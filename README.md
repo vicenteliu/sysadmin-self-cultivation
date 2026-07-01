@@ -52,8 +52,8 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 
 | Platform | What it is | Skill map | AI-assisted ramp | Labs |
 | --- | --- | --- | --- | --- |
-| **AWS** | ✅ | ✅ | ✅ | 🚧 starter |
-| Azure | 🚧 | 🚧 | 🚧 | — |
+| **AWS** | ✅ | ✅ | ✅ | ✅ 2 labs (boto3 + Terraform) |
+| **Azure** | ✅ | ✅ | ✅ | 🚧 planned |
 | GCP / GKE | 🚧 | 🚧 | 🚧 | — |
 | Cross-cutting | 🚧 | | | |
 

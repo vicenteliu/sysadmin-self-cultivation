@@ -10,8 +10,8 @@ can move between them without re-learning how to read them:
 
 | Platform | Status |
 | --- | --- |
-| **[aws/](aws/)** | ✅ worked example (read this first) |
-| azure/ | 🚧 planned — fastest to fill (Entra / Azure AD foundation) |
+| **[aws/](aws/)** | ✅ worked example + 2 runnable labs (read this first) |
+| **[azure/](azure/)** | ✅ module written (what-it-is / skill map / AI-ramp); labs planned. Entra/identity is the hands-on strength. |
 | gcp/ | 🚧 planned (incl. GKE) |
 
 See [`../00-the-operating-model.md`](../00-the-operating-model.md) for the transferable
