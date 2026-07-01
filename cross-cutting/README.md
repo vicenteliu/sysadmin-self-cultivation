@@ -8,7 +8,7 @@ Planned notes (added as the platform modules mature):
 
 | Note | What it covers |
 | --- | --- |
-| `identity-iam.md` | Least-privilege, roles vs. policies, short-lived credentials, lifecycle — the same discipline on AWS IAM, Azure RBAC, GCP IAM. |
+| ✅ [`identity-iam.md`](identity-iam.md) | Least-privilege, roles vs. policies, short-lived credentials, lifecycle (JML), SSO/SAML/OIDC, SCIM — the same discipline on AD, Entra, AWS IAM, Azure RBAC, GCP IAM, Okta. |
 | `networking.md` | Virtual networks, subnets, routing, firewalls, DNS, load balancing, private connectivity — cloud names for on-prem fundamentals. |
 | `terraform-iac.md` | Infrastructure-as-code as the universal control plane: state, modules, plan/apply/destroy, review, drift. One tool, every cloud. |
 | `kubernetes.md` | Containers + orchestration across EKS / AKS / GKE — the layer that's *most* portable between clouds. |

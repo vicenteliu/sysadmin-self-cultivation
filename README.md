@@ -46,6 +46,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 - Then pick a platform under **[`platforms/`](platforms/)**. **AWS is the worked example** — read it end to end to see the shape; the others follow the same template.
 - **[`cross-cutting/`](cross-cutting/)** covers the layers that transfer across every cloud (identity, networking, IaC, Kubernetes, observability, security, cost).
 - **[`ai-workflow/`](ai-workflow/)** is the meta-layer: how AI is used here to learn and to operate — and, just as important, how it's kept honest.
+- **[Roadmap](ROADMAP.md)** — what's built and what's next, prioritized by real-world demand.
 
 ## Status
 
@@ -54,7 +55,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 | **AWS** | ✅ | ✅ | ✅ | ✅ 2 labs (boto3 + Terraform) |
 | **Azure** | ✅ | ✅ | ✅ | 🚧 planned |
 | GCP / GKE | 🚧 | 🚧 | 🚧 | — |
-| Cross-cutting | 🚧 | | | |
+| Cross-cutting | identity ✅ · [roadmap](ROADMAP.md) for the rest | | | |
 
 This is a living project — built one platform at a time, out in the open.
 
