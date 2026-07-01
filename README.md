@@ -41,7 +41,8 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 
 ## How to read this
 
-- Start with **[the operating model](00-the-operating-model.md)** — the transferable skeleton.
+- **[Why this exists](WHY.md)** — the motivation, and an honest read on where the craft is heading in the AI era.
+- Then **[the operating model](00-the-operating-model.md)** — the transferable skeleton.
 - Then pick a platform under **[`platforms/`](platforms/)**. **AWS is the worked example** — read it end to end to see the shape; the others follow the same template.
 - **[`cross-cutting/`](cross-cutting/)** covers the layers that transfer across every cloud (identity, networking, IaC, Kubernetes, observability, security, cost).
 - **[`ai-workflow/`](ai-workflow/)** is the meta-layer: how AI is used here to learn and to operate — and, just as important, how it's kept honest.
