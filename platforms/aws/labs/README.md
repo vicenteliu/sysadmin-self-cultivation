@@ -12,7 +12,8 @@ different skills; these make you do the second.
 1. **`01-scoped-identity-inventory/`** — Create a least-privilege IAM role, then a
    `boto3` script that inventories the account (EC2, S3, VPCs, IAM users) to CSV.
    The cloud version of the classic "list everything" admin script — mirrors the
-   read-only, paginated inventory pattern used for on-prem/MDM fleets. *(next)*
+   read-only, paginated inventory pattern used for on-prem/MDM fleets.
+   ✅ **built** — see [`01-scoped-identity-inventory/`](01-scoped-identity-inventory/).
 2. **`02-minimal-vpc-ec2-terraform/`** — Terraform for a VPC (one public + one
    private subnet across two AZs, IGW + NAT), one EC2 instance with an instance
    profile (no baked-in keys), reachable over SSM (no open SSH). Apply, verify,

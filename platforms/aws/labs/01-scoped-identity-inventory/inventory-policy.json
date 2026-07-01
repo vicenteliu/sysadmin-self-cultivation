@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "InventoryReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "sts:GetCallerIdentity",
+        "ec2:DescribeRegions",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVpcs",
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation",
+        "iam:ListUsers"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
