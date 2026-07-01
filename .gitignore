@@ -1,0 +1,31 @@
+# Secrets & credentials — never commit these
+*.pem
+*.key
+.env
+.env.*
+credentials
+*_credentials*
+aws.json
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+crash.log
+override.tf
+override.tf.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
