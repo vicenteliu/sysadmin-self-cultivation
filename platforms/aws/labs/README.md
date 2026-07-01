@@ -14,10 +14,10 @@ different skills; these make you do the second.
    The cloud version of the classic "list everything" admin script — mirrors the
    read-only, paginated inventory pattern used for on-prem/MDM fleets.
    ✅ **built** — see [`01-scoped-identity-inventory/`](01-scoped-identity-inventory/).
-2. **`02-minimal-vpc-ec2-terraform/`** — Terraform for a VPC (one public + one
-   private subnet across two AZs, IGW + NAT), one EC2 instance with an instance
-   profile (no baked-in keys), reachable over SSM (no open SSH). Apply, verify,
-   destroy.
+2. **`02-minimal-vpc-ec2-terraform/`** — Terraform for a VPC (public + private
+   subnet, IGW + NAT), one EC2 instance with an instance profile (no baked-in keys),
+   reachable over SSM (no open SSH), IMDSv2 + encrypted disk. Apply, verify, destroy.
+   ✅ **built** — see [`02-minimal-vpc-ec2-terraform/`](02-minimal-vpc-ec2-terraform/).
 3. **`03-s3-secure-defaults/`** — An S3 bucket with encryption + block-public-access,
    a least-privilege bucket policy, and a lifecycle rule — proving the "right
    defaults" muscle.
