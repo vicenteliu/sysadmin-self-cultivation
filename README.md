@@ -1,10 +1,8 @@
 # The Sysadmin's Self-Cultivation
 
-### 《系统管理员的自我修养》
-
 *A field guide to mastering the clouds — with AI riding shotgun.*
 
-> 🌐 **Languages:** English (default) · [中文 (Chinese)](docs/zh/README.md)
+> 🌐 **Languages:** English (default) · [Chinese](docs/zh/README.md)
 
 ---
 

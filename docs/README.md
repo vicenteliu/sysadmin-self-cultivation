@@ -8,7 +8,7 @@ subfolder that mirrors the English tree as translations are contributed.
 
 ```
 docs/
-└── zh/                 # 中文 (Chinese)
+└── zh/                 # Chinese
     └── README.md       # translated overview; more docs added over time
 ```
 
