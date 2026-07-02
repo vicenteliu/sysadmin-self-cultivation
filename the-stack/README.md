@@ -104,7 +104,7 @@ mindmap
 | [`01-physical.md`](01-physical.md) — the physical layer: data centers, hardware, hypervisors, failure domains | ✅ |
 | [`02-network.md`](02-network.md) — underlay/overlay, VPC models, the egress meter, the debug ladder | ✅ |
 | [`03-compute-and-images.md`](03-compute-and-images.md) — compute shapes, the image pipeline, bake vs. fry, cloud-init everywhere | ✅ |
-| `04-storage.md` — block/object/file, SAN/NAS reality vs. cloud volumes, backup discipline | 🚧 next |
-| `05-platform-services.md` — containers, serverless, managed databases, the build-vs-rent line | 🚧 planned |
+| [`04-storage.md`](04-storage.md) — block/file/object, SAN/NAS reality vs. cloud volumes, the backup fear | ✅ |
+| `05-platform-services.md` — containers, serverless, managed databases, the build-vs-rent line | 🚧 next |
 
 Chinese mirrors land in [`docs/zh/`](../docs/zh/) after each chapter stabilizes.
