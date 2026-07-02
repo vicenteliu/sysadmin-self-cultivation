@@ -59,6 +59,8 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | **Cross-cutting** | **all dedicated notes written** (identity · saas-admin · iac · cost · kubernetes); networking/storage/virtualization/observability/security covered in the-stack | ✅ |
 | Platform | [`platforms/gcp/`](platforms/gcp/) — README + skills-map + ai-ramp (global-VPC outlier; Tier-1 #4); labs specced | ✅ written |
 | Platform depth | [`platforms/aws/architecture.md`](platforms/aws/architecture.md) + [`operations.md`](platforms/aws/operations.md) + [`automation.md`](platforms/aws/automation.md) — account model, day-2 ops-work breakdown, AI-in-the-loop, scripting the API | ✅ written |
+| Platform depth | Azure + GCP architecture/operations/automation trios (mirroring AWS) | ✅ written |
+| Private cloud | [`platforms/vsphere/`](platforms/vsphere/) — ✋ hands-on (VCP6-DCV/NV, AMS vCenter admin) + [`platforms/openstack/`](platforms/openstack/) — 🧗 ramp, KVM-adjacent | ✅ written |
 | **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)

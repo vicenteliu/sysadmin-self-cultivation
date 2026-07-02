@@ -69,16 +69,19 @@ the project's most distinctive axis. See [`the-stack/`](the-stack/).
 | [`06-observability`](the-stack/06-observability.md) | metrics/logs/traces, SLI/SLO, OpenTelemetry | ✅ |
 | [`07-security`](the-stack/07-security.md) | shared responsibility, defense in depth, CSPM/EDR/SIEM | ✅ |
 
-## IV. Platforms — read by cloud (same four-part template each)
+## IV. Platforms — read by platform (public cloud + private cloud / on-prem)
 
 Each is `README` (what-it-is + skill map + AI-ramp summary) · `skills-map` ·
-`ai-ramp` · `labs/`. See [`platforms/`](platforms/).
+`ai-ramp` · `labs/`. Public clouds (AWS/Azure/GCP) plus the on-prem platforms
+(vSphere ✋, OpenStack 🧗). See [`platforms/`](platforms/).
 
 | Platform | Status |
 | --- | --- |
 | [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md) + [operations](platforms/aws/operations.md) + [automation](platforms/aws/automation.md) + 2 runnable labs (read first) |
 | [`azure/`](platforms/azure/) | ✅ worked example depth: + [architecture](platforms/azure/architecture.md) + [operations](platforms/azure/operations.md) + [automation](platforms/azure/automation.md); Entra/identity is the hands-on strength |
-| [`gcp/`](platforms/gcp/) | ✅ module written (README + skills-map + ai-ramp); labs specced. The global-VPC outlier is the thing to learn. |
+| [`gcp/`](platforms/gcp/) | ✅ worked-example depth: + [architecture](platforms/gcp/architecture.md) + [operations](platforms/gcp/operations.md) + [automation](platforms/gcp/automation.md); labs specced. The global-VPC outlier is the thing to learn. |
+| [`vsphere/`](platforms/vsphere/) | ✅ module written — **✋ hands-on depth** (AMS-region vCenter admin, VCP6-DCV/NV); the one platform that's a strength, not a ramp |
+| [`openstack/`](platforms/openstack/) | ✅ module written — 🧗 ramp, adjacent to real KVM/Proxmox ✋; "you build the cloud" |
 
 ## V. Cross-cutting — read by theme (the transferable surfaces)
 

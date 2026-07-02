@@ -57,10 +57,12 @@ mindmap
       05 platform services
       06 observability
       07 security
-    Platforms - by cloud
+    Platforms - by platform
       AWS - the worked example
       Azure
       GCP
+      vSphere - hands-on depth
+      OpenStack
     Cross-cutting - by theme
       identity and IAM
       SaaS admin
@@ -102,18 +104,21 @@ Chinese mirrors, and deepening. See [`ROADMAP.md`](ROADMAP.md) for priorities.
 | **Endpoint** — MDM / imaging / EDR | ✅ [endpoint](endpoint/) |
 
 **Platforms** — each follows the four-part template (what-it-is · skill map ·
-AI-ramp · labs); AWS/Azure/GCP also carry the deeper **architecture · operations ·
+AI-ramp · labs); the public clouds also carry the deeper **architecture · operations ·
 automation** trio:
 
-| Platform | Module | Architecture | Operations | Automation | Labs |
-| --- | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ | ✅ | ✅ | ✅ 2 runnable (boto3 + Terraform) |
-| **[Azure](platforms/azure/)** | ✅ | ✅ | ✅ | ✅ | 🚧 specced |
-| **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ | ✅ | ✅ | 🚧 specced |
+| Platform | Module | Arch · Ops · Auto | Labs | Honesty |
+| --- | --- | --- | --- | --- |
+| **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ ✅ ✅ | ✅ 2 runnable (boto3 + Terraform) | 🧗 ramp |
+| **[Azure](platforms/azure/)** | ✅ | ✅ ✅ ✅ | 🚧 specced | 🧗 + Entra/identity ✋ |
+| **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | 🚧 specced | 🧗 ramp |
+| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | — | 🚧 specced | **✋ hands-on depth** (VCP6-DCV/NV) |
+| **[OpenStack](platforms/openstack/)** | ✅ | — | 🚧 specced | 🧗 ramp (KVM-adjacent ✋) |
 
 Every module marks **✋ hands-on depth** vs. **🧗 honest ramp** ([`WHY.md`](WHY.md)) —
-the strengths (Linux, endpoint, identity, SaaS admin, automation discipline) are
-claimed as ✋; a third cloud or deep Kubernetes is labeled 🧗, mapped and verified,
+the strengths (Linux, endpoint, identity, SaaS admin, automation discipline, and
+**vSphere** — a production virtualization estate) are claimed as ✋; a public cloud,
+OpenStack's control plane, or deep Kubernetes is labeled 🧗, mapped and verified,
 never bluffed.
 
 This is a living project — built out in the open, one layer at a time.
