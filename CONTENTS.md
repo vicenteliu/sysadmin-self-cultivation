@@ -92,7 +92,7 @@ duplicated. See [`cross-cutting/`](cross-cutting/).
 | [`iac-and-config`](cross-cutting/iac-and-config.md) | dedicated note (Terraform/Ansible/Puppet) | ✅ |
 | [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
-| [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | 🚧 opening written |
+| [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | ✅ |
 | [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | ✅ |
 | networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ covered in The Stack |
 | storage | → [`the-stack/04`](the-stack/04-storage.md) | ✅ covered in The Stack |

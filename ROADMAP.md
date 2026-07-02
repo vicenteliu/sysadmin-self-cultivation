@@ -55,6 +55,8 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | SaaS admin | [`cross-cutting/saas-admin.md`](cross-cutting/saas-admin.md) — Google Workspace / M365, identity spine, SCIM lifecycle (Tier-3 #11) | ✅ written |
 | IaC & config | [`cross-cutting/iac-and-config.md`](cross-cutting/iac-and-config.md) — provisioning vs. config, Terraform state, Ansible, drift (Tier-1 #3) | ✅ written |
 | Cost | [`cross-cutting/cost.md`](cross-cutting/cost.md) — cost as an ops signal, shapes, surprises, right-sizing, anomaly alerts | ✅ written |
+| Kubernetes | [`cross-cutting/kubernetes.md`](cross-cutting/kubernetes.md) — object model, control plane, CNI/CSI leak, Pending-vs-CrashLoop (Tier-2 #8) | ✅ written |
+| **Cross-cutting** | **all dedicated notes written** (identity · saas-admin · iac · cost · kubernetes); networking/storage/virtualization/observability/security covered in the-stack | ✅ |
 
 ## Build order (demand-driven)
 
