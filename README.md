@@ -57,7 +57,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 | **Azure** | ✅ | ✅ | ✅ | 🚧 planned |
 | GCP / GKE | 🚧 | 🚧 | 🚧 | — |
 | Cross-cutting | identity ✅ · [roadmap](ROADMAP.md) for the rest | | | |
-| **The Stack** (layer series) | ✅ [01 physical](the-stack/01-physical.md) · ✅ [02 network](the-stack/02-network.md) · ✅ [03 compute & images](the-stack/03-compute-and-images.md) · ✅ [04 storage](the-stack/04-storage.md) · 🚧 05 platform services | ✅ in-chapter | ✅ in-chapter | 🚧 specs written |
+| **The Stack** (layer series) | ✅ **complete, 01→05** ([physical](the-stack/01-physical.md) · [network](the-stack/02-network.md) · [compute](the-stack/03-compute-and-images.md) · [storage](the-stack/04-storage.md) · [platform services](the-stack/05-platform-services.md)) | ✅ in-chapter | ✅ in-chapter | 🚧 specs written |
 
 This is a living project — built one platform at a time, out in the open.
 

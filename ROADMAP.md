@@ -44,6 +44,8 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Layer series | [`the-stack/02-network.md`](the-stack/02-network.md) — network layer (covers Tier-1 item #2) | ✅ |
 | Layer series | [`the-stack/03-compute-and-images.md`](the-stack/03-compute-and-images.md) — compute & the image pipeline | ✅ |
 | Layer series | [`the-stack/04-storage.md`](the-stack/04-storage.md) — storage layer (block/file/object, backup) | ✅ |
+| Layer series | [`the-stack/05-platform-services.md`](the-stack/05-platform-services.md) — platform services (build-vs-rent) | ✅ |
+| Layer series | **the-stack 01→05 complete** — bottom-up stack done; observability is the natural next chapter | ✅ |
 
 ## Build order (demand-driven)
 

@@ -105,6 +105,12 @@ mindmap
 | [`02-network.md`](02-network.md) — underlay/overlay, VPC models, the egress meter, the debug ladder | ✅ |
 | [`03-compute-and-images.md`](03-compute-and-images.md) — compute shapes, the image pipeline, bake vs. fry, cloud-init everywhere | ✅ |
 | [`04-storage.md`](04-storage.md) — block/file/object, SAN/NAS reality vs. cloud volumes, the backup fear | ✅ |
-| `05-platform-services.md` — containers, serverless, managed databases, the build-vs-rent line | 🚧 next |
+| [`05-platform-services.md`](05-platform-services.md) — containers, serverless, managed databases, the build-vs-rent line | ✅ |
+
+**The bottom-up stack is complete (physical → platform services).** The series
+climbed the stack the way it's actually operated — hardware first, rented outcomes
+last. A natural next layer is **observability** — the one chapter 05 points to,
+because once you're renting outcomes you can't SSH into, telemetry is the only way
+in.
 
 Chinese mirrors land in [`docs/zh/`](../docs/zh/) after each chapter stabilizes.
