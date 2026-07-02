@@ -57,6 +57,8 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Cost | [`cross-cutting/cost.md`](cross-cutting/cost.md) — cost as an ops signal, shapes, surprises, right-sizing, anomaly alerts | ✅ written |
 | Kubernetes | [`cross-cutting/kubernetes.md`](cross-cutting/kubernetes.md) — object model, control plane, CNI/CSI leak, Pending-vs-CrashLoop (Tier-2 #8) | ✅ written |
 | **Cross-cutting** | **all dedicated notes written** (identity · saas-admin · iac · cost · kubernetes); networking/storage/virtualization/observability/security covered in the-stack | ✅ |
+| Platform | [`platforms/gcp/`](platforms/gcp/) — README + skills-map + ai-ramp (global-VPC outlier; Tier-1 #4); labs specced | ✅ written |
+| **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)
 

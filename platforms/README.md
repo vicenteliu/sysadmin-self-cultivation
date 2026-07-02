@@ -12,7 +12,7 @@ can move between them without re-learning how to read them:
 | --- | --- |
 | **[aws/](aws/)** | ✅ worked example + 2 runnable labs (read this first) |
 | **[azure/](azure/)** | ✅ module written (what-it-is / skill map / AI-ramp); labs planned. Entra/identity is the hands-on strength. |
-| **[gcp/](gcp/)** | 🚧 opening written — README + skills-map + ai-ramp scaffolded (incl. GKE); the global-VPC outlier is the thing to learn. |
+| **[gcp/](gcp/)** | ✅ module written (what-it-is / skill map / AI-ramp; incl. GKE); labs specced. The global-VPC outlier is the thing to learn. |
 
 See [`../00-the-operating-model.md`](../00-the-operating-model.md) for the transferable
 skeleton every module is organized around.
