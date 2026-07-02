@@ -41,6 +41,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 
 ## How to read this
 
+- **[Contents — the whole map](CONTENTS.md)** — every module, all four axes, what's written vs. scaffolded. Start here if you want the shape of the whole thing.
 - **[Why this exists](WHY.md)** — the motivation, and an honest read on where the craft is heading in the AI era.
 - Then **[the operating model](00-the-operating-model.md)** — the transferable skeleton.
 - Then pick a platform under **[`platforms/`](platforms/)**. **AWS is the worked example** — read it end to end to see the shape; the others follow the same template.
@@ -55,8 +56,9 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 | --- | --- | --- | --- | --- |
 | **AWS** | ✅ | ✅ | ✅ | ✅ 2 labs (boto3 + Terraform) |
 | **Azure** | ✅ | ✅ | ✅ | 🚧 planned |
-| GCP / GKE | 🚧 | 🚧 | 🚧 | — |
-| Cross-cutting | identity ✅ · [roadmap](ROADMAP.md) for the rest | | | |
+| GCP / GKE | 🚧 opening | 🚧 opening | 🚧 opening | — |
+| Cross-cutting | identity ✅ · IaC/SaaS-admin/K8s/cost 🚧 openings · [CONTENTS](CONTENTS.md) | | | |
+| Foundations · Endpoint | 🚧 openings ([foundations](foundations/) · [endpoint](endpoint/)) | | | |
 | **The Stack** (layer series) | ✅ **01→07** ([physical](the-stack/01-physical.md) · [network](the-stack/02-network.md) · [compute](the-stack/03-compute-and-images.md) · [storage](the-stack/04-storage.md) · [platform services](the-stack/05-platform-services.md) · [observability](the-stack/06-observability.md) · [security](the-stack/07-security.md)) | ✅ in-chapter | ✅ in-chapter | ✅ 1 runnable ([backup drill](the-stack/labs/04-backup-not-snapshot/)) · specs for rest |
 
 This is a living project — built one platform at a time, out in the open.

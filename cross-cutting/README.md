@@ -4,18 +4,28 @@ The layers that transfer across **every** cloud. Learn these as concepts once an
 you're mostly translating vocabulary on each platform. This is where a systems
 admin's existing depth (Linux, networking, identity, automation) pays off the most.
 
-Planned notes (added as the platform modules mature):
+**Dedicated notes** — themes best learned as one concept across all platforms:
 
-| Note | What it covers |
+| Note | What it covers | Status |
+| --- | --- | --- |
+| [`identity-iam.md`](identity-iam.md) | Least-privilege, roles vs. policies, short-lived credentials, lifecycle (JML), SSO/SAML/OIDC, SCIM — same discipline on AD, Entra, AWS IAM, Azure RBAC, GCP IAM, Okta. | ✅ |
+| [`iac-and-config.md`](iac-and-config.md) | Provisioning (Terraform) vs. config management (Ansible/Puppet): state, modules, plan/apply/destroy, idempotence, drift. | 🚧 |
+| [`saas-admin.md`](saas-admin.md) | Google Workspace & M365 administration, the identity spine, SCIM lifecycle — the productivity suite as a managed estate. | 🚧 |
+| [`kubernetes.md`](kubernetes.md) | The object model and operator's view, one layer deeper than the-stack/05; managed vs. self-run, the debugging reflex. | 🚧 |
+| [`cost.md`](cost.md) | Cost as a first-class operational control: budgets, alarms, right-sizing, the "forgotten GPU instance" problem. | 🚧 |
+
+**Covered by layer in [`the-stack/`](../the-stack/)** — cross-linked, not
+duplicated (these read more naturally as layers than as standalone themes):
+
+| Theme | Where |
 | --- | --- |
-| ✅ [`identity-iam.md`](identity-iam.md) | Least-privilege, roles vs. policies, short-lived credentials, lifecycle (JML), SSO/SAML/OIDC, SCIM — the same discipline on AD, Entra, AWS IAM, Azure RBAC, GCP IAM, Okta. |
-| `networking.md` | Virtual networks, subnets, routing, firewalls, DNS, load balancing, private connectivity — cloud names for on-prem fundamentals. |
-| `terraform-iac.md` | Infrastructure-as-code as the universal control plane: state, modules, plan/apply/destroy, review, drift. One tool, every cloud. |
-| `kubernetes.md` | Containers + orchestration across EKS / AKS / GKE — the layer that's *most* portable between clouds. |
-| `observability.md` | Metrics, logs, traces, alerts, SLIs/SLOs — "is it healthy, and how do I know," everywhere. |
-| `security-compliance.md` | Encryption, secrets, hardening, audit, guardrails, policy-as-code — provable safety. |
-| `cost.md` | Cost as a first-class operational control: budgets, alarms, right-sizing, the "forgotten GPU instance" problem. |
+| networking | [`the-stack/02-network.md`](../the-stack/02-network.md) |
+| storage | [`the-stack/04-storage.md`](../the-stack/04-storage.md) |
+| virtualization | [`the-stack/01-physical.md`](../the-stack/01-physical.md) |
+| observability | [`the-stack/06-observability.md`](../the-stack/06-observability.md) |
+| security & compliance | [`the-stack/07-security.md`](../the-stack/07-security.md) |
 
 > The point of this folder: after AWS, most of Azure and GCP is *"which of these
 > concepts is renamed to what, and what's the quirk?"* — a question that's fast to
-> answer once the concept itself is solid.
+> answer once the concept itself is solid. See [`../CONTENTS.md`](../CONTENTS.md)
+> for how this folder fits the whole map.
