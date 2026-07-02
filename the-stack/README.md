@@ -67,6 +67,10 @@ mindmap
         metrics logs traces
         SLI SLO error budget
         OpenTelemetry
+      07 Security
+        shared responsibility
+        defense in depth
+        secure-by-default vs by-discipline
     Seven platforms
       You build it
         Self-host ✋
@@ -111,12 +115,13 @@ mindmap
 | [`04-storage.md`](04-storage.md) — block/file/object, SAN/NAS reality vs. cloud volumes, the backup fear | ✅ |
 | [`05-platform-services.md`](05-platform-services.md) — containers, serverless, managed databases, the build-vs-rent line | ✅ |
 | [`06-observability.md`](06-observability.md) — the three pillars, monitoring vs. observability, SLI/SLO/error budget, OTel | ✅ |
+| [`07-security.md`](07-security.md) — shared responsibility, defense in depth, CSPM/EDR/SIEM/secrets, compliance | ✅ |
 
-**The bottom-up stack is complete (physical → platform services), plus the layer
-that sees all of it.** Chapters 01–05 climbed the stack the way it's actually
-operated — hardware first, rented outcomes last. Chapter 06 (observability) is the
-nervous system laid over the whole climb: once you're renting outcomes you can't
-SSH into, telemetry is the only way in. A natural continuation from here is
-**security** as a second cross-cutting layer over the same seven platforms.
+**The stack is complete: five layers bottom-up (01–05), plus the two cross-cutting
+layers that ride over all of them — observability (06, how you *see* it) and
+security (07, how you *guard* it).** Chapters 01–05 climbed the stack the way it's
+actually operated — hardware first, rented outcomes last. Chapter 07 closes the
+loop by showing that security isn't a new skill set: it's each layer you already
+built, made defensible, with detection laid on top.
 
 Chinese mirrors land in [`docs/zh/`](../docs/zh/) after each chapter stabilizes.

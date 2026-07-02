@@ -46,7 +46,8 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Layer series | [`the-stack/04-storage.md`](the-stack/04-storage.md) — storage layer (block/file/object, backup) | ✅ |
 | Layer series | [`the-stack/05-platform-services.md`](the-stack/05-platform-services.md) — platform services (build-vs-rent) | ✅ |
 | Layer series | [`the-stack/06-observability.md`](the-stack/06-observability.md) — observability (3 pillars, SLI/SLO, OTel; covers Tier-3 #9) | ✅ |
-| Layer series | **the-stack 01→06 complete** — bottom-up stack + observability; security is the natural next cross-cutting layer | ✅ |
+| Layer series | [`the-stack/07-security.md`](the-stack/07-security.md) — security (shared-resp, defense-in-depth, CSPM/EDR/SIEM; covers Tier-2 #6) | ✅ |
+| Layer series | **the-stack 01→07 complete** — 5 bottom-up layers + observability + security (two cross-cutting caps) | ✅ |
 
 ## Build order (demand-driven)
 
