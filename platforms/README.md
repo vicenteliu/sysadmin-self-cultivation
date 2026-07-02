@@ -11,8 +11,8 @@ can move between them without re-learning how to read them:
 | Platform | Status |
 | --- | --- |
 | **[aws/](aws/)** | ✅ worked example + architecture + operations + automation notes + 2 runnable labs (read this first) |
-| **[azure/](azure/)** | ✅ module written (what-it-is / skill map / AI-ramp); labs planned. Entra/identity is the hands-on strength. |
-| **[gcp/](gcp/)** | ✅ module written (what-it-is / skill map / AI-ramp; incl. GKE); labs specced. The global-VPC outlier is the thing to learn. |
+| **[azure/](azure/)** | ✅ worked-example depth — + architecture + operations + automation notes; labs planned. Entra/identity is the hands-on strength. |
+| **[gcp/](gcp/)** | ✅ worked-example depth — + architecture + operations + automation notes (incl. GKE); labs specced. The global-VPC outlier is the thing to learn. |
 
 See [`../00-the-operating-model.md`](../00-the-operating-model.md) for the transferable
 skeleton every module is organized around.

@@ -1,9 +1,13 @@
 # Azure
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
-> AI-assisted ramp → labs.** If you've read the AWS module, most of this is
-> *"which of those concepts is renamed to what, and what's the Azure quirk?"* — which
-> is exactly the point of the [operating model](../../00-the-operating-model.md).
+> AI-assisted ramp → labs** — plus three deeper companion notes mirroring the AWS
+> worked example: **[architecture](architecture.md)** (how it's structured),
+> **[operations](operations.md)** (running it day-2, the ops-work breakdown, AI in the
+> operating loop), and **[automation](automation.md)** (scripting the API). If you've
+> read the AWS module, most of this is *"which of those concepts is renamed to what,
+> and what's the Azure quirk?"* — which is exactly the point of the
+> [operating model](../../00-the-operating-model.md).
 
 ## 1. What Azure is
 
@@ -73,6 +77,24 @@ Runnable exercises in **[`labs/`](labs/)** — same shape as AWS: a scoped ident
 subscription inventory (Azure Resource Graph / CLI), then a minimal VNet + VM in
 Terraform reachable without an open port, then Key Vault + managed identity, then a
 Budget.
+
+## 5. Going deeper — architecture, operations & automation
+
+Three companion notes take Azure past "what the services are", mirroring the AWS set:
+
+- **[`architecture.md`](architecture.md)** — how Azure is *structured*: the management-
+  group → subscription → resource-group hierarchy as the blast-radius model, regions /
+  zones / **paired regions**, the **two-permission-planes** gotcha (Entra ID roles vs.
+  Azure RBAC) given real weight, shared responsibility, and a reference three-tier.
+- **[`operations.md`](operations.md)** — *running* Azure day-2: the brief, the ops
+  notes (public blob, NSG-at-subnet-or-NIC, the Entra-vs-RBAC denial), the recurring
+  work **broken down by cadence**, and **how AI assists the operating loop** — leaning
+  into KQL authoring for Log Analytics / Sentinel.
+- **[`automation.md`](automation.md)** — **scripting the ARM API**: the
+  `identity → client → API call` model, Azure's dual **CLI + first-class PowerShell**
+  altitude ladder, **managed identity** / `DefaultAzureCredential` (never a secret in
+  the script), the rules (`ItemPaged` pagination, **Resource Graph** for bulk),
+  and the read-audit vs. remediation shapes.
 
 ## Honest boundaries
 

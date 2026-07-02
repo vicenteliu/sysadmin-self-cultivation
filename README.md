@@ -14,54 +14,109 @@ productive on anything, fast**. In 2026 that second half got a turbo: AI compres
 the learning curve from months to days — *if* you already have the judgment to
 steer it and catch it when it's wrong.
 
-This repo is that idea, proved out across the major clouds. For each platform it
-answers three questions, in the same order every time:
+This repo is that idea, proved out across the major clouds and down every layer of
+the stack. For each platform it answers three questions, in the same order every
+time — **what is it**, **what must an admin be able to *do***, and **how do you get
+competent with AI as a co-pilot** — then makes you prove it with hands-on **labs**.
 
-1. **What is it?** — the platform's job and its core building blocks, on one page.
-2. **What does an admin actually need to be able to do?** — a concrete, checkable
-   competency map, not a marketing feature list.
-3. **How do you get competent with AI as a co-pilot?** — the method: how to ramp
-   fast *and* verify, so you're using AI, not trusting it blindly.
+## The one skeleton under every platform
 
-Then it makes you prove it with hands-on **labs** (scripts + infrastructure-as-code
-you can actually run).
+Administer one platform properly and the next is mostly new syntax over the same
+three moves:
 
-## Why "the same three moves"
-
-Once you've administered one platform properly, the next one is mostly new syntax
-over the same skeleton:
-
-> **register a scoped identity → get a token / credential → drive the platform
-> through its API and infrastructure-as-code.**
+```mermaid
+flowchart LR
+  id["① Register a scoped identity<br/>least privilege, narrowest scope"] --> cred["② Get a credential<br/>short-lived token — no key on the box"] --> drive["③ Drive by API and codify it<br/>CLI / SDK / infrastructure-as-code"]
+  drive -.->|"new platform = same three moves, new names"| id
+```
 
 Jamf, Intune, Entra, and Configuration Manager work this way. So do AWS, Azure, and
-GCP. This repo leans on that: master the pattern once (see
-[`00-the-operating-model.md`](00-the-operating-model.md)), and every new platform
-becomes a mapping exercise you can do with AI in a fraction of the time.
+GCP. Master the pattern once (see [`00-the-operating-model.md`](00-the-operating-model.md))
+and every new platform becomes a mapping exercise you can do with AI in a fraction
+of the time.
+
+## The map on one screen
+
+The project crosses the same material from **four angles** — enter from whichever
+matches the question you have:
+
+```mermaid
+mindmap
+  root((Self-cultivation))
+    Start here
+      WHY - the motivation
+      the operating model - the skeleton
+      ai-workflow - the method
+    Foundations
+      Linux and scripting - the floor
+    The Stack - by layer
+      01 physical
+      02 network
+      03 compute and images
+      04 storage
+      05 platform services
+      06 observability
+      07 security
+    Platforms - by cloud
+      AWS - the worked example
+      Azure
+      GCP
+    Cross-cutting - by theme
+      identity and IAM
+      SaaS admin
+      IaC and config
+      cost
+      kubernetes
+```
+
+The distinctive axis is **The Stack**: it reads the stack *bottom-up*, comparing
+**seven platforms at every layer** (AWS · Azure · GCP · OCI · vSphere · OpenStack ·
+self-host) — written from the machine room up, not the console down.
 
 ## How to read this
 
-- **[Contents — the whole map](CONTENTS.md)** — every module, all four axes, what's written vs. scaffolded. Start here if you want the shape of the whole thing.
-- **[Why this exists](WHY.md)** — the motivation, and an honest read on where the craft is heading in the AI era.
-- Then **[the operating model](00-the-operating-model.md)** — the transferable skeleton.
-- Then pick a platform under **[`platforms/`](platforms/)**. **AWS is the worked example** — read it end to end to see the shape; the others follow the same template.
-- Or read the stack **layer by layer** in **[`the-stack/`](the-stack/)** — bottom-up (physical → network → application), with **seven platforms compared at every layer** (AWS, Azure, GCP, OCI, vSphere, OpenStack, self-host).
-- **[`cross-cutting/`](cross-cutting/)** covers the layers that transfer across every cloud (identity, networking, IaC, Kubernetes, observability, security, cost).
-- **[`ai-workflow/`](ai-workflow/)** is the meta-layer: how AI is used here to learn and to operate — and, just as important, how it's kept honest.
-- **[Roadmap](ROADMAP.md)** — what's built and what's next, prioritized by real-world demand.
+Four entry points, by what you want:
 
-## Status
+| I want to… | Start at |
+| --- | --- |
+| **See the whole shape** | [`CONTENTS.md`](CONTENTS.md) — every module, all four axes, one page |
+| **Understand the philosophy** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
+| **Go deep on one cloud** | [`platforms/`](platforms/) — **AWS is the worked example**, read it end to end |
+| **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
+| **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity, IaC, cost, K8s, SaaS admin |
+| **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
 
-| Platform | What it is | Skill map | AI-assisted ramp | Labs |
-| --- | --- | --- | --- | --- |
-| **AWS** | ✅ | ✅ | ✅ | ✅ 2 labs (boto3 + Terraform) |
-| **Azure** | ✅ | ✅ | ✅ | 🚧 planned |
-| GCP / GKE | ✅ | ✅ | ✅ | 🚧 specced |
-| Cross-cutting | ✅ **all written** — identity · saas-admin · iac-and-config · cost · kubernetes · [CONTENTS](CONTENTS.md) | | | |
-| Foundations · Endpoint | ✅ [foundations](foundations/) (Linux + scripting) · ✅ [endpoint](endpoint/) (MDM/imaging/EDR) | | | |
-| **The Stack** (layer series) | ✅ **01→07** ([physical](the-stack/01-physical.md) · [network](the-stack/02-network.md) · [compute](the-stack/03-compute-and-images.md) · [storage](the-stack/04-storage.md) · [platform services](the-stack/05-platform-services.md) · [observability](the-stack/06-observability.md) · [security](the-stack/07-security.md)) | ✅ in-chapter | ✅ in-chapter | ✅ 1 runnable ([backup drill](the-stack/labs/04-backup-not-snapshot/)) · specs for rest |
+## Status — what's built
 
-This is a living project — built one platform at a time, out in the open.
+Every planned module has written content; the remaining work is more runnable labs,
+Chinese mirrors, and deepening. See [`ROADMAP.md`](ROADMAP.md) for priorities.
+
+**By axis:**
+
+| Axis | State |
+| --- | --- |
+| **Start here** — WHY · operating model · ai-workflow | ✅ |
+| **Foundations** — Linux + scripting | ✅ [foundations](foundations/) |
+| **The Stack** — 7 layers, 7 platforms each | ✅ [01→07](the-stack/) + 1 runnable [backup-drill lab](the-stack/labs/04-backup-not-snapshot/) |
+| **Cross-cutting** — the transferable surfaces | ✅ [identity](cross-cutting/identity-iam.md) · [saas-admin](cross-cutting/saas-admin.md) · [iac](cross-cutting/iac-and-config.md) · [cost](cross-cutting/cost.md) · [kubernetes](cross-cutting/kubernetes.md) |
+| **Endpoint** — MDM / imaging / EDR | ✅ [endpoint](endpoint/) |
+
+**Platforms** — each follows the four-part template (what-it-is · skill map ·
+AI-ramp · labs); AWS/Azure/GCP also carry the deeper **architecture · operations ·
+automation** trio:
+
+| Platform | Module | Architecture | Operations | Automation | Labs |
+| --- | --- | --- | --- | --- | --- |
+| **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ | ✅ | ✅ | ✅ 2 runnable (boto3 + Terraform) |
+| **[Azure](platforms/azure/)** | ✅ | ✅ | ✅ | ✅ | 🚧 specced |
+| **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ | ✅ | ✅ | 🚧 specced |
+
+Every module marks **✋ hands-on depth** vs. **🧗 honest ramp** ([`WHY.md`](WHY.md)) —
+the strengths (Linux, endpoint, identity, SaaS admin, automation discipline) are
+claimed as ✋; a third cloud or deep Kubernetes is labeled 🧗, mapped and verified,
+never bluffed.
+
+This is a living project — built out in the open, one layer at a time.
 
 ## Who wrote this
 
