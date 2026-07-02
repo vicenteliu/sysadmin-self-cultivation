@@ -61,6 +61,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Platform depth | [`platforms/aws/architecture.md`](platforms/aws/architecture.md) + [`operations.md`](platforms/aws/operations.md) + [`automation.md`](platforms/aws/automation.md) — account model, day-2 ops-work breakdown, AI-in-the-loop, scripting the API | ✅ written |
 | Platform depth | Azure + GCP architecture/operations/automation trios (mirroring AWS) | ✅ written |
 | Private cloud | [`platforms/vsphere/`](platforms/vsphere/) — ✋ hands-on (VCP6-DCV/NV, AMS vCenter admin) + [`platforms/openstack/`](platforms/openstack/) — 🧗 ramp, KVM-adjacent | ✅ written |
+| Platforms complete | [`platforms/oci/`](platforms/oci/) — 🧗 4th cloud + [`platforms/self-host/`](platforms/self-host/) — ✋ deepest root. **All seven the-stack platforms now have modules** | ✅ written |
 | **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)

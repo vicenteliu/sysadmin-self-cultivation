@@ -57,12 +57,14 @@ mindmap
       05 platform services
       06 observability
       07 security
-    Platforms - by platform
+    Platforms - all seven
       AWS - the worked example
       Azure
       GCP
+      OCI
       vSphere - hands-on depth
       OpenStack
+      self-host - hands-on depth
     Cross-cutting - by theme
       identity and IAM
       SaaS admin
@@ -107,13 +109,18 @@ Chinese mirrors, and deepening. See [`ROADMAP.md`](ROADMAP.md) for priorities.
 AI-ramp · labs); the public clouds also carry the deeper **architecture · operations ·
 automation** trio:
 
+All **seven** platforms compared in The Stack now have a dedicated "operate it end to
+end" module:
+
 | Platform | Module | Arch · Ops · Auto | Labs | Honesty |
 | --- | --- | --- | --- | --- |
 | **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ ✅ ✅ | ✅ 2 runnable (boto3 + Terraform) | 🧗 ramp |
 | **[Azure](platforms/azure/)** | ✅ | ✅ ✅ ✅ | 🚧 specced | 🧗 + Entra/identity ✋ |
 | **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | 🚧 specced | 🧗 ramp |
+| **[OCI](platforms/oci/)** | ✅ | — | 🚧 specced | 🧗 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ | — | 🚧 specced | **✋ hands-on depth** (VCP6-DCV/NV) |
 | **[OpenStack](platforms/openstack/)** | ✅ | — | 🚧 specced | 🧗 ramp (KVM-adjacent ✋) |
+| **[self-host / bare metal](platforms/self-host/)** | ✅ | — | 🚧 specced | **✋ hands-on depth** (100k+ fleet) |
 
 Every module marks **✋ hands-on depth** vs. **🧗 honest ramp** ([`WHY.md`](WHY.md)) —
 the strengths (Linux, endpoint, identity, SaaS admin, automation discipline, and

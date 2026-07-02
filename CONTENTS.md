@@ -80,8 +80,10 @@ Each is `README` (what-it-is + skill map + AI-ramp summary) · `skills-map` ·
 | [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md) + [operations](platforms/aws/operations.md) + [automation](platforms/aws/automation.md) + 2 runnable labs (read first) |
 | [`azure/`](platforms/azure/) | ✅ worked example depth: + [architecture](platforms/azure/architecture.md) + [operations](platforms/azure/operations.md) + [automation](platforms/azure/automation.md); Entra/identity is the hands-on strength |
 | [`gcp/`](platforms/gcp/) | ✅ worked-example depth: + [architecture](platforms/gcp/architecture.md) + [operations](platforms/gcp/operations.md) + [automation](platforms/gcp/automation.md); labs specced. The global-VPC outlier is the thing to learn. |
-| [`vsphere/`](platforms/vsphere/) | ✅ module written — **✋ hands-on depth** (AMS-region vCenter admin, VCP6-DCV/NV); the one platform that's a strength, not a ramp |
+| [`oci/`](platforms/oci/) | ✅ module written — 🧗 ramp; youngest hyperscaler (compartments, OCPU, bare-metal-first, cheap egress) |
+| [`vsphere/`](platforms/vsphere/) | ✅ module written — **✋ hands-on depth** (AMS-region vCenter admin, VCP6-DCV/NV); a strength, not a ramp |
 | [`openstack/`](platforms/openstack/) | ✅ module written — 🧗 ramp, adjacent to real KVM/Proxmox ✋; "you build the cloud" |
+| [`self-host/`](platforms/self-host/) | ✅ module written — **✋ hands-on depth**, the deepest root: PXE/image fleet at 100k+ scale, BMC/IPMI, DNS/RAID |
 
 ## V. Cross-cutting — read by theme (the transferable surfaces)
 

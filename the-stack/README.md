@@ -29,11 +29,11 @@ Reading the stack bottom-up buys you two things the console can't:
 
 | Family | Platforms | Who owns the hardware | Honesty marker |
 | --- | --- | --- | --- |
-| **You build it** | self-hosted bare metal · VMware [vSphere](../platforms/vsphere/) | you | ✋ hands-on depth |
+| **You build it** | [self-hosted bare metal](../platforms/self-host/) · VMware [vSphere](../platforms/vsphere/) | you | ✋ hands-on depth |
 | **You build a cloud** | [OpenStack](../platforms/openstack/) | you (plus a control plane you now operate) | 🧗 ramp (KVM-adjacent ✋) |
-| **They build it** | [AWS](../platforms/aws/) · [Azure](../platforms/azure/) · [GCP](../platforms/gcp/) · OCI | the provider | 🧗 ramp |
+| **They build it** | [AWS](../platforms/aws/) · [Azure](../platforms/azure/) · [GCP](../platforms/gcp/) · [OCI](../platforms/oci/) | the provider | 🧗 ramp |
 
-Five of the seven have a dedicated **[`platforms/`](../platforms/)** module (the
+**All seven** now have a dedicated **[`platforms/`](../platforms/)** module (the
 "operate this one end to end" view); this series is the "compare them per layer" view.
 
 The ✋/🧗 markers follow the repo's rule ([`WHY.md`](../WHY.md)): hands-on depth is
