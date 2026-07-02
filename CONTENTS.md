@@ -89,7 +89,7 @@ duplicated. See [`cross-cutting/`](cross-cutting/).
 | Theme | Home | Status |
 | --- | --- | --- |
 | [`identity-iam`](cross-cutting/identity-iam.md) | dedicated note | ✅ |
-| [`iac-and-config`](cross-cutting/iac-and-config.md) | dedicated note (Terraform/Ansible/Puppet) | 🚧 opening written |
+| [`iac-and-config`](cross-cutting/iac-and-config.md) | dedicated note (Terraform/Ansible/Puppet) | ✅ |
 | [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | 🚧 opening written |

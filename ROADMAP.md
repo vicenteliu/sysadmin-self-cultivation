@@ -53,6 +53,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Foundations | [`foundations/`](foundations/) — Linux mental model, debugging reflex, scripting, honest scope (Tier-3 #10) | ✅ written |
 | Endpoint | [`endpoint/`](endpoint/) — MDM model, imaging pipeline, patch/EDR, BYOD, Intune-as-ramp (Tier-2 #5) | ✅ written |
 | SaaS admin | [`cross-cutting/saas-admin.md`](cross-cutting/saas-admin.md) — Google Workspace / M365, identity spine, SCIM lifecycle (Tier-3 #11) | ✅ written |
+| IaC & config | [`cross-cutting/iac-and-config.md`](cross-cutting/iac-and-config.md) — provisioning vs. config, Terraform state, Ansible, drift (Tier-1 #3) | ✅ written |
 
 ## Build order (demand-driven)
 

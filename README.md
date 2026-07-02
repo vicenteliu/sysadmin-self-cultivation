@@ -57,7 +57,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 | **AWS** | ✅ | ✅ | ✅ | ✅ 2 labs (boto3 + Terraform) |
 | **Azure** | ✅ | ✅ | ✅ | 🚧 planned |
 | GCP / GKE | 🚧 opening | 🚧 opening | 🚧 opening | — |
-| Cross-cutting | identity ✅ · saas-admin ✅ · IaC/K8s/cost 🚧 openings · [CONTENTS](CONTENTS.md) | | | |
+| Cross-cutting | identity ✅ · saas-admin ✅ · iac-and-config ✅ · K8s/cost 🚧 openings · [CONTENTS](CONTENTS.md) | | | |
 | Foundations · Endpoint | ✅ [foundations](foundations/) (Linux + scripting) · ✅ [endpoint](endpoint/) (MDM/imaging/EDR) | | | |
 | **The Stack** (layer series) | ✅ **01→07** ([physical](the-stack/01-physical.md) · [network](the-stack/02-network.md) · [compute](the-stack/03-compute-and-images.md) · [storage](the-stack/04-storage.md) · [platform services](the-stack/05-platform-services.md) · [observability](the-stack/06-observability.md) · [security](the-stack/07-security.md)) | ✅ in-chapter | ✅ in-chapter | ✅ 1 runnable ([backup drill](the-stack/labs/04-backup-not-snapshot/)) · specs for rest |
 
