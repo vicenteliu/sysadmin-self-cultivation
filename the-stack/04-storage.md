@@ -189,17 +189,28 @@ across clouds, Ceph operations — mapped by the method above, with the *discipl
 (3-2-1, restore-testing, shape-selection, performance-contracting) being the ✋ part
 that transfers unchanged onto any platform's product names.
 
-## Lab (🚧 planned — spec)
+## Lab (✅ built — [`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot/))
 
-**Prove the backup, break the disk.**
+**Prove the backup, break the disk** — and this one actually runs, with zero cloud
+and zero dependencies (Python 3.8+ only, so CI can run it too):
 
-1. Put a small database on a **block volume**; write a known row.
-2. Back it up to **object storage** in a way that satisfies 3-2-1 (separate
-   account/project), then **restore it** to a fresh volume and verify the row —
-   timed; write down your RPO and RTO.
-3. **The drill:** take a snapshot, `DROP` the table, and prove the snapshot
-   "recovers" the drop faithfully (it does — that's the lesson); then recover for
-   real from the independent backup. Feel the difference in your hands.
+```bash
+python3 the-stack/labs/04-backup-not-snapshot/backup_drill.py
+```
+
+The drill seeds a database, "replicates" it, takes one independent point-in-time
+backup, writes **more** data, then `DROP`s the table — and checks three lessons:
+
+1. The **replica is destroyed too** — replication faithfully copies a `DROP`
+   (replication ≠ backup).
+2. Only the **independent vault backup** recovers the data — independence is the
+   property that saves you.
+3. **RPO is a number:** the rows written after the backup are gone, counted
+   exactly; the restore is timed (your RTO). Exit `0` means every lesson held.
+
+See the [lab README](labs/04-backup-not-snapshot/README.md) for the three-command
+manual verification (watch primary *and* replica both answer "no such table" while
+the vault answers with a row count).
 
 ## The chapter on one screen
 

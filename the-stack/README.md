@@ -124,4 +124,12 @@ actually operated — hardware first, rented outcomes last. Chapter 07 closes th
 loop by showing that security isn't a new skill set: it's each layer you already
 built, made defensible, with detection laid on top.
 
+## Labs
+
+Each chapter ends with a lab spec; [`labs/`](labs/) is where they become runnable
+evidence. First one built: [`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot/)
+— a pure-Python, zero-cost drill that proves *replication is not backup* by
+`DROP`ing a table and watching the replica die with it while an independent backup
+recovers. Runs anywhere Python does; exit `0` doubles as a CI check.
+
 Chinese mirrors land in [`docs/zh/`](../docs/zh/) after each chapter stabilizes.

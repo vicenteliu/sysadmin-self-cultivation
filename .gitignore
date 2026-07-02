@@ -23,6 +23,10 @@ __pycache__/
 venv/
 *.egg-info/
 
+# Lab run artifacts (regenerated on every run)
+drill-workspace/
+the-stack/labs/**/out/
+
 # OS / editor
 .DS_Store
 Thumbs.db
