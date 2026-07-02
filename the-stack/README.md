@@ -63,6 +63,10 @@ mindmap
       05 Platform services
         containers and serverless
         managed databases
+      06 Observability
+        metrics logs traces
+        SLI SLO error budget
+        OpenTelemetry
     Seven platforms
       You build it
         Self-host ✋
@@ -106,11 +110,13 @@ mindmap
 | [`03-compute-and-images.md`](03-compute-and-images.md) — compute shapes, the image pipeline, bake vs. fry, cloud-init everywhere | ✅ |
 | [`04-storage.md`](04-storage.md) — block/file/object, SAN/NAS reality vs. cloud volumes, the backup fear | ✅ |
 | [`05-platform-services.md`](05-platform-services.md) — containers, serverless, managed databases, the build-vs-rent line | ✅ |
+| [`06-observability.md`](06-observability.md) — the three pillars, monitoring vs. observability, SLI/SLO/error budget, OTel | ✅ |
 
-**The bottom-up stack is complete (physical → platform services).** The series
-climbed the stack the way it's actually operated — hardware first, rented outcomes
-last. A natural next layer is **observability** — the one chapter 05 points to,
-because once you're renting outcomes you can't SSH into, telemetry is the only way
-in.
+**The bottom-up stack is complete (physical → platform services), plus the layer
+that sees all of it.** Chapters 01–05 climbed the stack the way it's actually
+operated — hardware first, rented outcomes last. Chapter 06 (observability) is the
+nervous system laid over the whole climb: once you're renting outcomes you can't
+SSH into, telemetry is the only way in. A natural continuation from here is
+**security** as a second cross-cutting layer over the same seven platforms.
 
 Chinese mirrors land in [`docs/zh/`](../docs/zh/) after each chapter stabilizes.
