@@ -51,6 +51,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Layer lab | [`the-stack/labs/04-backup-not-snapshot/`](the-stack/labs/04-backup-not-snapshot/) — runnable, pure-Python "replication is not backup" drill | ✅ |
 | Framework | [`CONTENTS.md`](CONTENTS.md) + opening for every planned module (foundations/endpoint/iac/saas/k8s/cost/gcp) | ✅ |
 | Foundations | [`foundations/`](foundations/) — Linux mental model, debugging reflex, scripting, honest scope (Tier-3 #10) | ✅ written |
+| Endpoint | [`endpoint/`](endpoint/) — MDM model, imaging pipeline, patch/EDR, BYOD, Intune-as-ramp (Tier-2 #5) | ✅ written |
 
 ## Build order (demand-driven)
 
