@@ -52,7 +52,7 @@ mindmap
 
 | Module | What it is | Status |
 | --- | --- | --- |
-| [`foundations/`](foundations/) | Linux + scripting (Python/Bash/PowerShell) — the floor under every role | 🚧 opening written |
+| [`foundations/`](foundations/) | Linux + scripting (Python/Bash/PowerShell) — the floor under every role | ✅ |
 
 ## III. The Stack — read by layer, bottom-up (✅ complete, 01→07)
 

@@ -49,6 +49,8 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Layer series | [`the-stack/07-security.md`](the-stack/07-security.md) — security (shared-resp, defense-in-depth, CSPM/EDR/SIEM; covers Tier-2 #6) | ✅ |
 | Layer series | **the-stack 01→07 complete** — 5 bottom-up layers + observability + security (two cross-cutting caps) | ✅ |
 | Layer lab | [`the-stack/labs/04-backup-not-snapshot/`](the-stack/labs/04-backup-not-snapshot/) — runnable, pure-Python "replication is not backup" drill | ✅ |
+| Framework | [`CONTENTS.md`](CONTENTS.md) + opening for every planned module (foundations/endpoint/iac/saas/k8s/cost/gcp) | ✅ |
+| Foundations | [`foundations/`](foundations/) — Linux mental model, debugging reflex, scripting, honest scope (Tier-3 #10) | ✅ written |
 
 ## Build order (demand-driven)
 
