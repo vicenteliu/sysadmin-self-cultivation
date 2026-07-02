@@ -1,10 +1,13 @@
 # Google Cloud Platform (GCP) — the third cloud
 
 > The template every platform module follows: **what it is → the admin skill map →
-> the AI-assisted ramp → labs.** Follows the same shape as [`aws/`](../aws/) (the
-> worked example) and [`azure/`](../azure/). GCP is where the ramp method gets its
-> cleanest test — most of it is renamed AWS/Azure, with a few genuine structural
-> differences to catch.
+> the AI-assisted ramp → labs** — plus three deeper companion notes mirroring the AWS
+> worked example: **[architecture](architecture.md)** (how it's structured),
+> **[operations](operations.md)** (running it day-2, the ops-work breakdown, AI in
+> the operating loop), and **[automation](automation.md)** (scripting the API to
+> manage and operate it). Follows the same shape as [`aws/`](../aws/) and
+> [`azure/`](../azure/). GCP is where the ramp method gets its cleanest test — most
+> of it is renamed AWS/Azure, with a few genuine structural differences to catch.
 
 ## 1. What GCP is
 
@@ -76,6 +79,24 @@ tear-down-able exercises are planned in **[`labs/`](labs/)** (currently specced,
 mirroring the [AWS labs'](../aws/labs/) shape: a scoped-identity inventory script and
 a minimal-network Terraform stack — the second one is where the global-VPC model
 visibly changes the code vs. the AWS version).
+
+## 5. Going deeper — architecture, operations & automation
+
+Three companion notes take GCP past "what the services are", mirroring the AWS set:
+
+- **[`architecture.md`](architecture.md)** — how GCP is *structured*: the resource
+  hierarchy (Org → Folders → Projects) as the blast-radius unit, regions & zones, the
+  **global-VPC outlier**, service-account-centric IAM, shared responsibility, and a
+  reference three-tier showing every surface compose.
+- **[`operations.md`](operations.md)** — *running* GCP day-2: the brief, the ops notes
+  (what pages you), the recurring work **broken down by cadence**, and **how AI
+  assists the operating loop** — including AI's GCP-specific trap of handing you
+  AWS-shaped (regional-VPC) advice.
+- **[`automation.md`](automation.md)** — **scripting the API**: the
+  `identity → client → API call` model, the `gcloud`-vs-client-library-vs-Terraform
+  altitude ladder, ADC and attached service accounts (never a key file in the
+  script), the rules (iterate projects/regions/zones, Cloud Asset Inventory for bulk,
+  idempotence, read-only-first), and the read-audit vs. remediation shapes.
 
 ## Honest boundaries
 
