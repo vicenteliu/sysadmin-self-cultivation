@@ -93,7 +93,7 @@ duplicated. See [`cross-cutting/`](cross-cutting/).
 | [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | 🚧 opening written |
-| [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | 🚧 opening written |
+| [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | ✅ |
 | networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ covered in The Stack |
 | storage | → [`the-stack/04`](the-stack/04-storage.md) | ✅ covered in The Stack |
 | virtualization | → [`the-stack/01`](the-stack/01-physical.md) | ✅ covered in The Stack |

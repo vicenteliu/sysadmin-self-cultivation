@@ -54,6 +54,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Endpoint | [`endpoint/`](endpoint/) — MDM model, imaging pipeline, patch/EDR, BYOD, Intune-as-ramp (Tier-2 #5) | ✅ written |
 | SaaS admin | [`cross-cutting/saas-admin.md`](cross-cutting/saas-admin.md) — Google Workspace / M365, identity spine, SCIM lifecycle (Tier-3 #11) | ✅ written |
 | IaC & config | [`cross-cutting/iac-and-config.md`](cross-cutting/iac-and-config.md) — provisioning vs. config, Terraform state, Ansible, drift (Tier-1 #3) | ✅ written |
+| Cost | [`cross-cutting/cost.md`](cross-cutting/cost.md) — cost as an ops signal, shapes, surprises, right-sizing, anomaly alerts | ✅ written |
 
 ## Build order (demand-driven)
 
