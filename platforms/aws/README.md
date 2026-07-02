@@ -1,8 +1,11 @@
 # AWS — the worked example
 
 > The template every platform module follows: **what it is → the admin skill map →
-> the AI-assisted ramp → labs.** AWS is done first and most thoroughly; read it end
-> to end to see the shape.
+> the AI-assisted ramp → labs** — plus two deeper companion notes AWS gets as the
+> worked example: **[architecture](architecture.md)** (how it's structured) and
+> **[operations](operations.md)** (running it day-2, the ops-work breakdown, and AI
+> in the operating loop). AWS is done first and most thoroughly; read it end to end
+> to see the shape.
 
 ## 1. What AWS is
 
@@ -70,6 +73,21 @@ tear-down-able exercises live in **[`labs/`](labs/)** — starting with a
 least-privilege IAM role + a `boto3` script that inventories your account (the cloud
 version of a classic "list everything" admin script), then a minimal VPC + EC2 in
 Terraform.
+
+## 5. Going deeper — architecture & operations
+
+Two companion notes take AWS past "what the services are":
+
+- **[`architecture.md`](architecture.md)** — how AWS is *structured*: the
+  account/organization model as the blast-radius unit, regions & AZs, the
+  global-vs-regional split, the shared-responsibility line, Well-Architected as a
+  review lens, and a reference three-tier that shows every surface composing into one
+  system.
+- **[`operations.md`](operations.md)** — what *running* AWS looks like: the day-2
+  brief, the ops notes (what pages you), the recurring ops work **broken down by
+  cadence** (continuous / daily / weekly / monthly / quarterly / on-incident), and
+  **how AI assists the operating loop** — distinct from the learning ramp, with the
+  guardrail that AI touches signals and drafts while you touch production.
 
 ## Honest boundaries
 

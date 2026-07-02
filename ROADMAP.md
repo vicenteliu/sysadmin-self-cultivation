@@ -58,6 +58,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Kubernetes | [`cross-cutting/kubernetes.md`](cross-cutting/kubernetes.md) — object model, control plane, CNI/CSI leak, Pending-vs-CrashLoop (Tier-2 #8) | ✅ written |
 | **Cross-cutting** | **all dedicated notes written** (identity · saas-admin · iac · cost · kubernetes); networking/storage/virtualization/observability/security covered in the-stack | ✅ |
 | Platform | [`platforms/gcp/`](platforms/gcp/) — README + skills-map + ai-ramp (global-VPC outlier; Tier-1 #4); labs specced | ✅ written |
+| Platform depth | [`platforms/aws/architecture.md`](platforms/aws/architecture.md) + [`operations.md`](platforms/aws/operations.md) — account model, day-2 ops-work breakdown, AI-in-the-operating-loop | ✅ written |
 | **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)

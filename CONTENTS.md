@@ -76,7 +76,7 @@ Each is `README` (what-it-is + skill map + AI-ramp summary) · `skills-map` ·
 
 | Platform | Status |
 | --- | --- |
-| [`aws/`](platforms/aws/) | ✅ worked example + 2 runnable labs (read first) |
+| [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md) + [operations](platforms/aws/operations.md) + 2 runnable labs (read first) |
 | [`azure/`](platforms/azure/) | ✅ module written; Entra/identity is the hands-on strength |
 | [`gcp/`](platforms/gcp/) | ✅ module written (README + skills-map + ai-ramp); labs specced. The global-VPC outlier is the thing to learn. |
 
