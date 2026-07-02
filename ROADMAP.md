@@ -40,8 +40,17 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Platform | [`platforms/aws/`](platforms/aws/) | ✅ + 2 runnable labs |
 | Platform | [`platforms/azure/`](platforms/azure/) | ✅ (labs planned) |
 | Cross-cutting | [`cross-cutting/identity-iam.md`](cross-cutting/identity-iam.md) | ✅ |
+| Layer series | [`the-stack/01-physical.md`](the-stack/01-physical.md) — physical layer, 7 platforms compared | ✅ |
+| Layer series | [`the-stack/02-network.md`](the-stack/02-network.md) — network layer (covers Tier-1 item #2) | ✅ |
+| Layer series | [`the-stack/03-compute-and-images.md`](the-stack/03-compute-and-images.md) — compute & the image pipeline | ✅ |
 
 ## Build order (demand-driven)
+
+> **Note (2026-07):** the layer-first series [`the-stack/`](the-stack/) is now the
+> vehicle for several items below — networking (#2) lands as
+> `the-stack/02-network.md`, virtualization (#7) is carried from
+> `the-stack/01-physical.md` onward, and OpenStack/OCI (#11) are compared in every
+> chapter rather than getting late standalone folders.
 
 ### Tier 1 — highest ROI (highest demand, most transferable)
 

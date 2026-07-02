@@ -44,6 +44,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 - **[Why this exists](WHY.md)** — the motivation, and an honest read on where the craft is heading in the AI era.
 - Then **[the operating model](00-the-operating-model.md)** — the transferable skeleton.
 - Then pick a platform under **[`platforms/`](platforms/)**. **AWS is the worked example** — read it end to end to see the shape; the others follow the same template.
+- Or read the stack **layer by layer** in **[`the-stack/`](the-stack/)** — bottom-up (physical → network → application), with **seven platforms compared at every layer** (AWS, Azure, GCP, OCI, vSphere, OpenStack, self-host).
 - **[`cross-cutting/`](cross-cutting/)** covers the layers that transfer across every cloud (identity, networking, IaC, Kubernetes, observability, security, cost).
 - **[`ai-workflow/`](ai-workflow/)** is the meta-layer: how AI is used here to learn and to operate — and, just as important, how it's kept honest.
 - **[Roadmap](ROADMAP.md)** — what's built and what's next, prioritized by real-world demand.
@@ -56,6 +57,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 | **Azure** | ✅ | ✅ | ✅ | 🚧 planned |
 | GCP / GKE | 🚧 | 🚧 | 🚧 | — |
 | Cross-cutting | identity ✅ · [roadmap](ROADMAP.md) for the rest | | | |
+| **The Stack** (layer series) | ✅ [01 physical](the-stack/01-physical.md) · ✅ [02 network](the-stack/02-network.md) · ✅ [03 compute & images](the-stack/03-compute-and-images.md) · 🚧 04 storage | ✅ in-chapter | ✅ in-chapter | 🚧 specs written |
 
 This is a living project — built one platform at a time, out in the open.
 
