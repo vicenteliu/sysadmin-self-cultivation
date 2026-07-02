@@ -74,11 +74,10 @@ and on-prem — is the review gate.
 
 ## 4. Labs
 
-Reading about a global VPC and building one are different skills. Runnable,
-tear-down-able exercises are planned in **[`labs/`](labs/)** (currently specced,
-mirroring the [AWS labs'](../aws/labs/) shape: a scoped-identity inventory script and
-a minimal-network Terraform stack — the second one is where the global-VPC model
-visibly changes the code vs. the AWS version).
+Reading about a global VPC and building one are different skills. A **three-lab CLI
+arc** (scoped identity + inventory → global-VPC network + instance → secure storage +
+budget) is in **[`labs/`](labs/)** with real `gcloud` commands — the second lab is
+where the global-VPC model visibly changes the commands vs. the AWS version.
 
 ## 5. Going deeper — architecture, operations & automation
 

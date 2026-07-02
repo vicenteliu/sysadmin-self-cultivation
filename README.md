@@ -112,15 +112,20 @@ automation** trio:
 All **seven** platforms compared in The Stack now have a dedicated "operate it end to
 end" module:
 
+Every platform has a **3-lab CLI arc** (scoped-identity inventory → network+compute
+from code → secure defaults / the platform's signature drill), each with real
+command-line examples — because the CLI is faster, exact, repeatable, and reviewable,
+and it's the surface your automation uses.
+
 | Platform | Module | Arch · Ops · Auto | Labs | Honesty |
 | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ ✅ ✅ | ✅ 2 runnable (boto3 + Terraform) | 🧗 ramp |
-| **[Azure](platforms/azure/)** | ✅ | ✅ ✅ ✅ | 🚧 specced | 🧗 + Entra/identity ✋ |
-| **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | 🚧 specced | 🧗 ramp |
-| **[OCI](platforms/oci/)** | ✅ | — | 🚧 specced | 🧗 ramp |
-| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | — | 🚧 specced | **✋ hands-on depth** (VCP6-DCV/NV) |
-| **[OpenStack](platforms/openstack/)** | ✅ | — | 🚧 specced | 🧗 ramp (KVM-adjacent ✋) |
-| **[self-host / bare metal](platforms/self-host/)** | ✅ | — | 🚧 specced | **✋ hands-on depth** (100k+ fleet) |
+| **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) | 🧗 ramp |
+| **[Azure](platforms/azure/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) | 🧗 + Entra/identity ✋ |
+| **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) | 🧗 ramp |
+| **[OCI](platforms/oci/)** | ✅ | — | ✅ 3-lab CLI arc (`oci`) | 🧗 ramp |
+| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | — | ✅ 3-lab CLI arc (PowerCLI) | **✋ hands-on depth** (VCP6-DCV/NV) |
+| **[OpenStack](platforms/openstack/)** | ✅ | — | ✅ 3-lab CLI arc (`openstack`/DevStack) | 🧗 ramp (KVM-adjacent ✋) |
+| **[self-host / bare metal](platforms/self-host/)** | ✅ | — | ✅ 3-lab CLI arc (virsh/ipmitool/ansible) | **✋ hands-on depth** (100k+ fleet) |
 
 Every module marks **✋ hands-on depth** vs. **🧗 honest ramp** ([`WHY.md`](WHY.md)) —
 the strengths (Linux, endpoint, identity, SaaS admin, automation discipline, and

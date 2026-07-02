@@ -62,6 +62,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Platform depth | Azure + GCP architecture/operations/automation trios (mirroring AWS) | ✅ written |
 | Private cloud | [`platforms/vsphere/`](platforms/vsphere/) — ✋ hands-on (VCP6-DCV/NV, AMS vCenter admin) + [`platforms/openstack/`](platforms/openstack/) — 🧗 ramp, KVM-adjacent | ✅ written |
 | Platforms complete | [`platforms/oci/`](platforms/oci/) — 🧗 4th cloud + [`platforms/self-host/`](platforms/self-host/) — ✋ deepest root. **All seven the-stack platforms now have modules** | ✅ written |
+| Labs | **3-lab CLI arc per platform** (7×3 = 21 labs) — scoped-identity inventory → network+compute from code → secure-defaults/signature-drill, each with real command-line examples (CLI over GUI) | ✅ written; AWS 01/02 runnable |
 | **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)

@@ -80,7 +80,9 @@ below is 🧗.
 
 ## 4. Labs
 
-Repo-runnable exercises are **specced in [`labs/`](labs/)**: stand up **DevStack** (a
+A **three-lab CLI arc** (Keystone identity + inventory → Neutron network + Nova
+instance → the control-plane failure drill) is in **[`labs/`](labs/)** with real
+`openstack` commands. It's built on **DevStack** (a
 single-node all-in-one OpenStack) in a VM, create a project + flavor + tenant network,
 launch an instance with cloud-init, and — the real lesson — deliberately wedge a
 control-plane service and watch running instances survive while the API goes down.

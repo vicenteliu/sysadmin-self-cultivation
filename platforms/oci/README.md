@@ -78,7 +78,8 @@ the "OCI is just AWS" reflex fails; everything else is a rename.
 
 ## 4. Labs
 
-Repo-runnable exercises are **specced in [`labs/`](labs/)**, mirroring the
+A **three-lab CLI arc** (scoped identity + inventory → VCN + instance → object storage
++ budget) is in **[`labs/`](labs/)** with real `oci` commands, mirroring the
 [AWS labs'](../aws/labs/) shape: a scoped-identity (a least-privilege IAM policy +
 compartment) inventory script, then a minimal VCN + instance in Terraform via Resource
 Manager. OCI's **Always Free tier** makes this genuinely runnable at no cost — the
