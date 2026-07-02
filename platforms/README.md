@@ -10,7 +10,7 @@ can move between them without re-learning how to read them:
 
 | Platform | Status |
 | --- | --- |
-| **[aws/](aws/)** | ✅ worked example + architecture + operations notes + 2 runnable labs (read this first) |
+| **[aws/](aws/)** | ✅ worked example + architecture + operations + automation notes + 2 runnable labs (read this first) |
 | **[azure/](azure/)** | ✅ module written (what-it-is / skill map / AI-ramp); labs planned. Entra/identity is the hands-on strength. |
 | **[gcp/](gcp/)** | ✅ module written (what-it-is / skill map / AI-ramp; incl. GKE); labs specced. The global-VPC outlier is the thing to learn. |
 

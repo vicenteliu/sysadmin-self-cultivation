@@ -1,10 +1,11 @@
 # AWS — the worked example
 
 > The template every platform module follows: **what it is → the admin skill map →
-> the AI-assisted ramp → labs** — plus two deeper companion notes AWS gets as the
-> worked example: **[architecture](architecture.md)** (how it's structured) and
+> the AI-assisted ramp → labs** — plus three deeper companion notes AWS gets as the
+> worked example: **[architecture](architecture.md)** (how it's structured),
 > **[operations](operations.md)** (running it day-2, the ops-work breakdown, and AI
-> in the operating loop). AWS is done first and most thoroughly; read it end to end
+> in the operating loop), and **[automation](automation.md)** (scripting the API to
+> manage and operate it). AWS is done first and most thoroughly; read it end to end
 > to see the shape.
 
 ## 1. What AWS is
@@ -74,9 +75,9 @@ least-privilege IAM role + a `boto3` script that inventories your account (the c
 version of a classic "list everything" admin script), then a minimal VPC + EC2 in
 Terraform.
 
-## 5. Going deeper — architecture & operations
+## 5. Going deeper — architecture, operations & automation
 
-Two companion notes take AWS past "what the services are":
+Three companion notes take AWS past "what the services are":
 
 - **[`architecture.md`](architecture.md)** — how AWS is *structured*: the
   account/organization model as the blast-radius unit, regions & AZs, the
@@ -88,6 +89,12 @@ Two companion notes take AWS past "what the services are":
   cadence** (continuous / daily / weekly / monthly / quarterly / on-incident), and
   **how AI assists the operating loop** — distinct from the learning ramp, with the
   guardrail that AI touches signals and drafts while you touch production.
+- **[`automation.md`](automation.md)** — **scripting the API** to manage and operate
+  AWS: the `identity → client → API call` model, the CLI-vs-boto3-vs-Terraform
+  altitude ladder, the credential chain (never a key in the script), the rules that
+  separate a working script from a footgun (paginate, iterate regions, handle errors,
+  be idempotent), and the read-audit vs. remediation shapes — grounded in the
+  runnable [inventory lab](labs/01-scoped-identity-inventory/).
 
 ## Honest boundaries
 
