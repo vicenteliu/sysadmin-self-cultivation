@@ -91,7 +91,7 @@ duplicated. See [`cross-cutting/`](cross-cutting/).
 | [`identity-iam`](cross-cutting/identity-iam.md) | dedicated note | ✅ |
 | [`iac-and-config`](cross-cutting/iac-and-config.md) | dedicated note (Terraform/Ansible/Puppet) | 🚧 opening written |
 | [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) | ✅ |
-| [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | 🚧 opening written |
+| [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | 🚧 opening written |
 | [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | 🚧 opening written |
 | networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ covered in The Stack |
