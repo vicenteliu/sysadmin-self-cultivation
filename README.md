@@ -112,6 +112,12 @@ ground, not a ramp); the rest are honest 🧗 ramps. The labs are **CLI-first** 
 purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
 same surface your automation uses.
 
+**Agent Skills** — the repo ships with four [`.claude/skills/`](.claude/skills/) that
+turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
+platform, honestly), **honesty-audit** (classify claims ✋/🧗/overclaim),
+**author-module** (write a new note in the repo's voice), and **runnable-lab** (turn a
+concept into a self-verifying drill).
+
 ## Who wrote this
 
 An infrastructure and systems engineer with 15 years across Linux, networking,
