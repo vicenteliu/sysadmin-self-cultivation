@@ -90,6 +90,7 @@ See [`cross-cutting/`](cross-cutting/).
 | [`service-mesh`](cross-cutting/service-mesh.md) | dedicated note (service discovery + mesh; and when not to) | ✅ |
 | [`web-and-tls`](cross-cutting/web-and-tls.md) | dedicated note (reverse proxy, TLS/cert lifecycle) — **✋** fundamentals | ✅ |
 | [`incident-response`](cross-cutting/incident-response.md) | dedicated note (incident lifecycle, on-call, blameless post-mortem) | ✅ |
+| [`working-with-security`](cross-cutting/working-with-security.md) | dedicated note (working with InfoSec/SOC + ATT&CK awareness for operators) — **✋** ops-security | ✅ |
 | [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | ✅ |
 | networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ in The Stack |
 | storage | → [`the-stack/04`](the-stack/04-storage.md) | ✅ in The Stack |

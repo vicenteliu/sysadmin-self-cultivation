@@ -18,6 +18,7 @@ admin's existing depth (Linux, networking, identity, automation) pays off the mo
 | [`service-mesh.md`](service-mesh.md) | Service discovery + service mesh: the live registry, sidecar mTLS/traffic/observability, and "do you even need one?" | ✅ |
 | [`web-and-tls.md`](web-and-tls.md) | Web servers, reverse proxies & TLS: termination, routing, cert lifecycle + ACME, the hardened front door. **✋** fundamentals | ✅ |
 | [`incident-response.md`](incident-response.md) | Incident response & on-call: the lifecycle (mitigate-first), IC roles, humane on-call, the blameless post-mortem. | ✅ |
+| [`working-with-security.md`](working-with-security.md) | The operator's half of security: working with InfoSec/SOC + MITRE ATT&CK awareness (harden the right things), honest ✋ ops-security vs 🧗 specialist. | ✅ |
 | [`cost.md`](cost.md) | Cost as a first-class operational control: budgets, alarms, right-sizing, the "forgotten GPU instance" problem. | ✅ |
 
 **Covered by layer in [`the-stack/`](../the-stack/)** — cross-linked, not
