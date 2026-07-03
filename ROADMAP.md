@@ -60,6 +60,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Gap-fill | [`cross-cutting/ci-cd.md`](cross-cutting/ci-cd.md) — CI/CD & GitOps (the biggest gap vs. roadmap.sh/devops); 🧗 ramp on ✋ automation base | ✅ written |
 | Gap-fill | [`cross-cutting/databases.md`](cross-cutting/databases.md) — operating databases (backup/PITR, replication, self-run-vs-managed) — **✋** (production PostgreSQL) | ✅ written |
 | Gap-fill | [`cross-cutting/itsm-and-assets.md`](cross-cutting/itsm-and-assets.md) — ITSM, CMDB, asset reconciliation, access governance — **✋** (ServiceNow 5yr, audit automation) | ✅ written |
+| Gap-fill (batch 2) | [`service-mesh`](cross-cutting/service-mesh.md) (discovery + mesh, 🧗) · [`web-and-tls`](cross-cutting/web-and-tls.md) (reverse proxy + cert lifecycle, ✋ fundamentals) · [`incident-response`](cross-cutting/incident-response.md) (lifecycle, on-call, post-mortem) | ✅ written |
 | Platform | [`platforms/gcp/`](platforms/gcp/) — README + skills-map + ai-ramp (global-VPC outlier; Tier-1 #4); labs specced | ✅ written |
 | Platform depth | [`platforms/aws/architecture.md`](platforms/aws/architecture.md) + [`operations.md`](platforms/aws/operations.md) + [`automation.md`](platforms/aws/automation.md) — account model, day-2 ops-work breakdown, AI-in-the-loop, scripting the API | ✅ written |
 | Platform depth | Azure + GCP architecture/operations/automation trios (mirroring AWS) | ✅ written |
