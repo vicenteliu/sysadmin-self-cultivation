@@ -2,7 +2,7 @@
 
 *A field guide to mastering the clouds — with AI riding shotgun.*
 
-> 🌐 **Languages:** English (default) · [Chinese](docs/zh/README.md)
+> 🌐 **Languages:** English (default) · [中文](docs/zh/README.md)
 
 ---
 
@@ -43,9 +43,10 @@ mindmap
       WHY - the motivation
       the operating model - the skeleton
       ai-workflow - the method
+      agent skills - the method made invokable
     Foundations
       Linux and scripting - the floor
-    The Stack - by layer
+    The Stack - by layer, bottom-up
       01 physical
       02 network
       03 compute and images
@@ -61,12 +62,19 @@ mindmap
       vSphere - hands-on depth
       OpenStack
       self-host - hands-on depth
-    Cross-cutting - by theme
+    Cross-cutting - transferable skills
       identity and IAM
-      SaaS admin
       IaC and config
-      cost
+      CI-CD and GitOps
+      databases
+      ITSM and assets
+      web and TLS
+      service mesh
+      incident response
+      SaaS admin
       kubernetes
+      cost
+      endpoint
 ```
 
 The distinctive one is **The Stack**: it reads the stack *bottom-up*, comparing all
@@ -81,16 +89,19 @@ down.
 | **Understand the philosophy** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
 | **Go deep on one platform** | [`platforms/`](platforms/) — **AWS is the worked example**, read it end to end |
 | **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
-| **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity, IaC, cost, K8s, SaaS admin |
+| **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · and more |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
+| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — four invokable Agent Skills (ramp · audit · author · lab) |
 
 ## What's built
 
-Everything the [roadmap](ROADMAP.md) planned is written; what remains is more runnable
-labs, Chinese mirrors, and deepening.
+Everything the [roadmap](ROADMAP.md) planned is written, with **four runnable,
+self-verifying labs** (exit `0` = the lesson held) and **four Agent Skills**; what
+remains is more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md)
+is started), and deepening.
 
 - **Foundations & method** — [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) (Linux + scripting) ✅
-- **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + a runnable [backup-drill lab](the-stack/labs/04-backup-not-snapshot/) ✅
+- **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + runnable [failure-domains](the-stack/labs/01-failure-domains/) and [backup-drill](the-stack/labs/04-backup-not-snapshot/) labs ✅
 - **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
 
 **Platforms** — all seven compared in The Stack have a dedicated "operate it end to end"
