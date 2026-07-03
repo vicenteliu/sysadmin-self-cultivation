@@ -261,6 +261,31 @@ posture and program work — not "ten years as a security engineer."
    then do it right — the secret in a manager, injected at runtime, out of git —
    and rotate it to prove custody.
 
+## Going deeper — beyond the sysadmin's defensive baseline
+
+This chapter is security from the **operator's** seat: the shared-responsibility line,
+defense in depth, hardening, EDR/CSPM/SIEM, secrets, and the disciplines a sysadmin
+runs day to day. That's the honest scope of this repo — the defensive baseline every
+infrastructure engineer owns, not a security-*specialist* track.
+
+If you want to specialize *into* security — threat hunting, malware analysis, digital
+forensics, red teaming, detection engineering mapped to **MITRE ATT&CK / D3FEND** and
+**NIST CSF** — that's a different, deeper craft than this chapter claims. A large
+external library worth knowing:
+
+- **[Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills)**
+  (by Mahipal Jangra, Apache-2.0) — ~800 practitioner-workflow security skills across
+  ~29 domains, in the same [agent-skill](../.claude/skills/) format, mapped to MITRE
+  ATT&CK / D3FEND / ATLAS and NIST frameworks.
+  > ⚠️ *Community project — **not affiliated with or endorsed by Anthropic** despite
+  > the name. Much of it is offensive / dual-use tradecraft: **authorized, lawful use
+  > only.***
+
+The honest framing for the ✋/🧗 discipline: that library is a **specialist's** toolset,
+not the sysadmin baseline — if you cite or use it, own the boundary. What *this* repo
+covers is the security an infrastructure operator is genuinely on the hook for, and can
+speak to from experience.
+
 ## The chapter on one screen
 
 ```mermaid
