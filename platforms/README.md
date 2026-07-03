@@ -15,7 +15,7 @@ stack is the "compare them per layer" view.
 
 These are the **seven platforms** compared layer-by-layer in
 [`the-stack/`](../the-stack/) — every one now has a dedicated "operate it end to end"
-module.
+module, and **all seven carry the deeper architecture · operations · automation trio.**
 
 **Public clouds** — a rented data centre you drive by API:
 
@@ -24,14 +24,14 @@ module.
 | **[aws/](aws/)** | ✅ worked example + architecture + operations + automation notes + 2 runnable labs (read this first) |
 | **[azure/](azure/)** | ✅ worked-example depth — + architecture + operations + automation notes; labs planned. Entra/identity is the hands-on strength. |
 | **[gcp/](gcp/)** | ✅ worked-example depth — + architecture + operations + automation notes (incl. GKE); labs specced. The global-VPC outlier is the thing to learn. |
-| **[oci/](oci/)** | ✅ module written (what-it-is / skill map / ai-ramp) — 🧗 ramp; the youngest hyperscaler (compartments, OCPU-vs-vCPU, bare-metal-first, cheap egress). |
+| **[oci/](oci/)** | ✅ worked-example depth — + architecture + operations + automation — 🧗 ramp; the youngest hyperscaler (compartments, OCPU-vs-vCPU, bare-metal-first, cheap egress). |
 
 **Private cloud / on-prem** — the platforms you run on your *own* hardware:
 
 | Platform | Status |
 | --- | --- |
 | **[vsphere/](vsphere/)** | ✅ worked-example depth — + architecture + operations + automation — **✋ hands-on depth**: AMS-region vCenter admin, VCP6-DCV/NV. A strength, not a ramp. |
-| **[openstack/](openstack/)** | ✅ module written (what-it-is / skill map / ai-ramp) — 🧗 ramp, adjacent to real KVM/Proxmox ✋; "you build the cloud", control-plane-as-product. |
+| **[openstack/](openstack/)** | ✅ worked-example depth — + architecture + operations + automation — 🧗 ramp, adjacent to real KVM/Proxmox ✋; "you build the cloud", control-plane-as-product. |
 | **[self-host/](self-host/)** | ✅ worked-example depth — + architecture + operations + automation — **✋ hands-on depth**, the deepest root: PXE/image/cloud-init fleet at 100k+ scale, BMC/IPMI, DNS/BIND, RAID. The layer every cloud abstracts over. |
 
 See [`../00-the-operating-model.md`](../00-the-operating-model.md) for the transferable

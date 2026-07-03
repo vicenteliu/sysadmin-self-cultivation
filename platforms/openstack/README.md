@@ -1,10 +1,11 @@
 # OpenStack — building your own cloud
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
-> AI-assisted ramp → labs.** The honesty marker is **🧗 ramp** — understood
-> architecturally and adjacent to real KVM/Proxmox experience, not run in production.
-> OpenStack is the one platform in this repo where *you build the cloud*, and that
-> single fact shapes everything about operating it.
+> AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
+> [operations](operations.md) · [automation](automation.md)** trio. The honesty marker
+> is **🧗 ramp** — understood architecturally and adjacent to real KVM/Proxmox
+> experience, not run in production. OpenStack is the one platform in this repo where
+> *you build the cloud*, and that single fact shapes everything about operating it.
 
 ## 1. What OpenStack is
 
@@ -87,6 +88,21 @@ single-node all-in-one OpenStack) in a VM, create a project + flavor + tenant ne
 launch an instance with cloud-init, and — the real lesson — deliberately wedge a
 control-plane service and watch running instances survive while the API goes down.
 DevStack is the honest way to meet OpenStack's plumbing without a data centre.
+
+## 5. Going deeper — architecture, operations & automation
+
+Three companion notes take OpenStack past "what the components are", mirroring the AWS
+set:
+
+- **[`architecture.md`](architecture.md)** — how it's *structured*: the component flow
+  (Keystone → Nova/Neutron/Cinder/Glance over KVM+Ceph), **the control-plane-as-product
+  reality** (you run the cloud), projects/domains, and placement (AZs/host aggregates).
+- **[`operations.md`](operations.md)** — day-2: the ops notes (**the wedged control-
+  plane service — API down, VMs up**; Neutron pages you; Ceph health; quota
+  exhaustion), the recurring work **by cadence** where you monitor the *platform
+  itself*, and AI in the loop (helps you *use* it, quiet on the burden of *running* it).
+- **[`automation.md`](automation.md)** — the unified `openstack` CLI: `source openrc`
+  credentials, application credentials over passwords, iterate-projects, read-only-first.
 
 ## Honest boundaries
 

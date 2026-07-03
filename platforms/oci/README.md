@@ -1,10 +1,12 @@
 # Oracle Cloud Infrastructure (OCI) — the youngest hyperscaler
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
-> AI-assisted ramp → labs.** The honesty marker is **🧗 ramp** — mapped from the
-> AWS/Azure/GCP model and verified, not run in production. OCI is the fourth public
-> cloud in the [seven-platform comparison](../../the-stack/), and being the youngest
-> design shows in a few deliberate, admin-relevant differences.
+> AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
+> [operations](operations.md) · [automation](automation.md)** trio. The honesty marker
+> is **🧗 ramp** — mapped from the AWS/Azure/GCP model and verified, not run in
+> production. OCI is the fourth public cloud in the
+> [seven-platform comparison](../../the-stack/), and being the youngest design shows in
+> a few deliberate, admin-relevant differences.
 
 ## 1. What OCI is
 
@@ -84,6 +86,22 @@ A **three-lab CLI arc** (scoped identity + inventory → VCN + instance → obje
 compartment) inventory script, then a minimal VCN + instance in Terraform via Resource
 Manager. OCI's **Always Free tier** makes this genuinely runnable at no cost — the
 budget-safe throwaway tenancy this platform's ramp needs.
+
+## 5. Going deeper — architecture, operations & automation
+
+Three companion notes take OCI past "what the services are", mirroring the AWS set:
+
+- **[`architecture.md`](architecture.md)** — how OCI is *structured*: the tenancy →
+  compartment hierarchy as the blast-radius unit, regions → ADs → **fault domains**,
+  the **four deliberate differences** (compartments, OCPU-vs-vCPU, security-lists-vs-
+  NSGs, the human-readable policy language), and a reference three-tier.
+- **[`operations.md`](operations.md)** — day-2: the ops notes (public bucket, leaked
+  key vs instance principal, security-list-vs-NSG denial, the OCPU cost surprise), the
+  recurring work **by cadence**, and AI in the operating loop (noting AI hallucinates
+  *more* on OCI — younger, thinner training data).
+- **[`automation.md`](automation.md)** — the `oci` CLI + SDK: the identity → client →
+  API model, **instance principals** over API keys, iterate-compartments, and
+  read-only-first.
 
 ## Honest boundaries
 

@@ -93,19 +93,19 @@ labs, Chinese mirrors, and deepening.
 - **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + a runnable [backup-drill lab](the-stack/labs/04-backup-not-snapshot/) ✅
 - **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
 
-**Platforms** — all seven compared in The Stack now have a dedicated "operate it end to
-end" module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**); the public clouds
-also carry the deeper **architecture · operations · automation** trio:
+**Platforms** — all seven compared in The Stack have a dedicated "operate it end to end"
+module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**), and **all seven now
+carry the deeper architecture · operations · automation trio**:
 
 | Platform | Module | Arch · Ops · Auto | Labs | Honesty |
 | --- | --- | --- | --- | --- |
 | **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) | 🧗 ramp |
 | **[Azure](platforms/azure/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) | 🧗 + Entra/identity ✋ |
 | **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) | 🧗 ramp |
-| **[OCI](platforms/oci/)** | ✅ | — | ✅ 3-lab CLI arc (`oci`) | 🧗 ramp |
-| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | — | ✅ 3-lab CLI arc (PowerCLI) | **✋ hands-on depth** (VCP6-DCV/NV) |
-| **[OpenStack](platforms/openstack/)** | ✅ | — | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧗 ramp (KVM-adjacent ✋) |
-| **[self-host / bare metal](platforms/self-host/)** | ✅ | — | ✅ 3-lab CLI arc (virsh / ipmitool / ansible) | **✋ hands-on depth** (100k+ fleet) |
+| **[OCI](platforms/oci/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`oci`) | 🧗 ramp |
+| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (PowerCLI) | **✋ hands-on depth** (VCP6-DCV/NV) |
+| **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧗 ramp (KVM-adjacent ✋) |
+| **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (virsh / ipmitool / ansible) | **✋ hands-on depth** (100k+ fleet) |
 
 Two of the seven are labeled **✋ hands-on depth** (vSphere and self-host — production
 ground, not a ramp); the rest are honest 🧗 ramps. The labs are **CLI-first** on
