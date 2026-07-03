@@ -6,23 +6,21 @@
 
 ---
 
-## The thesis
+## What this is
 
-A systems administrator's real craft was never memorizing every service on every
-platform. It's a **transferable mental model** plus the **discipline to get
-productive on anything, fast**. In 2026 that second half got a turbo: AI compresses
-the learning curve from months to days — *if* you already have the judgment to
-steer it and catch it when it's wrong.
+A sysadmin's real craft was never memorizing every service on every platform — it's a
+**transferable mental model** plus the **discipline to get productive on anything,
+fast**. AI now compresses that ramp from months to days — *if* you already have the
+judgment to steer it and catch it when it's wrong.
 
-This repo is that idea, proved out across the major clouds and down every layer of
-the stack. For each platform it answers three questions, in the same order every
-time — **what is it**, **what must an admin be able to *do***, and **how do you get
-competent with AI as a co-pilot** — then makes you prove it with hands-on **labs**.
+This repo writes that judgment down: across **seven platforms**, down **every layer of
+the stack**, behind one strict rule — **✋ hands-on depth** is claimed only where it's
+real; everything else is a **🧗 verified ramp**, mapped and checked, never bluffed.
 
-## The one skeleton under every platform
+## The one idea: three moves
 
-Administer one platform properly and the next is mostly new syntax over the same
-three moves:
+Administer one platform properly and the next is mostly new syntax over the same three
+moves:
 
 ```mermaid
 flowchart LR
@@ -30,15 +28,13 @@ flowchart LR
   drive -.->|"new platform = same three moves, new names"| id
 ```
 
-Jamf, Intune, Entra, and Configuration Manager work this way. So do AWS, Azure, and
-GCP. Master the pattern once (see [`00-the-operating-model.md`](00-the-operating-model.md))
-and every new platform becomes a mapping exercise you can do with AI in a fraction
-of the time.
+Jamf, Intune, Entra, AWS, Azure, GCP — all the same skeleton. Master it once (see
+[`00-the-operating-model.md`](00-the-operating-model.md)) and every new platform
+becomes a mapping exercise you can do with AI in a fraction of the time.
 
-## The map on one screen
+## The shape
 
-The project crosses the same material from **four angles** — enter from whichever
-matches the question you have:
+Four axes over the same material — enter from whichever matches your question:
 
 ```mermaid
 mindmap
@@ -73,49 +69,33 @@ mindmap
       kubernetes
 ```
 
-The distinctive axis is **The Stack**: it reads the stack *bottom-up*, comparing
-**seven platforms at every layer** (AWS · Azure · GCP · OCI · vSphere · OpenStack ·
-self-host) — written from the machine room up, not the console down.
+The distinctive one is **The Stack**: it reads the stack *bottom-up*, comparing all
+seven platforms at **every layer** — written from the machine room up, not the console
+down.
 
 ## How to read this
-
-Four entry points, by what you want:
 
 | I want to… | Start at |
 | --- | --- |
 | **See the whole shape** | [`CONTENTS.md`](CONTENTS.md) — every module, all four axes, one page |
 | **Understand the philosophy** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
-| **Go deep on one cloud** | [`platforms/`](platforms/) — **AWS is the worked example**, read it end to end |
+| **Go deep on one platform** | [`platforms/`](platforms/) — **AWS is the worked example**, read it end to end |
 | **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
 | **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity, IaC, cost, K8s, SaaS admin |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
 
-## Status — what's built
+## What's built
 
-Every planned module has written content; the remaining work is more runnable labs,
-Chinese mirrors, and deepening. See [`ROADMAP.md`](ROADMAP.md) for priorities.
+Everything the [roadmap](ROADMAP.md) planned is written; what remains is more runnable
+labs, Chinese mirrors, and deepening.
 
-**By axis:**
+- **Foundations & method** — [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) (Linux + scripting) ✅
+- **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + a runnable [backup-drill lab](the-stack/labs/04-backup-not-snapshot/) ✅
+- **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [saas-admin](cross-cutting/saas-admin.md) · [iac](cross-cutting/iac-and-config.md) · [cost](cross-cutting/cost.md) · [kubernetes](cross-cutting/kubernetes.md) · [endpoint](endpoint/) ✅
 
-| Axis | State |
-| --- | --- |
-| **Start here** — WHY · operating model · ai-workflow | ✅ |
-| **Foundations** — Linux + scripting | ✅ [foundations](foundations/) |
-| **The Stack** — 7 layers, 7 platforms each | ✅ [01→07](the-stack/) + 1 runnable [backup-drill lab](the-stack/labs/04-backup-not-snapshot/) |
-| **Cross-cutting** — the transferable surfaces | ✅ [identity](cross-cutting/identity-iam.md) · [saas-admin](cross-cutting/saas-admin.md) · [iac](cross-cutting/iac-and-config.md) · [cost](cross-cutting/cost.md) · [kubernetes](cross-cutting/kubernetes.md) |
-| **Endpoint** — MDM / imaging / EDR | ✅ [endpoint](endpoint/) |
-
-**Platforms** — each follows the four-part template (what-it-is · skill map ·
-AI-ramp · labs); the public clouds also carry the deeper **architecture · operations ·
-automation** trio:
-
-All **seven** platforms compared in The Stack now have a dedicated "operate it end to
-end" module:
-
-Every platform has a **3-lab CLI arc** (scoped-identity inventory → network+compute
-from code → secure defaults / the platform's signature drill), each with real
-command-line examples — because the CLI is faster, exact, repeatable, and reviewable,
-and it's the surface your automation uses.
+**Platforms** — all seven compared in The Stack now have a dedicated "operate it end to
+end" module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**); the public clouds
+also carry the deeper **architecture · operations · automation** trio:
 
 | Platform | Module | Arch · Ops · Auto | Labs | Honesty |
 | --- | --- | --- | --- | --- |
@@ -124,23 +104,20 @@ and it's the surface your automation uses.
 | **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) | 🧗 ramp |
 | **[OCI](platforms/oci/)** | ✅ | — | ✅ 3-lab CLI arc (`oci`) | 🧗 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ | — | ✅ 3-lab CLI arc (PowerCLI) | **✋ hands-on depth** (VCP6-DCV/NV) |
-| **[OpenStack](platforms/openstack/)** | ✅ | — | ✅ 3-lab CLI arc (`openstack`/DevStack) | 🧗 ramp (KVM-adjacent ✋) |
-| **[self-host / bare metal](platforms/self-host/)** | ✅ | — | ✅ 3-lab CLI arc (virsh/ipmitool/ansible) | **✋ hands-on depth** (100k+ fleet) |
+| **[OpenStack](platforms/openstack/)** | ✅ | — | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧗 ramp (KVM-adjacent ✋) |
+| **[self-host / bare metal](platforms/self-host/)** | ✅ | — | ✅ 3-lab CLI arc (virsh / ipmitool / ansible) | **✋ hands-on depth** (100k+ fleet) |
 
-Every module marks **✋ hands-on depth** vs. **🧗 honest ramp** ([`WHY.md`](WHY.md)) —
-the strengths (Linux, endpoint, identity, SaaS admin, automation discipline, and
-**vSphere** — a production virtualization estate) are claimed as ✋; a public cloud,
-OpenStack's control plane, or deep Kubernetes is labeled 🧗, mapped and verified,
-never bluffed.
-
-This is a living project — built out in the open, one layer at a time.
+Two of the seven are labeled **✋ hands-on depth** (vSphere and self-host — production
+ground, not a ramp); the rest are honest 🧗 ramps. The labs are **CLI-first** on
+purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
+same surface your automation uses.
 
 ## Who wrote this
 
 An infrastructure and systems engineer with 15 years across Linux, networking,
-virtualization, identity, and automation at scale — writing down the method for
-ramping onto any platform fast, in the AI era. Corrections and pull requests
-welcome.
+virtualization, identity, and automation at scale — writing down the method for ramping
+onto any platform fast, in the AI era. A living project, built out in the open, one
+layer at a time. Corrections and pull requests welcome.
 
 ## License
 
