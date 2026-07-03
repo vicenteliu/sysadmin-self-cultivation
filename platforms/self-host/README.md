@@ -1,9 +1,11 @@
 # Self-Hosted / Bare Metal — where the abstractions end
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
-> AI-assisted ramp → labs.** The honesty marker is **✋ hands-on depth** — this is the
-> ground floor of the whole stack, operated at fleet scale (100k+ devices
-> provisioned), and the layer every cloud in this repo is an abstraction *over*.
+> AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
+> [operations](operations.md) · [automation](automation.md)** trio. The honesty marker
+> is **✋ hands-on depth** — this is the ground floor of the whole stack, operated at
+> fleet scale (100k+ devices provisioned), and the layer every cloud in this repo is an
+> abstraction *over*.
 
 ## 1. What self-hosting is
 
@@ -88,6 +90,23 @@ and image a node hands-off, define two "racks" and kill one to watch failure dom
 in action — the [`the-stack/01` lab spec](../../the-stack/01-physical.md), which is
 *this* platform's lab. The runnable [backup drill](../../the-stack/labs/04-backup-not-snapshot/)
 is another pure-local piece of the self-host discipline.
+
+## 5. Going deeper — architecture, operations & automation
+
+Three companion notes take self-hosting past "what you run", mirroring the AWS set —
+written from fleet-scale production, not a ramp:
+
+- **[`architecture.md`](architecture.md)** — the physical hierarchy (rack/TOR/PDU as
+  the **failure domains you design**), the **BMC/IPMI out-of-band plane** (what the
+  cloud serial console rents), the **PXE → image → cloud-init pipeline** that makes
+  metal cattle, and the core services (DNS/BIND/DHCP/LDAP/NTP).
+- **[`operations.md`](operations.md)** — day-2: the failures are physical (disk/DIMM
+  at fleet scale, a TOR taking a rack, capacity arriving late, firmware waves), the
+  recurring work **by cadence**, and where AI helps (config/error-decoding) vs. flatly
+  cannot (the physical layer; no undo on bare metal).
+- **[`automation.md`](automation.md)** — scripting the fleet: the inventory → transport
+  → idempotent-change model (Ansible/SSH/ipmitool/virsh/PXE), keys-not-passwords, and
+  **the bare-metal rule: there is no undo** — read every destructive command twice.
 
 ## Honest boundaries
 

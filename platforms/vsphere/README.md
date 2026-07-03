@@ -1,10 +1,12 @@
 # VMware vSphere / vCenter — the private-cloud workhorse
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
-> AI-assisted ramp → labs.** But the honesty marker flips here: vSphere is
-> **✋ hands-on depth**, not a ramp. This is the enterprise's private cloud, and it's
-> the platform in this repo written from the most direct production experience —
-> operated as an AMS-region vCenter administrator, VCP6-DCV / VCP6-NV certified.
+> AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
+> [operations](operations.md) · [automation](automation.md)** trio. But the honesty
+> marker flips here: vSphere is **✋ hands-on depth**, not a ramp. This is the
+> enterprise's private cloud, and it's the platform in this repo written from the most
+> direct production experience — operated as an AMS-region vCenter administrator,
+> VCP6-DCV / VCP6-NV certified.
 
 ## 1. What vSphere is
 
@@ -92,6 +94,22 @@ this platform's lab *already ran*, in production, for years. A **three-lab CLI a
 that forces a host failure to watch HA restart it, the failure-domain lesson from
 [`the-stack/01`](../../the-stack/01-physical.md), made tangible on the platform it
 came from).
+
+## 5. Going deeper — architecture, operations & automation
+
+Three companion notes take vSphere past "what the pieces are", mirroring the AWS set —
+written from production experience, not a ramp:
+
+- **[`architecture.md`](architecture.md)** — the vCenter → cluster → host → VM
+  hierarchy as the failure-domain unit (N+1), datastores as the shared substrate, and
+  the **HA/DRS/vMotion distinctions** (what each does and does *not* do), plus a
+  reference cluster architecture.
+- **[`operations.md`](operations.md)** — day-2: the ops notes (full datastore = mass
+  outage, HA events, contention read as CPU-ready / ballooning / datastore latency),
+  the recurring work **by cadence**, and AI in the operating loop (PowerCLI drafting).
+- **[`automation.md`](automation.md)** — **PowerCLI**: the connect → object →
+  operation model, the altitude ladder (PowerCLI / govc / Terraform vsphere provider),
+  credential handling, and `Get-*`-until-proven with `-WhatIf` on every mutation.
 
 ## Honest boundaries
 

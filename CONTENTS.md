@@ -67,9 +67,9 @@ Stack have a module. See [`platforms/`](platforms/).
 
 | Platform | What's there · honesty |
 | --- | --- |
-| [`vsphere/`](platforms/vsphere/) | ✅ module + 3-lab CLI arc (PowerCLI). AMS-region vCenter admin, VCP6-DCV/NV. · **✋ hands-on depth — a strength, not a ramp** |
+| [`vsphere/`](platforms/vsphere/) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + 3-lab CLI arc (PowerCLI). AMS-region vCenter admin, VCP6-DCV/NV. · **✋ hands-on depth — a strength, not a ramp** |
 | [`openstack/`](platforms/openstack/) | ✅ module + 3-lab CLI arc (DevStack). "You build the cloud"; control-plane-as-product. · 🧗 (KVM-adjacent ✋) |
-| [`self-host/`](platforms/self-host/) | ✅ module + 3-lab CLI arc. PXE/image fleet at 100k+ scale, BMC/IPMI, DNS/RAID. · **✋ hands-on depth — the deepest root** |
+| [`self-host/`](platforms/self-host/) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + 3-lab CLI arc. PXE/image fleet 100k+, BMC/IPMI, DNS/RAID. · **✋ hands-on depth — the deepest root** |
 
 ## V. Cross-cutting — read by theme (the transferable surfaces)
 

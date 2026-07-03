@@ -30,9 +30,9 @@ module.
 
 | Platform | Status |
 | --- | --- |
-| **[vsphere/](vsphere/)** | ✅ module written (what-it-is / skill map / ai-ramp) — **✋ hands-on depth**: AMS-region vCenter admin, VCP6-DCV/NV. A strength, not a ramp. |
+| **[vsphere/](vsphere/)** | ✅ worked-example depth — + architecture + operations + automation — **✋ hands-on depth**: AMS-region vCenter admin, VCP6-DCV/NV. A strength, not a ramp. |
 | **[openstack/](openstack/)** | ✅ module written (what-it-is / skill map / ai-ramp) — 🧗 ramp, adjacent to real KVM/Proxmox ✋; "you build the cloud", control-plane-as-product. |
-| **[self-host/](self-host/)** | ✅ module written (what-it-is / skill map / ai-ramp) — **✋ hands-on depth**, the deepest root: PXE/image/cloud-init fleet at 100k+ scale, BMC/IPMI, DNS/BIND, RAID. The layer every cloud abstracts over. |
+| **[self-host/](self-host/)** | ✅ worked-example depth — + architecture + operations + automation — **✋ hands-on depth**, the deepest root: PXE/image/cloud-init fleet at 100k+ scale, BMC/IPMI, DNS/BIND, RAID. The layer every cloud abstracts over. |
 
 See [`../00-the-operating-model.md`](../00-the-operating-model.md) for the transferable
 skeleton every module is organized around.
