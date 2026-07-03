@@ -1,42 +1,20 @@
 # Contents — the whole map
 
-> The single page that shows every part of this project, how the parts fit, and
-> what's written vs. scaffolded. [`ROADMAP.md`](ROADMAP.md) says what to build
-> *next and why*; this page says what *exists and where*.
+> The detailed index: every module, what it is, and where it lives.
+> [`README.md`](README.md) is the front door and the shape; [`ROADMAP.md`](ROADMAP.md)
+> says what to build *next and why*; this page is the table of contents.
 
-The project is organized along **four axes** that cross the same material from
-different angles. You don't read it front to back — you enter from whichever axis
-matches the question you have.
+The project crosses the same material along **four axes** — you enter from whichever
+matches your question, not front to back. Everything the roadmap planned is now
+**written** (✅); what remains is more runnable labs, Chinese mirrors, and deepening.
 
-```mermaid
-mindmap
-  root((Self-cultivation))
-    Start here
-      WHY - the motivation
-      00 operating model - the skeleton
-      ai-workflow - the method
-    Foundations
-      Linux and scripting - the assumed base
-    The Stack - by layer
-      01 physical
-      02 network
-      03 compute and images
-      04 storage
-      05 platform services
-      06 observability
-      07 security
-    Platforms - by cloud
-      AWS - worked example
-      Azure
-      GCP
-    Cross-cutting - by theme
-      identity and IAM
-      IaC and config
-      endpoint and MDM
-      SaaS admin
-      kubernetes
-      cost
-```
+| # | Axis | Read it when you want to… |
+| --- | --- | --- |
+| **I** | **Start here** | understand the philosophy and the method |
+| **II** | **Foundations** | shore up the Linux + scripting base |
+| **III** | **The Stack** | compare all seven platforms layer by layer |
+| **IV** | **Platforms** | operate one platform end to end |
+| **V** | **Cross-cutting** | learn a transferable skill |
 
 ---
 
@@ -56,8 +34,8 @@ mindmap
 
 ## III. The Stack — read by layer, bottom-up (✅ complete, 01→07)
 
-Seven platforms compared at every layer, written from the machine room up. This is
-the project's most distinctive axis. See [`the-stack/`](the-stack/).
+Seven platforms compared at every layer, written from the machine room up. The
+project's most distinctive axis. See [`the-stack/`](the-stack/).
 
 | Chapter | Covers | Status |
 | --- | --- | --- |
@@ -69,27 +47,35 @@ the project's most distinctive axis. See [`the-stack/`](the-stack/).
 | [`06-observability`](the-stack/06-observability.md) | metrics/logs/traces, SLI/SLO, OpenTelemetry | ✅ |
 | [`07-security`](the-stack/07-security.md) | shared responsibility, defense in depth, CSPM/EDR/SIEM | ✅ |
 
-## IV. Platforms — read by platform (public cloud + private cloud / on-prem)
+## IV. Platforms — read by platform (all seven)
 
-Each is `README` (what-it-is + skill map + AI-ramp summary) · `skills-map` ·
-`ai-ramp` · `labs/`. Public clouds (AWS/Azure/GCP) plus the on-prem platforms
-(vSphere ✋, OpenStack 🧗). See [`platforms/`](platforms/).
+Every module is `README` (what-it-is + skill map + AI-ramp summary) · `skills-map` ·
+`ai-ramp` · a **3-lab CLI arc** in `labs/`; the public clouds add the deeper
+**architecture · operations · automation** trio. All seven platforms compared in The
+Stack have a module. See [`platforms/`](platforms/).
 
-| Platform | Status |
+**Public clouds** — a rented data centre you drive by API:
+
+| Platform | What's there · honesty |
 | --- | --- |
-| [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md) + [operations](platforms/aws/operations.md) + [automation](platforms/aws/automation.md) + 2 runnable labs (read first) |
-| [`azure/`](platforms/azure/) | ✅ worked example depth: + [architecture](platforms/azure/architecture.md) + [operations](platforms/azure/operations.md) + [automation](platforms/azure/automation.md); Entra/identity is the hands-on strength |
-| [`gcp/`](platforms/gcp/) | ✅ worked-example depth: + [architecture](platforms/gcp/architecture.md) + [operations](platforms/gcp/operations.md) + [automation](platforms/gcp/automation.md); labs specced. The global-VPC outlier is the thing to learn. |
-| [`oci/`](platforms/oci/) | ✅ module written — 🧗 ramp; youngest hyperscaler (compartments, OCPU, bare-metal-first, cheap egress) |
-| [`vsphere/`](platforms/vsphere/) | ✅ module written — **✋ hands-on depth** (AMS-region vCenter admin, VCP6-DCV/NV); a strength, not a ramp |
-| [`openstack/`](platforms/openstack/) | ✅ module written — 🧗 ramp, adjacent to real KVM/Proxmox ✋; "you build the cloud" |
-| [`self-host/`](platforms/self-host/) | ✅ module written — **✋ hands-on depth**, the deepest root: PXE/image fleet at 100k+ scale, BMC/IPMI, DNS/RAID |
+| [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md) + labs (**2 runnable** + 3-lab CLI arc). Read first. · 🧗 |
+| [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md) + 3-lab CLI arc. · 🧗, **Entra/identity ✋** |
+| [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md) + 3-lab CLI arc. Global-VPC is the outlier. · 🧗 |
+| [`oci/`](platforms/oci/) | ✅ module + 3-lab CLI arc. Youngest hyperscaler — compartments, OCPU, bare-metal-first, cheap egress. · 🧗 |
+
+**Private cloud / on-prem** — the platforms you run on your *own* hardware:
+
+| Platform | What's there · honesty |
+| --- | --- |
+| [`vsphere/`](platforms/vsphere/) | ✅ module + 3-lab CLI arc (PowerCLI). AMS-region vCenter admin, VCP6-DCV/NV. · **✋ hands-on depth — a strength, not a ramp** |
+| [`openstack/`](platforms/openstack/) | ✅ module + 3-lab CLI arc (DevStack). "You build the cloud"; control-plane-as-product. · 🧗 (KVM-adjacent ✋) |
+| [`self-host/`](platforms/self-host/) | ✅ module + 3-lab CLI arc. PXE/image fleet at 100k+ scale, BMC/IPMI, DNS/RAID. · **✋ hands-on depth — the deepest root** |
 
 ## V. Cross-cutting — read by theme (the transferable surfaces)
 
-The layers that transfer across every platform. Some are dedicated notes; some are
-now best covered *by layer* in The Stack and are cross-linked rather than
-duplicated. See [`cross-cutting/`](cross-cutting/).
+The layers that transfer across every platform. Some are **dedicated notes**; some
+read more naturally *by layer* in The Stack and are **cross-linked, not duplicated**.
+See [`cross-cutting/`](cross-cutting/).
 
 | Theme | Home | Status |
 | --- | --- | --- |
@@ -99,25 +85,23 @@ duplicated. See [`cross-cutting/`](cross-cutting/).
 | [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | ✅ |
 | [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | ✅ |
-| networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ covered in The Stack |
-| storage | → [`the-stack/04`](the-stack/04-storage.md) | ✅ covered in The Stack |
-| virtualization | → [`the-stack/01`](the-stack/01-physical.md) | ✅ covered in The Stack |
-| observability | → [`the-stack/06`](the-stack/06-observability.md) | ✅ covered in The Stack |
-| security-compliance | → [`the-stack/07`](the-stack/07-security.md) | ✅ covered in The Stack |
+| networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ in The Stack |
+| storage | → [`the-stack/04`](the-stack/04-storage.md) | ✅ in The Stack |
+| virtualization | → [`the-stack/01`](the-stack/01-physical.md) | ✅ in The Stack |
+| observability | → [`the-stack/06`](the-stack/06-observability.md) | ✅ in The Stack |
+| security-compliance | → [`the-stack/07`](the-stack/07-security.md) | ✅ in The Stack |
 
 ---
 
-## Status legend
-
-- ✅ **written** — full module, ready to read.
-- 🚧 **opening written** — title, thesis, and a planned-coverage outline are in
-  place; the body is being filled in. Every 🚧 file states what it will cover, so
-  the framework is complete even where the prose isn't.
-
 ## The honesty layer (applies everywhere)
 
-Every module marks **✋ hands-on depth** vs. **🧗 honest ramp** per
-[`WHY.md`](WHY.md). The scaffolded modules already carry that marking in their
-openings, so the plan is honest before a line of the body is written — the
-strengths (Linux, endpoint, identity, SaaS admin) are labeled ✋; the ramps (a
-third cloud, deep Kubernetes) are labeled 🧗.
+Every module marks **✋ hands-on depth** vs. **🧗 verified ramp** per
+[`WHY.md`](WHY.md) — and the marking is load-bearing, not decoration. Two of the seven
+platforms are **✋**: [vSphere](platforms/vsphere/) (a production vCenter estate,
+VCP6-DCV/NV) and [self-host](platforms/self-host/) (a 100k+ device fleet), alongside
+the cross-cutting strengths — Linux, [endpoint](endpoint/),
+[identity](cross-cutting/identity-iam.md), [SaaS admin](cross-cutting/saas-admin.md),
+and the automation discipline. The public clouds, OpenStack's control plane, and deep
+Kubernetes are honest **🧗** ramps — mapped, verified, and runnable, never bluffed.
+That distinction is the whole point ([`WHY.md`](WHY.md) explains why it matters more in
+the AI era, not less).
