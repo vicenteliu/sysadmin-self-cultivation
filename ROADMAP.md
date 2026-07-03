@@ -57,6 +57,9 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Cost | [`cross-cutting/cost.md`](cross-cutting/cost.md) — cost as an ops signal, shapes, surprises, right-sizing, anomaly alerts | ✅ written |
 | Kubernetes | [`cross-cutting/kubernetes.md`](cross-cutting/kubernetes.md) — object model, control plane, CNI/CSI leak, Pending-vs-CrashLoop (Tier-2 #8) | ✅ written |
 | **Cross-cutting** | **all dedicated notes written** (identity · saas-admin · iac · cost · kubernetes); networking/storage/virtualization/observability/security covered in the-stack | ✅ |
+| Gap-fill | [`cross-cutting/ci-cd.md`](cross-cutting/ci-cd.md) — CI/CD & GitOps (the biggest gap vs. roadmap.sh/devops); 🧗 ramp on ✋ automation base | ✅ written |
+| Gap-fill | [`cross-cutting/databases.md`](cross-cutting/databases.md) — operating databases (backup/PITR, replication, self-run-vs-managed) — **✋** (production PostgreSQL) | ✅ written |
+| Gap-fill | [`cross-cutting/itsm-and-assets.md`](cross-cutting/itsm-and-assets.md) — ITSM, CMDB, asset reconciliation, access governance — **✋** (ServiceNow 5yr, audit automation) | ✅ written |
 | Platform | [`platforms/gcp/`](platforms/gcp/) — README + skills-map + ai-ramp (global-VPC outlier; Tier-1 #4); labs specced | ✅ written |
 | Platform depth | [`platforms/aws/architecture.md`](platforms/aws/architecture.md) + [`operations.md`](platforms/aws/operations.md) + [`automation.md`](platforms/aws/automation.md) — account model, day-2 ops-work breakdown, AI-in-the-loop, scripting the API | ✅ written |
 | Platform depth | Azure + GCP architecture/operations/automation trios (mirroring AWS) | ✅ written |
