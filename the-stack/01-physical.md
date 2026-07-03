@@ -293,14 +293,18 @@ mindmap
       placement is always your job
 ```
 
-## Lab (🚧 planned — spec)
+## Lab (✅ runnable — [`labs/01-failure-domains/`](labs/01-failure-domains/))
 
-**Build the physical layer in miniature.** On one machine with nested
-virtualization (Proxmox or VMware Workstation/Fusion):
+**Failure domains, made tangible** — and this one runs, pure Python, zero cloud:
 
-1. Stand up a 3-node virtual "fleet" with a PXE server; network-boot and image one
-   node hands-off (the self-host provisioning pipeline, end to end).
-2. Define two "racks" (host groups), place a 2-replica service with anti-affinity,
-   then kill a "rack" and watch what survives — failure domains made tangible.
-3. On any one cloud: read the **instance metadata service** and list **scheduled
-   events** for a VM — the cloud's version of the BMC you just used.
+```bash
+python3 the-stack/labs/01-failure-domains/failure_domains.py
+```
+
+It models a fleet as racks (each a failure domain), places a 2-replica service two
+ways, kills a rack, and checks three lessons: (1) **co-located replicas share a fate**
+— both in one rack means the service dies with it; (2) **anti-affinity across domains**
+is what "highly available" actually means; (3) **N replicas across N domains** tolerate
+one domain loss. Exit `0` means the lessons held. The full nested-virt version (PXE a
+"fleet," image a node hands-off, then kill a rack) is the [self-host
+lab](../platforms/self-host/labs/); this is its placement lesson, made pure-local.

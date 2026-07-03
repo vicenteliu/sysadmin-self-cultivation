@@ -186,22 +186,27 @@ labeled that way, not inflated into a primary language. There's no 🧗 in this 
 because there's nothing here that's a ramp — this is the ground the ramps are
 launched from.
 
-## Lab (🚧 planned — spec)
+## Lab (✅ runnable — [`labs/idempotence-drill/`](labs/idempotence-drill/))
 
-**Make the reflex muscle memory.** A pure-local drill (a container or a throwaway
-VM), no cloud:
+**Feel the idempotence lesson in bash** — this one runs, no cloud, no root:
 
-1. A setup script breaks *one* thing (a service pointed at a full disk, a permission
-   flipped, a process wedged on a missing file) — you don't know which.
-2. Climb the debugging ladder with only `systemctl`/`journalctl`/`ss`/`lsof`/
-   `strace`/`df` until you name the failing syscall or the exhausted resource — no
-   guessing, one variable at a time.
-3. Fix it, then rewrite the setup script to be **idempotent and `set -euo pipefail`
-   safe**, and prove it by running it twice with no damage.
+```bash
+bash foundations/labs/idempotence-drill/idempotence_drill.sh
+```
 
-(This is a natural companion to the runnable
-[backup drill](../the-stack/labs/04-backup-not-snapshot/) — both are pure-local,
-zero-cost, and prove a discipline rather than a fact.)
+It builds a **fragile** script (unconditional append, bare `mkdir`, no `set -e`) and a
+**safe** one (`set -euo pipefail`, a required-arg guard, `mkdir -p`, check-then-append),
+runs each repeatedly, and checks the difference: the fragile one *doubles its work* and
+*masks its own failure with exit 0*; the safe one *converges* and *fails fast* on a
+missing argument. Exit `0` means the lessons held. It's a natural companion to the
+runnable [backup drill](../the-stack/labs/04-backup-not-snapshot/) and
+[failure-domains lab](../the-stack/labs/01-failure-domains/) — all pure-local, all
+proving a discipline rather than a fact.
+
+**The reflex half** (planned): a setup script breaks *one* thing (a service on a full
+disk, a flipped permission, a process wedged on a missing file); climb the debugging
+ladder with only `systemctl`/`journalctl`/`ss`/`lsof`/`strace`/`df` until you name the
+failing syscall — no guessing, one variable at a time.
 
 ## The chapter on one screen
 

@@ -131,17 +131,22 @@ current docs, not claimed as years running a delivery platform. The transferable
 claim: a deep automation foundation plus a fast, honest ramp onto the specific CI/CD
 tool in front of you — exactly the shape [`WHY.md`](../WHY.md) argues for.
 
-## Lab (🚧 planned — spec)
+## Lab (✅ runnable — [`labs/ci-cd-pipeline/`](labs/ci-cd-pipeline/))
 
-**A pipeline for one small service, end to end.** Using GitHub Actions (free) and a
-local or free-tier target:
+**A real pipeline for one small service** — a valid GitHub Actions workflow over a
+tested app. Run the test job locally right now (pure stdlib, no install):
 
-1. **CI:** a workflow that runs on every push — lint, test, build a container image,
-   and push it to a registry — and make a test fail on purpose to watch it go red.
-2. **CD + OIDC:** deploy the image to a target using **OIDC** (no long-lived key in
-   the repo), gated on a manual approval for "prod."
-3. **The drill:** ship a bad change, then **roll it back** — `git revert` + re-run —
-   and prove the desired state (and the audit trail) lives entirely in git.
+```bash
+cd cross-cutting/labs/ci-cd-pipeline/app && python3 -m unittest -v
+```
+
+The [lab](labs/ci-cd-pipeline/) ships the `hostcheck` app + tests and a real `ci.yml`
+that encodes the chapter's rules: **test on every push**, **build the artifact once**
+(gated on green tests), and a **deploy gated on a manual approval using OIDC** (no
+long-lived key in the repo). The workflow lives under `.github-workflows-example/` so
+it doesn't run against this teaching repo — copy it to `.github/workflows/` to make it
+live. Extend it with the rollback drill: ship a bad change, then `git revert` + re-run,
+and prove the desired state lives entirely in git.
 
 ## The chapter on one screen
 

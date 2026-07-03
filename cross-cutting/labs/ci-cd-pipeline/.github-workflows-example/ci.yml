@@ -1,0 +1,70 @@
+# A real, valid CI/CD pipeline for the hostcheck app.
+#
+# This file is the deliverable of the lab. To make it run, copy it to
+# `.github/workflows/ci.yml` in a repo containing the `app/` directory (it lives
+# here under `.github-workflows-example/` on purpose, so it does NOT run against
+# this teaching repo). Everything below is standard GitHub Actions.
+#
+# It demonstrates the chapter's rules:
+#   - CI runs on every push/PR: lint -> test (fast feedback, minutes not release)
+#   - build the artifact ONCE, in its own job, gated on tests passing
+#   - deploy is gated on a MANUAL approval and uses OIDC (no long-lived cloud key)
+
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read          # least privilege by default; the deploy job widens it
+
+jobs:
+  test:
+    name: lint + test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4          # pin to a tag; production should pin to a SHA
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Lint (syntax + basic checks)
+        run: python -m py_compile hostcheck.py test_hostcheck.py
+      - name: Test
+        run: python -m unittest -v
+
+  build:
+    name: build artifact once
+    needs: test                            # gated: only builds if tests are green
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package the app (build ONCE, promote this same artifact)
+        run: |
+          mkdir -p dist
+          tar -czf dist/hostcheck.tar.gz -C app hostcheck.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: hostcheck-app
+          path: dist/hostcheck.tar.gz
+
+  deploy:
+    name: deploy (manual gate + OIDC, no static keys)
+    needs: build                           # promote the SAME artifact build produced
+    runs-on: ubuntu-latest
+    environment: production                # a protected environment = the manual approval gate
+    permissions:
+      contents: read
+      id-token: write                      # OIDC: mint a short-lived token, no secret in the repo
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: hostcheck-app
+      # In a real deploy you'd assume a cloud role via OIDC here — no long-lived key:
+      #   - uses: aws-actions/configure-aws-credentials@v4
+      #     with: { role-to-assume: arn:aws:iam::...:role/deployer, aws-region: us-east-1 }
+      - name: Deploy the promoted artifact
+        run: echo "deploying hostcheck.tar.gz (the exact artifact 'build' produced)"

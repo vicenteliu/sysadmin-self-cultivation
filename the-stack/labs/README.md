@@ -13,13 +13,19 @@ this folder is where those specs become code you can actually run and verify.
 
 | Lab | Chapter | What it proves | Needs |
 | --- | --- | --- | --- |
+| [`01-failure-domains/`](01-failure-domains/) | [01 physical](../01-physical.md) | co-located replicas share a fate; anti-affinity across failure domains is what "highly available" means | Python 3.8+ only |
 | [`04-backup-not-snapshot/`](04-backup-not-snapshot/) | [04 storage](../04-storage.md) | replication faithfully copies destruction; only an independent backup recovers you, up to its RPO | Python 3.8+ only |
+
+There are also runnable labs outside The Stack, same pure-local spirit:
+[`foundations/labs/idempotence-drill/`](../../foundations/labs/idempotence-drill/)
+(fragile vs. `set -euo pipefail`-safe scripting, bash) and
+[`cross-cutting/labs/ci-cd-pipeline/`](../../cross-cutting/labs/ci-cd-pipeline/) (a real
+GitHub Actions pipeline + a tested app).
 
 ## Planned (specs live in each chapter)
 
 | Lab | Chapter | Sketch |
 | --- | --- | --- |
-| `01-failure-domains/` | [01 physical](../01-physical.md) | nested virt: a PXE-booted "fleet," two "racks," kill one and see what survives |
 | `02-network-debug-ladder/` | [02 network](../02-network.md) | one 3-tier network built twice (Terraform on two clouds); break it 4 ways, fix with the debug ladder |
 | `03-one-image-two-clouds/` | [03 compute](../03-compute-and-images.md) | Packer golden image + cloud-init to KVM and one cloud; sabotage the image, recover from the serial console |
 | `06-see-the-request/` | [06 observability](../06-observability.md) | Prometheus + Grafana + an OTel trace; define an SLO and blow the error budget on purpose |
