@@ -71,6 +71,7 @@ mindmap
       web and TLS
       service mesh
       incident response
+      working with security
       SaaS admin
       kubernetes
       cost
