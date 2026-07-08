@@ -60,7 +60,7 @@ Stack have a module. See [`platforms/`](platforms/).
 | --- | --- |
 | [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs (**2 runnable** + 3-lab CLI arc). Read first. · 🧗 |
 | [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md) + 3-lab CLI arc. · 🧗, **Entra/identity ✋** |
-| [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md) + 3-lab CLI arc. Global-VPC is the outlier. · 🧗 |
+| [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 3-lab CLI arc. Global-VPC is the outlier. · 🧗 |
 | [`oci/`](platforms/oci/) | ✅ + [architecture](platforms/oci/architecture.md)/[operations](platforms/oci/operations.md)/[automation](platforms/oci/automation.md) + 3-lab CLI arc. Youngest hyperscaler — compartments, OCPU, bare-metal-first, cheap egress. · 🧗 |
 
 **Private cloud / on-prem** — the platforms you run on your *own* hardware:

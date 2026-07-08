@@ -25,7 +25,9 @@ GitHub Actions pipeline + a tested app),
 (a Conditional Access policy that locks the admin out — the tenant-wide blast radius,
 felt), and
 [`platforms/aws/labs/iam-deny-by-default/`](../../platforms/aws/labs/iam-deny-by-default/)
-(AWS IAM policy evaluation — deny-by-default and why `Allow *` isn't the fix).
+(AWS IAM policy evaluation — deny-by-default and why `Allow *` isn't the fix), and
+[`platforms/gcp/labs/gke-iam-vs-rbac/`](../../platforms/gcp/labs/gke-iam-vs-rbac/)
+(GKE's two auth planes — why "I'm Owner but kubectl says Forbidden").
 
 ## Planned (specs live in each chapter)
 

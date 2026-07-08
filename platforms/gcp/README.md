@@ -1,11 +1,12 @@
 # Google Cloud Platform (GCP) — the third cloud
 
 > The template every platform module follows: **what it is → the admin skill map →
-> the AI-assisted ramp → labs** — plus three deeper companion notes mirroring the AWS
+> the AI-assisted ramp → labs** — plus four deeper companion notes mirroring the AWS
 > worked example: **[architecture](architecture.md)** (how it's structured),
 > **[operations](operations.md)** (running it day-2, the ops-work breakdown, AI in
-> the operating loop), and **[automation](automation.md)** (scripting the API to
-> manage and operate it). Follows the same shape as [`aws/`](../aws/) and
+> the operating loop), **[automation](automation.md)** (scripting the API to
+> manage and operate it), and **[support](support.md)** (the break-fix craft — GCP +
+> GKE — and what an AWS admin must unlearn to inherit it). Follows the same shape as [`aws/`](../aws/) and
 > [`azure/`](../azure/). GCP is where the ramp method gets its cleanest test — most
 > of it is renamed AWS/Azure, with a few genuine structural differences to catch.
 
@@ -79,9 +80,9 @@ arc** (scoped identity + inventory → global-VPC network + instance → secure 
 budget) is in **[`labs/`](labs/)** with real `gcloud` commands — the second lab is
 where the global-VPC model visibly changes the commands vs. the AWS version.
 
-## 5. Going deeper — architecture, operations & automation
+## 5. Going deeper — architecture, operations, automation & support
 
-Three companion notes take GCP past "what the services are", mirroring the AWS set:
+Four companion notes take GCP past "what the services are", mirroring the AWS set:
 
 - **[`architecture.md`](architecture.md)** — how GCP is *structured*: the resource
   hierarchy (Org → Folders → Projects) as the blast-radius unit, regions & zones, the
@@ -96,6 +97,12 @@ Three companion notes take GCP past "what the services are", mirroring the AWS s
   altitude ladder, ADC and attached service accounts (never a key file in the
   script), the rules (iterate projects/regions/zones, Cloud Asset Inventory for bulk,
   idempotence, read-only-first), and the read-audit vs. remediation shapes.
+- **[`support.md`](support.md)** — **the break-fix craft (GCP + GKE)**: what supporting
+  GCP makes you responsible for, the recurring tickets and *where you look* (the
+  `403 PERMISSION_DENIED` hierarchy walk, the global-VPC firewall, and the GKE
+  deep-dive — the auth plugin, the **IAM-vs-RBAC two planes**, `IP_SPACE_EXHAUSTED`),
+  and the load-bearing AWS instincts an admin must **unlearn** — with a runnable
+  GKE-auth lab and a verified GitHub field kit.
 
 ## Honest boundaries
 

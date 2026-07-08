@@ -85,6 +85,24 @@ gcloud billing budgets create --billing-account=$BILLING_ACCT \
 **Verify:** the uniform-access value is `True`; attempting a legacy public ACL is
 rejected. **Teardown:** `gcloud storage rm --recursive gs://$BUCKET`.
 
+## Beyond the arc — a pure-local support drill
+
+The three-lab arc above needs a sandbox project. One more lab needs **nothing** — a
+pure-local, stdlib-only, self-verifying drill tied to the [support note](../support.md):
+
+### `gke-iam-vs-rbac/` — GKE's two auth planes ✅ built (pure-local)
+
+Models GKE authorization and proves the #1 GKE support lesson — **Cloud IAM
+authenticates, Kubernetes RBAC authorizes; `Unauthorized` ≠ `Forbidden`; IAM "Cluster
+Admin" is not in-cluster admin** — with zero credentials. See
+**[`gke-iam-vs-rbac/`](gke-iam-vs-rbac/)**.
+
+```bash
+python3 gke-iam-vs-rbac/gke_authz_drill.py   # exit 0 = the lessons held; runs in CI
+```
+
+Read it before the cloud arc if "I'm Owner but kubectl says Forbidden" is the ticket.
+
 ---
 
 Each lab lands with the code (Terraform is the persistent form), a `README`, and
