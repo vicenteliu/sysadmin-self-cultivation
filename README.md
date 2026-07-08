@@ -92,12 +92,12 @@ down.
 | **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
 | **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · and more |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
-| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — four invokable Agent Skills (ramp · audit · author · lab) |
+| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — five invokable Agent Skills (ramp · audit · author · lab · mirror) |
 
 ## What's built
 
 Everything the [roadmap](ROADMAP.md) planned is written, with **six runnable,
-self-verifying labs** (exit `0` = the lesson held) and **four Agent Skills**; what
+self-verifying labs** (exit `0` = the lesson held) and **five Agent Skills**; what
 remains is more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md)
 is started), and deepening.
 
@@ -124,11 +124,12 @@ ground, not a ramp); the rest are honest 🧗 ramps. The labs are **CLI-first** 
 purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
 same surface your automation uses.
 
-**Agent Skills** — the repo ships with four [`.claude/skills/`](.claude/skills/) that
+**Agent Skills** — the repo ships with five [`.claude/skills/`](.claude/skills/) that
 turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
 platform, honestly), **honesty-audit** (classify claims ✋/🧗/overclaim),
-**author-module** (write a new note in the repo's voice), and **runnable-lab** (turn a
-concept into a self-verifying drill).
+**author-module** (write a new note — including a **support note** — in the repo's
+voice, research-grounded), **runnable-lab** (turn a concept into a self-verifying
+drill), and **mirror-zh** (mirror a doc into `docs/zh/` Chinese).
 
 ## Who wrote this
 

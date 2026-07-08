@@ -103,13 +103,14 @@ See [`cross-cutting/`](cross-cutting/).
 
 ## Agent Skills — the method, made invokable
 
-The repo ships four [`.claude/skills/`](.claude/skills/) that package its methodology
+The repo ships five [`.claude/skills/`](.claude/skills/) that package its methodology
 as AI workflows: [`platform-ramp`](.claude/skills/platform-ramp/SKILL.md) (ramp onto
 any platform, honestly), [`honesty-audit`](.claude/skills/honesty-audit/SKILL.md)
 (classify claims ✋/🧗/overclaim), [`author-module`](.claude/skills/author-module/SKILL.md)
-(write a new note in the repo's voice), and
+(write a new note — incl. a **support note** — in the repo's voice, research-grounded),
 [`runnable-lab`](.claude/skills/runnable-lab/SKILL.md) (turn a concept into a
-self-verifying drill).
+self-verifying drill), and [`mirror-zh`](.claude/skills/mirror-zh/SKILL.md) (mirror a
+doc into `docs/zh/` Chinese).
 
 ## The honesty layer (applies everywhere)
 

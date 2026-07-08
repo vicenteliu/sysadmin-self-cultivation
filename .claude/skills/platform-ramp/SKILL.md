@@ -9,7 +9,7 @@ owner: Vicente Liu
 
 Turn "I've never touched this platform" into "I can operate it at a working level,
 and I know exactly where I'm bluffing" — the core method of
-[The Sysadmin's Self-Cultivation](../../README.md), made invokable for any platform.
+[The Sysadmin's Self-Cultivation](../../../README.md), made invokable for any platform.
 
 ## The premise
 
@@ -19,8 +19,8 @@ because the concepts transfer and AI supplies the platform-specific syntax. What
 disciplines held together: **AI for speed, judgment for truth**, with an honesty
 ledger so you never claim depth you don't have.
 
-Read [`00-the-operating-model.md`](../../00-the-operating-model.md) and
-[`WHY.md`](../../WHY.md) once; this skill applies them.
+Read [`00-the-operating-model.md`](../../../00-the-operating-model.md) and
+[`WHY.md`](../../../WHY.md) once; this skill applies them.
 
 ## The three moves (every platform is these)
 
@@ -39,7 +39,7 @@ Prompt the model as a *translator from what the user already knows*:
 
 The seven surfaces: **identity & access · compute · networking · storage & data ·
 provisioning & config · observability · security & compliance.** Produce a one-line
-"X's word for it" per surface (see the [AWS worked example](../../platforms/aws/README.md)
+"X's word for it" per surface (see the [AWS worked example](../../../platforms/aws/README.md)
 for the shape).
 
 ### 2 — Hunt the structural outliers
@@ -55,7 +55,7 @@ the attention; the rest is lookup.
 
 Not a feature list — a competency map in **Core / Working / Depth** tiers across the
 seven surfaces, where each box means *"I can do it from code and explain the failure
-modes."* Mirror [`platforms/aws/skills-map.md`](../../platforms/aws/skills-map.md).
+modes."* Mirror [`platforms/aws/skills-map.md`](../../../platforms/aws/skills-map.md).
 
 ### 4 — Generate an artifact, then verify hard
 
@@ -88,4 +88,4 @@ surface or generate a runnable lab (see the `runnable-lab` skill).
   names, quotas/prices, and anything security-critical.
 - The judgment is the user's; AI removes the rote lookup, not the accountability.
 - If the user has real hands-on depth on the platform, say so and *invert* the ramp —
-  AI drafts, their expertise verifies (see the [vSphere ai-ramp](../../platforms/vsphere/ai-ramp.md)).
+  AI drafts, their expertise verifies (see the [vSphere ai-ramp](../../../platforms/vsphere/ai-ramp.md)).

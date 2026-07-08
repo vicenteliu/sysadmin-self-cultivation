@@ -9,10 +9,10 @@ owner: Vicente Liu
 
 Make a concept *tangible and self-proving* — a script someone runs to feel the lesson,
 that asserts its own correctness. Modeled on this repo's runnable drills:
-[backup-not-snapshot](../../the-stack/labs/04-backup-not-snapshot/),
-[failure-domains](../../the-stack/labs/01-failure-domains/),
-[idempotence-drill](../../foundations/labs/idempotence-drill/),
-[ci-cd-pipeline](../../cross-cutting/labs/ci-cd-pipeline/). Read one before writing.
+[backup-not-snapshot](../../../the-stack/labs/04-backup-not-snapshot/),
+[failure-domains](../../../the-stack/labs/01-failure-domains/),
+[idempotence-drill](../../../foundations/labs/idempotence-drill/),
+[ci-cd-pipeline](../../../cross-cutting/labs/ci-cd-pipeline/). Read one before writing.
 
 ## What makes a good runnable lab (the bar)
 
@@ -57,7 +57,7 @@ that asserts its own correctness. Modeled on this repo's runnable drills:
 
 Some labs can't be pure-local (a real VPC, a kind cluster, a mesh). Then:
 - Say so, and keep it **tear-down-able** with sandbox + budget-alarm ground rules
-  (see [`platforms/aws/labs/`](../../platforms/aws/labs/)).
+  (see [`platforms/aws/labs/`](../../../platforms/aws/labs/)).
 - Still ship the *runnable* piece where possible — e.g. the CI/CD lab's tests run
   locally even though the pipeline runs on GitHub; a real, valid `ci.yml` kept out of
   the live workflows dir is a legitimate artifact.

@@ -7,7 +7,7 @@ owner: Vicente Liu
 
 # Skill: honesty-audit
 
-The honesty layer of [The Sysadmin's Self-Cultivation](../../WHY.md), turned into a
+The honesty layer of [The Sysadmin's Self-Cultivation](../../../WHY.md), turned into a
 review pass you can run over any claim. It answers one question per claim: **can this
 survive a probing follow-up in an interview — and if not, how do we make it true?**
 
