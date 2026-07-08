@@ -96,7 +96,7 @@ down.
 
 ## What's built
 
-Everything the [roadmap](ROADMAP.md) planned is written, with **four runnable,
+Everything the [roadmap](ROADMAP.md) planned is written, with **six runnable,
 self-verifying labs** (exit `0` = the lesson held) and **four Agent Skills**; what
 remains is more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md)
 is started), and deepening.

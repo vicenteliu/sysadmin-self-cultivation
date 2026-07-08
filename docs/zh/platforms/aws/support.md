@@ -146,6 +146,16 @@ AWS 的修/救本质是在一小组控制台和日志上做模式识别。你要
 以及 [ALB 排障](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-troubleshooting.html)。
 *（AWS 在 re:Invent 2025 重构了 Support plan —— 现为 Basic / Business Support+ / Enterprise / Unified Operations；旧的 Developer / Business / Enterprise On-Ramp 停止接受新订阅并于 2027-01-01 结束。Basic 开**不了**技术 case —— 只有账单、service-limit 提额、和 re:Post 社区。）*
 
+## Lab —— IAM deny-by-default ✅ 可跑
+
+**亲手证明头号支持教训。** 一个纯本地、只用 stdlib 的 drill，实现 AWS 真实的策略评估顺序，展示一个请求被多种方式拒绝 —— implicit deny、explicit deny（压过 `Allow *`）、一条**压住 admin 的 SCP**、一个 permissions-boundary 天花板 —— 再证明 on-prem *"admin 无所不能"* 的直觉到底错在哪。
+
+```bash
+python3 platforms/aws/labs/iam-deny-by-default/iam_eval_drill.py
+```
+
+exit `0` 表示教训都成立（兼作 CI 检查）。与可跑的 [`labs/`](../../../../platforms/aws/labs/) 并列（scoped-identity inventory · minimal VPC+EC2）—— 见 [`labs/iam-deny-by-default/`](../../../../platforms/aws/labs/iam-deny-by-default/)。
+
 ## 一页看全本章
 
 ```mermaid

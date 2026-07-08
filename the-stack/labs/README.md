@@ -18,9 +18,14 @@ this folder is where those specs become code you can actually run and verify.
 
 There are also runnable labs outside The Stack, same pure-local spirit:
 [`foundations/labs/idempotence-drill/`](../../foundations/labs/idempotence-drill/)
-(fragile vs. `set -euo pipefail`-safe scripting, bash) and
+(fragile vs. `set -euo pipefail`-safe scripting, bash),
 [`cross-cutting/labs/ci-cd-pipeline/`](../../cross-cutting/labs/ci-cd-pipeline/) (a real
-GitHub Actions pipeline + a tested app).
+GitHub Actions pipeline + a tested app),
+[`cross-cutting/labs/m365-conditional-access-lockout/`](../../cross-cutting/labs/m365-conditional-access-lockout/)
+(a Conditional Access policy that locks the admin out — the tenant-wide blast radius,
+felt), and
+[`platforms/aws/labs/iam-deny-by-default/`](../../platforms/aws/labs/iam-deny-by-default/)
+(AWS IAM policy evaluation — deny-by-default and why `Allow *` isn't the fix).
 
 ## Planned (specs live in each chapter)
 

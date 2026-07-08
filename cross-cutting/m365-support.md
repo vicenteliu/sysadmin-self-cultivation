@@ -294,6 +294,23 @@ and **advanced** — for incident work, not routine tickets.
 [Conditional Access troubleshooting](https://learn.microsoft.com/en-us/entra/identity/conditional-access/troubleshoot-conditional-access),
 and [group-license problems](https://learn.microsoft.com/en-us/entra/fundamentals/licensing-groups-resolve-problems).
 
+## Lab — Conditional Access self-lockout ✅ runnable
+
+**Prove the tenant-wide blast radius in your own hands.** A pure-local, stdlib-only
+drill that models M365 sign-in under one Conditional Access policy: ship a naive
+"all users, require compliant device" policy, watch the **admin and the break-glass
+account lock themselves out**, add the exclusion, and see **report-only enforce
+nothing** — the exact *exclude-break-glass-and-run-report-only-first* reflex from
+[the gap section](#the-experience-gap--what-a-strong-sysadmins-instincts-get-wrong),
+felt.
+
+```bash
+python3 cross-cutting/labs/m365-conditional-access-lockout/ca_lockout_drill.py
+```
+
+Exit `0` means the four lessons held (it doubles as a CI check). See
+[`labs/m365-conditional-access-lockout/`](labs/m365-conditional-access-lockout/).
+
 ## The chapter on one screen
 
 ```mermaid

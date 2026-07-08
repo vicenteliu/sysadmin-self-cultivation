@@ -317,6 +317,22 @@ Enterprise / Unified Operations; the legacy Developer / Business / Enterprise On
 tiers stop taking new subscribers and end Jan 1, 2027. Basic opens **no** technical
 cases — billing, service-limit increases, and re:Post community only.)*
 
+## Lab — IAM is deny-by-default ✅ runnable
+
+**Prove the #1 support lesson in your own hands.** A pure-local, stdlib-only drill
+that implements AWS's real policy-evaluation order and shows a request denied several
+ways — implicit deny, explicit deny (beating `Allow *`), an **SCP that caps the
+admin**, a permissions-boundary ceiling — then proves exactly where the on-prem
+*"admin can do anything"* instinct is wrong.
+
+```bash
+python3 platforms/aws/labs/iam-deny-by-default/iam_eval_drill.py
+```
+
+Exit `0` means the lessons held (it doubles as a CI check). Joins the runnable
+[`labs/`](labs/) (scoped-identity inventory · minimal VPC+EC2) — see
+[`labs/iam-deny-by-default/`](labs/iam-deny-by-default/).
+
 ## The chapter on one screen
 
 ```mermaid

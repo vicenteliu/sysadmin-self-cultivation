@@ -90,7 +90,7 @@ mindmap
 
 ## 已建成
 
-roadmap 计划的都写完了，含**四个可跑、自验证的 lab**（退出码 `0` = 教训成立）和**四个 Agent Skill**；剩下的是更多可跑 lab、完整中文镜像（本页已起步），以及深化。
+roadmap 计划的都写完了，含**六个可跑、自验证的 lab**（退出码 `0` = 教训成立）和**四个 Agent Skill**；剩下的是更多可跑 lab、完整中文镜像（本页已起步），以及深化。
 
 - **基础与方法** —— [WHY](../../WHY.md) · [操作模型](../../00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/)（Linux + 脚本）✅
 - **The Stack** —— [七层，01→07](../../the-stack/)，每层对比七个平台，+ 可跑的 [失败域](../../the-stack/labs/01-failure-domains/) 和 [备份演练](../../the-stack/labs/04-backup-not-snapshot/) lab ✅

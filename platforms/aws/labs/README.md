@@ -90,6 +90,25 @@ aws budgets create-budget --account-id "$(aws sts get-caller-identity --query Ac
 **Verify:** `aws s3api get-bucket-encryption --bucket "$BUCKET"` returns the KMS rule;
 public-access-block shows all four `true`. **Teardown:** `aws s3 rb s3://$BUCKET --force`.
 
+## Beyond the arc — a pure-local support drill
+
+The three-lab arc above needs a sandbox account. One more lab needs **nothing** — a
+pure-local, stdlib-only, self-verifying drill tied to the [support note](../support.md),
+in the spirit of the repo's other runnable drills:
+
+### `iam-deny-by-default/` — IAM policy evaluation ✅ built (pure-local)
+
+Implements AWS's real policy-evaluation order and proves the #1 support lesson —
+**deny-by-default, explicit-`Deny`-wins, an SCP or permissions boundary caps even an
+admin** — with zero credentials. See
+**[`iam-deny-by-default/`](iam-deny-by-default/)**.
+
+```bash
+python3 iam-deny-by-default/iam_eval_drill.py   # exit 0 = the lessons held; runs in CI
+```
+
+Read it before the cloud arc if IAM "Access Denied" is what you're actually debugging.
+
 ---
 
 Each built lab folder contains: the code, a `README` with the goal + what to verify,
