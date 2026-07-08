@@ -14,6 +14,7 @@ admin's existing depth (Linux, networking, identity, automation) pays off the mo
 | [`databases.md`](databases.md) | Operating the stateful hard part: availability, recoverability (backup/PITR), performance, self-run vs. managed. **✋** | ✅ |
 | [`itsm-and-assets.md`](itsm-and-assets.md) | ITSM (incident/request/change), the CMDB, asset reconciliation, access governance & audit. **✋** | ✅ |
 | [`saas-admin.md`](saas-admin.md) | Google Workspace & M365 administration, the identity spine, SCIM lifecycle — the productivity suite as a managed estate. | ✅ |
+| [`m365-support.md`](m365-support.md) | M365 support as break-fix craft: what you own, the recurring tickets & where you look, and the on-prem/cloud instincts a strong sysadmin must unlearn to inherit it. **✋** | ✅ |
 | [`kubernetes.md`](kubernetes.md) | The object model and operator's view, one layer deeper than the-stack/05; managed vs. self-run, the debugging reflex. | ✅ |
 | [`service-mesh.md`](service-mesh.md) | Service discovery + service mesh: the live registry, sidecar mTLS/traffic/observability, and "do you even need one?" | ✅ |
 | [`web-and-tls.md`](web-and-tls.md) | Web servers, reverse proxies & TLS: termination, routing, cert lifecycle + ACME, the hardened front door. **✋** fundamentals | ✅ |

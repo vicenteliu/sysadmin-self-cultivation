@@ -86,6 +86,7 @@ See [`cross-cutting/`](cross-cutting/).
 | [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | dedicated note (ITSM, CMDB, asset reconciliation, access governance) — **✋** | ✅ |
 | [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
+| [`m365-support`](cross-cutting/m365-support.md) | dedicated note (M365 break-fix craft + the cross-lane transition) — **✋** | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | ✅ |
 | [`service-mesh`](cross-cutting/service-mesh.md) | dedicated note (service discovery + mesh; and when not to) | ✅ |
 | [`web-and-tls`](cross-cutting/web-and-tls.md) | dedicated note (reverse proxy, TLS/cert lifecycle) — **✋** fundamentals | ✅ |
