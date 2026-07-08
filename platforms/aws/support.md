@@ -1,5 +1,9 @@
 # AWS Support — the operator's transition guide
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/aws/support.md)
+
+---
+
 > [`operations.md`](operations.md) covers the **cadence** of running your own AWS
 > estate — what pages you, and the daily/weekly/quarterly work. This note covers the
 > other half: **supporting AWS as a break-fix craft** — the tickets that actually
