@@ -1,12 +1,13 @@
 # AWS — the worked example
 
 > The template every platform module follows: **what it is → the admin skill map →
-> the AI-assisted ramp → labs** — plus three deeper companion notes AWS gets as the
+> the AI-assisted ramp → labs** — plus four deeper companion notes AWS gets as the
 > worked example: **[architecture](architecture.md)** (how it's structured),
 > **[operations](operations.md)** (running it day-2, the ops-work breakdown, and AI
-> in the operating loop), and **[automation](automation.md)** (scripting the API to
-> manage and operate it). AWS is done first and most thoroughly; read it end to end
-> to see the shape.
+> in the operating loop), **[automation](automation.md)** (scripting the API to
+> manage and operate it), and **[support](support.md)** (the break-fix craft and what
+> a strong sysadmin from another lane must unlearn to inherit it). AWS is done first
+> and most thoroughly; read it end to end to see the shape.
 
 ## 1. What AWS is
 
@@ -75,9 +76,9 @@ least-privilege IAM role + a `boto3` script that inventories your account (the c
 version of a classic "list everything" admin script), then a minimal VPC + EC2 in
 Terraform.
 
-## 5. Going deeper — architecture, operations & automation
+## 5. Going deeper — architecture, operations, automation & support
 
-Three companion notes take AWS past "what the services are":
+Four companion notes take AWS past "what the services are":
 
 - **[`architecture.md`](architecture.md)** — how AWS is *structured*: the
   account/organization model as the blast-radius unit, regions & AZs, the
@@ -95,6 +96,11 @@ Three companion notes take AWS past "what the services are":
   separate a working script from a footgun (paginate, iterate regions, handle errors,
   be idempotent), and the read-audit vs. remediation shapes — grounded in the
   runnable [inventory lab](labs/01-scoped-identity-inventory/).
+- **[`support.md`](support.md)** — **the break-fix craft**: what supporting AWS makes
+  you responsible for, the recurring tickets and *where you look* (the `AccessDenied`
+  grammar, timeout-vs-refused, S3-403 layers, ALB 5xx, the cost surprises), and the
+  load-bearing on-prem/cloud instincts a strong sysadmin must **unlearn** to inherit
+  it — the ramp made concrete, with a verified GitHub field kit.
 
 ## Honest boundaries
 
