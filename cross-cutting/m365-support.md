@@ -1,5 +1,9 @@
 # Microsoft 365 Support — the operator's transition guide
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/m365-support.md)
+
+---
+
 > [`saas-admin.md`](saas-admin.md) covers M365 as a **managed estate** — the
 > lifecycle and admin-center engineering. This note covers the other half: **M365
 > support**, the break-fix craft of keeping mail, identity, and collaboration
