@@ -38,7 +38,10 @@ compartment is not an account), and
 forces a destroy, and `count` churns where `for_each` stays stable), and
 [`cross-cutting/labs/k8s-reconcile-loop/`](../../cross-cutting/labs/k8s-reconcile-loop/)
 (Kubernetes' reconciliation loop — why a deleted pod comes back, an exec-fix vanishes, and a
-Running-but-not-Ready pod is pulled from the Service endpoints).
+Running-but-not-Ready pod is pulled from the Service endpoints), and
+[`cross-cutting/labs/multi-cloud-cidr-overlap/`](../../cross-cutting/labs/multi-cloud-cidr-overlap/)
+(multi-cloud networking — why overlapping CIDRs can't be peered, and there's no central router
+across clouds).
 
 ## Planned (specs live in each chapter)
 

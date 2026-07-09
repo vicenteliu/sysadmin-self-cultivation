@@ -90,6 +90,7 @@ See [`cross-cutting/`](cross-cutting/).
 | [`m365-support`](cross-cutting/m365-support.md) | dedicated note (M365 break-fix craft + the cross-lane transition) — **✋** | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | ✅ |
 | [`kubernetes-support`](cross-cutting/kubernetes-support.md) | dedicated note (K8s break-fix craft + the Linux-sysadmin ramp; reconcile loop / cattle-not-pets / endpoints) — **🧗** | ✅ |
+| [`multi-cloud-support`](cross-cutting/multi-cloud-support.md) | dedicated note (multi-cloud break-fix craft — the seams: CIDR/identity/egress/posture; synthesizes the four platform notes) — **🧗** | ✅ |
 | [`service-mesh`](cross-cutting/service-mesh.md) | dedicated note (service discovery + mesh; and when not to) | ✅ |
 | [`web-and-tls`](cross-cutting/web-and-tls.md) | dedicated note (reverse proxy, TLS/cert lifecycle) — **✋** fundamentals | ✅ |
 | [`incident-response`](cross-cutting/incident-response.md) | dedicated note (incident lifecycle, on-call, blameless post-mortem) | ✅ |
