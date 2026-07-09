@@ -85,8 +85,26 @@ az policy assignment create --name deny-public-blob \
 **Verify:** try to flip `--allow-blob-public-access true` and watch the policy deny it.
 **Teardown:** folded into `az group delete -n lab-rg`.
 
+## Beyond the arc — a pure-local support drill
+
+The three-lab arc above needs a sandbox subscription. One more lab needs **nothing** — a
+pure-local, stdlib-only, self-verifying drill tied to the [support note](../support.md):
+
+### `global-admin-is-not-owner/` — Azure's two identity planes ✅ built (pure-local)
+
+Models both planes and proves Azure's signature access lesson — **a Global Administrator
+(Entra) has no access to Azure resources; an Owner (RBAC) can't manage users; the
+elevation toggle grants User Access Administrator at `/` (assign, not use)** — with zero
+credentials. See **[`global-admin-is-not-owner/`](global-admin-is-not-owner/)**.
+
+```bash
+python3 global-admin-is-not-owner/two_planes_drill.py   # exit 0 = the lessons held; runs in CI
+```
+
+Read it the moment "I'm Global Admin but I can't see the VM" lands on your desk.
+
 ---
 
 Each lab lands with the code (Terraform/Bicep + any script), a `README`, and explicit
-teardown. The **Entra/identity** slice (lab 01's scoped role) is the one written from
-hands-on ground; the rest is the honest ramp.
+teardown. The **Entra/identity** slice (lab 01's scoped role, and the support drill) is
+written from hands-on ground; the rest is the honest ramp.

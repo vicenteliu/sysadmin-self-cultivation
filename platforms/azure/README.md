@@ -1,10 +1,12 @@
 # Azure
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
-> AI-assisted ramp → labs** — plus three deeper companion notes mirroring the AWS
+> AI-assisted ramp → labs** — plus four deeper companion notes mirroring the AWS
 > worked example: **[architecture](architecture.md)** (how it's structured),
 > **[operations](operations.md)** (running it day-2, the ops-work breakdown, AI in the
-> operating loop), and **[automation](automation.md)** (scripting the API). If you've
+> operating loop), **[automation](automation.md)** (scripting the API), and
+> **[support](support.md)** (the break-fix craft — Azure + Entra — with the identity
+> half hands-on). If you've
 > read the AWS module, most of this is *"which of those concepts is renamed to what,
 > and what's the Azure quirk?"* — which is exactly the point of the
 > [operating model](../../00-the-operating-model.md).
@@ -78,9 +80,9 @@ subscription inventory (Azure Resource Graph / CLI), then a minimal VNet + VM in
 Terraform reachable without an open port, then Key Vault + managed identity, then a
 Budget.
 
-## 5. Going deeper — architecture, operations & automation
+## 5. Going deeper — architecture, operations, automation & support
 
-Three companion notes take Azure past "what the services are", mirroring the AWS set:
+Four companion notes take Azure past "what the services are", mirroring the AWS set:
 
 - **[`architecture.md`](architecture.md)** — how Azure is *structured*: the management-
   group → subscription → resource-group hierarchy as the blast-radius model, regions /
@@ -95,6 +97,12 @@ Three companion notes take Azure past "what the services are", mirroring the AWS
   altitude ladder, **managed identity** / `DefaultAzureCredential` (never a secret in
   the script), the rules (`ItemPaged` pagination, **Resource Graph** for bulk),
   and the read-audit vs. remediation shapes.
+- **[`support.md`](support.md)** — **the break-fix craft (Azure + Entra)**: what
+  supporting Azure makes you responsible for, the recurring tickets and *where you look*
+  (the `AuthorizationFailed` role-and-scope check, the `MissingSubscriptionRegistration`
+  provider gotcha, Network Watcher over `tcpdump`), and the load-bearing AWS / on-prem-AD
+  instincts to **unlearn** — with the **identity half ✋ hands-on**, a runnable
+  Global-Admin-≠-Owner lab, and a verified GitHub field kit.
 
 ## Honest boundaries
 
