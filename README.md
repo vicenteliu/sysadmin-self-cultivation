@@ -91,19 +91,21 @@ down.
 | **Go deep on one platform** | [`platforms/`](platforms/) — **AWS is the worked example**, read it end to end |
 | **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
 | **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · and more |
+| **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
 | **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — five invokable Agent Skills (ramp · audit · author · lab · mirror) |
 
 ## What's built
 
 Everything the [roadmap](ROADMAP.md) planned is written, with **nine runnable,
-self-verifying labs** (exit `0` = the lesson held) and **five Agent Skills**; what
-remains is more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md)
-is started), and deepening.
+self-verifying labs** (exit `0` = the lesson held), **five break-fix support notes**, and
+**five Agent Skills**; what remains is more runnable labs, a full Chinese mirror
+([`docs/zh/`](docs/zh/README.md) is started), and deepening.
 
 - **Foundations & method** — [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) (Linux + scripting) ✅
 - **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + runnable [failure-domains](the-stack/labs/01-failure-domains/) and [backup-drill](the-stack/labs/04-backup-not-snapshot/) labs ✅
 - **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [working with security](cross-cutting/working-with-security.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
+- **Support notes (break-fix craft)** — for the surfaces you *inherit and support*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) — each with the recurring tickets, the cross-lane experience gap a strong sysadmin gets wrong, a runnable lab, and a Chinese mirror ✅
 
 **Platforms** — all seven compared in The Stack have a dedicated "operate it end to end"
 module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**), and **all seven now
@@ -111,9 +113,9 @@ carry the deeper architecture · operations · automation trio**:
 
 | Platform | Module | Arch · Ops · Auto | Labs | Honesty |
 | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) | 🧗 ramp |
-| **[Azure](platforms/azure/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) | 🧗 + Entra/identity ✋ |
-| **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) | 🧗 ramp |
+| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) + iam-deny lab | 🧗 ramp |
+| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) + two-planes lab | 🧗 + Entra/identity ✋ |
+| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) + gke-auth lab | 🧗 ramp |
 | **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`oci`) + compartment/verb lab | 🧗 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (PowerCLI) | **✋ hands-on depth** (VCP6-DCV/NV) |
 | **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧗 ramp (KVM-adjacent ✋) |
