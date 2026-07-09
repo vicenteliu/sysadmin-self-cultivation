@@ -35,7 +35,10 @@ felt), and
 compartment is not an account), and
 [`cross-cutting/labs/terraform-state-and-drift/`](../../cross-cutting/labs/terraform-state-and-drift/)
 (Terraform's config/state/real triangle — why a hand-edit gets reverted, an immutable attribute
-forces a destroy, and `count` churns where `for_each` stays stable).
+forces a destroy, and `count` churns where `for_each` stays stable), and
+[`cross-cutting/labs/k8s-reconcile-loop/`](../../cross-cutting/labs/k8s-reconcile-loop/)
+(Kubernetes' reconciliation loop — why a deleted pod comes back, an exec-fix vanishes, and a
+Running-but-not-Ready pod is pulled from the Service endpoints).
 
 ## Planned (specs live in each chapter)
 

@@ -17,6 +17,7 @@ admin's existing depth (Linux, networking, identity, automation) pays off the mo
 | [`saas-admin.md`](saas-admin.md) | Google Workspace & M365 administration, the identity spine, SCIM lifecycle — the productivity suite as a managed estate. | ✅ |
 | [`m365-support.md`](m365-support.md) | M365 support as break-fix craft: what you own, the recurring tickets & where you look, and the on-prem/cloud instincts a strong sysadmin must unlearn to inherit it. **✋** | ✅ |
 | [`kubernetes.md`](kubernetes.md) | The object model and operator's view, one layer deeper than the-stack/05; managed vs. self-run, the debugging reflex. | ✅ |
+| [`kubernetes-support.md`](kubernetes-support.md) | Kubernetes support as break-fix craft: the reconcile loop, CrashLoopBackOff / OOMKilled / "service down but pod Running", the recurring tickets & where you look, and the Linux/systemd/Docker instincts to unlearn. **🧗** | ✅ |
 | [`service-mesh.md`](service-mesh.md) | Service discovery + service mesh: the live registry, sidecar mTLS/traffic/observability, and "do you even need one?" | ✅ |
 | [`web-and-tls.md`](web-and-tls.md) | Web servers, reverse proxies & TLS: termination, routing, cert lifecycle + ACME, the hardened front door. **✋** fundamentals | ✅ |
 | [`incident-response.md`](incident-response.md) | Incident response & on-call: the lifecycle (mitigate-first), IC roles, humane on-call, the blameless post-mortem. | ✅ |
