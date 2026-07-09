@@ -89,6 +89,19 @@ oci budget budget create --compartment-id "$OCI_TENANCY" \
 **Verify:** `oci os bucket get --bucket-name "$BUCKET" --query 'data."public-access-type"'`
 returns `NoPublicAccess`. **Teardown:** delete the object, then the bucket.
 
+## Beyond the arc — a pure-local support drill
+
+The three-lab arc above needs an (Always-Free) tenancy. There's also a **zero-cost,
+zero-credential** drill that models OCI's signature access lessons in ~200 lines of
+stdlib Python — runnable anywhere, and in CI:
+
+- [`a-compartment-is-not-an-account/`](a-compartment-is-not-an-account/) — why **no
+  policy → `NotAuthorizedOrNotFound` (a 404, not a 403)**, how the verbs nest
+  **`inspect ⊂ read ⊂ use ⊂ manage`**, and how a policy **inherits down the compartment
+  tree but stops at a sibling**. `python3 verb_and_compartment_drill.py` → exit `0` if
+  the lessons held; `--sabotage verbs` or `--sabotage scope` breaks the model on purpose
+  and the assertions fail. Pairs with the [OCI support note](../support.md).
+
 ---
 
 Each lab lands with the code (Terraform / Resource Manager is the persistent form), a

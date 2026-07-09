@@ -96,7 +96,7 @@ down.
 
 ## What's built
 
-Everything the [roadmap](ROADMAP.md) planned is written, with **seven runnable,
+Everything the [roadmap](ROADMAP.md) planned is written, with **nine runnable,
 self-verifying labs** (exit `0` = the lesson held) and **five Agent Skills**; what
 remains is more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md)
 is started), and deepening.
@@ -114,7 +114,7 @@ carry the deeper architecture · operations · automation trio**:
 | **[AWS](platforms/aws/)** (worked example) | ✅ | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) | 🧗 ramp |
 | **[Azure](platforms/azure/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) | 🧗 + Entra/identity ✋ |
 | **[GCP / GKE](platforms/gcp/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) | 🧗 ramp |
-| **[OCI](platforms/oci/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`oci`) | 🧗 ramp |
+| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`oci`) + compartment/verb lab | 🧗 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (PowerCLI) | **✋ hands-on depth** (VCP6-DCV/NV) |
 | **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧗 ramp (KVM-adjacent ✋) |
 | **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (virsh / ipmitool / ansible) | **✋ hands-on depth** (100k+ fleet) |

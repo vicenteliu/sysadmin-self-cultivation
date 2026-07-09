@@ -27,7 +27,12 @@ felt), and
 [`platforms/aws/labs/iam-deny-by-default/`](../../platforms/aws/labs/iam-deny-by-default/)
 (AWS IAM policy evaluation — deny-by-default and why `Allow *` isn't the fix), and
 [`platforms/gcp/labs/gke-iam-vs-rbac/`](../../platforms/gcp/labs/gke-iam-vs-rbac/)
-(GKE's two auth planes — why "I'm Owner but kubectl says Forbidden").
+(GKE's two auth planes — why "I'm Owner but kubectl says Forbidden"), and
+[`platforms/azure/labs/global-admin-is-not-owner/`](../../platforms/azure/labs/global-admin-is-not-owner/)
+(Azure's two identity planes — why a Global Admin is not an Owner), and
+[`platforms/oci/labs/a-compartment-is-not-an-account/`](../../platforms/oci/labs/a-compartment-is-not-an-account/)
+(OCI's verb hierarchy + compartment scope — why `NotAuthorizedOrNotFound` is a 404 and a
+compartment is not an account).
 
 ## Planned (specs live in each chapter)
 

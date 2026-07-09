@@ -87,9 +87,9 @@ compartment) inventory script, then a minimal VCN + instance in Terraform via Re
 Manager. OCI's **Always Free tier** makes this genuinely runnable at no cost — the
 budget-safe throwaway tenancy this platform's ramp needs.
 
-## 5. Going deeper — architecture, operations & automation
+## 5. Going deeper — architecture, operations, automation & support
 
-Three companion notes take OCI past "what the services are", mirroring the AWS set:
+Four companion notes take OCI past "what the services are", mirroring the AWS set:
 
 - **[`architecture.md`](architecture.md)** — how OCI is *structured*: the tenancy →
   compartment hierarchy as the blast-radius unit, regions → ADs → **fault domains**,
@@ -102,6 +102,12 @@ Three companion notes take OCI past "what the services are", mirroring the AWS s
 - **[`automation.md`](automation.md)** — the `oci` CLI + SDK: the identity → client →
   API model, **instance principals** over API keys, iterate-compartments, and
   read-only-first.
+- **[`support.md`](support.md)** — break-fix: the recurring tickets and their exact
+  diagnostic surface (`NotAuthorizedOrNotFound` as a policy problem, the
+  security-list-*and*-NSG union, instance-principal's two halves), the cross-lane
+  **experience gap** (compartments-not-accounts, verb-sentences-not-JSON, 404-for-both,
+  `OCPU`=2`vCPU`, single-AD regions), and a runnable
+  [`labs/a-compartment-is-not-an-account/`](labs/a-compartment-is-not-an-account/) drill.
 
 ## Honest boundaries
 
