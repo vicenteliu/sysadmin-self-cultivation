@@ -81,6 +81,7 @@ See [`cross-cutting/`](cross-cutting/).
 | --- | --- | --- |
 | [`identity-iam`](cross-cutting/identity-iam.md) | dedicated note | ✅ |
 | [`iac-and-config`](cross-cutting/iac-and-config.md) | dedicated note (Terraform/Ansible/Puppet) | ✅ |
+| [`terraform-support`](cross-cutting/terraform-support.md) | dedicated note (Terraform break-fix craft + the Ansible-sysadmin ramp; state/drift/replacement) — **🧗** | ✅ |
 | [`ci-cd`](cross-cutting/ci-cd.md) | dedicated note (CI/CD pipelines, GitOps, rollback) | ✅ |
 | [`databases`](cross-cutting/databases.md) | dedicated note (backup/PITR, replication, self-run vs managed) — **✋** | ✅ |
 | [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | dedicated note (ITSM, CMDB, asset reconciliation, access governance) — **✋** | ✅ |

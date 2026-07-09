@@ -32,7 +32,10 @@ felt), and
 (Azure's two identity planes — why a Global Admin is not an Owner), and
 [`platforms/oci/labs/a-compartment-is-not-an-account/`](../../platforms/oci/labs/a-compartment-is-not-an-account/)
 (OCI's verb hierarchy + compartment scope — why `NotAuthorizedOrNotFound` is a 404 and a
-compartment is not an account).
+compartment is not an account), and
+[`cross-cutting/labs/terraform-state-and-drift/`](../../cross-cutting/labs/terraform-state-and-drift/)
+(Terraform's config/state/real triangle — why a hand-edit gets reverted, an immutable attribute
+forces a destroy, and `count` churns where `for_each` stays stable).
 
 ## Planned (specs live in each chapter)
 
