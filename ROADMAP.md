@@ -109,6 +109,15 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 10. **`foundations/`** — Linux + scripting (Python/Bash/PowerShell) as the assumed base, made explicit.
 11. **`cross-cutting/storage.md`**, SaaS admin (Google Workspace / M365), and additional platforms (OpenStack, OCI) as warranted.
 
+## The toolbox track (opened 2026-07)
+
+Everything above explains; [`toolbox/`](toolbox/) makes it **runnable** — small,
+self-contained, agent-callable tools under the same demand-first ordering (triage,
+identity lifecycle, patching, hardening are what JDs actually ask operators to do).
+The charter and conventions live in [`toolbox/README.md`](toolbox/README.md); the
+first wave grows partly out of existing labs. Later waves: Ansible roles, user-side
+Agent Skills that wrap the tools, and a per-shop toolbox generator.
+
 ## How this stays honest
 
 Every module marks what's **hands-on depth** vs. an **honest ramp** — the roadmap is

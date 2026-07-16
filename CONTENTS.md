@@ -15,6 +15,7 @@ matches your question, not front to back. Everything the roadmap planned is now
 | **III** | **The Stack** | compare all seven platforms layer by layer |
 | **IV** | **Platforms** | operate one platform end to end |
 | **V** | **Cross-cutting** | learn a transferable skill |
+| **VI** | **Toolbox** | take runnable, agent-callable tools with you |
 
 ---
 
@@ -103,6 +104,12 @@ See [`cross-cutting/`](cross-cutting/).
 | security-compliance | → [`the-stack/07`](the-stack/07-security.md) | ✅ in The Stack |
 
 ---
+
+## VI. Toolbox — run it
+
+| Module | What it is | Status |
+| --- | --- | --- |
+| [`toolbox/README.md`](toolbox/README.md) | The charter: conventions (safe-by-default, tested-on honesty, agent-readable) + the first-wave plan | 🚧 charter landed; first tools next |
 
 ## Agent Skills — the method, made invokable
 
