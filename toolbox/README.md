@@ -41,16 +41,16 @@ toolbox/
     └── <tool>.sh|.py    ← the tool itself
 ```
 
-## First wave (planned — ordered by how often the task shows up in real JDs)
+## First wave (✅ shipped — ordered by how often the task shows up in real JDs)
 
 | Tool | What it does | Origin |
 | --- | --- | --- |
-| `linux-triage` | one-shot health/triage report — CPU, memory, disk, network, recent log errors | new; the first move of every incident |
-| `user-lifecycle` | CSV-driven batch user create/disable on Linux | new; identity is the densest JD cluster |
-| `patch-report` | pending-updates inventory (apt/dnf) with reboot-required flags | new |
-| `baseline-check` | read-only audit of a small hardening-baseline subset | new; Ansible remediation comes in the Ansible wave |
-| `backup-restore-drill` | prove a backup by restoring it — a backup you haven't restored isn't one | grown from [the-stack lab 04](../the-stack/labs/04-backup-not-snapshot/) |
-| `cidr-check` | detect overlapping CIDR ranges across network plans | grown from the multi-cloud lab |
+| [`linux-triage`](linux-triage/) | one-shot health/triage report — CPU, memory, disk, network, failed services, recent log errors | new; the first move of every incident |
+| [`user-lifecycle`](user-lifecycle/) | CSV-driven batch user create/disable on Linux (dry-run by default) | new; identity is the densest JD cluster |
+| [`patch-report`](patch-report/) | pending-updates inventory (apt/dnf) with reboot-required flags | new |
+| [`baseline-check`](baseline-check/) | read-only audit of a small hardening-baseline subset | new; Ansible remediation comes in the Ansible wave |
+| [`backup-restore-drill`](backup-restore-drill/) | prove a backup by restoring it — a backup you haven't restored isn't one | grown from [the-stack lab 04](../the-stack/labs/04-backup-not-snapshot/) |
+| [`cidr-check`](cidr-check/) | detect overlapping CIDR ranges across network plans | grown from the multi-cloud lab |
 
 Waves after this one: **Ansible roles** (hardening / patch orchestration / user
 lifecycle, each lab-verified), then **user-side Agent Skills** wrapping the tools,

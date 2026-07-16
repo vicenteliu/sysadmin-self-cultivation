@@ -109,7 +109,13 @@ See [`cross-cutting/`](cross-cutting/).
 
 | Module | What it is | Status |
 | --- | --- | --- |
-| [`toolbox/README.md`](toolbox/README.md) | The charter: conventions (safe-by-default, tested-on honesty, agent-readable) + the first-wave plan | 🚧 charter landed; first tools next |
+| [`toolbox/README.md`](toolbox/README.md) | The charter: conventions (safe-by-default, tested-on honesty, agent-readable) + the first-wave plan | ✅ |
+| [`toolbox/linux-triage`](toolbox/linux-triage/) | one-shot incident triage report (read-only) | ✅ |
+| [`toolbox/user-lifecycle`](toolbox/user-lifecycle/) | CSV batch user create/disable (dry-run by default) | ✅ |
+| [`toolbox/patch-report`](toolbox/patch-report/) | pending-updates + reboot inventory (apt/dnf) | ✅ |
+| [`toolbox/baseline-check`](toolbox/baseline-check/) | small hardening-baseline audit (read-only) | ✅ |
+| [`toolbox/backup-restore-drill`](toolbox/backup-restore-drill/) | prove a backup by restoring it | ✅ |
+| [`toolbox/cidr-check`](toolbox/cidr-check/) | detect overlapping CIDR ranges | ✅ |
 
 ## Agent Skills — the method, made invokable
 
