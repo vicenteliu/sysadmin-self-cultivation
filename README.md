@@ -34,7 +34,7 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 
 ## The shape
 
-Four axes over the same material — enter from whichever matches your question:
+Six axes over the same material — enter from whichever matches your question:
 
 ```mermaid
 mindmap
@@ -76,6 +76,11 @@ mindmap
       kubernetes
       cost
       endpoint
+    Toolbox - run it
+      scripts - find
+      Ansible roles - fix
+      user-side skills - drive
+      generator - your own subset
 ```
 
 The distinctive one is **The Stack**: it reads the stack *bottom-up*, comparing all
@@ -93,19 +98,23 @@ down.
 | **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · and more |
 | **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
-| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — five invokable Agent Skills (ramp · audit · author · lab · mirror) |
+| **Take runnable tools with me** | [`toolbox/`](toolbox/) — six find/audit scripts, three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
+| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — eight Agent Skills: five for the method (ramp · audit · author · lab · mirror), three that drive the toolbox |
 
 ## What's built
 
 Everything the [roadmap](ROADMAP.md) planned is written, with **twelve runnable,
-self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**, and
-**five Agent Skills**; what remains is more runnable labs, a full Chinese mirror
-([`docs/zh/`](docs/zh/README.md) is started), and deepening.
+self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**,
+**eight Agent Skills**, and a **runnable toolbox** (six scripts, three Ansible
+remediation roles, a per-shop pack [generator](toolbox/generate/)); what remains is
+more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md) is
+started), and demand-first deepening.
 
 - **Foundations & method** — [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) (Linux + scripting) ✅
 - **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + runnable [failure-domains](the-stack/labs/01-failure-domains/) and [backup-drill](the-stack/labs/04-backup-not-snapshot/) labs ✅
 - **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [working with security](cross-cutting/working-with-security.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
 - **Support notes (break-fix craft)** — for the surfaces you *inherit and support*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [Multi-cloud](cross-cutting/multi-cloud-support.md) — each with the recurring tickets, the cross-lane experience gap a strong sysadmin gets wrong, a runnable lab, and a Chinese mirror ✅
+- **Toolbox (run it)** — [charter + conventions](toolbox/README.md) · six scripts (triage · users · patching · baseline · backup-drill · cidr) · [Ansible remediation roles](toolbox/ansible/) pairing audit→fix · a [per-shop pack generator](toolbox/generate/) — safe-by-default, every tool carries its own `Tested on:` line ✅
 
 **Platforms** — all seven compared in The Stack have a dedicated "operate it end to end"
 module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**), and **all seven now
@@ -126,12 +135,15 @@ ground, not a ramp); the rest are honest 🧗 ramps. The labs are **CLI-first** 
 purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
 same surface your automation uses.
 
-**Agent Skills** — the repo ships with five [`.claude/skills/`](.claude/skills/) that
+**Agent Skills** — the repo ships eight [`.claude/skills/`](.claude/skills/). Five
 turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
 platform, honestly), **honesty-audit** (classify claims ✋/🧗/overclaim),
 **author-module** (write a new note — including a **support note** — in the repo's
 voice, research-grounded), **runnable-lab** (turn a concept into a self-verifying
-drill), and **mirror-zh** (mirror a doc into `docs/zh/` Chinese).
+drill), and **mirror-zh** (mirror a doc into `docs/zh/` Chinese). Three are
+**user-side** — **linux-triage**, **harden-baseline**, and **toolbox-picker** wrap
+the [toolbox](toolbox/) so an AI agent can drive it for you: install one on a new
+box and run a triage, or the whole audit→remediate loop, in one sentence.
 
 ## Who wrote this
 
