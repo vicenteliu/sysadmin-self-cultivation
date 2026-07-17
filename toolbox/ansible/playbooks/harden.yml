@@ -1,0 +1,7 @@
+---
+# Apply the baseline hardening role. Preview first with --check --diff.
+- name: Baseline hardening
+  hosts: linux
+  become: true
+  roles:
+    - baseline_hardening

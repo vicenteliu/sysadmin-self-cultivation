@@ -52,9 +52,18 @@ toolbox/
 | [`backup-restore-drill`](backup-restore-drill/) | prove a backup by restoring it — a backup you haven't restored isn't one | grown from [the-stack lab 04](../the-stack/labs/04-backup-not-snapshot/) |
 | [`cidr-check`](cidr-check/) | detect overlapping CIDR ranges across network plans | grown from the multi-cloud lab |
 
-Waves after this one: **Ansible roles** (hardening / patch orchestration / user
-lifecycle, each lab-verified), then **user-side Agent Skills** wrapping the tools,
-then a **generator** that assembles a per-shop subset of the toolbox.
+## Ansible line (✅ shipped — the remediation half)
+
+The scripts above *find*; the [`ansible/`](ansible/) roles *fix*, idempotently:
+
+| Role | Remediates | Pairs with |
+| --- | --- | --- |
+| [`baseline_hardening`](ansible/roles/baseline_hardening/) | SSH posture, umask, sysctl, journald | `baseline-check` |
+| [`patch`](ansible/roles/patch/) | apply updates (apt/dnf) + reboot orchestration | `patch-report` |
+| [`user_lifecycle`](ansible/roles/user_lifecycle/) | declarative users (present / disabled) | `user-lifecycle` |
+
+Waves after this one: **user-side Agent Skills** wrapping the tools, then a
+**generator** that assembles a per-shop subset of the toolbox.
 
 ## What this is not
 

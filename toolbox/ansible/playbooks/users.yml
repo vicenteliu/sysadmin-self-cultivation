@@ -1,0 +1,8 @@
+---
+# Converge users. Define the `users` list in inventory/group_vars (reviewable in
+# Git) rather than inline here — this playbook just applies it.
+- name: User lifecycle
+  hosts: linux
+  become: true
+  roles:
+    - user_lifecycle

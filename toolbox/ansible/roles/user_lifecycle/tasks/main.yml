@@ -1,0 +1,52 @@
+---
+# Converge users to the declared state. The declarative counterpart of the
+# user-lifecycle script. disabled ≠ deleted (same law as the script).
+
+- name: Create / update present users
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    state: present
+    groups: "{{ item.groups | default(omit) }}"
+    append: "{{ true if item.groups is defined else omit }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    create_home: true
+    # Intentionally not touching password_lock here: present users are key-auth
+    # accounts with no password, and "ensure unlocked" on a passwordless account
+    # reports a false change every run. Leave the shadow lock state alone.
+  loop: "{{ users | selectattr('state', 'undefined') | list
+            + users | selectattr('state', 'defined')
+                    | selectattr('state', 'equalto', 'present') | list }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: Deploy SSH keys for present users
+  ansible.posix.authorized_key:
+    user: "{{ item.name }}"
+    key: "{{ item.ssh_key }}"
+    state: present
+  loop: "{{ (users | selectattr('state', 'undefined') | list
+             + users | selectattr('state', 'defined')
+                     | selectattr('state', 'equalto', 'present') | list)
+            | selectattr('ssh_key', 'defined') | list }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: Disable users (lock + expire, do not delete)
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    password_lock: true
+    expires: 1            # epoch+1s = long expired
+  loop: "{{ users | selectattr('state', 'defined')
+            | selectattr('state', 'equalto', 'disabled') | list }}"
+  loop_control:
+    label: "{{ item.name }}"
+
+- name: Remove users (explicit absent only)
+  ansible.builtin.user:
+    name: "{{ item.name }}"
+    state: absent
+    remove: "{{ user_remove_home }}"
+  loop: "{{ users | selectattr('state', 'defined')
+            | selectattr('state', 'equalto', 'absent') | list }}"
+  loop_control:
+    label: "{{ item.name }}"

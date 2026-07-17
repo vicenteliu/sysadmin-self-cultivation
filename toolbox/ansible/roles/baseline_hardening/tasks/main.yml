@@ -1,0 +1,77 @@
+---
+# Remediates the items baseline-check audits. Each block is guarded by its
+# switch; handlers restart only what actually changed.
+
+# sshd service is named 'ssh' on Debian/Ubuntu, 'sshd' on RHEL.
+- name: Determine sshd service name
+  ansible.builtin.set_fact:
+    sshd_service: "{{ 'sshd' if ansible_os_family == 'RedHat' else 'ssh' }}"
+
+# ── SSH ──────────────────────────────────────────────────────────────────────
+- name: SSH — PermitRootLogin
+  ansible.builtin.lineinfile:
+    path: "{{ harden_ssh_config }}"
+    regexp: '^\s*#?\s*PermitRootLogin\s+'
+    line: "PermitRootLogin {{ harden_ssh_permit_root }}"
+    validate: /usr/sbin/sshd -t -f %s
+  notify: reload sshd
+  when: harden_ssh
+
+- name: SSH — PasswordAuthentication
+  ansible.builtin.lineinfile:
+    path: "{{ harden_ssh_config }}"
+    regexp: '^\s*#?\s*PasswordAuthentication\s+'
+    line: "PasswordAuthentication {{ 'no' if not harden_ssh_password_auth else 'yes' }}"
+    validate: /usr/sbin/sshd -t -f %s
+  notify: reload sshd
+  when: harden_ssh
+
+# ── umask ────────────────────────────────────────────────────────────────────
+- name: umask — default in /etc/login.defs
+  ansible.builtin.lineinfile:
+    path: /etc/login.defs
+    regexp: '^\s*#?\s*UMASK\s+'
+    line: "UMASK\t\t{{ harden_umask_value }}"
+  when: harden_umask
+
+# ── sysctl ───────────────────────────────────────────────────────────────────
+- name: sysctl — hardening drop-in
+  ansible.builtin.copy:
+    dest: /etc/sysctl.d/99-baseline-hardening.conf
+    mode: "0644"
+    content: |
+      # Managed by toolbox/ansible baseline_hardening — do not edit by hand.
+      {% for k, v in harden_sysctl_settings.items() %}
+      {{ k }} = {{ v }}
+      {% endfor %}
+  notify: reload sysctl
+  when: harden_sysctl
+
+# ── journald ─────────────────────────────────────────────────────────────────
+# Creating the directory is enough; persistent storage begins at the next
+# journald restart or reboot. We deliberately do NOT bounce journald here —
+# restarting it interrupts logging, and there's no safe moment to do it mid-play.
+- name: journald — persistent storage directory
+  ansible.builtin.file:
+    path: /var/log/journal
+    state: directory
+    mode: "2755"
+  when: harden_journald_persistent
+
+# ── firewall (opt-in) ────────────────────────────────────────────────────────
+- name: firewall — ensure SSH allowed before enabling (ufw)
+  community.general.ufw:
+    rule: allow
+    name: OpenSSH
+  when:
+    - harden_firewall
+    - ansible_os_family == "Debian"
+
+- name: firewall — enable ufw
+  community.general.ufw:
+    state: enabled
+    policy: deny
+    direction: incoming
+  when:
+    - harden_firewall
+    - ansible_os_family == "Debian"

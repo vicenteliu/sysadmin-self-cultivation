@@ -1,0 +1,24 @@
+---
+# user_lifecycle — declarative users. Define the desired state; the role
+# converges to it. Mirrors the user-lifecycle script's philosophy:
+# disabled ≠ deleted.
+#
+# Each entry:
+#   name:    (required) username
+#   state:   present | disabled | absent   (default: present)
+#   groups:  optional list of supplementary groups
+#   shell:   optional login shell (default /bin/bash for present)
+#   ssh_key: optional public key string (deployed for present users)
+#
+# state semantics:
+#   present  → account exists, in the listed groups, key deployed, unlocked
+#   disabled → account locked + expired, sessions not killed by Ansible (the
+#              account simply can't be used); files and audit trail preserved
+#   absent   → account REMOVED. Off by the default philosophy — set explicitly
+#              and understand you're deleting a home directory decision.
+#
+users: []
+
+# When removing (state: absent), also remove the home directory. Default false —
+# deletion should be deliberate and reversible-ish.
+user_remove_home: false

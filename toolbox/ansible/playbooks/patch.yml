@@ -1,0 +1,9 @@
+---
+# Apply pending updates. serial: 1 rolls it out one host at a time so a bad
+# patch never takes the whole fleet down at once.
+- name: Patch
+  hosts: linux
+  become: true
+  serial: 1
+  roles:
+    - patch

@@ -1,0 +1,18 @@
+---
+# patch — apply pending updates, then decide about reboot.
+
+# "safe" = normal upgrade (Debian: upgrade, RHEL: latest). "full" = dist-upgrade
+# on Debian (may add/remove packages to satisfy dependencies).
+patch_upgrade_type: safe        # safe | full
+
+# Remove packages no longer needed after the upgrade.
+patch_autoremove: true
+
+# Update the package cache before upgrading (Debian). RHEL refreshes implicitly.
+patch_update_cache: true
+
+# Reboot handling:
+#   false  → detect a required reboot and report it, but do NOT reboot (default)
+#   true   → reboot the host if the upgrade requires it
+patch_reboot_if_required: false
+patch_reboot_timeout: 600

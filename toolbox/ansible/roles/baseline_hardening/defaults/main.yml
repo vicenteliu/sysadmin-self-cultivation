@@ -1,0 +1,29 @@
+---
+# baseline_hardening — every behavior is a switch. Defaults are the safe,
+# widely-agreed items; anything that can lock you out defaults to OFF.
+
+# SSH daemon posture
+harden_ssh: true
+harden_ssh_permit_root: "prohibit-password"   # "no" | "prohibit-password"
+harden_ssh_password_auth: false               # ⚠️ needs key auth already working
+harden_ssh_config: /etc/ssh/sshd_config
+
+# Default umask in /etc/login.defs
+harden_umask: true
+harden_umask_value: "027"
+
+# sysctl network/kernel baseline (written to a drop-in, not the main file)
+harden_sysctl: true
+harden_sysctl_settings:
+  net.ipv4.ip_forward: "0"
+  net.ipv4.conf.all.rp_filter: "1"
+  net.ipv4.conf.all.accept_redirects: "0"
+  net.ipv4.conf.all.send_redirects: "0"
+  kernel.randomize_va_space: "2"
+
+# Persistent journald storage
+harden_journald_persistent: true
+
+# Firewall enable — OFF by default: enabling a firewall over SSH can lock you
+# out. Turn on deliberately, and make sure SSH is allowed first.
+harden_firewall: false

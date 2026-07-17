@@ -1,0 +1,62 @@
+---
+# Applies pending updates on apt or dnf systems, then reports (or acts on) a
+# required reboot. The read-only counterpart is toolbox/patch-report.
+
+# ── Debian / Ubuntu ──────────────────────────────────────────────────────────
+- name: apt — upgrade
+  ansible.builtin.apt:
+    update_cache: "{{ patch_update_cache }}"
+    cache_valid_time: 3600
+    upgrade: "{{ 'dist' if patch_upgrade_type == 'full' else 'yes' }}"
+    autoremove: "{{ patch_autoremove }}"
+  when: ansible_os_family == "Debian"
+
+- name: apt — detect required reboot
+  ansible.builtin.stat:
+    path: /var/run/reboot-required
+  register: deb_reboot
+  when: ansible_os_family == "Debian"
+
+# ── RHEL family ──────────────────────────────────────────────────────────────
+- name: dnf — upgrade all
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+    update_cache: true
+  when: ansible_os_family == "RedHat"
+
+- name: dnf — autoremove
+  ansible.builtin.dnf:
+    autoremove: true
+  when:
+    - ansible_os_family == "RedHat"
+    - patch_autoremove | bool
+
+- name: dnf — detect required reboot
+  ansible.builtin.command: needs-restarting -r
+  register: rhel_reboot
+  changed_when: false
+  failed_when: false
+  when: ansible_os_family == "RedHat"
+
+# ── Reboot decision ──────────────────────────────────────────────────────────
+- name: Determine whether a reboot is required
+  ansible.builtin.set_fact:
+    reboot_required: >-
+      {{ (deb_reboot.stat.exists | default(false))
+         or (rhel_reboot.rc | default(0) == 1) }}
+
+- name: Report reboot status
+  ansible.builtin.debug:
+    msg: >-
+      Reboot required: {{ reboot_required }}.
+      {{ 'Rebooting now.' if (reboot_required and patch_reboot_if_required)
+         else 'Not rebooting (patch_reboot_if_required=false).'
+              if reboot_required else '' }}
+
+- name: Reboot if required and permitted
+  ansible.builtin.reboot:
+    reboot_timeout: "{{ patch_reboot_timeout }}"
+  when:
+    - reboot_required | bool
+    - patch_reboot_if_required | bool
