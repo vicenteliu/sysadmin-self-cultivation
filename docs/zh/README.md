@@ -92,18 +92,18 @@ mindmap
 | **学一项可迁移技能** | [`cross-cutting/`](../../cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](../../ai-workflow/) —— 方法及其护栏 |
-| **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 九个发现/审计脚本（含 VMware→Proxmox 评估三件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
+| **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 八个 Agent Skill：五个包装方法（ramp · audit · author · lab · mirror），三个驱动工具箱 |
 
 ## 已建成
 
-roadmap 计划的都写完了，含**十二个可跑、自验证的 lab**（退出码 `0` = 教训成立）、**八篇 break-fix support 笔记**、**八个 Agent Skill**、和一个**能直接跑的工具箱**（九个脚本、三个 Ansible 修复 roles、一个按环境打包的[生成器](toolbox/generate/)）；剩下的是更多可跑 lab、完整中文镜像（本页已起步），以及按需求深化。
+roadmap 计划的都写完了，含**十二个可跑、自验证的 lab**（退出码 `0` = 教训成立）、**八篇 break-fix support 笔记**、**八个 Agent Skill**、和一个**能直接跑的工具箱**（十个脚本、三个 Ansible 修复 roles、一个按环境打包的[生成器](toolbox/generate/)）；剩下的是更多可跑 lab、完整中文镜像（本页已起步），以及按需求深化。
 
 - **基础与方法** —— [WHY](../../WHY.md) · [操作模型](../../00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/)（Linux + 脚本）✅
 - **The Stack** —— [七层，01→07](../../the-stack/)，每层对比七个平台，+ 可跑的 [失败域](../../the-stack/labs/01-failure-domains/) 和 [备份演练](../../the-stack/labs/04-backup-not-snapshot/) lab ✅
 - **横切与端点** —— [身份](../../cross-cutting/identity-iam.md) · [iac](../../cross-cutting/iac-and-config.md) · [ci-cd](../../cross-cutting/ci-cd.md) · [数据库](../../cross-cutting/databases.md) · [itsm 与资产](../../cross-cutting/itsm-and-assets.md) · [web 与 TLS](../../cross-cutting/web-and-tls.md) · [服务网格](../../cross-cutting/service-mesh.md) · [事件响应](../../cross-cutting/incident-response.md) · [与安全协作](../../cross-cutting/working-with-security.md) · [saas-admin](../../cross-cutting/saas-admin.md) · [kubernetes](../../cross-cutting/kubernetes.md) · [成本](../../cross-cutting/cost.md) · [endpoint](../../endpoint/) ✅
 - **Support 笔记（break-fix 手艺）** —— 面向你*接手并支持*、而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [Multi-cloud](cross-cutting/multi-cloud-support.md) —— 每篇含反复出现的工单、一个强 sysadmin 会栽的跨方向经验差、一个可跑 lab、和中文镜像 ✅
-- **工具箱（拿去就能跑）** —— [charter + 约定](toolbox/README.md) · 九个脚本（分诊 · 用户 · 补丁 · 基线 · 备份演练 · cidr · VMware→Proxmox 评估三件套）· [Ansible 修复 roles](toolbox/ansible/) 与审计脚本配对（audit→fix）· 一个[按环境打包的生成器](toolbox/generate/) —— 安全默认，每个工具带自己的 `Tested on:` 行 ✅
+- **工具箱（拿去就能跑）** —— [charter + 约定](toolbox/README.md) · 十个脚本（分诊 · 用户 · 补丁 · 基线 · 备份演练 · cidr · VMware→Proxmox 虚拟化四件套）· [Ansible 修复 roles](toolbox/ansible/) 与审计脚本配对（audit→fix）· 一个[按环境打包的生成器](toolbox/generate/) —— 安全默认，每个工具带自己的 `Tested on:` 行 ✅
 
 **平台** —— The Stack 里对比的七个平台各有一个"端到端运维它"的专门模块（是什么 · 技能图 · AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：
 
