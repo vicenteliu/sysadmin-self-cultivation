@@ -34,7 +34,7 @@ toolbox/
     └── <tool>.sh|.py    ← 工具本体
 ```
 
-## 第一波（规划中——按任务在真实 JD 中出现的频率排序）
+## 第一波（✅ 已交付——按任务在真实 JD 中出现的频率排序）
 
 | 工具 | 做什么 | 来源 |
 | --- | --- | --- |
@@ -45,8 +45,36 @@ toolbox/
 | `backup-restore-drill` | 用恢复来证明备份——没恢复过的备份不算备份 | 从 [the-stack lab 04](../../../the-stack/labs/04-backup-not-snapshot/) 生长而来 |
 | `cidr-check` | 检测网络规划中的 CIDR 网段重叠 | 从 multi-cloud lab 生长而来 |
 
-之后的波次：**Ansible roles**（加固/补丁编排/用户生命周期，逐个 lab 验证）、
-包装工具的**使用者侧 Agent Skills**、以及按环境组装工具箱子集的**生成器**。
+## Ansible 线（✅ 已交付——修复的那一半）
+
+上面的脚本负责*发现*；[`ansible/`](../../../toolbox/ansible/) roles 负责*修复*，且幂等：
+
+| Role | 修复什么 | 与谁配对 |
+| --- | --- | --- |
+| `baseline_hardening` | SSH 姿态、umask、sysctl、journald | `baseline-check` |
+| `patch` | 应用更新（apt/dnf）+ 重启编排 | `patch-report` |
+| `user_lifecycle` | 声明式用户（present / disabled）| `user-lifecycle` |
+
+## Agent Skills（✅ 已交付——一句话驱动工具箱）
+
+三个使用者侧 [`.claude/skills/`](../../../.claude/skills/) 把这些工具包装成
+AI agent 可以替你运行的形态：**linux-triage**（分诊一台主机，把每个红旗路由到
+对应修复）、**harden-baseline**（audit→remediate 加固闭环，防锁死）、
+**toolbox-picker**（说出任务，拿到对的工具 + 命令）。在新机器上装一个 skill，
+一句话驱动整个工具箱——"AI-assisted toolset" 本体。
+
+## 生成器（✅ 已交付——可定制工具箱）
+
+[`generate`](generate/) 一条命令组装出某个环境真正需要的子集：匹配的脚本、
+配对的 Ansible roles、以及引用完全满足的 Agent Skills（包里永远不会出现指向
+包中不存在工具的 skill）：
+
+```bash
+./toolbox/generate/generate.py --profile security-baseline --out ~/kit
+```
+
+选择模型 = [`generate/catalog.json`](../../../toolbox/generate/catalog.json) 里的
+关注点 + 平台标签；新工具加一条 JSON 记录即可加入。
 
 ## 这不是什么
 
