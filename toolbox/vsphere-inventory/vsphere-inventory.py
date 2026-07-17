@@ -159,8 +159,23 @@ def parse_devices(val):
     return disks, nics
 
 
-def count_snapshots(val):
-    return sum(1 for _ in val.iter(f"{{{VIM}}}snapshot")) if val is not None else 0
+def parse_snapshots(val):
+    """snapshot.rootSnapshotList <val> → [{name, created, depth}, ...]."""
+    out = []
+
+    def walk(node, depth):
+        name = node.find(f"{{{VIM}}}name")
+        created = node.find(f"{{{VIM}}}createTime")
+        out.append({"name": name.text if name is not None else None,
+                    "created": created.text if created is not None else None,
+                    "depth": depth})
+        for child in node.findall(f"{{{VIM}}}childSnapshotList"):
+            walk(child, depth + 1)
+
+    if val is not None:
+        for root in val.findall(f"{{{VIM}}}VirtualMachineSnapshotTree"):
+            walk(root, 1)
+    return out
 
 
 def collect(server, user, password, insecure):
@@ -188,6 +203,7 @@ def collect(server, user, password, insecure):
     vms = []
     for p in retrieve(soap, pc, view_of("VirtualMachine"), "VirtualMachine", VM_PROPS):
         disks, nics = parse_devices(p.get("config.hardware.device"))
+        snaps = parse_snapshots(p.get("snapshot.rootSnapshotList"))
         power = (p.get("runtime.powerState").text or "").replace("powered", "") \
             if p.get("runtime.powerState") is not None else None
         vms.append({
@@ -199,7 +215,7 @@ def collect(server, user, password, insecure):
             "firmware": p["config.firmware"].text if p.get("config.firmware") is not None else None,
             "hw_version": p["config.version"].text if p.get("config.version") is not None else None,
             "disks": disks, "nics": nics,
-            "snapshots": count_snapshots(p.get("snapshot.rootSnapshotList")),
+            "snapshots": len(snaps), "snapshot_detail": snaps,
         })
 
     hosts = [{

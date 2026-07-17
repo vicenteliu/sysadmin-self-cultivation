@@ -32,6 +32,7 @@ one of each — audit then remediate.
 | inventory a vSphere environment | [`vsphere-inventory`](../../../toolbox/vsphere-inventory/) | script (read-only, stdlib SOAP) |
 | judge "can this VMware estate move to Proxmox?" | [`vm-migration-assess`](../../../toolbox/vm-migration-assess/) | script (assessment only; feed it vsphere-inventory JSON) |
 | inventory a Proxmox cluster / compare after migration | [`pve-inventory`](../../../toolbox/pve-inventory/) | script (read-only, on-node or from captures) |
+| find forgotten/stale snapshots on either hypervisor | [`snapshot-audit`](../../../toolbox/snapshot-audit/) | script (flags only; feed it inventory JSON) |
 
 When two tools pair (audit + fix), name both and the order: **audit first, show
 the result, remediate second.**

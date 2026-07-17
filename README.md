@@ -98,14 +98,14 @@ down.
 | **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · and more |
 | **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
-| **Take runnable tools with me** | [`toolbox/`](toolbox/) — nine find/audit scripts (incl. a VMware→Proxmox assessment trio), three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
+| **Take runnable tools with me** | [`toolbox/`](toolbox/) — ten find/audit scripts (incl. a VMware→Proxmox virtualization quartet), three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
 | **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — eight Agent Skills: five for the method (ramp · audit · author · lab · mirror), three that drive the toolbox |
 
 ## What's built
 
 Everything the [roadmap](ROADMAP.md) planned is written, with **twelve runnable,
 self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**,
-**eight Agent Skills**, and a **runnable toolbox** (nine scripts, three Ansible
+**eight Agent Skills**, and a **runnable toolbox** (ten scripts, three Ansible
 remediation roles, a per-shop pack [generator](toolbox/generate/)); what remains is
 more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md) is
 started), and demand-first deepening.
@@ -114,7 +114,7 @@ started), and demand-first deepening.
 - **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + runnable [failure-domains](the-stack/labs/01-failure-domains/) and [backup-drill](the-stack/labs/04-backup-not-snapshot/) labs ✅
 - **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [working with security](cross-cutting/working-with-security.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
 - **Support notes (break-fix craft)** — for the surfaces you *inherit and support*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [Multi-cloud](cross-cutting/multi-cloud-support.md) — each with the recurring tickets, the cross-lane experience gap a strong sysadmin gets wrong, a runnable lab, and a Chinese mirror ✅
-- **Toolbox (run it)** — [charter + conventions](toolbox/README.md) · nine scripts (triage · users · patching · baseline · backup-drill · cidr · a [vSphere→Proxmox assessment trio](toolbox/vm-migration-assess/)) · [Ansible remediation roles](toolbox/ansible/) pairing audit→fix · a [per-shop pack generator](toolbox/generate/) — safe-by-default, every tool carries its own `Tested on:` line ✅
+- **Toolbox (run it)** — [charter + conventions](toolbox/README.md) · ten scripts (triage · users · patching · baseline · backup-drill · cidr · a [vSphere→Proxmox virtualization quartet](toolbox/vm-migration-assess/)) · [Ansible remediation roles](toolbox/ansible/) pairing audit→fix · a [per-shop pack generator](toolbox/generate/) — safe-by-default, every tool carries its own `Tested on:` line ✅
 
 **Platforms** — all seven compared in The Stack have a dedicated "operate it end to end"
 module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**), and **all seven now

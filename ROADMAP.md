@@ -121,7 +121,8 @@ can drive them (linux-triage / harden-baseline / toolbox-picker), and the
 [generator](toolbox/generate/) that assembles a per-shop pack of all of the above.
 The track now grows demand-first, tool by tool — latest: the **virtualization
 wave** (vSphere inventory over stdlib SOAP, a VMware→Proxmox per-VM assessment,
-and the Proxmox-side mirror; `--profile escape-vmware` in the generator).
+the Proxmox-side mirror, and cross-hypervisor snapshot hygiene;
+`--profile escape-vmware` in the generator).
 
 ## How this stays honest
 

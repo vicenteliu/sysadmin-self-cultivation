@@ -120,6 +120,7 @@ See [`cross-cutting/`](cross-cutting/).
 | [`toolbox/vsphere-inventory`](toolbox/vsphere-inventory/) | read-only vSphere inventory, pure-stdlib SOAP (no SDK) | ✅ |
 | [`toolbox/vm-migration-assess`](toolbox/vm-migration-assess/) | VMware→Proxmox verdict per VM (EASY/MODERATE/HARD + findings) | ✅ |
 | [`toolbox/pve-inventory`](toolbox/pve-inventory/) | Proxmox inventory in the same schema (live or from captures) | ✅ |
+| [`toolbox/snapshot-audit`](toolbox/snapshot-audit/) | stale/deep/crowded snapshots flagged across both hypervisors | ✅ |
 | [`toolbox/generate`](toolbox/generate/) | per-shop pack generator: concern/platform tags → standalone subset + the skills it can honestly carry | ✅ |
 
 ## Agent Skills — the method, made invokable

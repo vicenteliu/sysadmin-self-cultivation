@@ -147,6 +147,18 @@
         "linux"
       ],
       "summary": "Proxmox inventory in the same schema, live or from captures"
+    },
+    "snapshot-audit": {
+      "path": "toolbox/snapshot-audit",
+      "entry": "snapshot-audit.py",
+      "concerns": [
+        "virtualization"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "summary": "flag stale/deep/crowded snapshots across both hypervisors"
     }
   },
   "roles": {
@@ -234,7 +246,8 @@
           "cidr-check",
           "vsphere-inventory",
           "vm-migration-assess",
-          "pve-inventory"
+          "pve-inventory",
+          "snapshot-audit"
         ],
         "roles": [
           "baseline_hardening",

@@ -72,7 +72,7 @@ new box and drive the toolbox in one sentence — the "AI-assisted toolset" itse
 
 ## Virtualization wave (✅ shipped — the hypervisor layer)
 
-The first six tools look *inside* an OS; these three look at the platform under
+The first six tools look *inside* an OS; these four look at the platform under
 it — and together they answer the season's question, "can this VMware estate
 move to Proxmox?":
 
@@ -81,6 +81,7 @@ move to Proxmox?":
 | [`vsphere-inventory`](vsphere-inventory/) | read-only vSphere inventory over **pure-stdlib SOAP** (no SDK, no govc) | feeds `vm-migration-assess` |
 | [`vm-migration-assess`](vm-migration-assess/) | verdict per VM — EASY/MODERATE/HARD — with the findings behind it | reads `vsphere-inventory` |
 | [`pve-inventory`](pve-inventory/) | Proxmox inventory in the **same schema**, live on a node or from captures | the destination-side mirror |
+| [`snapshot-audit`](snapshot-audit/) | flag stale/deep/crowded snapshots — both hypervisors, one audit | reads either inventory |
 
 ## Generator (✅ shipped — the customizable toolbox)
 

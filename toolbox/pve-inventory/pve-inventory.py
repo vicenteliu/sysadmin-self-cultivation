@@ -71,6 +71,26 @@ class Source:
         return json.loads(f.read_text())
 
 
+def snapshot_detail(snaps):
+    """pvesh snapshot list → [{name, created, depth}, ...] ('current' excluded)."""
+    nodes = {s["name"]: s for s in snaps if s.get("name") != "current"}
+
+    def depth(name, seen=()):
+        parent = nodes[name].get("parent")
+        if not parent or parent not in nodes or parent in seen:
+            return 1
+        return 1 + depth(parent, seen + (name,))
+
+    out = []
+    for name, s in nodes.items():
+        created = None
+        if s.get("snaptime"):
+            created = datetime.datetime.fromtimestamp(
+                s["snaptime"], datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        out.append({"name": name, "created": created, "depth": depth(name)})
+    return sorted(out, key=lambda x: (x["depth"], x["name"]))
+
+
 def parse_disks(config):
     disks = []
     for key in sorted(k for k in config if DISK_KEY.match(k)):
@@ -121,6 +141,7 @@ def collect(src):
         snaps = src.get(f"/nodes/{node}/qemu/{vmid}/snapshot",
                         f"snapshot-{vmid}.json", optional=True) or []
         nics = parse_nics(config)
+        snap_detail = snapshot_detail(snaps)
         bridges |= {n["network"] for n in nics if n["network"]}
         vms.append({
             "name": config.get("name") or r.get("name") or str(vmid),
@@ -132,7 +153,7 @@ def collect(src):
             "hw_version": config.get("machine"),  # qemu machine type, e.g. q35
             "disks": parse_disks(config),
             "nics": nics,
-            "snapshots": sum(1 for s in snaps if s.get("name") != "current"),
+            "snapshots": len(snap_detail), "snapshot_detail": snap_detail,
         })
 
     hosts = [{
