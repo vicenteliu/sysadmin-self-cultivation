@@ -116,9 +116,10 @@ self-contained, agent-callable tools under the same demand-first ordering (triag
 identity lifecycle, patching, hardening are what JDs actually ask operators to do).
 The charter and conventions live in [`toolbox/README.md`](toolbox/README.md). Shipped:
 the first-wave scripts, the [Ansible roles](toolbox/ansible/) (the remediation half),
-and three user-side [Agent Skills](.claude/skills/) that wrap the tools so an AI agent
-can drive them (linux-triage / harden-baseline / toolbox-picker). Remaining: a
-per-shop toolbox generator.
+three user-side [Agent Skills](.claude/skills/) that wrap the tools so an AI agent
+can drive them (linux-triage / harden-baseline / toolbox-picker), and the
+[generator](toolbox/generate/) that assembles a per-shop pack of all of the above.
+The track now grows demand-first, tool by tool, like the rest of the repo.
 
 ## How this stays honest
 

@@ -70,7 +70,19 @@ its fix), **harden-baseline** (audit→remediate hardening, lock-out-aware), and
 **toolbox-picker** (say the task, get the right tool + command). Install one on a
 new box and drive the toolbox in one sentence — the "AI-assisted toolset" itself.
 
-Wave after this one: a **generator** that assembles a per-shop subset of the toolbox.
+## Generator (✅ shipped — the customizable toolbox)
+
+[`generate`](generate/) assembles the subset a given shop actually needs — one
+command, one standalone pack: the matching scripts, their paired Ansible roles,
+and every Agent Skill whose references are fully satisfied (a pack never carries
+a skill that points at a tool it doesn't have):
+
+```bash
+./toolbox/generate/generate.py --profile security-baseline --out ~/kit
+```
+
+Selection is concern + platform tags in [`generate/catalog.json`](generate/catalog.json);
+a new tool joins the generator with one JSON entry.
 
 ## What this is not
 

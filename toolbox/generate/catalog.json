@@ -1,0 +1,203 @@
+{
+  "concerns": {
+    "triage": "incident first-look: what is wrong with this host",
+    "identity": "user and group lifecycle",
+    "patching": "pending updates and applying them",
+    "hardening": "security baseline audit and remediation",
+    "backup": "prove backups by restoring them",
+    "network": "network plan sanity"
+  },
+  "profiles": {
+    "linux-shop": {
+      "concerns": [
+        "triage",
+        "identity",
+        "patching",
+        "hardening",
+        "backup",
+        "network"
+      ],
+      "description": "the whole toolbox — a general Linux server shop"
+    },
+    "security-baseline": {
+      "concerns": [
+        "hardening",
+        "patching"
+      ],
+      "description": "audit and close hardening + patch gaps"
+    },
+    "incident-response": {
+      "concerns": [
+        "triage",
+        "patching",
+        "hardening",
+        "identity"
+      ],
+      "description": "triage a host and route every flag to its fix"
+    }
+  },
+  "tools": {
+    "linux-triage": {
+      "path": "toolbox/linux-triage",
+      "entry": "linux-triage.sh",
+      "concerns": [
+        "triage"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "one-shot health/triage report (read-only)"
+    },
+    "user-lifecycle": {
+      "path": "toolbox/user-lifecycle",
+      "entry": "user-lifecycle.sh",
+      "concerns": [
+        "identity"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "CSV batch user create/disable (dry-run by default)"
+    },
+    "patch-report": {
+      "path": "toolbox/patch-report",
+      "entry": "patch-report.sh",
+      "concerns": [
+        "patching"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "pending-updates + reboot-required inventory (read-only)"
+    },
+    "baseline-check": {
+      "path": "toolbox/baseline-check",
+      "entry": "baseline-check.sh",
+      "concerns": [
+        "hardening"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "hardening-baseline audit (read-only)"
+    },
+    "backup-restore-drill": {
+      "path": "toolbox/backup-restore-drill",
+      "entry": "backup-restore-drill.sh",
+      "concerns": [
+        "backup"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "summary": "prove a backup by restoring and comparing it"
+    },
+    "cidr-check": {
+      "path": "toolbox/cidr-check",
+      "entry": "cidr-check.py",
+      "concerns": [
+        "network"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "summary": "detect overlapping CIDR ranges"
+    }
+  },
+  "roles": {
+    "baseline_hardening": {
+      "path": "toolbox/ansible/roles/baseline_hardening",
+      "playbook": "toolbox/ansible/playbooks/harden.yml",
+      "concerns": [
+        "hardening"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "remediate SSH posture, umask, sysctl, journald"
+    },
+    "patch": {
+      "path": "toolbox/ansible/roles/patch",
+      "playbook": "toolbox/ansible/playbooks/patch.yml",
+      "concerns": [
+        "patching"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "apply updates (apt/dnf) one host at a time"
+    },
+    "user_lifecycle": {
+      "path": "toolbox/ansible/roles/user_lifecycle",
+      "playbook": "toolbox/ansible/playbooks/users.yml",
+      "concerns": [
+        "identity"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "declarative users (present / disabled)"
+    }
+  },
+  "ansible_common": [
+    "toolbox/ansible/ansible.cfg",
+    "toolbox/ansible/inventory.example.ini"
+  ],
+  "skills": {
+    "harden-baseline": {
+      "path": ".claude/skills/harden-baseline",
+      "requires": {
+        "tools": [
+          "baseline-check"
+        ],
+        "roles": [
+          "baseline_hardening"
+        ],
+        "skills": []
+      },
+      "summary": "audit→remediate the hardening baseline, lock-out-aware"
+    },
+    "linux-triage": {
+      "path": ".claude/skills/linux-triage",
+      "requires": {
+        "tools": [
+          "linux-triage",
+          "patch-report",
+          "baseline-check",
+          "user-lifecycle"
+        ],
+        "roles": [
+          "patch",
+          "baseline_hardening",
+          "user_lifecycle"
+        ],
+        "skills": [
+          "harden-baseline"
+        ]
+      },
+      "summary": "triage a host, route each flag to its fix"
+    },
+    "toolbox-picker": {
+      "path": ".claude/skills/toolbox-picker",
+      "requires": {
+        "tools": [
+          "linux-triage",
+          "user-lifecycle",
+          "patch-report",
+          "baseline-check",
+          "backup-restore-drill",
+          "cidr-check"
+        ],
+        "roles": [
+          "baseline_hardening",
+          "patch",
+          "user_lifecycle"
+        ],
+        "skills": []
+      },
+      "summary": "say the task, get the right tool + command"
+    }
+  }
+}
