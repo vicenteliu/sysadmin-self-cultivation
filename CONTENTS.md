@@ -117,6 +117,9 @@ See [`cross-cutting/`](cross-cutting/).
 | [`toolbox/backup-restore-drill`](toolbox/backup-restore-drill/) | prove a backup by restoring it | ✅ |
 | [`toolbox/cidr-check`](toolbox/cidr-check/) | detect overlapping CIDR ranges | ✅ |
 | [`toolbox/ansible`](toolbox/ansible/) | remediation roles: baseline_hardening, patch, user_lifecycle (idempotent) | ✅ |
+| [`toolbox/vsphere-inventory`](toolbox/vsphere-inventory/) | read-only vSphere inventory, pure-stdlib SOAP (no SDK) | ✅ |
+| [`toolbox/vm-migration-assess`](toolbox/vm-migration-assess/) | VMware→Proxmox verdict per VM (EASY/MODERATE/HARD + findings) | ✅ |
+| [`toolbox/pve-inventory`](toolbox/pve-inventory/) | Proxmox inventory in the same schema (live or from captures) | ✅ |
 | [`toolbox/generate`](toolbox/generate/) | per-shop pack generator: concern/platform tags → standalone subset + the skills it can honestly carry | ✅ |
 
 ## Agent Skills — the method, made invokable

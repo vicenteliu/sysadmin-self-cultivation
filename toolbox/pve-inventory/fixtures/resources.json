@@ -1,0 +1,7 @@
+[
+  {"type": "node", "node": "pve", "id": "node/pve", "status": "online", "maxcpu": 16, "maxmem": 67108864000, "uptime": 2592000},
+  {"type": "qemu", "vmid": 100, "name": "ubuntu-web", "node": "pve", "id": "qemu/100", "status": "running", "maxcpu": 2, "maxmem": 4294967296, "maxdisk": 42949672960},
+  {"type": "qemu", "vmid": 101, "name": "win11-desktop", "node": "pve", "id": "qemu/101", "status": "stopped", "maxcpu": 4, "maxmem": 17179869184, "maxdisk": 137438953472},
+  {"type": "storage", "storage": "local", "node": "pve", "id": "storage/pve/local", "status": "available", "plugintype": "dir", "maxdisk": 107374182400, "disk": 21474836480},
+  {"type": "storage", "storage": "local-lvm", "node": "pve", "id": "storage/pve/local-lvm", "status": "available", "plugintype": "lvmthin", "maxdisk": 429496729600, "disk": 107374182400}
+]

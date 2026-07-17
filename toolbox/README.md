@@ -70,6 +70,18 @@ its fix), **harden-baseline** (audit→remediate hardening, lock-out-aware), and
 **toolbox-picker** (say the task, get the right tool + command). Install one on a
 new box and drive the toolbox in one sentence — the "AI-assisted toolset" itself.
 
+## Virtualization wave (✅ shipped — the hypervisor layer)
+
+The first six tools look *inside* an OS; these three look at the platform under
+it — and together they answer the season's question, "can this VMware estate
+move to Proxmox?":
+
+| Tool | What it does | Pairs with |
+| --- | --- | --- |
+| [`vsphere-inventory`](vsphere-inventory/) | read-only vSphere inventory over **pure-stdlib SOAP** (no SDK, no govc) | feeds `vm-migration-assess` |
+| [`vm-migration-assess`](vm-migration-assess/) | verdict per VM — EASY/MODERATE/HARD — with the findings behind it | reads `vsphere-inventory` |
+| [`pve-inventory`](pve-inventory/) | Proxmox inventory in the **same schema**, live on a node or from captures | the destination-side mirror |
+
 ## Generator (✅ shipped — the customizable toolbox)
 
 [`generate`](generate/) assembles the subset a given shop actually needs — one

@@ -119,7 +119,9 @@ the first-wave scripts, the [Ansible roles](toolbox/ansible/) (the remediation h
 three user-side [Agent Skills](.claude/skills/) that wrap the tools so an AI agent
 can drive them (linux-triage / harden-baseline / toolbox-picker), and the
 [generator](toolbox/generate/) that assembles a per-shop pack of all of the above.
-The track now grows demand-first, tool by tool, like the rest of the repo.
+The track now grows demand-first, tool by tool — latest: the **virtualization
+wave** (vSphere inventory over stdlib SOAP, a VMware→Proxmox per-VM assessment,
+and the Proxmox-side mirror; `--profile escape-vmware` in the generator).
 
 ## How this stays honest
 

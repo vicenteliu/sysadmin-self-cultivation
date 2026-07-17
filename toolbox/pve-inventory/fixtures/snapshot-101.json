@@ -1,0 +1,5 @@
+[
+  {"name": "pre-update", "snaptime": 1783200000, "description": "before windows update", "parent": null},
+  {"name": "post-driver", "snaptime": 1783286400, "description": "after virtio drivers", "parent": "pre-update"},
+  {"name": "current", "digest": "def", "running": 0, "description": "You are here!", "parent": "post-driver"}
+]

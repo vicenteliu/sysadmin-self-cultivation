@@ -1,0 +1,4 @@
+{"name": "ubuntu-web", "cores": 2, "sockets": 1, "memory": "4096", "ostype": "l26",
+ "scsi0": "local-lvm:vm-100-disk-0,iothread=1,size=40G", "scsihw": "virtio-scsi-single",
+ "net0": "virtio=BC:24:11:2E:AE:01,bridge=vmbr0,firewall=1",
+ "boot": "order=scsi0;net0", "agent": "1", "digest": "0123456789abcdef0123456789abcdef01234567"}

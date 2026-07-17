@@ -29,6 +29,9 @@ one of each — audit then remediate.
 | manage users declaratively (in Git) | [`user_lifecycle` role](../../../toolbox/ansible/roles/user_lifecycle/) | Ansible |
 | prove a backup actually restores | [`backup-restore-drill`](../../../toolbox/backup-restore-drill/) | script (read-only to your system) |
 | find overlapping CIDR ranges | [`cidr-check`](../../../toolbox/cidr-check/) | script (read-only) |
+| inventory a vSphere environment | [`vsphere-inventory`](../../../toolbox/vsphere-inventory/) | script (read-only, stdlib SOAP) |
+| judge "can this VMware estate move to Proxmox?" | [`vm-migration-assess`](../../../toolbox/vm-migration-assess/) | script (assessment only; feed it vsphere-inventory JSON) |
+| inventory a Proxmox cluster / compare after migration | [`pve-inventory`](../../../toolbox/pve-inventory/) | script (read-only, on-node or from captures) |
 
 When two tools pair (audit + fix), name both and the order: **audit first, show
 the result, remediate second.**

@@ -5,7 +5,8 @@
     "patching": "pending updates and applying them",
     "hardening": "security baseline audit and remediation",
     "backup": "prove backups by restoring them",
-    "network": "network plan sanity"
+    "network": "network plan sanity",
+    "virtualization": "hypervisor-level inventory and VMware→Proxmox assessment"
   },
   "profiles": {
     "linux-shop": {
@@ -15,7 +16,8 @@
         "patching",
         "hardening",
         "backup",
-        "network"
+        "network",
+        "virtualization"
       ],
       "description": "the whole toolbox — a general Linux server shop"
     },
@@ -34,6 +36,12 @@
         "identity"
       ],
       "description": "triage a host and route every flag to its fix"
+    },
+    "escape-vmware": {
+      "concerns": [
+        "virtualization"
+      ],
+      "description": "assess a VMware estate for a move to Proxmox"
     }
   },
   "tools": {
@@ -104,6 +112,41 @@
         "macos"
       ],
       "summary": "detect overlapping CIDR ranges"
+    },
+    "vsphere-inventory": {
+      "path": "toolbox/vsphere-inventory",
+      "entry": "vsphere-inventory.py",
+      "concerns": [
+        "virtualization"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "summary": "read-only vSphere inventory over stdlib SOAP (read-only)"
+    },
+    "vm-migration-assess": {
+      "path": "toolbox/vm-migration-assess",
+      "entry": "vm-migration-assess.py",
+      "concerns": [
+        "virtualization"
+      ],
+      "platforms": [
+        "linux",
+        "macos"
+      ],
+      "summary": "score each VM for VMware→Proxmox difficulty (assessment only)"
+    },
+    "pve-inventory": {
+      "path": "toolbox/pve-inventory",
+      "entry": "pve-inventory.py",
+      "concerns": [
+        "virtualization"
+      ],
+      "platforms": [
+        "linux"
+      ],
+      "summary": "Proxmox inventory in the same schema, live or from captures"
     }
   },
   "roles": {
@@ -188,7 +231,10 @@
           "patch-report",
           "baseline-check",
           "backup-restore-drill",
-          "cidr-check"
+          "cidr-check",
+          "vsphere-inventory",
+          "vm-migration-assess",
+          "pve-inventory"
         ],
         "roles": [
           "baseline_hardening",
