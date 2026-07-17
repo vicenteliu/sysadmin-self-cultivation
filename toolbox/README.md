@@ -62,8 +62,15 @@ The scripts above *find*; the [`ansible/`](ansible/) roles *fix*, idempotently:
 | [`patch`](ansible/roles/patch/) | apply updates (apt/dnf) + reboot orchestration | `patch-report` |
 | [`user_lifecycle`](ansible/roles/user_lifecycle/) | declarative users (present / disabled) | `user-lifecycle` |
 
-Waves after this one: **user-side Agent Skills** wrapping the tools, then a
-**generator** that assembles a per-shop subset of the toolbox.
+## Agent Skills (✅ shipped — drive the toolbox by sentence)
+
+Three user-side [`.claude/skills/`](../.claude/skills/) wrap these tools so an AI
+agent can run them for you: **linux-triage** (triage a host, route each flag to
+its fix), **harden-baseline** (audit→remediate hardening, lock-out-aware), and
+**toolbox-picker** (say the task, get the right tool + command). Install one on a
+new box and drive the toolbox in one sentence — the "AI-assisted toolset" itself.
+
+Wave after this one: a **generator** that assembles a per-shop subset of the toolbox.
 
 ## What this is not
 

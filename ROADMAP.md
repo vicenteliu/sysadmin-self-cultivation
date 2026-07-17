@@ -114,9 +114,11 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 Everything above explains; [`toolbox/`](toolbox/) makes it **runnable** — small,
 self-contained, agent-callable tools under the same demand-first ordering (triage,
 identity lifecycle, patching, hardening are what JDs actually ask operators to do).
-The charter and conventions live in [`toolbox/README.md`](toolbox/README.md); the
-first wave grows partly out of existing labs. Later waves: Ansible roles, user-side
-Agent Skills that wrap the tools, and a per-shop toolbox generator.
+The charter and conventions live in [`toolbox/README.md`](toolbox/README.md). Shipped:
+the first-wave scripts, the [Ansible roles](toolbox/ansible/) (the remediation half),
+and three user-side [Agent Skills](.claude/skills/) that wrap the tools so an AI agent
+can drive them (linux-triage / harden-baseline / toolbox-picker). Remaining: a
+per-shop toolbox generator.
 
 ## How this stays honest
 

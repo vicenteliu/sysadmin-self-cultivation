@@ -120,14 +120,22 @@ See [`cross-cutting/`](cross-cutting/).
 
 ## Agent Skills — the method, made invokable
 
-The repo ships five [`.claude/skills/`](.claude/skills/) that package its methodology
-as AI workflows: [`platform-ramp`](.claude/skills/platform-ramp/SKILL.md) (ramp onto
+The repo ships eight [`.claude/skills/`](.claude/skills/). Five package its
+*methodology*: [`platform-ramp`](.claude/skills/platform-ramp/SKILL.md) (ramp onto
 any platform, honestly), [`honesty-audit`](.claude/skills/honesty-audit/SKILL.md)
 (classify claims ✋/🧗/overclaim), [`author-module`](.claude/skills/author-module/SKILL.md)
 (write a new note — incl. a **support note** — in the repo's voice, research-grounded),
 [`runnable-lab`](.claude/skills/runnable-lab/SKILL.md) (turn a concept into a
 self-verifying drill), and [`mirror-zh`](.claude/skills/mirror-zh/SKILL.md) (mirror a
 doc into `docs/zh/` Chinese).
+
+Three are **user-side** — they wrap the [toolbox](toolbox/) so an AI agent can run
+it for you: [`linux-triage`](.claude/skills/linux-triage/SKILL.md) (triage a host
+and route each red flag to its fix), [`harden-baseline`](.claude/skills/harden-baseline/SKILL.md)
+(the audit→remediate hardening loop, lock-out-aware), and
+[`toolbox-picker`](.claude/skills/toolbox-picker/SKILL.md) (say the task, get the
+right tool + exact command). This is the "AI-assisted toolset" the roadmap points
+at — install a skill on a new box and drive the toolbox in one sentence.
 
 ## The honesty layer (applies everywhere)
 
