@@ -75,13 +75,18 @@ those it is, is genuinely useful triage. It should propose; a person should act.
 
 ## Do it
 
+- ✅ [`cross-cutting/labs/remote-access-four-causes/`](../cross-cutting/labs/remote-access-four-causes/)
+  — **runnable, pure-local.** All four failure paths above, producing one identical
+  user report. Watch the reflex checks eliminate nothing, watch a captive portal
+  masquerade as an identity outage, and watch an elimination order resolve 4/4 with
+  a bounded worst case where habit resolves 2/4.
+
+  ```bash
+  python3 cross-cutting/labs/remote-access-four-causes/four_causes_drill.py
+  ```
+
 - [`cross-cutting/labs/m365-conditional-access-lockout/`](../cross-cutting/labs/m365-conditional-access-lockout/)
   — the policy that locks out remote users is the same policy that locks out you
-
-🔴 **Gap:** no runnable exercise for the remote-access failure paths — expired
-certificate, unreachable directory, captive portal, more-specific route from the
-tunnel. Given how much help-desk volume this generates, it is the strongest lab
-candidate this series has surfaced. Recorded in [`GAPS.md`](./GAPS.md).
 
 ## Getting it backwards
 
