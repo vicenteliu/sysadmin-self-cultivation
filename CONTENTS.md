@@ -123,6 +123,21 @@ See [`cross-cutting/`](cross-cutting/).
 | [`toolbox/snapshot-audit`](toolbox/snapshot-audit/) | stale/deep/crowded snapshots flagged across both hypervisors | ✅ |
 | [`toolbox/generate`](toolbox/generate/) | per-shop pack generator: concern/platform tags → standalone subset + the skills it can honestly carry | ✅ |
 
+## VII. Build-out — a route across the six axes
+
+Not a seventh body of material. One scenario walked end to end — a 100-person
+office, first day to open for business — where each step carries **sequence and
+dependency** and points into the axes above for the substance.
+Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
+
+| Item | Note | State |
+|---|---|---|
+| [`build-out/`](build-out/) | 16 steps, ordered by what must be true before what | 🚧 2 of 16 written |
+| [`build-out/03-identity.md`](build-out/03-identity.md) | Identity before devices — the step with no physical prerequisite | ✅ ✋ |
+| [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | The record that starts at device #1, not #100 | ✅ ✋ |
+| [`build-out/GAPS.md`](build-out/GAPS.md) | Gaps the scenario surfaced — derived, deliberately narrow | 🚧 living |
+
+
 ## Agent Skills — the method, made invokable
 
 The repo ships eight [`.claude/skills/`](.claude/skills/). Five package its

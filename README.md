@@ -34,7 +34,10 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 
 ## The shape
 
-Six axes over the same material — enter from whichever matches your question:
+Six axes over the same material — enter from whichever matches your question — plus
+one **route across all of them**, [`build-out/`](build-out/), for the reader who does not
+yet know what to ask. The route is not a seventh body of material: it teaches no new
+page, it decides the **order**.
 
 ```mermaid
 mindmap
@@ -77,6 +80,8 @@ mindmap
       cost
       endpoint
     Toolbox - run it
+    Build-out - a route across the six
+      one 100-person office, first day to open
       scripts - find
       Ansible roles - fix
       user-side skills - drive

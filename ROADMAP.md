@@ -51,6 +51,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Layer lab | [`the-stack/labs/04-backup-not-snapshot/`](the-stack/labs/04-backup-not-snapshot/) — runnable, pure-Python "replication is not backup" drill | ✅ |
 | Runnable labs | 3 more pure-local, self-verifying labs (exit 0 = lessons held): [failure-domains](the-stack/labs/01-failure-domains/) (Python), [idempotence-drill](foundations/labs/idempotence-drill/) (bash), [ci-cd-pipeline](cross-cutting/labs/ci-cd-pipeline/) (tested app + real GitHub Actions workflow) | ✅ |
 | Agent Skills | 4 [`.claude/skills/`](.claude/skills/) packaging the repo's method: platform-ramp · honesty-audit · author-module · runnable-lab | ✅ |
+| Route | [`build-out/`](build-out/) — one 100-person office end to end; carries sequence and dependency, points into the axes for substance ([ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)) | 🚧 2 of 16 |
 | Framework | [`CONTENTS.md`](CONTENTS.md) + opening for every planned module (foundations/endpoint/iac/saas/k8s/cost/gcp) | ✅ |
 | Foundations | [`foundations/`](foundations/) — Linux mental model, debugging reflex, scripting, honest scope (Tier-3 #10) | ✅ written |
 | Endpoint | [`endpoint/`](endpoint/) — MDM model, imaging pipeline, patch/EDR, BYOD, Intune-as-ramp (Tier-2 #5) | ✅ written |
