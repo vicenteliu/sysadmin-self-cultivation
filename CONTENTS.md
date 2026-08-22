@@ -132,11 +132,11 @@ Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh
 
 | Item | Note | State |
 |---|---|---|
-| [`build-out/`](build-out/) | 16 steps, ordered by what must be true before what | 🚧 2 of 16 written |
-| [`build-out/03-identity.md`](build-out/03-identity.md) | Identity before devices — the step with no physical prerequisite | ✅ ✋ |
-| [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | The record that starts at device #1, not #100 | ✅ ✋ |
-| [`build-out/GAPS.md`](build-out/GAPS.md) | Gaps the scenario surfaced — derived, deliberately narrow | 🚧 living |
-
+| [`build-out/`](build-out/) | **16 of 16 steps written.** Dependency graph verified acyclic and fully symmetric; 15 of 16 steps point at a runnable lab or tool (94%) | ✅ |
+| [`build-out/03-identity.md`](build-out/03-identity.md) | The step with an empty `Before` — identity has no physical prerequisite, and eight steps attach to it | ✅ ✋ |
+| [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | Numbered eleventh, must start at device #1 — honest about dependency, a lie about time | ✅ ✋ |
+| [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | How many IT people 100 people need — unanswerable until the estate is enumerated | ✅ ✋ |
+| [`build-out/GAPS.md`](build-out/GAPS.md) | Six real gaps the scenario surfaced, four of them the same shape | ✅ living |
 
 ## Agent Skills — the method, made invokable
 

@@ -2,7 +2,7 @@
 
 > ✋ hands-on (Entra/Azure AD, M365 tenant work, JML at scale)
 > **Before:** nothing. **After:** 04 devices · 05 network (802.1X) · 06 tenant and mail ·
-> 07 files · 08 endpoint security · 11 assets · 14 compliance evidence · 15 JML
+> 07 files · 08 endpoint security · 10 remote access · 11 assets · 14 compliance evidence · 15 JML
 
 **This step has no physical prerequisite, and that is the whole argument for
 where it sits.** Identity is the only part of a build-out that can begin before
