@@ -73,14 +73,21 @@ person it hits is a colleague who was doing their job.
 
 ## Do it
 
-🔴 **Gap:** there is no runnable exercise for permission sprawl — a synthetic set of
-spaces and links, and the job of finding the over-shared one. Recorded in
-[`GAPS.md`](./GAPS.md). It is a strong candidate for a pure-local lab, because the
-lesson is structural and needs no vendor.
+- ✅ [`cross-cutting/labs/permission-sprawl/`](../cross-cutting/labs/permission-sprawl/)
+  — **runnable, pure-local.** Two estates, same documents, same hundred people; one
+  granted through groups, the other four "just this once" clicks and an open link.
+  The visible difference is four names. The actual difference is 93 people, and the
+  access review returns clean on both.
 
-The nearest runnable relative is
-[`toolbox/user-lifecycle/`](../toolbox/user-lifecycle/), which governs the
-identities the permissions are attached to.
+  ```bash
+  python3 cross-cutting/labs/permission-sprawl/sprawl_drill.py
+  ```
+
+  Its `--break-it` makes the audit ignore sharing links — which is how access
+  reviews are usually performed — and the drill exits 1.
+
+- [`toolbox/user-lifecycle/`](../toolbox/user-lifecycle/) — the identities the
+  permissions are attached to; revocation only works if this half works.
 
 ## Getting it backwards
 

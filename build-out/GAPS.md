@@ -15,7 +15,6 @@ finds holes that a roadmap does not think to look for.
 | Step | What is missing | Why it counts |
 |---|---|---|
 | [06 · tenant and mail](06-tenant-and-mail.md) | Mail authentication: publish a record, read a DMARC aggregate report, watch a message fail alignment | Pure-local and self-verifying. The lesson — that `p=none` is monitoring and not protection — is exactly the kind that reads as obvious and is skipped anyway. |
-| [07 · files](07-files-and-collaboration.md) | Permission sprawl: a synthetic set of spaces and links, and the job of finding the over-shared one | The lesson is structural, needs no vendor, and answers the question an auditor actually asks: *who can see this, and how do you know?* |
 | [11 · assets](11-assets-and-tickets.md) | A reconciliation drill: two sources that disagree about the same fleet, and a diff to adjudicate | The step's whole claim is that the job is reconciling, not collecting — and nothing runnable makes that concrete. The ITSM note's own lab is still marked planned. |
 | [13 · the help desk](13-the-help-desk.md) | A queue model: arrival rates, categories, and what automating one category does to the others | It is the only way to test the staffing argument instead of asserting it. |
 | [12 · rooms](12-meeting-rooms-av-and-uc.md) | Governance of recordings and transcripts — where they land, who can read them | Partial: the AV half cannot be made runnable, but the *data* half is the same problem as step 07 and is currently unowned. |
@@ -49,6 +48,14 @@ It came out carrying the lesson all four of the same-shape gaps share — **a ch
 earns its place by what it eliminates, not by what it reports** — so the three that
 remain have a worked example to copy rather than a spec to interpret.
 
-**Next: [07 · permission sprawl](07-files-and-collaboration.md).** Same reason it was
-listed — structural, no vendor needed, and it answers the question an auditor
-actually asks.
+✅ **Step 07 — 2026-08-22.**
+[`cross-cutting/labs/permission-sprawl/`](../cross-cutting/labs/permission-sprawl/)
+— two estates, same documents and people; the ACL difference is four names and the
+real difference is 93 people, because a sharing link is a second grant path that no
+access review walks. Its `--break-it` is the sharpest in the series: it makes the
+audit ignore links, **which is how access reviews are actually performed**.
+
+**Two of the four same-shape gaps are now built.** Remaining: mail authentication
+(06) and reconciliation (11). Both should copy the pattern these two established —
+model the two sources, let them disagree, and make the *incomplete standard
+procedure* the sabotage mode.
