@@ -6,14 +6,14 @@
 > ⚠ **Not a backlog of everything missing.** Material a 100-person office never
 > touches is not a gap. This list stays useful exactly as long as it stays narrow.
 
-Sixteen steps, and **the residue is now empty** — every step that should point at a
-runnable lab or tool does. [`00 · before the lease`](00-before-the-lease.md) still
-points at nothing, correctly: it is a conversation with a landlord and the honesty
-marker carries the weight.
+Sixteen steps, **16 of 16 accounted for** (100%). Fifteen point at a runnable lab
+or a `toolbox/` tool; [`00 · before the lease`](00-before-the-lease.md) points at
+nothing and should — it is a conversation with a landlord, and the honesty marker
+carries the weight instead.
 
-What follows is the record of what the scenario found, which was more interesting
-than any coverage number, because a scenario finds holes a roadmap does not think
-to look for.
+The residue is empty. What follows is the record of what the scenario found, which
+was always more interesting than the coverage number, because a scenario finds holes
+a roadmap does not think to look for.
 
 ## Real gaps — a lab or tool should exist and does not
 
