@@ -83,8 +83,10 @@ along.
 - [`toolbox/linux-triage/`](../toolbox/linux-triage/) — the shape a runbook should
   have: ordered checks, each one eliminating something
 
-🔴 **Gap:** nothing models the queue itself — arrival rates, categories, and what
-automating one category does to the others. Recorded in [`GAPS.md`](./GAPS.md).
+- [`cross-cutting/labs/help-desk-queue/`](../cross-cutting/labs/help-desk-queue/)
+  — the queue itself: seven categories, two worlds, and Erlang-C over a stated
+  support window. What automating one category does to the others, and why the
+  ratio is right here for a reason it cannot state.
 
 ## Getting it backwards
 

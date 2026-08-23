@@ -136,7 +136,7 @@ Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh
 | [`build-out/03-identity.md`](build-out/03-identity.md) | The step with an empty `Before` — identity has no physical prerequisite, and eight steps attach to it | ✅ ✋ |
 | [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | Numbered eleventh, must start at device #1 — honest about dependency, a lie about time | ✅ ✋ |
 | [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | How many IT people 100 people need — unanswerable until the estate is enumerated | ✅ ✋ |
-| [`build-out/GAPS.md`](build-out/GAPS.md) | Six real gaps the scenario surfaced, four of them the same shape — **all four now closed** by [`remote-access-four-causes`](cross-cutting/labs/remote-access-four-causes/), [`permission-sprawl`](cross-cutting/labs/permission-sprawl/), [`mail-authentication-alignment`](cross-cutting/labs/mail-authentication-alignment/) and [`asset-reconciliation`](cross-cutting/labs/asset-reconciliation/) | ✅ living |
+| [`build-out/GAPS.md`](build-out/GAPS.md) | Six real gaps the scenario surfaced, four of them the same shape — **five of six now closed**, including all four same-shape ones, by [`remote-access-four-causes`](cross-cutting/labs/remote-access-four-causes/), [`permission-sprawl`](cross-cutting/labs/permission-sprawl/), [`mail-authentication-alignment`](cross-cutting/labs/mail-authentication-alignment/) [`asset-reconciliation`](cross-cutting/labs/asset-reconciliation/) and [`help-desk-queue`](cross-cutting/labs/help-desk-queue/) | ✅ living |
 
 ## Agent Skills — the method, made invokable
 

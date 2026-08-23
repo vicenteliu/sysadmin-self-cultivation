@@ -14,7 +14,6 @@ finds holes that a roadmap does not think to look for.
 
 | Step | What is missing | Why it counts |
 |---|---|---|
-| [13 · the help desk](13-the-help-desk.md) | A queue model: arrival rates, categories, and what automating one category does to the others | It is the only way to test the staffing argument instead of asserting it. |
 | [12 · rooms](12-meeting-rooms-av-and-uc.md) | Governance of recordings and transcripts — where they land, who can read them | Partial: the AV half cannot be made runnable, but the *data* half is the same problem as step 07 and is currently unowned. |
 
 ## Boundaries — not holes, and they should not be filled
@@ -73,6 +72,27 @@ every one.
 
 **All four same-shape gaps are now built** — remote access (10), permission sprawl
 (07), mail authentication (06), reconciliation (11).
+
+✅ **Step 13 — 2026-08-22.**
+[`cross-cutting/labs/help-desk-queue/`](../cross-cutting/labs/help-desk-queue/)
+— the first closed gap that is *not* the same shape. Nothing here disagrees with
+anything; the failure is a ratio being unfalsifiable. Seven categories, two worlds,
+Erlang-C: automation removes 39% of tickets and 31% of the work while *raising*
+mean handling time, one more agent is 21× better rather than twice, and steps 04,
+08 and 15 are priced at 50 people of headroom on one desk.
+
+Its `--break-it` is the quietest in the series and possibly the most useful: staffed
+by the one-per-fifty ratio it returns **the same answer the model does**. It breaks
+three assertions anyway — it cannot name its binding constraint, cannot say at what
+population its answer expires, and returns the same headcount whether or not the
+automation exists. **The ratio is not wrong at a hundred people; it is
+unfalsifiable at a hundred people**, and it will go on producing a number long
+after the number stops being true.
+
+The lab deliberately computes a *floor* rather than a recommendation, and leaves
+the ratio out of the comparison at scale — a ticket-load model set against a
+headcount rule would read as "you are over-staffed", which it has no standing to
+claim.
 
 Read together they say something none of them says alone. Each began as *two or
 more sources of truth that can disagree*, and in each the sabotage that breaks the
