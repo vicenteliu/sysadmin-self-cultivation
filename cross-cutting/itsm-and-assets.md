@@ -144,19 +144,31 @@ operational discipline is ✋, the formal-auditor role is the ramp. The transfer
 claim: real ITSM, asset-reconciliation, and access-governance operations — the spine a
 compliant IT org runs on — plus a fast ramp onto any specific platform or framework.
 
-## Lab (🚧 planned — spec)
+## Lab (✅ built, in two pieces)
 
-**Reconcile the truth, prove the access.** Pure-local, no special tooling:
+**Reconcile the truth, prove the access.** Pure-local, no special tooling. The
+spec below was written as one three-part lab; it ended up as two, because the
+reconciliation half and the access half turned out to be different drills.
 
-1. **Reconcile:** two lists — an "asset spreadsheet" and a "network scan" (both CSV) —
-   and a script that finds what's in one but not the other (the gap the CMDB is
-   always chasing). This is the audit-reconciliation win in miniature.
-2. **Lifecycle:** model a joiner and a leaver as records; write the script that flags
-   a "leaver" who still has an active access grant — the audit finding, caught before
-   the auditor.
-3. **The drill:** produce the **audit trail** — a log of who changed what and who has
-   access to which resource — and explain, for one grant, *why it exists* (or should
-   be revoked). Governance is only real when it's answerable.
+1. **Reconcile** — ✅ [`labs/asset-reconciliation/`](labs/asset-reconciliation/).
+   Built larger than this spec asked: the spec wanted *what is in one list and not
+   the other*, which is the shallow half. The drill also measures what the **join
+   key** costs you (hostname reports 104 devices where 97 exist) and ends on the
+   residue that a good key cannot resolve — because the adjudication, not the set
+   difference, is the job.
+2. **Lifecycle** — ✅ in substance, in
+   [`labs/permission-sprawl/`](labs/permission-sprawl/): removing someone from the
+   group revokes everywhere in the clean estate and revokes *nothing* in the
+   sprawled one, which is the leaver-who-still-has-access finding arrived at from
+   the access side. [`toolbox/user-lifecycle/`](../toolbox/user-lifecycle/)
+   *performs* joiner/mover/leaver; note that performing offboarding and detecting
+   one that silently failed are different jobs, and only the second is an audit
+   finding.
+3. **Answerability** — ✅ [`labs/permission-sprawl/`](labs/permission-sprawl/),
+   beat four: every group grant answers *why does this person have access* with a
+   role that outlives whoever granted it, and the individual grants cannot be
+   reconstructed at all. That is the "governance is only real when it's answerable"
+   claim, made to fail on demand.
 
 ## The chapter on one screen
 

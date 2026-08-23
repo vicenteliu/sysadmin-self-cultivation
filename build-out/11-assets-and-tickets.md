@@ -73,9 +73,9 @@ let it explain the discrepancy, let a person decide which record is true.
   [`toolbox/patch-report/`](../toolbox/patch-report/) — two of the state sources this
   step has to reconcile against ownership
 
-🔴 **Gap:** the repo has no runnable reconciliation drill — two sources that
-disagree, and a diff you have to adjudicate. The ITSM note's own lab is marked
-planned. Recorded in [`GAPS.md`](./GAPS.md).
+- [`cross-cutting/labs/asset-reconciliation/`](../cross-cutting/labs/asset-reconciliation/)
+  — both systems report 97 devices, 97 devices exist, and three records are wrong.
+  What the join key costs you, and why the residue it leaves is the work product.
 
 ## Getting it backwards
 

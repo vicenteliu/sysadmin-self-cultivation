@@ -14,7 +14,6 @@ finds holes that a roadmap does not think to look for.
 
 | Step | What is missing | Why it counts |
 |---|---|---|
-| [11 · assets](11-assets-and-tickets.md) | A reconciliation drill: two sources that disagree about the same fleet, and a diff to adjudicate | The step's whole claim is that the job is reconciling, not collecting — and nothing runnable makes that concrete. The ITSM note's own lab is still marked planned. |
 | [13 · the help desk](13-the-help-desk.md) | A queue model: arrival rates, categories, and what automating one category does to the others | It is the only way to test the staffing argument instead of asserting it. |
 | [12 · rooms](12-meeting-rooms-av-and-uc.md) | Governance of recordings and transcripts — where they land, who can read them | Partial: the AV half cannot be made runnable, but the *data* half is the same problem as step 07 and is currently unowned. |
 
@@ -63,6 +62,28 @@ without comparing them to the `From:` line, which is what every mail health chec
 reports — and under it `p=reject` still delivers the forged mail. The strictest
 policy available, read the standard way, stops nothing.
 
-**Three of the four same-shape gaps are now built.** Remaining: reconciliation (11).
-It should copy the pattern these three established — model the two sources, let
-them disagree, and make the *incomplete standard procedure* the sabotage mode.
+✅ **Step 11 — 2026-08-22.**
+[`cross-cutting/labs/asset-reconciliation/`](../cross-cutting/labs/asset-reconciliation/)
+— procurement and the endpoint tool both report 97 devices, 97 exist, and three
+records are wrong. The join key decides how much of the fleet is fiction: hostname
+reports 104, serial 99, asset tag 98. Its `--break-it` reconciles on hostname, and
+the assertion worth sitting with is the third — 12 of the 15 rows reaching the
+advisory layer are phantoms the key invented, and it produces confident causes for
+every one.
+
+**All four same-shape gaps are now built** — remote access (10), permission sprawl
+(07), mail authentication (06), reconciliation (11).
+
+Read together they say something none of them says alone. Each began as *two or
+more sources of truth that can disagree*, and in each the sabotage that breaks the
+drill turned out to be **the standard procedure**: an access review that walks
+groups, a checker that reads authentication results, a reconciliation joined on
+hostname. None of those is a mistake anyone would flag in a review. They are what
+"we already do that" means, and they are wrong in the same way — each answers a
+smaller question than the one being asked, and answers it correctly, which is why
+nothing looks broken.
+
+The four also converge on the same boundary: what survives a competent check is a
+residue whose cause is **not in any of the systems**. That is the advisory line the
+build-out's AI columns keep landing on — a model can rank the candidates, and the
+decision needs a person who knows something the records do not contain.
