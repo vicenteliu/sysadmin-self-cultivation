@@ -21,6 +21,23 @@ thing you've already crimped a cable for.
 - **Distribute** — spread load and survive failures: load balancers, anycast, DNS.
 - **Observe** — see what actually happened: flow logs, packet captures, counters.
 
+> **Where this chapter stops, on purpose.** Every verb above is stated at the
+> altitude of a decision somebody has to make and then own. Underneath it sits a
+> layer this repository does not cover anywhere — how a host actually resolves a
+> neighbour on the wire, what an ARP cache holds and when an entry goes stale,
+> what answers a name when there is no DNS server to ask, how a frame finds its
+> way from one switch port to another.
+>
+> That absence is a boundary rather than an oversight, and it is the same
+> reasoning as the Boundaries table in [`build-out/GAPS.md`](../build-out/GAPS.md).
+> This material stays useful exactly as long as it stays narrow, and the narrow
+> thing it does is decisions and their consequences. Protocol mechanics are a
+> different altitude with a different reader, and carrying both would cost both.
+>
+> It is worth naming rather than leaving for someone to discover. **Being able to
+> run a network and being able to say what the wire is doing are different
+> abilities, and this repository only trains the first one.**
+
 ## One concept before the seven: underlay vs. overlay
 
 Everything on this layer makes sense once you split it into two planes:
