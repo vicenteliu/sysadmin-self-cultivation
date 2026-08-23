@@ -78,9 +78,10 @@ senders, let a person decide which are authorised.
 - [`cross-cutting/labs/m365-conditional-access-lockout/`](../cross-cutting/labs/m365-conditional-access-lockout/)
   — the tenant-level mistake that is easiest to make and most expensive to undo.
 
-🔴 **Gap:** nothing runnable covers mail authentication — publishing a record,
-reading a DMARC report, seeing a message fail alignment. Recorded in
-[`GAPS.md`](./GAPS.md); it would be a good pure-local lab.
+- [`cross-cutting/labs/mail-authentication-alignment/`](../cross-cutting/labs/mail-authentication-alignment/)
+  — three green records and a fully spoofable domain, which is the same screenshot.
+  Why `p=none` is monitoring rather than protection, and what enforcement would
+  break if you moved today.
 
 ## Getting it backwards
 

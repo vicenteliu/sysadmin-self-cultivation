@@ -136,7 +136,7 @@ Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh
 | [`build-out/03-identity.md`](build-out/03-identity.md) | The step with an empty `Before` — identity has no physical prerequisite, and eight steps attach to it | ✅ ✋ |
 | [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | Numbered eleventh, must start at device #1 — honest about dependency, a lie about time | ✅ ✋ |
 | [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | How many IT people 100 people need — unanswerable until the estate is enumerated | ✅ ✋ |
-| [`build-out/GAPS.md`](build-out/GAPS.md) | Six real gaps the scenario surfaced, four of them the same shape — **two now closed** by [`remote-access-four-causes`](cross-cutting/labs/remote-access-four-causes/) and [`permission-sprawl`](cross-cutting/labs/permission-sprawl/) | ✅ living |
+| [`build-out/GAPS.md`](build-out/GAPS.md) | Six real gaps the scenario surfaced, four of them the same shape — **three now closed** by [`remote-access-four-causes`](cross-cutting/labs/remote-access-four-causes/), [`permission-sprawl`](cross-cutting/labs/permission-sprawl/) and [`mail-authentication-alignment`](cross-cutting/labs/mail-authentication-alignment/) | ✅ living |
 
 ## Agent Skills — the method, made invokable
 
