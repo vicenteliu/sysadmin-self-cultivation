@@ -6,15 +6,21 @@
 > ⚠ **Not a backlog of everything missing.** Material a 100-person office never
 > touches is not a gap. This list stays useful exactly as long as it stays narrow.
 
-Sixteen steps, **15 of 16 point at something runnable** (94%). What follows is the
-residue — and it is more interesting than the coverage number, because a scenario
-finds holes that a roadmap does not think to look for.
+Sixteen steps, and **the residue is now empty** — every step that should point at a
+runnable lab or tool does. [`00 · before the lease`](00-before-the-lease.md) still
+points at nothing, correctly: it is a conversation with a landlord and the honesty
+marker carries the weight.
+
+What follows is the record of what the scenario found, which was more interesting
+than any coverage number, because a scenario finds holes a roadmap does not think
+to look for.
 
 ## Real gaps — a lab or tool should exist and does not
 
-| Step | What is missing | Why it counts |
-|---|---|---|
-| [12 · rooms](12-meeting-rooms-av-and-uc.md) | Governance of recordings and transcripts — where they land, who can read them | Partial: the AV half cannot be made runnable, but the *data* half is the same problem as step 07 and is currently unowned. |
+**None open.** All six the scenario found are built; see [Closed](#closed) below.
+
+A step earns a line back into this table the moment it should be able to point at
+something runnable and cannot. The table being empty is a state, not a finish.
 
 ## Boundaries — not holes, and they should not be filled
 
@@ -22,7 +28,7 @@ finds holes that a roadmap does not think to look for.
 |---|---|
 | [00 · before the lease](00-before-the-lease.md) | It is a conversation with a landlord. The honesty marker carries the weight instead, and inventing an exercise would misrepresent the step. |
 | [02 · the building](02-the-building.md) | Commissioning a room from a shell is physical work with contractors. The rack-side habits are covered in [`platforms/self-host/`](../platforms/self-host/); the building-side is 🧗 and stays so. |
-| [12 · rooms](12-meeting-rooms-av-and-uc.md) — AV half | Same reason. Only the data-governance half is listed above as a real gap. |
+| [12 · rooms](12-meeting-rooms-av-and-uc.md) — AV half | Same reason. The data-governance half was the real gap and is now built at [`labs/transcript-retention/`](../cross-cutting/labs/transcript-retention/); the AV half stays here. |
 
 ## What this list is telling you
 
@@ -72,6 +78,25 @@ every one.
 
 **All four same-shape gaps are now built** — remote access (10), permission sprawl
 (07), mail authentication (06), reconciliation (11).
+
+✅ **Step 12 (data half) — 2026-08-22.**
+[`cross-cutting/labs/transcript-retention/`](../cross-cutting/labs/transcript-retention/)
+— the last one, and the only one containing no mistake. A meeting transcript shared
+to a group and to nothing else, exactly as lab 07 recommends: six people were in the
+room, 21 have been able to read it, zero grants were ever made, and four access
+reviews across three years all pass truthfully. The recording that could have checked
+the summary's one misattributed line expired on day 30; the summary did not. The
+person the meeting was about joins the project on day 700 and can read it.
+
+Its `--break-it` governs by point-in-time access review — the control everyone
+actually runs — and the four broken assertions all say the same thing in different
+words: **it does not answer those questions wrongly, it has no question whose answer
+is any of them.** The control that was missing was never an access control. It was
+an expiry.
+
+This is the one that most needed not to be written, and the check that decided it
+was worth writing was whether it could say anything lab 07 could not. It has one
+axis 07 does not have, and the axis is time.
 
 ✅ **Step 13 — 2026-08-22.**
 [`cross-cutting/labs/help-desk-queue/`](../cross-cutting/labs/help-desk-queue/)

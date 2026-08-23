@@ -77,10 +77,14 @@ anything. Here the answer is different, and it changes what IT has to think abou
 
 ## Do it
 
-🔴 **Gap, and partly a boundary.** Nothing here is runnable and little of it could
-be — commissioning a room is physical work with a vendor. What *could* exist is the
-governance side: where recordings and transcripts land, and who can read them.
-Recorded in [`GAPS.md`](./GAPS.md).
+- [`cross-cutting/labs/transcript-retention/`](../cross-cutting/labs/transcript-retention/)
+  — the governance half, and the only half that could be runnable: where recordings
+  and transcripts land, who can read them three years later, and why every access
+  review passes while that number triples.
+
+✋ **The AV half stays a boundary.** Commissioning a room is physical work with a
+vendor, and inventing an exercise for it would misrepresent the step. Recorded as
+such in [`GAPS.md`](./GAPS.md).
 
 ## Getting it backwards
 
