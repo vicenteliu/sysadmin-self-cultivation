@@ -84,6 +84,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Interview | [`cross-cutting/interview/`](cross-cutting/interview/) — the skill maps transposed again, from the interviewer's side: [networking](cross-cutting/interview/networking.md) (21 Q) + [identity](cross-cutting/interview/identity.md) (19 Q). Answer shape set by the section marker ([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)); six 🔨 answers still carry ⏳ | ✅ |
 | AI method | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — the steady state rather than the ramp: triage → change → incident → write-up → sweep, each naming what to hand over and where to take it back | ✅ |
 | Retrieval | front-matter on 156 files as the single source + [`docs/build-index.py`](docs/build-index.py) → [`docs/index.json`](docs/index.json) (191 records, mirrors derived). Agent-facing; idempotent, `--check` reports staleness | ✅ |
+| Site design | [`cross-cutting/site-network-design.md`](cross-cutting/site-network-design.md) — the step between the reference office's parameters and a design, at the same altitude as the layer chapter. Paired with [`the-reference-office.md`](the-reference-office.md)'s now-written **Selection rules** (the arithmetic 3 build-out steps asked for); `Reference build` stays ⏳ because no step asks for a model | ✅ |
 | **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)

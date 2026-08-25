@@ -106,7 +106,7 @@ how far each skill travels rather than by which cloud it belongs to.
 | **Understand the philosophy** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
 | **Go deep on one platform** | [`platforms/`](platforms/) — **AWS is the worked example**, read it end to end |
 | **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
-| **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · and more |
+| **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · **site network design** · and more |
 | **Check what I can actually do** | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/README.md) — one theme across all seven platforms, tiered by how far the skill travels |
 | **Prepare for the interview** | [`cross-cutting/interview/`](cross-cutting/interview/README.md) — the same sections from the other side: what they ask, what it probes, and the answer |
 | **Use AI on an ordinary Tuesday** | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — triage → change → incident → write-up → sweep, and where you take it back |

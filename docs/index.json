@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 191,
+  "count": 192,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -601,6 +601,19 @@
       ],
       "platforms": [],
       "summary": "Once you have many small services instead of a few big ones (the-stack/05), two new questions appear that a monolith never had: how does service A find service B when B's addresses change constantly?",
+      "marker": "mixed"
+    },
+    "cross-cutting/site-network-design.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "identity"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Designing the network for one physical place: segmentation with a reason per segment, an address plan that survives a merge, and the wireless question a hundred-person floor actually asks.",
       "marker": "mixed"
     },
     "cross-cutting/skills-maps/README.md": {
