@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [security-compliance]
+platforms: []
+summary: "Inputs: none · Outputs: PASS/FAIL/INFO/SKIP per check + summary · Risk: read-only, changes nothing · Root: optional — shadow and effective-sshd checks need…"
+---
 # baseline-check
 
 > **Inputs:** none · **Outputs:** PASS/FAIL/INFO/SKIP per check + summary ·

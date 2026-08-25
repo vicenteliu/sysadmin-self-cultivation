@@ -1,3 +1,10 @@
+---
+kind: ansible-role
+axis: toolbox
+themes: [iac-config]
+platforms: []
+summary: "The scripts find problems (read-only, safe to run anywhere)."
+---
 # Ansible line — the remediation half
 
 > The [scripts](../) *find* problems (read-only, safe to run anywhere). These

@@ -1,3 +1,10 @@
+---
+kind: index
+axis: cross-cutting
+themes: [identity, iac-config]
+platforms: []
+summary: "The layers that transfer across every cloud."
+---
 # cross-cutting/
 
 The layers that transfer across **every** cloud. Learn these as concepts once and

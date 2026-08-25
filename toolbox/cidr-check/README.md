@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [networking]
+platforms: []
+summary: "Inputs: CIDR ranges (args or --file plan.txt) · Outputs: overlap report on stdout · Risk: read-only, touches nothing · Root: not…"
+---
 # cidr-check
 
 > **Inputs:** CIDR ranges (args or `--file plan.txt`) · **Outputs:** overlap report on

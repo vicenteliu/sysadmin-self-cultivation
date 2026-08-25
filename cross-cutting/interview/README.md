@@ -1,3 +1,11 @@
+---
+kind: interview
+axis: cross-cutting
+themes: []
+platforms: []
+marker: "mixed"
+summary: "skills-maps/ answers what can I do. This answers how do they check — the same material, same sections, from the other side of the table."
+---
 # cross-cutting/interview/
 
 > [`skills-maps/`](../skills-maps/README.md) answers *what can I do.* This answers

@@ -1,3 +1,10 @@
+---
+kind: ansible-role
+axis: toolbox
+themes: [iac-config]
+platforms: []
+summary: "Declarative users: define the desired state, the role converges to it."
+---
 # role: user_lifecycle
 
 Declarative users: define the desired state, the role converges to it. The

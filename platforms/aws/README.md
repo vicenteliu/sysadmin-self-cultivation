@@ -1,3 +1,10 @@
+---
+kind: index
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+summary: "The template every platform module follows: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes AWS gets as the worked example: architecture (how it's…"
+---
 # AWS — the worked example
 
 > The template every platform module follows: **what it is → the admin skill map →

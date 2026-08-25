@@ -1,3 +1,10 @@
+---
+kind: ansible-role
+axis: toolbox
+themes: [iac-config, security-compliance]
+platforms: []
+summary: "Remediates the items baseline-check audits — SSH posture, default umask, a sysctl baseline, and persistent journald."
+---
 # role: baseline_hardening
 
 Remediates the items [`baseline-check`](../../../baseline-check/) audits — SSH

@@ -1,3 +1,11 @@
+---
+kind: skill-map
+axis: cross-cutting
+themes: [identity]
+platforms: [aws]
+marker: "mixed"
+summary: "Every platform folder carries a skill map: one platform, cut across every theme."
+---
 # cross-cutting/skills-maps/
 
 > Every platform folder carries a [skill map](../../platforms/aws/skills-map.md):

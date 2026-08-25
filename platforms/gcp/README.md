@@ -1,3 +1,10 @@
+---
+kind: index
+axis: platforms
+themes: [cloud]
+platforms: [gcp]
+summary: "The template every platform module follows: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes mirroring the AWS worked example: architecture (how it's…"
+---
 # Google Cloud Platform (GCP) — the third cloud
 
 > The template every platform module follows: **what it is → the admin skill map →

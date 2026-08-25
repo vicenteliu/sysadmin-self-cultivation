@@ -1,3 +1,10 @@
+---
+kind: adr
+axis: meta
+themes: []
+platforms: []
+summary: "This repo has six axes over one body of material, and the README says what they are for: \"enter from whichever matches your question.\" That works when you already know what to ask."
+---
 # The build-out is a route through the axes, not a seventh axis
 
 This repo has six axes over one body of material, and the README says what they

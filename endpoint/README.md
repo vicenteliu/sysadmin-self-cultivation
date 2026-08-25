@@ -1,3 +1,10 @@
+---
+kind: index
+axis: foundations
+themes: [endpoint-mdm]
+platforms: []
+summary: "One of the densest demand clusters in the whole signal, and the platform folders don't cover it: managing the fleet of laptops and phones that people actually work on."
+---
 # Endpoint & MDM
 
 > One of the densest demand clusters in the whole signal, and the platform folders

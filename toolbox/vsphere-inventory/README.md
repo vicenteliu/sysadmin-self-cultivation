@@ -1,3 +1,11 @@
+---
+kind: tool
+axis: toolbox
+themes: [virtualization]
+platforms: [vsphere]
+marker: "🔨"
+summary: "Inputs: --server host[:port], --user, password via VSPHEREPASSWORD · Outputs: one JSON inventory document (stdout or --out), optional per-VM CSV · Risk: read-only — logs in, reads properties, logs…"
+---
 # vsphere-inventory
 
 > **Inputs:** `--server host[:port]`, `--user`, password via `VSPHERE_PASSWORD` ·

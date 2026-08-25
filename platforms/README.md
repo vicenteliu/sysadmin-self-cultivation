@@ -1,3 +1,10 @@
+---
+kind: index
+axis: platforms
+themes: []
+platforms: []
+summary: "One folder per platform. Every module follows the same four-part template so you can move between them without re-learning how to read…"
+---
 # platforms/
 
 One folder per platform. Every module follows the **same four-part template** so you

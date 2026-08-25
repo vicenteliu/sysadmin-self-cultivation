@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [linux-scripting]
+platforms: []
+summary: "Inputs: none · Outputs: one triage report on stdout · Risk: read-only · Root: optional — journal errors and some counters say more with…"
+---
 # linux-triage
 
 > **Inputs:** none · **Outputs:** one triage report on stdout · **Risk:** read-only

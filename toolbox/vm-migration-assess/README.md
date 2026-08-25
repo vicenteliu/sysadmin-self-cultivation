@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [virtualization]
+platforms: [vsphere]
+summary: "Inputs: a vsphere-inventory JSON document (--in FILE or stdin) · Outputs: per-VM verdict report (or --json) · Risk: read-only — assessment only, touches neither environment · Root: not…"
+---
 # vm-migration-assess
 
 > **Inputs:** a [`vsphere-inventory`](../vsphere-inventory/) JSON document

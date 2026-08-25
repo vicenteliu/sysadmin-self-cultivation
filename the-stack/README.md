@@ -1,3 +1,10 @@
+---
+kind: index
+axis: the-stack
+themes: []
+platforms: [aws, azure, vsphere, openstack]
+summary: "The third axis of this repo. platforms/ reads the clouds one at a time; cross-cutting/ reads one theme across them."
+---
 # The Stack — One Stack, Seven Ways
 
 > The third axis of this repo. `platforms/` reads the clouds one at a time;

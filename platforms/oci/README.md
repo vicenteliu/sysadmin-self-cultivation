@@ -1,3 +1,10 @@
+---
+kind: index
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+summary: "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio."
+---
 # Oracle Cloud Infrastructure (OCI) — the youngest hyperscaler
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the

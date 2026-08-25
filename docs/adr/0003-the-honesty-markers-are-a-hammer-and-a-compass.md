@@ -1,3 +1,10 @@
+---
+kind: adr
+axis: meta
+themes: []
+platforms: []
+summary: "Every module in this repo marks what is hands-on depth and what is an honest ramp."
+---
 # The honesty markers are 🔨 and 🧭, not ✋ and 🧗
 
 Every module in this repo marks what is **hands-on depth** and what is an

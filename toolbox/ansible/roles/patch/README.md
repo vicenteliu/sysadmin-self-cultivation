@@ -1,3 +1,10 @@
+---
+kind: ansible-role
+axis: toolbox
+themes: [iac-config, security-compliance]
+platforms: []
+summary: "Applies pending updates on apt or dnf systems, then reports — or, if you ask — acts on a required reboot."
+---
 # role: patch
 
 Applies pending updates on apt or dnf systems, then reports — or, if you ask —

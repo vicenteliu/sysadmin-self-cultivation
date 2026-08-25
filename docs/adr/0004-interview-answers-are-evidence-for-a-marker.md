@@ -1,3 +1,10 @@
+---
+kind: adr
+axis: meta
+themes: []
+platforms: []
+summary: "ADR-0002 made five decisions about the-reference-office.md."
+---
 # Interview answers are evidence for a marker, not a script to recite
 
 [ADR-0002](0002-the-reference-office-is-parameters-not-a-bill-of-materials.md) made

@@ -1,3 +1,11 @@
+---
+kind: tool
+axis: toolbox
+themes: []
+platforms: [vsphere]
+marker: "mixed"
+summary: "The rest of this repo explains how things work."
+---
 # Toolbox — take it with you
 
 > The rest of this repo explains how things work. The toolbox is the part you can

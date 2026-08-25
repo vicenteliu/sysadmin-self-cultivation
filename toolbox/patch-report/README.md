@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [security-compliance]
+platforms: []
+summary: "Inputs: none (--quiet for counts only) · Outputs: pending-updates report on stdout · Risk: read-only — never installs, never refreshes metadata · Root: not needed for the…"
+---
 # patch-report
 
 > **Inputs:** none (`--quiet` for counts only) · **Outputs:** pending-updates report

@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [identity]
+platforms: []
+summary: "Inputs: a CSV of username,action[,groups] · Outputs: the plan (dry-run) or per-user results (--apply) · Risk: dry-run by default — changes state only with --apply · Root: required for…"
+---
 # user-lifecycle
 
 > **Inputs:** a CSV of `username,action[,groups]` · **Outputs:** the plan (dry-run)

@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: []
+platforms: []
+summary: "Inputs: a selection — --profile NAME or --pick concern,concern (+ optional --platform) · Outputs: a standalone toolbox pack written to --out DIR · Risk: read-only towards the repo and your system —…"
+---
 # generate
 
 > **Inputs:** a selection — `--profile NAME` or `--pick concern,concern` (+ optional

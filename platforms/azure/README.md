@@ -1,3 +1,10 @@
+---
+kind: index
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+summary: "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes mirroring the AWS worked example: architecture (how it's structured),…"
+---
 # Azure
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the

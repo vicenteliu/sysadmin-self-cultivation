@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [virtualization]
+platforms: [vsphere]
+summary: "Inputs: one or more inventory JSON files (vsphere-inventory and/or pve-inventory; stdin when none) · Outputs: hygiene report of flagged VMs (or --json) · Risk: read-only — flags only; deleting or…"
+---
 # snapshot-audit
 
 > **Inputs:** one or more inventory JSON files ([`vsphere-inventory`](../vsphere-inventory/)

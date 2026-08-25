@@ -1,3 +1,10 @@
+---
+kind: index
+axis: meta
+themes: []
+platforms: []
+summary: "The project's default language is English; the canonical docs live at the repo root and under platforms/, cross-cutting/, and ai-workflow/."
+---
 # docs/ — Documentation & translations
 
 The project's **default language is English**; the canonical docs live at the repo

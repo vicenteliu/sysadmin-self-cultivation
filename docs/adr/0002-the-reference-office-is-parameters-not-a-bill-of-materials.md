@@ -1,3 +1,10 @@
+---
+kind: adr
+axis: meta
+themes: []
+platforms: []
+summary: "Every build-out step says a hundred people without ever saying how big the place is, so a decision-teaching repo had nothing concrete to decide against."
+---
 # The reference office is parameters, and the model names are quarantined
 
 Every build-out step says *a hundred people* without ever saying how big the place is, so

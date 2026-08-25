@@ -1,3 +1,10 @@
+---
+kind: index
+axis: foundations
+themes: [linux-scripting]
+platforms: []
+summary: "The floor under every role in this repo. Every job posting that inspired this project assumes this and never lists it — which is exactly why it's worth making explicit."
+---
 # Foundations — Linux & scripting
 
 > The floor under every role in this repo. Every job posting that inspired this

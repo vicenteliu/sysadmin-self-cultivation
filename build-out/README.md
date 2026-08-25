@@ -1,3 +1,10 @@
+---
+kind: index
+axis: build-out
+themes: []
+platforms: []
+summary: "A route through the other axes, not another axis."
+---
 # The Build-Out — one office, first day to open for business
 
 > A **route through** the other axes, not another axis. Every step says what it

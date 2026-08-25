@@ -1,3 +1,10 @@
+---
+kind: tool
+axis: toolbox
+themes: [storage-backup]
+platforms: []
+summary: "Inputs: a tar archive; optionally the source dir it backs up · Outputs: restore report on stdout · Risk: read-only towards your system — writes only to a temp dir it deletes on exit · Root: not…"
+---
 # backup-restore-drill
 
 > **Inputs:** a tar archive; optionally the source dir it backs up · **Outputs:**

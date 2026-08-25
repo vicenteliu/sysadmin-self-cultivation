@@ -1,3 +1,10 @@
+---
+kind: index
+axis: platforms
+themes: [virtualization]
+platforms: [vsphere]
+summary: "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio."
+---
 # VMware vSphere / vCenter — the private-cloud workhorse
 
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
