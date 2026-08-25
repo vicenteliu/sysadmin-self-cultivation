@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+summary: "What it drills: 1. No policy → NotAuthorizedOrNotFound (a 404, not a 403)."
+---
 # Lab — a compartment is not an account (and a verb is not a role)
 
 **Goal:** feel OCI's two signature access lessons the way you'll actually hit them in a

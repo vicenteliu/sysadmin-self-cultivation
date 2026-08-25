@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [identity, cloud, containers]
+platforms: [gcp]
+summary: "No cluster, no credentials, no cost, no external packages — just Python 3.8+."
+---
 # Lab — GKE has two auth planes (prove it in your own hands)
 
 **Goal:** make the #1 GKE lesson of the [GCP support note](../../support.md) tangible —

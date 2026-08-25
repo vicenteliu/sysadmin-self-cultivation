@@ -1,3 +1,11 @@
+---
+kind: lab
+axis: platforms
+themes: [cloud]
+platforms: [openstack]
+marker: "🧭"
+summary: "Tear-down-able exercises against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre."
+---
 # OpenStack — Labs
 
 Tear-down-able exercises against **DevStack** — a single-node, all-in-one OpenStack in

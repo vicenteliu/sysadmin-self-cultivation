@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [storage-backup, itsm-saas]
+platforms: []
+summary: "permission-sprawl asks who can see this. That is a question about an instant, and it answers it well."
+---
 # Lab — the estate that passed the permission lab is the one that fails this one
 
 **Goal:** show a governance failure that contains no mistake. Nothing is

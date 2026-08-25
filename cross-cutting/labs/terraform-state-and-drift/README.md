@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [iac-config]
+platforms: []
+summary: "What it drills — six lessons that fall out of that one model: 1."
+---
 # Lab — state is the source of truth (and drift is the enemy)
 
 **Goal:** feel the one thing an **Ansible/config-management sysadmin gets wrong about

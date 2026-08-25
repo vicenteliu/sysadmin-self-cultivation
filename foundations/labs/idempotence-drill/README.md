@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: foundations
+themes: [linux-scripting]
+platforms: []
+summary: "No dependencies beyond bash + coreutils, no cloud, no root."
+---
 # Lab — Idempotence & `set -euo pipefail` (fragile vs. safe, felt in bash)
 
 **Goal:** make the central [foundations](../../README.md) lesson tangible — **an

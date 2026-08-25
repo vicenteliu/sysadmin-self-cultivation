@@ -1,3 +1,11 @@
+---
+kind: lab
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+marker: "🧭"
+summary: "Runnable, tear-down-able exercises — same shape as the AWS labs."
+---
 # OCI — Labs
 
 Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/).

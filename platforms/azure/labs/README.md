@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+summary: "Runnable, tear-down-able exercises — same shape as the AWS labs, so you feel the concepts translate rather than re-learning from scratch."
+---
 # Azure — Labs
 
 Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/), so

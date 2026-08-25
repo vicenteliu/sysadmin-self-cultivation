@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: the-stack
+themes: [virtualization, storage-backup]
+platforms: []
+summary: "No cloud, no credentials, no cost, no external packages — just Python 3.8+ and its built-in sqlite3."
+---
 # Lab 04 — Backup is not snapshot (prove it in your own hands)
 
 **Goal:** make the central lesson of [chapter 04](../../04-storage.md) tangible —

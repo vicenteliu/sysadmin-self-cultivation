@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [containers]
+platforms: []
+summary: "What it drills — six lessons that fall out of that one model: 1."
+---
 # Lab — pods are cattle, and a controller reconciles forever
 
 **Goal:** feel the one thing a **Linux/systemd/Docker sysadmin gets wrong about

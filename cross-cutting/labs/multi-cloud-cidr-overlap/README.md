@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [networking, cloud]
+platforms: []
+summary: "What it drills — five lessons: 1. Non-overlapping + routes both ways → traffic flows."
+---
 # Lab — overlapping CIDRs break the interconnect (and there is no central router)
 
 **Goal:** feel the #1 concrete blocker a single-cloud admin hits the day they connect two

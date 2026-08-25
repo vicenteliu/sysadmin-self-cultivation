@@ -1,3 +1,11 @@
+---
+kind: lab
+axis: platforms
+themes: [virtualization]
+platforms: [vsphere]
+marker: "🔨"
+summary: "Tear-down-able exercises against a lab vCenter (or nested ESXi)."
+---
 # vSphere — Labs
 
 Tear-down-able exercises against a lab vCenter (or nested ESXi). Reading about vMotion

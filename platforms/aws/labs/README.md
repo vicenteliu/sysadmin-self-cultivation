@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+summary: "Runnable, tear-down-able exercises. Reading about a subnet and configuring one are different skills; these make you do the second."
+---
 # AWS — Labs
 
 Runnable, tear-down-able exercises. Reading about a subnet and configuring one are

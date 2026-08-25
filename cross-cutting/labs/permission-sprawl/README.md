@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [identity]
+platforms: []
+summary: "Two estates, built the same week, same documents, same hundred people."
+---
 # Lab — "Who can see this?" is not answered by reading the permissions
 
 **Goal:** make the auditor's real question tangible. Not *is it locked down* —

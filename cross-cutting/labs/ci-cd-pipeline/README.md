@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [ci-cd]
+platforms: []
+summary: "The workflow lives under .github-workflows-example/ on purpose — GitHub only runs workflows in .github/workflows/, so it will not execute against this teaching repo."
+---
 # Lab — A real CI/CD pipeline (test → build once → gated deploy)
 
 **Goal:** make [the CI/CD chapter](../../ci-cd.md) concrete with a **real, valid

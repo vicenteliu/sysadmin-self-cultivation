@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [identity, itsm-saas]
+platforms: []
+summary: "No tenant, no credentials, no cost, no external packages — just Python 3.8+."
+---
 # Lab — Conditional Access self-lockout (prove it in your own hands)
 
 **Goal:** make the most dangerous lesson of the [M365 support note](../../m365-support.md)

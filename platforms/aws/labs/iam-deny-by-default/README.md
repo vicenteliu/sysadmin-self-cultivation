@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [identity, cloud]
+platforms: [aws]
+summary: "No cloud, no credentials, no cost, no external packages — just Python 3.8+."
+---
 # Lab — IAM is deny-by-default (prove it in your own hands)
 
 **Goal:** make the central lesson of the [AWS support note](../../support.md) tangible

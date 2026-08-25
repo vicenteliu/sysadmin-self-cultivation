@@ -1,3 +1,11 @@
+---
+kind: lab
+axis: platforms
+themes: [virtualization]
+platforms: [self-host]
+marker: "🔨"
+summary: "Pure-local, tear-down-able exercises. Where the clouds need an account, this platform needs a laptop with nested virtualization — the honest way to practice bare-metal discipline without a data centre."
+---
 # Self-Hosted / Bare Metal — Labs
 
 Pure-local, tear-down-able exercises. Where the clouds need an account, this platform

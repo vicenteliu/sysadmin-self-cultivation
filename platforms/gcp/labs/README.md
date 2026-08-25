@@ -1,3 +1,11 @@
+---
+kind: lab
+axis: platforms
+themes: [cloud]
+platforms: [gcp]
+marker: "🧭"
+summary: "Runnable, tear-down-able exercises — same shape as the AWS labs, so the concepts translate."
+---
 # GCP — Labs
 
 Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/), so

@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [itsm-saas]
+platforms: []
+summary: "A hundred-person office runs procurement (authoritative for who paid for it and who it belongs to) and an endpoint management tool (authoritative for what state it is in)."
+---
 # Lab — both systems report 97 devices, 97 devices exist, and three records are wrong
 
 **Goal:** kill the idea that a matching total is reassurance. Two live, automatic,

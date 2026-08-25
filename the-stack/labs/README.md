@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: the-stack
+themes: []
+platforms: [aws]
+summary: "Runnable evidence for the layer series. Each chapter's \"Lab\" section is a spec; this folder is where those specs become code you can actually run and verify."
+---
 # The Stack — Labs
 
 Runnable evidence for the layer series. Each chapter's "Lab" section is a spec;

@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [itsm-saas]
+platforms: []
+summary: "Seven ticket categories with their own arrival rates and handling times, two worlds (that automation built, or not), Erlang-C over a stated support window."
+---
 # Lab — "one per fifty users" is right here, for a reason it cannot state
 
 **Goal:** turn the staffing question into arithmetic you can argue with. Step 13

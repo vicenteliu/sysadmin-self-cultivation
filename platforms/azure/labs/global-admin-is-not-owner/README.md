@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+summary: "No tenant, no subscription, no credentials, no external packages — just Python 3.8+."
+---
 # Lab — Global Admin is not Owner (prove it in your own hands)
 
 **Goal:** make Azure's signature access lesson from the [Azure support note](../../support.md)

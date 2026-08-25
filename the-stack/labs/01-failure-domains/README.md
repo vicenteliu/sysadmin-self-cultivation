@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: the-stack
+themes: []
+platforms: []
+summary: "No cloud, no credentials, no cost, no external packages — just Python 3.8+."
+---
 # Lab 01 — Failure domains (place replicas so a rack loss survives)
 
 **Goal:** make the central lesson of [chapter 01](../../01-physical.md) tangible — **a

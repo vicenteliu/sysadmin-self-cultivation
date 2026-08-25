@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [identity, networking]
+platforms: []
+summary: "1. an expired certificate on the gateway 2."
+---
 # Lab — "The VPN won't connect" is four different problems
 
 **Goal:** make the most expensive habit in remote-access support tangible —

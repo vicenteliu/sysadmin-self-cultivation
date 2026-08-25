@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [iac-config, cloud]
+platforms: [aws]
+summary: "Confirm in Cost Explorer the next day that nothing lingers."
+---
 # Lab 02 — Minimal VPC + EC2, from Terraform
 
 **Goal:** stand up a small, *secure-by-default* stack entirely from code — a VPC, a

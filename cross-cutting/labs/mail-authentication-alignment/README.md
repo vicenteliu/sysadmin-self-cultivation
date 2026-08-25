@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: cross-cutting
+themes: [networking, itsm-saas]
+platforms: []
+summary: "A hundred-person office publishes all three records."
+---
 # Lab — "The records are published" is not the same claim as "the domain is protected"
 
 **Goal:** make the gap between those two sentences measurable. SPF, DKIM and

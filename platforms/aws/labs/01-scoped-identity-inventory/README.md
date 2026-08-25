@@ -1,3 +1,10 @@
+---
+kind: lab
+axis: platforms
+themes: [identity, cloud]
+platforms: [aws]
+summary: "inventory-policy.json grants only the read-only calls this script makes — nothing…"
+---
 # Lab 01 — Scoped identity + account inventory
 
 **Goal:** create a *least-privilege, read-only* identity, then use it to inventory
