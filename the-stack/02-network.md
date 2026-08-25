@@ -250,10 +250,18 @@ how far each skill travels rather than by platform — is
 The 🔨 here is the classic enterprise stack: years of hands-on DNS/DHCP/BIND,
 VLANs, firewalls, VPNs, and TCP/IP debugging across offices and data centers, with
 a CCNP-level routing-and-switching foundation and vSphere networking operated for
-real. The 🧭 is the modern SDN layer: each cloud's VPC specifics, NSX, and
+real. The 🧭 is two things, and the second was previously left unsaid rather than
+claimed. The first is the modern SDN layer: each cloud's VPC specifics, NSX, and
 EVPN-VXLAN fabrics are ramped via exactly the method above — solid conceptual
 mapping, verified against current docs, no claimed years of daily BGP peering or
-NSX production ops. The debug ladder, though, is platform-independent and
+NSX production ops. The second is **wireless**: density planning, channel and
+power strategy, RF survey practice and access-point selection are mapped and
+verified, not designed on a floor and lived with afterwards. It is named here
+because the 🔨 list above is deep enough that a reader would otherwise reasonably
+fold wireless into it, and the silence would be doing work the evidence does not
+support. The design method is written out in
+[`cross-cutting/site-network-design.md`](../cross-cutting/site-network-design.md),
+marked 🧭 in the same place. The debug ladder, though, is platform-independent and
 scar-tissue-tested: it was learned on hardware, and it works identically on
 overlays someone else runs.
 
