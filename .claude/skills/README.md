@@ -1,3 +1,11 @@
+---
+kind: index
+axis: start-here
+themes: []
+platforms: []
+summary: "The eight Agent Skills — five packaging the repo's method, three driving the toolbox — that let an AI agent apply the methodology rather than only read it."
+---
+
 # Agent Skills
 
 This repo ships with eight [Claude Code / Agent Skills](https://docs.claude.com) —

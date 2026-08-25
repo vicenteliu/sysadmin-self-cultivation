@@ -1,0 +1,2047 @@
+{
+  "schema": 1,
+  "generated_by": "docs/build-index.py",
+  "note": "Generated from front-matter. Edit the file, not this index.",
+  "count": 190,
+  "files": {
+    ".claude/skills/README.md": {
+      "kind": "index",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The eight Agent Skills — five packaging the repo's method, three driving the toolbox — that let an AI agent apply the methodology rather than only read it."
+    },
+    ".claude/skills/author-module/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Author a new module for The Sysadmin's Self-Cultivation repo (a platform doc, a cross-cutting note, an architecture/operations/automation companion, or a lab) that matches the established conventions — blockquote thesis, section skeleton, 🔨/🧭 honesty markers, validated mermaid, cadence tables, cross-links. Use when adding/writing a new chapter, note, platform module, or companion doc to this repo, or when the user says \"write a note on X\", \"add a module for X\", \"keep it consistent with the repo\"."
+    },
+    ".claude/skills/harden-baseline/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Close the audit→remediate loop on a Linux host — run the baseline-check script to find hardening gaps, explain each FAIL, then apply the baseline_hardening Ansible role safely (check-mode first, lock-out-aware). Use when the user says \"harden this box\", \"check/fix the security baseline\", \"is this server hardened\", \"apply CIS basics\", \"加固这台机器\", or wants the hardening gaps found and fixed. Pairs the read-only audit with its remediation."
+    },
+    ".claude/skills/honesty-audit/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Audit a resume, bio, skills list, LinkedIn blurb, or any technical claim and classify every claim as 🔨 hands-on depth / 🧭 verified ramp / ❌ overclaim, using this repo's honesty discipline. Flags anything bluffed, suggests honest reframes, and (for ramps) the fast-verifiable-ramp wording. Use when the user says \"audit this for overclaims\", \"is this honest\", \"check my resume claims\", \"am I bluffing\", \"🔨 or 🧭\", or shares a claims doc to vet."
+    },
+    ".claude/skills/linux-triage/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Triage a Linux host with the toolbox's linux-triage script, read the result honestly, and route each red flag to its fix — patch, hardening, or a pointer. Use when the user says \"check this box\", \"triage this server\", \"is this host healthy\", \"something's wrong with this machine\", \"帮我看看这台机器\", or hands you a server that's misbehaving. The user-facing entry point to the toolbox."
+    },
+    ".claude/skills/mirror-zh/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Mirror an English canonical doc from The Sysadmin's Self-Cultivation repo into a Chinese translation under docs/zh/, following the repo's translation convention — same path mirrored, technical terms kept in English, a bidirectional 🌐 language switcher, cross-links pointing back to the English source, and index/pointer updates. Use when the user says \"做个中文镜像\", \"mirror this to Chinese\", \"translate this to zh\", \"put it in docs/zh\", or wants a Chinese version of an existing note."
+    },
+    ".claude/skills/platform-ramp/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Ramp onto any platform (a cloud, a hypervisor, an MDM, a service) fast and honestly, using this repo's operating model — map the seven surfaces, produce a checkable skill map, give the AI-assisted method, and label every claim 🔨 hands-on vs 🧭 ramp. Use when the user says \"help me ramp onto X\", \"get me competent on X\", \"map X onto what I know\", \"I've never touched X\", or hands you a new platform to learn."
+    },
+    ".claude/skills/runnable-lab/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Turn a concept into a pure-local, zero-dependency, self-verifying lab (exit code 0 = the lessons held), in the style of this repo's runnable drills. Prefers stdlib Python or bash so it needs no install and CI can run it. Use when the user says \"make this a runnable lab\", \"turn this spec into code\", \"build a drill for X\", \"prove X in code\", or wants to make a lab spec actually executable."
+    },
+    ".claude/skills/toolbox-picker/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Given a sysadmin task or problem in plain language, pick the right toolbox tool or Ansible role, explain how to run it safely, and hand back the exact command. The navigator for this repo's toolbox. Use when the user describes a task (\"I need to batch-create users\", \"check what needs patching\", \"find overlapping subnets\") and isn't sure which tool fits, asks \"what's in the toolbox\", \"is there a tool for X\", or \"怎么用工具箱做 X\"."
+    },
+    "00-the-operating-model.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The transferable skeleton under every platform."
+    },
+    "CONTENTS.md": {
+      "kind": "index",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "The detailed index: every module, what it is, and where it lives."
+    },
+    "CONTEXT.md": {
+      "kind": "glossary",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "A glossary for this repo — the words that mean something specific here, and the words they get confused with."
+    },
+    "README.md": {
+      "kind": "index",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The front door: what this repo is, how to read it, and what is built."
+    },
+    "ROADMAP.md": {
+      "kind": "roadmap",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "This project is built demand-first. The order below is set by how often each skill shows up in real infrastructure / platform / IT-engineering job descriptions — so the repo grows toward what the…"
+    },
+    "WHY.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The idea behind the project, and an honest read on where the craft is heading."
+    },
+    "ai-workflow/ai-in-the-day-job.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [
+        "observability"
+      ],
+      "platforms": [],
+      "summary": "The companion to how-i-use-ai-to-learn-and-operate.md, which is about the ramp — arriving somewhere new.",
+      "marker": "mixed"
+    },
+    "ai-workflow/how-i-use-ai-to-learn-and-operate.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [
+        "observability"
+      ],
+      "platforms": [],
+      "summary": "The meta-layer. Every platform module has its own AI-ramp; this is the shared philosophy behind them — and the part that keeps AI from quietly wrecking things."
+    },
+    "build-out/00-before-the-lease.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "🧭 verified ramp, not hands-on. This step is written as a question list, not as negotiating advice — a question list can be derived from first principles; negotiating cannot, and this author has not…",
+      "marker": "🧭"
+    },
+    "build-out/01-uplink.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "🧭 verified ramp for procurement and carrier negotiation; 🔨 for what the circuit is carrying and how it fails once it is live.",
+      "marker": "mixed"
+    },
+    "build-out/02-the-building.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "🧭 for commissioning a new site; 🔨 for what happens in the rack afterwards (PXE/imaging fleets, BMC/IPMI, DNS and RAID at scale — see platforms/self-host/).",
+      "marker": "mixed"
+    },
+    "build-out/03-identity.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on (Entra/Azure AD, M365 tenant work, JML at scale) Before: nothing.",
+      "marker": "🔨"
+    },
+    "build-out/04-devices-and-images.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "endpoint-mdm"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, hardware lifecycle Before: 02 the building · 03 identity.",
+      "marker": "🔨"
+    },
+    "build-out/05-network.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — switching, DNS/DHCP, the boot path, and the fault-isolation habits Before: 01 uplink · 02 the building · 03 identity · 04 devices.",
+      "marker": "🔨"
+    },
+    "build-out/06-tenant-and-mail.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — M365 tenant work and the break-fix craft around it Before: 03 identity.",
+      "marker": "🔨"
+    },
+    "build-out/07-files-and-collaboration.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — SaaS administration and the sharing/permission surface Before: 03 identity · 05 network · 06 tenant.",
+      "marker": "🔨"
+    },
+    "build-out/08-endpoint-security-and-patching.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "endpoint-mdm",
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — patch operations, baselines, and working alongside a security function Before: 03 identity · 04 devices.",
+      "marker": "🔨"
+    },
+    "build-out/09-backup-and-the-restore-drill.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "storage-backup"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — backup targets, RAID rebuild windows, snapshot hygiene, restore practice Before: 06 tenant · 07 files.",
+      "marker": "🔨"
+    },
+    "build-out/10-remote-access.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "identity",
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — VPN operations, certificate and TLS fundamentals, the auth failure paths Before: 01 uplink · 03 identity · 05 network.",
+      "marker": "🔨"
+    },
+    "build-out/11-assets-and-tickets.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on (ServiceNow, ~5 years; asset reconciliation and audit automation) Before: 03 identity · 04 devices.",
+      "marker": "🔨"
+    },
+    "build-out/12-meeting-rooms-av-and-uc.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "🧭 verified ramp. Room AV integration is not this author's hands-on ground; the network, identity and support surfaces underneath it are.",
+      "marker": "mixed"
+    },
+    "build-out/13-the-help-desk.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — service desk operations and ITSM practice Before: 04 devices · 10 remote access · 11 assets · 12 rooms.",
+      "marker": "🔨"
+    },
+    "build-out/14-compliance-evidence.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — access governance, asset reconciliation, and audit automation Before: 03 identity · 06 tenant · 07 files · 08 endpoint · 09 backup · 11 assets.",
+      "marker": "🔨"
+    },
+    "build-out/15-joiner-mover-leaver.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — JML at scale, directory automation, SCIM provisioning Before: 03 identity · 06 tenant · 11 assets · 13 the help desk.",
+      "marker": "🔨"
+    },
+    "build-out/GAPS.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "Derived, not planned. A step earns a line here when it should be able to point at a runnable lab or a toolbox/ tool and the repo has none.",
+      "marker": "🧭"
+    },
+    "build-out/README.md": {
+      "kind": "index",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "A route through the other axes, not another axis."
+    },
+    "cross-cutting/README.md": {
+      "kind": "index",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity",
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "The layers that transfer across every cloud."
+    },
+    "cross-cutting/ci-cd.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "ci-cd"
+      ],
+      "platforms": [],
+      "summary": "The one topic the standard roadmaps put at the center that this repo owed a dedicated note.",
+      "marker": "mixed"
+    },
+    "cross-cutting/cost.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "cost"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "On the clouds, cost is not the finance team's problem — it's a signal on your dashboard, an alarm that should page you, and a design constraint that shapes architecture.",
+      "marker": "mixed"
+    },
+    "cross-cutting/databases.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "databases"
+      ],
+      "platforms": [],
+      "summary": "the-stack/04 taught that state is the thing no pipeline recreates; the-stack/05 said the managed database is usually the highest-value rent.",
+      "marker": "mixed"
+    },
+    "cross-cutting/iac-and-config.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The universal control plane. Move #3 of the operating model — drive the platform through its API and codify it — made into its own discipline.",
+      "marker": "mixed"
+    },
+    "cross-cutting/identity-iam.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws",
+        "azure"
+      ],
+      "summary": "The densest, most-transferable surface there is."
+    },
+    "cross-cutting/incident-response.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "incident"
+      ],
+      "platforms": [],
+      "summary": "foundations/ built the technical half of debugging — the reflex that finds what's wrong.",
+      "marker": "mixed"
+    },
+    "cross-cutting/interview/README.md": {
+      "kind": "interview",
+      "axis": "cross-cutting",
+      "themes": [],
+      "platforms": [],
+      "summary": "skills-maps/ answers what can I do. This answers how do they check — the same material, same sections, from the other side of the table.",
+      "marker": "mixed"
+    },
+    "cross-cutting/interview/identity.md": {
+      "kind": "interview",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Pairs with skills-maps/identity.md, section for section.",
+      "marker": "mixed"
+    },
+    "cross-cutting/interview/networking.md": {
+      "kind": "interview",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Pairs with skills-maps/networking.md, section for section.",
+      "marker": "mixed"
+    },
+    "cross-cutting/itsm-and-assets.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "The part of the job the cloud-native roadmaps skip and every real IT org runs on: the ticket queue, the asset inventory, the access requests, and the audit that proves it all.",
+      "marker": "mixed"
+    },
+    "cross-cutting/kubernetes-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "containers"
+      ],
+      "platforms": [],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "cross-cutting/kubernetes.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "containers"
+      ],
+      "platforms": [],
+      "summary": "the-stack/05 placed Kubernetes on the build-vs-rent spectrum; this note goes a layer deeper into the thing itself — because \"managed Kubernetes\" still requires you to understand Kubernetes the moment it misbehaves.",
+      "marker": "mixed"
+    },
+    "cross-cutting/labs/asset-reconciliation/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "A hundred-person office runs procurement (authoritative for who paid for it and who it belongs to) and an endpoint management tool (authoritative for what state it is in)."
+    },
+    "cross-cutting/labs/ci-cd-pipeline/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "ci-cd"
+      ],
+      "platforms": [],
+      "summary": "The workflow lives under .github-workflows-example/ on purpose — GitHub only runs workflows in .github/workflows/, so it will not execute against this teaching repo."
+    },
+    "cross-cutting/labs/help-desk-queue/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "Seven ticket categories with their own arrival rates and handling times, two worlds (that automation built, or not), Erlang-C over a stated support window."
+    },
+    "cross-cutting/labs/k8s-reconcile-loop/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "containers"
+      ],
+      "platforms": [],
+      "summary": "What it drills — six lessons that fall out of that one model: 1."
+    },
+    "cross-cutting/labs/m365-conditional-access-lockout/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity",
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "No tenant, no credentials, no cost, no external packages — just Python 3.8+."
+    },
+    "cross-cutting/labs/mail-authentication-alignment/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "A hundred-person office publishes all three records."
+    },
+    "cross-cutting/labs/multi-cloud-cidr-overlap/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "cloud"
+      ],
+      "platforms": [],
+      "summary": "What it drills — five lessons: 1. Non-overlapping + routes both ways → traffic flows."
+    },
+    "cross-cutting/labs/permission-sprawl/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "Two estates, built the same week, same documents, same hundred people."
+    },
+    "cross-cutting/labs/remote-access-four-causes/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity",
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "1. an expired certificate on the gateway 2."
+    },
+    "cross-cutting/labs/terraform-state-and-drift/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "What it drills — six lessons that fall out of that one model: 1."
+    },
+    "cross-cutting/labs/transcript-retention/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "storage-backup",
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "permission-sprawl asks who can see this. That is a question about an instant, and it answers it well."
+    },
+    "cross-cutting/m365-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "cross-cutting/multi-cloud-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "cross-cutting/saas-admin.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "The clouds run your infrastructure; SaaS runs your company.",
+      "marker": "mixed"
+    },
+    "cross-cutting/service-mesh.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Once you have many small services instead of a few big ones (the-stack/05), two new questions appear that a monolith never had: how does service A find service B when B's addresses change constantly?",
+      "marker": "mixed"
+    },
+    "cross-cutting/skills-maps/README.md": {
+      "kind": "skill-map",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Every platform folder carries a skill map: one platform, cut across every theme.",
+      "marker": "mixed"
+    },
+    "cross-cutting/skills-maps/identity.md": {
+      "kind": "skill-map",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "One theme, cut across every platform. The substance lives in cross-cutting/identity-iam.md — this is the checkable version of it.",
+      "marker": "mixed"
+    },
+    "cross-cutting/skills-maps/networking.md": {
+      "kind": "skill-map",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "One theme, cut across every platform. The substance lives in the-stack/02-network.md — this is the checkable version of it.",
+      "marker": "mixed"
+    },
+    "cross-cutting/terraform-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "cross-cutting/web-and-tls.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Almost every service a user touches sits behind a web server or a reverse proxy, and almost every connection to it is TLS.",
+      "marker": "mixed"
+    },
+    "cross-cutting/working-with-security.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "You are not the security team. You are the surface they defend — and their biggest force multiplier.",
+      "marker": "mixed"
+    },
+    "docs/README.md": {
+      "kind": "index",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The project's default language is English; the canonical docs live at the repo root and under platforms/, cross-cutting/, and ai-workflow/."
+    },
+    "docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "This repo has six axes over one body of material, and the README says what they are for: \"enter from whichever matches your question.\" That works when you already know what to ask."
+    },
+    "docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Every build-out step says a hundred people without ever saying how big the place is, so a decision-teaching repo had nothing concrete to decide against."
+    },
+    "docs/adr/0003-the-honesty-markers-are-a-hammer-and-a-compass.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Every module in this repo marks what is hands-on depth and what is an honest ramp."
+    },
+    "docs/adr/0004-interview-answers-are-evidence-for-a-marker.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "ADR-0002 made five decisions about the-reference-office.md."
+    },
+    "docs/zh/README.md": {
+      "kind": "index",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The front door: what this repo is, how to read it, and what is built.",
+      "language": "zh",
+      "mirrors": "README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/kubernetes-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "containers"
+      ],
+      "platforms": [],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/kubernetes-support.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/m365-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/m365-support.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/multi-cloud-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/multi-cloud-support.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/terraform-support.md": {
+      "kind": "support-note",
+      "axis": "cross-cutting",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/terraform-support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/aws/support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/azure/support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/gcp/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/gcp/support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/oci/support.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "The rest of this repo explains how things work.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "toolbox/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/ansible/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "The scripts find problems (read-only, safe to run anywhere).",
+      "language": "zh",
+      "mirrors": "toolbox/ansible/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/ansible/roles/baseline_hardening/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config",
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Remediates the items baseline-check audits — SSH posture, default umask, a sysctl baseline, and persistent journald.",
+      "language": "zh",
+      "mirrors": "toolbox/ansible/roles/baseline_hardening/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/ansible/roles/patch/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config",
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Applies pending updates on apt or dnf systems, then reports — or, if you ask — acts on a required reboot.",
+      "language": "zh",
+      "mirrors": "toolbox/ansible/roles/patch/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/ansible/roles/user_lifecycle/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "Declarative users: define the desired state, the role converges to it.",
+      "language": "zh",
+      "mirrors": "toolbox/ansible/roles/user_lifecycle/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/backup-restore-drill/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "storage-backup"
+      ],
+      "platforms": [],
+      "summary": "Inputs: a tar archive; optionally the source dir it backs up · Outputs: restore report on stdout · Risk: read-only towards your system — writes only to a temp dir it deletes on exit · Root: not…",
+      "language": "zh",
+      "mirrors": "toolbox/backup-restore-drill/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/baseline-check/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none · Outputs: PASS/FAIL/INFO/SKIP per check + summary · Risk: read-only, changes nothing · Root: optional — shadow and effective-sshd checks need…",
+      "language": "zh",
+      "mirrors": "toolbox/baseline-check/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/cidr-check/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Inputs: CIDR ranges (args or --file plan.txt) · Outputs: overlap report on stdout · Risk: read-only, touches nothing · Root: not…",
+      "language": "zh",
+      "mirrors": "toolbox/cidr-check/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/generate/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [],
+      "platforms": [],
+      "summary": "Inputs: a selection — --profile NAME or --pick concern,concern (+ optional --platform) · Outputs: a standalone toolbox pack written to --out DIR · Risk: read-only towards the repo and your system —…",
+      "language": "zh",
+      "mirrors": "toolbox/generate/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/linux-triage/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "linux-scripting"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none · Outputs: one triage report on stdout · Risk: read-only · Root: optional — journal errors and some counters say more with…",
+      "language": "zh",
+      "mirrors": "toolbox/linux-triage/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/patch-report/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none (--quiet for counts only) · Outputs: pending-updates report on stdout · Risk: read-only — never installs, never refreshes metadata · Root: not needed for the…",
+      "language": "zh",
+      "mirrors": "toolbox/patch-report/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/pve-inventory/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none on a PVE node (live pvesh get calls); or --from DIR with captured output · Outputs: one JSON inventory document (stdout or --out), same schema as vsphere-inventory · Risk: read-only —…",
+      "language": "zh",
+      "mirrors": "toolbox/pve-inventory/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/snapshot-audit/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Inputs: one or more inventory JSON files (vsphere-inventory and/or pve-inventory; stdin when none) · Outputs: hygiene report of flagged VMs (or --json) · Risk: read-only — flags only; deleting or…",
+      "language": "zh",
+      "mirrors": "toolbox/snapshot-audit/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/user-lifecycle/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "Inputs: a CSV of username,action[,groups] · Outputs: the plan (dry-run) or per-user results (--apply) · Risk: dry-run by default — changes state only with --apply · Root: required for…",
+      "language": "zh",
+      "mirrors": "toolbox/user-lifecycle/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/vm-migration-assess/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Inputs: a vsphere-inventory JSON document (--in FILE or stdin) · Outputs: per-VM verdict report (or --json) · Risk: read-only — assessment only, touches neither environment · Root: not…",
+      "language": "zh",
+      "mirrors": "toolbox/vm-migration-assess/README.md",
+      "derived": true
+    },
+    "docs/zh/toolbox/vsphere-inventory/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Inputs: --server host[:port], --user, password via VSPHEREPASSWORD · Outputs: one JSON inventory document (stdout or --out), optional per-VM CSV · Risk: read-only — logs in, reads properties, logs…",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "toolbox/vsphere-inventory/README.md",
+      "derived": true
+    },
+    "endpoint/README.md": {
+      "kind": "index",
+      "axis": "foundations",
+      "themes": [
+        "endpoint-mdm"
+      ],
+      "platforms": [],
+      "summary": "One of the densest demand clusters in the whole signal, and the platform folders don't cover it: managing the fleet of laptops and phones that people actually work on."
+    },
+    "foundations/README.md": {
+      "kind": "index",
+      "axis": "foundations",
+      "themes": [
+        "linux-scripting"
+      ],
+      "platforms": [],
+      "summary": "The floor under every role in this repo. Every job posting that inspired this project assumes this and never lists it — which is exactly why it's worth making explicit."
+    },
+    "foundations/labs/idempotence-drill/README.md": {
+      "kind": "lab",
+      "axis": "foundations",
+      "themes": [
+        "linux-scripting"
+      ],
+      "platforms": [],
+      "summary": "No dependencies beyond bash + coreutils, no cloud, no root."
+    },
+    "platforms/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [],
+      "platforms": [],
+      "summary": "One folder per platform. Every module follows the same four-part template so you can move between them without re-learning how to read…"
+    },
+    "platforms/aws/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The template every platform module follows: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes AWS gets as the worked example: architecture (how it's…"
+    },
+    "platforms/aws/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "How to get to competent on AWS in days instead of months — using AI as a co-pilot, and keeping it honest."
+    },
+    "platforms/aws/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The README mapped AWS onto the seven surfaces — what the services are.",
+      "marker": "mixed"
+    },
+    "platforms/aws/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "architecture is how AWS is structured; operations is what running it looks like.",
+      "marker": "mixed"
+    },
+    "platforms/aws/labs/01-scoped-identity-inventory/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "identity",
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "inventory-policy.json grants only the read-only calls this script makes — nothing…"
+    },
+    "platforms/aws/labs/02-minimal-vpc-ec2-terraform/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "iac-config",
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Confirm in Cost Explorer the next day that nothing lingers."
+    },
+    "platforms/aws/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Runnable, tear-down-able exercises. Reading about a subnet and configuring one are different skills; these make you do the second."
+    },
+    "platforms/aws/labs/iam-deny-by-default/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "identity",
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+."
+    },
+    "platforms/aws/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The README is what AWS is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…",
+      "marker": "mixed"
+    },
+    "platforms/aws/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Check a box when you can do it from code and explain the failure modes — not when you've read about it."
+    },
+    "platforms/aws/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "platforms/azure/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes mirroring the AWS worked example: architecture (how it's structured),…"
+    },
+    "platforms/azure/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Getting to competent on Azure fast. Same discipline as everywhere else (AI for speed, judgment for truth — see ai-workflow/ and the AWS ai-ramp); this note is the Azure-specific delta."
+    },
+    "platforms/azure/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "The README mapped Azure onto the seven surfaces — what the services are.",
+      "marker": "mixed"
+    },
+    "platforms/azure/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "architecture is how Azure is structured; operations is what running it looks like.",
+      "marker": "mixed"
+    },
+    "platforms/azure/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so you feel the concepts translate rather than re-learning from scratch."
+    },
+    "platforms/azure/labs/global-admin-is-not-owner/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "No tenant, no subscription, no credentials, no external packages — just Python 3.8+."
+    },
+    "platforms/azure/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "The README is what Azure is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…",
+      "marker": "mixed"
+    },
+    "platforms/azure/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Same tiers as AWS: Core (can't admin without it), Working (solid mid/senior), Depth (the differentiator)."
+    },
+    "platforms/azure/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "platforms/gcp/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "The template every platform module follows: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes mirroring the AWS worked example: architecture (how it's…"
+    },
+    "platforms/gcp/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "How to get to competent on GCP in days — using AI as a co-pilot and keeping it honest."
+    },
+    "platforms/gcp/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "The README mapped GCP onto the seven surfaces — what the services are.",
+      "marker": "mixed"
+    },
+    "platforms/gcp/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "architecture is how GCP is structured; operations is what running it looks like.",
+      "marker": "mixed"
+    },
+    "platforms/gcp/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so the concepts translate.",
+      "marker": "🧭"
+    },
+    "platforms/gcp/labs/gke-iam-vs-rbac/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "identity",
+        "cloud",
+        "containers"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "No cluster, no credentials, no cost, no external packages — just Python 3.8+."
+    },
+    "platforms/gcp/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "The README is what GCP is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…",
+      "marker": "mixed"
+    },
+    "platforms/gcp/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "Check a box when you can do it from code and explain the failure modes — not when you've read about it."
+    },
+    "platforms/gcp/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "platforms/oci/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio."
+    },
+    "platforms/oci/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "How to get to competent on OCI in days — using AI as a co-pilot and keeping it honest."
+    },
+    "platforms/oci/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "The README mapped OCI onto the seven surfaces — what the services are.",
+      "marker": "mixed"
+    },
+    "platforms/oci/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "architecture is how OCI is structured; operations is what running it looks like.",
+      "marker": "mixed"
+    },
+    "platforms/oci/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs.",
+      "marker": "🧭"
+    },
+    "platforms/oci/labs/a-compartment-is-not-an-account/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "What it drills: 1. No policy → NotAuthorizedOrNotFound (a 404, not a 403)."
+    },
+    "platforms/oci/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "The README is what OCI is; architecture is how it's structured; this note is what running it looks like — the brief, what pages you, the ops work by cadence, and AI in the operating loop.",
+      "marker": "mixed"
+    },
+    "platforms/oci/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "Check a box when you can do it from code and explain the failure modes."
+    },
+    "platforms/oci/support.md": {
+      "kind": "support-note",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "🌐 Languages: English (default) ·…",
+      "marker": "mixed"
+    },
+    "platforms/openstack/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio."
+    },
+    "platforms/openstack/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "How to get to competent-to-reason on OpenStack fast — and an honest line about where AI stops.",
+      "marker": "mixed"
+    },
+    "platforms/openstack/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "The README mapped OpenStack onto the seven surfaces — what the components are.",
+      "marker": "mixed"
+    },
+    "platforms/openstack/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "architecture is how OpenStack is structured; operations is what running it looks like.",
+      "marker": "mixed"
+    },
+    "platforms/openstack/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "Tear-down-able exercises against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre.",
+      "marker": "🧭"
+    },
+    "platforms/openstack/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "The README is what OpenStack is; architecture is how it's structured; this note is what running it looks like — and here the day-2 story has a twist no managed cloud has: you operate the control…",
+      "marker": "mixed"
+    },
+    "platforms/openstack/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "Check a box when you can do it and explain the failure modes."
+    },
+    "platforms/self-host/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio."
+    },
+    "platforms/self-host/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Like the vSphere note, this one is inverted: self-hosting is a strength, not a gap, so AI's job isn't to teach the platform — it's to accelerate the software glue, and to stay entirely out of the…"
+    },
+    "platforms/self-host/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "The README mapped self-hosting onto the seven surfaces — what you run.",
+      "marker": "mixed"
+    },
+    "platforms/self-host/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "architecture is how a bare-metal estate is structured; operations is what running it looks like.",
+      "marker": "mixed"
+    },
+    "platforms/self-host/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Pure-local, tear-down-able exercises. Where the clouds need an account, this platform needs a laptop with nested virtualization — the honest way to practice bare-metal discipline without a data centre.",
+      "marker": "🔨"
+    },
+    "platforms/self-host/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "The README is what self-hosting is; architecture is how it's structured; this note is what running it actually looks like — the brief, what pages you (hardware, at fleet scale, constantly), the ops…",
+      "marker": "🔨"
+    },
+    "platforms/self-host/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Check a box when you can do it and explain the failure modes."
+    },
+    "platforms/vsphere/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio."
+    },
+    "platforms/vsphere/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Every other platform's AI-ramp note is about getting to competent fast.",
+      "marker": "mixed"
+    },
+    "platforms/vsphere/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "The README mapped vSphere onto the seven surfaces — what the pieces are.",
+      "marker": "mixed"
+    },
+    "platforms/vsphere/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "architecture is how vSphere is structured; operations is what running it looks like.",
+      "marker": "mixed"
+    },
+    "platforms/vsphere/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Tear-down-able exercises against a lab vCenter (or nested ESXi).",
+      "marker": "🔨"
+    },
+    "platforms/vsphere/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "The README is what vSphere is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you, the real ops work by cadence, and AI in the operating loop.",
+      "marker": "mixed"
+    },
+    "platforms/vsphere/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Check a box when you can do it and explain the failure modes — not when you've read about it."
+    },
+    "the-reference-office.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Every step in the build-out says a hundred people."
+    },
+    "the-stack/01-physical.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "Every cloud is somebody's data center. The only question is whose pager goes off when a disk dies — and whether you can see it happen.",
+      "marker": "mixed"
+    },
+    "the-stack/02-network.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "Chapter 01 ended on a promise: the real lock-in lives up here.",
+      "marker": "mixed"
+    },
+    "the-stack/03-compute-and-images.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "A VM is just a rented server. The durable asset — the thing worth engineering — is the pipeline that turns a blank machine into a working one with no hands on it.",
+      "marker": "mixed"
+    },
+    "the-stack/04-storage.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "storage-backup"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "oci",
+        "vsphere"
+      ],
+      "summary": "Compute is disposable; storage is where the fear lives.",
+      "marker": "mixed"
+    },
+    "the-stack/05-platform-services.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure",
+        "self-host"
+      ],
+      "summary": "The layers below asked how do I build it?",
+      "marker": "mixed"
+    },
+    "the-stack/06-observability.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "observability"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "The bottom-up climb ended at platform services you can't SSH into.",
+      "marker": "mixed"
+    },
+    "the-stack/07-security.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "oci",
+        "self-host"
+      ],
+      "summary": "Observability was the layer that sees the whole stack; security is the layer that guards it.",
+      "marker": "mixed"
+    },
+    "the-stack/README.md": {
+      "kind": "index",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [
+        "aws",
+        "azure",
+        "vsphere",
+        "openstack"
+      ],
+      "summary": "The third axis of this repo. platforms/ reads the clouds one at a time; cross-cutting/ reads one theme across them."
+    },
+    "the-stack/labs/01-failure-domains/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [],
+      "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+."
+    },
+    "the-stack/labs/04-backup-not-snapshot/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization",
+        "storage-backup"
+      ],
+      "platforms": [],
+      "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+ and its built-in sqlite3."
+    },
+    "the-stack/labs/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Runnable evidence for the layer series. Each chapter's \"Lab\" section is a spec; this folder is where those specs become code you can actually run and verify."
+    },
+    "toolbox/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "The rest of this repo explains how things work.",
+      "marker": "mixed"
+    },
+    "toolbox/ansible/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "The scripts find problems (read-only, safe to run anywhere)."
+    },
+    "toolbox/ansible/roles/baseline_hardening/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config",
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Remediates the items baseline-check audits — SSH posture, default umask, a sysctl baseline, and persistent journald."
+    },
+    "toolbox/ansible/roles/patch/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config",
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Applies pending updates on apt or dnf systems, then reports — or, if you ask — acts on a required reboot."
+    },
+    "toolbox/ansible/roles/user_lifecycle/README.md": {
+      "kind": "ansible-role",
+      "axis": "toolbox",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "Declarative users: define the desired state, the role converges to it."
+    },
+    "toolbox/backup-restore-drill/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "storage-backup"
+      ],
+      "platforms": [],
+      "summary": "Inputs: a tar archive; optionally the source dir it backs up · Outputs: restore report on stdout · Risk: read-only towards your system — writes only to a temp dir it deletes on exit · Root: not…"
+    },
+    "toolbox/baseline-check/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none · Outputs: PASS/FAIL/INFO/SKIP per check + summary · Risk: read-only, changes nothing · Root: optional — shadow and effective-sshd checks need…"
+    },
+    "toolbox/cidr-check/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Inputs: CIDR ranges (args or --file plan.txt) · Outputs: overlap report on stdout · Risk: read-only, touches nothing · Root: not…"
+    },
+    "toolbox/generate/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [],
+      "platforms": [],
+      "summary": "Inputs: a selection — --profile NAME or --pick concern,concern (+ optional --platform) · Outputs: a standalone toolbox pack written to --out DIR · Risk: read-only towards the repo and your system —…"
+    },
+    "toolbox/linux-triage/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "linux-scripting"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none · Outputs: one triage report on stdout · Risk: read-only · Root: optional — journal errors and some counters say more with…"
+    },
+    "toolbox/patch-report/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none (--quiet for counts only) · Outputs: pending-updates report on stdout · Risk: read-only — never installs, never refreshes metadata · Root: not needed for the…"
+    },
+    "toolbox/pve-inventory/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [],
+      "summary": "Inputs: none on a PVE node (live pvesh get calls); or --from DIR with captured output · Outputs: one JSON inventory document (stdout or --out), same schema as vsphere-inventory · Risk: read-only —…"
+    },
+    "toolbox/snapshot-audit/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Inputs: one or more inventory JSON files (vsphere-inventory and/or pve-inventory; stdin when none) · Outputs: hygiene report of flagged VMs (or --json) · Risk: read-only — flags only; deleting or…"
+    },
+    "toolbox/user-lifecycle/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "Inputs: a CSV of username,action[,groups] · Outputs: the plan (dry-run) or per-user results (--apply) · Risk: dry-run by default — changes state only with --apply · Root: required for…"
+    },
+    "toolbox/vm-migration-assess/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Inputs: a vsphere-inventory JSON document (--in FILE or stdin) · Outputs: per-VM verdict report (or --json) · Risk: read-only — assessment only, touches neither environment · Root: not…"
+    },
+    "toolbox/vsphere-inventory/README.md": {
+      "kind": "tool",
+      "axis": "toolbox",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Inputs: --server host[:port], --user, password via VSPHEREPASSWORD · Outputs: one JSON inventory document (stdout or --out), optional per-VM CSV · Risk: read-only — logs in, reads properties, logs…",
+      "marker": "🔨"
+    }
+  }
+}
