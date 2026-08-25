@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 190,
+  "count": 191,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -31,6 +31,13 @@
       "themes": [],
       "platforms": [],
       "summary": "Audit a resume, bio, skills list, LinkedIn blurb, or any technical claim and classify every claim as 🔨 hands-on depth / 🧭 verified ramp / ❌ overclaim, using this repo's honesty discipline. Flags anything bluffed, suggests honest reframes, and (for ramps) the fast-verifiable-ramp wording. Use when the user says \"audit this for overclaims\", \"is this honest\", \"check my resume claims\", \"am I bluffing\", \"🔨 or 🧭\", or shares a claims doc to vet."
+    },
+    ".claude/skills/interview-drill/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Run an interview drill against this repo's interview maps — ask a question, listen to the answer, and follow up the way an interviewer does, then judge whether the answer stayed on evidence or drifted into the fluent version. Marks 🔨 answers that arrived without a specific, and 🧭 answers that quietly claimed depth. Use when the user says \"quiz me\", \"interview me\", \"practise interview questions\", \"drill me on networking/identity\", \"面试模拟\", or asks whether an answer would hold up."
     },
     ".claude/skills/linux-triage/SKILL.md": {
       "kind": "agent-skill",
