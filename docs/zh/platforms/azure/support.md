@@ -6,7 +6,7 @@
 
 ---
 
-> [`operations.md`](../../../../platforms/azure/operations.md) 讲的是运营你自己那套 Azure 的**节奏**。本篇讲另一半：**把 Azure 和 Microsoft Entra ID 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个来自别的方向（AWS、GCP、或 on-prem AD）的强 sysadmin 接手它时，哪些直觉会坑他。** 注意本页守着的诚实分级：**Entra / 身份**那一半是 ✋ 亲手做过（真实租户实战——MFA、Conditional Access、PIM、Entra 初始搭建）；更广的 **Azure IaaS** 是 🧗 ramp。两者都如实标注。
+> [`operations.md`](../../../../platforms/azure/operations.md) 讲的是运营你自己那套 Azure 的**节奏**。本篇讲另一半：**把 Azure 和 Microsoft Entra ID 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个来自别的方向（AWS、GCP、或 on-prem AD）的强 sysadmin 接手它时，哪些直觉会坑他。** 注意本页守着的诚实分级：**Entra / 身份**那一半是 ⚒️ 亲手做过（真实租户实战——MFA、Conditional Access、PIM、Entra 初始搭建）；更广的 **Azure IaaS** 是 🧭 ramp。两者都如实标注。
 
 Azure 自己的[平台篇](../../../../platforms/azure/README.md)一句话说清了那个经典错误：*Entra = 你是谁，RBAC = 你能碰什么——把两者混淆是经典错误。* 这句话就是本页存在的全部理由。一个"已经懂云"的运维接手 Azure 支持很快，然后在微软做了不同选择的那几处栽跟头：**两个独立的身份面**（Global Administrator **不是** Owner）、**不是** on-prem AD 的 Entra、你必须注册的 **resource provider**、以及一个连 Owner 都能拦下的治理面（**Azure Policy**）。本篇把职责、反复出现的工单及其诊断面、以及一个自信的云（或 AD）运维反射恰好失灵的那几处一一点名——并显式标出 AWS / on-prem-AD 对比，因为大多数读者是从那儿来的。
 
@@ -16,8 +16,8 @@ Azure 自己的[平台篇](../../../../platforms/azure/README.md)一句话说清
 
 | Surface | 你要为之负责的事 |
 | --- | --- |
-| **身份——两个面** | **Entra ID 目录角色**（Global Admin、User Admin——管*租户*）vs **Azure RBAC**（Owner/Contributor/Reader——在 mgmt-group→subscription→RG→resource 层级上管*资源*）。PIM（eligible vs active）、Conditional Access、sign-in/audit 日志、break-glass。**✋** |
-| **Entra app 身份** | app registration vs enterprise app（service principal）、delegated vs application 权限 + admin consent、过期 secret、managed identity（system vs user-assigned）。**✋** |
+| **身份——两个面** | **Entra ID 目录角色**（Global Admin、User Admin——管*租户*）vs **Azure RBAC**（Owner/Contributor/Reader——在 mgmt-group→subscription→RG→resource 层级上管*资源*）。PIM（eligible vs active）、Conditional Access、sign-in/audit 日志、break-glass。**⚒️** |
+| **Entra app 身份** | app registration vs enterprise app（service principal）、delegated vs application 权限 + admin consent、过期 secret、managed identity（system vs user-assigned）。**⚒️** |
 | **subscription 与治理** | resource provider 按 subscription 注册、**Azure Policy** 护栏、配额——那些"不是 RBAC，是 policy/provider"的工单。 |
 | **网络** | "为啥 X 到不了 Y？"—— **NSG**（有状态、allow **和** deny、优先级、默认规则）、UDR、Azure Firewall、**Bastion**（无公网 IP）、Private Endpoint DNS、peering。 |
 | **计算** | 通过 **Bastion / serial console / run-command** 的 VM 访问、managed disk、VMSS、boot diagnostics。 |
@@ -105,21 +105,21 @@ Azure 的修/救本质是在门户、两个 CLI（`az`、`Az` PowerShell）、�
 
 本页守着一条**分割的**诚实线，而且是真实的。
 
-✋ **Entra / 身份那一半是亲手做过的。** 真实租户实战——**Entra ID 初始搭建、租户级 MFA、一条 Conditional Access 策略、privileged 角色的 PIM**、以及身份生命周期——是深度，不是 ramp（与 [`saas-admin.md`](../../../../cross-cutting/saas-admin.md)、[`identity-iam.md`](../../../../cross-cutting/identity-iam.md) 画的是同一条线，也与 [M365 支持篇](../../../../cross-cutting/m365-support.md) 共享，因为 Entra 是两者之下的身份骨干）。Conditional Access、sign-in 日志分诊、break-glass 纪律都是 ✋。
+⚒️ **Entra / 身份那一半是亲手做过的。** 真实租户实战——**Entra ID 初始搭建、租户级 MFA、一条 Conditional Access 策略、privileged 角色的 PIM**、以及身份生命周期——是深度，不是 ramp（与 [`saas-admin.md`](../../../../cross-cutting/saas-admin.md)、[`identity-iam.md`](../../../../cross-cutting/identity-iam.md) 画的是同一条线，也与 [M365 支持篇](../../../../cross-cutting/m365-support.md) 共享，因为 Entra 是两者之下的身份骨干）。Conditional Access、sign-in 日志分诊、break-glass 纪律都是 ⚒️。
 
-🧗 **更广的 Azure IaaS 是验证过的 ramp。** 资源面机制——RBAC scope 与继承、VNet/NSG、Bastion、Azure Policy、配额/provider 的边——是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/azure/labs/global-admin-is-not-owner/) 里练过的，由**✋ 可迁移基本功**（Linux、网络、DNS/TLS、身份思维）承载。更深的规模化生产 Azure（landing zone、AKS 平台工程、大型多 subscription 资产）仍在前方，注释如实说明、绝不吹。
+🧭 **更广的 Azure IaaS 是验证过的 ramp。** 资源面机制——RBAC scope 与继承、VNet/NSG、Bastion、Azure Policy、配额/provider 的边——是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/azure/labs/global-admin-is-not-owner/) 里练过的，由**⚒️ 可迁移基本功**（Linux、网络、DNS/TLS、身份思维）承载。更深的规模化生产 Azure（landing zone、AKS 平台工程、大型多 subscription 资产）仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 
 以下指针在 GitHub 上逐个核实存在，按用途分组。Entra-身份 与 Azure-资源 工具已标注；有几个安全工具兼作"认证到底怎么运作"的地图。
 
-**Entra / 身份（✋ 那一半）：**
+**Entra / 身份（⚒️ 那一半）：**
 - [`merill/awesome-entra`](https://github.com/merill/awesome-entra) —— Entra 管理/运维工具最好的起点（由一位 Entra PM 维护）。
 - [`maester365/maester`](https://github.com/maester365/maester) —— 基于 Pester 的测试，把"我的租户 / Conditional Access 配对了吗？"变成 pass/fail 检查。
 - [`AzureAD/AzureADAssessment`](https://github.com/AzureAD/AzureADAssessment) · [`merill/idPowerToys`](https://github.com/merill/idPowerToys) —— 微软的 Entra 健康评估，和一个 Conditional Access 策略文档器（这次登录为啥被拦？）。
 - [`dirkjanm/ROADtools`](https://github.com/dirkjanm/ROADtools) · [`Gerenios/AADInternals`](https://github.com/Gerenios/AADInternals) —— 离线 dump 并图形化租户的角色/app/consent；攻击起源，但是*理解* Entra 认证真实运作的参考。
 
-**Azure 资源与治理（🧗 那一半）：**
+**Azure 资源与治理（🧭 那一半）：**
 - [`Azure/azure-cli`](https://github.com/Azure/azure-cli) · [`Azure/azure-powershell`](https://github.com/Azure/azure-powershell) —— 主检查/修复面；issue tracker 是事实上的排障 KB。
 - [`microsoft/ARI`](https://github.com/microsoft/ARI) —— Azure Resource Inventory：任何支持工作的"我们到底有什么"基线。
 - [`Azure/Enterprise-Scale`](https://github.com/Azure/Enterprise-Scale) —— landing-zone 的 RBAC/网络/policy 基线；一个金标准，用来 diff 一个出问题的租户。

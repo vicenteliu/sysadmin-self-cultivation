@@ -42,6 +42,6 @@ export VSPHERE_PASSWORD='…'                     # 密钥不上命令行
 
 macOS 26（Python 3.14）与 Ubuntu 24.04 容器（Python 3.12），对 **vcsim**
 （govmomi 官方 vCenter 模拟器，4 VM/4 host）验证：完整文档、快照计数（含链式
-快照）、磁盘/网卡设备解析；连接拒绝与缺密码路径都演练过。vSphere ✋ 深度是真的
+快照）、磁盘/网卡设备解析；连接拒绝与缺密码路径都演练过。vSphere ⚒️ 深度是真的
 （VCP 级、多年生产）；但**对真实 vCenter 的运行还没做过**——生产版本 vCenter 的
 输出细节按 lab 验证对待，不按生产验证对待。

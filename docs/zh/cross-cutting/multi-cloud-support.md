@@ -6,7 +6,7 @@
 
 ---
 
-> [平台篇](../../../platforms/)一次读一朵云;[`the-stack/`](../../../the-stack/) 横跨它们读一层。本篇是收官之作:**把多云支持当作一门修/救（break-fix）手艺**——反复出现在云*之间*的工单、精确的排查落点,以及**一个强单云 sysadmin 在几朵云必须协同工作时,哪些直觉会被烧到。** 诚实标记先说清:本篇是 **🧗 ramp**——我的多云亲手经验是 **exposure**(AWS/Azure/GCP/OCI 都映射并实验核验过,真正 ✋ 只在 Azure/Entra 身份上),由一个真实资产承载——我**给全部四朵云都写了诚实的逐云支持笔记**([AWS](../../../platforms/aws/support.md) · [Azure](../../../platforms/azure/support.md) · [GCP](../../../platforms/gcp/support.md) · [OCI](../../../platforms/oci/support.md)),*而那份综合本身就是多云技能。* 它的权威来自研究(厂商文档 + practitioner 失效模式 + 一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑)),不是跨三家的生产资历。
+> [平台篇](../../../platforms/)一次读一朵云;[`the-stack/`](../../../the-stack/) 横跨它们读一层。本篇是收官之作:**把多云支持当作一门修/救（break-fix）手艺**——反复出现在云*之间*的工单、精确的排查落点,以及**一个强单云 sysadmin 在几朵云必须协同工作时,哪些直觉会被烧到。** 诚实标记先说清:本篇是 **🧭 ramp**——我的多云亲手经验是 **exposure**(AWS/Azure/GCP/OCI 都映射并实验核验过,真正 ⚒️ 只在 Azure/Entra 身份上),由一个真实资产承载——我**给全部四朵云都写了诚实的逐云支持笔记**([AWS](../../../platforms/aws/support.md) · [Azure](../../../platforms/azure/support.md) · [GCP](../../../platforms/gcp/support.md) · [OCI](../../../platforms/oci/support.md)),*而那份综合本身就是多云技能。* 它的权威来自研究(厂商文档 + practitioner 失效模式 + 一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑)),不是跨三家的生产资历。
 
 **多云是一种姿态,不是一个产品。** 没有一个你装上去的统一控制面——每朵云保有自己的 IAM、网络、配额、账单、遥测模型,而工作是拥有**它们之间的接缝。** 一个单云管理员带着一种虚假的踏实上手:"我懂云。" 但昂贵的错误不住在任何一朵云里(那些你学过了);它们住在四条接缝里——**CIDR/路由、跨云身份、egress/data-gravity、一致的安全姿态**——那里单云直觉假设了一种并不存在的对等。本篇把接缝职责、反复出现的跨云工单、以及失灵的直觉一一点名——全程倚靠四篇平台笔记,因为*多云就是那四个模型同时在跑。*
 
@@ -93,7 +93,7 @@
 
 ## 诚实边界
 
-本篇是 **🧗 ramp,而且明说。** 我的多云亲手经验是 **exposure**——每朵云的操作模型都映射并实验核验过,真正 ✋ 深度只在 **Azure/Entra 身份**上(以及 ✋ on-prem 网络/IPAM,它在这里强迁移)。承载它的是那个真实资产:我**给全部四朵云都写了诚实、有据可查的支持笔记**([AWS](../../../platforms/aws/support.md) · [Azure](../../../platforms/azure/support.md) · [GCP](../../../platforms/gcp/support.md) · [OCI](../../../platforms/oci/support.md))外加 [`identity-iam.md`](../../../cross-cutting/identity-iam.md) 和 [`cost.md`](../../../cross-cutting/cost.md)——而**多云支持*就是*那份综合**用在接缝上,由 ✋ 网络基本功和一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑) 撑着。上面那些接缝机制——federation、CIDR/IPAM、egress 经济学、跨云姿态——是映射并文档核验过的,**不是资历。** 更深的生产多云(跨三家真跑工作负载、一张活的跨云网络 fabric、规模化的多云 FinOps + CSPM 计划)仍在前方;注释如实说明、绝不吹。这是一个先记录每朵云、再记录它们之间接缝的 sysadmin 的诚实收官之作——公开记录、✋/🧗 标注。
+本篇是 **🧭 ramp,而且明说。** 我的多云亲手经验是 **exposure**——每朵云的操作模型都映射并实验核验过,真正 ⚒️ 深度只在 **Azure/Entra 身份**上(以及 ⚒️ on-prem 网络/IPAM,它在这里强迁移)。承载它的是那个真实资产:我**给全部四朵云都写了诚实、有据可查的支持笔记**([AWS](../../../platforms/aws/support.md) · [Azure](../../../platforms/azure/support.md) · [GCP](../../../platforms/gcp/support.md) · [OCI](../../../platforms/oci/support.md))外加 [`identity-iam.md`](../../../cross-cutting/identity-iam.md) 和 [`cost.md`](../../../cross-cutting/cost.md)——而**多云支持*就是*那份综合**用在接缝上,由 ⚒️ 网络基本功和一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑) 撑着。上面那些接缝机制——federation、CIDR/IPAM、egress 经济学、跨云姿态——是映射并文档核验过的,**不是资历。** 更深的生产多云(跨三家真跑工作负载、一张活的跨云网络 fabric、规模化的多云 FinOps + CSPM 计划)仍在前方;注释如实说明、绝不吹。这是一个先记录每朵云、再记录它们之间接缝的 sysadmin 的诚实收官之作——公开记录、⚒️/🧭 标注。
 
 ## Field kit —— 真实工具与参考
 

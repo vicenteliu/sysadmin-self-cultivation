@@ -6,7 +6,7 @@
 
 ---
 
-> [`operations.md`](../../../../platforms/gcp/operations.md) 讲的是运营你自己那套 GCP 的**节奏**。本篇讲另一半：**把 GCP 和 GKE 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及最有用的那点：**一个来自别的方向（尤其 AWS）的强 sysadmin 接手它时，哪些直觉会坑他。** GCP 本身在这里仍是 🧗 ramp；撑起它的可迁移基本功（Linux、网络、身份、Kubernetes 概念、排障）才是那个 ✋ 亲手做过——而这正是本页的意义。
+> [`operations.md`](../../../../platforms/gcp/operations.md) 讲的是运营你自己那套 GCP 的**节奏**。本篇讲另一半：**把 GCP 和 GKE 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及最有用的那点：**一个来自别的方向（尤其 AWS）的强 sysadmin 接手它时，哪些直觉会坑他。** GCP 本身在这里仍是 🧭 ramp；撑起它的可迁移基本功（Linux、网络、身份、Kubernetes 概念、排障）才是那个 ⚒️ 亲手做过——而这正是本页的意义。
 
 正如[平台篇](../../../../platforms/gcp/README.md)所说，GCP 大体上是*改了名的 AWS/Azure* —— 而这恰恰是陷阱。一个"已经懂云"的运维接手 GCP 支持很快，然后在 Google 做了真正不同设计选择的那几处栽跟头：**additive 且沿层级继承**、而非 deny-by-default 的 IAM；一个**全局 VPC**；作为一切单位的 **project**；以及——连同时懂 AWS *和* Kubernetes 的人都会吃惊的那点——**GKE 的两个独立授权面**。本篇把职责、反复出现的工单及其诊断面、以及一个自信的云运维反射恰好失灵的那几处一一点名——并显式标出 AWS 对比，因为大多数读者是从那儿来的。
 
@@ -109,7 +109,7 @@ GCP 的修/救本质是在一小组控制台、日志、和两个 CLI（`gcloud`
 
 ## 诚实边界
 
-**GCP 在本仓库里是个 🧗 验证过的 ramp，本页也守着这条线。** 承重的是那些**✋ 可迁移、且真实**的基本功：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../../../the-stack/02-network.md)）、**身份与最小权限思维**（[`identity-iam.md`](../../../../cross-cutting/identity-iam.md)）、以及 **Kubernetes 对象模型**（[`cross-cutting/kubernetes.md`](../../../../cross-cutting/kubernetes.md)）—— GCP/GKE 支持里那些*本来就是*这些技能、只是换了 Google 名字的部分。GCP 特有的机制（additive-继承的 IAM、全局 VPC、GKE 两个面、计费与配额的边）是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/gcp/labs/gke-iam-vs-rbac/) 里练过的——**不是**声称成多年生产资历。更深、规模化的生产 GKE（大型多租户集群、mesh、平台工程）仍在前方，注释如实说明、绝不吹。
+**GCP 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 承重的是那些**⚒️ 可迁移、且真实**的基本功：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../../../the-stack/02-network.md)）、**身份与最小权限思维**（[`identity-iam.md`](../../../../cross-cutting/identity-iam.md)）、以及 **Kubernetes 对象模型**（[`cross-cutting/kubernetes.md`](../../../../cross-cutting/kubernetes.md)）—— GCP/GKE 支持里那些*本来就是*这些技能、只是换了 Google 名字的部分。GCP 特有的机制（additive-继承的 IAM、全局 VPC、GKE 两个面、计费与配额的边）是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/gcp/labs/gke-iam-vs-rbac/) 里练过的——**不是**声称成多年生产资历。更深、规模化的生产 GKE（大型多租户集群、mesh、平台工程）仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 
