@@ -146,12 +146,12 @@ writing the *code*. Genuinely accelerating, with specific traps:
 
 ## Honest boundaries
 
-✋ **where it transfers, 🧗 where it's GCP.** The scripting-and-automation *discipline*
+⚒️ **where it transfers, 🧭 where it's GCP.** The scripting-and-automation *discipline*
 is hands-on — Python and Bash as everyday tools, iterated/idempotent/error-handled
 automation, and the "read-only first, then act" instinct built on real fleet scripting
 ([`foundations/`](../../foundations/)) — and that discipline transfers whole onto GCP's
 API. But the GCP-*specific* surface (the exact client libraries, ADC quirks, service
-behaviors) is the 🧗 ramp, mapped and verified per this repo's method, with **no
+behaviors) is the 🧭 ramp, mapped and verified per this repo's method, with **no
 production GCP claimed**. The claim is a strong automation foundation plus a fast,
 verifiable ramp onto GCP's API surface — the honest position of every GCP doc here
 ([`WHY.md`](../../WHY.md)).

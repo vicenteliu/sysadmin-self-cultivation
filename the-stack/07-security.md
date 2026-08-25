@@ -99,7 +99,7 @@ depth.
 
 ## Seven ways — by security domain
 
-**Cloud posture & guardrails 🧗** — each cloud has a native security spine:
+**Cloud posture & guardrails 🧭** — each cloud has a native security spine:
 **AWS** (Security Hub, GuardDuty, IAM Access Analyzer, Config), **Azure**
 (Defender for Cloud, Sentinel as SIEM), **GCP** (Security Command Center), **OCI**
 (Cloud Guard, Security Zones). Same shape everywhere: a posture scanner flagging
@@ -108,26 +108,26 @@ bad config rather than just alerting on it. Policy-as-code (SCPs, Azure Policy, 
 Policy, OPA) is the mature form — the guardrail that makes the wrong thing
 impossible, not merely visible.
 
-**Self-host / vSphere ✋🧗** — you build the posture yourself: hardening baselines
+**Self-host / vSphere ⚒️🧭** — you build the posture yourself: hardening baselines
 (CIS), a patching pipeline, network segmentation at the firewall, and an EDR/SIEM
-you deploy and operate. The ✋ is real here — endpoint protection deployed and
+you deploy and operate. The ⚒️ is real here — endpoint protection deployed and
 migrated across a fleet, full-disk encryption enrolled at scale, device
 security-configuration and network-admission compliance checks run as daily ops.
 No provider guardrail catches your mistakes; the discipline is entirely yours.
 
-**Secrets management 🧗 (on ✋ instincts)** — the "no secret on the box" rule from
+**Secrets management 🧭 (on ⚒️ instincts)** — the "no secret on the box" rule from
 the identity chapter, made concrete: **HashiCorp Vault** self-hosted, or the native
 managers (AWS Secrets Manager / Parameter Store, Azure Key Vault, GCP Secret
 Manager, OCI Vault). The discipline is platform-independent — short-lived,
 rotated, never-in-git, injected-at-runtime — and it's the same instinct behind
 using platform-managed workload identities instead of static keys.
 
-**Endpoint & EDR ✋🧗** — the fleet-security domain: EDR/XDR agents (Defender for
+**Endpoint & EDR ⚒️🧭** — the fleet-security domain: EDR/XDR agents (Defender for
 Endpoint, SentinelOne, CrowdStrike) deployed, migrated, and operated from their
 consoles; disk encryption; compliance baselines enforced by MDM. This is the
 security domain with the deepest hands-on backing in this series.
 
-**Compliance frameworks 🧗** — SOC 2, ISO 27001, FedRAMP, PCI-DSS, HIPAA: the same
+**Compliance frameworks 🧭** — SOC 2, ISO 27001, FedRAMP, PCI-DSS, HIPAA: the same
 technical controls (encryption, access review, audit logging, change management)
 mapped onto a named framework's evidence requirements. The technical work is
 familiar operational discipline; the framework is the vocabulary and the auditor's
@@ -135,15 +135,15 @@ checklist laid over it.
 
 ## The comparison table
 
-| Domain | Self-host ✋ | vSphere ✋ | AWS 🧗 | Azure 🧗 | GCP 🧗 | OCI 🧗 |
+| Domain | Self-host ⚒️ | vSphere ⚒️ | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- |
 | **Posture / CSPM** | you build it (CIS scans) | you build it | Security Hub / Config | Defender for Cloud | Security Command Center | Cloud Guard |
 | **Threat detection** | IDS + SIEM you run | you run | GuardDuty | Defender | SCC threat | Cloud Guard |
 | **SIEM** | ELK/Splunk you run | you run | Security Lake + partners | **Sentinel** | Chronicle | partners |
 | **Policy-as-code guardrail** | OPA / your pipeline | — | SCPs | Azure Policy | Org Policy | Security Zones |
-| **Secrets** | Vault ✋🧗 | Vault | Secrets Manager | Key Vault | Secret Manager | Vault (OCI) |
+| **Secrets** | Vault ⚒️🧭 | Vault | Secrets Manager | Key Vault | Secret Manager | Vault (OCI) |
 | **Key management** | your KMS / HSM | your KMS | KMS | Key Vault | Cloud KMS | KMS |
-| **Endpoint EDR** | Defender/SentinelOne ✋ | same | (agent) | Defender | (agent) | (agent) |
+| **Endpoint EDR** | Defender/SentinelOne ⚒️ | same | (agent) | Defender | (agent) | (agent) |
 | **Encryption default** | you enable it | you enable it | often default-on | often default-on | **default-on** | default-on |
 
 The pattern: **the clouds increasingly make the secure choice the default and the
@@ -232,14 +232,14 @@ adversarial and a plausible-but-wrong answer is a vulnerability, not a bug.
 
 ## Honest boundaries
 
-The ✋ in this chapter is operational security done at fleet scale, and it's
+The ⚒️ in this chapter is operational security done at fleet scale, and it's
 specific: **full-disk encryption** enrolled across a large endpoint fleet,
 **patch-compliance** as daily operations, **device security-configuration and
 network-admission compliance checks** run routinely (with a wide view of real-world
 failure modes), **endpoint protection** deployed and migrated across the fleet
 (Defender for Endpoint → SentinelOne, both consoles operated), and **access
 governance** inside a strict multi-approver, least-privilege model. That's genuine
-enforce-and-operate security depth. The 🧗 is the modern cloud-security and
+enforce-and-operate security depth. The 🧭 is the modern cloud-security and
 program layer: **CSPM, SIEM operation, policy-as-code guardrails, secrets platforms
 like Vault, zero-trust architecture, and named-framework compliance
 (SOC 2 / FedRAMP / ISO 27001)** — mapped by the method above, ramped and verified,
@@ -281,7 +281,7 @@ external library worth knowing:
   > the name. Much of it is offensive / dual-use tradecraft: **authorized, lawful use
   > only.***
 
-The honest framing for the ✋/🧗 discipline: that library is a **specialist's** toolset,
+The honest framing for the ⚒️/🧭 discipline: that library is a **specialist's** toolset,
 not the sysadmin baseline — if you cite or use it, own the boundary. What *this* repo
 covers is the security an infrastructure operator is genuinely on the hook for, and can
 speak to from experience.

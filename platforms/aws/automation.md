@@ -151,11 +151,11 @@ writing the *code*. Genuinely accelerating, with specific traps:
 
 ## Honest boundaries
 
-✋ **where it counts, and it counts here.** The scripting-and-automation discipline is
+⚒️ **where it counts, and it counts here.** The scripting-and-automation discipline is
 hands-on — Python and Bash as everyday tools, paginated/idempotent/error-handled
 automation, and the "read-only first, then act" instinct built on real fleet
 scripting ([`foundations/`](../../foundations/)). The AWS-API *specifics* (the exact
-boto3 calls, the service quirks) are the 🧗 ramp, and the [inventory lab](labs/01-scoped-identity-inventory/)
+boto3 calls, the service quirks) are the 🧭 ramp, and the [inventory lab](labs/01-scoped-identity-inventory/)
 is that ramp proven in running code — read-only, least-privilege, paginated,
 region-aware. The claim is a strong automation foundation plus a verifiable ramp onto
 AWS's API surface — not years of production AWS platform-engineering.

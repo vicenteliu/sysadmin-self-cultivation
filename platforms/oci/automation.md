@@ -89,11 +89,11 @@ The [foundations](../../foundations/) idempotence-and-safety discipline, OCI-spe
 
 ## Honest boundaries
 
-✋ **where it transfers, 🧗 where it's OCI.** The scripting-and-automation *discipline*
+⚒️ **where it transfers, 🧭 where it's OCI.** The scripting-and-automation *discipline*
 is hands-on — Python/Bash, paginated/idempotent/error-handled automation, read-only-
 first ([`foundations/`](../../foundations/)) — and it transfers whole onto OCI's API.
 But the OCI-*specific* surface (the exact CLI/SDK, instance-principal setup, service
-quirks) is the 🧗 ramp, mapped and verified, with **no production OCI claimed**. The
+quirks) is the 🧭 ramp, mapped and verified, with **no production OCI claimed**. The
 claim: a strong automation foundation plus a fast, verifiable ramp onto OCI's API — the
 honest position of every OCI doc here ([`WHY.md`](../../WHY.md)).
 

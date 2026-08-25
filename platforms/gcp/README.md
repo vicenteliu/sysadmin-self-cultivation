@@ -106,11 +106,11 @@ Four companion notes take GCP past "what the services are", mirroring the AWS se
 
 ## Honest boundaries
 
-🧗 **honest ramp — and labeled as one.** No production GCP operations claimed: this
+🧭 **honest ramp — and labeled as one.** No production GCP operations claimed: this
 module is the transferable operating model (AWS/Azure surfaces + on-prem depth)
 mapped onto GCP's names and verified against current docs — exactly the ramp method
 [`WHY.md`](../../WHY.md) argues for. The structural differences (global VPC,
 projects, custom machine types, service-account IAM) are called out precisely
 because they're where the "GCP is just AWS" reflex fails. The claim isn't "years on
 GCP"; it's "a transferable model plus a fast, verifiable ramp" — the same honest
-position as every 🧗 module in this repo.
+position as every 🧭 module in this repo.

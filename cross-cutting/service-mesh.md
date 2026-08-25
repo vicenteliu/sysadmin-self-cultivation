@@ -4,7 +4,7 @@
 > ([`the-stack/05`](../the-stack/05-platform-services.md)), two new questions appear
 > that a monolith never had: *how does service A find service B when B's addresses
 > change constantly?* and *how do A and B trust and observe each other?* Service
-> discovery answers the first; a service mesh answers the second. This is a **🧗
+> discovery answers the first; a service mesh answers the second. This is a **🧭
 > ramp** — the concepts mapped and verified, not run in production.
 
 A monolith calls a function; a distributed system makes a network call — and every
@@ -142,13 +142,13 @@ Connect**, and increasingly the **sidecar-less / ambient** and **eBPF** approach
 
 ## Honest boundaries
 
-🧗 **ramp — clearly labeled.** Service discovery's *concept* sits on ✋ ground — DNS,
+🧭 **ramp — clearly labeled.** Service discovery's *concept* sits on ⚒️ ground — DNS,
 health checks, and the [Kubernetes Service](kubernetes.md) model (test-scope
-Kubernetes, itself 🧗) — and the underlying network/TLS/least-privilege instincts are
-✋ ([the-stack/02](../the-stack/02-network.md), [07](../the-stack/07-security.md)). But
+Kubernetes, itself 🧭) — and the underlying network/TLS/least-privilege instincts are
+⚒️ ([the-stack/02](../the-stack/02-network.md), [07](../the-stack/07-security.md)). But
 running a **production service mesh** (Istio/Linkerd/Consul Connect operations, mTLS
-lifecycle, mesh debugging at scale) is a **🧗 ramp** — mapped and verified, not claimed
-as production ops. The most valuable ✋ thing this note carries is *judgment*: knowing
+lifecycle, mesh debugging at scale) is a **🧭 ramp** — mapped and verified, not claimed
+as production ops. The most valuable ⚒️ thing this note carries is *judgment*: knowing
 when a mesh is the answer and, more often, when it's expensive complexity a smaller
 architecture doesn't need.
 

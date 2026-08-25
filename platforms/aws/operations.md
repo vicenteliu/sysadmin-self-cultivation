@@ -129,11 +129,11 @@ as it does to yours.
 
 ## Honest boundaries
 
-The ops *discipline* here is ✋ — triage, incident method, the review cadence,
+The ops *discipline* here is ⚒️ — triage, incident method, the review cadence,
 least-privilege review, restore-testing, treating cost and drift as signals — because
 it's the same operations craft carried from real infrastructure and fleet work,
 where the pager was real. The AWS-service specifics (which console, which alarm,
-which finding type) are the 🧗 ramp, mapped and verified per this repo's method. The
+which finding type) are the 🧭 ramp, mapped and verified per this repo's method. The
 claim isn't "years on-call for a production AWS estate"; it's a **transferable
 operating discipline plus a fast, honest ramp onto AWS's tooling** — and the
 AI-assisted operating loop above is exactly how that ramp gets applied without

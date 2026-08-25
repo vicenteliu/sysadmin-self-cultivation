@@ -8,8 +8,8 @@
 > reads one layer across them. This is the capstone: **multi-cloud support as a break-fix craft** —
 > the tickets that recur *between* clouds, exactly where you look, and **where a strong single-cloud
 > sysadmin's instincts get burned when the clouds have to work together.** Honesty marker up front:
-> this note is **🧗 ramp** — my multi-cloud hands-on is **exposure** (AWS/Azure/GCP/OCI mapped and
-> lab-checked; real ✋ only on Azure/Entra identity), carried by a genuine asset — I've **written the
+> this note is **🧭 ramp** — my multi-cloud hands-on is **exposure** (AWS/Azure/GCP/OCI mapped and
+> lab-checked; real ⚒️ only on Azure/Entra identity), carried by a genuine asset — I've **written the
 > honest per-cloud support note for all four clouds** ([AWS](../platforms/aws/support.md) ·
 > [Azure](../platforms/azure/support.md) · [GCP](../platforms/gcp/support.md) ·
 > [OCI](../platforms/oci/support.md)), and *that synthesis is the multi-cloud skill.* Its authority is
@@ -184,20 +184,20 @@ assume the clouds are the same.
 
 ## Honest boundaries
 
-This note is **🧗 ramp, and it says so clearly.** My multi-cloud hands-on is **exposure** — each
-cloud's operating model mapped and lab-checked, with real ✋ depth only on **Azure/Entra identity** (and
-✋ on-prem networking/IPAM, which transfers hard here). What carries it is the genuine asset: I've
+This note is **🧭 ramp, and it says so clearly.** My multi-cloud hands-on is **exposure** — each
+cloud's operating model mapped and lab-checked, with real ⚒️ depth only on **Azure/Entra identity** (and
+⚒️ on-prem networking/IPAM, which transfers hard here). What carries it is the genuine asset: I've
 **written the honest, research-grounded support note for all four clouds**
 ([AWS](../platforms/aws/support.md) · [Azure](../platforms/azure/support.md) ·
 [GCP](../platforms/gcp/support.md) · [OCI](../platforms/oci/support.md)) plus
 [`identity-iam.md`](identity-iam.md) and [`cost.md`](cost.md) — and **multi-cloud support *is* that
-synthesis** applied to the seams, backed by ✋ networking fundamentals and a runnable
+synthesis** applied to the seams, backed by ⚒️ networking fundamentals and a runnable
 [lab](#lab--overlapping-cidrs-break-the-interconnect--runnable). The seam mechanics above — federation,
 CIDR/IPAM, egress economics, cross-cloud posture — are **mapped and doc-verified, not tenure.** Deeper
 production multi-cloud (running real workloads across three providers, a live cross-cloud network
 fabric, a multi-cloud FinOps + CSPM program at scale) is still ahead; the annotation says so plainly and
 never bluffs. This is the honest capstone of a sysadmin who documented each cloud first, then the seams
-between them — in public, ✋/🧗 marked.
+between them — in public, ⚒️/🧭 marked.
 
 ## Field kit — real tools & references
 

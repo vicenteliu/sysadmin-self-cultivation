@@ -54,24 +54,24 @@ Every step assumes the same company, so that no step has to answer "it depends":
 
 Ordered by **dependency** — what must be true before what — not by technical domain.
 
-| # | Step | ✋/🧗 |
+| # | Step | ⚒️/🧭 |
 |---:|---|:--:|
-| 00 | [Questions to ask before the lease is signed](00-before-the-lease.md) | 🧗 |
-| 01 | [Uplink — carriers, bandwidth, redundancy](01-uplink.md) | 🧗 / ✋ |
-| 02 | [The building — riser, IDF, power, cooling, cable paths](02-the-building.md) | 🧗 / ✋ |
-| 03 | [**Identity** — directory, groups, SSO](03-identity.md) | ✋ |
-| 04 | [Devices and images — purchase, build, enroll](04-devices-and-images.md) | ✋ |
-| 05 | [Network — VLANs, wireless, guest, printing, door access](05-network.md) | ✋ |
-| 06 | [Tenant and mail — domains, routing, SPF/DKIM/DMARC](06-tenant-and-mail.md) | ✋ |
-| 07 | [Files and collaboration — where state lives, who can see it](07-files-and-collaboration.md) | ✋ |
-| 08 | [Endpoint security and patching](08-endpoint-security-and-patching.md) | ✋ |
-| 09 | [Backup — and the restore drill](09-backup-and-the-restore-drill.md) | ✋ |
-| 10 | [Remote access — VPN, or the thing that replaced it](10-remote-access.md) | ✋ |
-| 11 | [**Assets and tickets** — the record that starts at device #1](11-assets-and-tickets.md) | ✋ |
-| 12 | [Meeting rooms, AV and UC — the orphan nobody owns](12-meeting-rooms-av-and-uc.md) | 🧗 |
-| 13 | [The help desk itself — and how many people this needs](13-the-help-desk.md) | ✋ |
-| 14 | [Compliance evidence — what an audit actually asks for](14-compliance-evidence.md) | ✋ |
-| 15 | [Joiner / mover / leaver, automated](15-joiner-mover-leaver.md) | ✋ |
+| 00 | [Questions to ask before the lease is signed](00-before-the-lease.md) | 🧭 |
+| 01 | [Uplink — carriers, bandwidth, redundancy](01-uplink.md) | 🧭 / ⚒️ |
+| 02 | [The building — riser, IDF, power, cooling, cable paths](02-the-building.md) | 🧭 / ⚒️ |
+| 03 | [**Identity** — directory, groups, SSO](03-identity.md) | ⚒️ |
+| 04 | [Devices and images — purchase, build, enroll](04-devices-and-images.md) | ⚒️ |
+| 05 | [Network — VLANs, wireless, guest, printing, door access](05-network.md) | ⚒️ |
+| 06 | [Tenant and mail — domains, routing, SPF/DKIM/DMARC](06-tenant-and-mail.md) | ⚒️ |
+| 07 | [Files and collaboration — where state lives, who can see it](07-files-and-collaboration.md) | ⚒️ |
+| 08 | [Endpoint security and patching](08-endpoint-security-and-patching.md) | ⚒️ |
+| 09 | [Backup — and the restore drill](09-backup-and-the-restore-drill.md) | ⚒️ |
+| 10 | [Remote access — VPN, or the thing that replaced it](10-remote-access.md) | ⚒️ |
+| 11 | [**Assets and tickets** — the record that starts at device #1](11-assets-and-tickets.md) | ⚒️ |
+| 12 | [Meeting rooms, AV and UC — the orphan nobody owns](12-meeting-rooms-av-and-uc.md) | 🧭 |
+| 13 | [The help desk itself — and how many people this needs](13-the-help-desk.md) | ⚒️ |
+| 14 | [Compliance evidence — what an audit actually asks for](14-compliance-evidence.md) | ⚒️ |
+| 15 | [Joiner / mover / leaver, automated](15-joiner-mover-leaver.md) | ⚒️ |
 
 **Budget and procurement are a section inside each step, not a step of their own** —
 money is decided at every one of these, and collecting it into one file produces a
@@ -83,7 +83,7 @@ Gaps the scenario surfaced: [`GAPS.md`](GAPS.md).
 
 ```
 # NN · <what this step is>
-> ✋/🧗 · Before: <steps that must be done> · After: <steps that depend on this>
+> ⚒️/🧭 · Before: <steps that must be done> · After: <steps that depend on this>
 
 ## What this step produces        something checkable, not a list of topics
 ## Questions to ask first          the house style of this series

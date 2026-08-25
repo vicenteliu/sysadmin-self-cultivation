@@ -80,12 +80,12 @@ The [foundations](../../foundations/) discipline, OpenStack-specific:
 
 ## Honest boundaries
 
-✋ **where it transfers, 🧗 where it's OpenStack.** The scripting-and-automation
+⚒️ **where it transfers, 🧭 where it's OpenStack.** The scripting-and-automation
 *discipline* is hands-on — Python/Bash, paginated/idempotent/error-handled automation,
 read-only-first ([`foundations/`](../../foundations/)) — and it transfers onto the
-`openstack` client. **KVM** underneath is ✋. But the OpenStack-*specific* surface (the
+`openstack` client. **KVM** underneath is ⚒️. But the OpenStack-*specific* surface (the
 unified client's breadth, release/microversion specifics, running it against a real
-control plane) is the 🧗 ramp, mapped and verified on DevStack, not claimed as
+control plane) is the 🧭 ramp, mapped and verified on DevStack, not claimed as
 production tooling. The claim: a strong automation foundation plus a verifiable ramp
 onto OpenStack's API — honest that production ops comes only from running it.
 

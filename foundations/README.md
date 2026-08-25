@@ -9,7 +9,7 @@ the thing *underneath* even those — the Linux command line and the scripting t
 turns "I did it once by hand" into "it runs itself now." It's the most-requested,
 least-taught skill in the whole demand signal, precisely because everyone assumes
 you already have it. And it's the one place in this repo where the honesty marker is
-unqualified: **✋ hands-on depth** — RHCE-level Linux operated at fleet scale, Python
+unqualified: **⚒️ hands-on depth** — RHCE-level Linux operated at fleet scale, Python
 and Bash as daily tools for over a decade. Everything else here is written looking
 *up* from this floor.
 
@@ -177,12 +177,12 @@ to trust — because a shell command runs as you, right now, with your privilege
 
 ## Honest boundaries
 
-✋ **hands-on depth — the most direct in the repo.** Linux (RHEL/CentOS/Ubuntu)
+⚒️ **hands-on depth — the most direct in the repo.** Linux (RHEL/CentOS/Ubuntu)
 operated at fleet scale, RHCE certified, with Python and Bash as everyday automation
 tools across ten-plus years — provisioning pipelines, audit-reconciliation scripts,
 and the cross-stack troubleshooting the [`the-stack`](../the-stack/) chapters draw
 on. PowerShell is real but scoped (Windows Server maintenance, M365/Entra admin) and
-labeled that way, not inflated into a primary language. There's no 🧗 in this module
+labeled that way, not inflated into a primary language. There's no 🧭 in this module
 because there's nothing here that's a ramp — this is the ground the ramps are
 launched from.
 

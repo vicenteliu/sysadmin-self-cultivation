@@ -10,19 +10,19 @@ admin's existing depth (Linux, networking, identity, automation) pays off the mo
 | --- | --- | --- |
 | [`identity-iam.md`](identity-iam.md) | Least-privilege, roles vs. policies, short-lived credentials, lifecycle (JML), SSO/SAML/OIDC, SCIM — same discipline on AD, Entra, AWS IAM, Azure RBAC, GCP IAM, Okta. | ✅ |
 | [`iac-and-config.md`](iac-and-config.md) | Provisioning (Terraform) vs. config management (Ansible/Puppet): state, modules, plan/apply/destroy, idempotence, drift. | ✅ |
-| [`terraform-support.md`](terraform-support.md) | Terraform support as break-fix craft: state/drift/forced-replacement/count-vs-for_each, the recurring tickets & where you look, and the Ansible-sysadmin instincts to unlearn. **🧗** | ✅ |
+| [`terraform-support.md`](terraform-support.md) | Terraform support as break-fix craft: state/drift/forced-replacement/count-vs-for_each, the recurring tickets & where you look, and the Ansible-sysadmin instincts to unlearn. **🧭** | ✅ |
 | [`ci-cd.md`](ci-cd.md) | The deployment pipeline: CI/CD, build-once-promote, OIDC over keys, GitOps (pull vs. push), rollback. | ✅ |
-| [`databases.md`](databases.md) | Operating the stateful hard part: availability, recoverability (backup/PITR), performance, self-run vs. managed. **✋** | ✅ |
-| [`itsm-and-assets.md`](itsm-and-assets.md) | ITSM (incident/request/change), the CMDB, asset reconciliation, access governance & audit. **✋** | ✅ |
+| [`databases.md`](databases.md) | Operating the stateful hard part: availability, recoverability (backup/PITR), performance, self-run vs. managed. **⚒️** | ✅ |
+| [`itsm-and-assets.md`](itsm-and-assets.md) | ITSM (incident/request/change), the CMDB, asset reconciliation, access governance & audit. **⚒️** | ✅ |
 | [`saas-admin.md`](saas-admin.md) | Google Workspace & M365 administration, the identity spine, SCIM lifecycle — the productivity suite as a managed estate. | ✅ |
-| [`m365-support.md`](m365-support.md) | M365 support as break-fix craft: what you own, the recurring tickets & where you look, and the on-prem/cloud instincts a strong sysadmin must unlearn to inherit it. **✋** | ✅ |
+| [`m365-support.md`](m365-support.md) | M365 support as break-fix craft: what you own, the recurring tickets & where you look, and the on-prem/cloud instincts a strong sysadmin must unlearn to inherit it. **⚒️** | ✅ |
 | [`kubernetes.md`](kubernetes.md) | The object model and operator's view, one layer deeper than the-stack/05; managed vs. self-run, the debugging reflex. | ✅ |
-| [`kubernetes-support.md`](kubernetes-support.md) | Kubernetes support as break-fix craft: the reconcile loop, CrashLoopBackOff / OOMKilled / "service down but pod Running", the recurring tickets & where you look, and the Linux/systemd/Docker instincts to unlearn. **🧗** | ✅ |
-| [`multi-cloud-support.md`](multi-cloud-support.md) | Multi-cloud support as break-fix craft: the seams between clouds — CIDR/routing, cross-cloud identity/federation, egress/data-gravity, consistent posture — and why single-cloud parity instincts bite. Synthesizes the four platform support notes. **🧗** | ✅ |
+| [`kubernetes-support.md`](kubernetes-support.md) | Kubernetes support as break-fix craft: the reconcile loop, CrashLoopBackOff / OOMKilled / "service down but pod Running", the recurring tickets & where you look, and the Linux/systemd/Docker instincts to unlearn. **🧭** | ✅ |
+| [`multi-cloud-support.md`](multi-cloud-support.md) | Multi-cloud support as break-fix craft: the seams between clouds — CIDR/routing, cross-cloud identity/federation, egress/data-gravity, consistent posture — and why single-cloud parity instincts bite. Synthesizes the four platform support notes. **🧭** | ✅ |
 | [`service-mesh.md`](service-mesh.md) | Service discovery + service mesh: the live registry, sidecar mTLS/traffic/observability, and "do you even need one?" | ✅ |
-| [`web-and-tls.md`](web-and-tls.md) | Web servers, reverse proxies & TLS: termination, routing, cert lifecycle + ACME, the hardened front door. **✋** fundamentals | ✅ |
+| [`web-and-tls.md`](web-and-tls.md) | Web servers, reverse proxies & TLS: termination, routing, cert lifecycle + ACME, the hardened front door. **⚒️** fundamentals | ✅ |
 | [`incident-response.md`](incident-response.md) | Incident response & on-call: the lifecycle (mitigate-first), IC roles, humane on-call, the blameless post-mortem. | ✅ |
-| [`working-with-security.md`](working-with-security.md) | The operator's half of security: working with InfoSec/SOC + MITRE ATT&CK awareness (harden the right things), honest ✋ ops-security vs 🧗 specialist. | ✅ |
+| [`working-with-security.md`](working-with-security.md) | The operator's half of security: working with InfoSec/SOC + MITRE ATT&CK awareness (harden the right things), honest ⚒️ ops-security vs 🧭 specialist. | ✅ |
 | [`cost.md`](cost.md) | Cost as a first-class operational control: budgets, alarms, right-sizing, the "forgotten GPU instance" problem. | ✅ |
 
 **Covered by layer in [`the-stack/`](../the-stack/)** — cross-linked, not

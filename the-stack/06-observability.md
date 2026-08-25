@@ -53,7 +53,7 @@ desperately needed the third.
 ## Monitoring vs. observability (the distinction interviewers test)
 
 - **Monitoring** — watching *known* failure modes: dashboards and alerts for
-  conditions you predicted (disk full, CPU high, service down). This is the ✋
+  conditions you predicted (disk full, CPU high, service down). This is the ⚒️
   discipline — infrastructure signals watched for decades: UPS, PDU, environment,
   network gear, server logs.
 - **Observability** — being able to ask *new* questions of a system *without
@@ -89,45 +89,45 @@ Like chapter 05, this layer cuts by **pattern, not one-per-platform**: every
 platform gives you a native telemetry stack, and the open-source stack
 (Prometheus/Grafana/OpenTelemetry) rides on top of all of them.
 
-**Self-hosted ✋🧗** — you run the whole pipeline: agents/exporters →
+**Self-hosted ⚒️🧭** — you run the whole pipeline: agents/exporters →
 **Prometheus** (metrics) → **Grafana** (dashboards) → **Alertmanager**, plus an
 **ELK/Loki** stack for logs, and increasingly **OpenTelemetry** collectors feeding
-a tracing backend (Jaeger/Tempo). The ✋ part is real — infra signal monitoring and
+a tracing backend (Jaeger/Tempo). The ⚒️ part is real — infra signal monitoring and
 server-side monitoring operated for years; the modern OTel/Prometheus/tracing
-assembly is the 🧗 ramp. You own retention, cardinality cost, and the truth that
+assembly is the 🧭 ramp. You own retention, cardinality cost, and the truth that
 **your monitoring going down during an incident is its own incident** (monitor the
 monitoring, from somewhere else).
 
-**vSphere ✋** — **vCenter** metrics and alarms, **vROps** (Aria Operations) for
+**vSphere ⚒️** — **vCenter** metrics and alarms, **vROps** (Aria Operations) for
 capacity and health. Mature, infrastructure-focused, and exactly the monitoring
 (not observability) shape — great at "is this host/datastore/VM healthy," not built
 for tracing a request across services.
 
-**OpenStack 🧗** — **Ceilometer/Gnocchi/Aodh** (the Telemetry project), usually
+**OpenStack 🧭** — **Ceilometer/Gnocchi/Aodh** (the Telemetry project), usually
 paired with the same Prometheus/Grafana stack everyone converges on. Another
 component set you operate — the recurring OpenStack theme.
 
-**AWS 🧗** — **CloudWatch** (metrics/logs/alarms) as the native spine,
+**AWS 🧭** — **CloudWatch** (metrics/logs/alarms) as the native spine,
 **X-Ray** for tracing, CloudWatch Logs Insights for queries. Native, deeply
 integrated, and it bills per metric/log/query in ways that surprise people at
 scale — the chapter-04 storage-cost lesson, applied to telemetry.
 
-**Azure 🧗** — **Azure Monitor** umbrella: **Application Insights** (APM/traces),
+**Azure 🧭** — **Azure Monitor** umbrella: **Application Insights** (APM/traces),
 **Log Analytics** with **KQL** (a genuinely strong query language worth learning),
 metrics and alerts unified. The most integrated APM story of the native stacks.
 
-**GCP 🧗** — **Cloud Operations** (formerly Stackdriver): Monitoring, Logging,
+**GCP 🧭** — **Cloud Operations** (formerly Stackdriver): Monitoring, Logging,
 and **Cloud Trace** — and Google's SRE-heritage shows, with SLO tooling built into
 the product rather than bolted on. The native stack most opinionated about the
 discipline above.
 
-**OCI 🧗** — **Monitoring**, **Logging**, and **APM** — the expected trio,
+**OCI 🧭** — **Monitoring**, **Logging**, and **APM** — the expected trio,
 younger and less deep than the big three's, and (chapter-02 signature) without the
 egress penalty on shipping telemetry around.
 
 ## The comparison table
 
-| Concern | Self-host ✋🧗 | vSphere ✋ | OpenStack 🧗 | AWS 🧗 | Azure 🧗 | GCP 🧗 | OCI 🧗 |
+| Concern | Self-host ⚒️🧭 | vSphere ⚒️ | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Metrics** | Prometheus | vCenter / vROps | Gnocchi / Prom | CloudWatch | Azure Monitor | Cloud Monitoring | Monitoring |
 | **Logs** | ELK / Loki | vRLI | ELK / Prom | CloudWatch Logs | Log Analytics (**KQL**) | Cloud Logging | Logging |
@@ -216,12 +216,12 @@ being as sticky as chapter 05's managed services.
 
 ## Honest boundaries
 
-The ✋ here is genuine and specific: years of **infrastructure monitoring**
+The ⚒️ here is genuine and specific: years of **infrastructure monitoring**
 operated for real — UPS, PDU, environmental, network equipment, server logs, and
 data-center signals watched for reliability at Varian, plus **server-side
 monitoring** of the deployment platform at ByteDance and **log/audit-data
 reconciliation scripting**. That's monitoring depth — the "known failure modes"
-half of this chapter — and it's hands-on. The 🧗 is the **modern observability
+half of this chapter — and it's hands-on. The 🧭 is the **modern observability
 stack and SRE practice**: Prometheus/Grafana/OpenTelemetry assembly, distributed
 tracing, and especially **SLI/SLO/error-budget engineering** — mapped by the method
 above, ramped and verified, not claimed as years of production SRE. The personal

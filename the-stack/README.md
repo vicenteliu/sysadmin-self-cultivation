@@ -29,14 +29,14 @@ Reading the stack bottom-up buys you two things the console can't:
 
 | Family | Platforms | Who owns the hardware | Honesty marker |
 | --- | --- | --- | --- |
-| **You build it** | [self-hosted bare metal](../platforms/self-host/) · VMware [vSphere](../platforms/vsphere/) | you | ✋ hands-on depth |
-| **You build a cloud** | [OpenStack](../platforms/openstack/) | you (plus a control plane you now operate) | 🧗 ramp (KVM-adjacent ✋) |
-| **They build it** | [AWS](../platforms/aws/) · [Azure](../platforms/azure/) · [GCP](../platforms/gcp/) · [OCI](../platforms/oci/) | the provider | 🧗 ramp |
+| **You build it** | [self-hosted bare metal](../platforms/self-host/) · VMware [vSphere](../platforms/vsphere/) | you | ⚒️ hands-on depth |
+| **You build a cloud** | [OpenStack](../platforms/openstack/) | you (plus a control plane you now operate) | 🧭 ramp (KVM-adjacent ⚒️) |
+| **They build it** | [AWS](../platforms/aws/) · [Azure](../platforms/azure/) · [GCP](../platforms/gcp/) · [OCI](../platforms/oci/) | the provider | 🧭 ramp |
 
 **All seven** now have a dedicated **[`platforms/`](../platforms/)** module (the
 "operate this one end to end" view); this series is the "compare them per layer" view.
 
-The ✋/🧗 markers follow the repo's rule ([`WHY.md`](../WHY.md)): hands-on depth is
+The ⚒️/🧭 markers follow the repo's rule ([`WHY.md`](../WHY.md)): hands-on depth is
 claimed only where it exists; everything else is labeled as a ramp — done with AI
 as a co-pilot and verified, which is itself the method this repo teaches.
 
@@ -76,15 +76,15 @@ mindmap
         secure-by-default vs by-discipline
     Seven platforms
       You build it
-        Self-host ✋
-        vSphere ✋
+        Self-host ⚒️
+        vSphere ⚒️
       You build a cloud
-        OpenStack 🧗
+        OpenStack 🧭
       They build it
-        AWS 🧗
-        Azure 🧗
-        GCP 🧗
-        OCI 🧗
+        AWS 🧭
+        Azure 🧭
+        GCP 🧭
+        OCI 🧭
     Every chapter asks
       what the layer does
       seven teardowns
@@ -106,7 +106,7 @@ mindmap
 5. **Ops notes** — what actually pages you at 3 a.m., per family.
 6. **The admin discipline** — what you should be able to *do*, checkable.
 7. **The AI-assisted ramp** — how to learn this layer fast, and where AI burns you.
-8. **Honest boundaries** — what's ✋ depth vs 🧗 ramp in this chapter.
+8. **Honest boundaries** — what's ⚒️ depth vs 🧭 ramp in this chapter.
 
 ## Chapters
 

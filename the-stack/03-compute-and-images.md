@@ -50,10 +50,10 @@ The signature diagram of this series — the same pipeline, twice:
 
 ```mermaid
 flowchart LR
-  subgraph old["Self-host fleet ✋ — the original"]
+  subgraph old["Self-host fleet ⚒️ — the original"]
     o1["PXE network boot"] --> o2["image laid down"] --> o3["cloud-init personalizes"] --> o4["node joins fleet"]
   end
-  subgraph new["Any cloud 🧗 — the rename"]
+  subgraph new["Any cloud 🧭 — the rename"]
     n1["API launches instance"] --> n2["AMI / gallery image / custom image"] --> n3["user-data → cloud-init"] --> n4["instance joins group"]
   end
   o1 -.->|"same job"| n1
@@ -71,42 +71,42 @@ on every platform in this series.
 
 ## Seven ways to build it
 
-**Self-hosted ✋** — the pipeline above, plus everything the clouds hide: hardware
+**Self-hosted ⚒️** — the pipeline above, plus everything the clouds hide: hardware
 diversity (the image must boot on every generation you own), driver compatibility,
 full-disk encryption enrollment, and the warehouse reality of imaging hundreds of
 machines a day. The image *is* the product; the pipeline is its factory.
 
-**vSphere ✋** — templates and clones instead of PXE: golden VM → template →
+**vSphere ⚒️** — templates and clones instead of PXE: golden VM → template →
 clone + customization spec (or cloud-init via VMware's support for it). Content
 libraries distribute templates across sites. The classic failure mode is **VM
 sprawl** — cloning is so cheap that inventory discipline, not provisioning, becomes
 the hard problem.
 
-**OpenStack 🧗** — the cloud pattern with the covers off: **Glance** stores
+**OpenStack 🧭** — the cloud pattern with the covers off: **Glance** stores
 images, **Nova** schedules instances against **flavors** (the size menu),
 cloud-init personalizes, **Ironic** does the same dance for bare metal — PXE
 included, which makes it the closest cloud analog to a self-host fleet pipeline.
 
-**AWS 🧗** — instance types as an alphabet soup with grammar (letter = family:
+**AWS 🧭** — instance types as an alphabet soup with grammar (letter = family:
 general/compute/memory/accelerated; number = generation), **AMIs** as the image
 artifact (regional — copying them around is your job), **user data** feeding
 cloud-init, **Auto Scaling Groups** replacing sick instances from a launch
 template, and **Spot** renting spare capacity at a discount with eviction as a
 designed-in event.
 
-**Azure 🧗** — VM sizes in families like AWS's; images distributed through
+**Azure 🧭** — VM sizes in families like AWS's; images distributed through
 **Azure Compute Gallery** (versioned, replicated, RBAC'd — the most built-out
 image-distribution story of the four); cloud-init on Linux, provisioning agents
 on Windows; **VM Scale Sets** for groups; availability sets from chapter 01
 resurface at placement time.
 
-**GCP 🧗** — the sizing outlier: predefined machine types *plus* **custom machine
+**GCP 🧭** — the sizing outlier: predefined machine types *plus* **custom machine
 types** — dial the exact vCPU/memory you want instead of picking from a menu.
 Instance templates feed **Managed Instance Groups**; images are global (no
 regional copying chore); live migration from chapter 01 means maintenance mostly
 doesn't touch you.
 
-**OCI 🧗** — **shapes**, including **flexible shapes** (dial OCPUs and memory —
+**OCI 🧭** — **shapes**, including **flexible shapes** (dial OCPUs and memory —
 and note: an OCPU is a full physical core, not a hyperthread; the same "vCPU"
 word means half as much elsewhere), custom images, cloud-init standard, and the
 chapter-01 signature carried up the stack: **bare-metal shapes as a first-class
@@ -114,7 +114,7 @@ menu item**, not an exotic.
 
 ## The comparison table
 
-| Dimension | Self-host ✋ | vSphere ✋ | OpenStack 🧗 | AWS 🧗 | Azure 🧗 | GCP 🧗 | OCI 🧗 |
+| Dimension | Self-host ⚒️ | vSphere ⚒️ | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Compute unit** | the server | VM | instance (flavor) | instance (type) | VM (size) | instance (machine type) | instance (shape) |
 | **Sizing model** | what you bought | what you allocate | flavor menu (yours) | fixed menu | fixed menu | menu + **custom dial** | menu + **flexible dial** |
@@ -123,7 +123,7 @@ menu item**, not an exotic.
 | **Scaling group** | your tooling | DRS cluster (placement, not scaling) | Heat / Senlin | Auto Scaling Group | VM Scale Set | Managed Instance Group | instance pool |
 | **Cheap interruptible** | — | — | — | Spot | Spot | Spot (né preemptible) | preemptible |
 | **Bare metal** | everything | everything | Ironic | metal instance types | limited | limited | **first-class shapes** |
-| **Console of last resort** | BMC / IPMI ✋ | vSphere console | Nova console | EC2 serial console | serial console | serial console | serial console |
+| **Console of last resort** | BMC / IPMI ⚒️ | vSphere console | Nova console | EC2 serial console | serial console | serial console | serial console |
 
 That last row is chapter 01 paying off: **the cloud serial console is the BMC you
 already know** — same job, same moment of need, no badge required.
@@ -205,13 +205,13 @@ already know** — same job, same moment of need, no badge required.
 
 ## Honest boundaries
 
-The ✋ in this chapter is the deepest in the series: designing and running an
+The ⚒️ in this chapter is the deepest in the series: designing and running an
 image-and-provisioning pipeline at hundred-thousand-device scale — PXE, custom
 image builds, cloud-init personalization, full-disk encryption, hardware-diversity
 handling — plus years of vSphere template-and-clone operations. That's the
-discipline this chapter generalizes. The 🧗 is the per-cloud machinery: ASG/VMSS/MIG
+discipline this chapter generalizes. The 🧭 is the per-cloud machinery: ASG/VMSS/MIG
 production operations, Packer as a specific tool (the *discipline* it encodes is
-✋; the tool itself is a ramp), and each platform's image-distribution specifics —
+⚒️; the tool itself is a ramp), and each platform's image-distribution specifics —
 all mapped with the method above and verified by building, not by reading.
 
 ## Lab (🚧 planned — spec)
@@ -241,13 +241,13 @@ mindmap
       thin image slow and flexible
       bake the stable, fry the volatile
     Seven ways
-      Self-host ✋ the original pipeline
-      vSphere ✋ templates and sprawl
-      OpenStack 🧗 the pattern, covers off
-      AWS 🧗 AMI and the type grammar
-      Azure 🧗 Compute Gallery distribution
-      GCP 🧗 custom machine dial
-      OCI 🧗 bare metal on the menu
+      Self-host ⚒️ the original pipeline
+      vSphere ⚒️ templates and sprawl
+      OpenStack 🧭 the pattern, covers off
+      AWS 🧭 AMI and the type grammar
+      Azure 🧭 Compute Gallery distribution
+      GCP 🧭 custom machine dial
+      OCI 🧭 bare metal on the menu
     Ops truths
       patch or reimage - pick one
       snowflakes rot fleets

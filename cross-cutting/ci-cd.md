@@ -121,12 +121,12 @@ version control, drift is a diff, and rollback is `git revert`.**
 
 ## Honest boundaries
 
-🧗 **ramp built on a ✋ foundation.** The *automation discipline* CI/CD rests on is
+🧭 **ramp built on a ⚒️ foundation.** The *automation discipline* CI/CD rests on is
 hands-on — Bash/Python/Ansible fleet automation, Git as everyday version control,
 idempotence, and the "put the steps in code, not in a person" instinct
 ([foundations](../foundations/), [iac](iac-and-config.md)). Building and operating
 **production CI/CD pipelines and GitOps** (Jenkins/Actions/GitLab CI at scale, ArgoCD
-in production) is a **🧗 ramp** — the concepts are solid and mapped, verified against
+in production) is a **🧭 ramp** — the concepts are solid and mapped, verified against
 current docs, not claimed as years running a delivery platform. The transferable
 claim: a deep automation foundation plus a fast, honest ramp onto the specific CI/CD
 tool in front of you — exactly the shape [`WHY.md`](../WHY.md) argues for.

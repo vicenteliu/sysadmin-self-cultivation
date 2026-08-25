@@ -9,9 +9,9 @@
 > that actually recur, exactly where you look, and **where a strong sysadmin coming from
 > another lane (AWS, Azure, GCP, or on-prem) gets tripped by the deliberate choices the
 > youngest hyperscaler made differently.** Honesty marker up front: this whole note is
-> **🧗 ramp** — mapped from the AWS/Azure/GCP model, doc-checked against Oracle's own pages,
+> **🧭 ramp** — mapped from the AWS/Azure/GCP model, doc-checked against Oracle's own pages,
 > and drilled in a runnable [lab](#lab--a-compartment-is-not-an-account--runnable) — carried
-> by ✋ transferable fundamentals (Linux, networking, DNS/TLS, identity thinking), not by
+> by ⚒️ transferable fundamentals (Linux, networking, DNS/TLS, identity thinking), not by
 > production tenure on OCI.
 
 OCI's own [platform note](README.md) states the headline in one line: *compartments are OCI's
@@ -223,9 +223,9 @@ here**, each with its failure mode.
 
 ## Honest boundaries
 
-This note is **🧗 ramp, and it says so** — mapped from the AWS/Azure/GCP model, checked against
+This note is **🧭 ramp, and it says so** — mapped from the AWS/Azure/GCP model, checked against
 Oracle's own documentation, and drilled in a runnable [lab](#lab--a-compartment-is-not-an-account--runnable),
-**not** run in production. What carries it is real: **✋ transferable fundamentals** — Linux and
+**not** run in production. What carries it is real: **⚒️ transferable fundamentals** — Linux and
 guest-OS depth, networking, DNS/TLS, and identity/least-privilege *thinking* (the same line
 [`identity-iam.md`](../../cross-cutting/identity-iam.md) and the [self-host](../self-host/)-adjacent
 Linux depth draw). The OCI-specific mechanics above — compartments, the verb-policy language,
@@ -233,7 +233,7 @@ security-lists-vs-NSGs, instance principals, fault domains, the two-tier limits 
 doc-verified, not tenure. Deeper production OCI (large multi-compartment estates, OKE platform
 engineering, FastConnect/DRG topologies, Autonomous DB operations at scale) is still ahead; the
 annotation says so plainly and never bluffs. OCI's honesty marker across this repo is a single,
-consistent **🧗 ramp** — see the [platform note](README.md).
+consistent **🧭 ramp** — see the [platform note](README.md).
 
 ## Field kit — real tools & references
 

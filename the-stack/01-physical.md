@@ -57,7 +57,7 @@ the seven platforms.
 
 ## Seven ways to build it
 
-**Self-hosted bare metal ✋** — you own every noun in the job description above.
+**Self-hosted bare metal ⚒️** — you own every noun in the job description above.
 Racks, top-of-rack switches, BMC/IPMI out-of-band management, PXE boot
 infrastructure, firmware, spares inventory, power budgets. Provisioning at fleet
 scale means an image-and-boot pipeline, not a person with a USB stick:
@@ -71,14 +71,14 @@ Total control, total responsibility, procurement lead times measured in
 weeks-to-months. (Hold onto that pipeline diagram — it comes back as Packer and
 golden images in chapter 03, and it's the same pipeline.)
 
-**VMware vSphere ✋** — the enterprise standard for pretending your hardware is a
+**VMware vSphere ⚒️** — the enterprise standard for pretending your hardware is a
 pool. ESXi is the hypervisor on each host; vCenter is the control plane; vMotion
 moves running VMs between hosts; DRS balances load; HA restarts VMs from a dead
 host. The hardware is still yours — vSphere changes *how you schedule* it, not *who
 replaces the DIMM*. Clusters become your failure-domain unit, host anti-affinity
 your placement tool.
 
-**OpenStack 🧗** — you build an actual cloud on your hardware: Nova (compute),
+**OpenStack 🧭** — you build an actual cloud on your hardware: Nova (compute),
 Neutron (networking), Cinder (block), Glance (images), Keystone (identity), usually
 over KVM, with Ironic if you want to serve bare metal like a cloud does. The
 critical mental shift: **the control plane is now a production system you operate.**
@@ -86,7 +86,7 @@ Your cloud's API going down is an outage *you* own, on top of every hardware dut
 from self-hosting. That staffing reality — you need a platform team, not an admin —
 is the single most under-priced line in every OpenStack pitch.
 
-**AWS 🧗** — the physical layer disappears behind **Regions** and **Availability
+**AWS 🧭** — the physical layer disappears behind **Regions** and **Availability
 Zones** (each AZ = one or more discrete data centers with independent power,
 cooling, and networking). Under the VMs sits the **Nitro system**: network,
 storage, and security offloaded onto custom cards, leaving a minimal hypervisor —
@@ -94,19 +94,19 @@ plus Graviton (ARM) CPUs up the stack. You never see a server; you see instance
 families, placement groups, and the occasional "instance scheduled for retirement"
 email — which is a hardware failure you're reading about from the outside.
 
-**Azure 🧗** — Hyper-V-lineage hypervisor with its own offload hardware (Azure
+**Azure 🧭** — Hyper-V-lineage hypervisor with its own offload hardware (Azure
 Boost); regions with (in most, not all, regions) Availability Zones, plus a
 concept the others lack: **availability sets** with *fault domains* and *update
 domains* inside a single DC — a visible fossil of "racks and maintenance windows"
 that maps one-to-one onto what a self-hoster already knows.
 
-**Google Cloud 🧗** — KVM-based hypervisor on top of Google's internal fabric
+**Google Cloud 🧭** — KVM-based hypervisor on top of Google's internal fabric
 (Jupiter network, Borg scheduling heritage, Titan security silicon). Its signature
 physical-layer behavior: **live migration by default** — instead of mailing you a
 retirement notice, GCP moves your running VM off failing or maintenance-due
 hardware. You mostly find out afterwards, in the logs.
 
-**Oracle Cloud (OCI) 🧗** — the youngest design of the four, and it shows in two
+**Oracle Cloud (OCI) 🧭** — the youngest design of the four, and it shows in two
 ways: **off-box network virtualization** (network I/O handled outside the host, so
 the hypervisor tax is low) and **bare-metal instances as a first-class product** —
 the closest a public cloud gets to handing you the actual server. Regions contain
@@ -120,15 +120,15 @@ provider's problem — and note the one thing that stays blue everywhere:
 
 ```mermaid
 flowchart LR
-  subgraph sh["Self-host · vSphere ✋"]
+  subgraph sh["Self-host · vSphere ⚒️"]
     direction LR
     a1["Hardware"]:::you --> a2["Hypervisor"]:::you --> a3["Control plane"]:::you --> a4["Placement + capacity"]:::you
   end
-  subgraph os["OpenStack 🧗"]
+  subgraph os["OpenStack 🧭"]
     direction LR
     b1["Hardware"]:::you --> b2["Hypervisor"]:::you --> b3["Control plane — now YOUR production system"]:::you --> b4["Placement + capacity"]:::you
   end
-  subgraph cl["AWS · Azure · GCP · OCI 🧗"]
+  subgraph cl["AWS · Azure · GCP · OCI 🧭"]
     direction LR
     c1["Hardware"]:::prov --> c2["Hypervisor"]:::prov --> c3["Control plane"]:::prov --> c4["Placement + capacity"]:::you
   end
@@ -142,7 +142,7 @@ your quota.
 
 ## The comparison table
 
-| Dimension | Self-host ✋ | vSphere ✋ | OpenStack 🧗 | AWS 🧗 | Azure 🧗 | GCP 🧗 | OCI 🧗 |
+| Dimension | Self-host ⚒️ | vSphere ⚒️ | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Hardware owner** | you | you | you | provider | provider | provider | provider |
 | **Hypervisor** | KVM/Proxmox (typ.) | ESXi | KVM (typ.) | Nitro (KVM-derived, offloaded) | Hyper-V lineage + Boost | KVM-based | KVM-based + off-box net |
@@ -249,17 +249,17 @@ perfect place for AI to accelerate you *and* to burn you.
 
 ## Honest boundaries
 
-The ✋ in this chapter is real: years of hands-on fleet work at a previous employer
+The ⚒️ in this chapter is real: years of hands-on fleet work at a previous employer
 — racking and cabling, BMC/IPMI, PXE-and-image provisioning pipelines at
 tens-of-thousands-of-devices scale, regional vSphere administration, KVM and
-Proxmox (including GPU passthrough) in lab and internal environments. The 🧗 is
+Proxmox (including GPU passthrough) in lab and internal environments. The 🧭 is
 equally real: the AWS/Azure/GCP/OCI physical layers are studied and AI-ramped from
 public engineering material, not badged into — nobody outside those companies
 operates that layer, **which is precisely the point of this chapter**: on the
 hyperscalers you operate *above* the physical layer, but you operate *better* if
-you know what it's doing underneath. OpenStack is labeled 🧗: evaluated and
+you know what it's doing underneath. OpenStack is labeled 🧭: evaluated and
 understood architecturally, not run in production — the control-plane-as-product
-warning comes from the platform-operations experience that *is* ✋, applied to
+warning comes from the platform-operations experience that *is* ⚒️, applied to
 OpenStack's design.
 
 ## The chapter on one screen
@@ -273,13 +273,13 @@ mindmap
       replace and refresh
       plan capacity
     Seven ways
-      Self-host ✋ you own every noun
-      vSphere ✋ pooled scheduling, your hardware
-      OpenStack 🧗 control plane becomes your product
-      AWS 🧗 Nitro offload
-      Azure 🧗 Hyper-V lineage, fault and update domains
-      GCP 🧗 live migration by default
-      OCI 🧗 off-box network, bare metal first-class
+      Self-host ⚒️ you own every noun
+      vSphere ⚒️ pooled scheduling, your hardware
+      OpenStack 🧭 control plane becomes your product
+      AWS 🧭 Nitro offload
+      Azure 🧭 Hyper-V lineage, fault and update domains
+      GCP 🧭 live migration by default
+      OCI 🧭 off-box network, bare metal first-class
     Choosing
       utilization shape
       team you actually have

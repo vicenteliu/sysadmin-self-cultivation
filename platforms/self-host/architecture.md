@@ -95,13 +95,13 @@ earned on.
 
 ## Honest boundaries
 
-✋ **hands-on depth — the deepest root in the repo, and this note is written entirely
+⚒️ **hands-on depth — the deepest root in the repo, and this note is written entirely
 from it.** A multi-OS **PXE + image-based deployment platform** built from scratch and
 run at fleet scale (100k+ devices cumulatively provisioned); **full-disk encryption**
 at scale; **DNS/BIND, DHCP, LDAP, NTP** core services; **RAID/SAN/NAS** storage;
 **KVM/Proxmox** (incl. GPU passthrough); and the **BMC/IPMI out-of-band** muscle the
 cloud console rents. The failure-domain design, the provisioning pipeline, the
-out-of-band plane — all lived. There is essentially **no 🧗 to flag here**: bare metal
+out-of-band plane — all lived. There is essentially **no 🧭 to flag here**: bare metal
 is where the judgment the rest of the repo applies to other platforms was *earned*,
 and it ties directly to [`foundations/`](../../foundations/), [`endpoint/`](../../endpoint/),
 and [`the-stack`](../../the-stack/).

@@ -1,6 +1,6 @@
 # 06 · Tenant and mail — domains, routing, SPF/DKIM/DMARC
 
-> ✋ hands-on — M365 tenant work and the break-fix craft around it
+> ⚒️ hands-on — M365 tenant work and the break-fix craft around it
 > **Before:** 03 identity. **After:** 07 files · 09 backup · 14 compliance evidence · 15 JML
 
 The tenant is created in this step, but **the decision that shapes it was made in
@@ -65,7 +65,7 @@ senders, let a person decide which are authorised.
 
 ## Read deeper
 
-- [`cross-cutting/m365-support.md`](../cross-cutting/m365-support.md) — the ✋
+- [`cross-cutting/m365-support.md`](../cross-cutting/m365-support.md) — the ⚒️
   break-fix craft on this exact surface
 - [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) — the identity
   spine across Workspace and M365, and SCIM lifecycle

@@ -96,6 +96,6 @@ draws, felt in your hands. Pair this with the runnable
 
 ---
 
-Honest note: this is the ✋ platform — the deepest root. These labs are the fleet work
+Honest note: this is the ⚒️ platform — the deepest root. These labs are the fleet work
 written down, and they're the most reproducible in the repo because they need nothing
 but a laptop.

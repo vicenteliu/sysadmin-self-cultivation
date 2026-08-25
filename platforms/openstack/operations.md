@@ -3,8 +3,8 @@
 > The [README](README.md) is *what OpenStack is*; [architecture](architecture.md) is
 > *how it's structured*; this note is **what running it looks like** — and here the
 > day-2 story has a twist no managed cloud has: **you operate the control plane, so
-> its health is your health.** OpenStack is a 🧗 ramp; this is the operating discipline
-> mapped onto its reality, with KVM underneath as the ✋ ground.
+> its health is your health.** OpenStack is a 🧭 ramp; this is the operating discipline
+> mapped onto its reality, with KVM underneath as the ⚒️ ground.
 
 ## The brief — what "operating OpenStack" means
 
@@ -79,11 +79,11 @@ flowchart LR
 
 ## Honest boundaries
 
-🧗 **ramp, with the hypervisor as ✋ ground.** The ops *discipline* — triage, incident
-method, capacity thinking, the control-plane-as-product instinct — is ✋, carried from
+🧭 **ramp, with the hypervisor as ⚒️ ground.** The ops *discipline* — triage, incident
+method, capacity thinking, the control-plane-as-product instinct — is ⚒️, carried from
 real platform work ([vSphere](../vsphere/), [fleet](../self-host/)), and **KVM**
 underneath is hands-on. But **running a production OpenStack control plane** (Neutron
 at scale, Ceph operations, coordinated upgrades, the 3 a.m. control-plane incident) is
-the 🧗 ramp, understood architecturally and mapped, not claimed as production ops.
+the 🧭 ramp, understood architecturally and mapped, not claimed as production ops.
 Production competence on this platform is precisely the part that only comes from
 running it — and this note says so.

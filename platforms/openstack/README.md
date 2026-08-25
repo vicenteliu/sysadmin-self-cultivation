@@ -3,7 +3,7 @@
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. The honesty marker
-> is **🧗 ramp** — understood architecturally and adjacent to real KVM/Proxmox
+> is **🧭 ramp** — understood architecturally and adjacent to real KVM/Proxmox
 > experience, not run in production. OpenStack is the one platform in this repo where
 > *you build the cloud*, and that single fact shapes everything about operating it.
 
@@ -77,7 +77,7 @@ to minutes. But the hard-won knowledge of OpenStack is **operational** (what bre
 the control plane, how to debug Neutron at 3 a.m.), and that comes from running it,
 not reading about it. AI ramps you to *competent-to-reason*; production competence on
 this platform is the part it can't hand you — which is exactly why the honest marker
-below is 🧗.
+below is 🧭.
 
 ## 4. Labs
 
@@ -106,11 +106,11 @@ set:
 
 ## Honest boundaries
 
-🧗 **honest ramp — clearly labeled.** OpenStack is **understood architecturally**
+🧭 **honest ramp — clearly labeled.** OpenStack is **understood architecturally**
 (Nova/Neutron/Cinder/Glance/Keystone over KVM, the control-plane-as-product reality)
-and sits *adjacent* to real ✋ ground — **KVM** and **Proxmox VE** run hands-on in lab
+and sits *adjacent* to real ⚒️ ground — **KVM** and **Proxmox VE** run hands-on in lab
 and internal environments, including GPU passthrough ([`the-stack/01`](../../the-stack/01-physical.md)).
-So the *hypervisor* underneath is ✋; the OpenStack *control plane* is the 🧗 ramp,
+So the *hypervisor* underneath is ⚒️; the OpenStack *control plane* is the 🧭 ramp,
 not claimed as production operations. The control-plane-as-product warning that runs
 through this module isn't theory — it comes from real platform-operations experience
 (vSphere estate, fleet infrastructure) applied to OpenStack's design. The claim is a

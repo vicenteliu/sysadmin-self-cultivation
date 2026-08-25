@@ -9,8 +9,8 @@
 > This is the other half for the provisioning side: **Terraform support as a break-fix
 > craft** — the tickets that actually recur, exactly where you look, and **where a strong
 > Ansible / Puppet / Chef sysadmin's instincts get burned inheriting Terraform.** Honesty
-> marker up front: this note is **🧗 ramp** — my Terraform hands-on is **lab/exposure**,
-> mapped from and carried by a ✋ **config-management + Linux foundation** (Ansible, declarative
+> marker up front: this note is **🧭 ramp** — my Terraform hands-on is **lab/exposure**,
+> mapped from and carried by a ⚒️ **config-management + Linux foundation** (Ansible, declarative
 > thinking, GitOps, idempotency). Its authority is **research** (HashiCorp docs + practitioner
 > failure modes + a runnable [lab](#lab--state-is-the-source-of-truth--runnable)), not
 > production tenure. The whole point of this note is *the gap I'm crossing.*
@@ -190,9 +190,9 @@ failure mode.
 
 ## Honest boundaries
 
-This note is **🧗 ramp, and it says so clearly.** My Terraform hands-on is **lab/exposure** —
+This note is **🧭 ramp, and it says so clearly.** My Terraform hands-on is **lab/exposure** —
 built from an Ansible/Puppet config-management and Linux foundation, not from years of running
-Terraform state in production. What carries it is real: **✋ config-management + Linux depth**
+Terraform state in production. What carries it is real: **⚒️ config-management + Linux depth**
 (Ansible/IaC, declarative thinking, idempotency, GitOps/PR discipline, dependency reasoning,
 debugging methodology — the same line [`iac-and-config.md`](iac-and-config.md) draws), plus a
 research-grounded model of Terraform's mechanics and a runnable
@@ -202,7 +202,7 @@ providers/lock, drift — are **mapped and doc-verified, not tenure.** Deeper pr
 (large multi-team state, module authorship at scale, Sentinel/OPA policy programs, Terragrunt
 mono-repos, state migrations under load) is still ahead; the annotation says so plainly and
 never bluffs. This is the honest artifact of a strong sysadmin **crossing the exact gap** the
-job market keeps asking about — documented in public, ✋/🧗 marked.
+job market keeps asking about — documented in public, ⚒️/🧭 marked.
 
 ## Field kit — real tools & references
 

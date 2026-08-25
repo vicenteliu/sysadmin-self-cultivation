@@ -134,12 +134,12 @@ feeding back into engineering priorities.
 ## Honest boundaries
 
 Mixed, and honest about which half. The **technical incident reflex** — decomposition,
-one-variable-at-a-time, reading what the system says under pressure — is ✋
+one-variable-at-a-time, reading what the system says under pressure — is ⚒️
 ([foundations](../foundations/), and real infrastructure work where the pager was
 real), as is the **composure**: staying methodical when it breaks. Formal **SRE
 incident-command practice at scale** (dedicated IC rotations, error-budget-driven
-engineering, large-org post-mortem programs) is a **🧗 ramp** — the framework mapped and
-verified, not claimed as running a production SRE org. The most transferable ✋ thing
+engineering, large-org post-mortem programs) is a **🧭 ramp** — the framework mapped and
+verified, not claimed as running a production SRE org. The most transferable ⚒️ thing
 here is exactly what [`WHY.md`](../WHY.md) says survives the AI era: the judgment and
 calm to structure a messy, high-stakes situation — which no model provides.
 

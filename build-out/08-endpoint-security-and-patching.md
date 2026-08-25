@@ -1,6 +1,6 @@
 # 08 · Endpoint security and patching
 
-> ✋ hands-on — patch operations, baselines, and working alongside a security function
+> ⚒️ hands-on — patch operations, baselines, and working alongside a security function
 > **Before:** 03 identity · 04 devices. **After:** 14 compliance evidence
 
 Patching is the step everyone agrees is important and nobody schedules. It is also

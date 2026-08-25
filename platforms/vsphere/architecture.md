@@ -113,7 +113,7 @@ DRS-balanced), **networking** (DVS onto VLANs), **storage** (shared datastore),
 
 ## Honest boundaries
 
-✋ **hands-on depth — one of the deepest in the repo, and this whole note is written
+⚒️ **hands-on depth — one of the deepest in the repo, and this whole note is written
 from it.** Operated as the **AMS-region vCenter administrator** (maintained and
 upgraded VM infrastructure and services), **VCP6-DCV** (Data Center Virtualization)
 and **VCP6-NV** (Network Virtualization) certified, with adjacent hands-on **KVM** and
@@ -121,6 +121,6 @@ and **VCP6-NV** (Network Virtualization) certified, with adjacent hands-on **KVM
 distinctions, the datastore-full outage, the permission model — lived, not read. This
 is not a ramp; it's the production-virtualization ground the repo's
 [failure-domain](../../the-stack/01-physical.md) and hypervisor material stands on.
-The only 🧗 worth flagging: the **newest vSphere 8 / NSX features** and the
+The only 🧭 worth flagging: the **newest vSphere 8 / NSX features** and the
 **post-Broadcom licensing landscape** — fast-moving details verified against current
 docs, not bluffed.

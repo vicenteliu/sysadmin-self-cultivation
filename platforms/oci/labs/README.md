@@ -105,5 +105,5 @@ stdlib Python — runnable anywhere, and in CI:
 ---
 
 Each lab lands with the code (Terraform / Resource Manager is the persistent form), a
-`README`, and explicit teardown. Honest note: OCI is a 🧗 ramp — the Always-Free tier
+`README`, and explicit teardown. Honest note: OCI is a 🧭 ramp — the Always-Free tier
 makes it a runnable one.

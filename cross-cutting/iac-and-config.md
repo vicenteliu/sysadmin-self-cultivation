@@ -128,10 +128,10 @@ it's what IaC exists to kill:
 
 ## Honest boundaries
 
-Mixed, and marked precisely. **Ansible and the automation discipline are ✋** —
+Mixed, and marked precisely. **Ansible and the automation discipline are ⚒️** —
 Python/Bash/Ansible operated for real fleet automation, and the idempotence instinct
 that underlies all of IaC is hands-on (see [`foundations/`](../foundations/)).
-**Terraform is a 🧗 ramp** — the concepts (state, plan/apply/destroy, modules) are
+**Terraform is a 🧭 ramp** — the concepts (state, plan/apply/destroy, modules) are
 solid, mapped, and proven in the [AWS lab](../platforms/aws/labs/02-minimal-vpc-ec2-terraform/),
 not claimed as years of production module authoring at scale. **Puppet is
 conceptual** — understood as the pull-model contrast, not operated. The transferable

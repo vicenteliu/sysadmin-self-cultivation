@@ -141,12 +141,12 @@ the whole [skill map](skills-map.md) doing one job.
 
 ## Honest boundaries
 
-🧗 **ramp, honestly — and more so than AWS.** This is the transferable architecture
+🧭 **ramp, honestly — and more so than AWS.** This is the transferable architecture
 model — hierarchy/blast-radius design, failure domains, shared responsibility —
 mapped onto GCP and verified against its docs, with **no production GCP operations
 claimed** (the [README](README.md) says the same). The *instincts* underneath
 (blast-radius thinking, multi-zone placement, least privilege, "design the hierarchy
-before you furnish it") are ✋ — from real infrastructure and fleet work
+before you furnish it") are ⚒️ — from real infrastructure and fleet work
 ([`the-stack`](../../the-stack/) draws on it) — but every GCP-service specific here is
 the ramp. The claim is a sound architectural model plus a fast, verifiable ramp onto
 GCP's version of it — the repo's honest position ([`WHY.md`](../../WHY.md)), applied

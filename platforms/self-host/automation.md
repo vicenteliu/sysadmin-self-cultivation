@@ -88,13 +88,13 @@ host *is*). Ops is Ansible; the standing fleet is the pipeline
 
 ## Honest boundaries
 
-✋ **hands-on depth — the deepest root.** Ansible/bash/SSH fleet automation, `ipmitool`
+⚒️ **hands-on depth — the deepest root.** Ansible/bash/SSH fleet automation, `ipmitool`
 out-of-band operations, `virsh`/KVM VM lifecycle, and the **PXE + kickstart +
 cloud-init pipeline** operated at fleet scale (100k+ devices) — the automation instinct
-this whole repo teaches, applied where it was earned. Built on the ✋
+this whole repo teaches, applied where it was earned. Built on the ⚒️
 [foundations](../../foundations/) scripting discipline (idempotence, read-only-first,
 no plaintext secrets) with the extra bare-metal rule baked in by experience: there is
-no undo. The only 🧗 edge: newest **MAAS/Terraform bare-metal** provisioning at scale
+no undo. The only 🧭 edge: newest **MAAS/Terraform bare-metal** provisioning at scale
 — mapped and verified, not claimed as the primary tooling.
 
 ## The doc on one screen

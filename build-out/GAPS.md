@@ -27,7 +27,7 @@ something runnable and cannot. The table being empty is a state, not a finish.
 | Step | Why nothing runnable belongs here |
 |---|---|
 | [00 · before the lease](00-before-the-lease.md) | It is a conversation with a landlord. The honesty marker carries the weight instead, and inventing an exercise would misrepresent the step. |
-| [02 · the building](02-the-building.md) | Commissioning a room from a shell is physical work with contractors. The rack-side habits are covered in [`platforms/self-host/`](../platforms/self-host/); the building-side is 🧗 and stays so. |
+| [02 · the building](02-the-building.md) | Commissioning a room from a shell is physical work with contractors. The rack-side habits are covered in [`platforms/self-host/`](../platforms/self-host/); the building-side is 🧭 and stays so. |
 | [12 · rooms](12-meeting-rooms-av-and-uc.md) — AV half | Same reason. The data-governance half was the real gap and is now built at [`labs/transcript-retention/`](../cross-cutting/labs/transcript-retention/); the AV half stays here. |
 
 ## What this list is telling you

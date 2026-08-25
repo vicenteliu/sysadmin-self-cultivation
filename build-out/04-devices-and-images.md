@@ -1,6 +1,6 @@
 # 04 · Devices and images — purchase, build, enroll
 
-> ✋ hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, hardware lifecycle
+> ⚒️ hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, hardware lifecycle
 > **Before:** 02 the building · 03 identity. **After:** 05 network · 08 endpoint security · 11 assets · 13 the help desk
 
 Its dependency on 03 is the one that costs money if you get it wrong: **a device is
@@ -58,7 +58,7 @@ because enrolment failures are opaque and their error strings are unhelpful.
 - [`the-stack/03-compute-and-images.md`](../the-stack/03-compute-and-images.md) —
   compute and the image pipeline, the layer this step lives at
 - [`endpoint/`](../endpoint/) — the MDM model, imaging pipeline, patch and EDR, BYOD
-- [`platforms/self-host/operations.md`](../platforms/self-host/operations.md) — the ✋
+- [`platforms/self-host/operations.md`](../platforms/self-host/operations.md) — the ⚒️
   fleet material this step's habits come from
 
 ## Do it

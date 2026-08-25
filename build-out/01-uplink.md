@@ -1,6 +1,6 @@
 # 01 · Uplink — carriers, bandwidth, redundancy
 
-> 🧗 **verified ramp** for procurement and carrier negotiation; ✋ for what the
+> 🧭 **verified ramp** for procurement and carrier negotiation; ⚒️ for what the
 > circuit is carrying and how it fails once it is live.
 > **Before:** 00 lease questions. **After:** 02 the building · 05 network · 10 remote access
 

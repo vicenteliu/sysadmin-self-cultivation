@@ -95,5 +95,5 @@ resources.
 
 ---
 
-Honest note: OpenStack is a 🧗 ramp — DevStack makes it a runnable one, and lab 03 is
+Honest note: OpenStack is a 🧭 ramp — DevStack makes it a runnable one, and lab 03 is
 the piece that turns the "control plane is now yours" warning from theory into muscle.

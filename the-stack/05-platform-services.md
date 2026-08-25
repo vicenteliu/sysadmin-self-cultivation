@@ -67,17 +67,17 @@ locked in and over-billed. Naming both is the whole discipline.
 
 This layer doesn't map to seven platforms as cleanly as the ones below — the
 honest cut is **by service family, noting where each platform lands.** (And the
-honesty marker earns its keep here: this is the most 🧗 chapter in the series.)
+honesty marker earns its keep here: this is the most 🧭 chapter in the series.)
 
 ### Containers & orchestration
 
-**Self-host / on-prem ✋🧗** — Docker on a host is ✋ (you've built and shipped
-images, chapter 03); running **Kubernetes yourself** is 🧗 and is its own
+**Self-host / on-prem ⚒️🧭** — Docker on a host is ⚒️ (you've built and shipped
+images, chapter 03); running **Kubernetes yourself** is 🧭 and is its own
 control-plane-as-product commitment — etcd, the API server, upgrades, and the
 networking/storage CNI/CSI plumbing all become yours. The lesson from OpenStack and
 Ceph repeats: *self-run orchestration is a platform team, not a deployment target.*
 
-**Managed Kubernetes 🧗** — **EKS / AKS / GKE / OKE**: the provider runs the
+**Managed Kubernetes 🧭** — **EKS / AKS / GKE / OKE**: the provider runs the
 control plane, you run the workloads (and, depending, the nodes). **GKE is widely
 treated as the reference** — Kubernetes is Google's own heritage. The managed form
 removes the etcd-and-upgrades toil but not the need to actually understand
@@ -85,7 +85,7 @@ Kubernetes; the abstraction leaks the moment something breaks.
 
 ### Serverless & functions
 
-**Functions 🧗** — **Lambda / Azure Functions / Cloud Functions / OCI
+**Functions 🧭** — **Lambda / Azure Functions / Cloud Functions / OCI
 Functions**: event-driven code, no server to patch, scale-to-zero, pay-per-invoke.
 The trade is starkest here — near-zero ops for near-total lock-in (the event
 model, the triggers, and the surrounding services are proprietary) and a debugging
@@ -95,7 +95,7 @@ rent.**
 
 ### Managed databases
 
-**Managed relational 🧗 (on ✋ foundations)** — **RDS / Aurora / Azure SQL / Cloud
+**Managed relational 🧭 (on ⚒️ foundations)** — **RDS / Aurora / Azure SQL / Cloud
 SQL / Autonomous DB**: the engine you know (Postgres, MySQL) with backups,
 failover, patching, and replication operated for you. This is often the *highest-
 value rent on the whole layer* — databases are the hardest stateful thing to run
@@ -103,7 +103,7 @@ well, and the toil removed is real and dangerous toil. The chapter-04 discipline
 still apply: you must still know your RPO/RTO, still test restores, still
 understand that *their* backup is only as good as your understanding of it.
 
-**Managed everything-else 🧗** — queues (SQS/Service Bus/Pub-Sub), caches (managed
+**Managed everything-else 🧭** — queues (SQS/Service Bus/Pub-Sub), caches (managed
 Redis), search, streaming. Same bargain, narrower scope: rent the stateful hard
 part, accept the proprietary edges.
 
@@ -111,12 +111,12 @@ part, accept the proprietary edges.
 
 | Service family | Self-host | AWS | Azure | GCP | OCI | The trade |
 | --- | --- | --- | --- | --- | --- | --- |
-| **Container runtime** | Docker ✋ | ECR + runtime | ACR + runtime | Artifact Registry | OCIR | portable — the least sticky thing here |
-| **Managed Kubernetes** | self-run K8s 🧗 | EKS | AKS | **GKE** (reference) | OKE | control plane rented; workloads portable-ish |
+| **Container runtime** | Docker ⚒️ | ECR + runtime | ACR + runtime | Artifact Registry | OCIR | portable — the least sticky thing here |
+| **Managed Kubernetes** | self-run K8s 🧭 | EKS | AKS | **GKE** (reference) | OKE | control plane rented; workloads portable-ish |
 | **Serverless containers** | — | Fargate / App Runner | Container Apps | Cloud Run | Container Instances | no nodes to manage; platform-shaped |
 | **Functions** | — (rent-only) | Lambda | Functions | Cloud Functions | Functions | max convenience, max lock-in |
-| **Managed relational** | DB on a VM ✋ | RDS / Aurora | Azure SQL | Cloud SQL | Autonomous DB | highest-value rent; RPO/RTO still yours |
-| **Managed cache / queue** | Redis / Rabbit ✋ | ElastiCache / SQS | Cache / Service Bus | Memorystore / Pub-Sub | Cache / Streaming | rent the stateful hard part |
+| **Managed relational** | DB on a VM ⚒️ | RDS / Aurora | Azure SQL | Cloud SQL | Autonomous DB | highest-value rent; RPO/RTO still yours |
+| **Managed cache / queue** | Redis / Rabbit ⚒️ | ElastiCache / SQS | Cache / Service Bus | Memorystore / Pub-Sub | Cache / Streaming | rent the stateful hard part |
 | **Lock-in gradient** | lowest | → | → | → | → | rises left-to-right within each row |
 
 The pattern across the table: **the runtime is portable, the orchestration is
@@ -207,7 +207,7 @@ is precisely the judgment AI can't supply.
 
 ## Honest boundaries
 
-This is the most 🧗 chapter in the series, and saying so *is* the point. The ✋
+This is the most 🧭 chapter in the series, and saying so *is* the point. The ⚒️
 underneath is real and it's the foundation the judgment rests on: Docker and image
 building shipped at scale (chapter 03), production relational databases operated on
 self-managed infrastructure (chapter 04), and the container/Kubernetes work that's

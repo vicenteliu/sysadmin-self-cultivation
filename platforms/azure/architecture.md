@@ -153,11 +153,11 @@ encryption, tiered subnets). Read this diagram and you can see the whole
 
 ## Honest boundaries
 
-🧗 **ramp, honestly — with one ✋ exception that matters here.** The transferable
+🧭 **ramp, honestly — with one ⚒️ exception that matters here.** The transferable
 architecture model (blast-radius thinking, failure domains, shared responsibility,
-"design the rooms before you furnish them") is ✋ craft from real infrastructure and
+"design the rooms before you furnish them") is ⚒️ craft from real infrastructure and
 fleet work, mapped onto Azure and verified against its docs — not a claim of years
-architecting production Azure estates, which is 🧗. The exception is the **identity
+architecting production Azure estates, which is 🧭. The exception is the **identity
 plane**: Entra ID / Azure AD setup and directory design is genuine hands-on ground
 ([`identity`](../../cross-cutting/identity-iam.md)), so the two-permission-planes
 section is written from experience, not from a doc read. The claim is a sound

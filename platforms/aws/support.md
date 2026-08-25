@@ -8,9 +8,9 @@
 > estate — what pages you, and the daily/weekly/quarterly work. This note covers the
 > other half: **supporting AWS as a break-fix craft** — the tickets that actually
 > recur, exactly where you look, and, most usefully, **what a strong sysadmin from
-> another lane gets wrong when they inherit it.** AWS itself stays a 🧗 ramp here; the
+> another lane gets wrong when they inherit it.** AWS itself stays a 🧭 ramp here; the
 > transferable foundations under it (Linux, networking, identity, troubleshooting)
-> are the ✋ that carries the load — which is the whole point of this page.
+> are the ⚒️ that carries the load — which is the whole point of this page.
 
 A competent Linux / on-prem-network / virtualization / another-cloud admin can pick
 up AWS support faster than a fresh cloud hire — *if* they notice which of their
@@ -240,8 +240,8 @@ are **false here**, each with a failure mode attached.
 
 ## Honest boundaries
 
-**AWS is a 🧗 verified ramp in this repo, and this page keeps that line.** What makes
-the ramp fast is that the load is carried by **✋ transferable foundations** that are
+**AWS is a 🧭 verified ramp in this repo, and this page keeps that line.** What makes
+the ramp fast is that the load is carried by **⚒️ transferable foundations** that are
 real: **Linux** and guest-OS operations, **networking / DNS / TLS**
 ([`the-stack/02`](../../the-stack/02-network.md)), and **identity & least-privilege
 thinking** ([`identity-iam.md`](../../cross-cutting/identity-iam.md)) — the parts of

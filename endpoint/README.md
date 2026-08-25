@@ -9,7 +9,7 @@ Endpoint management is the discipline of taking thousands of heterogeneous devic
 — macOS, Windows, iOS, Android — and making them consistent, secure, and
 self-provisioning without a human touching each one. It's the same
 *register → image → personalize → maintain* pipeline as [`the-stack/03`](../the-stack/03-compute-and-images.md),
-pointed at the endpoint instead of the server, and it's **✋ hands-on depth**: a
+pointed at the endpoint instead of the server, and it's **⚒️ hands-on depth**: a
 multi-OS deployment platform built from scratch and operated at ~100k-device scale.
 
 ## Why endpoint is its own discipline (not "IT support")
@@ -116,14 +116,14 @@ collide:
   in-house-vs-Okta-vs-Google decision.
 - **The tunnel plumbing** — UAG / per-app VPN so a personal phone reaches an
   internal app safely.
-- **Scoped honestly** — enrollment and platform lifecycle are ✋; deep iOS/Android
+- **Scoped honestly** — enrollment and platform lifecycle are ⚒️; deep iOS/Android
   *fleet compliance-profile mastery* is a step beyond, and labeled as such rather
   than claimed.
 
 ## Where Intune is a ramp
 
 The Microsoft endpoint stack — **Intune, Autopilot, Configuration Manager** — is
-🧗, not ✋. But the model above is exactly transferable: Intune is
+🧭, not ⚒️. But the model above is exactly transferable: Intune is
 *enroll → configure → comply → act* in Microsoft's dialect, with Autopilot as its
 zero-touch first boot. The discipline is hands-on; the specific console is a lookup
 — which is the whole thesis of this repo applied to one more tool.
@@ -145,15 +145,15 @@ zero-touch first boot. The discipline is hands-on; the specific console is a loo
 
 ## Honest boundaries
 
-✋ **hands-on depth — the core lane.** Designed and ran a multi-OS (Win/macOS/Linux)
+⚒️ **hands-on depth — the core lane.** Designed and ran a multi-OS (Win/macOS/Linux)
 PXE and image-based deployment platform adopted org-wide, cumulatively provisioning
 100k+ devices; **Jamf + Workspace ONE / UEM** operated hands-on (owning North
 America testing/maintenance on the Jamf side); application packaging, targeted
 distribution, patch compliance, full-disk encryption at scale, and **EDR
 deploy/migration** (Defender for Endpoint → SentinelOne, both consoles) all daily
-work. 🧗 where marked and nowhere else: **Intune/Autopilot/ConfigMgr** (different
+work. 🧭 where marked and nowhere else: **Intune/Autopilot/ConfigMgr** (different
 console, same discipline) and deep **iOS/Android fleet compliance-profile
-engineering** (enrollment and lifecycle are ✋; fleet-profile mastery is the ramp).
+engineering** (enrollment and lifecycle are ⚒️; fleet-profile mastery is the ramp).
 This is the track that most directly *is* the job the whole repo is aimed at.
 
 ## Lab (🚧 planned — spec)

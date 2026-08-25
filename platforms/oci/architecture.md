@@ -103,12 +103,12 @@ Guard) — the [skill map](skills-map.md) doing one job.
 
 ## Honest boundaries
 
-🧗 **ramp, honestly.** This maps the transferable architecture model — blast-radius via
+🧭 **ramp, honestly.** This maps the transferable architecture model — blast-radius via
 compartments, failure domains, shared responsibility — onto OCI and verifies it against
 current docs, with **no production OCI operations claimed** (the [README](README.md)
 says the same). The *instincts* underneath (compartment blast-radius thinking, bare-
 metal and fault-domain judgment from real [vSphere](../vsphere/) and
-[self-host](../self-host/) work, least privilege) are ✋; the OCI-service specifics are
+[self-host](../self-host/) work, least privilege) are ⚒️; the OCI-service specifics are
 the ramp. The four deliberate differences (compartments, OCPU-vs-vCPU, security-lists-
 vs-NSGs, the policy language) are flagged precisely because they're where the "OCI is
 just AWS" reflex fails. The claim is a sound model plus a fast, verifiable ramp — not

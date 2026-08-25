@@ -135,11 +135,11 @@ diagram and you can see the whole [skill map](skills-map.md) doing one job.
 
 ## Honest boundaries
 
-🧗 **ramp, honestly.** This is the transferable architecture model — account/org
+🧭 **ramp, honestly.** This is the transferable architecture model — account/org
 design, failure domains, shared responsibility — mapped onto AWS and verified
 against its docs, not a claim of years architecting production AWS estates. The
 *instincts* underneath (blast-radius thinking, multi-AZ placement, least privilege,
-"design the rooms before you furnish them") are ✋ — they come from real
+"design the rooms before you furnish them") are ⚒️ — they come from real
 infrastructure and fleet work ([`the-stack`](../../the-stack/) draws on it); the
 AWS-specific service composition is the ramp. The claim is a sound architectural
 model plus a fast, verifiable ramp onto AWS's version of it — the repo's honest

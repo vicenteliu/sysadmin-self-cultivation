@@ -106,5 +106,5 @@ Read it before the cloud arc if "I'm Owner but kubectl says Forbidden" is the ti
 ---
 
 Each lab lands with the code (Terraform is the persistent form), a `README`, and
-explicit teardown. Honest note: GCP is the 🧗 ramp — these are the ramp made runnable
+explicit teardown. Honest note: GCP is the 🧭 ramp — these are the ramp made runnable
 at no cost on the free tier.

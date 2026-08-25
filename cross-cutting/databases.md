@@ -4,7 +4,7 @@
 > pipeline recreates; [`the-stack/05`](../the-stack/05-platform-services.md) said the
 > managed database is usually the highest-value rent. This note is the layer between:
 > what it takes to *operate* a database well — self-run or managed — because "it's
-> managed" never moved the RPO/RTO off your desk. This is **✋ hands-on ground** — a
+> managed" never moved the RPO/RTO off your desk. This is **⚒️ hands-on ground** — a
 > production PostgreSQL system operated for real.
 
 Every application ends at a database, and the database is where the fear lives
@@ -124,13 +124,13 @@ data stories than it has saved.
 
 ## Honest boundaries
 
-✋ **hands-on depth.** A production relational database operated for real —
+⚒️ **hands-on depth.** A production relational database operated for real —
 **PostgreSQL** backing an internal IT inventory/warehouse system he proposed and
 co-developed (schema, queries, DB-backed services, the backup-and-restore discipline),
 plus **MySQL** across years of lab and small-service work and **SQLite** for local
 services. So the block-storage-under-a-database story from
 [`the-stack/04`](../the-stack/04-storage.md) and this note's operational core are
-lived, not read. Where it's a **🧗 ramp** and labeled so: **Oracle Database** (a
+lived, not read. Where it's a **🧭 ramp** and labeled so: **Oracle Database** (a
 different RDBMS — fundamentals transfer, the specifics are a fast ramp, not a claim),
 deep query-optimizer internals at large scale, and specialized/distributed engines
 (Spanner, Cassandra). The transferable claim: real relational-database operations —

@@ -1,6 +1,6 @@
 # 02 · The building — riser, IDF, power, cooling, cable paths
 
-> 🧗 for **commissioning a new site**; ✋ for **what happens in the rack afterwards**
+> 🧭 for **commissioning a new site**; ⚒️ for **what happens in the rack afterwards**
 > (PXE/imaging fleets, BMC/IPMI, DNS and RAID at scale — see
 > [`platforms/self-host/`](../platforms/self-host/)). The distinction is deliberate:
 > having operated machine rooms is not the same as having built one out of a shell.
@@ -60,7 +60,7 @@ that is physically yours.
 - [`the-stack/01-physical.md`](../the-stack/01-physical.md) — the physical layer
   compared across seven platforms; what an availability zone actually is
 - [`platforms/self-host/architecture.md`](../platforms/self-host/architecture.md) and
-  [`operations.md`](../platforms/self-host/operations.md) — the ✋ material, from
+  [`operations.md`](../platforms/self-host/operations.md) — the ⚒️ material, from
   running fleets rather than commissioning buildings
 - [`the-stack/labs/01-failure-domains/`](../the-stack/labs/01-failure-domains/)
 

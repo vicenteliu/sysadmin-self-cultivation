@@ -1,6 +1,6 @@
 # 14 · Compliance evidence — what an audit actually asks for
 
-> ✋ hands-on — access governance, asset reconciliation, and audit automation
+> ⚒️ hands-on — access governance, asset reconciliation, and audit automation
 > **Before:** 03 identity · 06 tenant · 07 files · 08 endpoint · 09 backup · 11 assets. **After:** —
 
 Its Before list is the longest in the series, and that is the point: **this step

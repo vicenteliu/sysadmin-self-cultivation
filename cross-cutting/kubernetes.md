@@ -126,8 +126,8 @@ even running?" — it routes you to the right half of the problem immediately.
 
 ## Honest boundaries
 
-🧗 **honest ramp — clearly labeled, and this is where the label matters most.**
-Docker and image building are ✋ ([`the-stack/03`](../the-stack/03-compute-and-images.md)),
+🧭 **honest ramp — clearly labeled, and this is where the label matters most.**
+Docker and image building are ⚒️ ([`the-stack/03`](../the-stack/03-compute-and-images.md)),
 but Kubernetes here is **test-environment scope, not production platform
 ownership** — the object model, control-plane machinery, and operator mechanics are
 understood and mapped via the method above, not claimed as years running production
@@ -179,6 +179,6 @@ mindmap
       CrashLoopBackOff = starts then dies (app)
       describe + logs, like a Linux box
     Honestly scoped
-      Docker/images ✋
-      Kubernetes test-scope 🧗, not production
+      Docker/images ⚒️
+      Kubernetes test-scope 🧭, not production
 ```

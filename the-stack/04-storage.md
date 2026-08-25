@@ -46,7 +46,7 @@ mounted as a filesystem is the classic self-inflicted wound.
 
 ## Seven ways to build it
 
-**Self-hosted ✋** — the shapes made of metal: block is **SAN** (Fibre Channel /
+**Self-hosted ⚒️** — the shapes made of metal: block is **SAN** (Fibre Channel /
 iSCSI LUNs) or local disks; file is a **NAS** (NFS/SMB filer); object is
 **MinIO/Ceph** if you run it, or you simply don't have real object storage and
 feel its absence. RAID for disk-failure survival, controllers and multipath for
@@ -54,44 +54,44 @@ availability. You own capacity planning, the rebuild window after a disk dies
 (the scariest hours in storage — a second failure during rebuild is the nightmare
 RAID levels exist to bound), and the truth that **RAID is not backup**.
 
-**vSphere ✋** — **datastores** abstract the SAN/NAS beneath into a pool VMs draw
+**vSphere ⚒️** — **datastores** abstract the SAN/NAS beneath into a pool VMs draw
 from; **VMDKs** are the block volumes; **vSAN** turns local disks across hosts into
 a distributed datastore (hyperconverged, no separate SAN). The failure modes are
 the physical ones above, one abstraction up — and datastore-full is the outage
 that takes every VM on it down together.
 
-**OpenStack 🧗** — the shapes with cloud names: **Cinder** (block), **Manila**
+**OpenStack 🧭** — the shapes with cloud names: **Cinder** (block), **Manila**
 (file), **Swift** or Ceph-via-**RadosGW** (object), usually **Ceph** underneath
 doing all three. Powerful, and Ceph is a genuine platform to operate — its health,
 rebalancing, and placement-group tuning are their own discipline, another
 control-plane-as-product line item.
 
-**AWS 🧗** — the reference vocabulary everyone else is compared against: **EBS**
+**AWS 🧭** — the reference vocabulary everyone else is compared against: **EBS**
 (block, AZ-locked — a volume lives in one AZ, a fact that shapes your whole HA
 design), **EFS** (NFS file), **FSx** (managed file, several flavors), and **S3**
 (object — effectively the industry's definition of object storage, with storage
 classes from hot to glacial and lifecycle rules to move data down the tiers
 automatically).
 
-**Azure 🧗** — one **Storage Account** umbrella spanning **Blob** (object),
+**Azure 🧭** — one **Storage Account** umbrella spanning **Blob** (object),
 **Files** (SMB/NFS), and **Queues/Tables**, plus **Managed Disks** for block. The
 storage-account-as-container model and its naming/limits are the Azure-specific
 thing to learn; **access tiers** (hot/cool/cold/archive) mirror S3's classes.
 
-**GCP 🧗** — **Persistent Disk** and **Hyperdisk** (block, and notably
+**GCP 🧭** — **Persistent Disk** and **Hyperdisk** (block, and notably
 **zonal or regional** — regional PD synchronously replicates across two zones, a
 cleaner HA primitive than AZ-locked block), **Filestore** (file), and **Cloud
 Storage** (object, with one global namespace and storage classes). Fewer, more
 orthogonal products than AWS's sprawl.
 
-**OCI 🧗** — **Block Volume**, **File Storage** (NFS), and **Object Storage**
+**OCI 🧭** — **Block Volume**, **File Storage** (NFS), and **Object Storage**
 (with an Archive tier), the expected trio — carrying the chapter-02 signature
 forward: **egress on retrieval is cheap by design**, which is exactly what makes
 OCI attractive as a backup and archive target for data born on another cloud.
 
 ## The comparison table
 
-| Shape | Self-host ✋ | vSphere ✋ | OpenStack 🧗 | AWS 🧗 | Azure 🧗 | GCP 🧗 | OCI 🧗 |
+| Shape | Self-host ⚒️ | vSphere ⚒️ | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Block** | SAN / iSCSI / local | VMDK on datastore / vSAN | Cinder | EBS (**AZ-locked**) | Managed Disks | PD / Hyperdisk (**zonal or regional**) | Block Volume |
 | **File** | NAS (NFS/SMB) | (via guest) | Manila | EFS / FSx | Files | Filestore | File Storage |
@@ -180,13 +180,13 @@ OCI attractive as a backup and archive target for data born on another cloud.
 
 ## Honest boundaries
 
-The ✋ here is the on-prem storage stack operated for real: SAN/NAS, iSCSI, RAID,
+The ⚒️ here is the on-prem storage stack operated for real: SAN/NAS, iSCSI, RAID,
 multipath, vSphere datastores and VMDK lifecycle, plus running relational
 databases on top of it (PostgreSQL backing a production inventory system) — so the
-block-storage-under-a-database story is lived, not read. The 🧗 is the cloud
+block-storage-under-a-database story is lived, not read. The 🧭 is the cloud
 object-and-managed-storage layer: S3 storage classes, EBS/EFS/FSx and their peers
 across clouds, Ceph operations — mapped by the method above, with the *disciplines*
-(3-2-1, restore-testing, shape-selection, performance-contracting) being the ✋ part
+(3-2-1, restore-testing, shape-selection, performance-contracting) being the ⚒️ part
 that transfers unchanged onto any platform's product names.
 
 ## Lab (✅ built — [`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot/))
@@ -222,13 +222,13 @@ mindmap
       file is a share
       object is an API
     Seven ways
-      Self-host ✋ SAN NAS RAID
-      vSphere ✋ datastores and vSAN
-      OpenStack 🧗 Cinder Manila Ceph
-      AWS 🧗 EBS EFS S3 - the vocabulary
-      Azure 🧗 storage account umbrella
-      GCP 🧗 regional PD, fewer knobs
-      OCI 🧗 egress-cheap archive target
+      Self-host ⚒️ SAN NAS RAID
+      vSphere ⚒️ datastores and vSAN
+      OpenStack 🧭 Cinder Manila Ceph
+      AWS 🧭 EBS EFS S3 - the vocabulary
+      Azure 🧭 storage account umbrella
+      GCP 🧭 regional PD, fewer knobs
+      OCI 🧭 egress-cheap archive target
     The fear
       RAID is not backup
       snapshot is not backup

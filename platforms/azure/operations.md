@@ -142,13 +142,13 @@ as it does to yours.
 
 ## Honest boundaries
 
-The ops *discipline* here is ✋ — triage, incident method, the review cadence,
+The ops *discipline* here is ⚒️ — triage, incident method, the review cadence,
 least-privilege review, restore-testing, treating cost and drift as signals — because
 it's the same operations craft carried from real infrastructure and fleet work, where
-the pager was real. The **identity slice is doubly ✋**: reading a denied action in the
+the pager was real. The **identity slice is doubly ⚒️**: reading a denied action in the
 Activity Log and untangling the two permission planes is exactly the Entra/RBAC ground
 I've worked hands-on ([`identity`](../../cross-cutting/identity-iam.md)). The rest of
-the Azure-service specifics (which blade, which alert, which finding type) are the 🧗
+the Azure-service specifics (which blade, which alert, which finding type) are the 🧭
 ramp, mapped and verified per this repo's method. The claim isn't "years on-call for a
 production Azure estate"; it's a **transferable operating discipline plus a fast,
 honest ramp onto Azure's tooling** — with identity already deep.

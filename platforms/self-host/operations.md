@@ -89,7 +89,7 @@ flowchart LR
 
 ## Honest boundaries
 
-✋ **hands-on depth — the deepest root, and this note is the fleet work written down.**
+⚒️ **hands-on depth — the deepest root, and this note is the fleet work written down.**
 Disk/DIMM-swap-at-scale, the spares-as-consumables discipline, firmware CVE waves,
 capacity planning with procurement lead time, core-service operation (DNS/DHCP/LDAP/
 NTP), the provisioning pipeline as production infrastructure, and BMC/IPMI out-of-band

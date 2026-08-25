@@ -9,8 +9,8 @@
 > as a break-fix craft** — the tickets that actually recur, exactly where you look,
 > and **what a strong sysadmin from another lane (AWS, GCP, or on-prem AD) gets wrong
 > when they inherit it.** Note the honest-scope split this page keeps: the **Entra /
-> identity** half is ✋ hands-on (real tenant work — MFA, Conditional Access, PIM,
-> Entra initial setup); the broader **Azure IaaS** is a 🧗 ramp. Both are labeled.
+> identity** half is ⚒️ hands-on (real tenant work — MFA, Conditional Access, PIM,
+> Entra initial setup); the broader **Azure IaaS** is a 🧭 ramp. Both are labeled.
 
 Azure's own [platform note](README.md) says the classic mistake in one line: *Entra =
 who you are, RBAC = what you can touch — confusing them is the classic mistake.* That
@@ -30,8 +30,8 @@ arrive:
 
 | Surface | What you're on the hook for |
 | --- | --- |
-| **Identity — the two planes** | **Entra ID directory roles** (Global Admin, User Admin — govern the *tenant*) vs **Azure RBAC** (Owner/Contributor/Reader — govern *resources* on the mgmt-group→subscription→RG→resource hierarchy). PIM (eligible vs active), Conditional Access, sign-in/audit logs, break-glass. **✋** |
-| **Entra app identities** | App registration vs enterprise app (service principal), delegated vs application permissions + admin consent, expiring secrets, managed identities (system vs user-assigned). **✋** |
+| **Identity — the two planes** | **Entra ID directory roles** (Global Admin, User Admin — govern the *tenant*) vs **Azure RBAC** (Owner/Contributor/Reader — govern *resources* on the mgmt-group→subscription→RG→resource hierarchy). PIM (eligible vs active), Conditional Access, sign-in/audit logs, break-glass. **⚒️** |
+| **Entra app identities** | App registration vs enterprise app (service principal), delegated vs application permissions + admin consent, expiring secrets, managed identities (system vs user-assigned). **⚒️** |
 | **The subscription & governance** | Resource providers registered per subscription, **Azure Policy** guardrails, quotas — the "it's not RBAC, it's policy/the provider" tickets. |
 | **Networking** | "Why can't X reach Y?" — **NSGs** (stateful, allow **and** deny, priority, default rules), UDR, Azure Firewall, **Bastion** (no public IP), Private Endpoint DNS, peering. |
 | **Compute** | VM access via **Bastion / serial console / run-command**, managed disks, VMSS, boot diagnostics. |
@@ -230,19 +230,19 @@ that are **false here**, each with its failure mode.
 
 This page keeps a **split** honest line, and it's a real one.
 
-✋ **The Entra / identity half is hands-on.** Real tenant work — **Entra ID initial
+⚒️ **The Entra / identity half is hands-on.** Real tenant work — **Entra ID initial
 setup, tenant-wide MFA, a Conditional Access policy, PIM for privileged roles**, and the
 identity lifecycle — is depth, not a ramp (the same line drawn in
 [`saas-admin.md`](../../cross-cutting/saas-admin.md) and
 [`identity-iam.md`](../../cross-cutting/identity-iam.md), and shared with the
 [M365 support note](../../cross-cutting/m365-support.md), since Entra is the identity
 backbone under both). Conditional Access, sign-in-log triage, and break-glass discipline
-are ✋.
+are ⚒️.
 
-🧗 **The broader Azure IaaS is a verified ramp.** The resource-plane mechanics — RBAC
+🧭 **The broader Azure IaaS is a verified ramp.** The resource-plane mechanics — RBAC
 scopes and inheritance, VNet/NSG, Bastion, Azure Policy, the quota/provider edges — are
 mapped, checked against the docs, and exercised in the runnable
-[lab](#lab--global-admin-is-not-owner--runnable), carried by the **✋ transferable
+[lab](#lab--global-admin-is-not-owner--runnable), carried by the **⚒️ transferable
 foundations** (Linux, networking, DNS/TLS, identity thinking). Deep at-scale production
 Azure (landing zones, AKS platform engineering, large multi-subscription estates) is
 still ahead, and the notes say so rather than bluffing.
@@ -252,7 +252,7 @@ still ahead, and the notes say so rather than bluffing.
 Pointers verified live on GitHub, grouped by use. Entra-identity and Azure-resource
 tools are marked; several security tools double as "how does auth actually work" maps.
 
-**Entra / identity (the ✋ half):**
+**Entra / identity (the ⚒️ half):**
 - [`merill/awesome-entra`](https://github.com/merill/awesome-entra) — the best jump-off
   for Entra admin/ops tooling (maintained by an Entra PM).
 - [`maester365/maester`](https://github.com/maester365/maester) — Pester-based tests that
@@ -266,7 +266,7 @@ tools are marked; several security tools double as "how does auth actually work"
   tenant's roles/apps/consent offline; offensive-origin but the reference for
   *understanding* how Entra auth really works.
 
-**Azure resources & governance (the 🧗 half):**
+**Azure resources & governance (the 🧭 half):**
 - [`Azure/azure-cli`](https://github.com/Azure/azure-cli) ·
   [`Azure/azure-powershell`](https://github.com/Azure/azure-powershell) — the primary
   inspect/repair surface; the issue trackers are de-facto troubleshooting KBs.

@@ -3,7 +3,7 @@
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. The honesty marker
-> is **🧗 ramp** — mapped from the AWS/Azure/GCP model and verified, not run in
+> is **🧭 ramp** — mapped from the AWS/Azure/GCP model and verified, not run in
 > production. OCI is the fourth public cloud in the
 > [seven-platform comparison](../../the-stack/), and being the youngest design shows in
 > a few deliberate, admin-relevant differences.
@@ -111,12 +111,12 @@ Four companion notes take OCI past "what the services are", mirroring the AWS se
 
 ## Honest boundaries
 
-🧗 **honest ramp — labeled as one.** No production OCI operations claimed: this module
+🧭 **honest ramp — labeled as one.** No production OCI operations claimed: this module
 maps the transferable operating model (AWS/Azure/GCP surfaces + on-prem depth) onto
 OCI's names and verifies against current docs — the ramp method
 [`WHY.md`](../../WHY.md) argues for. The *instincts* underneath (blast-radius thinking
 via compartments, least privilege, bare-metal and failure-domain judgment from real
-[vSphere](../vsphere/) and [self-host](../self-host/) experience) are ✋; the OCI-service
+[vSphere](../vsphere/) and [self-host](../self-host/) experience) are ⚒️; the OCI-service
 specifics are the ramp. Worth noting: OCI's bare-metal-first, egress-cheap design maps
 unusually well onto genuine hands-on strengths — which shortens the ramp — but the
 claim stays honest: a transferable model plus a fast, verifiable ramp, not years on

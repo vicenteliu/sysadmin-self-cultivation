@@ -66,35 +66,35 @@ flowchart TB
 
 ## Seven ways to build it
 
-**Self-hosted ✋** — VLANs for segmentation, a firewall pair at the edge,
+**Self-hosted ⚒️** — VLANs for segmentation, a firewall pair at the edge,
 DNS/DHCP you run yourself (BIND and friends), HAProxy/keepalived or an appliance
 for load balancing, site-to-site VPN or leased lines between locations. The
 failure modes are physical (a looped cable can still ruin a floor) and the limits
 are honest: what the boxes can do, you can do.
 
-**vSphere ✋** — standard and distributed vSwitches bridge VMs onto the physical
+**vSphere ⚒️** — standard and distributed vSwitches bridge VMs onto the physical
 VLANs; the network team's world and the VM team's world meet at a port group.
-**NSX 🧗** adds a full overlay (segments, distributed firewall, virtual routers) on
+**NSX 🧭** adds a full overlay (segments, distributed firewall, virtual routers) on
 top — vSphere shops adopt it exactly when VLAN sprawl and east-west filtering
 outgrow the physical network.
 
-**OpenStack 🧗** — Neutron provides tenant networks (typically VXLAN overlays),
+**OpenStack 🧭** — Neutron provides tenant networks (typically VXLAN overlays),
 routers, floating IPs, and security groups. Powerful and honest about its plumbing
 — which means you *will* meet the plumbing: Neutron is consistently the component
 operators name first when asked what pages them.
 
-**AWS 🧗** — the **VPC**: a regional network you carve into **AZ-scoped subnets**.
+**AWS 🧭** — the **VPC**: a regional network you carve into **AZ-scoped subnets**.
 Route tables per subnet, an Internet Gateway for north-south, NAT Gateways for
 private egress, **security groups (stateful, instance-attached)** plus **NACLs
 (stateless, subnet-level)**. The mental model is a classic three-tier DC diagram —
 deliberately so.
 
-**Azure 🧗** — the **VNet**: regional, with subnets that span zones. **NSGs**
+**Azure 🧭** — the **VNet**: regional, with subnets that span zones. **NSGs**
 attach at subnet *or* NIC; **User-Defined Routes** override system routing;
 Private Endpoints thread SaaS into your address space. Azure networking loves
 explicitness — more knobs than AWS at the same layer, which cuts both ways.
 
-**GCP 🧗** — the structural outlier: the **VPC is global**, subnets are
+**GCP 🧭** — the structural outlier: the **VPC is global**, subnets are
 **regional**, and firewall rules live at the VPC level targeting tags or service
 accounts. One network can span the planet with no peering between regions —
 elegant, and a genuinely different topology to plan for:
@@ -120,14 +120,14 @@ flowchart LR
   end
 ```
 
-**OCI 🧗** — the **VCN**: regional, with (preferably) regional subnets; **security
+**OCI 🧭** — the **VCN**: regional, with (preferably) regional subnets; **security
 lists** at the subnet *and* **NSGs** per resource — two overlapping filtering
 mechanisms, pick a lane and standardize. Interconnect and egress pricing are
 deliberately aggressive; OCI courts exactly the workloads the egress meter hurts.
 
 ## The comparison table
 
-| Dimension | Self-host ✋ | vSphere (+NSX) | OpenStack 🧗 | AWS 🧗 | Azure 🧗 | GCP 🧗 | OCI 🧗 |
+| Dimension | Self-host ⚒️ | vSphere (+NSX) | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Virtual network** | VLANs / EVPN-VXLAN | port groups / NSX segments | Neutron tenant nets | VPC (regional) | VNet (regional) | **VPC (global)** | VCN (regional) |
 | **Subnet scope** | per-VLAN, your design | per port group | per tenant net | **per AZ** | spans zones | **regional** | regional (pref.) |
@@ -136,7 +136,7 @@ deliberately aggressive; OCI courts exactly the workloads the egress meter hurts
 | **North-south** | edge firewall pair | edge / NSX gateway | Neutron router + floating IP | IGW / NAT GW | LB / NAT GW | Cloud NAT / global LB | IGW / NAT GW |
 | **Cross-site** | VPN / leased line | same + NSX federation | VPN-as-a-service | Direct Connect | ExpressRoute | Interconnect | FastConnect |
 | **LB signature** | HAProxy / keepalived / F5 | NSX LB | Octavia | ALB / NLB | Azure LB / App GW / Front Door | **global anycast LB** | LB / NLB |
-| **DNS** | BIND you run ✋ | — (yours) | Designate | Route 53 | Azure DNS / private zones | Cloud DNS | OCI DNS |
+| **DNS** | BIND you run ⚒️ | — (yours) | Designate | Route 53 | Azure DNS / private zones | Cloud DNS | OCI DNS |
 
 ## Choosing — and the egress meter
 
@@ -238,10 +238,10 @@ flowchart TD
 
 ## Honest boundaries
 
-The ✋ here is the classic enterprise stack: years of hands-on DNS/DHCP/BIND,
+The ⚒️ here is the classic enterprise stack: years of hands-on DNS/DHCP/BIND,
 VLANs, firewalls, VPNs, and TCP/IP debugging across offices and data centers, with
 a CCNP-level routing-and-switching foundation and vSphere networking operated for
-real. The 🧗 is the modern SDN layer: each cloud's VPC specifics, NSX, and
+real. The 🧭 is the modern SDN layer: each cloud's VPC specifics, NSX, and
 EVPN-VXLAN fabrics are ramped via exactly the method above — solid conceptual
 mapping, verified against current docs, no claimed years of daily BGP peering or
 NSX production ops. The debug ladder, though, is platform-independent and
@@ -269,14 +269,14 @@ mindmap
       underlay - the fabric
       overlay - what you configure
     Seven ways
-      Self-host ✋ both planes yours
-      vSphere ✋ port groups meet VLANs
-      NSX 🧗 SDN you operate
-      OpenStack 🧗 Neutron pages you
-      AWS 🧗 regional VPC, AZ subnets
-      Azure 🧗 explicit knobs everywhere
-      GCP 🧗 global VPC outlier
-      OCI 🧗 two filter layers, cheap egress
+      Self-host ⚒️ both planes yours
+      vSphere ⚒️ port groups meet VLANs
+      NSX 🧭 SDN you operate
+      OpenStack 🧭 Neutron pages you
+      AWS 🧭 regional VPC, AZ subnets
+      Azure 🧭 explicit knobs everywhere
+      GCP 🧭 global VPC outlier
+      OCI 🧭 two filter layers, cheap egress
     The money
       ingress free
       egress billed

@@ -2,7 +2,7 @@
 
 > The [README](README.md) is *what OCI is*; [architecture](architecture.md) is *how
 > it's structured*; this note is **what running it looks like** — the brief, what
-> pages you, the ops work by cadence, and AI in the operating loop. OCI is a 🧗 ramp,
+> pages you, the ops work by cadence, and AI in the operating loop. OCI is a 🧭 ramp,
 > so this is the transferable operating discipline mapped onto OCI's tools, not
 > production-OCI experience.
 
@@ -84,7 +84,7 @@ flowchart LR
 
 ## Honest boundaries
 
-🧗 **ramp.** The ops *discipline* is ✋ — triage, incident method, review cadence,
+🧭 **ramp.** The ops *discipline* is ⚒️ — triage, incident method, review cadence,
 least-privilege review, restore-testing, cost-as-a-signal — carried from real
 infrastructure work. But every OCI-service specific (which console, which finding,
 which alarm) is the ramp, mapped and verified per this repo's method, not claimed as

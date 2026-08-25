@@ -46,7 +46,7 @@ genuinely helps.**
 Because honesty is the point of this repo. It would be easy to write vSphere the same
 way as AWS — "here's how AI gets you competent fast" — and it would be false: this
 platform didn't need AI to get competent on, and pretending otherwise would undercut
-the ✋/🧗 discipline everywhere else. The truthful version is more useful anyway: **on
+the ⚒️/🧭 discipline everywhere else. The truthful version is more useful anyway: **on
 your strong platform, AI is a force multiplier for automation and translation, not a
 teacher — and the judgment that makes it safe is exactly the judgment years on the
 platform gave you.**

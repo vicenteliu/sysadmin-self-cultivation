@@ -1,6 +1,6 @@
 # 10 · Remote access — VPN, or the thing that replaced it
 
-> ✋ hands-on — VPN operations, certificate and TLS fundamentals, the auth failure paths
+> ⚒️ hands-on — VPN operations, certificate and TLS fundamentals, the auth failure paths
 > **Before:** 01 uplink · 03 identity · 05 network. **After:** 13 the help desk
 
 The scenario has one office and one small branch, and **nobody is in either of them

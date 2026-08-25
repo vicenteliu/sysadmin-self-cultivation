@@ -21,7 +21,7 @@ chapter, made executable.
    can't run casually is a tool you won't run at all.
 3. **Honest scope.** Every README carries a `Tested on:` line (e.g. *Ubuntu 22.04,
    RHEL 9 lab*). Lab-verified is not production-hardened, and the README says so —
-   the repo's ✋/🧗 honesty layer, applied to code.
+   the repo's ⚒️/🧭 honesty layer, applied to code.
 4. **Plain dependencies.** Bash and Python stdlib first; Ansible where orchestration
    genuinely earns it. No frameworks, no curl-piped installers.
 5. **Agent-readable.** Each README opens with a short block stating inputs, outputs,

@@ -3,7 +3,7 @@
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. But the honesty
-> marker flips here: vSphere is **✋ hands-on depth**, not a ramp. This is the
+> marker flips here: vSphere is **⚒️ hands-on depth**, not a ramp. This is the
 > enterprise's private cloud, and it's the platform in this repo written from the most
 > direct production experience — operated as an AMS-region vCenter administrator,
 > VCP6-DCV / VCP6-NV certified.
@@ -113,7 +113,7 @@ written from production experience, not a ramp:
 
 ## Honest boundaries
 
-✋ **hands-on depth — one of the deepest in the repo.** Operated as the **AMS-region
+⚒️ **hands-on depth — one of the deepest in the repo.** Operated as the **AMS-region
 vCenter administrator** (maintained and upgraded VM infrastructure and services),
 **VCP6-DCV** (Data Center Virtualization) and **VCP6-NV** (Network Virtualization)
 certified, with adjacent hands-on **KVM** and **Proxmox VE** (including physical-GPU
@@ -121,6 +121,6 @@ passthrough) in lab and internal environments ([`the-stack/01`](../../the-stack/
 draws on this). This is not a ramp — it's the production-virtualization ground the
 rest of the repo's failure-domain and hypervisor material stands on. Where it's a
 ramp rather than depth, it's the *newest* vSphere/NSX features and the post-Broadcom
-licensing landscape — labeled 🧗 and verified, not bluffed. The claim here is
+licensing landscape — labeled 🧭 and verified, not bluffed. The claim here is
 genuine: **years running a production vSphere estate**, plus the transferable
 instinct that makes every other platform in this repo faster to learn.

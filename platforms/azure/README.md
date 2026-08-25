@@ -101,7 +101,7 @@ Four companion notes take Azure past "what the services are", mirroring the AWS 
   supporting Azure makes you responsible for, the recurring tickets and *where you look*
   (the `AuthorizationFailed` role-and-scope check, the `MissingSubscriptionRegistration`
   provider gotcha, Network Watcher over `tcpdump`), and the load-bearing AWS / on-prem-AD
-  instincts to **unlearn** — with the **identity half ✋ hands-on**, a runnable
+  instincts to **unlearn** — with the **identity half ⚒️ hands-on**, a runnable
   Global-Admin-≠-Owner lab, and a verified GitHub field kit.
 
 ## Honest boundaries
