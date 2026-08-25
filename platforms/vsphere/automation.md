@@ -89,9 +89,9 @@ The [foundations](../../foundations/) idempotence-and-safety discipline, in Powe
 
 ## Honest boundaries
 
-⚒️ **hands-on depth.** PowerCLI as the real automation surface for a production
+🔨 **hands-on depth.** PowerCLI as the real automation surface for a production
 vCenter estate — reports, fleet operations, and maintenance scripting — on top of the
-⚒️ [foundations](../../foundations/) scripting discipline (idempotence, read-only-first,
+🔨 [foundations](../../foundations/) scripting discipline (idempotence, read-only-first,
 scoped credentials). This isn't a ramp; it's the platform where the automation instinct
 was applied for real. The 🧭 edge: the **Terraform vsphere provider** and **pyVmomi**
 tooling at scale, and newest-version cmdlet changes — mapped and verified, not claimed

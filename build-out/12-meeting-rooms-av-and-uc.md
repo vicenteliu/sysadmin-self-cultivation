@@ -82,7 +82,7 @@ anything. Here the answer is different, and it changes what IT has to think abou
   and transcripts land, who can read them three years later, and why every access
   review passes while that number triples.
 
-⚒️ **The AV half stays a boundary.** Commissioning a room is physical work with a
+🔨 **The AV half stays a boundary.** Commissioning a room is physical work with a
 vendor, and inventing an exercise for it would misrepresent the step. Recorded as
 such in [`GAPS.md`](./GAPS.md).
 

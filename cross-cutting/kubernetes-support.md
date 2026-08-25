@@ -9,7 +9,7 @@
 > a break-fix craft** — the tickets that actually recur, exactly where you look, and **where
 > a strong Linux / Docker / systemd sysadmin's instincts get burned inheriting a cluster.**
 > Honesty marker up front: this note is **🧭 ramp** — my Kubernetes hands-on is **test/lab**
-> (kind/minikube/k3s), carried by a ⚒️ **Linux + containers + networking + troubleshooting**
+> (kind/minikube/k3s), carried by a 🔨 **Linux + containers + networking + troubleshooting**
 > foundation. Its authority is **research** (kubernetes.io + practitioner failure modes + a
 > runnable [lab](#lab--pods-are-cattle--runnable)), not production cluster tenure. The whole
 > point is *the gap I'm crossing.*
@@ -198,7 +198,7 @@ set of Linux/systemd/Docker reflexes that are **wrong here**, each with a failur
 
 This note is **🧭 ramp, and it says so clearly.** My Kubernetes hands-on is **test/lab** —
 kind/minikube/k3s and the object model, not years running production clusters and their control
-plane. What carries it is real: **⚒️ Linux + container + networking + troubleshooting depth** —
+plane. What carries it is real: **🔨 Linux + container + networking + troubleshooting depth** —
 namespaces/cgroups, the kernel OOM-killer, Docker/containers, DNS/routing, and the
 describe→logs→events methodology that *is* `systemctl`/`journalctl`/`dmesg` renamed (the same line
 [`kubernetes.md`](kubernetes.md) and [`iac-and-config.md`](iac-and-config.md) draw). The
@@ -207,7 +207,7 @@ requests/limits/QoS/OOMKill, probes, PVC/StorageClass binding, RBAC — are **ma
 doc-verified, not tenure.** Deeper production Kubernetes (etcd operations, CNI/networking at scale,
 multi-tenant platform engineering, operators/CRDs, cluster upgrades under load) is still ahead; the
 annotation says so plainly and never bluffs. This is the honest artifact of a strong sysadmin
-**crossing the exact gap** the job market keeps asking about — documented in public, ⚒️/🧭 marked.
+**crossing the exact gap** the job market keeps asking about — documented in public, 🔨/🧭 marked.
 
 ## Field kit — real tools & references
 

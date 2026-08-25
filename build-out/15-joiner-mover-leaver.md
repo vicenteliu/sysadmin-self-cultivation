@@ -1,6 +1,6 @@
 # 15 · Joiner / mover / leaver, automated
 
-> ⚒️ hands-on — JML at scale, directory automation, SCIM provisioning
+> 🔨 hands-on — JML at scale, directory automation, SCIM provisioning
 > **Before:** 03 identity · 06 tenant · 11 assets · 13 the help desk. **After:** —
 
 This is last because it consumes everything: a group model from 03, a tenant from

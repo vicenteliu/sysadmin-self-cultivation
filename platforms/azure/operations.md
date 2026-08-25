@@ -142,10 +142,10 @@ as it does to yours.
 
 ## Honest boundaries
 
-The ops *discipline* here is ⚒️ — triage, incident method, the review cadence,
+The ops *discipline* here is 🔨 — triage, incident method, the review cadence,
 least-privilege review, restore-testing, treating cost and drift as signals — because
 it's the same operations craft carried from real infrastructure and fleet work, where
-the pager was real. The **identity slice is doubly ⚒️**: reading a denied action in the
+the pager was real. The **identity slice is doubly 🔨**: reading a denied action in the
 Activity Log and untangling the two permission planes is exactly the Entra/RBAC ground
 I've worked hands-on ([`identity`](../../cross-cutting/identity-iam.md)). The rest of
 the Azure-service specifics (which blade, which alert, which finding type) are the 🧭

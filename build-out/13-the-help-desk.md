@@ -1,6 +1,6 @@
 # 13 · The help desk itself — and how many people this needs
 
-> ⚒️ hands-on — service desk operations and ITSM practice
+> 🔨 hands-on — service desk operations and ITSM practice
 > **Before:** 04 devices · 10 remote access · 11 assets · 12 rooms. **After:** 15 joiner/mover/leaver
 
 Twelve steps have described what to build. This one asks the question everything

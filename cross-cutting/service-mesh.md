@@ -142,13 +142,13 @@ Connect**, and increasingly the **sidecar-less / ambient** and **eBPF** approach
 
 ## Honest boundaries
 
-🧭 **ramp — clearly labeled.** Service discovery's *concept* sits on ⚒️ ground — DNS,
+🧭 **ramp — clearly labeled.** Service discovery's *concept* sits on 🔨 ground — DNS,
 health checks, and the [Kubernetes Service](kubernetes.md) model (test-scope
 Kubernetes, itself 🧭) — and the underlying network/TLS/least-privilege instincts are
-⚒️ ([the-stack/02](../the-stack/02-network.md), [07](../the-stack/07-security.md)). But
+🔨 ([the-stack/02](../the-stack/02-network.md), [07](../the-stack/07-security.md)). But
 running a **production service mesh** (Istio/Linkerd/Consul Connect operations, mTLS
 lifecycle, mesh debugging at scale) is a **🧭 ramp** — mapped and verified, not claimed
-as production ops. The most valuable ⚒️ thing this note carries is *judgment*: knowing
+as production ops. The most valuable 🔨 thing this note carries is *judgment*: knowing
 when a mesh is the answer and, more often, when it's expensive complexity a smaller
 architecture doesn't need.
 

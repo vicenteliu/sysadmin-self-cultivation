@@ -84,7 +84,7 @@ flowchart LR
 
 ## Honest boundaries
 
-🧭 **ramp.** The ops *discipline* is ⚒️ — triage, incident method, review cadence,
+🧭 **ramp.** The ops *discipline* is 🔨 — triage, incident method, review cadence,
 least-privilege review, restore-testing, cost-as-a-signal — carried from real
 infrastructure work. But every OCI-service specific (which console, which finding,
 which alarm) is the ramp, mapped and verified per this repo's method, not claimed as

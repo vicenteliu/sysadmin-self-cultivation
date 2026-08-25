@@ -47,7 +47,7 @@ is worth having (jump hosts, agents, teaching).
 macOS 26 (Python 3.14) and Ubuntu 24.04 container (Python 3.12) against
 **vcsim** (govmomi's official vCenter simulator, 4 VMs/4 hosts): full document
 verified including snapshot counting (chained snapshots) and disk/NIC device
-parsing; connection-refused and missing-password paths exercised. vSphere ⚒️
+parsing; connection-refused and missing-password paths exercised. vSphere 🔨
 depth is real (VCP-level, production years); a run against a **real** vCenter
 is still pending — treat output-shape details against production vCenter
 versions as lab-verified, not production-proven.

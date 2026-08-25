@@ -3,7 +3,7 @@
 > The part of the job the cloud-native roadmaps skip and every real IT org runs on:
 > the ticket queue, the asset inventory, the access requests, and the audit that
 > proves it all. It's unglamorous, it's where compliance actually lives, and it's
-> **⚒️ hands-on ground** — years in ServiceNow, plus audit-reconciliation automation
+> **🔨 hands-on ground** — years in ServiceNow, plus audit-reconciliation automation
 > written for real.
 
 Every platform in this repo answers "how does the machine work." This note answers
@@ -131,7 +131,7 @@ This is where ITSM meets [security](../the-stack/07-security.md) and
 
 ## Honest boundaries
 
-⚒️ **hands-on depth — a genuinely under-showcased strength.** Years of **ServiceNow**
+🔨 **hands-on depth — a genuinely under-showcased strength.** Years of **ServiceNow**
 (incident/request/change) at Mphasis/Varian; ITSM at ByteDance through **Jira** and
 then an in-house ticketing system; **hardware and software audits** with the data
 migrated from spreadsheets into a database and **reconciliation scripts** written to
@@ -140,7 +140,7 @@ compare it (contrast: doing it by hand in Excel); operation inside a strict
 and device security-configuration / network-admission **compliance checks** as daily
 work. Where it's a **🧭 ramp**: deep GRC-framework auditing (SOC 2 / ISO 27001 /
 FedRAMP as a specialist practice) and enterprise CMDB architecture at scale — the
-operational discipline is ⚒️, the formal-auditor role is the ramp. The transferable
+operational discipline is 🔨, the formal-auditor role is the ramp. The transferable
 claim: real ITSM, asset-reconciliation, and access-governance operations — the spine a
 compliant IT org runs on — plus a fast ramp onto any specific platform or framework.
 

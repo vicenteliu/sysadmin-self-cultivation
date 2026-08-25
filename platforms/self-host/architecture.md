@@ -95,7 +95,7 @@ earned on.
 
 ## Honest boundaries
 
-⚒️ **hands-on depth — the deepest root in the repo, and this note is written entirely
+🔨 **hands-on depth — the deepest root in the repo, and this note is written entirely
 from it.** A multi-OS **PXE + image-based deployment platform** built from scratch and
 run at fleet scale (100k+ devices cumulatively provisioned); **full-disk encryption**
 at scale; **DNS/BIND, DHCP, LDAP, NTP** core services; **RAID/SAN/NAS** storage;

@@ -46,7 +46,7 @@ mounted as a filesystem is the classic self-inflicted wound.
 
 ## Seven ways to build it
 
-**Self-hosted ⚒️** — the shapes made of metal: block is **SAN** (Fibre Channel /
+**Self-hosted 🔨** — the shapes made of metal: block is **SAN** (Fibre Channel /
 iSCSI LUNs) or local disks; file is a **NAS** (NFS/SMB filer); object is
 **MinIO/Ceph** if you run it, or you simply don't have real object storage and
 feel its absence. RAID for disk-failure survival, controllers and multipath for
@@ -54,7 +54,7 @@ availability. You own capacity planning, the rebuild window after a disk dies
 (the scariest hours in storage — a second failure during rebuild is the nightmare
 RAID levels exist to bound), and the truth that **RAID is not backup**.
 
-**vSphere ⚒️** — **datastores** abstract the SAN/NAS beneath into a pool VMs draw
+**vSphere 🔨** — **datastores** abstract the SAN/NAS beneath into a pool VMs draw
 from; **VMDKs** are the block volumes; **vSAN** turns local disks across hosts into
 a distributed datastore (hyperconverged, no separate SAN). The failure modes are
 the physical ones above, one abstraction up — and datastore-full is the outage
@@ -91,7 +91,7 @@ OCI attractive as a backup and archive target for data born on another cloud.
 
 ## The comparison table
 
-| Shape | Self-host ⚒️ | vSphere ⚒️ | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
+| Shape | Self-host 🔨 | vSphere 🔨 | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Block** | SAN / iSCSI / local | VMDK on datastore / vSAN | Cinder | EBS (**AZ-locked**) | Managed Disks | PD / Hyperdisk (**zonal or regional**) | Block Volume |
 | **File** | NAS (NFS/SMB) | (via guest) | Manila | EFS / FSx | Files | Filestore | File Storage |
@@ -180,13 +180,13 @@ OCI attractive as a backup and archive target for data born on another cloud.
 
 ## Honest boundaries
 
-The ⚒️ here is the on-prem storage stack operated for real: SAN/NAS, iSCSI, RAID,
+The 🔨 here is the on-prem storage stack operated for real: SAN/NAS, iSCSI, RAID,
 multipath, vSphere datastores and VMDK lifecycle, plus running relational
 databases on top of it (PostgreSQL backing a production inventory system) — so the
 block-storage-under-a-database story is lived, not read. The 🧭 is the cloud
 object-and-managed-storage layer: S3 storage classes, EBS/EFS/FSx and their peers
 across clouds, Ceph operations — mapped by the method above, with the *disciplines*
-(3-2-1, restore-testing, shape-selection, performance-contracting) being the ⚒️ part
+(3-2-1, restore-testing, shape-selection, performance-contracting) being the 🔨 part
 that transfers unchanged onto any platform's product names.
 
 ## Lab (✅ built — [`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot/))
@@ -222,8 +222,8 @@ mindmap
       file is a share
       object is an API
     Seven ways
-      Self-host ⚒️ SAN NAS RAID
-      vSphere ⚒️ datastores and vSAN
+      Self-host 🔨 SAN NAS RAID
+      vSphere 🔨 datastores and vSAN
       OpenStack 🧭 Cinder Manila Ceph
       AWS 🧭 EBS EFS S3 - the vocabulary
       Azure 🧭 storage account umbrella

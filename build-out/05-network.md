@@ -1,6 +1,6 @@
 # 05 · Network — VLANs, wireless, guest, printing, door access
 
-> ⚒️ hands-on — switching, DNS/DHCP, the boot path, and the fault-isolation habits
+> 🔨 hands-on — switching, DNS/DHCP, the boot path, and the fault-isolation habits
 > **Before:** 01 uplink · 02 the building · 03 identity · 04 devices. **After:** 07 files · 10 remote access · 12 meeting rooms
 
 This is where the forced-hybrid constraint from the scenario becomes concrete.

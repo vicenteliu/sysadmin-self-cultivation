@@ -6,7 +6,7 @@
 
 ---
 
-> [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md) 划清了 **provisioning**（Terraform 造资源）与 **configuration**（Ansible 让资源一致）的界线。本篇是 provisioning 那一侧的另一半：**把 Terraform 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个强 Ansible / Puppet / Chef sysadmin 接手 Terraform 时，哪些直觉会被烧到。** 诚实标记先说清：本篇是 **🧭 ramp** —— 我的 Terraform 亲手经验是**实验/exposure 级**，从一套 ⚒️ **配置管理 + Linux 基本功**（Ansible、声明式思维、GitOps、幂等）映射并承载。它的权威来自**研究**（HashiCorp 文档 + practitioner 失效模式 + 一个可跑的 [lab](#lab--state-是事实来源--可跑)），不是生产资历。本篇存在的全部意义，就是*我正在跨的那道沟。*
+> [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md) 划清了 **provisioning**（Terraform 造资源）与 **configuration**（Ansible 让资源一致）的界线。本篇是 provisioning 那一侧的另一半：**把 Terraform 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个强 Ansible / Puppet / Chef sysadmin 接手 Terraform 时，哪些直觉会被烧到。** 诚实标记先说清：本篇是 **🧭 ramp** —— 我的 Terraform 亲手经验是**实验/exposure 级**，从一套 🔨 **配置管理 + Linux 基本功**（Ansible、声明式思维、GitOps、幂等）映射并承载。它的权威来自**研究**（HashiCorp 文档 + practitioner 失效模式 + 一个可跑的 [lab](#lab--state-是事实来源--可跑)），不是生产资历。本篇存在的全部意义，就是*我正在跨的那道沟。*
 
 一个 Ansible sysadmin 上手 Terraform 很快——它声明式、配置在 git 里、同样是"描述终态"的直觉。然后它在配置管理没有的那个地方咬人：**Terraform 保有一份 state 文件，而它就是事实来源。** Ansible/Puppet/Chef 是*收敛式*的——每次运行把期望态推到目标机，从不保留一份它造了什么的权威记录。Terraform 是对着 **state**（从现实 refresh 而来）做 plan，不是直接对着现实——所以一份丢失的 state、一次导致 drift 的手改、一把锁住的 state、一个强制 destroy 的不可变属性、或一个你重排了的 `count` 列表，任何一个都可能**删掉生产**。本篇把职责、反复出现的工单及其诊断面、以及那几个失灵的配置管理反射一一点名——全程对着 Ansible 作对比，因为读者是从那儿来的。
 
@@ -97,7 +97,7 @@ Terraform 修/救就是像鹰一样读 **plan**，并知道 config、state、rea
 
 ## 诚实边界
 
-本篇是 **🧭 ramp,而且明说。** 我的 Terraform 亲手经验是**实验/exposure 级**——建在 Ansible/Puppet 配置管理和 Linux 基本功上,不是多年跑 Terraform 生产 state。承载它的是真的:**⚒️ 配置管理 + Linux 深度**(Ansible/IaC、声明式思维、幂等、GitOps/PR 纪律、依赖推理、调试方法学——与 [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md) 画的是同一条线),外加一套研究扎实的 Terraform 机制模型和一个可跑的 [lab](#lab--state-是事实来源--可跑)。上面那些 Terraform 特有机制——state/locking、plan/apply/refresh 生命周期、强制替换、`count`-vs-`for_each`、provider/lock、drift——是映射并文档核验过的,**不是资历。** 更深的生产 Terraform(大型多团队 state、规模化 module 编写、Sentinel/OPA policy 程序、Terragrunt 单仓、负载下的 state 迁移)仍在前方;注释如实说明、绝不吹。这是一个强 sysadmin **正在跨过就业市场反复问的那道沟**的诚实产物——公开记录、⚒️/🧭 标注。
+本篇是 **🧭 ramp,而且明说。** 我的 Terraform 亲手经验是**实验/exposure 级**——建在 Ansible/Puppet 配置管理和 Linux 基本功上,不是多年跑 Terraform 生产 state。承载它的是真的:**🔨 配置管理 + Linux 深度**(Ansible/IaC、声明式思维、幂等、GitOps/PR 纪律、依赖推理、调试方法学——与 [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md) 画的是同一条线),外加一套研究扎实的 Terraform 机制模型和一个可跑的 [lab](#lab--state-是事实来源--可跑)。上面那些 Terraform 特有机制——state/locking、plan/apply/refresh 生命周期、强制替换、`count`-vs-`for_each`、provider/lock、drift——是映射并文档核验过的,**不是资历。** 更深的生产 Terraform(大型多团队 state、规模化 module 编写、Sentinel/OPA policy 程序、Terragrunt 单仓、负载下的 state 迁移)仍在前方;注释如实说明、绝不吹。这是一个强 sysadmin **正在跨过就业市场反复问的那道沟**的诚实产物——公开记录、🔨/🧭 标注。
 
 ## Field kit —— 真实工具与参考
 

@@ -34,10 +34,10 @@ _Avoid_: skill area, topic, category
 
 ### The honesty markers
 
-**⚒️ (hands-on depth)**:
+**🔨 (hands-on depth)**:
 A claim that the author has operated this for real, in production, with
 consequences. Survives a deep follow-up question.
-_Avoid_: expert, proficient, strong, ✋ (retired — see [ADR-0003](docs/adr/0003-the-honesty-markers-are-a-pick-and-a-compass.md))
+_Avoid_: expert, proficient, strong, ✋ and ⚒️ (both retired — see [ADR-0003](docs/adr/0003-the-honesty-markers-are-a-hammer-and-a-compass.md), including why the second one lasted a day)
 
 **🧭 (verified ramp)**:
 A claim that the material is mapped, doc-checked and often lab-verified, but not
@@ -45,7 +45,7 @@ run in production. Honest about the gap rather than hiding it.
 _Avoid_: familiar with, exposure, working knowledge, 🧗 (retired — see ADR-0003)
 
 **Overclaim (❌)**:
-Any ⚒️ verb attached to 🧭 experience. The failure mode the markers exist to
+Any 🔨 verb attached to 🧭 experience. The failure mode the markers exist to
 prevent; [`honesty-audit`](.claude/skills/honesty-audit/SKILL.md) is what detects it.
 
 ### Tiers, in a skill map

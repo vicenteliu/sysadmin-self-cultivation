@@ -146,7 +146,7 @@ writing the *code*. Genuinely accelerating, with specific traps:
 
 ## Honest boundaries
 
-⚒️ **where it transfers, 🧭 where it's GCP.** The scripting-and-automation *discipline*
+🔨 **where it transfers, 🧭 where it's GCP.** The scripting-and-automation *discipline*
 is hands-on — Python and Bash as everyday tools, iterated/idempotent/error-handled
 automation, and the "read-only first, then act" instinct built on real fleet scripting
 ([`foundations/`](../../foundations/)) — and that discipline transfers whole onto GCP's

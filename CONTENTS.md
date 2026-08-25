@@ -60,7 +60,7 @@ Stack have a module. See [`platforms/`](platforms/).
 | Platform | What's there · honesty |
 | --- | --- |
 | [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs (**2 runnable** + 3-lab CLI arc). Read first. · 🧭 |
-| [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md)/[support](platforms/azure/support.md) + 3-lab CLI arc. · 🧭, **Entra/identity ⚒️** |
+| [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md)/[support](platforms/azure/support.md) + 3-lab CLI arc. · 🧭, **Entra/identity 🔨** |
 | [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 3-lab CLI arc. Global-VPC is the outlier. · 🧭 |
 | [`oci/`](platforms/oci/) | ✅ + [architecture](platforms/oci/architecture.md)/[operations](platforms/oci/operations.md)/[automation](platforms/oci/automation.md)/[support](platforms/oci/support.md) + 3-lab CLI arc + [compartment/verb lab](platforms/oci/labs/a-compartment-is-not-an-account/). Youngest hyperscaler — compartments, OCPU, bare-metal-first, cheap egress. · 🧭 |
 
@@ -68,9 +68,9 @@ Stack have a module. See [`platforms/`](platforms/).
 
 | Platform | What's there · honesty |
 | --- | --- |
-| [`vsphere/`](platforms/vsphere/) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + 3-lab CLI arc (PowerCLI). AMS-region vCenter admin, VCP6-DCV/NV. · **⚒️ hands-on depth — a strength, not a ramp** |
-| [`openstack/`](platforms/openstack/) | ✅ + [architecture](platforms/openstack/architecture.md)/[operations](platforms/openstack/operations.md)/[automation](platforms/openstack/automation.md) + 3-lab CLI arc (DevStack). "You build the cloud"; control-plane-as-product. · 🧭 (KVM-adjacent ⚒️) |
-| [`self-host/`](platforms/self-host/) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + 3-lab CLI arc. PXE/image fleet 100k+, BMC/IPMI, DNS/RAID. · **⚒️ hands-on depth — the deepest root** |
+| [`vsphere/`](platforms/vsphere/) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + 3-lab CLI arc (PowerCLI). AMS-region vCenter admin, VCP6-DCV/NV. · **🔨 hands-on depth — a strength, not a ramp** |
+| [`openstack/`](platforms/openstack/) | ✅ + [architecture](platforms/openstack/architecture.md)/[operations](platforms/openstack/operations.md)/[automation](platforms/openstack/automation.md) + 3-lab CLI arc (DevStack). "You build the cloud"; control-plane-as-product. · 🧭 (KVM-adjacent 🔨) |
+| [`self-host/`](platforms/self-host/) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + 3-lab CLI arc. PXE/image fleet 100k+, BMC/IPMI, DNS/RAID. · **🔨 hands-on depth — the deepest root** |
 
 ## V. Cross-cutting — read by theme (the transferable surfaces)
 
@@ -84,18 +84,18 @@ See [`cross-cutting/`](cross-cutting/).
 | [`iac-and-config`](cross-cutting/iac-and-config.md) | dedicated note (Terraform/Ansible/Puppet) | ✅ |
 | [`terraform-support`](cross-cutting/terraform-support.md) | dedicated note (Terraform break-fix craft + the Ansible-sysadmin ramp; state/drift/replacement) — **🧭** | ✅ |
 | [`ci-cd`](cross-cutting/ci-cd.md) | dedicated note (CI/CD pipelines, GitOps, rollback) | ✅ |
-| [`databases`](cross-cutting/databases.md) | dedicated note (backup/PITR, replication, self-run vs managed) — **⚒️** | ✅ |
-| [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | dedicated note (ITSM, CMDB, asset reconciliation, access governance) — **⚒️** | ✅ |
+| [`databases`](cross-cutting/databases.md) | dedicated note (backup/PITR, replication, self-run vs managed) — **🔨** | ✅ |
+| [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | dedicated note (ITSM, CMDB, asset reconciliation, access governance) — **🔨** | ✅ |
 | [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
-| [`m365-support`](cross-cutting/m365-support.md) | dedicated note (M365 break-fix craft + the cross-lane transition) — **⚒️** | ✅ |
+| [`m365-support`](cross-cutting/m365-support.md) | dedicated note (M365 break-fix craft + the cross-lane transition) — **🔨** | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | ✅ |
 | [`kubernetes-support`](cross-cutting/kubernetes-support.md) | dedicated note (K8s break-fix craft + the Linux-sysadmin ramp; reconcile loop / cattle-not-pets / endpoints) — **🧭** | ✅ |
 | [`multi-cloud-support`](cross-cutting/multi-cloud-support.md) | dedicated note (multi-cloud break-fix craft — the seams: CIDR/identity/egress/posture; synthesizes the four platform notes) — **🧭** | ✅ |
 | [`service-mesh`](cross-cutting/service-mesh.md) | dedicated note (service discovery + mesh; and when not to) | ✅ |
-| [`web-and-tls`](cross-cutting/web-and-tls.md) | dedicated note (reverse proxy, TLS/cert lifecycle) — **⚒️** fundamentals | ✅ |
+| [`web-and-tls`](cross-cutting/web-and-tls.md) | dedicated note (reverse proxy, TLS/cert lifecycle) — **🔨** fundamentals | ✅ |
 | [`incident-response`](cross-cutting/incident-response.md) | dedicated note (incident lifecycle, on-call, blameless post-mortem) | ✅ |
-| [`working-with-security`](cross-cutting/working-with-security.md) | dedicated note (working with InfoSec/SOC + ATT&CK awareness for operators) — **⚒️** ops-security | ✅ |
+| [`working-with-security`](cross-cutting/working-with-security.md) | dedicated note (working with InfoSec/SOC + ATT&CK awareness for operators) — **🔨** ops-security | ✅ |
 | [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | ✅ |
 | networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ in The Stack |
 | storage | → [`the-stack/04`](the-stack/04-storage.md) | ✅ in The Stack |
@@ -142,9 +142,9 @@ Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh
 | Item | Note | State |
 |---|---|---|
 | [`build-out/`](build-out/) | **16 of 16 steps written.** Dependency graph verified acyclic and fully symmetric; 15 of 16 steps point at a runnable lab or tool (94%) | ✅ |
-| [`build-out/03-identity.md`](build-out/03-identity.md) | The step with an empty `Before` — identity has no physical prerequisite, and eight steps attach to it | ✅ ⚒️ |
-| [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | Numbered eleventh, must start at device #1 — honest about dependency, a lie about time | ✅ ⚒️ |
-| [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | How many IT people 100 people need — unanswerable until the estate is enumerated | ✅ ⚒️ |
+| [`build-out/03-identity.md`](build-out/03-identity.md) | The step with an empty `Before` — identity has no physical prerequisite, and eight steps attach to it | ✅ 🔨 |
+| [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | Numbered eleventh, must start at device #1 — honest about dependency, a lie about time | ✅ 🔨 |
+| [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | How many IT people 100 people need — unanswerable until the estate is enumerated | ✅ 🔨 |
 | [`build-out/GAPS.md`](build-out/GAPS.md) | Six real gaps the scenario surfaced, four of them the same shape — **all six now closed** by [`remote-access-four-causes`](cross-cutting/labs/remote-access-four-causes/), [`permission-sprawl`](cross-cutting/labs/permission-sprawl/), [`mail-authentication-alignment`](cross-cutting/labs/mail-authentication-alignment/) [`asset-reconciliation`](cross-cutting/labs/asset-reconciliation/) [`help-desk-queue`](cross-cutting/labs/help-desk-queue/) and [`transcript-retention`](cross-cutting/labs/transcript-retention/) | ✅ living |
 
 ## Agent Skills — the method, made invokable
@@ -152,7 +152,7 @@ Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh
 The repo ships eight [`.claude/skills/`](.claude/skills/). Five package its
 *methodology*: [`platform-ramp`](.claude/skills/platform-ramp/SKILL.md) (ramp onto
 any platform, honestly), [`honesty-audit`](.claude/skills/honesty-audit/SKILL.md)
-(classify claims ⚒️/🧭/overclaim), [`author-module`](.claude/skills/author-module/SKILL.md)
+(classify claims 🔨/🧭/overclaim), [`author-module`](.claude/skills/author-module/SKILL.md)
 (write a new note — incl. a **support note** — in the repo's voice, research-grounded),
 [`runnable-lab`](.claude/skills/runnable-lab/SKILL.md) (turn a concept into a
 self-verifying drill), and [`mirror-zh`](.claude/skills/mirror-zh/SKILL.md) (mirror a
@@ -168,9 +168,9 @@ at — install a skill on a new box and drive the toolbox in one sentence.
 
 ## The honesty layer (applies everywhere)
 
-Every module marks **⚒️ hands-on depth** vs. **🧭 verified ramp** per
+Every module marks **🔨 hands-on depth** vs. **🧭 verified ramp** per
 [`WHY.md`](WHY.md) — and the marking is load-bearing, not decoration. Two of the seven
-platforms are **⚒️**: [vSphere](platforms/vsphere/) (a production vCenter estate,
+platforms are **🔨**: [vSphere](platforms/vsphere/) (a production vCenter estate,
 VCP6-DCV/NV) and [self-host](platforms/self-host/) (a 100k+ device fleet), alongside
 the cross-cutting strengths — Linux, [endpoint](endpoint/),
 [identity](cross-cutting/identity-iam.md), [SaaS admin](cross-cutting/saas-admin.md),

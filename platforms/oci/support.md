@@ -11,7 +11,7 @@
 > youngest hyperscaler made differently.** Honesty marker up front: this whole note is
 > **🧭 ramp** — mapped from the AWS/Azure/GCP model, doc-checked against Oracle's own pages,
 > and drilled in a runnable [lab](#lab--a-compartment-is-not-an-account--runnable) — carried
-> by ⚒️ transferable fundamentals (Linux, networking, DNS/TLS, identity thinking), not by
+> by 🔨 transferable fundamentals (Linux, networking, DNS/TLS, identity thinking), not by
 > production tenure on OCI.
 
 OCI's own [platform note](README.md) states the headline in one line: *compartments are OCI's
@@ -225,7 +225,7 @@ here**, each with its failure mode.
 
 This note is **🧭 ramp, and it says so** — mapped from the AWS/Azure/GCP model, checked against
 Oracle's own documentation, and drilled in a runnable [lab](#lab--a-compartment-is-not-an-account--runnable),
-**not** run in production. What carries it is real: **⚒️ transferable fundamentals** — Linux and
+**not** run in production. What carries it is real: **🔨 transferable fundamentals** — Linux and
 guest-OS depth, networking, DNS/TLS, and identity/least-privilege *thinking* (the same line
 [`identity-iam.md`](../../cross-cutting/identity-iam.md) and the [self-host](../self-host/)-adjacent
 Linux depth draw). The OCI-specific mechanics above — compartments, the verb-policy language,

@@ -125,7 +125,7 @@ Money becomes real observability when you wire it like any other signal:
 
 ## Honest boundaries
 
-Operational, not FinOps-specialist — and marked that way. The ⚒️ is real
+Operational, not FinOps-specialist — and marked that way. The 🔨 is real
 cost-and-capacity instinct: hardware/software **audit and asset reconciliation**
 (reconciling what's deployed against what's paid for is cost hygiene), capacity
 planning, and the operational habit of treating waste as a fixable defect rather

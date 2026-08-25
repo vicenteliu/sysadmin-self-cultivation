@@ -129,7 +129,7 @@ as it does to yours.
 
 ## Honest boundaries
 
-The ops *discipline* here is ⚒️ — triage, incident method, the review cadence,
+The ops *discipline* here is 🔨 — triage, incident method, the review cadence,
 least-privilege review, restore-testing, treating cost and drift as signals — because
 it's the same operations craft carried from real infrastructure and fleet work,
 where the pager was real. The AWS-service specifics (which console, which alarm,

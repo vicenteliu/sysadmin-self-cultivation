@@ -53,7 +53,7 @@ desperately needed the third.
 ## Monitoring vs. observability (the distinction interviewers test)
 
 - **Monitoring** — watching *known* failure modes: dashboards and alerts for
-  conditions you predicted (disk full, CPU high, service down). This is the ⚒️
+  conditions you predicted (disk full, CPU high, service down). This is the 🔨
   discipline — infrastructure signals watched for decades: UPS, PDU, environment,
   network gear, server logs.
 - **Observability** — being able to ask *new* questions of a system *without
@@ -89,16 +89,16 @@ Like chapter 05, this layer cuts by **pattern, not one-per-platform**: every
 platform gives you a native telemetry stack, and the open-source stack
 (Prometheus/Grafana/OpenTelemetry) rides on top of all of them.
 
-**Self-hosted ⚒️🧭** — you run the whole pipeline: agents/exporters →
+**Self-hosted 🔨🧭** — you run the whole pipeline: agents/exporters →
 **Prometheus** (metrics) → **Grafana** (dashboards) → **Alertmanager**, plus an
 **ELK/Loki** stack for logs, and increasingly **OpenTelemetry** collectors feeding
-a tracing backend (Jaeger/Tempo). The ⚒️ part is real — infra signal monitoring and
+a tracing backend (Jaeger/Tempo). The 🔨 part is real — infra signal monitoring and
 server-side monitoring operated for years; the modern OTel/Prometheus/tracing
 assembly is the 🧭 ramp. You own retention, cardinality cost, and the truth that
 **your monitoring going down during an incident is its own incident** (monitor the
 monitoring, from somewhere else).
 
-**vSphere ⚒️** — **vCenter** metrics and alarms, **vROps** (Aria Operations) for
+**vSphere 🔨** — **vCenter** metrics and alarms, **vROps** (Aria Operations) for
 capacity and health. Mature, infrastructure-focused, and exactly the monitoring
 (not observability) shape — great at "is this host/datastore/VM healthy," not built
 for tracing a request across services.
@@ -127,7 +127,7 @@ egress penalty on shipping telemetry around.
 
 ## The comparison table
 
-| Concern | Self-host ⚒️🧭 | vSphere ⚒️ | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
+| Concern | Self-host 🔨🧭 | vSphere 🔨 | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Metrics** | Prometheus | vCenter / vROps | Gnocchi / Prom | CloudWatch | Azure Monitor | Cloud Monitoring | Monitoring |
 | **Logs** | ELK / Loki | vRLI | ELK / Prom | CloudWatch Logs | Log Analytics (**KQL**) | Cloud Logging | Logging |
@@ -216,7 +216,7 @@ being as sticky as chapter 05's managed services.
 
 ## Honest boundaries
 
-The ⚒️ here is genuine and specific: years of **infrastructure monitoring**
+The 🔨 here is genuine and specific: years of **infrastructure monitoring**
 operated for real — UPS, PDU, environmental, network equipment, server logs, and
 data-center signals watched for reliability at Varian, plus **server-side
 monitoring** of the deployment platform at ByteDance and **log/audit-data

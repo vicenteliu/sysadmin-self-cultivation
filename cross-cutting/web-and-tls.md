@@ -3,7 +3,7 @@
 > Almost every service a user touches sits behind a web server or a reverse proxy,
 > and almost every connection to it is TLS. This is the oldest, most universal
 > cross-cutting surface there is — and one the cloud-native roadmaps assume you
-> already know. This note is **⚒️ ground on the fundamentals** (running Apache, DNS,
+> already know. This note is **🔨 ground on the fundamentals** (running Apache, DNS,
 > and core services for real), with modern proxies and automated certs as the ramp.
 
 The reverse proxy is where the internet meets your services: it terminates TLS,
@@ -125,8 +125,8 @@ is exactly why the fundamentals transfer.
 
 ## Honest boundaries
 
-⚒️ **on the fundamentals, 🧭 on the modern edge.** Running **Apache**, **DNS/BIND**,
-and web/core services is ⚒️ ground — real operation of the front-door stack (Sunteck-
+🔨 **on the fundamentals, 🧭 on the modern edge.** Running **Apache**, **DNS/BIND**,
+and web/core services is 🔨 ground — real operation of the front-door stack (Sunteck-
 era and beyond), and the TLS/PKI and DNS fundamentals underneath are the same ones the
 [identity](identity-iam.md), [mesh](service-mesh.md), and [saas-admin](saas-admin.md)
 notes lean on. Where it's a **🧭 ramp**: modern proxies at scale (Traefik/Caddy/Envoy

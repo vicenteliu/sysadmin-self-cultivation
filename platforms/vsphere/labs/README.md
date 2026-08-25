@@ -83,6 +83,6 @@ failure, HA restarts them on a surviving host — the failure domain, in your ha
 
 ---
 
-Honest note: this is the ⚒️ platform — these labs are the production work written down,
+Honest note: this is the 🔨 platform — these labs are the production work written down,
 not a ramp. The GUI/CLI point lands hardest here: at fleet scale, you *only* operate
 via PowerCLI.

@@ -1,6 +1,6 @@
 # 09 · Backup — and the restore drill
 
-> ⚒️ hands-on — backup targets, RAID rebuild windows, snapshot hygiene, restore practice
+> 🔨 hands-on — backup targets, RAID rebuild windows, snapshot hygiene, restore practice
 > **Before:** 06 tenant · 07 files. **After:** 14 compliance evidence
 
 The title is the argument. **A backup that has never been restored is a belief, not

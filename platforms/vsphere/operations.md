@@ -87,7 +87,7 @@ flowchart LR
 
 ## Honest boundaries
 
-⚒️ **hands-on depth.** The triage instincts, the contention-metric literacy (CPU
+🔨 **hands-on depth.** The triage instincts, the contention-metric literacy (CPU
 ready, ballooning, datastore latency), the maintenance-mode-and-evacuate rhythm, the
 snapshot discipline, and the restore-test habit are production experience — AMS-region
 vCenter administration, VCP6-DCV/NV. This is the operating discipline the rest of the

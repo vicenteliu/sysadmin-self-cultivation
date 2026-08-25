@@ -100,9 +100,9 @@ you keep alive — the [skill map](skills-map.md) doing one job.
 
 🧭 **ramp — clearly labeled.** OpenStack is **understood architecturally** (the
 component flow, the control-plane-as-product reality, the tenancy and placement models)
-and sits *adjacent* to real ⚒️ ground: **KVM** and **Proxmox VE** run hands-on in lab
+and sits *adjacent* to real 🔨 ground: **KVM** and **Proxmox VE** run hands-on in lab
 and internal environments (incl. GPU passthrough — [`the-stack/01`](../../the-stack/01-physical.md)).
-So the **hypervisor** underneath (KVM) is ⚒️; the **OpenStack control plane** is the 🧭
+So the **hypervisor** underneath (KVM) is 🔨; the **OpenStack control plane** is the 🧭
 ramp, not claimed as production operations. The control-plane-as-product warning that
 defines this architecture isn't theory — it comes from real platform-operations
 experience ([vSphere](../vsphere/) estate, [fleet](../self-host/) infrastructure)

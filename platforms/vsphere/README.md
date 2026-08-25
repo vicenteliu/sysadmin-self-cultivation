@@ -3,7 +3,7 @@
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. But the honesty
-> marker flips here: vSphere is **⚒️ hands-on depth**, not a ramp. This is the
+> marker flips here: vSphere is **🔨 hands-on depth**, not a ramp. This is the
 > enterprise's private cloud, and it's the platform in this repo written from the most
 > direct production experience — operated as an AMS-region vCenter administrator,
 > VCP6-DCV / VCP6-NV certified.
@@ -113,7 +113,7 @@ written from production experience, not a ramp:
 
 ## Honest boundaries
 
-⚒️ **hands-on depth — one of the deepest in the repo.** Operated as the **AMS-region
+🔨 **hands-on depth — one of the deepest in the repo.** Operated as the **AMS-region
 vCenter administrator** (maintained and upgraded VM infrastructure and services),
 **VCP6-DCV** (Data Center Virtualization) and **VCP6-NV** (Network Virtualization)
 certified, with adjacent hands-on **KVM** and **Proxmox VE** (including physical-GPU

@@ -158,11 +158,11 @@ writing the *code*. Genuinely accelerating, with specific traps:
 
 ## Honest boundaries
 
-⚒️ **where it counts, and it counts here.** The scripting-and-automation discipline is
+🔨 **where it counts, and it counts here.** The scripting-and-automation discipline is
 hands-on — Python and Bash (and PowerShell for Windows Server work) as everyday tools,
 paginated/idempotent/error-handled automation, and the "read-only first, then act"
 instinct built on real fleet scripting ([`foundations/`](../../foundations/)). The
-**identity end is doubly ⚒️**: managed identities, service principals, and scoped RBAC
+**identity end is doubly 🔨**: managed identities, service principals, and scoped RBAC
 are the Entra/Azure-AD ground I've worked directly
 ([`identity`](../../cross-cutting/identity-iam.md)). The Azure-API *specifics* (the
 exact `azure-*` clients, ARM quirks, Resource Graph schema) are the 🧭 ramp. The claim

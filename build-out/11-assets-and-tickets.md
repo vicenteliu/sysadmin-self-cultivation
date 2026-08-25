@@ -1,6 +1,6 @@
 # 11 · Assets and tickets — the record that starts at device #1
 
-> ⚒️ hands-on (ServiceNow, ~5 years; asset reconciliation and audit automation)
+> 🔨 hands-on (ServiceNow, ~5 years; asset reconciliation and audit automation)
 > **Before:** 03 identity · 04 devices. **After:** 13 the help desk · 14 compliance evidence · 15 JML
 
 The number in the title is a lie about time and honest about dependency. This

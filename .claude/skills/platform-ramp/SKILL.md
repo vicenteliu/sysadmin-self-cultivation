@@ -1,6 +1,6 @@
 ---
 name: platform-ramp
-description: Ramp onto any platform (a cloud, a hypervisor, an MDM, a service) fast and honestly, using this repo's operating model — map the seven surfaces, produce a checkable skill map, give the AI-assisted method, and label every claim ⚒️ hands-on vs 🧭 ramp. Use when the user says "help me ramp onto X", "get me competent on X", "map X onto what I know", "I've never touched X", or hands you a new platform to learn.
+description: Ramp onto any platform (a cloud, a hypervisor, an MDM, a service) fast and honestly, using this repo's operating model — map the seven surfaces, produce a checkable skill map, give the AI-assisted method, and label every claim 🔨 hands-on vs 🧭 ramp. Use when the user says "help me ramp onto X", "get me competent on X", "map X onto what I know", "I've never touched X", or hands you a new platform to learn.
 created: 2026-07-02
 owner: Vicente Liu
 ---
@@ -67,11 +67,11 @@ assume the draft is 90% right and hunt the 10%.
 ### 5 — Write the honesty ledger (the non-negotiable step)
 
 Label the user's *actual* standing on this platform:
-- **⚒️ hands-on depth** — only where they've operated it for real; can be probed in an
+- **🔨 hands-on depth** — only where they've operated it for real; can be probed in an
   interview.
 - **🧭 verified ramp** — mapped and doc-checked, not run in production; say so plainly.
 - Transferable *instincts* (least privilege, failure domains, idempotence,
-  incident method) are ⚒️ even on a new platform; the platform-*specific* surface is 🧭.
+  incident method) are 🔨 even on a new platform; the platform-*specific* surface is 🧭.
 
 Never write "years of production X" for a 🧭 platform. The claim is always
 *"a transferable model plus a fast, verifiable ramp."*
@@ -79,7 +79,7 @@ Never write "years of production X" for a 🧭 platform. The claim is always
 ## Output
 
 A short ramp brief: the seven-surface map, the 2-4 outliers, a Core-tier skill
-checklist, one verified artifact to try, and the ⚒️/🧭 ledger. Offer to expand any
+checklist, one verified artifact to try, and the 🔨/🧭 ledger. Offer to expand any
 surface or generate a runnable lab (see the `runnable-lab` skill).
 
 ## Guardrails

@@ -9,7 +9,7 @@
 > craft** — the tickets that actually recur, exactly where you look, and, most
 > usefully, **what a strong sysadmin from another lane (especially AWS) gets wrong
 > when they inherit it.** GCP stays a 🧭 ramp here; the transferable foundations under
-> it (Linux, networking, identity, Kubernetes concepts, troubleshooting) are the ⚒️
+> it (Linux, networking, identity, Kubernetes concepts, troubleshooting) are the 🔨
 > that carries the load — which is the whole point of this page.
 
 GCP is, as the [platform note](README.md) says, mostly *renamed AWS/Azure* — which is
@@ -247,7 +247,7 @@ are **false here**, each with its failure mode.
 ## Honest boundaries
 
 **GCP is a 🧭 verified ramp in this repo, and this page keeps that line.** The load is
-carried by **⚒️ transferable foundations** that are real: **Linux** and guest-OS
+carried by **🔨 transferable foundations** that are real: **Linux** and guest-OS
 operations, **networking / DNS / TLS** ([`the-stack/02`](../../the-stack/02-network.md)),
 **identity & least-privilege thinking** ([`identity-iam.md`](../../cross-cutting/identity-iam.md)),
 and the **Kubernetes object model** ([`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md))

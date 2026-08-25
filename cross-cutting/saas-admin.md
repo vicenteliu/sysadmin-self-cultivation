@@ -3,7 +3,7 @@
 > The clouds run your infrastructure; SaaS runs your company. Google Workspace,
 > Microsoft 365, and the identity fabric under them are where most employees
 > actually live — and administering them well is a distinct, high-demand craft the
-> platform folders don't touch. This one is **⚒️ hands-on depth**.
+> platform folders don't touch. This one is **🔨 hands-on depth**.
 
 Every layer below this one asked how machines run; this asks how *people* work —
 mail, docs, collaboration, and the account lifecycle that grants and revokes it all.
@@ -115,7 +115,7 @@ The plumbing under the mail everyone takes for granted:
 - **Domains and DNS** — the domain and subdomain management and the DNS records
   (**SPF** and its relatives) that decide whether your mail is trusted and delivered.
 - **Mail flow** — routing, transport rules, and delegation as configured policy.
-- **The honest scope** — SPF and domain/DNS administration are ⚒️; deep email-security
+- **The honest scope** — SPF and domain/DNS administration are 🔨; deep email-security
   operations (**Proofpoint, Defender for Office 365, DMARC/DKIM** enforcement) are
   🧭 ramps, labeled as such — the same line drawn everywhere in this repo.
 
@@ -137,7 +137,7 @@ The plumbing under the mail everyone takes for granted:
 
 ## Honest boundaries
 
-⚒️ **hands-on depth.** Google Workspace administered for a global workforce
+🔨 **hands-on depth.** Google Workspace administered for a global workforce
 (document ownership/permission transfers, account and mail operations) through a live
 email-platform migration; **Microsoft 365 admin operations** — Exchange (mailboxes,
 shared mailboxes, distribution groups, transport rules), SharePoint site/permission

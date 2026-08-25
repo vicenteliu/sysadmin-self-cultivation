@@ -108,9 +108,9 @@ set:
 
 🧭 **honest ramp — clearly labeled.** OpenStack is **understood architecturally**
 (Nova/Neutron/Cinder/Glance/Keystone over KVM, the control-plane-as-product reality)
-and sits *adjacent* to real ⚒️ ground — **KVM** and **Proxmox VE** run hands-on in lab
+and sits *adjacent* to real 🔨 ground — **KVM** and **Proxmox VE** run hands-on in lab
 and internal environments, including GPU passthrough ([`the-stack/01`](../../the-stack/01-physical.md)).
-So the *hypervisor* underneath is ⚒️; the OpenStack *control plane* is the 🧭 ramp,
+So the *hypervisor* underneath is 🔨; the OpenStack *control plane* is the 🧭 ramp,
 not claimed as production operations. The control-plane-as-product warning that runs
 through this module isn't theory — it comes from real platform-operations experience
 (vSphere estate, fleet infrastructure) applied to OpenStack's design. The claim is a

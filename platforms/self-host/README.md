@@ -3,7 +3,7 @@
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. The honesty marker
-> is **⚒️ hands-on depth** — this is the ground floor of the whole stack, operated at
+> is **🔨 hands-on depth** — this is the ground floor of the whole stack, operated at
 > fleet scale (100k+ devices provisioned), and the layer every cloud in this repo is an
 > abstraction *over*.
 
@@ -110,7 +110,7 @@ written from fleet-scale production, not a ramp:
 
 ## Honest boundaries
 
-⚒️ **hands-on depth — the deepest root in the repo.** This is the ground the whole
+🔨 **hands-on depth — the deepest root in the repo.** This is the ground the whole
 project stands on: a multi-OS **PXE and image-based deployment platform** built from
 scratch and run at fleet scale (100k+ devices cumulatively provisioned), **full-disk
 encryption** at scale, **DNS/BIND/DHCP/LDAP** and core-services administration,

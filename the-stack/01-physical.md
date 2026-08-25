@@ -57,7 +57,7 @@ the seven platforms.
 
 ## Seven ways to build it
 
-**Self-hosted bare metal ⚒️** — you own every noun in the job description above.
+**Self-hosted bare metal 🔨** — you own every noun in the job description above.
 Racks, top-of-rack switches, BMC/IPMI out-of-band management, PXE boot
 infrastructure, firmware, spares inventory, power budgets. Provisioning at fleet
 scale means an image-and-boot pipeline, not a person with a USB stick:
@@ -71,7 +71,7 @@ Total control, total responsibility, procurement lead times measured in
 weeks-to-months. (Hold onto that pipeline diagram — it comes back as Packer and
 golden images in chapter 03, and it's the same pipeline.)
 
-**VMware vSphere ⚒️** — the enterprise standard for pretending your hardware is a
+**VMware vSphere 🔨** — the enterprise standard for pretending your hardware is a
 pool. ESXi is the hypervisor on each host; vCenter is the control plane; vMotion
 moves running VMs between hosts; DRS balances load; HA restarts VMs from a dead
 host. The hardware is still yours — vSphere changes *how you schedule* it, not *who
@@ -120,7 +120,7 @@ provider's problem — and note the one thing that stays blue everywhere:
 
 ```mermaid
 flowchart LR
-  subgraph sh["Self-host · vSphere ⚒️"]
+  subgraph sh["Self-host · vSphere 🔨"]
     direction LR
     a1["Hardware"]:::you --> a2["Hypervisor"]:::you --> a3["Control plane"]:::you --> a4["Placement + capacity"]:::you
   end
@@ -142,7 +142,7 @@ your quota.
 
 ## The comparison table
 
-| Dimension | Self-host ⚒️ | vSphere ⚒️ | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
+| Dimension | Self-host 🔨 | vSphere 🔨 | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Hardware owner** | you | you | you | provider | provider | provider | provider |
 | **Hypervisor** | KVM/Proxmox (typ.) | ESXi | KVM (typ.) | Nitro (KVM-derived, offloaded) | Hyper-V lineage + Boost | KVM-based | KVM-based + off-box net |
@@ -249,7 +249,7 @@ perfect place for AI to accelerate you *and* to burn you.
 
 ## Honest boundaries
 
-The ⚒️ in this chapter is real: years of hands-on fleet work at a previous employer
+The 🔨 in this chapter is real: years of hands-on fleet work at a previous employer
 — racking and cabling, BMC/IPMI, PXE-and-image provisioning pipelines at
 tens-of-thousands-of-devices scale, regional vSphere administration, KVM and
 Proxmox (including GPU passthrough) in lab and internal environments. The 🧭 is
@@ -259,7 +259,7 @@ operates that layer, **which is precisely the point of this chapter**: on the
 hyperscalers you operate *above* the physical layer, but you operate *better* if
 you know what it's doing underneath. OpenStack is labeled 🧭: evaluated and
 understood architecturally, not run in production — the control-plane-as-product
-warning comes from the platform-operations experience that *is* ⚒️, applied to
+warning comes from the platform-operations experience that *is* 🔨, applied to
 OpenStack's design.
 
 ## The chapter on one screen
@@ -273,8 +273,8 @@ mindmap
       replace and refresh
       plan capacity
     Seven ways
-      Self-host ⚒️ you own every noun
-      vSphere ⚒️ pooled scheduling, your hardware
+      Self-host 🔨 you own every noun
+      vSphere 🔨 pooled scheduling, your hardware
       OpenStack 🧭 control plane becomes your product
       AWS 🧭 Nitro offload
       Azure 🧭 Hyper-V lineage, fault and update domains

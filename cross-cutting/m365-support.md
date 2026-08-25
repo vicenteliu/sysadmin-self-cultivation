@@ -8,7 +8,7 @@
 > lifecycle and admin-center engineering. This note covers the other half: **M365
 > support**, the break-fix craft of keeping mail, identity, and collaboration
 > working for real people — and, specifically, **what a strong sysadmin from another
-> lane gets wrong when they inherit it.** The support skill is ⚒️ hands-on; the deep
+> lane gets wrong when they inherit it.** The support skill is 🔨 hands-on; the deep
 > tenant-engineering tail is a 🧭 ramp, marked as such.
 
 A competent Linux / networking / on-prem-AD / cloud admin can pick up M365 support
@@ -228,7 +228,7 @@ are **false here**, and each one has a failure mode attached.
 
 ## Honest boundaries
 
-⚒️ **The support craft is hands-on**, and it leans on real adjacent depth: **M365
+🔨 **The support craft is hands-on**, and it leans on real adjacent depth: **M365
 admin operations** (Exchange mailboxes/shared mailboxes/transport rules, SharePoint
 permissions, Teams — see [`saas-admin.md`](saas-admin.md)), **Entra ID initial setup**
 (tenant-wide MFA, a Conditional Access policy, PIM — see

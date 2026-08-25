@@ -57,5 +57,5 @@ This is the platform where the repo's honesty policy is most visible. AI ramps y
 fast. It does **not** ramp you to production competence, because OpenStack's real skill
 is operating a control plane under load, and that's earned, not prompted. The truthful
 claim ([`README.md`](README.md)): a sound architectural grasp plus a verifiable ramp,
-with the hypervisor underneath (KVM) as real ⚒️ ground and the OpenStack control plane
+with the hypervisor underneath (KVM) as real 🔨 ground and the OpenStack control plane
 as the honest 🧭 — exactly the distinction this repo exists to keep.

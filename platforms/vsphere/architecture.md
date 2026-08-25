@@ -113,7 +113,7 @@ DRS-balanced), **networking** (DVS onto VLANs), **storage** (shared datastore),
 
 ## Honest boundaries
 
-⚒️ **hands-on depth — one of the deepest in the repo, and this whole note is written
+🔨 **hands-on depth — one of the deepest in the repo, and this whole note is written
 from it.** Operated as the **AMS-region vCenter administrator** (maintained and
 upgraded VM infrastructure and services), **VCP6-DCV** (Data Center Virtualization)
 and **VCP6-NV** (Network Virtualization) certified, with adjacent hands-on **KVM** and

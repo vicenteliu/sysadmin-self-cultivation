@@ -121,7 +121,7 @@ version control, drift is a diff, and rollback is `git revert`.**
 
 ## Honest boundaries
 
-🧭 **ramp built on a ⚒️ foundation.** The *automation discipline* CI/CD rests on is
+🧭 **ramp built on a 🔨 foundation.** The *automation discipline* CI/CD rests on is
 hands-on — Bash/Python/Ansible fleet automation, Git as everyday version control,
 idempotence, and the "put the steps in code, not in a person" instinct
 ([foundations](../foundations/), [iac](iac-and-config.md)). Building and operating

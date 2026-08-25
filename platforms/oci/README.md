@@ -116,7 +116,7 @@ maps the transferable operating model (AWS/Azure/GCP surfaces + on-prem depth) o
 OCI's names and verifies against current docs — the ramp method
 [`WHY.md`](../../WHY.md) argues for. The *instincts* underneath (blast-radius thinking
 via compartments, least privilege, bare-metal and failure-domain judgment from real
-[vSphere](../vsphere/) and [self-host](../self-host/) experience) are ⚒️; the OCI-service
+[vSphere](../vsphere/) and [self-host](../self-host/) experience) are 🔨; the OCI-service
 specifics are the ramp. Worth noting: OCI's bare-metal-first, egress-cheap design maps
 unusually well onto genuine hands-on strengths — which shortens the ramp — but the
 claim stays honest: a transferable model plus a fast, verifiable ramp, not years on

@@ -14,7 +14,7 @@ Identity is the densest cluster in the demand signal and the one where a wrong
 answer is least visible: an over-broad grant looks exactly like a correct one
 until someone uses it.
 
-## Directory & the source of truth ⚒️
+## Directory & the source of truth 🔨
 
 - [ ] **Core** — Name the **one** system that decides a person exists, and what happens downstream when it says they stopped.
 - [ ] **Core** — Users, groups, OUs, attributes — and why group-based access is the only thing that survives scale.
@@ -23,7 +23,7 @@ until someone uses it.
 - [ ] **Working** — Two directories that both believe they are authoritative — recognise the shape before it is a project.
 - [ ] **Depth** — Migrate the source of truth without an outage: coexistence, cutover, and the rollback nobody plans.
 
-## Authentication vs authorization ⚒️
+## Authentication vs authorization 🔨
 
 - [ ] **Core** — Keep the two questions separate — *who are you* and *what may you do* — in every conversation. Conflating them is the root of most identity confusion.
 - [ ] **Core** — MFA factors and their real strength ranking; why SMS is a factor and still a weak one.
@@ -32,7 +32,7 @@ until someone uses it.
 - [ ] **Working** — Read an authentication log and separate a failed sign-in from a successful sign-in that was then denied authorization.
 - [ ] **Depth** — Token replay and consent phishing — attacks that never touch the password.
 
-## Federation & SSO (SAML / OIDC) ⚒️
+## Federation & SSO (SAML / OIDC) 🔨
 
 - [ ] **Core** — Draw the flow: SP/RP, IdP, assertion or token, and who trusts whom.
 - [ ] **Core** — Decide SAML vs OIDC for a given application and say why — not by preference, by what the application supports.
@@ -49,7 +49,7 @@ until someone uses it.
 - [ ] **Working** — Back it up and **restore it**: an IdP restore is an identity-continuity exercise, not a database exercise.
 - [ ] **Depth** — Upgrade a live IdP; and know the honest cost comparison against a hosted one before choosing to run it.
 
-## SCIM & the joiner/mover/leaver lifecycle ⚒️
+## SCIM & the joiner/mover/leaver lifecycle 🔨
 
 - [ ] **Core** — Automate all three of J, M and L. **Leaver is the one that gets skipped**, and the only one with an auditor attached.
 - [ ] **Core** — Say what SCIM does that SSO does not: SSO answers how people sign in, SCIM answers how accounts come into existence and stop.
@@ -60,7 +60,7 @@ until someone uses it.
 
 **Prove it:** [`toolbox/user-lifecycle`](../../toolbox/user-lifecycle/)
 
-## RBAC & least privilege ⚒️
+## RBAC & least privilege 🔨
 
 - [ ] **Core** — Write a **scoped** policy for one task and defend why it is minimal.
 - [ ] **Core** — Principal, role, policy, scope — map the four onto whichever platform is in front of you.
@@ -71,7 +71,7 @@ until someone uses it.
 
 **Prove it:** [`aws/iam-deny-by-default`](../../platforms/aws/labs/iam-deny-by-default/) · [`azure/global-admin-is-not-owner`](../../platforms/azure/labs/global-admin-is-not-owner/) · [`gcp/gke-iam-vs-rbac`](../../platforms/gcp/labs/gke-iam-vs-rbac/) · [`oci/a-compartment-is-not-an-account`](../../platforms/oci/labs/a-compartment-is-not-an-account/)
 
-## Conditional access & device trust ⚒️
+## Conditional access & device trust 🔨
 
 - [ ] **Core** — Express a policy as *signals → decision*: user, device, location, risk → allow, block, or require something more.
 - [ ] **Core** — **Never write a policy that can lock you out.** Exclude a break-glass account before saving, every time.
@@ -82,7 +82,7 @@ until someone uses it.
 
 **Prove it:** [`labs/m365-conditional-access-lockout`](../labs/m365-conditional-access-lockout/)
 
-## Privileged access & break-glass ⚒️
+## Privileged access & break-glass 🔨
 
 - [ ] **Core** — Separate the daily account from the privileged one, for yourself first.
 - [ ] **Core** — Design a **break-glass** account: what it bypasses, where the credential lives, and who is alerted when it is used.
@@ -91,7 +91,7 @@ until someone uses it.
 - [ ] **Working** — Test the break-glass path on a schedule. An untested one is a belief, not a control.
 - [ ] **Depth** — Highest-privilege actions that leave no useful audit trail — find them, then compensate.
 
-## Access review & permission sprawl ⚒️
+## Access review & permission sprawl 🔨
 
 - [ ] **Core** — Answer *"who can see this?"* — and know that reading the permissions does not answer it, because a sharing link is a grant path no review walks.
 - [ ] **Core** — Run a review that finds stale accounts and over-broad grants, and produces evidence rather than an assertion.

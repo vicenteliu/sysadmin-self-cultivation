@@ -14,8 +14,8 @@ really just AWS?"**
 
 | Map | Covers | Markers |
 | --- | --- | --- |
-| [`networking.md`](networking.md) | Addressing, routing, L2/overlay, DNS, DHCP, filtering rules, load balancing, TLS, remote access, flow analysis, inter-cloud | ⚒️ ×9 · 🧭 ×2 |
-| [`identity.md`](identity.md) | Directory, AuthN/AuthZ, federation & SSO, running an IdP, SCIM/JML, RBAC, conditional access, privileged access, access review, workload identity | ⚒️ ×8 · 🧭 ×2 |
+| [`networking.md`](networking.md) | Addressing, routing, L2/overlay, DNS, DHCP, filtering rules, load balancing, TLS, remote access, flow analysis, inter-cloud | 🔨 ×9 · 🧭 ×2 |
+| [`identity.md`](identity.md) | Directory, AuthN/AuthZ, federation & SSO, running an IdP, SCIM/JML, RBAC, conditional access, privileged access, access review, workload identity | 🔨 ×8 · 🧭 ×2 |
 
 More themes follow the same demand order as [`../../ROADMAP.md`](../../ROADMAP.md).
 These two came first because they are the two densest clusters in the demand
@@ -42,9 +42,9 @@ you've read about it. Same rule as the platform maps.
 
 ## Markers sit on sections, not on the folder
 
-Platform maps carry **no** ⚒️/🧭 markers inside them; the honesty marker lives on
+Platform maps carry **no** 🔨/🧭 markers inside them; the honesty marker lives on
 the platform as a whole. That works there and fails here, because a theme map
-almost always mixes: network *design* is ⚒️ in the same file where network
+almost always mixes: network *design* is 🔨 in the same file where network
 *monitoring* is 🧭. A single marker on the file would have to read "mixed", which
 is the vagueness [`WHY.md`](../../WHY.md) exists to refuse.
 

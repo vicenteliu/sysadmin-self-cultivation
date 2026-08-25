@@ -66,13 +66,13 @@ flowchart TB
 
 ## Seven ways to build it
 
-**Self-hosted ⚒️** — VLANs for segmentation, a firewall pair at the edge,
+**Self-hosted 🔨** — VLANs for segmentation, a firewall pair at the edge,
 DNS/DHCP you run yourself (BIND and friends), HAProxy/keepalived or an appliance
 for load balancing, site-to-site VPN or leased lines between locations. The
 failure modes are physical (a looped cable can still ruin a floor) and the limits
 are honest: what the boxes can do, you can do.
 
-**vSphere ⚒️** — standard and distributed vSwitches bridge VMs onto the physical
+**vSphere 🔨** — standard and distributed vSwitches bridge VMs onto the physical
 VLANs; the network team's world and the VM team's world meet at a port group.
 **NSX 🧭** adds a full overlay (segments, distributed firewall, virtual routers) on
 top — vSphere shops adopt it exactly when VLAN sprawl and east-west filtering
@@ -127,7 +127,7 @@ deliberately aggressive; OCI courts exactly the workloads the egress meter hurts
 
 ## The comparison table
 
-| Dimension | Self-host ⚒️ | vSphere (+NSX) | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
+| Dimension | Self-host 🔨 | vSphere (+NSX) | OpenStack 🧭 | AWS 🧭 | Azure 🧭 | GCP 🧭 | OCI 🧭 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Virtual network** | VLANs / EVPN-VXLAN | port groups / NSX segments | Neutron tenant nets | VPC (regional) | VNet (regional) | **VPC (global)** | VCN (regional) |
 | **Subnet scope** | per-VLAN, your design | per port group | per tenant net | **per AZ** | spans zones | **regional** | regional (pref.) |
@@ -136,7 +136,7 @@ deliberately aggressive; OCI courts exactly the workloads the egress meter hurts
 | **North-south** | edge firewall pair | edge / NSX gateway | Neutron router + floating IP | IGW / NAT GW | LB / NAT GW | Cloud NAT / global LB | IGW / NAT GW |
 | **Cross-site** | VPN / leased line | same + NSX federation | VPN-as-a-service | Direct Connect | ExpressRoute | Interconnect | FastConnect |
 | **LB signature** | HAProxy / keepalived / F5 | NSX LB | Octavia | ALB / NLB | Azure LB / App GW / Front Door | **global anycast LB** | LB / NLB |
-| **DNS** | BIND you run ⚒️ | — (yours) | Designate | Route 53 | Azure DNS / private zones | Cloud DNS | OCI DNS |
+| **DNS** | BIND you run 🔨 | — (yours) | Designate | Route 53 | Azure DNS / private zones | Cloud DNS | OCI DNS |
 
 ## Choosing — and the egress meter
 
@@ -239,7 +239,7 @@ how far each skill travels rather than by platform — is
 
 ## Honest boundaries
 
-The ⚒️ here is the classic enterprise stack: years of hands-on DNS/DHCP/BIND,
+The 🔨 here is the classic enterprise stack: years of hands-on DNS/DHCP/BIND,
 VLANs, firewalls, VPNs, and TCP/IP debugging across offices and data centers, with
 a CCNP-level routing-and-switching foundation and vSphere networking operated for
 real. The 🧭 is the modern SDN layer: each cloud's VPC specifics, NSX, and
@@ -270,8 +270,8 @@ mindmap
       underlay - the fabric
       overlay - what you configure
     Seven ways
-      Self-host ⚒️ both planes yours
-      vSphere ⚒️ port groups meet VLANs
+      Self-host 🔨 both planes yours
+      vSphere 🔨 port groups meet VLANs
       NSX 🧭 SDN you operate
       OpenStack 🧭 Neutron pages you
       AWS 🧭 regional VPC, AZ subnets

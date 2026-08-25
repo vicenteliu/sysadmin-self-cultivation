@@ -89,7 +89,7 @@ The [foundations](../../foundations/) idempotence-and-safety discipline, OCI-spe
 
 ## Honest boundaries
 
-⚒️ **where it transfers, 🧭 where it's OCI.** The scripting-and-automation *discipline*
+🔨 **where it transfers, 🧭 where it's OCI.** The scripting-and-automation *discipline*
 is hands-on — Python/Bash, paginated/idempotent/error-handled automation, read-only-
 first ([`foundations/`](../../foundations/)) — and it transfers whole onto OCI's API.
 But the OCI-*specific* surface (the exact CLI/SDK, instance-principal setup, service

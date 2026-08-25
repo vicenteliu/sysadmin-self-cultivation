@@ -1,6 +1,6 @@
 # 07 · Files and collaboration — where state lives, who can see it
 
-> ⚒️ hands-on — SaaS administration and the sharing/permission surface
+> 🔨 hands-on — SaaS administration and the sharing/permission surface
 > **Before:** 03 identity · 05 network · 06 tenant. **After:** 09 backup · 14 compliance evidence
 
 The technical part of this step is small. The part that decides whether the next

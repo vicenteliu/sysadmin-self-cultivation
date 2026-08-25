@@ -160,7 +160,7 @@ in exact proportion to how well you do yours.
 
 ## Honest boundaries
 
-⚒️ **operational security is hands-on ground.** The Protect / host-Detect / Respond-hands
+🔨 **operational security is hands-on ground.** The Protect / host-Detect / Respond-hands
 lane is real experience: **patch compliance** as daily ops, **full-disk encryption** at
 fleet scale, **EDR** deployed and migrated across a fleet (Defender for Endpoint →
 SentinelOne, both consoles), **device security-configuration and network-admission
@@ -168,7 +168,7 @@ compliance checks**, **least-privilege access governance** in a multi-approver m
 operating inside **segmented, access-gated, audited environments**, and serving as a
 **systems liaison across Infrastructure, Network, and Security** — partnering on
 endpoint security models (exactly the "partner with InfoSec" many infra roles ask for).
-That's the operator's security, and it's ⚒️.
+That's the operator's security, and it's 🔨.
 
 🧭 **and stop there, honestly.** **Threat hunting, malware analysis, detection
 engineering, digital forensics, and red teaming** are specialist crafts this note does

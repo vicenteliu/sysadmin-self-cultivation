@@ -125,7 +125,7 @@ your own changes ([`iac`](../../cross-cutting/iac-and-config.md)).
 ## Honest boundaries
 
 🧭 **ramp — GCP has no production hands-on here, and it's labeled that way.** The ops
-*discipline* is ⚒️ — triage, incident method, the review cadence, least-privilege
+*discipline* is 🔨 — triage, incident method, the review cadence, least-privilege
 review, restore-testing, treating cost and drift as signals — because it's the same
 operations craft carried from real infrastructure and fleet work, where the pager was
 real. But every GCP-service specific (which console, which finding, which SLO tool) is
