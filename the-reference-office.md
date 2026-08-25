@@ -93,20 +93,114 @@ landlord can quote against.
 
 ## Selection rules
 
-⏳ **Not written yet.** This section takes criteria only, never model names.
+Criteria only, never model names. **Written because three build-out steps needed a
+number and could only give a criterion**: [01](build-out/01-uplink.md) wants *"a sizing
+number with the reasoning attached"*, [02](build-out/02-the-building.md) says the load
+moved to wireless density, and [05](build-out/05-network.md) asks how many people are in
+the largest room on video without answering it. The scenario would want this if nothing
+were ever filmed, which is the test.
 
-**It gets written when a build-out step needs it** — not when a video needs it. The test
-is whether the scenario would still want it if nothing were ever filmed.
+The design decisions these quantities feed live in
+[`cross-cutting/site-network-design.md`](cross-cutting/site-network-design.md). This is
+the arithmetic; that is what you do with it.
+
+### Wireless — count it twice and take the larger
+
+The method, which outlives any radio generation:
+
+1. **By client count.** Associated devices ÷ clients-per-AP. Plan around **25 active
+   clients per radio, ~50 per AP** in a dense space — an airtime-fairness limit, not a
+   spec-sheet one, which is why it has barely moved across generations.
+2. **By throughput.** Active devices × per-client target ÷ usable per-AP throughput.
+   Per-client targets: **video conferencing ~1.5 Mbps, HD video ~3 Mbps**, VoIP a
+   rounding error. Size on the highest-bitrate application, not the average one.
+3. **Take the larger, then check it against the coverage floor** — roughly **one AP per
+   2,500–3,000 sq ft** of partitioned office. Below about a hundred and fifty people the
+   coverage floor usually wins, which surprises people who have been told density is
+   what matters.
+4. **Then place them for the peak square metre**, not the mean. Uniform spacing serves a
+   floor with meeting rooms worse than deliberate placement does.
+
+**Worked, for this office.** ~65 on the peak day at roughly two devices each, plus seven
+room systems, six booths and a handful of printers and controllers ≈ **145 associated
+devices**.
+
+| Calculation | Result |
+|---|---|
+| By client count | 145 ÷ 50 ≈ **3 APs** |
+| By throughput | ~40% active at peak → 58 × 3 Mbps ≈ 174 Mbps → **1 AP** |
+| Larger of the two | **3** |
+| Coverage floor (~11,000 sq ft) | 11,000 ÷ 2,750 ≈ **4 APs** |
+| Placement — the large room earns a dedicated radio | **5–6 APs** |
+
+The number that binds is coverage and placement, not capacity. **That is the useful
+finding**, and it refines rather than contradicts step 05: at a hundred people density
+decides *where* the access points go, and coverage decides *how many*. Density starts
+setting the count somewhere above this office's size.
+
+### Wired — ports, then the two things that get under-specified
+
+Count the ports, then check the two budgets that are not port counts:
+
+| Draw | For this office |
+|---|---|
+| Desks | 70 |
+| Rooms — display + room system | 14 |
+| Phone booths | 6 |
+| Access points | 6 |
+| Printers / MFDs | ~3 |
+| Door controllers and access panels | ~3 |
+| Signage, spares, unknowns | ~8 |
+| **Active ports** | **~110** |
+| **Plus growth to ~130 people** | **~135 → three 48-port switches** |
+
+- **PoE budget, not port count, often picks the switch.** Six access points plus room
+  and booth devices plus access control lands near **500 W** of simultaneous draw here,
+  and a 48-port switch's PoE budget varies by more than a factor of two between models
+  at the same port count. Specify the watts, not the ports.
+- **Uplink and stacking are the under-specified path.** Access-layer port count is easy
+  to get right because it is easy to count. The path from access to core is not counted
+  by anything and is where the design gets quietly capped.
+
+### Requirements to specify, in criteria
+
+- **Switching:** PoE budget in watts under simultaneous load · multi-gig access ports
+  for AP-facing drops · uplink capacity sized past the access layer · L3 at the
+  aggregation point if segments must route locally · 802.1X support, because
+  [network authentication is an identity decision](cross-cutting/identity-iam.md).
+- **Wireless:** current-generation radios · per-SSID VLAN mapping · client isolation on
+  guest · controller or cloud management that one person can operate.
+- **Both:** management interfaces reachable only from the management segment · firmware
+  support life stated in years, since it decides when this becomes someone's project
+  again.
+
+*As of 2026, current-generation access points want PoE++ (802.3bt) and a 2.5GbE
+access port; a design specifying PoE+ (802.3at) and 1GbE ports will meet the criteria
+above and still constrain the radios it powers. That sentence is the part of this
+section with a short shelf life — the criteria around it are not.*
+
+**Where the wireless figures come from.** This section's radio arithmetic is 🧭 — drawn
+from published vendor engineering guidance and checked for internal consistency, not
+from having designed and then lived with an office wireless deployment. See
+[`site-network-design.md`](cross-cutting/site-network-design.md#honest-boundaries) for
+the boundary stated in full.
 
 ## Reference build
 
-⏳ **Not written yet.** When it exists it is a dated table and nothing else, replaceable
-whole without touching a word of prose elsewhere in this file.
+⏳ **Still not written, and the entry condition explains why.** It gets written when a
+build-out step needs it — and **no step asks for a model**. Steps 01, 02 and 04 ask for
+sizing numbers and for a hardware *policy* (how many laptop models to support); none of
+them asks which switch. The criteria above answer every question the scenario actually
+poses.
 
 **Entry condition, and it is a hard one.** Every line here must survive the question
 **could someone buy from this?** A switch model, a port count, an access point count all
 pass. How a protocol behaves does not — that belongs somewhere else and this file stays
 out of it.
+
+When it is written it is a dated table and nothing else, replaceable whole without
+touching a word of prose elsewhere in this file.
+
 
 ## Cost shape
 
