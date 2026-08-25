@@ -35,7 +35,7 @@ bidirectional switcher, so they're spelled out below.
    cmdlets, and load-bearing jargon stay English inside Chinese prose — e.g. Exchange
    Online, Entra, Conditional Access, break-glass, Message Trace, `AccessDenied`,
    `ThrottlingException`, IAM, security group, NACL, SCP, `Connect-ExchangeOnline`.
-   Translate the *prose*, keep the *terms*. Preserve ✋/🧗 markers and bold emphasis.
+   Translate the *prose*, keep the *terms*. Preserve ⚒️/🧭 markers and bold emphasis.
 
 4. **Mermaid: translate node text to plain Chinese words** (mindmap nodes take no
    parentheses/punctuation — same rule as [`author-module`](../author-module/SKILL.md)).
