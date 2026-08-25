@@ -89,7 +89,7 @@ flowchart LR
 
 🔨 **hands-on depth.** The triage instincts, the contention-metric literacy (CPU
 ready, ballooning, datastore latency), the maintenance-mode-and-evacuate rhythm, the
-snapshot discipline, and the restore-test habit are production experience — AMS-region
+snapshot discipline, and the restore-test habit are production experience — regional
 vCenter administration, VCP6-DCV/NV. This is the operating discipline the rest of the
 repo carries onto other platforms. The only 🧭: the **newest vSphere 8 tooling**
 (Lifecycle Manager images, vROps/Aria specifics) and **post-Broadcom licensing** —
