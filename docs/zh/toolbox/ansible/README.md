@@ -8,9 +8,9 @@
 
 | Role | 修什么 | 配对脚本 |
 | --- | --- | --- |
-| [`baseline_hardening`](roles/baseline_hardening/) | SSH 姿态、umask、sysctl、持久化 journald（逐项开关）| [`baseline-check`](../../baseline-check/) |
-| [`patch`](roles/patch/) | 应用待更新（apt/dnf）+ reboot 编排 | [`patch-report`](../../patch-report/) |
-| [`user_lifecycle`](roles/user_lifecycle/) | 声明式用户：present / disabled（锁定，默认不删）| [`user-lifecycle`](../../user-lifecycle/) |
+| [`baseline_hardening`](roles/baseline_hardening/) | SSH 姿态、umask、sysctl、持久化 journald（逐项开关）| [`baseline-check`](../baseline-check/) |
+| [`patch`](roles/patch/) | 应用待更新（apt/dnf）+ reboot 编排 | [`patch-report`](../patch-report/) |
+| [`user_lifecycle`](roles/user_lifecycle/) | 声明式用户：present / disabled（锁定，默认不删）| [`user-lifecycle`](../user-lifecycle/) |
 
 ## 约定（工具箱章程六条，应用到 Ansible）
 

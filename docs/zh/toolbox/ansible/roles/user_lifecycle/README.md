@@ -1,6 +1,6 @@
 # role: user_lifecycle
 
-声明式用户：定义期望状态，role 收敛到它。[`user-lifecycle`](../../../../../toolbox/user-lifecycle/)
+声明式用户：定义期望状态，role 收敛到它。[`user-lifecycle`](../../../user-lifecycle/)
 脚本的 Ansible 对应物，同样的法则——**停用 ≠ 删除**。
 
 ## `users` 变量

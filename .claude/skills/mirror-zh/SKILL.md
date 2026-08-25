@@ -49,17 +49,33 @@ bidirectional switcher, so they're spelled out below.
    ```
    Then a `---`, then the translated thesis blockquote.
 
-6. **Cross-links point BACK to the English canonical** (the zh versions usually don't
-   exist). Compute the climb to repo root, then append the English path.
-   **Depth cheat-sheet** (this is where mistakes happen):
+6. **Cross-links: first check whether the target is itself mirrored, then pick a branch.**
 
-   | Mirror lives at | Climb to root | Example link to `cross-cutting/x.md` |
+   **Target has a zh mirror** (`docs/zh/<target>` exists — whole subtrees are mirrored
+   now, all of `toolbox/` among them): link to the mirror. Inside `docs/zh/` the tree
+   has the same shape as English, so the link is **byte-identical to the English one**.
+   Add nothing; there is nothing to climb.
+
+   **Target has no mirror**: link BACK to the English canonical — climb to repo root,
+   then append the English path. One `../` per directory segment between the mirror and
+   the root, and `docs/zh/` is already two of them:
+
+   | Mirror lives at | Segments | Climb to root |
    | --- | --- | --- |
-   | `docs/zh/cross-cutting/X.md` | `../../../` | `../../../cross-cutting/x.md` |
-   | `docs/zh/platforms/aws/X.md` | `../../../../` | `../../../../cross-cutting/x.md` |
-   | `docs/zh/README.md` | `../../` | `../../cross-cutting/x.md` |
+   | `docs/zh/README.md` | 2 | `../../` |
+   | `docs/zh/cross-cutting/X.md` | 3 | `../../../` |
+   | `docs/zh/platforms/aws/X.md` | 4 | `../../../../` |
+   | `docs/zh/toolbox/ansible/roles/patch/X.md` | 6 | `../../../../../../` |
 
-   Rule: one `../` per directory segment between the mirror and repo root.
+   Count the segments or measure the climb — don't read it off the table:
+   `python3 -c "import os;print(os.path.relpath('.','docs/zh/a/b/c'))"`. The table
+   can't hold every depth, and the depths it omits are where this has actually broken.
+
+   > **How it broke once (2026-08-24, 13 dead links).** Both branches were off by
+   > exactly one `../`, in *opposite* directions: targets that were mirrored got a
+   > `../` added, pushing the link out of `docs/zh/`; targets that weren't got one too
+   > few, landing in `docs/` instead of the repo root. One constant, two symptoms —
+   > which is why "the depth is off" is not a specific enough diagnosis to act on.
 
 7. **Make it bidirectional — add the switcher to the English source.** The repo
    convention is that a doc carries a `🌐` switcher **only once its mirror exists**.
@@ -80,8 +96,17 @@ bidirectional switcher, so they're spelled out below.
 
 ## Verify (don't skip)
 
-- **Every relative link resolves** — from each edited file's directory, confirm the
-  target exists (`[ -e <path> ]`). The depth math is the #1 source of dead links.
+- **Every relative link resolves** — run the checker; don't spot-check by hand:
+
+  ```
+  python3 .claude/skills/mirror-zh/check_links.py
+  ```
+
+  It resolves every relative link in the repo, prints how many it checked, lists each
+  dead one together with where that target actually sits on disk, and exits 1 if any
+  are dead. Read the count, not just the verdict: `0 dead` out of 4 links and `0 dead`
+  out of 1403 are different results. A hand check of the file you just edited also
+  can't see the links you broke in the file you edited an hour ago.
 - **Mermaid validates** (see step 4).
 - **The mirror is complete** — same sections as the English source, nothing dropped.
 
@@ -98,6 +123,7 @@ bidirectional switcher, so they're spelled out below.
   so); a *partial* one that silently drops sections is not.
 - **Terms in English, prose in Chinese** — don't "translate" `AccessDenied` or
   `security group`.
-- **Links go to the English canonical**, never to a zh sibling that doesn't exist.
+- **Link to the zh mirror where one exists, to the English canonical where it doesn't** —
+  never to a zh sibling that isn't there. Check which case you're in (step 6).
 - Run the link check before calling it done — dead relative links are the failure
   mode this skill exists to prevent.

@@ -1,7 +1,7 @@
 # role: user_lifecycle
 
 Declarative users: define the desired state, the role converges to it. The
-Ansible counterpart of the [`user-lifecycle`](../../user-lifecycle/) script,
+Ansible counterpart of the [`user-lifecycle`](../../../user-lifecycle/) script,
 same law — **disabled ≠ deleted**.
 
 ## The `users` variable

@@ -2,7 +2,7 @@
 
 Applies pending updates on apt or dnf systems, then reports — or, if you ask —
 acts on a required reboot. The execution half of
-[`patch-report`](../../patch-report/).
+[`patch-report`](../../../patch-report/).
 
 ## Variables (see [`defaults/main.yml`](defaults/main.yml))
 

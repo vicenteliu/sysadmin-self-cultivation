@@ -1,9 +1,9 @@
 # role: baseline_hardening
 
-修复 [`baseline-check`](../../../../../toolbox/baseline-check/) 审计的项——SSH 姿态、
+修复 [`baseline-check`](../../../baseline-check/) 审计的项——SSH 姿态、
 默认 umask、sysctl 基线、持久化 journald。每项都是开关；任何可能把你锁在外面的项默认**关闭**。
 
-## 变量（见 [`defaults/main.yml`](../../../../../toolbox/ansible/roles/baseline_hardening/defaults/main.yml)）
+## 变量（见 [`defaults/main.yml`](../../../../../../toolbox/ansible/roles/baseline_hardening/defaults/main.yml)）
 
 | 变量 | 默认 | 说明 |
 | --- | --- | --- |

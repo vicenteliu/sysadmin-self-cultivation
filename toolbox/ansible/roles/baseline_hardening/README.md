@@ -1,6 +1,6 @@
 # role: baseline_hardening
 
-Remediates the items [`baseline-check`](../../baseline-check/) audits — SSH
+Remediates the items [`baseline-check`](../../../baseline-check/) audits — SSH
 posture, default umask, a sysctl baseline, and persistent journald. Every item
 is a switch; anything that can lock you out defaults to **off**.
 

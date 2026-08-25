@@ -1,9 +1,9 @@
 # role: patch
 
 在 apt 或 dnf 系统上应用待更新，然后报告——或者按你要求，处理需要的重启。
-[`patch-report`](../../../../../toolbox/patch-report/) 的执行侧。
+[`patch-report`](../../../patch-report/) 的执行侧。
 
-## 变量（见 [`defaults/main.yml`](../../../../../toolbox/ansible/roles/patch/defaults/main.yml)）
+## 变量（见 [`defaults/main.yml`](../../../../../../toolbox/ansible/roles/patch/defaults/main.yml)）
 
 | 变量 | 默认 | 说明 |
 | --- | --- | --- |

@@ -5,7 +5,7 @@
 
 用恢复来证明备份。把归档解压进一个用完即弃的临时目录，清点解出的内容，并——加
 `--against` 时——将恢复结果与源目录逐字节比对。一个从未被恢复过的备份是一份指望，
-不是备份（[the-stack lab 04](../../../the-stack/labs/04-backup-not-snapshot/)）。
+不是备份（[the-stack lab 04](../../../../the-stack/labs/04-backup-not-snapshot/)）。
 
 ## 用法
 

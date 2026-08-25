@@ -65,7 +65,7 @@ on-prem discipline of enterprise IP address management (IPAM) spanning every clo
 Second, **"I'll just peer them later"** — you can't, if the ranges overlap, and re-IP-ing live
 subnets is the one multi-cloud decision that's genuinely painful to reverse. Plan non-overlapping
 CIDRs first. See the [multi-cloud support note](../../multi-cloud-support.md) for the full seam
-catalog and [`the-stack/02-network.md`](../../the-stack/02-network.md) for the per-cloud
+catalog and [`the-stack/02-network.md`](../../../the-stack/02-network.md) for the per-cloud
 networking primitives.
 
 ## Teardown
