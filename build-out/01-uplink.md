@@ -69,6 +69,8 @@ factor worth naming.
   what "diverse" has to mean to count
 - [`cross-cutting/incident-response.md`](../cross-cutting/incident-response.md) —
   because the 2am question above is really an on-call question
+- [the reference office's Selection rules](../the-reference-office.md#selection-rules)
+  — the sizing arithmetic, with the reasoning attached rather than a round number
 
 ## Do it
 

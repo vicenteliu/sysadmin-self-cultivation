@@ -71,6 +71,9 @@ that is physically yours.
   [`operations.md`](../platforms/self-host/operations.md) — the 🔨 material, from
   running fleets rather than commissioning buildings
 - [`the-stack/labs/01-failure-domains/`](../the-stack/labs/01-failure-domains/)
+- [the reference office's Selection rules](../the-reference-office.md#selection-rules)
+  — how many access points and switch ports the floor above actually implies, since
+  the cable and riser decisions here are made before anyone counts them
 
 ## Do it
 

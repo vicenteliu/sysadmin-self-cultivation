@@ -68,6 +68,10 @@ same as letting it change a VLAN.
 
 ## Read deeper
 
+- [`cross-cutting/site-network-design.md`](../cross-cutting/site-network-design.md)
+  — the design decisions behind every question above, in order; and
+  [the reference office's Selection rules](../the-reference-office.md#selection-rules)
+  for the wireless and port arithmetic this step asks for and does not answer
 - [`the-stack/02-network.md`](../the-stack/02-network.md) — the network layer across
   seven platforms
 - [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) — because
