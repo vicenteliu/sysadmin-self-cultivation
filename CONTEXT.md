@@ -48,6 +48,43 @@ _Avoid_: familiar with, exposure, working knowledge, 🧗 (retired — see ADR-0
 Any 🔨 verb attached to 🧭 experience. The failure mode the markers exist to
 prevent; [`honesty-audit`](.claude/skills/honesty-audit/SKILL.md) is what detects it.
 
+### Interview material
+
+**Interview question**:
+A question an interviewer actually asks, paired with **what it probes** — the
+judgement being tested, not the fact being recalled. Lives in
+[`cross-cutting/interview/`](cross-cutting/interview/README.md), grouped by the same
+sections as the matching [skill map](cross-cutting/skills-maps/README.md). A skill-map
+box says *what you can do*; an interview question says *how they check*.
+_Avoid_: quiz question, flashcard, prep question
+
+**Answer**:
+What follows a question, and **its shape is decided by the section's marker** — a
+🔨 section answers with a [work example](#), a 🧭 section answers with the honest-ramp
+framing. It is evidence for the marker, never a script to recite. Note the reversal:
+[ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)
+used *finished answer* for the thing not to write;
+[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md) reversed it.
+_Avoid_: model answer, sample answer, script, canned response
+
+**Work example**:
+Something that actually happened at work, told anonymised — scale and shape, never
+place or party, and no reconstructible timeline. It attaches to a 🔨 section and is
+what makes that marker checkable rather than asserted. **Not a lab** (synthetic
+and runnable — see below), and **not the reference office** (a fiction the repo reasons against).
+_Avoid_: war story, anecdote, case study, experience
+
+### Retrieval
+
+**Retrieval index**:
+The generated `docs/index.json` — one machine-readable record per file, built from
+front-matter by `docs/build-index.py`, for an agent to search without opening
+anything. **"Index" is three things here and only this one is the retrieval index:**
+[`CONTENTS.md`](CONTENTS.md) is the human table of contents, a directory `README.md`
+is a local index for its folder, and this is neither.
+_Avoid_: catalog (that is `toolbox/generate/catalog.json`, hand-maintained and
+unrelated), manifest, search index
+
 ### Tiers, in a skill map
 
 **Core / Working / Depth**:
