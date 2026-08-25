@@ -103,6 +103,15 @@ See [`cross-cutting/`](cross-cutting/).
 | observability | → [`the-stack/06`](the-stack/06-observability.md) | ✅ in The Stack |
 | security-compliance | → [`the-stack/07`](the-stack/07-security.md) | ✅ in The Stack |
 
+**Skill maps** — the same material as a checkable competency list, transposed from
+the platform maps: one theme across all seven platforms, tiered by how far each
+skill travels. Markers sit on sections here, not on the file.
+
+| Map | What it is | Status |
+| --- | --- | --- |
+| [`skills-maps/networking.md`](cross-cutting/skills-maps/networking.md) | 11 sections / 63 boxes; 4 point at something runnable | ✅ |
+| [`skills-maps/identity.md`](cross-cutting/skills-maps/identity.md) | 10 sections / 58 boxes; 5 point at something runnable | ✅ |
+
 ---
 
 ## VI. Toolbox — run it

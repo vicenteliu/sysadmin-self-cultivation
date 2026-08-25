@@ -108,13 +108,18 @@ answers "how do accounts get created and destroyed."
 
 ## The admin discipline (what to be able to do)
 
-- Create a **scoped role/policy** for a specific task and explain why it's minimal.
-- Design **group-based** access for humans (never per-user grants at scale).
-- Give a workload a **managed identity** — no secret on the box.
-- Automate **joiner/mover/leaver** through the directory API and/or **SCIM**.
-- Stand up **SSO** for an app and know whether it's SAML or OIDC, and why.
-- Run an **access review**: find stale accounts and over-broad grants, and prove it.
-- Read a **denied request** (CloudTrail / Azure Activity Log / audit log) and explain the deny.
+Seven things, and the rest is vocabulary: create a **scoped** role or policy and
+explain why it is minimal; design **group-based** access for humans, never
+per-user grants at scale; give a workload a **managed identity** so no secret
+sits on the box; automate **joiner/mover/leaver** through the directory API or
+**SCIM**, *leaver* included; stand up **SSO** and know whether it is SAML or OIDC
+and why; run an **access review** that produces evidence rather than an
+assertion; and read a **denied request** well enough to name which rule denied
+it, at which scope.
+
+The checkable version of all of it — 58 boxes across ten sections, tiered by how
+far each skill travels rather than by platform — is
+[`skills-maps/identity.md`](skills-maps/identity.md).
 
 ## The AI-assisted ramp (identity flavor)
 

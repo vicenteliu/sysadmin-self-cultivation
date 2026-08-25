@@ -73,6 +73,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Labs | **3-lab CLI arc per platform** (7×3 = 21 labs) — scoped-identity inventory → network+compute from code → secure-defaults/signature-drill, each with real command-line examples (CLI over GUI) | ✅ written; AWS 01/02 runnable |
 | Platform depth | **vSphere + self-host** architecture/operations/automation trios — the two ⚒️ platforms now match AWS/Azure/GCP depth (written from production) | ✅ written |
 | Platform depth | **OCI + OpenStack** architecture/operations/automation trios (🧭 ramps). **All seven platforms now carry the full trio** — platform depth symmetric | ✅ written |
+| Skill maps | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/) — the platform skill maps **transposed**: one theme across all seven platforms, tiered by transferability rather than by cloud. [networking](cross-cutting/skills-maps/networking.md) (63 boxes) + [identity](cross-cutting/skills-maps/identity.md) (58 boxes); the two densest demand clusters first | ✅ |
 | **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)

@@ -25,6 +25,16 @@ admin's existing depth (Linux, networking, identity, automation) pays off the mo
 | [`working-with-security.md`](working-with-security.md) | The operator's half of security: working with InfoSec/SOC + MITRE ATT&CK awareness (harden the right things), honest ⚒️ ops-security vs 🧭 specialist. | ✅ |
 | [`cost.md`](cost.md) | Cost as a first-class operational control: budgets, alarms, right-sizing, the "forgotten GPU instance" problem. | ✅ |
 
+**Skill maps** — the [platform skill maps](../platforms/aws/skills-map.md)
+transposed: one theme cut across every platform, tiered by how far each skill
+travels rather than by which cloud it belongs to. See
+[`skills-maps/`](skills-maps/README.md).
+
+| Map | Covers | Markers |
+| --- | --- | --- |
+| [`skills-maps/networking.md`](skills-maps/networking.md) | Addressing, routing, L2/overlay, DNS, DHCP, filtering rules, load balancing, TLS, remote access, flow analysis, inter-cloud — 63 boxes | ⚒️ ×9 · 🧭 ×2 |
+| [`skills-maps/identity.md`](skills-maps/identity.md) | Directory, AuthN/AuthZ, federation & SSO, running an IdP, SCIM/JML, RBAC, conditional access, privileged access, access review, workload identity — 58 boxes | ⚒️ ×8 · 🧭 ×2 |
+
 **Covered by layer in [`the-stack/`](../the-stack/)** — cross-linked, not
 duplicated (these read more naturally as layers than as standalone themes):
 

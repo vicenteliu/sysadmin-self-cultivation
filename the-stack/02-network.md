@@ -209,17 +209,18 @@ flowchart TD
 
 ## The admin discipline (what to be able to do)
 
-- Stand up a **three-tier network from code** (public LB tier, private app tier,
-  isolated data tier) on any platform handed to you.
-- Explain **stateful vs. stateless** filtering and show where each platform hides
-  the stateless layer.
-- Run the **debug ladder** above without skipping rungs, and read a **flow log**
-  to prove which rung it was.
-- Write an **IP plan** that survives five years: non-overlapping RFC1918 across
-  sites and clouds, room to grow, documented before the first subnet exists —
-  merging two overlapping 10.0.0.0/16s later is a project with a name.
-- Configure **split-horizon DNS** deliberately, not accidentally.
-- Read an **egress bill** and say where the gigabytes crossed a billing boundary.
+Six things, and the rest is detail: stand up a **three-tier network from code**
+on any platform handed to you; explain **stateful vs. stateless** filtering and
+show where each platform hides the stateless layer; run the **debug ladder**
+above without skipping rungs, and read a **flow log** to prove which rung it was;
+write an **IP plan that survives five years** before the first subnet exists —
+merging two overlapping `10.0.0.0/16`s later is a project with a name; configure
+**split-horizon DNS** deliberately rather than accidentally; and read an **egress
+bill** well enough to say where the gigabytes crossed a billing boundary.
+
+The checkable version of all of it — 63 boxes across eleven sections, tiered by
+how far each skill travels rather than by platform — is
+[`cross-cutting/skills-maps/networking.md`](../cross-cutting/skills-maps/networking.md).
 
 ## The AI-assisted ramp (network flavor)
 
