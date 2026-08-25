@@ -115,6 +115,18 @@ already know. Numbered Rule 2 of [`ai-workflow/`](ai-workflow/how-i-use-ai-to-le
 It belongs to 🧭, which is why ⚓ was rejected as a depth marker.
 _Avoid_: using "anchor" to mean established expertise
 
+**Altitude**:
+How high above the mechanism a piece of work sits. Two uses, related and distinct.
+**Tooling altitude** — which layer you drive an API from (CLI, SDK, IaC), where
+reaching for the wrong one is the recurring mistake the `automation.md` companions
+name. **Content altitude** — where a document stops on purpose, which is an editorial
+rule rather than a description: [`the-stack/02`](the-stack/02-network.md) stops at
+decisions somebody must make and own, and deliberately excludes protocol mechanics,
+because *being able to run a network and being able to say what the wire is doing are
+different abilities.* A section that drifts below its stated altitude is a defect even
+when every sentence in it is true.
+_Avoid_: level, depth (that is the 🔨 claim), layer (that is `the-stack/`)
+
 **Gap**:
 Something [`build-out/GAPS.md`](build-out/GAPS.md) records: a step in the
 100-person-office scenario that *should* point at a runnable lab or a
