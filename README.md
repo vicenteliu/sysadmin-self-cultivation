@@ -79,6 +79,7 @@ mindmap
       kubernetes
       cost
       endpoint
+      skill maps - one theme across all seven
     Toolbox - run it
     Build-out - a route across the six
       one 100-person office, first day to open
@@ -92,11 +93,16 @@ The distinctive one is **The Stack**: it reads the stack *bottom-up*, comparing 
 seven platforms at **every layer** — written from the machine room up, not the console
 down.
 
+Cross-cutting carries one extra view rather than an extra axis:
+[`skills-maps/`](cross-cutting/skills-maps/README.md) **transposes** the per-platform
+skill maps — one theme cut across all seven platforms, as boxes you tick, tiered by
+how far each skill travels rather than by which cloud it belongs to.
+
 ## How to read this
 
 | I want to… | Start at |
 | --- | --- |
-| **See the whole shape** | [`CONTENTS.md`](CONTENTS.md) — every module, all four axes, one page |
+| **See the whole shape** | [`CONTENTS.md`](CONTENTS.md) — every module, all six axes plus the route, one page |
 | **Understand the philosophy** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
 | **Go deep on one platform** | [`platforms/`](platforms/) — **AWS is the worked example**, read it end to end |
 | **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
@@ -104,21 +110,25 @@ down.
 | **Check what I can actually do** | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/README.md) — one theme across all seven platforms, tiered by how far the skill travels |
 | **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
+| **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — three decisions and the options they beat |
 | **Take runnable tools with me** | [`toolbox/`](toolbox/) — ten find/audit scripts (incl. a VMware→Proxmox virtualization quartet), three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
 | **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — eight Agent Skills: five for the method (ramp · audit · author · lab · mirror), three that drive the toolbox |
 
 ## What's built
 
-Everything the [roadmap](ROADMAP.md) planned is written, with **twelve runnable,
+Everything the [roadmap](ROADMAP.md) planned is written, with **twenty runnable,
 self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**,
-**eight Agent Skills**, and a **runnable toolbox** (ten scripts, three Ansible
-remediation roles, a per-shop pack [generator](toolbox/generate/)); what remains is
-more runnable labs, a full Chinese mirror ([`docs/zh/`](docs/zh/README.md) is
-started), and demand-first deepening.
+**two theme skill maps**, **eight Agent Skills**, and a **runnable toolbox** (ten
+scripts, three Ansible remediation roles, a per-shop pack
+[generator](toolbox/generate/)); what remains is more runnable labs — the platform lab
+arcs are specced well ahead of what is built, and the table below says which — a fuller
+Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 25 pages so far), and
+demand-first deepening.
 
 - **Foundations & method** — [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) (Linux + scripting) ✅
 - **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + runnable [failure-domains](the-stack/labs/01-failure-domains/) and [backup-drill](the-stack/labs/04-backup-not-snapshot/) labs ✅
 - **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [working with security](cross-cutting/working-with-security.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
+- **Skill maps (check yourself)** — the per-platform maps [transposed](cross-cutting/skills-maps/README.md): [networking](cross-cutting/skills-maps/networking.md) (11 sections / 63 boxes) and [identity](cross-cutting/skills-maps/identity.md) (10 / 58), one theme across all seven platforms, tiered by how far each skill travels — so an unticked **Core** box is a gap everywhere, not on one cloud ✅
 - **Support notes (break-fix craft)** — for the surfaces you *inherit and support*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [Multi-cloud](cross-cutting/multi-cloud-support.md) — each with the recurring tickets, the cross-lane experience gap a strong sysadmin gets wrong, a runnable lab, and a Chinese mirror ✅
 - **Toolbox (run it)** — [charter + conventions](toolbox/README.md) · ten scripts (triage · users · patching · baseline · backup-drill · cidr · a [vSphere→Proxmox virtualization quartet](toolbox/vm-migration-assess/)) · [Ansible remediation roles](toolbox/ansible/) pairing audit→fix · a [per-shop pack generator](toolbox/generate/) — safe-by-default, every tool carries its own `Tested on:` line ✅
 
@@ -126,20 +136,25 @@ started), and demand-first deepening.
 module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**), and **all seven now
 carry the deeper architecture · operations · automation trio**:
 
-| Platform | Module | Arch · Ops · Auto | Labs | Honesty |
-| --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) + iam-deny lab | 🧭 ramp |
-| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) + two-planes lab | 🧭 + Entra/identity ⚒️ |
-| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) + gke-auth lab | 🧭 ramp |
-| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`oci`) + compartment/verb lab | 🧭 ramp |
-| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (PowerCLI) | **⚒️ hands-on depth** (VCP6-DCV/NV) |
-| **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧭 ramp (KVM-adjacent ⚒️) |
-| **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (virsh / ipmitool / ansible) | **⚒️ hands-on depth** (100k+ fleet) |
+| Platform | Module | Arch · Ops · Auto | Lab arc (specced) | Labs built | Honesty |
+| --- | --- | --- | --- | --- | --- |
+| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ ✅ ✅ | 3 (boto3 / Terraform) | **01–02 built**; 03 is a walkthrough · + [iam-deny](platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
+| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ ✅ ✅ | 3 (`az`) | none of the arc · [two-planes](platforms/azure/labs/global-admin-is-not-owner/) stands alone | 🧭 + Entra/identity ⚒️ |
+| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ ✅ ✅ | 3 (`gcloud`) | none of the arc · [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac/) stands alone | 🧭 ramp |
+| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ ✅ ✅ | 3 (`oci`) | none of the arc · [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account/) stands alone | 🧭 ramp |
+| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | 3 (PowerCLI) | — | **⚒️ hands-on depth** (VCP6-DCV/NV) |
+| **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | 3 (`openstack` / DevStack) | — | 🧭 ramp (KVM-adjacent ⚒️) |
+| **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ ✅ ✅ | 3 (virsh / ipmitool / ansible) | — | **⚒️ hands-on depth** (100k+ fleet) |
 
 Two of the seven are labeled **⚒️ hands-on depth** (vSphere and self-host — production
 ground, not a ramp); the rest are honest 🧭 ramps. The labs are **CLI-first** on
 purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
 same surface your automation uses.
+
+**All seven arcs are written; two of the twenty-one are built** (AWS 01–02), alongside
+four standalone drills that sit outside the arcs. The gap gets its own column rather
+than a shared checkmark, because a specced lab is a plan — and the rule in the second
+paragraph of this file applies to the repo's own claims first.
 
 **Agent Skills** — the repo ships eight [`.claude/skills/`](.claude/skills/). Five
 turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
