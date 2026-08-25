@@ -14,8 +14,8 @@ fast**. AI now compresses that ramp from months to days — *if* you already hav
 judgment to steer it and catch it when it's wrong.
 
 This repo writes that judgment down: across **seven platforms**, down **every layer of
-the stack**, behind one strict rule — **✋ hands-on depth** is claimed only where it's
-real; everything else is a **🧗 verified ramp**, mapped and checked, never bluffed.
+the stack**, behind one strict rule — **⚒️ hands-on depth** is claimed only where it's
+real; everything else is a **🧭 verified ramp**, mapped and checked, never bluffed.
 
 ## The one idea: three moves
 
@@ -127,22 +127,22 @@ carry the deeper architecture · operations · automation trio**:
 
 | Platform | Module | Arch · Ops · Auto | Labs | Honesty |
 | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) + iam-deny lab | 🧗 ramp |
-| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) + two-planes lab | 🧗 + Entra/identity ✋ |
-| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) + gke-auth lab | 🧗 ramp |
-| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`oci`) + compartment/verb lab | 🧗 ramp |
-| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (PowerCLI) | **✋ hands-on depth** (VCP6-DCV/NV) |
-| **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧗 ramp (KVM-adjacent ✋) |
-| **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (virsh / ipmitool / ansible) | **✋ hands-on depth** (100k+ fleet) |
+| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ ✅ ✅ | ✅ 3-lab arc — **2 runnable** (boto3 + Terraform) + iam-deny lab | 🧭 ramp |
+| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`az`) + two-planes lab | 🧭 + Entra/identity ⚒️ |
+| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`gcloud`) + gke-auth lab | 🧭 ramp |
+| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`oci`) + compartment/verb lab | 🧭 ramp |
+| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (PowerCLI) | **⚒️ hands-on depth** (VCP6-DCV/NV) |
+| **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (`openstack` / DevStack) | 🧭 ramp (KVM-adjacent ⚒️) |
+| **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc (virsh / ipmitool / ansible) | **⚒️ hands-on depth** (100k+ fleet) |
 
-Two of the seven are labeled **✋ hands-on depth** (vSphere and self-host — production
-ground, not a ramp); the rest are honest 🧗 ramps. The labs are **CLI-first** on
+Two of the seven are labeled **⚒️ hands-on depth** (vSphere and self-host — production
+ground, not a ramp); the rest are honest 🧭 ramps. The labs are **CLI-first** on
 purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
 same surface your automation uses.
 
 **Agent Skills** — the repo ships eight [`.claude/skills/`](.claude/skills/). Five
 turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
-platform, honestly), **honesty-audit** (classify claims ✋/🧗/overclaim),
+platform, honestly), **honesty-audit** (classify claims ⚒️/🧭/overclaim),
 **author-module** (write a new note — including a **support note** — in the repo's
 voice, research-grounded), **runnable-lab** (turn a concept into a self-verifying
 drill), and **mirror-zh** (mirror a doc into `docs/zh/` Chinese). Three are
