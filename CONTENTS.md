@@ -119,6 +119,15 @@ skill travels. Markers sit on sections here, not on the file.
 | [`skills-maps/networking.md`](cross-cutting/skills-maps/networking.md) | 11 sections / 63 boxes; 4 point at something runnable | ✅ |
 | [`skills-maps/identity.md`](cross-cutting/skills-maps/identity.md) | 10 sections / 58 boxes; 5 point at something runnable | ✅ |
 
+**Interview maps** — the same sections from the interviewer's side. Each question
+carries what it probes and an answer whose shape follows the section's marker
+([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)).
+
+| Map | What it is | Status |
+| --- | --- | --- |
+| [`interview/networking.md`](cross-cutting/interview/networking.md) | 21 questions / 11 sections; 4 answers still ⏳ | ✅ |
+| [`interview/identity.md`](cross-cutting/interview/identity.md) | 19 questions / 10 sections; 2 answers still ⏳ | ✅ |
+
 ---
 
 ## VI. Toolbox — run it

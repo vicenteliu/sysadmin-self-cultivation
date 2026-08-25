@@ -57,7 +57,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Layer series | **the-stack 01→07 complete** — 5 bottom-up layers + observability + security (two cross-cutting caps) | ✅ |
 | Layer lab | [`the-stack/labs/04-backup-not-snapshot/`](the-stack/labs/04-backup-not-snapshot/) — runnable, pure-Python "replication is not backup" drill | ✅ |
 | Runnable labs | 3 more pure-local, self-verifying labs (exit 0 = lessons held): [failure-domains](the-stack/labs/01-failure-domains/) (Python), [idempotence-drill](foundations/labs/idempotence-drill/) (bash), [ci-cd-pipeline](cross-cutting/labs/ci-cd-pipeline/) (tested app + real GitHub Actions workflow) | ✅ |
-| Agent Skills | 5 [`.claude/skills/`](.claude/skills/) packaging the repo's method: platform-ramp · honesty-audit · author-module · runnable-lab · mirror-zh — plus the three toolbox-driving skills below, eight in total | ✅ |
+| Agent Skills | 6 [`.claude/skills/`](.claude/skills/) packaging the repo's method: platform-ramp · honesty-audit · author-module · runnable-lab · mirror-zh · interview-drill — plus the three toolbox-driving skills below, nine in total | ✅ |
 | Route | [`build-out/`](build-out/) — one 100-person office end to end, **16 of 16 steps**; carries sequence and dependency, points into the axes for substance. Dependency graph verified acyclic + symmetric; 94% of steps hook a runnable lab or tool; [`GAPS.md`](build-out/GAPS.md) records what the scenario found missing ([ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)) | ✅ |
 | Framework | [`CONTENTS.md`](CONTENTS.md) + opening for every planned module (foundations/endpoint/iac/saas/k8s/cost/gcp) | ✅ |
 | Foundations | [`foundations/`](foundations/) — Linux mental model, debugging reflex, scripting, honest scope (Tier-3 #10) | ✅ written |
@@ -81,6 +81,9 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Platform depth | **vSphere + self-host** architecture/operations/automation trios — the two 🔨 platforms now match AWS/Azure/GCP depth (written from production) | ✅ written |
 | Platform depth | **OCI + OpenStack** architecture/operations/automation trios (🧭 ramps). **All seven platforms now carry the full trio** — platform depth symmetric | ✅ written |
 | Skill maps | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/) — the platform skill maps **transposed**: one theme across all seven platforms, tiered by transferability rather than by cloud. [networking](cross-cutting/skills-maps/networking.md) (63 boxes) + [identity](cross-cutting/skills-maps/identity.md) (58 boxes); the two densest demand clusters first | ✅ |
+| Interview | [`cross-cutting/interview/`](cross-cutting/interview/) — the skill maps transposed again, from the interviewer's side: [networking](cross-cutting/interview/networking.md) (21 Q) + [identity](cross-cutting/interview/identity.md) (19 Q). Answer shape set by the section marker ([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)); six 🔨 answers still carry ⏳ | ✅ |
+| AI method | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — the steady state rather than the ramp: triage → change → incident → write-up → sweep, each naming what to hand over and where to take it back | ✅ |
+| Retrieval | front-matter on 156 files as the single source + [`docs/build-index.py`](docs/build-index.py) → [`docs/index.json`](docs/index.json) (191 records, mirrors derived). Agent-facing; idempotent, `--check` reports staleness | ✅ |
 | **Roadmap** | **all tiered items landed** — every planned module has written content; remaining work is labs + `docs/zh/` mirrors + deepening | ✅ |
 
 ## Build order (demand-driven)

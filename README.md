@@ -108,17 +108,20 @@ how far each skill travels rather than by which cloud it belongs to.
 | **Read the stack by layer** | [`the-stack/`](the-stack/) — physical → security, seven platforms compared |
 | **Learn a transferable skill** | [`cross-cutting/`](cross-cutting/) — identity · IaC · CI/CD · databases · ITSM · web/TLS · incident response · and more |
 | **Check what I can actually do** | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/README.md) — one theme across all seven platforms, tiered by how far the skill travels |
+| **Prepare for the interview** | [`cross-cutting/interview/`](cross-cutting/interview/README.md) — the same sections from the other side: what they ask, what it probes, and the answer |
+| **Use AI on an ordinary Tuesday** | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — triage → change → incident → write-up → sweep, and where you take it back |
 | **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
 | **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — three decisions and the options they beat |
 | **Take runnable tools with me** | [`toolbox/`](toolbox/) — ten find/audit scripts (incl. a VMware→Proxmox virtualization quartet), three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
-| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — eight Agent Skills: five for the method (ramp · audit · author · lab · mirror), three that drive the toolbox |
+| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — nine Agent Skills: six for the method (ramp · audit · author · lab · mirror · drill), three that drive the toolbox |
+| **Let an agent search it** | [`docs/index.json`](docs/index.json) — one record per file, generated from front-matter by [`docs/build-index.py`](docs/build-index.py) |
 
 ## What's built
 
 Everything the [roadmap](ROADMAP.md) planned is written, with **twenty runnable,
 self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**,
-**two theme skill maps**, **eight Agent Skills**, and a **runnable toolbox** (ten
+**two theme skill maps**, **two interview maps**, **nine Agent Skills**, and a **runnable toolbox** (ten
 scripts, three Ansible remediation roles, a per-shop pack
 [generator](toolbox/generate/)); what remains is more runnable labs — the platform lab
 arcs are specced well ahead of what is built, and the table below says which — a fuller
@@ -129,6 +132,8 @@ demand-first deepening.
 - **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + runnable [failure-domains](the-stack/labs/01-failure-domains/) and [backup-drill](the-stack/labs/04-backup-not-snapshot/) labs ✅
 - **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [working with security](cross-cutting/working-with-security.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
 - **Skill maps (check yourself)** — the per-platform maps [transposed](cross-cutting/skills-maps/README.md): [networking](cross-cutting/skills-maps/networking.md) (11 sections / 63 boxes) and [identity](cross-cutting/skills-maps/identity.md) (10 / 58), one theme across all seven platforms, tiered by how far each skill travels — so an unticked **Core** box is a gap everywhere, not on one cloud ✅
+- **Interview maps (the other side of the table)** — [networking](cross-cutting/interview/networking.md) (21 questions) and [identity](cross-cutting/interview/identity.md) (19), paired section-for-section with the skill maps. The answer's shape follows the section's marker: 🔨 answers with a real anonymised example, 🧭 with the honest ramp ([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)) ✅
+- **Retrieval (for agents)** — [`docs/index.json`](docs/index.json): 191 records generated from front-matter, with the Chinese mirrors derived from their English source rather than maintained twice ✅
 - **Support notes (break-fix craft)** — for the surfaces you *inherit and support*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [Multi-cloud](cross-cutting/multi-cloud-support.md) — each with the recurring tickets, the cross-lane experience gap a strong sysadmin gets wrong, a runnable lab, and a Chinese mirror ✅
 - **Toolbox (run it)** — [charter + conventions](toolbox/README.md) · ten scripts (triage · users · patching · baseline · backup-drill · cidr · a [vSphere→Proxmox virtualization quartet](toolbox/vm-migration-assess/)) · [Ansible remediation roles](toolbox/ansible/) pairing audit→fix · a [per-shop pack generator](toolbox/generate/) — safe-by-default, every tool carries its own `Tested on:` line ✅
 

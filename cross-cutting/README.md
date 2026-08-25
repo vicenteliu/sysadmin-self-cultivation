@@ -42,6 +42,15 @@ travels rather than by which cloud it belongs to. See
 | [`skills-maps/networking.md`](skills-maps/networking.md) | Addressing, routing, L2/overlay, DNS, DHCP, filtering rules, load balancing, TLS, remote access, flow analysis, inter-cloud — 63 boxes | 🔨 ×9 · 🧭 ×2 |
 | [`skills-maps/identity.md`](skills-maps/identity.md) | Directory, AuthN/AuthZ, federation & SSO, running an IdP, SCIM/JML, RBAC, conditional access, privileged access, access review, workload identity — 58 boxes | 🔨 ×8 · 🧭 ×2 |
 
+**Interview maps** — the [skill maps](skills-maps/README.md) transposed once more, from
+the other side of the table: what gets asked, what each question probes, and the answer,
+whose shape follows the section's marker. See [`interview/`](interview/README.md).
+
+| Map | Pairs with | Questions |
+| --- | --- | --- |
+| [`interview/networking.md`](interview/networking.md) | [`skills-maps/networking.md`](skills-maps/networking.md) | 21 across 11 sections |
+| [`interview/identity.md`](interview/identity.md) | [`skills-maps/identity.md`](skills-maps/identity.md) | 19 across 10 sections |
+
 **Covered by layer in [`the-stack/`](../the-stack/)** — cross-linked, not
 duplicated (these read more naturally as layers than as standalone themes):
 
