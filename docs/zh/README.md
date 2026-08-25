@@ -97,7 +97,7 @@ mindmap
 
 ## 已建成
 
-roadmap 计划的都写完了，含**十二个可跑、自验证的 lab**（退出码 `0` = 教训成立）、**八篇 break-fix support 笔记**、**八个 Agent Skill**、和一个**能直接跑的工具箱**（十个脚本、三个 Ansible 修复 roles、一个按环境打包的[生成器](toolbox/generate/)）；剩下的是更多可跑 lab、完整中文镜像（本页已起步），以及按需求深化。
+roadmap 计划的都写完了，含**二十个可跑、自验证的 lab**（退出码 `0` = 教训成立）、**八篇 break-fix support 笔记**、**两份[主题技能图](../../cross-cutting/skills-maps/README.md)**、**八个 Agent Skill**、和一个**能直接跑的工具箱**（十个脚本、三个 Ansible 修复 roles、一个按环境打包的[生成器](toolbox/generate/)）；剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表逐个说明 —— 更完整的中文镜像（本页目前覆盖 25 篇），以及按需求深化。
 
 - **基础与方法** —— [WHY](../../WHY.md) · [操作模型](../../00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/)（Linux + 脚本）✅
 - **The Stack** —— [七层，01→07](../../the-stack/)，每层对比七个平台，+ 可跑的 [失败域](../../the-stack/labs/01-failure-domains/) 和 [备份演练](../../the-stack/labs/04-backup-not-snapshot/) lab ✅
@@ -107,17 +107,19 @@ roadmap 计划的都写完了，含**十二个可跑、自验证的 lab**（退�
 
 **平台** —— The Stack 里对比的七个平台各有一个"端到端运维它"的专门模块（是什么 · 技能图 · AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：
 
-| 平台 | 模块 | 架构·运营·自动化 | Labs | 诚实度 |
-| --- | --- | --- | --- | --- |
-| **[AWS](../../platforms/aws/)**（完整样板） | ✅ · [support 中文镜像](platforms/aws/support.md) | ✅ ✅ ✅ | ✅ 3-lab arc —— **2 个可跑**（boto3 + Terraform） | 🧭 ramp |
-| **[Azure](../../platforms/azure/)** | ✅ · [support 中文镜像](platforms/azure/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc（`az`） | 🧭 + Entra/身份 ⚒️ |
-| **[GCP / GKE](../../platforms/gcp/)** | ✅ · [support 中文镜像](platforms/gcp/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc（`gcloud`） | 🧭 ramp |
-| **[OCI](../../platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ ✅ ✅ | ✅ 3-lab CLI arc（`oci`）+ compartment/verb lab | 🧭 ramp |
-| **[vSphere / vCenter](../../platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc（PowerCLI） | **⚒️ 亲手做过**（VCP6-DCV/NV） |
-| **[OpenStack](../../platforms/openstack/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc（`openstack` / DevStack） | 🧭 ramp（KVM 相邻 ⚒️） |
-| **[self-host / 裸机](../../platforms/self-host/)** | ✅ | ✅ ✅ ✅ | ✅ 3-lab CLI arc（virsh / ipmitool / ansible） | **⚒️ 亲手做过**（10万+ 机群） |
+| 平台 | 模块 | 架构·运营·自动化 | Lab arc（已规范） | 已建成的 lab | 诚实度 |
+| --- | --- | --- | --- | --- | --- |
+| **[AWS](../../platforms/aws/)**（完整样板） | ✅ · [support 中文镜像](platforms/aws/support.md) | ✅ ✅ ✅ | 3 节（boto3 / Terraform） | **01–02 已建**；03 是命令行走查 · 另加 [iam-deny](../../platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
+| **[Azure](../../platforms/azure/)** | ✅ · [support 中文镜像](platforms/azure/support.md) | ✅ ✅ ✅ | 3 节（`az`） | arc 一节未建 · [two-planes](../../platforms/azure/labs/global-admin-is-not-owner/) 是独立 drill | 🧭 + Entra/身份 ⚒️ |
+| **[GCP / GKE](../../platforms/gcp/)** | ✅ · [support 中文镜像](platforms/gcp/support.md) | ✅ ✅ ✅ | 3 节（`gcloud`） | arc 一节未建 · [gke-auth](../../platforms/gcp/labs/gke-iam-vs-rbac/) 是独立 drill | 🧭 ramp |
+| **[OCI](../../platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ ✅ ✅ | 3 节（`oci`） | arc 一节未建 · [compartment/verb](../../platforms/oci/labs/a-compartment-is-not-an-account/) 是独立 drill | 🧭 ramp |
+| **[vSphere / vCenter](../../platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | 3 节（PowerCLI） | —— | **⚒️ 亲手做过**（VCP6-DCV/NV） |
+| **[OpenStack](../../platforms/openstack/)** | ✅ | ✅ ✅ ✅ | 3 节（`openstack` / DevStack） | —— | 🧭 ramp（KVM 相邻 ⚒️） |
+| **[self-host / 裸机](../../platforms/self-host/)** | ✅ | ✅ ✅ ✅ | 3 节（virsh / ipmitool / ansible） | —— | **⚒️ 亲手做过**（10万+ 机群） |
 
 七个里两个标 **⚒️ 亲手做过**（vSphere 和 self-host —— 生产实战，不是 ramp）；其余是诚实的 🧭 ramp。lab 刻意**命令行优先**：命令行更快、更精确、可复现、可审查 —— 而且是你自动化用的同一个界面。
+
+**七条 arc 全部写完；二十一节里建成两节**（AWS 01–02），另有四个不属于任何 arc 的独立 drill。这个缺口单独占一列、而不是和已写共用一个 ✅ —— 因为写好的 spec 只是一个计划，而本页第二段立的那条规矩，首先适用于仓库对自己的声明。
 
 **Agent Skills** —— 仓库自带八个 [`.claude/skills/`](../../.claude/skills/)。五个把方法论变成可调用的 AI 工作流：**platform-ramp**（诚实地上手任何平台）、**honesty-audit**（把声明分类 ⚒️/🧭/过度声明）、**author-module**（用仓库的声音写新章，含 **support note**、有据可查）、**runnable-lab**（把概念做成自验证 drill）、**mirror-zh**（把文档镜像成 `docs/zh/` 中文）。另外三个是**使用者侧**的 —— **linux-triage**、**harden-baseline**、**toolbox-picker** 把[工具箱](toolbox/)包装成 AI agent 能替你驱动的形态：新机器上装一个，一句话跑完一次分诊、或整个 audit→remediate 闭环。
 

@@ -4,7 +4,7 @@
 > [`README.md`](README.md) is the front door and the shape; [`ROADMAP.md`](ROADMAP.md)
 > says what to build *next and why*; this page is the table of contents.
 
-The project crosses the same material along **four axes** — you enter from whichever
+The project crosses the same material along **six axes** — you enter from whichever
 matches your question, not front to back. Everything the roadmap planned is now
 **written** (✅); what remains is more runnable labs, Chinese mirrors, and deepening.
 

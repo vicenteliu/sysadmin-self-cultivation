@@ -50,7 +50,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Layer series | **the-stack 01→07 complete** — 5 bottom-up layers + observability + security (two cross-cutting caps) | ✅ |
 | Layer lab | [`the-stack/labs/04-backup-not-snapshot/`](the-stack/labs/04-backup-not-snapshot/) — runnable, pure-Python "replication is not backup" drill | ✅ |
 | Runnable labs | 3 more pure-local, self-verifying labs (exit 0 = lessons held): [failure-domains](the-stack/labs/01-failure-domains/) (Python), [idempotence-drill](foundations/labs/idempotence-drill/) (bash), [ci-cd-pipeline](cross-cutting/labs/ci-cd-pipeline/) (tested app + real GitHub Actions workflow) | ✅ |
-| Agent Skills | 4 [`.claude/skills/`](.claude/skills/) packaging the repo's method: platform-ramp · honesty-audit · author-module · runnable-lab | ✅ |
+| Agent Skills | 5 [`.claude/skills/`](.claude/skills/) packaging the repo's method: platform-ramp · honesty-audit · author-module · runnable-lab · mirror-zh — plus the three toolbox-driving skills below, eight in total | ✅ |
 | Route | [`build-out/`](build-out/) — one 100-person office end to end, **16 of 16 steps**; carries sequence and dependency, points into the axes for substance. Dependency graph verified acyclic + symmetric; 94% of steps hook a runnable lab or tool; [`GAPS.md`](build-out/GAPS.md) records what the scenario found missing ([ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)) | ✅ |
 | Framework | [`CONTENTS.md`](CONTENTS.md) + opening for every planned module (foundations/endpoint/iac/saas/k8s/cost/gcp) | ✅ |
 | Foundations | [`foundations/`](foundations/) — Linux mental model, debugging reflex, scripting, honest scope (Tier-3 #10) | ✅ written |
