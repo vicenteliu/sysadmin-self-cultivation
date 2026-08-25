@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [openstack]
+marker: "mixed"
+summary: "architecture is how OpenStack is structured; operations is what running it looks like."
+---
 # OpenStack — Scripting the API (managing & operating from code)
 
 > [`architecture`](architecture.md) is how OpenStack is structured; [`operations`](operations.md)

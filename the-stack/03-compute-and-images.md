@@ -1,3 +1,11 @@
+---
+kind: note
+axis: the-stack
+themes: [virtualization]
+platforms: [aws, azure, gcp, oci]
+marker: "mixed"
+summary: "A VM is just a rented server. The durable asset — the thing worth engineering — is the pipeline that turns a blank machine into a working one with no hands on it."
+---
 # 03 — Compute & Images
 
 > A VM is just a rented server. The durable asset — the thing worth engineering —

@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [itsm-saas]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — M365 tenant work and the break-fix craft around it Before: 03 identity."
+---
 # 06 · Tenant and mail — domains, routing, SPF/DKIM/DMARC
 
 > 🔨 hands-on — M365 tenant work and the break-fix craft around it

@@ -1,3 +1,10 @@
+---
+kind: glossary
+axis: start-here
+themes: []
+platforms: []
+summary: "A glossary for this repo — the words that mean something specific here, and the words they get confused with."
+---
 # The Sysadmin's Self-Cultivation
 
 A glossary for this repo — the words that mean something specific here, and the

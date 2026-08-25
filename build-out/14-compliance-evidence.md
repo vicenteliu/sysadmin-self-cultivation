@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [security-compliance]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — access governance, asset reconciliation, and audit automation Before: 03 identity · 06 tenant · 07 files · 08 endpoint · 09 backup · 11 assets."
+---
 # 14 · Compliance evidence — what an audit actually asks for
 
 > 🔨 hands-on — access governance, asset reconciliation, and audit automation

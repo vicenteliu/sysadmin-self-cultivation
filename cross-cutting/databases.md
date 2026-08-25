@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [databases]
+platforms: []
+marker: "mixed"
+summary: "the-stack/04 taught that state is the thing no pipeline recreates; the-stack/05 said the managed database is usually the highest-value rent."
+---
 # Databases — operating the stateful hard part
 
 > [`the-stack/04`](../the-stack/04-storage.md) taught that state is the thing no

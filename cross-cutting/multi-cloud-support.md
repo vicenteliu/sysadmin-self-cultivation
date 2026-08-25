@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: cross-cutting
+themes: [cloud]
+platforms: [aws, azure, gcp, oci]
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # Multi-Cloud Support — the single-cloud sysadmin's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/multi-cloud-support.md)

@@ -1,3 +1,10 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+summary: "Getting to competent on Azure fast. Same discipline as everywhere else (AI for speed, judgment for truth — see ai-workflow/ and the AWS ai-ramp); this note is the Azure-specific delta."
+---
 # Azure — The AI-Assisted Ramp
 
 > Getting to *competent* on Azure fast. Same discipline as everywhere else

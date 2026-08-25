@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [self-host]
+marker: "mixed"
+summary: "architecture is how a bare-metal estate is structured; operations is what running it looks like."
+---
 # Self-Hosted / Bare Metal — Scripting the Fleet
 
 > [`architecture`](architecture.md) is how a bare-metal estate is structured;

@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [itsm-saas]
+platforms: []
+marker: "mixed"
+summary: "The part of the job the cloud-native roadmaps skip and every real IT org runs on: the ticket queue, the asset inventory, the access requests, and the audit that proves it all."
+---
 # ITSM, Asset Management & Governance — the operational spine
 
 > The part of the job the cloud-native roadmaps skip and every real IT org runs on:

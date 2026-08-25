@@ -1,3 +1,11 @@
+---
+kind: interview
+axis: cross-cutting
+themes: [networking]
+platforms: []
+marker: "mixed"
+summary: "Pairs with skills-maps/networking.md, section for section."
+---
 # Networking — Interview Map
 
 > Pairs with [`skills-maps/networking.md`](../skills-maps/networking.md), section for

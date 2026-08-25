@@ -1,3 +1,10 @@
+---
+kind: skill-map
+axis: platforms
+themes: [virtualization]
+platforms: [self-host]
+summary: "Check a box when you can do it and explain the failure modes."
+---
 # Self-Hosted / Bare Metal — Admin Skill Map
 
 A checkable competency list. Tiers:

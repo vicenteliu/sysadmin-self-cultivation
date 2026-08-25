@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [openstack]
+marker: "mixed"
+summary: "The README mapped OpenStack onto the seven surfaces — what the components are."
+---
 # OpenStack — Understanding the Architecture
 
 > The [README](README.md) mapped OpenStack onto the seven surfaces — *what the

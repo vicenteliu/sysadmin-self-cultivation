@@ -1,3 +1,10 @@
+---
+kind: note
+axis: start-here
+themes: [observability]
+platforms: []
+summary: "The meta-layer. Every platform module has its own AI-ramp; this is the shared philosophy behind them — and the part that keeps AI from quietly wrecking things."
+---
 # How I Use AI to Learn and Operate
 
 > The meta-layer. Every platform module has its own AI-ramp; this is the shared

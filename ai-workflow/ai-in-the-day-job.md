@@ -1,3 +1,11 @@
+---
+kind: note
+axis: start-here
+themes: [observability]
+platforms: []
+marker: "mixed"
+summary: "The companion to how-i-use-ai-to-learn-and-operate.md, which is about the ramp — arriving somewhere new."
+---
 # AI in the Day Job
 
 > The companion to [`how-i-use-ai-to-learn-and-operate.md`](how-i-use-ai-to-learn-and-operate.md),

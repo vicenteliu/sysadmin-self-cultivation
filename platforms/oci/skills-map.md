@@ -1,3 +1,10 @@
+---
+kind: skill-map
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+summary: "Check a box when you can do it from code and explain the failure modes."
+---
 # OCI — Admin Skill Map
 
 A checkable competency list. Tiers:

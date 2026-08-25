@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: platforms
+themes: [cloud]
+platforms: [gcp]
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # GCP & GKE Support — the operator's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/gcp/support.md)

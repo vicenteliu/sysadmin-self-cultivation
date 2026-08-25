@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [identity]
+platforms: []
+marker: "mixed"
+summary: "The clouds run your infrastructure; SaaS runs your company."
+---
 # SaaS & Collaboration Administration
 
 > The clouds run your infrastructure; SaaS runs your company. Google Workspace,

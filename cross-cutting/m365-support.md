@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: cross-cutting
+themes: [itsm-saas]
+platforms: []
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # Microsoft 365 Support — the operator's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/m365-support.md)

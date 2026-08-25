@@ -1,3 +1,10 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [gcp]
+summary: "How to get to competent on GCP in days — using AI as a co-pilot and keeping it honest."
+---
 # GCP — The AI-Assisted Ramp
 
 > How to get to *competent* on GCP in days — using AI as a co-pilot and keeping it

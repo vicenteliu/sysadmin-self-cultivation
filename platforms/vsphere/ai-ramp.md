@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [vsphere]
+marker: "mixed"
+summary: "Every other platform's AI-ramp note is about getting to competent fast."
+---
 # vSphere — The AI-Assisted Ramp (inverted)
 
 > Every other platform's AI-ramp note is about getting *to* competent fast. This one

@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: []
+platforms: []
+marker: "mixed"
+summary: "🧭 verified ramp. Room AV integration is not this author's hands-on ground; the network, identity and support surfaces underneath it are."
+---
 # 12 · Meeting rooms, AV and UC — the orphan nobody owns
 
 > 🧭 **verified ramp.** Room AV integration is not this author's hands-on ground;

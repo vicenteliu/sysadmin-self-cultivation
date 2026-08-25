@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [endpoint-mdm, security-compliance]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — patch operations, baselines, and working alongside a security function Before: 03 identity · 04 devices."
+---
 # 08 · Endpoint security and patching
 
 > 🔨 hands-on — patch operations, baselines, and working alongside a security function

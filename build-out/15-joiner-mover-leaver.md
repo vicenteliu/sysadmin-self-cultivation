@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [identity]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — JML at scale, directory automation, SCIM provisioning Before: 03 identity · 06 tenant · 11 assets · 13 the help desk."
+---
 # 15 · Joiner / mover / leaver, automated
 
 > 🔨 hands-on — JML at scale, directory automation, SCIM provisioning

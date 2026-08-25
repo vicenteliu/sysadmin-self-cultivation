@@ -1,3 +1,10 @@
+---
+kind: index
+axis: start-here
+themes: []
+platforms: [aws, azure, gcp, oci]
+summary: "The detailed index: every module, what it is, and where it lives."
+---
 # Contents — the whole map
 
 > The detailed index: every module, what it is, and where it lives.

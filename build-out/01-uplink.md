@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [networking]
+platforms: []
+marker: "mixed"
+summary: "🧭 verified ramp for procurement and carrier negotiation; 🔨 for what the circuit is carrying and how it fails once it is live."
+---
 # 01 · Uplink — carriers, bandwidth, redundancy
 
 > 🧭 **verified ramp** for procurement and carrier negotiation; 🔨 for what the

@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [cost]
+platforms: [aws]
+marker: "mixed"
+summary: "On the clouds, cost is not the finance team's problem — it's a signal on your dashboard, an alarm that should page you, and a design constraint that shapes architecture."
+---
 # Cost as an Operational Control
 
 > On the clouds, cost is not the finance team's problem — it's a signal on your

@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [self-host]
+marker: "🔨"
+summary: "The README is what self-hosting is; architecture is how it's structured; this note is what running it actually looks like — the brief, what pages you (hardware, at fleet scale, constantly), the ops…"
+---
 # Self-Hosted / Bare Metal — Operating It (the day-2 reality)
 
 > The [README](README.md) is *what self-hosting is*; [architecture](architecture.md)

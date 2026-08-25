@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [security-compliance]
+platforms: []
+marker: "mixed"
+summary: "You are not the security team. You are the surface they defend — and their biggest force multiplier."
+---
 # Working with Security — ATT&CK awareness for operators
 
 > You are not the security team. You are the surface they defend — and their biggest

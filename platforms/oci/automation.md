@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+marker: "mixed"
+summary: "architecture is how OCI is structured; operations is what running it looks like."
+---
 # OCI — Scripting the API (managing & operating from code)
 
 > [`architecture`](architecture.md) is how OCI is structured; [`operations`](operations.md)

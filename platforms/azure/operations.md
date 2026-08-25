@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+marker: "mixed"
+summary: "The README is what Azure is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…"
+---
 # Azure — Operating It (the day-2 reality)
 
 > The [README](README.md) is *what Azure is*; [architecture](architecture.md) is *how

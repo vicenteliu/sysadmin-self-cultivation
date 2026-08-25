@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: cross-cutting
+themes: [iac-config]
+platforms: [aws]
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # Terraform Support — the config-management sysadmin's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/terraform-support.md)

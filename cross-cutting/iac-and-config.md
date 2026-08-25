@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [iac-config]
+platforms: [aws]
+marker: "mixed"
+summary: "The universal control plane. Move #3 of the operating model — drive the platform through its API and codify it — made into its own discipline."
+---
 # Infrastructure-as-Code & Configuration Management
 
 > The universal control plane. Move #3 of the [operating model](../00-the-operating-model.md)

@@ -1,3 +1,10 @@
+---
+kind: note
+axis: cross-cutting
+themes: [identity]
+platforms: [aws, azure]
+summary: "The densest, most-transferable surface there is."
+---
 # Identity & Access (IAM)
 
 > The densest, most-transferable surface there is. Get identity right and everything

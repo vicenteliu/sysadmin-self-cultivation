@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [gcp]
+marker: "mixed"
+summary: "architecture is how GCP is structured; operations is what running it looks like."
+---
 # GCP — Scripting the API (managing & operating from code)
 
 > [`architecture`](architecture.md) is how GCP is structured; [`operations`](operations.md)

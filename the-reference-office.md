@@ -1,3 +1,10 @@
+---
+kind: note
+axis: start-here
+themes: []
+platforms: []
+summary: "Every step in the build-out says a hundred people."
+---
 # The reference office
 
 Every step in the build-out says *a hundred people*. This file is where that stops being

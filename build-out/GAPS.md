@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: []
+platforms: []
+marker: "🧭"
+summary: "Derived, not planned. A step earns a line here when it should be able to point at a runnable lab or a toolbox/ tool and the repo has none."
+---
 # Gaps the build-out found
 
 > Derived, not planned. A step earns a line here when it **should** be able to point

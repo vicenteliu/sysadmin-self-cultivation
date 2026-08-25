@@ -1,3 +1,11 @@
+---
+kind: skill-map
+axis: cross-cutting
+themes: [networking]
+platforms: []
+marker: "mixed"
+summary: "One theme, cut across every platform. The substance lives in the-stack/02-network.md — this is the checkable version of it."
+---
 # Networking — Theme Skill Map
 
 > One theme, cut across every platform. The substance lives in

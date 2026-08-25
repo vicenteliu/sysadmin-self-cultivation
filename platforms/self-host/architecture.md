@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [self-host]
+marker: "mixed"
+summary: "The README mapped self-hosting onto the seven surfaces — what you run."
+---
 # Self-Hosted / Bare Metal — Understanding the Architecture
 
 > The [README](README.md) mapped self-hosting onto the seven surfaces — *what you

@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [vsphere]
+marker: "mixed"
+summary: "The README mapped vSphere onto the seven surfaces — what the pieces are."
+---
 # vSphere — Understanding the Architecture
 
 > The [README](README.md) mapped vSphere onto the seven surfaces — *what the pieces

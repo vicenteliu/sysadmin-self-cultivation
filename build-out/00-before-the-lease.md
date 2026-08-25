@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: []
+platforms: []
+marker: "🧭"
+summary: "🧭 verified ramp, not hands-on. This step is written as a question list, not as negotiating advice — a question list can be derived from first principles; negotiating cannot, and this author has not…"
+---
 # 00 · Questions to ask before the lease is signed
 
 > 🧭 **verified ramp, not hands-on.** This step is written as a question list, not

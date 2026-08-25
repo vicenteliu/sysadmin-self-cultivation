@@ -1,3 +1,10 @@
+---
+kind: skill-map
+axis: platforms
+themes: [cloud]
+platforms: [openstack]
+summary: "Check a box when you can do it and explain the failure modes."
+---
 # OpenStack — Admin Skill Map
 
 A checkable competency list. Tiers:

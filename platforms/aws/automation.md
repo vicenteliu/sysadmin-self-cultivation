@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+marker: "mixed"
+summary: "architecture is how AWS is structured; operations is what running it looks like."
+---
 # AWS — Scripting the API (managing & operating from code)
 
 > [`architecture`](architecture.md) is how AWS is structured; [`operations`](operations.md)

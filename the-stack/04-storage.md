@@ -1,3 +1,11 @@
+---
+kind: note
+axis: the-stack
+themes: [storage-backup]
+platforms: [aws, azure, oci, vsphere]
+marker: "mixed"
+summary: "Compute is disposable; storage is where the fear lives."
+---
 # 04 — Storage
 
 > Compute is disposable; storage is where the fear lives. You can rebuild any

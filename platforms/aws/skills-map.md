@@ -1,3 +1,10 @@
+---
+kind: skill-map
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+summary: "Check a box when you can do it from code and explain the failure modes — not when you've read about it."
+---
 # AWS — Admin Skill Map
 
 A checkable competency list. Tiers:

@@ -1,3 +1,11 @@
+---
+kind: note
+axis: the-stack
+themes: [observability]
+platforms: [azure]
+marker: "mixed"
+summary: "The bottom-up climb ended at platform services you can't SSH into."
+---
 # 06 — Observability
 
 > The bottom-up climb ended at platform services you can't SSH into. This chapter

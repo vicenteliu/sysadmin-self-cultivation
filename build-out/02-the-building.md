@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: []
+platforms: [self-host]
+marker: "mixed"
+summary: "🧭 for commissioning a new site; 🔨 for what happens in the rack afterwards (PXE/imaging fleets, BMC/IPMI, DNS and RAID at scale — see platforms/self-host/)."
+---
 # 02 · The building — riser, IDF, power, cooling, cable paths
 
 > 🧭 for **commissioning a new site**; 🔨 for **what happens in the rack afterwards**

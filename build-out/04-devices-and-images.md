@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [endpoint-mdm]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, hardware lifecycle Before: 02 the building · 03 identity."
+---
 # 04 · Devices and images — purchase, build, enroll
 
 > 🔨 hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, hardware lifecycle

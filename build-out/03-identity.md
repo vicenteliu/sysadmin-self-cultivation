@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [identity]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on (Entra/Azure AD, M365 tenant work, JML at scale) Before: nothing."
+---
 # 03 · Identity — directory, groups, SSO
 
 > 🔨 hands-on (Entra/Azure AD, M365 tenant work, JML at scale)

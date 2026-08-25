@@ -1,3 +1,10 @@
+---
+kind: skill-map
+axis: platforms
+themes: [virtualization]
+platforms: [vsphere]
+summary: "Check a box when you can do it and explain the failure modes — not when you've read about it."
+---
 # vSphere — Admin Skill Map
 
 A checkable competency list. Tiers:

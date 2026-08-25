@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [networking]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — switching, DNS/DHCP, the boot path, and the fault-isolation habits Before: 01 uplink · 02 the building · 03 identity · 04 devices."
+---
 # 05 · Network — VLANs, wireless, guest, printing, door access
 
 > 🔨 hands-on — switching, DNS/DHCP, the boot path, and the fault-isolation habits

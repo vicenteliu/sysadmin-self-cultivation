@@ -1,3 +1,10 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [self-host]
+summary: "Like the vSphere note, this one is inverted: self-hosting is a strength, not a gap, so AI's job isn't to teach the platform — it's to accelerate the software glue, and to stay entirely out of the…"
+---
 # Self-Hosted / Bare Metal — The AI-Assisted Ramp
 
 > Like the [vSphere note](../vsphere/ai-ramp.md), this one is inverted: self-hosting

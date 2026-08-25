@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [ci-cd]
+platforms: []
+marker: "mixed"
+summary: "The one topic the standard roadmaps put at the center that this repo owed a dedicated note."
+---
 # CI/CD & GitOps — the deployment pipeline
 
 > The one topic the standard roadmaps put at the center that this repo owed a

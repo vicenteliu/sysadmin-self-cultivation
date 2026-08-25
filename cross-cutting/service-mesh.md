@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [networking]
+platforms: []
+marker: "mixed"
+summary: "Once you have many small services instead of a few big ones (the-stack/05), two new questions appear that a monolith never had: how does service A find service B when B's addresses change constantly?"
+---
 # Service Discovery & Service Mesh — how services find and trust each other
 
 > Once you have many small services instead of a few big ones

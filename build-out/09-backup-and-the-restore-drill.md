@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [storage-backup]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — backup targets, RAID rebuild windows, snapshot hygiene, restore practice Before: 06 tenant · 07 files."
+---
 # 09 · Backup — and the restore drill
 
 > 🔨 hands-on — backup targets, RAID rebuild windows, snapshot hygiene, restore practice

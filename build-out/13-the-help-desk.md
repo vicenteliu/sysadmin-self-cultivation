@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [itsm-saas]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — service desk operations and ITSM practice Before: 04 devices · 10 remote access · 11 assets · 12 rooms."
+---
 # 13 · The help desk itself — and how many people this needs
 
 > 🔨 hands-on — service desk operations and ITSM practice

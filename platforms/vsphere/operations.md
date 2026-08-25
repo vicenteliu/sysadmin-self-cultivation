@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [vsphere]
+marker: "mixed"
+summary: "The README is what vSphere is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you, the real ops work by cadence, and AI in the operating loop."
+---
 # vSphere — Operating It (the day-2 reality)
 
 > The [README](README.md) is *what vSphere is*; [architecture](architecture.md) is

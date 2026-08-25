@@ -1,3 +1,10 @@
+---
+kind: note
+axis: start-here
+themes: []
+platforms: []
+summary: "The idea behind the project, and an honest read on where the craft is heading."
+---
 # Why this exists
 
 > The idea behind the project, and an honest read on where the craft is heading.

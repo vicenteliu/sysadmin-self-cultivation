@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: cross-cutting
+themes: [containers]
+platforms: []
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # Kubernetes Support — the Linux sysadmin's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/kubernetes-support.md)

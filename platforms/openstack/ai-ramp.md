@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [openstack]
+marker: "mixed"
+summary: "How to get to competent-to-reason on OpenStack fast — and an honest line about where AI stops."
+---
 # OpenStack — The AI-Assisted Ramp
 
 > How to get to *competent-to-reason* on OpenStack fast — and an honest line about

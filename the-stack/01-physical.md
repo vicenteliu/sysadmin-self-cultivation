@@ -1,3 +1,11 @@
+---
+kind: note
+axis: the-stack
+themes: [virtualization]
+platforms: [aws, azure, gcp, oci]
+marker: "mixed"
+summary: "Every cloud is somebody's data center. The only question is whose pager goes off when a disk dies — and whether you can see it happen."
+---
 # 01 — The Physical Layer
 
 > Every cloud is somebody's data center. The only question is whose pager goes off

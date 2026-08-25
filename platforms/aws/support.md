@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # AWS Support — the operator's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/aws/support.md)

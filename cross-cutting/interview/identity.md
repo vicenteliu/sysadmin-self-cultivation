@@ -1,3 +1,11 @@
+---
+kind: interview
+axis: cross-cutting
+themes: [identity]
+platforms: [aws]
+marker: "mixed"
+summary: "Pairs with skills-maps/identity.md, section for section."
+---
 # Identity & Access — Interview Map
 
 > Pairs with [`skills-maps/identity.md`](../skills-maps/identity.md), section for

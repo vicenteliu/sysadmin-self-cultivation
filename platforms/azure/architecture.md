@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+marker: "mixed"
+summary: "The README mapped Azure onto the seven surfaces — what the services are."
+---
 # Azure — Understanding the Architecture
 
 > The [README](README.md) mapped Azure onto the seven surfaces — *what the services

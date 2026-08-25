@@ -1,3 +1,10 @@
+---
+kind: skill-map
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+summary: "Same tiers as AWS: Core (can't admin without it), Working (solid mid/senior), Depth (the differentiator)."
+---
 # Azure — Admin Skill Map
 
 Same tiers as [AWS](../aws/skills-map.md): **Core** (can't admin without it),

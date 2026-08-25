@@ -1,3 +1,11 @@
+---
+kind: note
+axis: the-stack
+themes: [security-compliance]
+platforms: [aws, azure, oci, self-host]
+marker: "mixed"
+summary: "Observability was the layer that sees the whole stack; security is the layer that guards it."
+---
 # 07 — Security
 
 > Observability was the layer that *sees* the whole stack; security is the layer

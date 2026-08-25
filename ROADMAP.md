@@ -1,3 +1,10 @@
+---
+kind: roadmap
+axis: start-here
+themes: []
+platforms: [aws, azure, gcp, oci]
+summary: "This project is built demand-first. The order below is set by how often each skill shows up in real infrastructure / platform / IT-engineering job descriptions — so the repo grows toward what the…"
+---
 # Roadmap
 
 > This project is built **demand-first**. The order below is set by how often each

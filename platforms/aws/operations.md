@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+marker: "mixed"
+summary: "The README is what AWS is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…"
+---
 # AWS — Operating It (the day-2 reality)
 
 > The [README](README.md) is *what AWS is*; [architecture](architecture.md) is *how

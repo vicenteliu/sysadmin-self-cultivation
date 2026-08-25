@@ -1,3 +1,10 @@
+---
+kind: note
+axis: start-here
+themes: []
+platforms: []
+summary: "The transferable skeleton under every platform."
+---
 # The Operating Model
 
 > The transferable skeleton under every platform. Learn this once; everything else

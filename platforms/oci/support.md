@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # OCI Support — the operator's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/oci/support.md)

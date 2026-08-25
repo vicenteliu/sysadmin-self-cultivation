@@ -1,3 +1,11 @@
+---
+kind: note
+axis: the-stack
+themes: [cloud]
+platforms: [azure, self-host]
+marker: "mixed"
+summary: "The layers below asked how do I build it?"
+---
 # 05 — Platform Services
 
 > The layers below asked *how do I build it?* This one asks a sharper question:

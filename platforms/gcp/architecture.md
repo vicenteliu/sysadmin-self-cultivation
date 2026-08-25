@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [gcp]
+marker: "mixed"
+summary: "The README mapped GCP onto the seven surfaces — what the services are."
+---
 # GCP — Understanding the Architecture
 
 > The [README](README.md) mapped GCP onto the seven surfaces — *what the services

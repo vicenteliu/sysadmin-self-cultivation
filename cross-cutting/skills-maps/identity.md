@@ -1,3 +1,11 @@
+---
+kind: skill-map
+axis: cross-cutting
+themes: [identity]
+platforms: [aws]
+marker: "mixed"
+summary: "One theme, cut across every platform. The substance lives in cross-cutting/identity-iam.md — this is the checkable version of it."
+---
 # Identity & Access — Theme Skill Map
 
 > One theme, cut across every platform. The substance lives in

@@ -1,3 +1,10 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+summary: "How to get to competent on OCI in days — using AI as a co-pilot and keeping it honest."
+---
 # OCI — The AI-Assisted Ramp
 
 > How to get to *competent* on OCI in days — using AI as a co-pilot and keeping it

@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [itsm-saas]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on — SaaS administration and the sharing/permission surface Before: 03 identity · 05 network · 06 tenant."
+---
 # 07 · Files and collaboration — where state lives, who can see it
 
 > 🔨 hands-on — SaaS administration and the sharing/permission surface

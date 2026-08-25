@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+marker: "mixed"
+summary: "architecture is how Azure is structured; operations is what running it looks like."
+---
 # Azure — Scripting the API (managing & operating from code)
 
 > [`architecture`](architecture.md) is how Azure is structured; [`operations`](operations.md)

@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [incident]
+platforms: []
+marker: "mixed"
+summary: "foundations/ built the technical half of debugging — the reflex that finds what's wrong."
+---
 # Incident Response & On-Call — staying calm when it breaks
 
 > [`foundations/`](../foundations/) built the *technical* half of debugging — the

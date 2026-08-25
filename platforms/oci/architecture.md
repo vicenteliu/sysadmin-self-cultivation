@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [oci]
+marker: "mixed"
+summary: "The README mapped OCI onto the seven surfaces — what the services are."
+---
 # OCI — Understanding the Architecture
 
 > The [README](README.md) mapped OCI onto the seven surfaces — *what the services

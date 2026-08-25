@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+marker: "mixed"
+summary: "The README mapped AWS onto the seven surfaces — what the services are."
+---
 # AWS — Understanding the Architecture
 
 > The [README](README.md) mapped AWS onto the seven surfaces — *what the services

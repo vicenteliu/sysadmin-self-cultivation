@@ -1,3 +1,10 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [aws]
+summary: "How to get to competent on AWS in days instead of months — using AI as a co-pilot, and keeping it honest."
+---
 # AWS — The AI-Assisted Ramp
 
 > How to get to *competent* on AWS in days instead of months — using AI as a

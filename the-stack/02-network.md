@@ -1,3 +1,11 @@
+---
+kind: note
+axis: the-stack
+themes: [networking]
+platforms: [aws, azure, gcp, oci]
+marker: "mixed"
+summary: "Chapter 01 ended on a promise: the real lock-in lives up here."
+---
 # 02 — The Network Layer
 
 > Chapter 01 ended on a promise: the real lock-in lives up here. The network layer

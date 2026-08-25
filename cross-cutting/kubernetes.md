@@ -1,3 +1,11 @@
+---
+kind: note
+axis: cross-cutting
+themes: [containers]
+platforms: []
+marker: "mixed"
+summary: "the-stack/05 placed Kubernetes on the build-vs-rent spectrum; this note goes a layer deeper into the thing itself — because \"managed Kubernetes\" still requires you to understand Kubernetes the moment it misbehaves."
+---
 # Kubernetes & Containers
 
 > [`the-stack/05`](../the-stack/05-platform-services.md) placed Kubernetes on the

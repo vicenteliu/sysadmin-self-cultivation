@@ -1,3 +1,11 @@
+---
+kind: support-note
+axis: platforms
+themes: [cloud]
+platforms: [azure]
+marker: "mixed"
+summary: "🌐 Languages: English (default) ·…"
+---
 # Azure & Entra Support — the operator's transition guide
 
 > 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/azure/support.md)

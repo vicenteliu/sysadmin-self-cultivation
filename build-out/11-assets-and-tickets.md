@@ -1,3 +1,11 @@
+---
+kind: route-step
+axis: build-out
+themes: [itsm-saas]
+platforms: []
+marker: "🔨"
+summary: "🔨 hands-on (ServiceNow, ~5 years; asset reconciliation and audit automation) Before: 03 identity · 04 devices."
+---
 # 11 · Assets and tickets — the record that starts at device #1
 
 > 🔨 hands-on (ServiceNow, ~5 years; asset reconciliation and audit automation)

@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [virtualization]
+platforms: [vsphere]
+marker: "mixed"
+summary: "architecture is how vSphere is structured; operations is what running it looks like."
+---
 # vSphere — Scripting the API (PowerCLI & the vSphere API)
 
 > [`architecture`](architecture.md) is how vSphere is structured; [`operations`](operations.md)

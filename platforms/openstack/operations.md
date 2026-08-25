@@ -1,3 +1,11 @@
+---
+kind: companion
+axis: platforms
+themes: [cloud]
+platforms: [openstack]
+marker: "mixed"
+summary: "The README is what OpenStack is; architecture is how it's structured; this note is what running it looks like — and here the day-2 story has a twist no managed cloud has: you operate the control…"
+---
 # OpenStack — Operating It (the day-2 reality)
 
 > The [README](README.md) is *what OpenStack is*; [architecture](architecture.md) is
