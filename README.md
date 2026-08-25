@@ -14,7 +14,7 @@ fast**. AI now compresses that ramp from months to days — *if* you already hav
 judgment to steer it and catch it when it's wrong.
 
 This repo writes that judgment down: across **seven platforms**, down **every layer of
-the stack**, behind one strict rule — **⚒️ hands-on depth** is claimed only where it's
+the stack**, behind one strict rule — **🔨 hands-on depth** is claimed only where it's
 real; everything else is a **🧭 verified ramp**, mapped and checked, never bluffed.
 
 ## The one idea: three moves
@@ -138,15 +138,15 @@ carry the deeper architecture · operations · automation trio**:
 
 | Platform | Module | Arch · Ops · Auto | Lab arc (specced) | Labs built | Honesty |
 | --- | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ ✅ ✅ | 3 (boto3 / Terraform) | **01–02 built**; 03 is a walkthrough · + [iam-deny](platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
-| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ ✅ ✅ | 3 (`az`) | none of the arc · [two-planes](platforms/azure/labs/global-admin-is-not-owner/) stands alone | 🧭 + Entra/identity ⚒️ |
-| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ ✅ ✅ | 3 (`gcloud`) | none of the arc · [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac/) stands alone | 🧭 ramp |
-| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ ✅ ✅ | 3 (`oci`) | none of the arc · [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account/) stands alone | 🧭 ramp |
-| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ ✅ ✅ | 3 (PowerCLI) | — | **⚒️ hands-on depth** (VCP6-DCV/NV) |
-| **[OpenStack](platforms/openstack/)** | ✅ | ✅ ✅ ✅ | 3 (`openstack` / DevStack) | — | 🧭 ramp (KVM-adjacent ⚒️) |
-| **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ ✅ ✅ | 3 (virsh / ipmitool / ansible) | — | **⚒️ hands-on depth** (100k+ fleet) |
+| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ | 3 (boto3 / Terraform) | **01–02 built**; 03 is a walkthrough · + [iam-deny](platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
+| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ | 3 (`az`) | none of the arc · [two-planes](platforms/azure/labs/global-admin-is-not-owner/) stands alone | 🧭 + Entra/identity 🔨 |
+| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ | 3 (`gcloud`) | none of the arc · [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac/) stands alone | 🧭 ramp |
+| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ | 3 (`oci`) | none of the arc · [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account/) stands alone | 🧭 ramp |
+| **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ | 3 (PowerCLI) | — | **🔨 hands-on depth** (VCP6-DCV/NV) |
+| **[OpenStack](platforms/openstack/)** | ✅ | ✅ | 3 (`openstack` / DevStack) | — | 🧭 ramp (KVM-adjacent 🔨) |
+| **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ | 3 (virsh / ipmitool / ansible) | — | **🔨 hands-on depth** (100k+ fleet) |
 
-Two of the seven are labeled **⚒️ hands-on depth** (vSphere and self-host — production
+Two of the seven are labeled **🔨 hands-on depth** (vSphere and self-host — production
 ground, not a ramp); the rest are honest 🧭 ramps. The labs are **CLI-first** on
 purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
 same surface your automation uses.
@@ -158,7 +158,7 @@ paragraph of this file applies to the repo's own claims first.
 
 **Agent Skills** — the repo ships eight [`.claude/skills/`](.claude/skills/). Five
 turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
-platform, honestly), **honesty-audit** (classify claims ⚒️/🧭/overclaim),
+platform, honestly), **honesty-audit** (classify claims 🔨/🧭/overclaim),
 **author-module** (write a new note — including a **support note** — in the repo's
 voice, research-grounded), **runnable-lab** (turn a concept into a self-verifying
 drill), and **mirror-zh** (mirror a doc into `docs/zh/` Chinese). Three are
