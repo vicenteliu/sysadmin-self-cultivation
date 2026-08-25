@@ -32,6 +32,13 @@ that exists to serve a recording belongs with the recording.
 
 **Interview material is questions plus what each one probes, never finished answers.**
 
+> ⚠️ **Superseded by [ADR-0004](0004-interview-answers-are-evidence-for-a-marker.md).**
+> Only this fifth decision; the other four on this page stand. Answers are now written,
+> with their shape set by the section's honesty marker and their detail bounded by an
+> anonymisation discipline. The reasoning that replaced this one is that the rule was
+> written for a stranger reading the repo, and silent about the author, who has 591
+> markers to defend.
+
 ## Two things deliberately not done
 
 **The building-side boundary in `build-out/GAPS.md` stands, untouched.** It reads that
