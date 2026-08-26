@@ -63,7 +63,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](../../ai-workflow/) —— 方法及其护栏 |
-| **查一个词或一条旧决策** | [`CONTEXT.md`](../../CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](../adr/) —— 七条决策及它们击败的选项 |
+| **查一个词或一条旧决策** | [`CONTEXT.md`](../../CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](../adr/) —— 八条决策及它们击败的选项 |
 | **看它还答不上什么** | [`docs/questions.md`](../questions.md) —— 有人问过这个仓库、而它还答不上的问题：开放的、已答的、或明确划在边界外并说明原因的 |
 | **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |

@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 199,
+  "count": 200,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -84,6 +84,7 @@
     "docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md": "The site is a view over the material, not a seventh axis",
     "docs/adr/0006-the-viewer-vendors-its-dependencies.md": "The viewer vendors its dependencies instead of adopting a site generator",
     "docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md": "A figure's medium is decided by what renders it",
+    "docs/adr/0008-a-count-is-not-a-bound.md": "A count is not a bound",
     "docs/questions.md": "Open questions",
     "docs/zh/README.md": "系统管理员的自我修养",
     "docs/zh/cross-cutting/kubernetes-support.md": "Kubernetes 支持 —— Linux sysadmin 的转轨指南",

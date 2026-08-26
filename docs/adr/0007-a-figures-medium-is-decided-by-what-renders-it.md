@@ -17,6 +17,9 @@ rots — so the boundary between them is written down here rather than left to t
 GitHub, renders in the viewer, and diffs as text — the source and the picture are the
 same object, so they cannot disagree.
 
+> ⚠️ **The bound below is superseded by [ADR-0008](0008-a-count-is-not-a-bound.md).**
+> There are seven, the count was never enforceable, and it is a criterion now.
+
 **A hero diagram is the exception, and it is bounded.** Four exist: the axis map, the
 stack, the ramp, and the route. Each opens an axis. Each is authored once as a light
 HTML file and everything else is derived by
@@ -69,8 +72,9 @@ the eleven files left alone were left alone on purpose.
   dark value back. It found two real skews the moment it existed — the accent tint was
   deriving at the wrong opacity in three live artifacts, and `rule-solid` was deriving
   an opaque approximation of a translucent hairline.
-- **A fifth hero needs an argument, not an occasion.** The bound is what keeps the
-  exception from becoming the rule.
+- ~~**A fifth hero needs an argument, not an occasion.**~~ Superseded by
+  [ADR-0008](0008-a-count-is-not-a-bound.md) — the argument was never made, three times
+  over, because a count cannot announce that it has been crossed.
 - **Mermaid's layout is a constraint on content.** Keep subgraph titles under about 28
   characters, avoid back-edges in a `TB` flow, and do not put a disconnected component
   beside a connected one. The traps and their symptoms are recorded in

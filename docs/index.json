@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 199,
+  "count": 200,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -744,6 +744,13 @@
       "themes": [],
       "platforms": [],
       "summary": "The repo had 67 mermaid diagrams and one way of making them. Adding branded hero figures introduced a second way, and two ways of doing one thing is how a convention rots — so the boundary between them is written down here rather than left to taste."
+    },
+    "docs/adr/0008-a-count-is-not-a-bound.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "ADR-0007 bounded hero diagrams at four and said a fifth would need an argument. Three more were added without that argument ever being made, and nobody noticed — because a bound written as a count cannot tell you it has been crossed."
     },
     "docs/questions.md": {
       "kind": "questions",
