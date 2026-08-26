@@ -115,6 +115,20 @@ already know. Numbered Rule 2 of [`ai-workflow/`](ai-workflow/how-i-use-ai-to-le
 It belongs to 🧭, which is why ⚓ was rejected as a depth marker.
 _Avoid_: using "anchor" to mean established expertise
 
+**Vendor name**:
+A product or manufacturer named in the text, and **which of two jobs it is doing
+decides whether it belongs.** As a **signature** it is allowed and already in use —
+naming what you will *see* in an environment (`the-stack/02`'s *LB signature* row
+lists HAProxy / keepalived / F5 so a reader can recognise a self-hosted estate), or
+quoting the market (`ROADMAP.md` cites *"firewalls (Palo Alto/Fortinet)"* because
+that is what the postings say). As a **recommendation** it is forbidden outside a
+dated `Reference build`, per
+[ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md).
+The test: *does this name help someone recognise where they are, or is it telling
+them what to buy?* The first transfers and the second expires.
+_Avoid_: model name (that is narrower — ADR-0002 forbids those in Selection rules
+specifically), brand, product
+
 **Altitude**:
 How high above the mechanism a piece of work sits. Two uses, related and distinct.
 **Tooling altitude** — which layer you drive an API from (CLI, SDK, IaC), where
