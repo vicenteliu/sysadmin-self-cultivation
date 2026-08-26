@@ -18,6 +18,11 @@ front-matter by [`build-index.py`](build-index.py) so an agent can search the re
 without walking it. The index is generated, never edited: change the file, then run
 the script. `--check` exits non-zero when it has gone stale.
 
+The same generated-not-edited contract covers the two files the browser at
+[`site/`](../site/README.md) reads — its titles map and its **search corpus** — and the
+twelve artifacts derived from the four hero-diagram sources. Each builder takes
+`--check`.
+
 This directory holds **translations** (multi-language support). Each language gets a
 subfolder that mirrors the English tree as translations are contributed.
 

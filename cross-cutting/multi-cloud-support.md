@@ -4,7 +4,7 @@ axis: cross-cutting
 themes: [cloud]
 platforms: [aws, azure, gcp, oci]
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The capstone support note: multi-cloud is a posture, not a product. There is no unifying control plane to install — each cloud keeps its own IAM, network, quota and billing model, and the job is owning the seams between them."
 ---
 # Multi-Cloud Support — the single-cloud sysadmin's transition guide
 

@@ -24,6 +24,13 @@ matches your question, not front to back. Everything the roadmap planned is now
 | **V** | **Cross-cutting** | learn a transferable skill |
 | **VI** | **Toolbox** | take runnable, agent-callable tools with you |
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="site/assets/diagrams/repo-map.dark.svg">
+  <img alt="Six axis cards inside one container labelled 'one body of material, six views', with the build-out route set apart beneath them spanning the same width" src="site/assets/diagrams/repo-map.light.svg">
+</picture>
+
+*The table above says which axis answers which question; the figure says why there are six of them and not seven — `build-out/` spans the same width because it crosses all six rather than adding one.*
+
 ---
 
 ## I. Start here — the thesis and the method
@@ -167,14 +174,17 @@ Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh
 
 ## Agent Skills — the method, made invokable
 
-The repo ships eight [`.claude/skills/`](.claude/skills/). Five package its
+The repo ships ten [`.claude/skills/`](.claude/skills/). Seven package its
 *methodology*: [`platform-ramp`](.claude/skills/platform-ramp/SKILL.md) (ramp onto
 any platform, honestly), [`honesty-audit`](.claude/skills/honesty-audit/SKILL.md)
 (classify claims 🔨/🧭/overclaim), [`author-module`](.claude/skills/author-module/SKILL.md)
 (write a new note — incl. a **support note** — in the repo's voice, research-grounded),
 [`runnable-lab`](.claude/skills/runnable-lab/SKILL.md) (turn a concept into a
-self-verifying drill), and [`mirror-zh`](.claude/skills/mirror-zh/SKILL.md) (mirror a
-doc into `docs/zh/` Chinese).
+self-verifying drill), [`diagram-module`](.claude/skills/diagram-module/SKILL.md)
+(decide whether a doc needs a figure, pick its medium, keep the derived artifacts in
+step), [`mirror-zh`](.claude/skills/mirror-zh/SKILL.md) (mirror a doc into `docs/zh/`
+Chinese), and [`interview-drill`](.claude/skills/interview-drill/SKILL.md) (ask it back
+the way an interviewer would).
 
 Three are **user-side** — they wrap the [toolbox](toolbox/) so an AI agent can run
 it for you: [`linux-triage`](.claude/skills/linux-triage/SKILL.md) (triage a host
@@ -183,6 +193,22 @@ and route each red flag to its fix), [`harden-baseline`](.claude/skills/harden-b
 [`toolbox-picker`](.claude/skills/toolbox-picker/SKILL.md) (say the task, get the
 right tool + exact command). This is the "AI-assisted toolset" the roadmap points
 at — install a skill on a new box and drive the toolbox in one sentence.
+
+## Reading it in a browser
+
+Two hundred thousand words is past the size where scrolling a folder works.
+[`site/`](site/README.md) is the same material with navigation, full-text search, a
+language switcher and rendered diagrams — and nothing else. It starts two ways and
+installs nothing either way:
+
+```bash
+python3 site/serve.py                           # http://127.0.0.1:8000
+docker compose -f site/docker-compose.yml up    # http://127.0.0.1:8099
+```
+
+It is a **view**, not a seventh axis: every word it shows is a file GitHub also renders,
+and deleting `site/` would cost this repo no fact
+([ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)).
 
 ## The honesty layer (applies everywhere)
 

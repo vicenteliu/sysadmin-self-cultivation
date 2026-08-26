@@ -4,7 +4,7 @@ axis: platforms
 themes: [cloud]
 platforms: [azure]
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The break-fix half of Azure and Entra, and the honest split it keeps: identity is hands-on depth, Azure IaaS is a ramp. Entra is who you are, RBAC is what you can touch, and confusing them is the classic mistake."
 ---
 # Azure & Entra Support — the operator's transition guide
 

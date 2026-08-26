@@ -93,11 +93,11 @@ mindmap
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](../../ai-workflow/) —— 方法及其护栏 |
 | **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
-| **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 八个 Agent Skill：五个包装方法（ramp · audit · author · lab · mirror），三个驱动工具箱 |
+| **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |
 
 ## 已建成
 
-roadmap 计划的都写完了，含**二十个可跑、自验证的 lab**（退出码 `0` = 教训成立）、**八篇 break-fix support 笔记**、**两份[主题技能图](../../cross-cutting/skills-maps/README.md)**、**八个 Agent Skill**、和一个**能直接跑的工具箱**（十个脚本、三个 Ansible 修复 roles、一个按环境打包的[生成器](toolbox/generate/)）；剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表逐个说明 —— 更完整的中文镜像（本页目前覆盖 25 篇），以及按需求深化。
+roadmap 计划的都写完了，含**二十个可跑、自验证的 lab**（退出码 `0` = 教训成立）、**八篇 break-fix support 笔记**、**两份[主题技能图](../../cross-cutting/skills-maps/README.md)**、**十个 Agent Skill**、和一个**能直接跑的工具箱**（十个脚本、三个 Ansible 修复 roles、一个按环境打包的[生成器](toolbox/generate/)）；剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表逐个说明 —— 更完整的中文镜像（本页目前覆盖 26 篇），以及按需求深化。
 
 - **基础与方法** —— [WHY](../../WHY.md) · [操作模型](../../00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/)（Linux + 脚本）✅
 - **The Stack** —— [七层，01→07](../../the-stack/)，每层对比七个平台，+ 可跑的 [失败域](../../the-stack/labs/01-failure-domains/) 和 [备份演练](../../the-stack/labs/04-backup-not-snapshot/) lab ✅
@@ -121,7 +121,21 @@ roadmap 计划的都写完了，含**二十个可跑、自验证的 lab**（退�
 
 **七条 arc 全部写完；二十一节里建成两节**（AWS 01–02），另有四个不属于任何 arc 的独立 drill。这个缺口单独占一列、而不是和已写共用一个 ✅ —— 因为写好的 spec 只是一个计划，而本页第二段立的那条规矩，首先适用于仓库对自己的声明。
 
-**Agent Skills** —— 仓库自带八个 [`.claude/skills/`](../../.claude/skills/)。五个把方法论变成可调用的 AI 工作流：**platform-ramp**（诚实地上手任何平台）、**honesty-audit**（把声明分类 🔨/🧭/过度声明）、**author-module**（用仓库的声音写新章，含 **support note**、有据可查）、**runnable-lab**（把概念做成自验证 drill）、**mirror-zh**（把文档镜像成 `docs/zh/` 中文）。另外三个是**使用者侧**的 —— **linux-triage**、**harden-baseline**、**toolbox-picker** 把[工具箱](toolbox/)包装成 AI agent 能替你驱动的形态：新机器上装一个，一句话跑完一次分诊、或整个 audit→remediate 闭环。
+**Agent Skills** —— 仓库自带十个 [`.claude/skills/`](../../.claude/skills/)。七个把方法论变成可调用的 AI 工作流：**platform-ramp**（诚实地上手任何平台）、**honesty-audit**（把声明分类 🔨/🧭/过度声明）、**author-module**（用仓库的声音写新章，含 **support note**、有据可查）、**runnable-lab**（把概念做成自验证 drill）、**diagram-module**（判断一篇文档该不该配图、配什么图，并让派生产物保持同步）、**mirror-zh**（把文档镜像成 `docs/zh/` 中文）、**interview-drill**（按面试官的方式把它问回来）。另外三个是**使用者侧**的 —— **linux-triage**、**harden-baseline**、**toolbox-picker** 把[工具箱](toolbox/)包装成 AI agent 能替你驱动的形态：新机器上装一个，一句话跑完一次分诊、或整个 audit→remediate 闭环。
+
+## 在浏览器里读
+
+二十万词已经超过了"翻目录"能应付的规模。[`site/`](site/README.md) 是同一批材料，外加
+导航、全文搜索、语言切换和图形渲染 —— 仅此而已。两种启动方式，都不需要安装任何东西：
+
+```bash
+python3 site/serve.py                           # http://127.0.0.1:8000
+docker compose -f site/docker-compose.yml up    # http://127.0.0.1:8099
+```
+
+它是一个**视图**，不是第七条轴：它显示的每个字都是 GitHub 同样会渲染的文件，删掉
+`site/` 不会让这个仓库少掉任何一个事实（见
+[ADR-0005](../adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
 
 ## 关于作者
 

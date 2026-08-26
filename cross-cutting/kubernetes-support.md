@@ -4,7 +4,7 @@ axis: cross-cutting
 themes: [containers]
 platforms: []
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The break-fix half of Kubernetes, written for a Linux sysadmin. You no longer manage processes — you declare desired state and controllers reconcile forever, which is why SSH-ing in to fix a pod does not stick."
 ---
 # Kubernetes Support — the Linux sysadmin's transition guide
 

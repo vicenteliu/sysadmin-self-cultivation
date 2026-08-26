@@ -4,7 +4,7 @@ axis: platforms
 themes: [cloud]
 platforms: [aws]
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The break-fix half of AWS — the tickets that actually recur and exactly where you look. AWS stays a ramp here; the transferable foundations under it are what carry the load, which is the whole point of the page."
 ---
 # AWS Support — the operator's transition guide
 

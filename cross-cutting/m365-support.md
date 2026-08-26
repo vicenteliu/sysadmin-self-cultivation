@@ -4,7 +4,7 @@ axis: cross-cutting
 themes: [itsm-saas]
 platforms: []
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The break-fix half of M365 — keeping mail, identity and collaboration working for real people, and the confident muscle memory a strong sysadmin from another lane points at a system that breaks its own rules."
 ---
 # Microsoft 365 Support — the operator's transition guide
 

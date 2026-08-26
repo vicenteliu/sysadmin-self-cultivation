@@ -4,7 +4,7 @@ axis: cross-cutting
 themes: [iac-config]
 platforms: [aws]
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The break-fix half of Terraform, written for an Ansible sysadmin. It bites in the one place config management has no equivalent for: Terraform keeps a state file, and the state file is the source of truth."
 ---
 # Terraform Support — the config-management sysadmin's transition guide
 

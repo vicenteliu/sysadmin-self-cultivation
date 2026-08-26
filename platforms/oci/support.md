@@ -4,7 +4,7 @@ axis: platforms
 themes: [cloud]
 platforms: [oci]
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The break-fix half of OCI — the deliberate choices the youngest hyperscaler made differently, and where they trip a sysadmin arriving from AWS, Azure, GCP or on-prem. A compartment is not an account."
 ---
 # OCI Support — the operator's transition guide
 

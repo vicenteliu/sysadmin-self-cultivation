@@ -9,7 +9,7 @@
       "axis": "start-here",
       "themes": [],
       "platforms": [],
-      "summary": "The nine Agent Skills — six packaging the repo's method, three driving the toolbox — that let an AI agent apply the methodology rather than only read it."
+      "summary": "The ten Agent Skills — seven packaging the repo's method, three driving the toolbox — that let an AI agent apply the methodology rather than only read it."
     },
     ".claude/skills/author-module/SKILL.md": {
       "kind": "agent-skill",
@@ -448,7 +448,7 @@
         "containers"
       ],
       "platforms": [],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of Kubernetes, written for a Linux sysadmin. You no longer manage processes — you declare desired state and controllers reconcile forever, which is why SSH-ing in to fix a pod does not stick.",
       "marker": "mixed"
     },
     "cross-cutting/kubernetes.md": {
@@ -572,7 +572,7 @@
         "itsm-saas"
       ],
       "platforms": [],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of M365 — keeping mail, identity and collaboration working for real people, and the confident muscle memory a strong sysadmin from another lane points at a system that breaks its own rules.",
       "marker": "mixed"
     },
     "cross-cutting/multi-cloud-support.md": {
@@ -587,7 +587,7 @@
         "gcp",
         "oci"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The capstone support note: multi-cloud is a posture, not a product. There is no unifying control plane to install — each cloud keeps its own IAM, network, quota and billing model, and the job is owning the seams between them.",
       "marker": "mixed"
     },
     "cross-cutting/saas-admin.md": {
@@ -666,7 +666,7 @@
       "platforms": [
         "aws"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of Terraform, written for an Ansible sysadmin. It bites in the one place config management has no equivalent for: Terraform keeps a state file, and the state file is the source of truth.",
       "marker": "mixed"
     },
     "cross-cutting/web-and-tls.md": {
@@ -771,7 +771,7 @@
         "containers"
       ],
       "platforms": [],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of Kubernetes, written for a Linux sysadmin. You no longer manage processes — you declare desired state and controllers reconcile forever, which is why SSH-ing in to fix a pod does not stick.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/kubernetes-support.md",
@@ -784,7 +784,7 @@
         "itsm-saas"
       ],
       "platforms": [],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of M365 — keeping mail, identity and collaboration working for real people, and the confident muscle memory a strong sysadmin from another lane points at a system that breaks its own rules.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/m365-support.md",
@@ -802,7 +802,7 @@
         "gcp",
         "oci"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The capstone support note: multi-cloud is a posture, not a product. There is no unifying control plane to install — each cloud keeps its own IAM, network, quota and billing model, and the job is owning the seams between them.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/multi-cloud-support.md",
@@ -817,7 +817,7 @@
       "platforms": [
         "aws"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of Terraform, written for an Ansible sysadmin. It bites in the one place config management has no equivalent for: Terraform keeps a state file, and the state file is the source of truth.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/terraform-support.md",
@@ -832,7 +832,7 @@
       "platforms": [
         "aws"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of AWS — the tickets that actually recur and exactly where you look. AWS stays a ramp here; the transferable foundations under it are what carry the load, which is the whole point of the page.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/aws/support.md",
@@ -847,7 +847,7 @@
       "platforms": [
         "azure"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of Azure and Entra, and the honest split it keeps: identity is hands-on depth, Azure IaaS is a ramp. Entra is who you are, RBAC is what you can touch, and confusing them is the classic mistake.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/azure/support.md",
@@ -862,7 +862,7 @@
       "platforms": [
         "gcp"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of GCP and GKE. Google Cloud is mostly renamed AWS, which is exactly the trap — the burns are in the few genuinely different choices, starting with IAM that is additive and inherited.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/gcp/support.md",
@@ -877,7 +877,7 @@
       "platforms": [
         "oci"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of OCI — the deliberate choices the youngest hyperscaler made differently, and where they trip a sysadmin arriving from AWS, Azure, GCP or on-prem. A compartment is not an account.",
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/oci/support.md",
@@ -1252,7 +1252,7 @@
       "platforms": [
         "aws"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of AWS — the tickets that actually recur and exactly where you look. AWS stays a ramp here; the transferable foundations under it are what carry the load, which is the whole point of the page.",
       "marker": "mixed"
     },
     "platforms/azure/README.md": {
@@ -1355,7 +1355,7 @@
       "platforms": [
         "azure"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of Azure and Entra, and the honest split it keeps: identity is hands-on depth, Azure IaaS is a ramp. Entra is who you are, RBAC is what you can touch, and confusing them is the classic mistake.",
       "marker": "mixed"
     },
     "platforms/gcp/README.md": {
@@ -1461,7 +1461,7 @@
       "platforms": [
         "gcp"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of GCP and GKE. Google Cloud is mostly renamed AWS, which is exactly the trap — the burns are in the few genuinely different choices, starting with IAM that is additive and inherited.",
       "marker": "mixed"
     },
     "platforms/oci/README.md": {
@@ -1565,7 +1565,7 @@
       "platforms": [
         "oci"
       ],
-      "summary": "🌐 Languages: English (default) ·…",
+      "summary": "The break-fix half of OCI — the deliberate choices the youngest hyperscaler made differently, and where they trip a sysadmin arriving from AWS, Azure, GCP or on-prem. A compartment is not an account.",
       "marker": "mixed"
     },
     "platforms/openstack/README.md": {

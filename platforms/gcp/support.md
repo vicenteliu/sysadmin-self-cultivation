@@ -4,7 +4,7 @@ axis: platforms
 themes: [cloud]
 platforms: [gcp]
 marker: "mixed"
-summary: "🌐 Languages: English (default) ·…"
+summary: "The break-fix half of GCP and GKE. Google Cloud is mostly renamed AWS, which is exactly the trap — the burns are in the few genuinely different choices, starting with IAM that is additive and inherited."
 ---
 # GCP & GKE Support — the operator's transition guide
 

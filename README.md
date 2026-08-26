@@ -112,17 +112,18 @@ how far each skill travels rather than by which cloud it belongs to.
 | **Use AI on an ordinary Tuesday** | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — triage → change → incident → write-up → sweep, and where you take it back |
 | **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
-| **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — four decisions and the options they beat |
+| **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — seven decisions and the options they beat |
 | **See what it cannot answer yet** | [`docs/questions.md`](docs/questions.md) — questions asked of this repo: open, answered, or out of scope with the reason |
 | **Take runnable tools with me** | [`toolbox/`](toolbox/) — ten find/audit scripts (incl. a VMware→Proxmox virtualization quartet), three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
-| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — nine Agent Skills: six for the method (ramp · audit · author · lab · mirror · drill), three that drive the toolbox |
+| **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — ten Agent Skills: seven for the method (ramp · audit · author · lab · diagram · mirror · drill), three that drive the toolbox |
+| **Read it in a browser** | [`site/`](site/README.md) — `python3 site/serve.py`, or `docker compose -f site/docker-compose.yml up`. Full-text search, facets, a 🌐 switcher, rendered diagrams. Nothing to install |
 | **Let an agent search it** | [`docs/index.json`](docs/index.json) — one record per file, generated from front-matter by [`docs/build-index.py`](docs/build-index.py) |
 
 ## What's built
 
 Everything the [roadmap](ROADMAP.md) planned is written, with **twenty runnable,
 self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**,
-**two theme skill maps**, **two interview maps**, **nine Agent Skills**, and a **runnable toolbox** (ten
+**two theme skill maps**, **two interview maps**, **ten Agent Skills**, and a **runnable toolbox** (ten
 scripts, three Ansible remediation roles, a per-shop pack
 [generator](toolbox/generate/)); what remains is more runnable labs — the platform lab
 arcs are specced well ahead of what is built, and the table below says which — a fuller
@@ -162,12 +163,14 @@ four standalone drills that sit outside the arcs. The gap gets its own column ra
 than a shared checkmark, because a specced lab is a plan — and the rule in the second
 paragraph of this file applies to the repo's own claims first.
 
-**Agent Skills** — the repo ships eight [`.claude/skills/`](.claude/skills/). Five
+**Agent Skills** — the repo ships ten [`.claude/skills/`](.claude/skills/). Seven
 turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
 platform, honestly), **honesty-audit** (classify claims 🔨/🧭/overclaim),
 **author-module** (write a new note — including a **support note** — in the repo's
 voice, research-grounded), **runnable-lab** (turn a concept into a self-verifying
-drill), and **mirror-zh** (mirror a doc into `docs/zh/` Chinese). Three are
+drill), **diagram-module** (decide whether a doc needs a figure, draw it, keep the
+derived artifacts in step), **mirror-zh** (mirror a doc into `docs/zh/` Chinese), and
+**interview-drill** (ask it back the way an interviewer would). Three are
 **user-side** — **linux-triage**, **harden-baseline**, and **toolbox-picker** wrap
 the [toolbox](toolbox/) so an AI agent can drive it for you: install one on a new
 box and run a triage, or the whole audit→remediate loop, in one sentence.
