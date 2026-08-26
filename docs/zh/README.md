@@ -30,56 +30,24 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 
 ## 整体形状
 
-六条轴切同一批材料 —— 从哪条最贴你的问题就从哪进：
+六条轴切同一批材料 —— 从哪条最贴你的问题就从哪进 —— 外加一条**横穿全部六条的路线**
+[`build-out/`](../../build-out/)，给还不知道该问什么的读者。
 
-```mermaid
-mindmap
-  root((自我修养))
-    从这里开始
-      WHY - 动机
-      操作模型 - 骨架
-      ai-workflow - 方法
-      agent skills - 方法变成可调用工具
-    基础
-      Linux 与脚本 - 地基
-    The Stack 按层自底向上
-      01 物理层
-      02 网络层
-      03 计算与镜像
-      04 存储
-      05 平台服务
-      06 可观测性
-      07 安全
-    七个平台
-      AWS - 完整样板
-      Azure
-      GCP
-      OCI
-      vSphere - 亲手做过
-      OpenStack
-      self-host - 亲手做过
-    横切主题 可迁移技能
-      身份与 IAM
-      IaC 与配置
-      CI-CD 与 GitOps
-      数据库
-      ITSM 与资产
-      web 与 TLS
-      服务网格
-      事件响应
-      与安全协作
-      SaaS 管理
-      kubernetes
-      成本
-      endpoint
-    工具箱 拿去就能跑
-      脚本 - 发现
-      Ansible roles - 修复
-      使用者侧 skills - 驱动
-      生成器 - 组装你自己的子集
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../../site/assets/diagrams/repo-map.dark.svg">
+  <img alt="六张轴卡片装在一个标着「一个本体、六个视图」的容器里，build-out 路线单独置于其下、横跨同样的宽度" src="../../site/assets/diagrams/repo-map.light.svg">
+</picture>
 
-最有特色的一条是 **The Stack**：它**自底向上**读技术栈，在**每一层**都把七个平台放一起对比 —— 从机房往上写，不是从控制台往下写。
+这条路线不是第七批材料：它不教任何新页面，它决定的是**顺序**
+（[ADR-0001](../adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)）。
+
+最有特色的一条轴是 **The Stack**：它**自底向上**读技术栈，在**每一层**都把七个平台放
+一起对比 —— 从机房往上写，不是从控制台往下写。横切（cross-cutting）多的是一个视图而
+不是一条轴：[`skills-maps/`](../../cross-cutting/skills-maps/README.md) 把各平台的技能图
+**转置** —— 一个主题横切全部七个平台，做成可勾选的框，按这项技能能走多远来分层，而不是
+按它属于哪朵云。
+
+每条轴里的每个模块，一页看全：[`CONTENTS.md`](../../CONTENTS.md)。
 
 ## 怎么读
 
@@ -90,22 +58,40 @@ mindmap
 | **深入一个平台** | [`platforms/`](../../platforms/) —— **AWS 是完整样板**，从头读到尾 |
 | **按层读技术栈** | [`the-stack/`](../../the-stack/) —— 物理层 → 安全，七平台逐层对比 |
 | **学一项可迁移技能** | [`cross-cutting/`](../../cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
+| **核对我究竟会什么** | [`cross-cutting/skills-maps/`](../../cross-cutting/skills-maps/README.md) —— 一个主题横切全部七个平台，按技能能走多远分层 |
+| **准备面试** | [`cross-cutting/interview/`](../../cross-cutting/interview/README.md) —— 同样的章节从桌子另一侧看：他们问什么、在探什么、答案什么形状 |
+| **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](../../ai-workflow/) —— 方法及其护栏 |
+| **查一个词或一条旧决策** | [`CONTEXT.md`](../../CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](../adr/) —— 七条决策及它们击败的选项 |
+| **看它还答不上什么** | [`docs/questions.md`](../questions.md) —— 有人问过这个仓库、而它还答不上的问题：开放的、已答的、或明确划在边界外并说明原因的 |
 | **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |
+| **在浏览器里读** | [`site/`](site/README.md) —— `python3 site/serve.py`，或 `docker compose -f site/docker-compose.yml up`。全文搜索、分面、🌐 切换、图形渲染。零安装 |
+| **让 agent 检索它** | [`docs/index.json`](../index.json) —— 每个文件一条记录，由 [`docs/build-index.py`](../build-index.py) 从 front-matter 生成 |
 
 ## 已建成
 
-roadmap 计划的都写完了，含**二十个可跑、自验证的 lab**（退出码 `0` = 教训成立）、**八篇 break-fix support 笔记**、**两份[主题技能图](../../cross-cutting/skills-maps/README.md)**、**十个 Agent Skill**、和一个**能直接跑的工具箱**（十个脚本、三个 Ansible 修复 roles、一个按环境打包的[生成器](toolbox/generate/)）；剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表逐个说明 —— 更完整的中文镜像（本页目前覆盖 26 篇），以及按需求深化。
+roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
+逐个说明 —— 更完整的中文镜像（本页目前覆盖 26 篇），以及按需求深化。
 
-- **基础与方法** —— [WHY](../../WHY.md) · [操作模型](../../00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/)（Linux + 脚本）✅
-- **The Stack** —— [七层，01→07](../../the-stack/)，每层对比七个平台，+ 可跑的 [失败域](../../the-stack/labs/01-failure-domains/) 和 [备份演练](../../the-stack/labs/04-backup-not-snapshot/) lab ✅
-- **横切与端点** —— [身份](../../cross-cutting/identity-iam.md) · [iac](../../cross-cutting/iac-and-config.md) · [ci-cd](../../cross-cutting/ci-cd.md) · [数据库](../../cross-cutting/databases.md) · [itsm 与资产](../../cross-cutting/itsm-and-assets.md) · [web 与 TLS](../../cross-cutting/web-and-tls.md) · [服务网格](../../cross-cutting/service-mesh.md) · [事件响应](../../cross-cutting/incident-response.md) · [与安全协作](../../cross-cutting/working-with-security.md) · [saas-admin](../../cross-cutting/saas-admin.md) · [kubernetes](../../cross-cutting/kubernetes.md) · [成本](../../cross-cutting/cost.md) · [endpoint](../../endpoint/) ✅
-- **Support 笔记（break-fix 手艺）** —— 面向你*接手并支持*、而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [Multi-cloud](cross-cutting/multi-cloud-support.md) —— 每篇含反复出现的工单、一个强 sysadmin 会栽的跨方向经验差、一个可跑 lab、和中文镜像 ✅
-- **工具箱（拿去就能跑）** —— [charter + 约定](toolbox/README.md) · 十个脚本（分诊 · 用户 · 补丁 · 基线 · 备份演练 · cidr · VMware→Proxmox 虚拟化四件套）· [Ansible 修复 roles](toolbox/ansible/) 与审计脚本配对（audit→fix）· 一个[按环境打包的生成器](toolbox/generate/) —— 安全默认，每个工具带自己的 `Tested on:` 行 ✅
+| | 是什么 | 从哪进 |
+| --- | --- | --- |
+| ✅ | **基础与方法** | [WHY](../../WHY.md) · [操作模型](../../00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/) |
+| ✅ | **技术栈 01→07** | [`the-stack/`](../../the-stack/) —— 每层对比七个平台，另加两个可跑 lab |
+| ✅ | **横切与端点** | [`cross-cutting/`](../../cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](../../endpoint/) |
+| ✅ | **技能图** —— 自查用 | [网络](../../cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](../../cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |
+| ✅ | **面试图** —— 桌子的另一侧 | [网络](../../cross-cutting/interview/networking.md)（21 题）· [身份](../../cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)） |
+| ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
+| ✅ | **工具箱** —— 拿去就能跑 | [十个脚本 + 三个 Ansible roles](toolbox/) 配对成 audit→fix，加一个[打包生成器](toolbox/generate/)。安全默认，每个工具带自己的 `Tested on:` 行 |
+| ✅ | **Agent Skills** —— 方法，可调用 | [十个](../../.claude/skills/) —— 七个包装方法，三个驱动工具箱 |
+| ✅ | **浏览器与检索** | [`site/`](site/README.md) —— 全文搜索，零安装：`python3 site/serve.py` 或 `docker compose -f site/docker-compose.yml up` · [`docs/index.json`](../index.json) —— 每个文件一条记录，给 agent 用 |
 
-**平台** —— The Stack 里对比的七个平台各有一个"端到端运维它"的专门模块（是什么 · 技能图 · AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：
+**二十个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，多数还带一个
+`--break-it` 开关，换上*标准*做法，让你看着它失败。
+
+**平台** —— The Stack 里对比的七个平台各有一个"端到端运维它"的专门模块（是什么 · 技能图 ·
+AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：
 
 | 平台 | 模块 | 架构·运营·自动化 | Lab arc（已规范） | 已建成的 lab | 诚实度 |
 | --- | --- | --- | --- | --- | --- |
@@ -122,20 +108,6 @@ roadmap 计划的都写完了，含**二十个可跑、自验证的 lab**（退�
 **七条 arc 全部写完；二十一节里建成两节**（AWS 01–02），另有四个不属于任何 arc 的独立 drill。这个缺口单独占一列、而不是和已写共用一个 ✅ —— 因为写好的 spec 只是一个计划，而本页第二段立的那条规矩，首先适用于仓库对自己的声明。
 
 **Agent Skills** —— 仓库自带十个 [`.claude/skills/`](../../.claude/skills/)。七个把方法论变成可调用的 AI 工作流：**platform-ramp**（诚实地上手任何平台）、**honesty-audit**（把声明分类 🔨/🧭/过度声明）、**author-module**（用仓库的声音写新章，含 **support note**、有据可查）、**runnable-lab**（把概念做成自验证 drill）、**diagram-module**（判断一篇文档该不该配图、配什么图，并让派生产物保持同步）、**mirror-zh**（把文档镜像成 `docs/zh/` 中文）、**interview-drill**（按面试官的方式把它问回来）。另外三个是**使用者侧**的 —— **linux-triage**、**harden-baseline**、**toolbox-picker** 把[工具箱](toolbox/)包装成 AI agent 能替你驱动的形态：新机器上装一个，一句话跑完一次分诊、或整个 audit→remediate 闭环。
-
-## 在浏览器里读
-
-二十万词已经超过了"翻目录"能应付的规模。[`site/`](site/README.md) 是同一批材料，外加
-导航、全文搜索、语言切换和图形渲染 —— 仅此而已。两种启动方式，都不需要安装任何东西：
-
-```bash
-python3 site/serve.py                           # http://127.0.0.1:8000
-docker compose -f site/docker-compose.yml up    # http://127.0.0.1:8099
-```
-
-它是一个**视图**，不是第七条轴：它显示的每个字都是 GitHub 同样会渲染的文件，删掉
-`site/` 不会让这个仓库少掉任何一个事实（见
-[ADR-0005](../adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
 
 ## 关于作者
 
