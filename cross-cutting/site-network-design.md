@@ -244,6 +244,21 @@ The [parameters](../the-reference-office.md) — 100 people, ~65 on a Tuesday, 7
 7 rooms (1 large / 2 medium / 4 small), 6 phone booths, one floor, growth to ~130 —
 produce this shape:
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../site/assets/diagrams/site-network.dark.svg">
+  <img alt="Two carriers into an edge firewall that is the gateway for four segments; a core switch feeding one-gigabit desk ports and multi-gigabit access-point uplinks; and four addressed segments — staff, guest, unpatchable and management — out of a single /22, with the ranges deliberately left unused recorded underneath" src="../site/assets/diagrams/site-network.light.svg">
+</picture>
+
+*One instance of everything above, drawn. The addresses are a **dated** example and are
+meant to be replaced whole — they are not parameters and they do not belong in
+[the reference office](../the-reference-office.md), whose `Reference build` section
+admits only things somebody could buy from. What the figure carries that the table below
+does not is the **boundary** (which segment the firewall is the gateway for) and the
+**tier** (which link actually moves), and it was checked with
+[`toolbox/cidr-check`](../toolbox/cidr-check/) rather than by eye — including against the
+three ranges it says not to use.*
+
+
 | Decision | For this office |
 | --- | --- |
 | Segments | Four: staff, guest, unpatchable, management |

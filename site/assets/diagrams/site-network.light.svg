@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 928" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="site-network-title site-network-desc">
+      <title id="site-network-title">The reference office, addressed</title>
+      <desc id="site-network-desc">A single-floor hundred-person office network: two carriers into an edge firewall that is the gateway for four segments, a core switch feeding one-gigabit desk ports and multi-gigabit access-point uplinks, and four addressed segments — staff, guest, unpatchable and management — with the ranges deliberately left unused recorded underneath.</desc>
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');</style>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5d5a52"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a8763e"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6b8a"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#faf8f4"/>
+
+      <text x="40" y="32" fill="#a8763e" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">A DATED REFERENCE BUILD — THE PARAMETERS LIVE IN THE-REFERENCE-OFFICE.MD AND OUTLIVE THIS; THESE ADDRESSES ARE MEANT TO BE REPLACED WHOLE</text>
+
+      <!-- zones first -->
+      <rect x="340" y="48" width="520" height="128" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="352" y="52" width="112" height="12" rx="2" fill="#faf8f4"/>
+      <text x="360" y="61" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">WAN — TWO CARRIERS</text>
+
+      <rect x="340" y="496" width="520" height="136" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="352" y="500" width="76" height="12" rx="2" fill="#faf8f4"/>
+      <text x="360" y="509" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">ACCESS LAYER</text>
+
+      <rect x="40" y="664" width="1120" height="184" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="52" y="668" width="248" height="12" rx="2" fill="#faf8f4"/>
+      <text x="60" y="677" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">FOUR SEGMENTS OUT OF ONE /22 — 10.20.4.0/22</text>
+
+      <!-- arrows before boxes -->
+      <path d="M 476,160 V 196 Q 476,204 484,204 H 542 Q 550,204 550,212 V 216" fill="none" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <path d="M 724,160 V 196 Q 724,204 716,204 H 658 Q 650,204 650,212 V 216" fill="none" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <line x1="600" y1="312" x2="600" y2="352" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="612" y="320" width="80" height="12" rx="2" fill="#faf8f4"/>
+      <text x="616" y="329" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em">10 GbE</text>
+
+      <path d="M 526,448 V 484 Q 526,492 518,492 H 484 Q 476,492 476,500 V 520" fill="none" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <path d="M 674,448 V 484 Q 674,492 682,492 H 716 Q 724,492 724,500 V 520" fill="none" stroke="#a8763e" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+      <line x1="600" y1="448" x2="600" y2="656" stroke="#5d5a52" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+      <rect x="612" y="636" width="216" height="12" rx="2" fill="#faf8f4"/>
+      <text x="616" y="645" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em">802.1Q TRUNK — EVERY SEGMENT, EVERY PORT</text>
+
+      <!-- carrier A -->
+      <rect x="364" y="80" width="224" height="80" rx="6" fill="#faf8f4"/>
+      <rect x="364" y="80" width="224" height="80" rx="6" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.30)" stroke-width="1"/>
+      <text x="380" y="104" fill="#8a8479" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">PRIMARY</text>
+      <text x="476" y="126" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Carrier A</text>
+      <text x="476" y="146" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">fibre · the SLA you bought</text>
+
+      <!-- carrier B -->
+      <rect x="612" y="80" width="224" height="80" rx="6" fill="#faf8f4"/>
+      <rect x="612" y="80" width="224" height="80" rx="6" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.30)" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="628" y="104" fill="#8a8479" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">FAILOVER</text>
+      <text x="724" y="126" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Carrier B</text>
+      <text x="724" y="146" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">different media, different duct</text>
+
+      <!-- firewall -->
+      <rect x="452" y="216" width="296" height="96" rx="6" fill="#faf8f4"/>
+      <rect x="452" y="216" width="296" height="96" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="468" y="240" fill="#8a8479" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">POLICY</text>
+      <text x="600" y="264" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Edge firewall</text>
+      <text x="600" y="284" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the gateway for all four segments —</text>
+      <text x="600" y="300" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">inter-segment traffic is a decision, not a default</text>
+
+      <!-- core -->
+      <rect x="452" y="352" width="296" height="96" rx="6" fill="#faf8f4"/>
+      <rect x="452" y="352" width="296" height="96" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="468" y="376" fill="#8a8479" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">AGGREGATION</text>
+      <text x="600" y="400" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Core switch</text>
+      <text x="600" y="420" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">every access uplink lands here —</text>
+      <text x="600" y="436" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the tier a design caps by counting ports</text>
+
+      <!-- desk access -->
+      <rect x="364" y="520" width="224" height="96" rx="6" fill="#faf8f4"/>
+      <rect x="364" y="520" width="224" height="96" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="380" y="544" fill="#8a8479" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">1 GbE</text>
+      <text x="476" y="568" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Desk access · 70 ports</text>
+      <text x="476" y="588" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the least starved link here</text>
+      <text x="476" y="604" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">— upgrading it first is the misread</text>
+
+      <!-- AP uplinks — the focal tier -->
+      <rect x="612" y="520" width="224" height="96" rx="6" fill="#faf8f4"/>
+      <rect x="612" y="520" width="224" height="96" rx="6" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="628" y="544" fill="#a8763e" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">2.5 / 5 GbE — THE TIER THAT MOVES</text>
+      <text x="724" y="568" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">6 access points</text>
+      <text x="724" y="588" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">~174 Mbps at peak · a 1GbE uplink</text>
+      <text x="724" y="604" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">would make it the bottleneck</text>
+
+      <!-- segments -->
+      <rect x="64" y="696" width="244" height="136" rx="6" fill="#faf8f4"/>
+      <rect x="64" y="696" width="244" height="136" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="186" y="722" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Staff</text>
+      <text x="186" y="746" fill="#a8763e" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">10.20.4.0/23</text>
+      <text x="186" y="770" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">authenticated humans and</text>
+      <text x="186" y="786" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">their managed devices</text>
+      <text x="186" y="812" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">510 usable · 130 people at growth</text>
+
+      <rect x="340" y="696" width="244" height="136" rx="6" fill="#faf8f4"/>
+      <rect x="340" y="696" width="244" height="136" rx="6" fill="rgba(168,118,62,0.05)" stroke="rgba(168,118,62,0.50)" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="462" y="722" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Guest</text>
+      <text x="462" y="746" fill="#a8763e" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">10.20.6.0/24</text>
+      <text x="462" y="770" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">untrusted people,</text>
+      <text x="462" y="786" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">internet only</text>
+      <text x="462" y="812" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">isolation you can demonstrate</text>
+
+      <rect x="616" y="696" width="244" height="136" rx="6" fill="#faf8f4"/>
+      <rect x="616" y="696" width="244" height="136" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="738" y="722" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Unpatchable</text>
+      <text x="738" y="746" fill="#a8763e" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">10.20.7.0/25</text>
+      <text x="738" y="770" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">door controllers · printers ·</text>
+      <text x="738" y="786" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">room AV · lab gear</text>
+      <text x="738" y="812" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">vendor firmware, vendor schedule</text>
+
+      <rect x="892" y="696" width="244" height="136" rx="6" fill="#faf8f4"/>
+      <rect x="892" y="696" width="244" height="136" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="1014" y="722" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Management</text>
+      <text x="1014" y="746" fill="#a8763e" font-size="12" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">10.20.7.128/25</text>
+      <text x="1014" y="770" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">switch and AP management</text>
+      <text x="1014" y="786" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">interfaces</text>
+      <text x="1014" y="812" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">reachable from one place</text>
+
+      <!-- the address plan's actual argument -->
+      <line x1="40" y1="872" x2="1160" y2="872" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="40" y="892" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">RESERVED</text>
+      <text x="132" y="892" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">branch site 10.20.16.0/22 · VPN pool 10.20.32.0/24 · cloud VPCs 10.40.0.0/14 · 10.20.8.0–10.20.15.255 left empty between the two sites, on purpose</text>
+      <text x="40" y="912" fill="#a8763e" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">NOT USED</text>
+      <text x="132" y="912" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">10.0.0.0/16 and 10.1.0.0/16 — every console's default, so two clouds that took it cannot be joined · 192.168.0.0/16 — where the VPN client already is</text>
+    </svg>
