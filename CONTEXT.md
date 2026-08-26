@@ -90,7 +90,26 @@ anything. **"Index" is three things here and only this one is the retrieval inde
 [`CONTENTS.md`](CONTENTS.md) is the human table of contents, a directory `README.md`
 is a local index for its folder, and this is neither.
 _Avoid_: catalog (that is `toolbox/generate/catalog.json`, hand-maintained and
-unrelated), manifest, search index
+unrelated), manifest, search index (that is the **search corpus**, below)
+
+**Search corpus**:
+The generated `site/corpus.json` — the full text of every document, flattened for the
+site's search box and fetched only when someone searches. Built by
+`site/build-corpus.py`, which also emits `site/titles.json` because the retrieval index
+records a summary but never a title. **Deliberately not called an index**: that word is
+already spoken for three times over, and this is a fourth thing — the prose itself,
+not a record about it.
+_Avoid_: search index, full-text index, catalog
+
+**Hero diagram**:
+One of the four branded figures under `site/assets/diagrams/` that open an axis — the
+axis map, the stack, the ramp, the route. Authored once as a light HTML file; the dark
+HTML and both SVGs are **derived** by `site/build-diagrams.py` and never hand-edited.
+Distinct from the 67 in-document **mermaid** diagrams, which are the default:
+[ADR-0007](docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) decides
+which medium a figure belongs in, and both are subject to the rule above them — a
+figure must carry what the prose does not.
+_Avoid_: illustration, graphic, branded diagram, figure (that is either of the two)
 
 ### Tiers, in a skill map
 
@@ -160,5 +179,7 @@ One of the repo's six faces over one body of material — by platform, by layer,
 theme, and so on. Something that teaches no new page is **not** an axis, however
 useful ([ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)).
 `build-out/` is a route across the axes; `cross-cutting/skills-maps/` is a
-transposed view of them.
+transposed view of them; [`site/`](site/README.md) is a **view** — it renders
+the material and adds none of it, which is the same test applied a second time
+([ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)).
 _Avoid_: section, category, track

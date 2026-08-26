@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 196,
+  "count": 199,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -723,6 +723,27 @@
       "themes": [],
       "platforms": [],
       "summary": "ADR-0002 made five decisions about the-reference-office.md."
+    },
+    "docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The repo now ships a browser at site/ — navigation, full-text search, a language switcher, rendered diagrams. It is the first thing here that is neither a document nor a tool, and the question it raises is what it is allowed to become."
+    },
+    "docs/adr/0006-the-viewer-vendors-its-dependencies.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "There is a 2.5 MB minified JavaScript bundle committed to this repository. It is larger than every Markdown file here put together, and it is the single most surprising thing in the tree, so it needs a reason on the record."
+    },
+    "docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The repo had 67 mermaid diagrams and one way of making them. Adding branded hero figures introduced a second way, and two ways of doing one thing is how a convention rots — so the boundary between them is written down here rather than left to taste."
     },
     "docs/questions.md": {
       "kind": "questions",
