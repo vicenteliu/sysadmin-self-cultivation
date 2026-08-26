@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One host's uplinks, and what is bound to what</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #faf8f4;
+      --color-ink:     #26262b;
+      --color-muted:   #5d5a52;
+      --color-accent:  #a8763e;
+      --font-sans:     'Geist', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+      --font-serif:    'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --font-mono:     'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    body {
+      font-family: var(--font-sans); background: var(--color-paper); color: var(--color-ink);
+      min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem;
+    }
+    .frame { max-width: 1200px; width: 100%; }
+    .eyebrow {
+      font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: var(--font-serif); font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem); font-weight: 400;
+      letter-spacing: -0.02em; line-height: 1.15; color: var(--color-ink); margin-bottom: 1.5rem;
+    }
+    svg { width: 100%; min-width: 900px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Architecture · The Sysadmin's Self-Cultivation</p>
+    <h1>One host's uplinks, and what is bound to what</h1>
+
+    <svg viewBox="0 0 1200 856" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="esxi-host-network-title esxi-host-network-desc">
+      <title id="esxi-host-network-title">One host's uplinks, and what is bound to what</title>
+      <desc id="esxi-host-network-desc">A single ESXi host's network wiring: four physical adapters mapped one-to-one onto four distributed-switch uplinks and split across two top-of-rack switches, and five port groups below showing the teaming policy each one uses — including the two iSCSI port groups that mark their second uplink unused rather than standby, which is what makes their paths independent.</desc>
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5d5a52"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a8763e"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6b8a"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#faf8f4"/>
+
+      <text x="40" y="32" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">ONE HOST OF THE SIX — THE OTHER FIVE ARE IDENTICAL, WHICH IS THE POINT OF A HOST PROFILE</text>
+
+      <!-- cabling, drawn before the boxes -->
+      <path d="M 360,232 V 200 Q 360,192 352,192 H 252 Q 244,192 244,184 V 160" fill="none" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="248" y="170" width="108" height="12" rx="2" fill="#faf8f4"/>
+      <text x="302" y="179" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">vmnic0 · vmnic2</text>
+
+      <path d="M 840,232 V 200 Q 840,192 848,192 H 948 Q 956,192 956,184 V 160" fill="none" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="844" y="170" width="108" height="12" rx="2" fill="#faf8f4"/>
+      <text x="898" y="179" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.06em">vmnic1 · vmnic3</text>
+
+      <line x1="600" y1="448" x2="600" y2="488" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="612" y="456" width="196" height="12" rx="2" fill="#faf8f4"/>
+      <text x="616" y="465" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em">PORT GROUPS ON THE SAME vDS</text>
+
+      <!-- top of rack -->
+      <rect x="64" y="64" width="360" height="88" rx="6" fill="#faf8f4"/>
+      <rect x="64" y="64" width="360" height="88" rx="6" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.30)" stroke-width="1"/>
+      <text x="244" y="98" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ToR switch A</text>
+      <text x="244" y="120" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">carries iSCSI path A</text>
+      <text x="244" y="138" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">MLAG peer of B for everything except iSCSI</text>
+
+      <rect x="776" y="64" width="360" height="88" rx="6" fill="#faf8f4"/>
+      <rect x="776" y="64" width="360" height="88" rx="6" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.30)" stroke-width="1"/>
+      <text x="956" y="98" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ToR switch B</text>
+      <text x="956" y="120" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">carries iSCSI path B</text>
+      <text x="956" y="138" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">lose one switch and one iSCSI path survives</text>
+
+      <!-- the host -->
+      <rect x="240" y="232" width="720" height="216" rx="6" fill="#faf8f4"/>
+      <rect x="240" y="232" width="720" height="216" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="600" y="266" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ESXi host — 4 × 25 GbE, mapped one to one onto vDS uplinks</text>
+
+      <rect x="272" y="296" width="152" height="112" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="348" y="324" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">vmnic0</text>
+      <text x="348" y="352" fill="#5d5a52" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 1</text>
+      <text x="348" y="376" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">to ToR A</text>
+      <text x="348" y="394" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">pair 1 — shared</text>
+
+      <rect x="440" y="296" width="152" height="112" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="516" y="324" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">vmnic1</text>
+      <text x="516" y="352" fill="#5d5a52" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 2</text>
+      <text x="516" y="376" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">to ToR B</text>
+      <text x="516" y="394" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">pair 1 — shared</text>
+
+      <rect x="608" y="296" width="152" height="112" rx="4" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="684" y="324" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">vmnic2</text>
+      <text x="684" y="352" fill="#a8763e" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 3</text>
+      <text x="684" y="376" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">to ToR A</text>
+      <text x="684" y="394" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">pair 2 — iSCSI only</text>
+
+      <rect x="776" y="296" width="152" height="112" rx="4" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="852" y="324" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">vmnic3</text>
+      <text x="852" y="352" fill="#a8763e" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 4</text>
+      <text x="852" y="376" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">to ToR B</text>
+      <text x="852" y="394" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">pair 2 — iSCSI only</text>
+
+      <text x="600" y="432" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the same four on every host — a host profile is what keeps that true after the third one is built</text>
+
+      <!-- port groups and their teaming -->
+      <rect x="40" y="496" width="1120" height="216" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="52" y="500" width="224" height="12" rx="2" fill="#faf8f4"/>
+      <text x="60" y="509" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">FIVE PORT GROUPS, FIVE TEAMING POLICIES</text>
+
+      <rect x="68" y="528" width="200" height="152" rx="6" fill="#faf8f4"/><rect x="68" y="528" width="200" height="152" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="168" y="556" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Management</text>
+      <text x="168" y="578" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 100 · vmk0</text>
+      <text x="168" y="608" fill="#26262b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 1 active</text>
+      <text x="168" y="626" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 2 standby</text>
+      <text x="168" y="656" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">explicit order, not a hash</text>
+
+      <rect x="284" y="528" width="200" height="152" rx="6" fill="#faf8f4"/><rect x="284" y="528" width="200" height="152" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="384" y="556" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">vMotion</text>
+      <text x="384" y="578" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 110 · vmk1</text>
+      <text x="384" y="608" fill="#26262b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 2 active</text>
+      <text x="384" y="626" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 1 standby</text>
+      <text x="384" y="656" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the mirror of mgmt, on purpose</text>
+
+      <rect x="500" y="528" width="200" height="152" rx="6" fill="#faf8f4"/><rect x="500" y="528" width="200" height="152" rx="6" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="600" y="556" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">iSCSI — path A</text>
+      <text x="600" y="578" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 120 · vmk2</text>
+      <text x="600" y="608" fill="#26262b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 3 active</text>
+      <text x="600" y="626" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 4 UNUSED</text>
+      <text x="600" y="656" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">port binding — 1 vmk : 1 uplink</text>
+
+      <rect x="716" y="528" width="200" height="152" rx="6" fill="#faf8f4"/><rect x="716" y="528" width="200" height="152" rx="6" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="816" y="556" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">iSCSI — path B</text>
+      <text x="816" y="578" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 121 · vmk3</text>
+      <text x="816" y="608" fill="#26262b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 4 active</text>
+      <text x="816" y="626" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 3 UNUSED</text>
+      <text x="816" y="656" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the other failure domain</text>
+
+      <rect x="932" y="528" width="200" height="152" rx="6" fill="#faf8f4"/><rect x="932" y="528" width="200" height="152" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="1032" y="556" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">VM networks</text>
+      <text x="1032" y="578" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 200+ · no vmk</text>
+      <text x="1032" y="608" fill="#26262b" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">uplink 1 + 2 active</text>
+      <text x="1032" y="626" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">route by NIC load</text>
+      <text x="1032" y="656" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the only one that rebalances</text>
+
+      <!-- the two things the drawing exists to say -->
+      <line x1="40" y1="744" x2="1160" y2="744" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="40" y="768" fill="#a8763e" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">UNUSED, NOT STANDBY</text>
+      <text x="216" y="768" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">iSCSI multipathing belongs to the storage stack, not the teaming policy. A standby uplink lets teaming fail a vmk over and</text>
+      <text x="216" y="786" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">quietly break the one-to-one binding Round Robin is counting on — so the second uplink is marked unused and the array does the work.</text>
+      <text x="40" y="816" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">NIOC</text>
+      <text x="216" y="816" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">only has to arbitrate pair 1. Pair 2 carries one thing, so a 1 TB vMotion can never contend with storage — which is why the split.</text>
+    </svg>
+  </div>
+</body>
+</html>

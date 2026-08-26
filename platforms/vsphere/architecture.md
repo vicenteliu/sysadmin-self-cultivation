@@ -145,6 +145,31 @@ The host itself was chosen so that CPU and memory run out together: 64 physical 
 4:1 and 1 TB of memory at 8 GB per VM both land on 128 VMs. A host where one is reached
 long before the other is a host you paid for twice.
 
+### One host's uplinks, zoomed in
+
+The figure above says which VLANs exist. It does not say what makes the two iSCSI paths
+*independent*, and that is a binding rather than a VLAN — so it needs its own drawing.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../../site/assets/diagrams/esxi-host-network.dark.svg">
+  <img alt="One ESXi host's four physical adapters mapped one to one onto four distributed-switch uplinks and split across two top-of-rack switches, with five port groups below showing each one's teaming policy — including the two iSCSI port groups that mark their second uplink unused rather than standby" src="../../site/assets/diagrams/esxi-host-network.light.svg">
+</picture>
+
+**The line worth reading twice is `UNUSED`, not `standby`.** Every other port group here
+wants a standby uplink, because failing over is the whole point of a team. The two iSCSI
+port groups do not: multipathing is the storage stack's job, done by Round Robin across
+paths it can see, and it can only see them if each `vmk` stays pinned to exactly one
+uplink. Leave the second uplink on standby and the teaming layer will one day move a
+`vmk` for you, silently collapsing two paths into one — the array still reports two, and
+nothing alarms until the switch you are now single-homed to reboots.
+
+The rest of the sheet is the same idea applied more cheaply: management and vMotion take
+opposite active uplinks so that in normal running they are not on the same wire, and the
+whole reason for splitting four adapters into two pairs is that NIOC then only has to
+arbitrate the first one — a terabyte of vMotion cannot contend with storage that is not
+sharing its NICs.
+
+
 
 ## Honest boundaries
 
