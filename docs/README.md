@@ -10,7 +10,9 @@ summary: "The project's default language is English; the canonical docs live at 
 The project's **default language is English**; the canonical docs live at the repo
 root and under `platforms/`, `cross-cutting/`, and `ai-workflow/`.
 
-It also holds the repo's own metadata: the [decision records](adr/) and the
+It also holds the repo's own metadata: the [decision records](adr/), the
+[open questions](questions.md) — what the repo has been asked and cannot yet answer,
+including the ones deliberately out of scope and why — and the
 **retrieval index** — [`index.json`](index.json), generated from every file's
 front-matter by [`build-index.py`](build-index.py) so an agent can search the repo
 without walking it. The index is generated, never edited: change the file, then run

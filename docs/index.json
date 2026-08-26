@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 192,
+  "count": 193,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -716,6 +716,15 @@
       "themes": [],
       "platforms": [],
       "summary": "ADR-0002 made five decisions about the-reference-office.md."
+    },
+    "docs/questions.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Questions asked of this repo that it cannot yet answer — open, answered, or deliberately out of scope, with the reason recorded for the last kind."
     },
     "docs/zh/README.md": {
       "kind": "index",
