@@ -119,6 +119,33 @@ Every surface is present: **identity** (SSO + AD groups), **compute** (the clust
 DRS-balanced), **networking** (DVS onto VLANs), **storage** (shared datastore),
 **availability** (HA + anti-affinity) — the [skill map](skills-map.md) doing one job.
 
+### The same shape, sized — 500 VMs
+
+The diagram above says which surfaces exist. This one says what they cost when the
+estate is a real size, and every number on it is derived rather than asserted — the
+strip along the bottom shows the arithmetic.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../../site/assets/diagrams/vsphere-500vm.dark.svg">
+  <img alt="A vSphere estate for five hundred VMs: a vCenter appliance on a separate three-host management cluster, a six-host workload cluster with the per-host arithmetic shown, one distributed switch carrying management, vMotion, two iSCSI paths and VM traffic on separate VLANs, and an all-flash array presenting eight VMFS datastores over unrouted storage VLANs" src="../../site/assets/diagrams/vsphere-500vm.light.svg">
+</picture>
+
+Three things on it are decisions rather than arithmetic, and they are the ones worth
+arguing with:
+
+- **Six hosts, not four.** Four hold 500 VMs. Six is what lets one host fail while all
+  500 keep running at 78% — and admission control is what makes that a guarantee
+  instead of a hope.
+- **A separate management cluster.** vCenter on the cluster it manages is a bootstrap
+  problem you only meet during a full-site restart, which is the worst moment to meet it.
+- **Eight datastores, not one.** The capacity is the same either way; the blast radius
+  is not, and §2 above says why.
+
+The host itself was chosen so that CPU and memory run out together: 64 physical cores at
+4:1 and 1 TB of memory at 8 GB per VM both land on 128 VMs. A host where one is reached
+long before the other is a host you paid for twice.
+
+
 ## Honest boundaries
 
 🔨 **hands-on depth — one of the deepest in the repo, and this whole note is written

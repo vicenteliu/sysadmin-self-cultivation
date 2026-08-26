@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 1008" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vsphere-500vm-title vsphere-500vm-desc">
+      <title id="vsphere-500vm-title">Five hundred VMs, on your own floor</title>
+      <desc id="vsphere-500vm-desc">A self-hosted vSphere estate sized for five hundred virtual machines: a vCenter appliance on its own three-host management cluster, a six-host workload cluster with the per-host arithmetic shown, one distributed switch carrying management, vMotion, two iSCSI paths and VM traffic on separate VLANs, and an all-flash array presenting eight VMFS datastores over unrouted storage VLANs.</desc>
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');</style>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5d5a52"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a8763e"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6b8a"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#faf8f4"/>
+
+      <text x="40" y="36" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">A DATED WORKED INSTANCE — EVERY NUMBER ON IT IS DERIVED IN THE STRIP AT THE BOTTOM, NOT ASSERTED</text>
+
+      <!-- zones -->
+      <rect x="40" y="64" width="1120" height="128" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="52" y="68" width="88" height="12" rx="2" fill="#faf8f4"/>
+      <text x="60" y="77" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">CONTROL PLANE</text>
+
+      <rect x="40" y="240" width="1120" height="200" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="52" y="244" width="252" height="12" rx="2" fill="#faf8f4"/>
+      <text x="60" y="253" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">WORKLOAD CLUSTER — 6 × ESXi · HA + DRS · N+1</text>
+
+      <rect x="40" y="488" width="1120" height="152" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="52" y="492" width="288" height="12" rx="2" fill="#faf8f4"/>
+      <text x="60" y="501" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">ONE vDS — TRAFFIC SEPARATED BY VLAN, NOT BY SWITCH</text>
+
+      <rect x="40" y="688" width="1120" height="200" rx="8" fill="rgba(38,38,43,0.02)" stroke="rgba(38,38,43,0.10)" stroke-width="0.8"/>
+      <rect x="52" y="692" width="184" height="12" rx="2" fill="#faf8f4"/>
+      <text x="60" y="701" fill="rgba(38,38,43,0.40)" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">STORAGE — EXTERNAL ARRAY, iSCSI</text>
+
+      <!-- inter-tier connectors -->
+      <line x1="600" y1="192" x2="600" y2="232" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="612" y="200" width="72" height="12" rx="2" fill="#faf8f4"/>
+      <text x="616" y="209" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em">MANAGES</text>
+
+      <line x1="600" y1="440" x2="600" y2="480" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="612" y="448" width="216" height="12" rx="2" fill="#faf8f4"/>
+      <text x="616" y="457" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em">4 × 25 GbE PER HOST, TWO NIC PAIRS</text>
+
+      <line x1="600" y1="640" x2="600" y2="680" stroke="#a8763e" stroke-width="1.2" marker-end="url(#arrow-accent)"/>
+      <rect x="612" y="648" width="240" height="12" rx="2" fill="#faf8f4"/>
+      <text x="616" y="657" fill="#a8763e" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.06em">TWO UNROUTED STORAGE VLANs, MTU 9000</text>
+
+      <!-- control plane -->
+      <rect x="64" y="96" width="520" height="80" rx="6" fill="#faf8f4"/>
+      <rect x="64" y="96" width="520" height="80" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="80" y="120" fill="#8a8479" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">VCENTER</text>
+      <text x="324" y="142" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">VCSA — Small deployment size</text>
+      <text x="324" y="162" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">4 vCPU · 21 GB · rated to 100 hosts / 1000 VMs — this estate is 9 and 500</text>
+
+      <rect x="616" y="96" width="520" height="80" rx="6" fill="#faf8f4"/>
+      <rect x="616" y="96" width="520" height="80" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="632" y="120" fill="#8a8479" font-size="7" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">MANAGEMENT CLUSTER</text>
+      <text x="876" y="142" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">3 × ESXi — vCenter, backup, monitoring</text>
+      <text x="876" y="162" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">separate, so a full restart does not need the cluster vCenter is on</text>
+
+      <!-- six hosts -->
+      <rect x="56" y="272" width="168" height="72" rx="6" fill="#faf8f4"/><rect x="56" y="272" width="168" height="72" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="140" y="304" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ESXi 01</text>
+      <text x="140" y="324" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">2×32c · 1 TB</text>
+      <rect x="240" y="272" width="168" height="72" rx="6" fill="#faf8f4"/><rect x="240" y="272" width="168" height="72" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="324" y="304" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ESXi 02</text>
+      <text x="324" y="324" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">2×32c · 1 TB</text>
+      <rect x="424" y="272" width="168" height="72" rx="6" fill="#faf8f4"/><rect x="424" y="272" width="168" height="72" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="508" y="304" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ESXi 03</text>
+      <text x="508" y="324" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">2×32c · 1 TB</text>
+      <rect x="608" y="272" width="168" height="72" rx="6" fill="#faf8f4"/><rect x="608" y="272" width="168" height="72" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="692" y="304" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ESXi 04</text>
+      <text x="692" y="324" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">2×32c · 1 TB</text>
+      <rect x="792" y="272" width="168" height="72" rx="6" fill="#faf8f4"/><rect x="792" y="272" width="168" height="72" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="876" y="304" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ESXi 05</text>
+      <text x="876" y="324" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">2×32c · 1 TB</text>
+      <rect x="976" y="272" width="168" height="72" rx="6" fill="#faf8f4"/><rect x="976" y="272" width="168" height="72" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="1060" y="304" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">ESXi 06</text>
+      <text x="1060" y="324" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">2×32c · 1 TB</text>
+
+      <text x="600" y="372" fill="#26262b" font-size="10" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">64 pCore × 4:1 ÷ 2 vCPU = 128 VM     ·     1 TB ÷ 8 GB = 128 VM</text>
+      <text x="600" y="392" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">CPU and memory land on the same number — that is why this host, not a bigger one</text>
+      <text x="600" y="416" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">~83 VMs each in normal running (65%) · lose one host and the other five carry all 500 at 78%</text>
+
+      <!-- port groups -->
+      <rect x="68" y="520" width="200" height="96" rx="6" fill="#faf8f4"/><rect x="68" y="520" width="200" height="96" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="168" y="548" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Management</text>
+      <text x="168" y="572" fill="#5d5a52" font-size="11" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 100</text>
+      <text x="168" y="596" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">vmk0 · routed</text>
+
+      <rect x="284" y="520" width="200" height="96" rx="6" fill="#faf8f4"/><rect x="284" y="520" width="200" height="96" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="384" y="548" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">vMotion</text>
+      <text x="384" y="572" fill="#5d5a52" font-size="11" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 110</text>
+      <text x="384" y="596" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">vmk1 · unrouted · 1 TB moves</text>
+
+      <rect x="500" y="520" width="200" height="96" rx="6" fill="#faf8f4"/><rect x="500" y="520" width="200" height="96" rx="6" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="600" y="548" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">iSCSI — path A</text>
+      <text x="600" y="572" fill="#a8763e" font-size="11" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 120</text>
+      <text x="600" y="596" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">vmk2 · MTU 9000</text>
+
+      <rect x="716" y="520" width="200" height="96" rx="6" fill="#faf8f4"/><rect x="716" y="520" width="200" height="96" rx="6" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="816" y="548" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">iSCSI — path B</text>
+      <text x="816" y="572" fill="#a8763e" font-size="11" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 121</text>
+      <text x="816" y="596" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">vmk3 · a second failure domain</text>
+
+      <rect x="932" y="520" width="200" height="96" rx="6" fill="#faf8f4"/><rect x="932" y="520" width="200" height="96" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="1032" y="548" fill="#26262b" font-size="12" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">VM networks</text>
+      <text x="1032" y="572" fill="#5d5a52" font-size="11" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">VLAN 200+</text>
+      <text x="1032" y="596" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">a port group per tier</text>
+
+      <!-- storage -->
+      <rect x="64" y="720" width="296" height="88" rx="6" fill="#faf8f4"/><rect x="64" y="720" width="296" height="88" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="212" y="752" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">2 × ToR switch</text>
+      <text x="212" y="774" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">MLAG · one uplink pair per host</text>
+      <text x="212" y="792" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">storage VLANs never leave this pair</text>
+
+      <rect x="392" y="720" width="328" height="88" rx="6" fill="#faf8f4"/><rect x="392" y="720" width="328" height="88" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="556" y="752" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">All-flash array, dual controller</text>
+      <text x="556" y="774" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">active/active · 4 paths per LUN, Round Robin</text>
+      <text x="556" y="792" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">a controller failover must be a non-event, and gets tested</text>
+
+      <rect x="752" y="720" width="384" height="88" rx="6" fill="#faf8f4"/><rect x="752" y="720" width="384" height="88" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
+      <text x="944" y="752" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">8 × VMFS datastore × 10 TB = 80 TB usable</text>
+      <text x="944" y="774" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">~62 VMs each — not one big datastore</text>
+      <text x="944" y="792" fill="#a8763e" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">a full datastore is a mass outage — free space is an alarm</text>
+
+      <text x="600" y="840" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">~15,000 IOPS steady · designed for 45,000 at peak</text>
+      <text x="600" y="864" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">vMotion, HA restart and DRS all assume every host sees every datastore</text>
+
+      <!-- the arithmetic -->
+      <line x1="40" y1="912" x2="1160" y2="912" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="40" y="936" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">SIZED FROM</text>
+      <text x="148" y="936" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">500 VMs at 2 vCPU · 8 GB · 100 GB each · 4:1 vCPU overcommit · memory not overcommitted</text>
+      <text x="40" y="960" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">HOSTS</text>
+      <text x="148" y="960" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">4 would hold 500; 6 so one failure leaves all 500 running at 78% — and 614 fit before the survivors reach 80%</text>
+      <text x="40" y="984" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">CAPACITY</text>
+      <text x="148" y="984" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace">49 TB of disks + 4 TB of swap + 5 TB overhead = 58 TB; held under 75% utilisation → 80 TB usable</text>
+    </svg>
