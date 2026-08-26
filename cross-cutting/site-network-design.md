@@ -106,6 +106,27 @@ removing it. The things that still want copper:
 count and easy to get right; what gets under-specified is the path from the access
 switch to everything else, because it does not show up in a port count.
 
+### Speed is a per-tier decision, and the tiers move at different times
+
+"Is it still gigabit?" has three answers, because three tiers upgrade on three
+different schedules and for different reasons:
+
+| Tier | What drives it |
+| --- | --- |
+| **Desk ports** | Almost nothing. A hybrid floor moved its load to wireless and its storage to SaaS; the desk is the *least* starved link in the building. Upgrading here first is the classic misread. |
+| **AP uplinks** | **The tier that actually moves.** A modern access point can exceed a gigabit on its radios, so a 1GbE uplink turns the AP into the bottleneck it was bought to remove. This is where multi-gig earns its money. |
+| **Aggregation and core** | Oversubscription. Every access switch's uplink lands here, and this is the tier a design quietly caps by counting ports and not paths. |
+
+**The order matters more than the numbers.** The instinct is to upgrade what people
+touch, and what people touch is the desk. The link under pressure is the one nobody
+looks at, because it is in a ceiling. Specify the AP uplink first, the aggregation
+path second, and the desk when something actually needs it — which for most offices
+is not yet.
+
+*A number in this section would date; the ordering will not.* Current-generation
+figures live with the other things that date, in the reference office's
+[Selection rules](../the-reference-office.md#selection-rules).
+
 ## Wireless — density, not coverage 🧭
 
 **🧭 This section is a verified ramp, not hands-on depth.** The segmentation and
@@ -186,6 +207,36 @@ not an answer.
 The evidence matters as much as the control: this is one of the cheapest genuine
 artefacts to have ready before
 [compliance evidence](../build-out/14-compliance-evidence.md) becomes urgent.
+
+## When the size changes the design
+
+The reference office is a hundred people on one floor. Most of what is above holds
+from fifteen people to five hundred — but **eight decisions flip**, and knowing
+*what drives each flip* is more useful than knowing where it lands, because the
+driver transfers and the threshold does not.
+
+| Decision | Small (<25) | Reference (~100) | Large (500+) | What actually drives the flip |
+| --- | --- | --- | --- | --- |
+| **Wireless management** | Standalone APs | Cloud-managed or controller | Controller cluster | AP count — around five, when configuring each by hand stops being tolerable |
+| **Switching** | One switch | Stacked, uplinks planned | Access / aggregation tiers | Port count and floor count |
+| **Routing boundary** | Flat L2 | Inter-segment routing at the edge | L3 to the access layer | Broadcast domain size, and the day there is a second floor |
+| **Firewall** | One | One, or an HA pair | HA pair, plus zoning | **Cost of downtime exceeding the cost of a second box** — not headcount |
+| **DHCP / DNS** | On the firewall | A service with an owner | Redundant, with IPAM | **Rate of change, not size.** A stable fifty-person office needs less than a churning twenty-person one. |
+| **Access speed** | 1GbE throughout | Multi-gig to the APs | Multi-gig access, 10G+ aggregation | The AP uplink first, always; the desk last |
+| **Network authentication** | Pre-shared key | 802.1X to the directory | 802.1X with dynamic VLAN assignment | Staff turnover — the point where "change the key and tell everyone" stops working |
+| **Sites** | One | One, plus VPN | Routed WAN or SD-WAN | The second site existing at all |
+
+**Read the last column, not the first three.** Two of the eight flips are not driven
+by size at all — the firewall pair is a downtime-cost decision and the DHCP/DNS split
+is a rate-of-change decision — which is why a design copied from an office of the same
+headcount can still be wrong. *Headcount is a proxy for the drivers, and like every
+proxy it is right until it is not.*
+
+**Going the other way is the harder direction.** Most of these flips are additive and
+can be done when the driver arrives. Two cannot: **the address plan** and **the
+segmentation** are laid down at the smallest size and are the expensive things to
+change later. A fifteen-person office that picks `192.168.1.0/24` and one flat segment
+has not saved anything; it has borrowed against the day it is a hundred people.
 
 ## Applying it to the reference office
 
