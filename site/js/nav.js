@@ -110,7 +110,8 @@ export function buildNav(state, activePath) {
       const a = document.createElement("a");
       a.href = href;
       a.textContent = title;
-      a.title = path;
+      const summary = state.index.files[path]?.summary;
+      a.title = summary ? `${path}\n\n${summary}` : path;
       if (getLang() === "zh" && !mirrored) {
         const tag = document.createElement("span");
         tag.className = "n only-en";

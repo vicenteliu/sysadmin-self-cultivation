@@ -272,6 +272,10 @@ a:hover { text-decoration-color: currentColor; }
 .result:hover .result-title { color: var(--accent); }
 .result-title { font-weight: 600; font-size: .95rem; }
 .result-path { font: 400 .68rem var(--mono); color: var(--soft); margin-left: .5rem; }
+.result-summary {
+  font-size: .8rem; color: var(--soft); margin: .2rem 0 0; font-style: italic;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
 .result-snippet { font-size: .84rem; color: var(--muted); margin: .25rem 0 0; }
 .result mark { background: var(--mark); color: inherit; border-radius: 2px; padding: 0 .1em; }
 .empty { color: var(--muted); font-size: .9rem; }

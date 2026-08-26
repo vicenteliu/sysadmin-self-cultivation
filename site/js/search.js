@@ -63,7 +63,11 @@ export async function search(query, state) {
   }
 
   scored.sort((a, b) => b.score - a.score || a.path.localeCompare(b.path));
-  return scored.slice(0, 40).map((hit) => ({ ...hit, snippet: snippet(hit.doc.b, words) }));
+  return scored.slice(0, 40).map((hit) => ({
+    ...hit,
+    summary: state.index.files[hit.path]?.summary ?? "",
+    snippet: snippet(hit.doc.b, words),
+  }));
 }
 
 function snippet(body, words) {
@@ -132,7 +136,16 @@ export async function renderSearch(query, state) {
     body.className = "result-snippet";
     body.append(highlight(hit.snippet, query));
 
-    a.append(title, path, body);
+    a.append(title, path);
+    // The snippet says why this matched; the summary says what it is. A reader scanning
+    // forty results needs the second at least as much as the first.
+    if (hit.summary) {
+      const claim = document.createElement("p");
+      claim.className = "result-summary";
+      claim.textContent = hit.summary;
+      a.append(claim);
+    }
+    a.append(body);
     article.append(a);
   }
   main.replaceChildren(article);
