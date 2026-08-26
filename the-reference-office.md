@@ -154,6 +154,20 @@ Count the ports, then check the two budgets that are not port counts:
 | **Active ports** | **~110** |
 | **Plus growth to ~130 people** | **~135 → three 48-port switches** |
 
+**Speed, per tier.** Three tiers, three answers — the reasoning for *why* they differ
+is in [`site-network-design.md`](cross-cutting/site-network-design.md); this is what
+this office needs.
+
+| Tier | This office | Why not more |
+|---|---|---|
+| Desk ports | **1GbE** | A hybrid floor's load moved to wireless and to SaaS. Nothing at a desk here is starved; upgrading these first buys nothing. |
+| AP-facing ports | **multi-gig** | Six access points whose radios can exceed a gigabit. A 1GbE drop makes the AP the bottleneck it was bought to remove. |
+| Access-to-core uplink | **10GbE** | Three access switches aggregating ~110 ports. Sized against the sum of what lands on it, not against a round number. |
+
+Note which tier is *not* upgraded. **The desk is the least starved link in the
+building**, and specifying it up is the most common way to spend the budget in the
+wrong ceiling.
+
 - **PoE budget, not port count, often picks the switch.** Six access points plus room
   and booth devices plus access control lands near **500 W** of simultaneous draw here,
   and a 48-port switch's PoE budget varies by more than a factor of two between models
