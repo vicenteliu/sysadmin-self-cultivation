@@ -15,12 +15,8 @@ The project crosses the same material along **six axes** — you enter from whic
 matches your question, not front to back. Everything the roadmap planned is now
 **written** (✅); what remains is more runnable labs, Chinese mirrors, and deepening.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="site/assets/diagrams/repo-map.dark.svg">
-  <img alt="Six axis cards inside one container labelled 'one body of material, six views', with the build-out route set apart beneath them spanning the same width" src="site/assets/diagrams/repo-map.light.svg">
-</picture>
-
-The table is the same six, with what each one answers.
+The map of these six is on the [front door](README.md#the-shape); this page is the
+detail underneath it.
 
 | # | Axis | Read it when you want to… |
 | --- | --- | --- |

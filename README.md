@@ -34,69 +34,26 @@ becomes a mapping exercise you can do with AI in a fraction of the time.
 
 ## The shape
 
-Six axes over the same material — enter from whichever matches your question — plus
-one **route across all of them**, [`build-out/`](build-out/), for the reader who does not
-yet know what to ask. The route is not a seventh body of material: it teaches no new
-page, it decides the **order**.
+Six axes over the same material — enter from whichever matches your question — plus one
+**route across all of them**, [`build-out/`](build-out/), for the reader who does not yet
+know what to ask.
 
-```mermaid
-mindmap
-  root((Self-cultivation))
-    Start here
-      WHY - the motivation
-      the operating model - the skeleton
-      ai-workflow - the method
-      agent skills - the method made invokable
-    Foundations
-      Linux and scripting - the floor
-    The Stack - by layer, bottom-up
-      01 physical
-      02 network
-      03 compute and images
-      04 storage
-      05 platform services
-      06 observability
-      07 security
-    Platforms - all seven
-      AWS - the worked example
-      Azure
-      GCP
-      OCI
-      vSphere - hands-on depth
-      OpenStack
-      self-host - hands-on depth
-    Cross-cutting - transferable skills
-      identity and IAM
-      IaC and config
-      CI-CD and GitOps
-      databases
-      ITSM and assets
-      web and TLS
-      service mesh
-      incident response
-      working with security
-      SaaS admin
-      kubernetes
-      cost
-      endpoint
-      skill maps - one theme across all seven
-    Toolbox - run it
-    Build-out - a route across the six
-      one 100-person office, first day to open
-      scripts - find
-      Ansible roles - fix
-      user-side skills - drive
-      generator - your own subset
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="site/assets/diagrams/repo-map.dark.svg">
+  <img alt="Six axis cards inside one container labelled 'one body of material, six views', with the build-out route set apart beneath them spanning the same width" src="site/assets/diagrams/repo-map.light.svg">
+</picture>
 
-The distinctive one is **The Stack**: it reads the stack *bottom-up*, comparing all
-seven platforms at **every layer** — written from the machine room up, not the console
-down.
+The route is not a seventh body of material: it teaches no new page, it decides the
+**order** ([ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)).
 
-Cross-cutting carries one extra view rather than an extra axis:
+The distinctive axis is **The Stack** — it reads the stack *bottom-up*, comparing all
+seven platforms at **every layer**, written from the machine room up rather than the
+console down. Cross-cutting carries one extra view rather than an extra axis:
 [`skills-maps/`](cross-cutting/skills-maps/README.md) **transposes** the per-platform
-skill maps — one theme cut across all seven platforms, as boxes you tick, tiered by
-how far each skill travels rather than by which cloud it belongs to.
+skill maps — one theme cut across all seven platforms, as boxes you tick, tiered by how
+far each skill travels rather than by which cloud it belongs to.
+
+Every module in every axis, one page: [`CONTENTS.md`](CONTENTS.md).
 
 ## How to read this
 
@@ -121,24 +78,26 @@ how far each skill travels rather than by which cloud it belongs to.
 
 ## What's built
 
-Everything the [roadmap](ROADMAP.md) planned is written, with **twenty runnable,
-self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**,
-**two theme skill maps**, **two interview maps**, **ten Agent Skills**, a **runnable toolbox** (ten
-scripts, three Ansible remediation roles, a per-shop pack
-[generator](toolbox/generate/)), and a **zero-dependency browser** for all of it
-([`site/`](site/README.md), with four branded figures that open an axis); what remains is more runnable labs — the platform lab
-arcs are specced well ahead of what is built, and the table below says which — a fuller
-Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 26 pages so far), and
-demand-first deepening.
+Everything the [roadmap](ROADMAP.md) planned is written. What remains is more runnable
+labs — the platform lab arcs are specced well ahead of what is built, and the table below
+says which — a fuller Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 26 pages so
+far), and demand-first deepening.
 
-- **Foundations & method** — [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) (Linux + scripting) ✅
-- **The Stack** — [seven layers, 01→07](the-stack/), all seven platforms compared at each, + runnable [failure-domains](the-stack/labs/01-failure-domains/) and [backup-drill](the-stack/labs/04-backup-not-snapshot/) labs ✅
-- **Cross-cutting & endpoint** — [identity](cross-cutting/identity-iam.md) · [iac](cross-cutting/iac-and-config.md) · [ci-cd](cross-cutting/ci-cd.md) · [databases](cross-cutting/databases.md) · [itsm & assets](cross-cutting/itsm-and-assets.md) · [web & TLS](cross-cutting/web-and-tls.md) · [service mesh](cross-cutting/service-mesh.md) · [incident response](cross-cutting/incident-response.md) · [working with security](cross-cutting/working-with-security.md) · [saas-admin](cross-cutting/saas-admin.md) · [kubernetes](cross-cutting/kubernetes.md) · [cost](cross-cutting/cost.md) · [endpoint](endpoint/) ✅
-- **Skill maps (check yourself)** — the per-platform maps [transposed](cross-cutting/skills-maps/README.md): [networking](cross-cutting/skills-maps/networking.md) (11 sections / 63 boxes) and [identity](cross-cutting/skills-maps/identity.md) (10 / 58), one theme across all seven platforms, tiered by how far each skill travels — so an unticked **Core** box is a gap everywhere, not on one cloud ✅
-- **Interview maps (the other side of the table)** — [networking](cross-cutting/interview/networking.md) (21 questions) and [identity](cross-cutting/interview/identity.md) (19), paired section-for-section with the skill maps. The answer's shape follows the section's marker: 🔨 answers with a real anonymised example, 🧭 with the honest ramp ([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)) ✅
-- **Retrieval (for agents)** — [`docs/index.json`](docs/index.json): 191 records generated from front-matter, with the Chinese mirrors derived from their English source rather than maintained twice ✅
-- **Support notes (break-fix craft)** — for the surfaces you *inherit and support*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [Multi-cloud](cross-cutting/multi-cloud-support.md) — each with the recurring tickets, the cross-lane experience gap a strong sysadmin gets wrong, a runnable lab, and a Chinese mirror ✅
-- **Toolbox (run it)** — [charter + conventions](toolbox/README.md) · ten scripts (triage · users · patching · baseline · backup-drill · cidr · a [vSphere→Proxmox virtualization quartet](toolbox/vm-migration-assess/)) · [Ansible remediation roles](toolbox/ansible/) pairing audit→fix · a [per-shop pack generator](toolbox/generate/) — safe-by-default, every tool carries its own `Tested on:` line ✅
+| | What | Where to start |
+| --- | --- | --- |
+| ✅ | **Foundations & method** | [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) |
+| ✅ | **The stack, 01→07** | [`the-stack/`](the-stack/) — seven platforms compared at every layer, + two runnable labs |
+| ✅ | **Cross-cutting & endpoint** | [`cross-cutting/`](cross-cutting/) — 17 notes: identity · IaC · CI/CD · databases · ITSM · web/TLS · mesh · incident response · security · SaaS · K8s · cost · [endpoint](endpoint/) |
+| ✅ | **Skill maps** — check yourself | [networking](cross-cutting/skills-maps/networking.md) (11 sections / 63 boxes) · [identity](cross-cutting/skills-maps/identity.md) (10 / 58). An unticked **Core** box is a gap everywhere, not on one cloud |
+| ✅ | **Interview maps** — the other side | [networking](cross-cutting/interview/networking.md) (21 questions) · [identity](cross-cutting/interview/identity.md) (19), paired section-for-section with the skill maps ([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)) |
+| ✅ | **Support notes** — break-fix craft | For surfaces you *inherit*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
+| ✅ | **Toolbox** — run it | [ten scripts + three Ansible roles](toolbox/) pairing audit→fix, and a [pack generator](toolbox/generate/). Safe by default; every tool carries its own `Tested on:` line |
+| ✅ | **Agent Skills** — the method, invokable | [ten of them](.claude/skills/) — seven package the method, three drive the toolbox |
+| ✅ | **Browser & retrieval** | [`site/`](site/README.md) — full-text search over the lot, nothing to install · [`docs/index.json`](docs/index.json) — one record per file, for an agent |
+
+**Twenty runnable, self-verifying labs** sit under those axes — exit `0` means the lesson
+held, and most carry a `--break-it` flag that swaps in the *standard* procedure and shows
+it failing.
 
 **Platforms** — all seven compared in The Stack have a dedicated "operate it end to end"
 module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**), and **all seven now
@@ -155,26 +114,14 @@ carry the deeper architecture · operations · automation trio**:
 | **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ | 3 (virsh / ipmitool / ansible) | — | **🔨 hands-on depth** (100k+ fleet) |
 
 Two of the seven are labeled **🔨 hands-on depth** (vSphere and self-host — production
-ground, not a ramp); the rest are honest 🧭 ramps. The labs are **CLI-first** on
-purpose: the command line is faster, exact, repeatable, and reviewable — and it's the
-same surface your automation uses.
+ground, not a ramp); the rest are honest 🧭 ramps. The labs are **CLI-first** on purpose:
+the command line is faster, exact, repeatable, and reviewable — and it's the same surface
+your automation uses.
 
 **All seven arcs are written; two of the twenty-one are built** (AWS 01–02), alongside
-four standalone drills that sit outside the arcs. The gap gets its own column rather
-than a shared checkmark, because a specced lab is a plan — and the rule in the second
-paragraph of this file applies to the repo's own claims first.
-
-**Agent Skills** — the repo ships ten [`.claude/skills/`](.claude/skills/). Seven
-turn its methodology into invokable AI workflows: **platform-ramp** (ramp onto any
-platform, honestly), **honesty-audit** (classify claims 🔨/🧭/overclaim),
-**author-module** (write a new note — including a **support note** — in the repo's
-voice, research-grounded), **runnable-lab** (turn a concept into a self-verifying
-drill), **diagram-module** (decide whether a doc needs a figure, draw it, keep the
-derived artifacts in step), **mirror-zh** (mirror a doc into `docs/zh/` Chinese), and
-**interview-drill** (ask it back the way an interviewer would). Three are
-**user-side** — **linux-triage**, **harden-baseline**, and **toolbox-picker** wrap
-the [toolbox](toolbox/) so an AI agent can drive it for you: install one on a new
-box and run a triage, or the whole audit→remediate loop, in one sentence.
+four standalone drills that sit outside the arcs. The gap gets its own column rather than
+a shared checkmark, because a specced lab is a plan — and the rule in the second paragraph
+of this file applies to the repo's own claims first.
 
 ## Who wrote this
 
