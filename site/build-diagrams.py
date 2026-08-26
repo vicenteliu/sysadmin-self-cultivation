@@ -25,11 +25,15 @@ carries the `.diagram-design` marker but not the skin it names. `--install-profi
 copies it into place; `--check` verifies the token table below still derives exactly
 what that profile declares, and says so when the installed copy has drifted from it.
 
+`--check` also holds every number drawn into a figure to the retrieval index. A count in
+a drawing is a fact that cannot re-derive itself on load, and the first one here went
+stale the same afternoon it was drawn.
+
 Standard library only, and idempotent: two runs produce byte-identical output.
 
 Exit codes: 0 ok · 1 a source is malformed · 2 --check found a derived file out of date.
 """
-import os, re, sys
+import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIAGRAMS = os.path.join(ROOT, "site", "assets", "diagrams")
@@ -65,6 +69,10 @@ SVG_RE = re.compile(r"<svg\b.*?</svg>", re.DOTALL)
 # `| `paper` | Page background, default node fill | `#faf8f4` (bone) | `#1a1a17` (soot) |`
 ROLE_ROW = re.compile(r"^\| `([a-z0-9-]+)` \| [^|]*\| `([^`]+)`[^|]*\| `([^`]+)`[^|]*\|\s*$")
 SLUG_RE = re.compile(r"\Aprofile: ([a-z0-9][a-z0-9-]{0,63})\s*\Z")
+
+# `<text … data-axis="platforms">60 DOCS</text>` — a number baked into a drawing, tagged
+# with what it counts so it can be held to it.
+BAKED_COUNT = re.compile(r'data-axis="([a-z-]+)"[^>]*>(\d+) DOCS')
 
 # Tokens the SKIN table maps that are not semantic roles: the white lift under a step
 # node, and muted-at-10%. Declared so the role check can be strict about the rest.
@@ -130,6 +138,39 @@ def skin_problems():
     for key in sorted(covered - declared):
         if not any(d.startswith(key) for d in declared):
             problems.append(f"SKIN maps {key}, which is neither a role nor declared in NOT_ROLES")
+    return problems
+
+
+def baked_count_problems():
+    """Do the numbers drawn into a figure still match the repo they describe?
+
+    A figure that states a count is stating a fact, and a fact drawn into an SVG cannot
+    be re-derived on load the way the home page's can. This one went stale within a
+    single afternoon: the axis map was drawn saying 19 documents under start-here, and
+    the tenth Agent Skill — added two commits later — made it 20, so the site rendered
+    the figure directly above a live count that disagreed with it.
+
+    Deriving the artifacts proves the deriver ran. This proves the drawing is true.
+    """
+    index_path = os.path.join(ROOT, "docs", "index.json")
+    try:
+        files = json.load(open(index_path, encoding="utf-8"))["files"]
+    except OSError:
+        return ["docs/index.json is missing — run docs/build-index.py"]
+
+    live = {}
+    for path, record in files.items():
+        if record.get("derived") or not path.endswith(".md"):
+            continue
+        live[record.get("axis", "")] = live.get(record.get("axis", ""), 0) + 1
+
+    problems = []
+    for slug in slugs():
+        source = os.path.join(DIAGRAMS, f"{slug}.html")
+        for axis, drawn in BAKED_COUNT.findall(open(source, encoding="utf-8").read()):
+            if int(drawn) != live.get(axis, 0):
+                problems.append(f"{slug}.html draws {drawn} documents for `{axis}`, "
+                                f"the retrieval index has {live.get(axis, 0)}")
     return problems
 
 
@@ -229,6 +270,13 @@ def main():
         return 1
 
     if "--check" in sys.argv:
+        problems = baked_count_problems()
+        if problems:
+            print("a figure states a count the repo no longer has:", file=sys.stderr)
+            for problem in problems:
+                print(f"  {problem}", file=sys.stderr)
+            return 2
+
         problems = skin_problems()
         if problems:
             print("the SKIN table no longer matches the style profile:", file=sys.stderr)
@@ -246,7 +294,7 @@ def main():
         if state:
             print(f"note: the installed style profile is {state}", file=sys.stderr)
         print(f"diagrams current — {len(slugs())} sources, {len(wanted)} derived files, "
-              f"skin matches the profile")
+              f"skin matches the profile, drawn counts match the index")
         return 0
 
     for path, text in sorted(wanted.items()):

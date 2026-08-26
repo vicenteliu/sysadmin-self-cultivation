@@ -15,6 +15,13 @@ The project crosses the same material along **six axes** — you enter from whic
 matches your question, not front to back. Everything the roadmap planned is now
 **written** (✅); what remains is more runnable labs, Chinese mirrors, and deepening.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="site/assets/diagrams/repo-map.dark.svg">
+  <img alt="Six axis cards inside one container labelled 'one body of material, six views', with the build-out route set apart beneath them spanning the same width" src="site/assets/diagrams/repo-map.light.svg">
+</picture>
+
+The table is the same six, with what each one answers.
+
 | # | Axis | Read it when you want to… |
 | --- | --- | --- |
 | **I** | **Start here** | understand the philosophy and the method |
@@ -23,13 +30,6 @@ matches your question, not front to back. Everything the roadmap planned is now
 | **IV** | **Platforms** | operate one platform end to end |
 | **V** | **Cross-cutting** | learn a transferable skill |
 | **VI** | **Toolbox** | take runnable, agent-callable tools with you |
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="site/assets/diagrams/repo-map.dark.svg">
-  <img alt="Six axis cards inside one container labelled 'one body of material, six views', with the build-out route set apart beneath them spanning the same width" src="site/assets/diagrams/repo-map.light.svg">
-</picture>
-
-*The table above says which axis answers which question; the figure says why there are six of them and not seven — `build-out/` spans the same width because it crosses all six rather than adding one.*
 
 ---
 
