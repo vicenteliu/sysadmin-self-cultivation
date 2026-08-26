@@ -111,7 +111,7 @@ boundaries` section states this plainly.
 - Node labels with special chars go in `["..."]` quotes; avoid parens/commas/colons in
   unquoted labels; `<br/>` for line breaks inside quoted labels.
 - Mindmap node text = plain words only (no parens or punctuation).
-- **Validate every diagram before finishing:** extract each ```mermaid block to a
+- **Validate every diagram before finishing:** extract each `mermaid` block to a
   scratch file and run `npx --yes @mermaid-js/mermaid-cli -i f.mmd -o f.svg` in the
   scratchpad; fix any that fail.
 

@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 195,
+  "count": 196,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -17,6 +17,13 @@
       "themes": [],
       "platforms": [],
       "summary": "Author a new module for The Sysadmin's Self-Cultivation repo (a platform doc, a cross-cutting note, an architecture/operations/automation companion, or a lab) that matches the established conventions — blockquote thesis, section skeleton, 🔨/🧭 honesty markers, validated mermaid, cadence tables, cross-links. Use when adding/writing a new chapter, note, platform module, or companion doc to this repo, or when the user says \"write a note on X\", \"add a module for X\", \"keep it consistent with the repo\"."
+    },
+    ".claude/skills/diagram-module/SKILL.md": {
+      "kind": "agent-skill",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Draw a figure for The Sysadmin's Self-Cultivation repo and keep it in sync — decide whether a diagram is warranted at all, pick mermaid (in the Markdown, rendered by GitHub) or a diagram-design hero (HTML source, SVG artifact), author it in the repo's brass skin, validate it, and run the consistency check over the generated site data. Use when the user says \"add a diagram\", \"draw this\", \"配张图\", \"画个图\", \"make a diagram for X\", \"the diagrams are out of date\", or asks whether a doc needs a figure."
     },
     ".claude/skills/harden-baseline/SKILL.md": {
       "kind": "agent-skill",

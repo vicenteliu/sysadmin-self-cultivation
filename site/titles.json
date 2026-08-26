@@ -2,10 +2,11 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 195,
+  "count": 196,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
+    ".claude/skills/diagram-module/SKILL.md": "Skill: diagram-module",
     ".claude/skills/harden-baseline/SKILL.md": "Skill: harden-baseline",
     ".claude/skills/honesty-audit/SKILL.md": "Skill: honesty-audit",
     ".claude/skills/interview-drill/SKILL.md": "Skill: interview-drill",
