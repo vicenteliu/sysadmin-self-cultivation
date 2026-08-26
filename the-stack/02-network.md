@@ -46,7 +46,9 @@ thing you've already crimped a cable for.
 > run a network and being able to say what the wire is doing are different
 > abilities, and this repository only trains the first one.**
 
-## One concept before the seven: underlay vs. overlay
+## Two concepts before the seven
+
+### Underlay vs. overlay
 
 Everything on this layer makes sense once you split it into two planes:
 
@@ -71,6 +73,37 @@ flowchart TB
   by their fabric.
 - **OpenStack / NSX:** you run the SDN machinery yourself — the overlay is yours
   *and* the underlay is yours, which is both the appeal and the bill.
+
+### Dual-stack, because the migration never happened
+
+IPv6 has been arriving for twenty-five years, and the operationally important fact
+about it is **not** how the addresses are written. It is that **the migration people
+kept predicting did not occur, and dual-stack stopped being a transition state.** It
+is the destination. Estates that planned a cutover are still waiting; estates that
+planned to run both have been running both for a decade.
+
+Three things follow, and they are the parts that show up in tickets:
+
+- **You now have two paths to every destination and they fail independently.** A name
+  with both an `A` and an `AAAA` record hands the client a choice, and clients prefer
+  IPv6. If the v6 path is broken while the v4 path is fine, the symptom is *"the site
+  is slow"* or *"it works for some people"* — the client tries v6, waits, and falls
+  back. Happy Eyeballs hides this from users and from you, which is exactly why it
+  takes so long to find. **`AAAA` is published, therefore `AAAA` must work** is the
+  discipline; publishing it optimistically is the common self-inflicted outage.
+- **There is no NAT to hide behind, and that is a filtering change, not an addressing
+  one.** Every host having a globally routable address means the firewall is doing
+  work that IPv4's address shortage was doing accidentally. An estate that opened v6
+  without writing v6 rules has a second, unfiltered internet path — and its v4 rule
+  set looks complete.
+- **Address assignment is a different model, not a different notation.** SLAAC, DHCPv6
+  and the interaction of the two are where the operational surprises live, alongside
+  privacy addresses that change what your logs mean. *Which of your systems records
+  the address it saw, and can you still map it to a person tomorrow?*
+
+The clouds diverge more here than they do on almost any other dimension in the table
+below — dual-stack is not uniformly available, and where it is, the mechanism differs.
+Check per platform rather than carrying an assumption across.
 
 ## Seven ways to build it
 
@@ -144,6 +177,7 @@ deliberately aggressive; OCI courts exactly the workloads the egress meter hurts
 | **North-south** | edge firewall pair | edge / NSX gateway | Neutron router + floating IP | IGW / NAT GW | LB / NAT GW | Cloud NAT / global LB | IGW / NAT GW |
 | **Cross-site** | VPN / leased line | same + NSX federation | VPN-as-a-service | Direct Connect | ExpressRoute | Interconnect | FastConnect |
 | **LB signature** | HAProxy / keepalived / F5 | NSX LB | Octavia | ALB / NLB | Azure LB / App GW / Front Door | **global anycast LB** | LB / NLB |
+| **IPv6** | dual-stack, yours to plan | dual-stack on port groups | dual-stack per tenant net | dual-stack VPC, egress-only IGW | dual-stack VNet | dual-stack, external/internal | dual-stack VCN |
 | **DNS** | BIND you run 🔨 | — (yours) | Designate | Route 53 | Azure DNS / private zones | Cloud DNS | OCI DNS |
 
 ## Choosing — and the egress meter
