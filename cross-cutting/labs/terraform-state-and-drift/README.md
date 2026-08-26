@@ -3,7 +3,7 @@ kind: lab
 axis: cross-cutting
 themes: [iac-config]
 platforms: []
-summary: "What it drills — six lessons that fall out of that one model: 1."
+summary: "Terraform does not converge against the real world every run. It plans against a state file, and the gap between config, state and reality is where every Terraform surprise lives."
 ---
 # Lab — state is the source of truth (and drift is the enemy)
 

@@ -3,7 +3,7 @@ kind: lab
 axis: cross-cutting
 themes: [identity, networking]
 platforms: []
-summary: "1. an expired certificate on the gateway 2."
+summary: "Four unrelated causes produce a byte-identical 'the VPN will not connect', so diagnosing from the symptom is guessing with extra steps. An ordered set of checks, each chosen for what it rules out, gets there every time with a bounded worst case."
 ---
 # Lab — "The VPN won't connect" is four different problems
 

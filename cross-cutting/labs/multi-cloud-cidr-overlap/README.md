@@ -3,7 +3,7 @@ kind: lab
 axis: cross-cutting
 themes: [networking, cloud]
 platforms: []
-summary: "What it drills — five lessons: 1. Non-overlapping + routes both ways → traffic flows."
+summary: "The first concrete blocker the day a single-cloud admin connects two clouds: peering is refused when the address space overlaps, and every console nudges you toward the same 10.0.0.0/16."
 ---
 # Lab — overlapping CIDRs break the interconnect (and there is no central router)
 

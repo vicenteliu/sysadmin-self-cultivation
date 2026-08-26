@@ -495,7 +495,7 @@
         "containers"
       ],
       "platforms": [],
-      "summary": "What it drills — six lessons that fall out of that one model: 1."
+      "summary": "The runtime twin of the Terraform state lesson: you do not manage processes, you declare desired state, and a controller drives actual toward desired forever. Delete a pod and it comes back."
     },
     "cross-cutting/labs/m365-conditional-access-lockout/README.md": {
       "kind": "lab",
@@ -525,7 +525,7 @@
         "cloud"
       ],
       "platforms": [],
-      "summary": "What it drills — five lessons: 1. Non-overlapping + routes both ways → traffic flows."
+      "summary": "The first concrete blocker the day a single-cloud admin connects two clouds: peering is refused when the address space overlaps, and every console nudges you toward the same 10.0.0.0/16."
     },
     "cross-cutting/labs/permission-sprawl/README.md": {
       "kind": "lab",
@@ -544,7 +544,7 @@
         "networking"
       ],
       "platforms": [],
-      "summary": "1. an expired certificate on the gateway 2."
+      "summary": "Four unrelated causes produce a byte-identical 'the VPN will not connect', so diagnosing from the symptom is guessing with extra steps. An ordered set of checks, each chosen for what it rules out, gets there every time with a bounded worst case."
     },
     "cross-cutting/labs/terraform-state-and-drift/README.md": {
       "kind": "lab",
@@ -553,7 +553,7 @@
         "iac-config"
       ],
       "platforms": [],
-      "summary": "What it drills — six lessons that fall out of that one model: 1."
+      "summary": "Terraform does not converge against the real world every run. It plans against a state file, and the gap between config, state and reality is where every Terraform surprise lives."
     },
     "cross-cutting/labs/transcript-retention/README.md": {
       "kind": "lab",
@@ -722,7 +722,7 @@
       "axis": "meta",
       "themes": [],
       "platforms": [],
-      "summary": "ADR-0002 made five decisions about the-reference-office.md."
+      "summary": "ADR-0002 ruled that interview material carries questions and what each probes, never finished answers. This reverses that half: an answer is evidence for the section's marker, not a script to recite, and its shape is decided by whether the section is hands-on or a ramp."
     },
     "docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md": {
       "kind": "adr",
@@ -1118,7 +1118,7 @@
         "linux-scripting"
       ],
       "platforms": [],
-      "summary": "No dependencies beyond bash + coreutils, no cloud, no root."
+      "summary": "An idempotent script is infrastructure and a fragile one is a liability; strict mode is the line between a tool and a footgun. Built, run twice, and felt in bash."
     },
     "platforms/README.md": {
       "kind": "index",
@@ -1195,7 +1195,7 @@
       "platforms": [
         "aws"
       ],
-      "summary": "Confirm in Cost Explorer the next day that nothing lingers."
+      "summary": "A VPC, a public and a private subnet, and one EC2 instance reachable without opening a single inbound port — stood up entirely from Terraform and torn down cleanly. Move #3 of the operating model, at the build-from-code-not-clicks bar."
     },
     "platforms/aws/labs/README.md": {
       "kind": "lab",
@@ -1531,7 +1531,7 @@
       "platforms": [
         "oci"
       ],
-      "summary": "What it drills: 1. No policy → NotAuthorizedOrNotFound (a 404, not a 403)."
+      "summary": "OCI's two signature access lessons, by hand and with no cloud account: NotAuthorizedOrNotFound is a 404 rather than a 403, so a resource is invisible instead of visibly forbidden, and inspect/read/use/manage is a hierarchy rather than a set of roles."
     },
     "platforms/oci/operations.md": {
       "kind": "companion",

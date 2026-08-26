@@ -3,7 +3,7 @@ kind: lab
 axis: foundations
 themes: [linux-scripting]
 platforms: []
-summary: "No dependencies beyond bash + coreutils, no cloud, no root."
+summary: "An idempotent script is infrastructure and a fragile one is a liability; strict mode is the line between a tool and a footgun. Built, run twice, and felt in bash."
 ---
 # Lab — Idempotence & `set -euo pipefail` (fragile vs. safe, felt in bash)
 

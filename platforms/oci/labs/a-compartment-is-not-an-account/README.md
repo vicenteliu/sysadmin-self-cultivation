@@ -3,7 +3,7 @@ kind: lab
 axis: platforms
 themes: [cloud]
 platforms: [oci]
-summary: "What it drills: 1. No policy → NotAuthorizedOrNotFound (a 404, not a 403)."
+summary: "OCI's two signature access lessons, by hand and with no cloud account: NotAuthorizedOrNotFound is a 404 rather than a 403, so a resource is invisible instead of visibly forbidden, and inspect/read/use/manage is a hierarchy rather than a set of roles."
 ---
 # Lab — a compartment is not an account (and a verb is not a role)
 

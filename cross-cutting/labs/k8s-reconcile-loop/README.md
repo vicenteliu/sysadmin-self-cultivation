@@ -3,7 +3,7 @@ kind: lab
 axis: cross-cutting
 themes: [containers]
 platforms: []
-summary: "What it drills — six lessons that fall out of that one model: 1."
+summary: "The runtime twin of the Terraform state lesson: you do not manage processes, you declare desired state, and a controller drives actual toward desired forever. Delete a pod and it comes back."
 ---
 # Lab — pods are cattle, and a controller reconciles forever
 

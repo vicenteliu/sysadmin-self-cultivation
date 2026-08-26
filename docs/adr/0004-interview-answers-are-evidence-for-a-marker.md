@@ -3,7 +3,7 @@ kind: adr
 axis: meta
 themes: []
 platforms: []
-summary: "ADR-0002 made five decisions about the-reference-office.md."
+summary: "ADR-0002 ruled that interview material carries questions and what each probes, never finished answers. This reverses that half: an answer is evidence for the section's marker, not a script to recite, and its shape is decided by whether the section is hands-on or a ramp."
 ---
 # Interview answers are evidence for a marker, not a script to recite
 

@@ -3,7 +3,7 @@ kind: lab
 axis: platforms
 themes: [iac-config, cloud]
 platforms: [aws]
-summary: "Confirm in Cost Explorer the next day that nothing lingers."
+summary: "A VPC, a public and a private subnet, and one EC2 instance reachable without opening a single inbound port — stood up entirely from Terraform and torn down cleanly. Move #3 of the operating model, at the build-from-code-not-clicks bar."
 ---
 # Lab 02 — Minimal VPC + EC2, from Terraform
 

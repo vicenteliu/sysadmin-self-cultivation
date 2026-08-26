@@ -19,8 +19,8 @@ hand-maintained second copy drifts (ADR-0001).
 One further exception, kept as a named set rather than a rule: a Markdown file that is
 another tool's data is skipped outright — see `NOT_A_DOCUMENT`.
 
-Exit codes: 0 ok · 1 a content file is missing front-matter · 2 --check found the
-index stale. Idempotent — two runs produce byte-identical output.
+Exit codes: 0 ok · 1 a content file is missing front-matter, or carries a summary that is
+visibly a fragment of something else · 2 --check found the index stale. Idempotent — two runs produce byte-identical output.
 """
 import json, os, re, sys
 
@@ -39,6 +39,21 @@ ROOT_README = {"kind": "index", "axis": "start-here", "themes": [], "platforms":
 NOT_A_DOCUMENT = {"site/assets/diagrams/sysadmin-brass.profile.md"}
 
 LIST_RE = re.compile(r"^\[(.*)\]$")
+
+# A summary that is visibly a fragment of something else. These are shapes, not meanings:
+# they catch a list or a leftover marker that ended up in the field, and they cannot catch
+# a well-formed sentence lifted from the wrong paragraph — "Confirm in Cost Explorer the
+# next day that nothing lingers." was a teardown note serving as a summary for months and
+# no rule here would have objected. Eight documents once carried the language-switcher line
+# and eight more carried a list item; this stops the mechanical half of that recurring.
+# Ending in an ellipsis is deliberate house style (the toolbox summaries truncate their
+# Inputs/Outputs opener) and is not a defect.
+CAPTURED = [
+    (re.compile(r"^\s*$"),            "is empty"),
+    (re.compile(r"^\s*\d+\.\s"),      "starts as a list item"),
+    (re.compile(r"[:\s]\d+\.\s*$"),   "ends on a list marker"),
+    (re.compile(r"\s1\.\s.*\s2\.\s"), "is a numbered list flattened into one line"),
+]
 
 
 def parse_front_matter(text):
@@ -74,8 +89,16 @@ def walk_markdown():
                 yield os.path.relpath(os.path.join(dirpath, name), ROOT).replace(os.sep, "/")
 
 
+def captured(summary):
+    """The reason this summary looks lifted rather than written, or None."""
+    for pattern, why in CAPTURED:
+        if pattern.search(summary):
+            return why
+    return None
+
+
 def build():
-    records, missing = {}, []
+    records, missing, lifted = {}, [], []
 
     for path in walk_markdown():
         if path.startswith("docs/zh/"):
@@ -103,6 +126,9 @@ def build():
         records[path] = {"kind": fm.get("kind", ""), "axis": fm.get("axis", ""),
                          "themes": fm.get("themes", []), "platforms": fm.get("platforms", []),
                          "summary": fm.get("summary", "")}
+        why = captured(records[path]["summary"])
+        if why:
+            lifted.append(f"{path}: summary {why}")
         if "marker" in fm:
             records[path]["marker"] = fm["marker"]
 
@@ -120,11 +146,16 @@ def build():
         rec["derived"] = True
         records[path] = rec
 
-    return records, missing
+    return records, missing, lifted
 
 
 def main():
-    records, missing = build()
+    records, missing, lifted = build()
+    if lifted:
+        print(f"summaries that look lifted rather than written: {len(lifted)}", file=sys.stderr)
+        for problem in lifted:
+            print(f"  {problem}", file=sys.stderr)
+        return 1
     if missing:
         print(f"missing front-matter: {len(missing)}", file=sys.stderr)
         for path in missing:
