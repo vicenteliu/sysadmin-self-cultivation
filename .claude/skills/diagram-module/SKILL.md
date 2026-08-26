@@ -15,7 +15,7 @@ artifacts once one exists.
 ## First: read the exemplars
 
 - A hero, and its derived pair → [`site/assets/diagrams/stack-layers.html`](../../../site/assets/diagrams/stack-layers.html)
-  (the only file to edit) and the four files `site/build-diagrams.py` derives from it.
+  (the only file to edit) and the files `site/build-diagrams.py` derives from it.
 - Two in-document mermaid figures that earn their place →
   [`.claude/skills/README.md`](../README.md) (which skill hands off to which) and
   [`cross-cutting/README.md`](../../../cross-cutting/README.md) (where the support notes
@@ -48,9 +48,16 @@ other eight did not.
 **If GitHub can render it, it must be mermaid.** GitHub renders a fenced `mermaid`
 block natively, the source stays diffable, and the repo is already full of them.
 
-Reach for a **hero diagram** — [`diagram-design`](https://github.com/) output, HTML
-source, SVG artifact — only for the small number of figures that open an axis and are
-worth branding. There are four; adding a fifth needs a reason, not an occasion.
+Reach for a **hero diagram** — `diagram-design` output, HTML source, SVG artifact —
+when **the layout itself carries meaning**: a focal element, a deliberate hierarchy, a
+spatial relationship an automatic layout engine would destroy. Reach for mermaid when
+only the topology matters, which is most of the time.
+
+That test replaces a count. This skill used to say "there are four; a fifth needs an
+argument" — and three more were added without that argument ever being made, because a
+number cannot announce that it has been crossed
+([ADR-0008](../../../docs/adr/0008-a-count-is-not-a-bound.md)). Do not write a count
+here again.
 
 | | mermaid | hero diagram |
 | --- | --- | --- |
@@ -59,6 +66,23 @@ worth branding. There are four; adding a fifth needs a reason, not an occasion.
 | Diffable | yes — it is text | the HTML source is; the SVG is generated |
 | Themed | at runtime, by the viewer | two exported variants, light and dark |
 | Cost to change | edit the fence | edit the source, re-run the deriver |
+
+## Before you draw: read what it will sit next to
+
+Two failures here were not about drawing at all. Both are cheap to prevent and invisible
+to every `--check` in this repo.
+
+**Read the prose the figure will sit in, and check the figure against it.** A site-network
+figure was drawn with a `/16` site range and was about to be placed above a table that had
+always specified *"one `/22` out of a documented site range"*. The figure was redrawn to
+the `/22`; the note was not edited. A figure that argues with the paragraph beside it is
+worse than no figure, because the reader believes the picture.
+
+**Read the figures already near it, and check for a claim you cannot show.** A 500-VM
+figure carried the label *"a second failure domain"* on an iSCSI path — true only if each
+`vmk` is pinned to one uplink, and nothing on that drawing said whether it was. The fix
+was a second figure showing the binding. When two figures share facts, list the shared
+facts and compare them one by one; nine were compared for that pair.
 
 ## Mermaid: the layout traps, learned the hard way
 
@@ -121,11 +145,21 @@ demands the profile's dark value back.
 ## The consistency check (run it before you finish)
 
 ```bash
-python3 site/build-diagrams.py --check    # 12 artifacts match their 4 sources, and the
-                                          # token table still matches the style profile
+python3 site/build-diagrams.py --check    # every artifact matches its source · the token
+                                          # table matches the style profile · every number
+                                          # drawn matches the index · every label fits its box
 python3 docs/build-index.py --check       # front-matter still matches the retrieval index
 python3 site/build-corpus.py --check      # titles and search corpus still match the prose
 ```
+
+Deliberately no counts above. A count in a document is a fact that goes stale silently,
+which this file has now demonstrated twice — once claiming the repo had 67 mermaid
+diagrams when 67 was a count of *files*, and once claiming four artifacts from four
+sources long after there were more of both.
+
+**What no check covers**: whether the figure agrees with the prose beside it, whether it
+agrees with the figure above it, and whether it should exist at all. Those are the two
+sections at the top of this skill, and they are read by a person or not at all.
 
 Non-zero from any of them means a generated file is behind its source. Re-run the
 script without `--check`, then commit source and artifact together. Two of these are

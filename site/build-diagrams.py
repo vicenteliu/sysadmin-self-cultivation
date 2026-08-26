@@ -27,7 +27,9 @@ what that profile declares, and says so when the installed copy has drifted from
 
 `--check` also holds every number drawn into a figure to the retrieval index. A count in
 a drawing is a fact that cannot re-derive itself on load, and the first one here went
-stale the same afternoon it was drawn.
+stale the same afternoon it was drawn. And it estimates whether each label still fits
+inside its box, because four figures shipped with text over an edge and every one of them
+was found by eye, late.
 
 Standard library only, and idempotent: two runs produce byte-identical output.
 
@@ -73,6 +75,16 @@ SLUG_RE = re.compile(r"\Aprofile: ([a-z0-9][a-z0-9-]{0,63})\s*\Z")
 # `<text … data-axis="platforms">60 DOCS</text>` — a number baked into a drawing, tagged
 # with what it counts so it can be held to it.
 BAKED_COUNT = re.compile(r'data-axis="([a-z-]+)"[^>]*>(\d+) DOCS')
+
+# A box with a stroke is a node; a stroke-less rect is a label mask and is meant to be
+# tight around its text. Only nodes are checked for text spilling out of them.
+NODE_BOX = re.compile(r'<rect x="(-?\d+)" y="(-?\d+)" width="(\d+)" height="(\d+)"[^>]*stroke="(?!none)')
+SVG_TEXT = re.compile(r'<text x="(-?\d+)" y="(-?\d+)"([^>]*)>([^<]*)</text>')
+FONT_SIZE = re.compile(r'font-size="([\d.]+)"')
+FONT_FAMILY = re.compile(r"font-family=\"'([^']+)'")
+TRACKING = re.compile(r'letter-spacing="([\d.]+)em"')
+BOX_PADDING = 8      # what the type reference asks be left inside a node
+SLACK = 2            # the estimator's own noise, measured against the seven live figures
 
 # Tokens the SKIN table maps that are not semantic roles: the white lift under a step
 # node, and muted-at-10%. Declared so the role check can be strict about the rest.
@@ -174,6 +186,63 @@ def baked_count_problems():
     return problems
 
 
+def text_width(content, attrs):
+    """Estimate a run's rendered width. Rough, and it does not need to be better.
+
+    Advance widths differ per glyph and per face; what is being caught here is a label
+    that overshoots its box by tens of pixels, not one that overshoots by one. Measured
+    against the figures in this repo, per-character advance is about 0.60em for the mono
+    face, 0.52em for the sans and 0.46em for the serif.
+    """
+    size = FONT_SIZE.search(attrs)
+    size = float(size.group(1)) if size else 12.0
+    family = FONT_FAMILY.search(attrs)
+    family = family.group(1) if family else "Geist"
+    advance = 0.60 if "Mono" in family else (0.46 if "Serif" in family else 0.52)
+    tracking = TRACKING.search(attrs)
+    return len(content) * size * (advance + (float(tracking.group(1)) if tracking else 0.0))
+
+
+def overflow_problems():
+    """Does any label run outside the box that is supposed to contain it?
+
+    Four figures shipped with text over the edge of a node before anyone looked closely
+    at a rendered SVG, and every one was found by eye, late. The arithmetic is simple
+    enough to do at check time: estimate the run's width, find the smallest stroked box
+    whose interior contains its baseline, and complain when the run leaves that interior.
+    """
+    problems = []
+    for slug in slugs():
+        source = os.path.join(DIAGRAMS, f"{slug}.html")
+        text = open(source, encoding="utf-8").read()
+        boxes = [tuple(int(v) for v in m.groups()) for m in NODE_BOX.finditer(text)]
+
+        for match in SVG_TEXT.finditer(text):
+            x, y, attrs, content = int(match.group(1)), int(match.group(2)), match.group(3), match.group(4)
+            if not content.strip():
+                continue
+            width = text_width(content, attrs)
+            if 'text-anchor="middle"' in attrs:
+                left = x - width / 2
+            elif 'text-anchor="end"' in attrs:
+                left = x - width
+            else:
+                left = x
+
+            box = None
+            for bx, by, bw, bh in boxes:
+                if by < y < by + bh and bx <= x <= bx + bw and (box is None or bw < box[2]):
+                    box = (bx, by, bw, bh)
+            if box is None:
+                continue
+
+            spill = max(box[0] + BOX_PADDING - left, left + width - (box[0] + box[2] - BOX_PADDING))
+            if spill > SLACK:
+                problems.append(f"{slug}.html: \"{content[:52]}\" runs {spill:.0f}px "
+                                f"outside its {box[2]}px box")
+    return problems
+
+
 def installed_profile_state(slug):
     """Whether the machine-local profile library agrees with the committed copy."""
     if slug is None:
@@ -270,6 +339,13 @@ def main():
         return 1
 
     if "--check" in sys.argv:
+        problems = overflow_problems()
+        if problems:
+            print("a label does not fit the box it belongs to:", file=sys.stderr)
+            for problem in problems:
+                print(f"  {problem}", file=sys.stderr)
+            return 2
+
         problems = baked_count_problems()
         if problems:
             print("a figure states a count the repo no longer has:", file=sys.stderr)
@@ -294,7 +370,7 @@ def main():
         if state:
             print(f"note: the installed style profile is {state}", file=sys.stderr)
         print(f"diagrams current — {len(slugs())} sources, {len(wanted)} derived files, "
-              f"skin matches the profile, drawn counts match the index")
+              f"skin matches the profile, drawn counts match the index, labels fit")
         return 0
 
     for path, text in sorted(wanted.items()):
