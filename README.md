@@ -123,11 +123,12 @@ how far each skill travels rather than by which cloud it belongs to.
 
 Everything the [roadmap](ROADMAP.md) planned is written, with **twenty runnable,
 self-verifying labs** (exit `0` = the lesson held), **eight break-fix support notes**,
-**two theme skill maps**, **two interview maps**, **ten Agent Skills**, and a **runnable toolbox** (ten
+**two theme skill maps**, **two interview maps**, **ten Agent Skills**, a **runnable toolbox** (ten
 scripts, three Ansible remediation roles, a per-shop pack
-[generator](toolbox/generate/)); what remains is more runnable labs — the platform lab
+[generator](toolbox/generate/)), and a **zero-dependency browser** for all of it
+([`site/`](site/README.md), with four branded figures that open an axis); what remains is more runnable labs — the platform lab
 arcs are specced well ahead of what is built, and the table below says which — a fuller
-Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 25 pages so far), and
+Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 26 pages so far), and
 demand-first deepening.
 
 - **Foundations & method** — [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) (Linux + scripting) ✅

@@ -126,9 +126,8 @@ it's a headline addition. Then it's discoverable, not orphaned.
 
 - Match length to the neighbors (~120-165 lines for a chapter); don't pad.
 - Surgical edits to indexes — one row per new module, consistent wording.
-- Commit with the repo's message style (`<area>: <what> — <why>`), **no
-  `Co-Authored-By` trailer** (this is a public portfolio repo — keep history clean),
-  and validate mermaid before committing.
+- Commit with the repo's message style: `<area>: <what> — <why>` as the subject, then a
+  body that says why, in the repo's voice. Validate mermaid before committing.
 - If the addition includes a runnable lab or a new skill, bump the counts the repo
   advertises (root [`README.md`](../../../README.md) + [`docs/zh/README.md`](../../../docs/zh/README.md)
   "N runnable labs" / "N Agent Skills", and [`.claude/skills/README.md`](../README.md)).

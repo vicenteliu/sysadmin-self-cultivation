@@ -113,9 +113,8 @@ bidirectional switcher, so they're spelled out below.
 ## Wire-in & commit
 
 - If the repo tracks a translation count or a "started" note, keep it accurate.
-- Commit with `docs(zh): mirror <path> into Chinese` and **no `Co-Authored-By`
-  trailer** — this is a public portfolio repo; match its clean, unsigned history
-  ([`author-module`](../author-module/SKILL.md) has the same commit rule).
+- Commit with `docs(zh): mirror <path> into Chinese` — the same message style
+  [`author-module`](../author-module/SKILL.md) uses.
 
 ## Guardrails
 

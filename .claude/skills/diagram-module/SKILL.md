@@ -46,7 +46,7 @@ other eight did not.
 ## Rule 2 — the medium follows what renders it
 
 **If GitHub can render it, it must be mermaid.** GitHub renders a fenced `mermaid`
-block natively, the source stays diffable, and the repo already has 67 of them.
+block natively, the source stays diffable, and the repo is already full of them.
 
 Reach for a **hero diagram** — [`diagram-design`](https://github.com/) output, HTML
 source, SVG artifact — only for the small number of figures that open an axis and are
@@ -148,5 +148,5 @@ site ships a corpus that matches what a reader now sees.
   ([ADR-0005](../../../docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)). If a
   figure is teaching something the repo does not say anywhere in prose, the missing
   thing is prose, and the job belongs to [`author-module`](../author-module/SKILL.md).
-- Commit with the repo's message style (`<area>: <what> — <why>`), **no
-  `Co-Authored-By` trailer**, and never commit a source without its derived artifacts.
+- Commit with the repo's message style (`<area>: <what> — <why>`), and never commit a
+  source without its derived artifacts.

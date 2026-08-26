@@ -39,7 +39,7 @@ the eleven files left alone were left alone on purpose.
   moved a lane and inverted a rank and made the caption a lie.
 
 - **Everything from `diagram-design`.** Rejected outright. Sixty-seven diagrams become
-  sixty-seven HTML sources and one hundred and thirty-four generated SVGs; a
+  an HTML source and two SVGs for every one of the hundred-odd fenced blocks; a
   one-word label fix becomes a build; and GitHub loses the plain-text diff that makes a
   diagram reviewable in a pull request.
 

@@ -29,7 +29,7 @@ _Avoid_: skill list, competency matrix, checklist
 
 **Agent Skill**:
 A `SKILL.md` workflow in [`.claude/skills/`](.claude/skills/) that an AI agent
-invokes to *apply* this repo's method. Eight exist. A unit of automation, never a
+invokes to *apply* this repo's method. Ten exist. A unit of automation, never a
 unit of knowledge.
 _Avoid_: skill (unqualified), tool, command
 
@@ -105,7 +105,7 @@ _Avoid_: search index, full-text index, catalog
 One of the four branded figures under `site/assets/diagrams/` that open an axis — the
 axis map, the stack, the ramp, the route. Authored once as a light HTML file; the dark
 HTML and both SVGs are **derived** by `site/build-diagrams.py` and never hand-edited.
-Distinct from the 67 in-document **mermaid** diagrams, which are the default:
+Distinct from the in-document **mermaid** diagrams, which are the default:
 [ADR-0007](docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) decides
 which medium a figure belongs in, and both are subject to the rule above them — a
 figure must carry what the prose does not.
