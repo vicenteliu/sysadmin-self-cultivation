@@ -13,6 +13,13 @@ summary: "The third axis of this repo. platforms/ reads the clouds one at a time
 > the same thing**: AWS, Azure, Google Cloud, Oracle Cloud, VMware vSphere,
 > OpenStack, and self-hosted bare metal.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../site/assets/diagrams/stack-layers.dark.svg">
+  <img alt="Seven layers stacked from 01 physical at the bottom to 07 security at the top, each with the job it does, with 02 network marked as the focal layer" src="../site/assets/diagrams/stack-layers.light.svg">
+</picture>
+
+*The stack's shape and its one focal layer. The mindmap under [The series on one screen](#the-series-on-one-screen) is the other view — what is inside each layer rather than how the layers sit.*
+
 ## Why layer-first
 
 Most cloud material is written **from the console down** — here's a service, here's

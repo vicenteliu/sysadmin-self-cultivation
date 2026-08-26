@@ -15,6 +15,13 @@ can move between them without re-learning how to read them:
 3. **`ai-ramp.md`** — the AI-assisted method to get competent fast, and how to keep AI honest.
 4. **`labs/`** — runnable, tear-down-able exercises.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../site/assets/diagrams/seven-surfaces.dark.svg">
+  <img alt="A five-step ramp: what you know, then the seven surfaces, then the structural outliers, then a checkable skill map, then the honesty ledger" src="../site/assets/diagrams/seven-surfaces.light.svg">
+</picture>
+
+*Every `README.md` in this folder is step 02 of that ramp, filled in for one platform: the seven surfaces with that platform's words in them. The [`platform-ramp`](../.claude/skills/platform-ramp/SKILL.md) skill is the same method, invokable.*
+
 These are the platforms an admin *operates end to end*. They're also five of the
 seven compared layer-by-layer in [`the-stack/`](../the-stack/) (with OCI and
 self-host as the other two) — the platform folder is the "operate this one" view; the

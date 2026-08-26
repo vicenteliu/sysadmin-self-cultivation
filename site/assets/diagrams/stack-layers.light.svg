@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="stack-layers-title stack-layers-desc">
+      <title id="stack-layers-title">The stack, read bottom-up</title>
+      <desc id="stack-layers-desc">Seven layers of an estate stacked from the physical layer at the bottom to security at the top, each with the job it does, with the network layer marked as the one where the seven platforms differ most.</desc>
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');</style>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5d5a52"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a8763e"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6b8a"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#faf8f4"/>
+
+      <text x="76" y="56" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">READ BOTTOM-UP — 01 IS THE FLOOR, AND EVERY LAYER IS COMPARED ACROSS ALL SEVEN PLATFORMS</text>
+
+      <rect x="76" y="72" width="848" height="448" rx="8" fill="#faf8f4" stroke="#5d5a52" stroke-width="1"/>
+
+      <text x="96" y="110" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">07</text>
+      <text x="148" y="110" fill="#26262b" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif">Security</text>
+      <text x="904" y="110" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">identity · secrets · boundaries</text>
+      <line x1="76" y1="136" x2="924" y2="136" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+
+      <text x="96" y="174" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">06</text>
+      <text x="148" y="174" fill="#26262b" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif">Observability</text>
+      <text x="904" y="174" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">logs · metrics · traces</text>
+      <line x1="76" y1="200" x2="924" y2="200" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+
+      <text x="96" y="238" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">05</text>
+      <text x="148" y="238" fill="#26262b" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif">Platform services</text>
+      <text x="904" y="238" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">managed DB · queues · DNS</text>
+      <line x1="76" y1="264" x2="924" y2="264" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+
+      <text x="96" y="302" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">04</text>
+      <text x="148" y="302" fill="#26262b" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif">Storage</text>
+      <text x="904" y="302" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">block · object · file</text>
+      <line x1="76" y1="328" x2="924" y2="328" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+
+      <text x="96" y="366" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">03</text>
+      <text x="148" y="366" fill="#26262b" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif">Compute &amp; images</text>
+      <text x="904" y="366" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">VM · container · image pipeline</text>
+      <line x1="76" y1="392" x2="924" y2="392" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+
+      <rect x="76" y="392" width="848" height="64" fill="rgba(168,118,62,0.08)"/>
+      <line x1="76" y1="392" x2="924" y2="392" stroke="#a8763e" stroke-width="1"/>
+      <line x1="76" y1="456" x2="924" y2="456" stroke="#a8763e" stroke-width="1"/>
+      <text x="96" y="430" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">02</text>
+      <text x="148" y="430" fill="#26262b" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif">Network</text>
+      <text x="904" y="430" fill="#a8763e" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">address · connect · isolate · filter</text>
+
+      <text x="96" y="494" fill="#8a8479" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">01</text>
+      <text x="148" y="494" fill="#26262b" font-size="16" font-weight="600" font-family="'Geist', system-ui, sans-serif">Physical</text>
+      <text x="904" y="494" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">failure domains · power · racks</text>
+
+      <line x1="76" y1="548" x2="924" y2="548" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="76" y="576" fill="#5d5a52" font-size="14" font-style="italic" font-family="'Instrument Serif', Georgia, serif">02 is where the seven platforms differ most — and where the money quietly leaks.</text>
+      <text x="924" y="576" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end" letter-spacing="0.12em">THE-STACK/02</text>
+    </svg>

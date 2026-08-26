@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="seven-surfaces-title seven-surfaces-desc">
+      <title id="seven-surfaces-title">The seven surfaces, and the ramp that uses them</title>
+      <desc id="seven-surfaces-desc">A five-step ramp onto an unfamiliar platform: start from what you already know, translate it onto seven surfaces — identity and access, compute, networking, storage and data, provisioning and config, observability, security and compliance — then hunt the structural outliers, build a checkable skill map, and finish with an honesty ledger.</desc>
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');</style>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5d5a52"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a8763e"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6b8a"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#faf8f4"/>
+
+      <text x="84" y="40" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">A PLATFORM YOU HAVE NEVER TOUCHED — IN DAYS, AND HONEST ABOUT WHERE YOU ARE STILL BLUFFING</text>
+
+      <!-- connectors first -->
+      <line x1="244" y1="182" x2="280" y2="182" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <line x1="516" y1="182" x2="552" y2="182" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <line x1="716" y1="182" x2="752" y2="182" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <line x1="916" y1="182" x2="952" y2="182" stroke="#5d5a52" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+      <!-- 01 what you know -->
+      <rect x="84" y="138" width="160" height="88" rx="6" fill="#faf8f4"/>
+      <rect x="84" y="138" width="160" height="88" rx="6" fill="rgba(93,90,82,0.10)" stroke="#8a8479" stroke-width="1"/>
+      <text x="100" y="162" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">01</text>
+      <text x="164" y="186" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">What you know</text>
+      <text x="164" y="206" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Linux · VLANs · IAM</text>
+
+      <!-- 02 the seven surfaces — focal -->
+      <rect x="284" y="64" width="232" height="236" rx="6" fill="#faf8f4"/>
+      <rect x="284" y="64" width="232" height="236" rx="6" fill="rgba(168,118,62,0.08)" stroke="#a8763e" stroke-width="1"/>
+      <text x="300" y="88" fill="#a8763e" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">02 · THE TRANSLATION</text>
+      <text x="300" y="108" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif">The seven surfaces</text>
+
+      <rect x="300" y="120" width="200" height="20" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="310" y="134" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">identity &amp; access</text>
+      <rect x="300" y="144" width="200" height="20" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="310" y="158" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">compute</text>
+      <rect x="300" y="168" width="200" height="20" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="310" y="182" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">networking</text>
+      <rect x="300" y="192" width="200" height="20" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="310" y="206" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">storage &amp; data</text>
+      <rect x="300" y="216" width="200" height="20" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="310" y="230" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">provisioning &amp; config</text>
+      <rect x="300" y="240" width="200" height="20" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="310" y="254" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">observability</text>
+      <rect x="300" y="264" width="200" height="20" rx="4" fill="rgba(38,38,43,0.03)" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="310" y="278" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">security &amp; compliance</text>
+
+      <!-- 03 outliers -->
+      <rect x="556" y="138" width="160" height="88" rx="6" fill="#faf8f4"/>
+      <rect x="556" y="138" width="160" height="88" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="572" y="162" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">03</text>
+      <text x="636" y="186" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">The outliers</text>
+      <text x="636" y="206" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the 2-4 that bite</text>
+
+      <!-- 04 skill map -->
+      <rect x="756" y="138" width="160" height="88" rx="6" fill="#faf8f4"/>
+      <rect x="756" y="138" width="160" height="88" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="772" y="162" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">04</text>
+      <text x="836" y="186" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">The skill map</text>
+      <text x="836" y="206" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">core · working · depth</text>
+
+      <!-- 05 ledger -->
+      <rect x="956" y="138" width="160" height="88" rx="6" fill="#faf8f4"/>
+      <rect x="956" y="138" width="160" height="88" rx="6" fill="#ffffff" stroke="#26262b" stroke-width="1"/>
+      <text x="972" y="162" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">05</text>
+      <text x="1036" y="186" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Honesty ledger</text>
+      <text x="1036" y="206" fill="#5d5a52" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">hands-on vs ramp</text>
+
+      <!-- editorial callout -->
+      <line x1="84" y1="332" x2="1116" y2="332" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="84" y="360" fill="#5d5a52" font-size="14" font-style="italic" font-family="'Instrument Serif', Georgia, serif">AI for speed, judgement for truth — and step 05 so you never claim depth you do not have.</text>
+      <text x="1116" y="360" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end" letter-spacing="0.12em">SKILL: PLATFORM-RAMP</text>
+    </svg>

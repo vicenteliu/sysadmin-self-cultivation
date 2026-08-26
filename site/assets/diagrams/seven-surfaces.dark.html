@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The seven surfaces, and the ramp that uses them</title>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --color-paper:   #1a1a17;
+      --color-ink:     #faf8f4;
+      --color-muted:   #b8b2a6;
+      --color-accent:  #c99a5b;
+      --font-sans:     'Geist', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+      --font-serif:    'Instrument Serif', Georgia, 'Times New Roman', serif;
+      --font-mono:     'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    body {
+      font-family: var(--font-sans); background: var(--color-paper); color: var(--color-ink);
+      min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 3rem 2rem;
+    }
+    .frame { max-width: 1200px; width: 100%; }
+    .eyebrow {
+      font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--color-muted); margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-family: var(--font-serif); font-size: clamp(1.5rem, 2.4vw + 0.75rem, 2rem); font-weight: 400;
+      letter-spacing: -0.02em; line-height: 1.15; color: var(--color-ink); margin-bottom: 1.5rem;
+    }
+    svg { width: 100%; min-width: 900px; display: block; }
+  </style>
+</head>
+<body>
+  <div class="frame">
+    <p class="eyebrow">Architecture · The Sysadmin's Self-Cultivation</p>
+    <h1>The seven surfaces, and the ramp that uses them</h1>
+
+    <svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="seven-surfaces-dark-title seven-surfaces-dark-desc">
+      <title id="seven-surfaces-dark-title">The seven surfaces, and the ramp that uses them</title>
+      <desc id="seven-surfaces-dark-desc">A five-step ramp onto an unfamiliar platform: start from what you already know, translate it onto seven surfaces — identity and access, compute, networking, storage and data, provisioning and config, observability, security and compliance — then hunt the structural outliers, build a checkable skill map, and finish with an honesty ledger.</desc>
+      <defs>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#b8b2a6"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#c99a5b"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7fa3c4"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#1a1a17"/>
+
+      <text x="84" y="40" fill="#8f887c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">A PLATFORM YOU HAVE NEVER TOUCHED — IN DAYS, AND HONEST ABOUT WHERE YOU ARE STILL BLUFFING</text>
+
+      <!-- connectors first -->
+      <line x1="244" y1="182" x2="280" y2="182" stroke="#b8b2a6" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <line x1="516" y1="182" x2="552" y2="182" stroke="#b8b2a6" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <line x1="716" y1="182" x2="752" y2="182" stroke="#b8b2a6" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <line x1="916" y1="182" x2="952" y2="182" stroke="#b8b2a6" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+      <!-- 01 what you know -->
+      <rect x="84" y="138" width="160" height="88" rx="6" fill="#1a1a17"/>
+      <rect x="84" y="138" width="160" height="88" rx="6" fill="rgba(184,178,166,0.10)" stroke="#8f887c" stroke-width="1"/>
+      <text x="100" y="162" fill="#8f887c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">01</text>
+      <text x="164" y="186" fill="#faf8f4" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">What you know</text>
+      <text x="164" y="206" fill="#b8b2a6" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">Linux · VLANs · IAM</text>
+
+      <!-- 02 the seven surfaces — focal -->
+      <rect x="284" y="64" width="232" height="236" rx="6" fill="#1a1a17"/>
+      <rect x="284" y="64" width="232" height="236" rx="6" fill="rgba(201,154,91,0.10)" stroke="#c99a5b" stroke-width="1"/>
+      <text x="300" y="88" fill="#c99a5b" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">02 · THE TRANSLATION</text>
+      <text x="300" y="108" fill="#faf8f4" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif">The seven surfaces</text>
+
+      <rect x="300" y="120" width="200" height="20" rx="4" fill="rgba(250,248,244,0.03)" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="310" y="134" fill="#b8b2a6" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">identity &amp; access</text>
+      <rect x="300" y="144" width="200" height="20" rx="4" fill="rgba(250,248,244,0.03)" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="310" y="158" fill="#b8b2a6" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">compute</text>
+      <rect x="300" y="168" width="200" height="20" rx="4" fill="rgba(250,248,244,0.03)" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="310" y="182" fill="#b8b2a6" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">networking</text>
+      <rect x="300" y="192" width="200" height="20" rx="4" fill="rgba(250,248,244,0.03)" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="310" y="206" fill="#b8b2a6" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">storage &amp; data</text>
+      <rect x="300" y="216" width="200" height="20" rx="4" fill="rgba(250,248,244,0.03)" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="310" y="230" fill="#b8b2a6" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">provisioning &amp; config</text>
+      <rect x="300" y="240" width="200" height="20" rx="4" fill="rgba(250,248,244,0.03)" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="310" y="254" fill="#b8b2a6" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">observability</text>
+      <rect x="300" y="264" width="200" height="20" rx="4" fill="rgba(250,248,244,0.03)" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="310" y="278" fill="#b8b2a6" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">security &amp; compliance</text>
+
+      <!-- 03 outliers -->
+      <rect x="556" y="138" width="160" height="88" rx="6" fill="#1a1a17"/>
+      <rect x="556" y="138" width="160" height="88" rx="6" fill="#25241f" stroke="#faf8f4" stroke-width="1"/>
+      <text x="572" y="162" fill="#8f887c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">03</text>
+      <text x="636" y="186" fill="#faf8f4" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">The outliers</text>
+      <text x="636" y="206" fill="#b8b2a6" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">the 2-4 that bite</text>
+
+      <!-- 04 skill map -->
+      <rect x="756" y="138" width="160" height="88" rx="6" fill="#1a1a17"/>
+      <rect x="756" y="138" width="160" height="88" rx="6" fill="#25241f" stroke="#faf8f4" stroke-width="1"/>
+      <text x="772" y="162" fill="#8f887c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">04</text>
+      <text x="836" y="186" fill="#faf8f4" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">The skill map</text>
+      <text x="836" y="206" fill="#b8b2a6" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">core · working · depth</text>
+
+      <!-- 05 ledger -->
+      <rect x="956" y="138" width="160" height="88" rx="6" fill="#1a1a17"/>
+      <rect x="956" y="138" width="160" height="88" rx="6" fill="#25241f" stroke="#faf8f4" stroke-width="1"/>
+      <text x="972" y="162" fill="#8f887c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">05</text>
+      <text x="1036" y="186" fill="#faf8f4" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Honesty ledger</text>
+      <text x="1036" y="206" fill="#b8b2a6" font-size="9" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">hands-on vs ramp</text>
+
+      <!-- editorial callout -->
+      <line x1="84" y1="332" x2="1116" y2="332" stroke="rgba(250,248,244,0.12)" stroke-width="0.8"/>
+      <text x="84" y="360" fill="#b8b2a6" font-size="14" font-style="italic" font-family="'Instrument Serif', Georgia, serif">AI for speed, judgement for truth — and step 05 so you never claim depth you do not have.</text>
+      <text x="1116" y="360" fill="#8f887c" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end" letter-spacing="0.12em">SKILL: PLATFORM-RAMP</text>
+    </svg>
+  </div>
+</body>
+</html>

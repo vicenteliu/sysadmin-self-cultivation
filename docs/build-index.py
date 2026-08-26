@@ -16,6 +16,9 @@ hand-maintained second copy drifts (ADR-0001).
     system reads `name` and `description`). Those two fields are read as they
     stand; nothing is added to that schema.
 
+One further exception, kept as a named set rather than a rule: a Markdown file that is
+another tool's data is skipped outright — see `NOT_A_DOCUMENT`.
+
 Exit codes: 0 ok · 1 a content file is missing front-matter · 2 --check found the
 index stale. Idempotent — two runs produce byte-identical output.
 """
@@ -28,6 +31,12 @@ SKIP_DIRS = (".git", ".serena", "__pycache__", "node_modules")
 # and this file is the front door. Its record is stated here instead.
 ROOT_README = {"kind": "index", "axis": "start-here", "themes": [], "platforms": [],
                "summary": "The front door: what this repo is, how to read it, and what is built."}
+
+# Markdown that is another tool's data rather than a document. The diagram-design style
+# profile has to stay byte-identical to the copy `site/build-diagrams.py --install-profile`
+# writes into `~/.diagram-design/profiles/`, so front-matter cannot be added to it, and it
+# is no more a document than `toolbox/generate/catalog.json` is.
+NOT_A_DOCUMENT = {"site/assets/diagrams/sysadmin-brass.profile.md"}
 
 LIST_RE = re.compile(r"^\[(.*)\]$")
 
@@ -78,6 +87,9 @@ def build():
             records[path] = {"kind": "agent-skill", "axis": "start-here",
                              "themes": [], "platforms": [],
                              "summary": fm.get("description", "").strip()}
+            continue
+
+        if path in NOT_A_DOCUMENT:
             continue
 
         if path == "README.md":

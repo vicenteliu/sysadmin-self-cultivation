@@ -33,6 +33,36 @@ admin's existing depth (Linux, networking, identity, automation) pays off the mo
 | [`site-network-design.md`](site-network-design.md) | Designing the network for one physical place: segmentation with a reason per segment, an address plan that survives a merge, wired vs wireless, DNS/DHCP ownership, 802.1X, provable guest isolation. **🔨** except wireless, which is **🧭**. |
 | [`cost.md`](cost.md) | Cost as a first-class operational control: budgets, alarms, right-sizing, the "forgotten GPU instance" problem. | ✅ |
 
+**Where the support notes converge.** Eight of the notes above and in `platforms/` are
+**support notes** — the break-fix craft of inheriting something rather than the concept
+of it. They come in two kinds, and only one kind gets synthesised:
+
+```mermaid
+flowchart LR
+  subgraph plat["Per platform — what breaks on that one"]
+    direction TB
+    aws["platforms/aws/support.md"]
+    azure["platforms/azure/support.md"]
+    gcp["platforms/gcp/support.md"]
+    oci["platforms/oci/support.md"]
+  end
+
+  subgraph theme["Per theme — what breaks in that layer"]
+    direction TB
+    m365["m365-support.md"]
+    tf["terraform-support.md"]
+    k8s["kubernetes-support.md"]
+  end
+
+  multi["multi-cloud-support.md<br/>CIDR overlap · federation · egress · posture"]
+
+  plat -- "synthesised into" --> multi
+```
+
+The theme notes have no equivalent synthesis, and that is a statement rather than a
+gap: what breaks *between* clouds is a subject; what breaks between Terraform and
+Kubernetes is not.
+
 **Skill maps** — the [platform skill maps](../platforms/aws/skills-map.md)
 transposed: one theme cut across every platform, tiered by how far each skill
 travels rather than by which cloud it belongs to. See

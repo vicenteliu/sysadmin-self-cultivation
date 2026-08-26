@@ -13,6 +13,13 @@ summary: "A route through the other axes, not another axis."
 > `toolbox/` for the substance. **No step teaches a new page.**
 > Decision: [`docs/adr/0001`](../docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="../site/assets/diagrams/build-out-route.dark.svg">
+  <img alt="The sixteen build-out steps grouped into five phases on a timeline, spaced in proportion to how many steps each phase contains" src="../site/assets/diagrams/build-out-route.light.svg">
+</picture>
+
+*Spacing is proportional to step count, which is the point: the phase after everything is built is the longest one.*
+
 ## Why sequence is a useful cut
 
 *(Written after the sixteen steps existed, not before — the claim had to survive

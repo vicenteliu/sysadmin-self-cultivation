@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="build-out-route-title build-out-route-desc">
+      <title id="build-out-route-title">One 100-person office, in sixteen steps</title>
+      <desc id="build-out-route-desc">A timeline of the build-out route in five phases — site, identity and fleet, network and workplace, keeping it safe, and running it — spaced along the axis in proportion to how many of the sixteen steps each phase contains, so the final running phase is visibly the longest.</desc>
+      <defs>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap');</style>
+        <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#5d5a52"/></marker>
+        <marker id="arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#a8763e"/></marker>
+        <marker id="arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4a6b8a"/></marker>
+      </defs>
+
+      <rect width="100%" height="100%" fill="#faf8f4"/>
+
+      <text x="88" y="40" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.14em">SPACED BY HOW MANY OF THE SIXTEEN STEPS EACH PHASE ACTUALLY TAKES — NOT EVENLY</text>
+
+      <!-- baseline and boundary ticks -->
+      <line x1="88" y1="200" x2="1112" y2="200" stroke="#5d5a52" stroke-width="1"/>
+      <line x1="88" y1="196" x2="88" y2="204" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="280" y1="196" x2="280" y2="204" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="408" y1="196" x2="408" y2="204" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="600" y1="196" x2="600" y2="204" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="792" y1="196" x2="792" y2="204" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="1112" y1="196" x2="1112" y2="204" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+
+      <!-- drops -->
+      <line x1="88" y1="172" x2="88" y2="196" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="280" y1="204" x2="280" y2="228" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="408" y1="172" x2="408" y2="196" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="600" y1="204" x2="600" y2="228" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="792" y1="172" x2="792" y2="196" stroke="rgba(38,38,43,0.12)" stroke-width="1"/>
+      <line x1="1112" y1="204" x2="1112" y2="228" stroke="rgba(168,118,62,0.40)" stroke-width="1"/>
+
+      <!-- phase 1 — above -->
+      <text x="88" y="148" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif">Site</text>
+      <text x="88" y="164" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">00 before the lease · 01 uplink · 02 the building</text>
+
+      <!-- phase 2 — below -->
+      <text x="280" y="244" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif">Identity &amp; fleet</text>
+      <text x="280" y="260" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">03 identity · 04 devices and images</text>
+
+      <!-- phase 3 — above -->
+      <text x="408" y="148" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif">Network &amp; workplace</text>
+      <text x="408" y="164" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">05 network · 06 tenant and mail · 07 files</text>
+
+      <!-- phase 4 — below -->
+      <text x="600" y="244" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif">Keep it safe</text>
+      <text x="600" y="260" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">08 endpoint security · 09 backup + restore drill · 10 remote access</text>
+
+      <!-- phase 5 — above -->
+      <text x="792" y="148" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif">Run it</text>
+      <text x="792" y="164" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace">11 assets · 12 rooms and AV · 13 help desk · 14 compliance · 15 JML</text>
+
+      <!-- terminal — below -->
+      <text x="1112" y="244" fill="#26262b" font-size="13" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="end">Running estate</text>
+      <text x="1112" y="260" fill="#a8763e" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end">and now someone has to run it</text>
+
+      <!-- markers, drawn last so they sit on the baseline -->
+      <circle cx="88" cy="200" r="4" fill="#5d5a52"/>
+      <circle cx="280" cy="200" r="4" fill="#5d5a52"/>
+      <circle cx="408" cy="200" r="4" fill="#5d5a52"/>
+      <circle cx="600" cy="200" r="4" fill="#5d5a52"/>
+      <circle cx="792" cy="200" r="4" fill="#5d5a52"/>
+      <circle cx="1112" cy="200" r="6" fill="#a8763e"/>
+
+      <text x="88" y="188" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" letter-spacing="0.12em">EMPTY LEASE</text>
+
+      <!-- editorial callout -->
+      <line x1="88" y1="332" x2="1112" y2="332" stroke="rgba(38,38,43,0.12)" stroke-width="0.8"/>
+      <text x="88" y="360" fill="#5d5a52" font-size="14" font-style="italic" font-family="'Instrument Serif', Georgia, serif">The longest phase is the one after everything is built.</text>
+      <text x="1112" y="360" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="end" letter-spacing="0.12em">BUILD-OUT/</text>
+    </svg>
