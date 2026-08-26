@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 193,
+  "count": 195,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -853,6 +853,16 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/oci/support.md",
+      "derived": true
+    },
+    "docs/zh/site/README.md": {
+      "kind": "tool",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Inputs: the Markdown already in this repo · Outputs: a browsable, searchable view of it at http://127.0.0.1:8000 · Risk: read-only, localhost-only, and it can only reach files the retrieval index already lists · Root: not needed",
+      "language": "zh",
+      "mirrors": "site/README.md",
       "derived": true
     },
     "docs/zh/toolbox/README.md": {
@@ -1774,6 +1784,13 @@
         "vsphere"
       ],
       "summary": "Check a box when you can do it and explain the failure modes — not when you've read about it."
+    },
+    "site/README.md": {
+      "kind": "tool",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Inputs: the Markdown already in this repo · Outputs: a browsable, searchable view of it at http://127.0.0.1:8000 · Risk: read-only, localhost-only, and it can only reach files the retrieval index already lists · Root: not needed"
     },
     "the-reference-office.md": {
       "kind": "note",

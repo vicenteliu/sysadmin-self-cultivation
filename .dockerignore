@@ -1,0 +1,14 @@
+# The build context is the repo root (see site/Dockerfile). Keep history, local state,
+# and secrets out of the image even though the Dockerfile deletes them again.
+.git
+.serena
+**/__pycache__
+**/.terraform
+*.tfstate*
+*.pem
+*.key
+.env
+.env.*
+drill-workspace
+**/out
+.DS_Store

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Sysadmin's Self-Cultivation</title>
+<meta name="description" content="A browsable view of The Sysadmin's Self-Cultivation — six axes over one body of material.">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🔨</text></svg>">
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/mermaid.min.js"></script>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skipToContent">Skip to content</a>
+
+<header class="topbar">
+  <button class="icon-btn drawer-toggle" id="drawer-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+
+  <a class="brand" href="#/">
+    <span class="brand-mark">🔨</span>
+    <span class="brand-text">
+      <span class="brand-title" data-i18n="siteTitle">The Sysadmin's Self-Cultivation</span>
+      <span class="brand-sub" data-i18n="siteTagline">A transferable model, and an honest ramp</span>
+    </span>
+  </a>
+
+  <form class="search" id="search-form" role="search">
+    <input id="search-input" type="search" autocomplete="off" spellcheck="false"
+           data-i18n-placeholder="searchPlaceholder" placeholder="Search all documents…"
+           aria-label="Search">
+    <kbd class="search-hint">/</kbd>
+  </form>
+
+  <div class="topbar-actions">
+    <button class="icon-btn" id="lang-toggle" aria-label="Language">🌐 <span id="lang-label">EN</span></button>
+    <button class="icon-btn" id="theme-toggle" aria-label="Theme">◐</button>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="sidebar" id="sidebar" aria-label="Documents">
+    <div class="facet-picker" id="facet-picker" role="tablist"></div>
+    <div class="nav-tree" id="nav-tree"></div>
+    <p class="nav-foot">
+      <span id="nav-count"></span>
+    </p>
+  </nav>
+
+  <main class="main" id="main" tabindex="-1"></main>
+
+  <aside class="toc" id="toc" aria-label="On this page"></aside>
+</div>
+
+<div class="drawer-scrim" id="drawer-scrim" hidden></div>
+
+<script type="module" src="js/router.js"></script>
+</body>
+</html>
