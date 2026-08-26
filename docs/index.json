@@ -311,7 +311,7 @@
       "marker": "🔨"
     },
     "build-out/GAPS.md": {
-      "kind": "route-step",
+      "kind": "index",
       "axis": "build-out",
       "themes": [],
       "platforms": [],
@@ -894,7 +894,7 @@
       "derived": true
     },
     "docs/zh/toolbox/README.md": {
-      "kind": "tool",
+      "kind": "index",
       "axis": "toolbox",
       "themes": [],
       "platforms": [
@@ -907,7 +907,7 @@
       "derived": true
     },
     "docs/zh/toolbox/ansible/README.md": {
-      "kind": "ansible-role",
+      "kind": "index",
       "axis": "toolbox",
       "themes": [
         "iac-config"
@@ -1966,7 +1966,7 @@
       "summary": "Runnable evidence for the layer series. Each chapter's \"Lab\" section is a spec; this folder is where those specs become code you can actually run and verify."
     },
     "toolbox/README.md": {
-      "kind": "tool",
+      "kind": "index",
       "axis": "toolbox",
       "themes": [],
       "platforms": [
@@ -1976,7 +1976,7 @@
       "marker": "mixed"
     },
     "toolbox/ansible/README.md": {
-      "kind": "ansible-role",
+      "kind": "index",
       "axis": "toolbox",
       "themes": [
         "iac-config"

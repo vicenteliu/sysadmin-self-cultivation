@@ -1,5 +1,5 @@
 ---
-kind: route-step
+kind: index
 axis: build-out
 themes: []
 platforms: []

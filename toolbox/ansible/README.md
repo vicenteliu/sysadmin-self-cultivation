@@ -1,5 +1,5 @@
 ---
-kind: ansible-role
+kind: index
 axis: toolbox
 themes: [iac-config]
 platforms: []

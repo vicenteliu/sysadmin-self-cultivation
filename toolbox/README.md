@@ -1,5 +1,5 @@
 ---
-kind: tool
+kind: index
 axis: toolbox
 themes: []
 platforms: [vsphere]

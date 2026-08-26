@@ -380,7 +380,9 @@ export function renderHome(state) {
     if (rec.derived || !path.endsWith(".md")) continue;
     counts.set(rec.axis, (counts.get(rec.axis) ?? 0) + 1);
     if (rec.kind === "lab") labs += 1;
-    if (rec.kind === "tool" || rec.kind === "ansible-role") tools += 1;
+    // Scoped to the toolbox axis on purpose: site/README.md is a tool too, but it is not
+    // one of the things the front door means when it advertises what you can take with you.
+    if ((rec.kind === "tool" || rec.kind === "ansible-role") && rec.axis === "toolbox") tools += 1;
     if (rec.kind === "agent-skill") skills += 1;
   }
   const total = [...counts.values()].reduce((a, b) => a + b, 0);
