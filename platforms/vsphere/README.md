@@ -97,7 +97,7 @@ reverse.
 Reading about vMotion and doing it are different skills — but the honest note is that
 this platform's lab *already ran*, in production, for years. A **three-lab CLI arc**
 (connect + inventory → provision from a template → watch HA restart a VM) is in
-**[`labs/`](labs/)** with real **PowerCLI** — a nested-ESXi or lab-cluster walkthrough
+**[`labs/`](labs/)** with real **PowerCLI** — a nested-ESXi or lab-cluster run-through
 that forces a host failure to watch HA restart it, the failure-domain lesson from
 [`the-stack/01`](../../the-stack/01-physical.md), made tangible on the platform it
 came from).

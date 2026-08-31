@@ -8,9 +8,9 @@
 import { t, label, getLang } from "./i18n.js";
 
 const AXIS_ORDER = ["start-here", "foundations", "the-stack", "platforms",
-                    "cross-cutting", "build-out", "toolbox", "meta"];
+                    "cross-cutting", "build-out", "walkthrough", "toolbox", "meta"];
 const KIND_ORDER = ["index", "note", "companion", "support-note", "lab", "route-step",
-                    "tool", "ansible-role", "skill-map", "agent-skill", "interview",
+                    "walkthrough", "tool", "ansible-role", "skill-map", "agent-skill", "interview",
                     "adr", "roadmap", "questions", "glossary"];
 const FACETS = [["axis", "byAxis"], ["platforms", "byPlatform"],
                 ["themes", "byTheme"], ["kind", "byKind"]];
@@ -20,11 +20,22 @@ const STORE_KEY = "ssc.facet";
 
 export function currentFacet() { return facet; }
 
-/** Canonical documents only, in a stable order: a folder's README, then everything else. */
+/** Canonical documents only, in a stable order: a folder's README, then everything else.
+
+    A walkthrough is two canonical scripts, one per language, and neither is a mirror of
+    the other — so the nav shows the one written in the language you are reading in.
+    Without this an English reader gets a Chinese title in the list and no way to tell
+    why. It is the same hiding the nav already does for the 26 mirrors, applied to a
+    sibling instead of a derivative. */
 export function canonicalDocs(state) {
   return Object.entries(state.index.files)
-    .filter(([path, rec]) => !rec.derived && path.endsWith(".md"))
+    .filter(([path, rec]) => !rec.derived && path.endsWith(".md") && inThisLanguage(rec))
     .sort(([a], [b]) => sortKey(a).localeCompare(sortKey(b)));
+}
+
+/** True unless the document names a language, and it is not the one on screen. */
+export function inThisLanguage(rec) {
+  return !rec.counterpart || (rec.language ?? "en") === getLang();
 }
 
 function sortKey(path) {

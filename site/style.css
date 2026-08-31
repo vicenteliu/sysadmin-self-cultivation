@@ -304,3 +304,98 @@ a:hover { text-decoration-color: currentColor; }
   .brand-title { font-size: 1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .sidebar { transition: none; } }
+
+/* ── the floor ───────────────────────────────────────────────────────────────
+   The scene itself keeps one palette and does not follow the theme (ADR-0013);
+   the chrome around it does, because it is part of the page. */
+.floor { width: 100%; max-width: 1280px; margin: 0 0 2.25rem; }
+.floor-bar {
+  display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center;
+  padding: .55rem .7rem; border: 1px solid var(--rule-solid);
+  border-bottom: 0; border-radius: 8px 8px 0 0; background: var(--paper-2);
+}
+.floor-bar > div { display: flex; gap: .3rem; }
+.floor-transport { margin-left: auto; }
+.floor-bar button {
+  font: 500 12px/1 var(--mono); letter-spacing: .02em;
+  padding: .42rem .6rem; border: 1px solid var(--rule-solid); border-radius: 5px;
+  background: var(--paper); color: var(--muted); cursor: pointer;
+}
+.floor-bar button:hover { color: var(--ink); border-color: var(--accent); }
+.floor-bar button.on { background: var(--accent-tint); color: var(--accent); border-color: var(--accent); }
+.floor-bar button.accent { color: var(--accent); }
+
+.floor-stage {
+  position: relative; height: min(76vh, 720px);
+  border: 1px solid var(--rule-solid); border-radius: 0 0 8px 8px;
+  overflow: hidden; background: #1b1a17;
+}
+.floor-canvas { display: block; touch-action: none; cursor: grab; }
+.floor-canvas:active { cursor: grabbing; }
+
+.floor-marker {
+  position: absolute; top: .7rem; right: .7rem;
+  font: 600 12px/1 var(--mono); padding: .4rem .6rem; border-radius: 999px;
+  background: rgba(27, 26, 23, .9); border: 1px solid #a8763e; color: #c99a5b;
+}
+.floor-marker.hands { border-color: #7c8f6f; color: #9caf8f; }
+
+.floor-caption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: .8rem 1rem; font: 400 15px/1.6 var(--sans);
+  color: #e7e2d8; background: linear-gradient(transparent, rgba(27, 26, 23, .93) 28%);
+  max-height: 42%; overflow-y: auto;
+}
+
+.floor-panel {
+  position: absolute; top: 0; right: 0; bottom: 0; width: min(24rem, 78%);
+  padding: 1rem 1.1rem; overflow-y: auto;
+  background: var(--paper); border-left: 1px solid var(--rule-solid);
+  font-size: 14px;
+}
+.floor-panel h4 { margin: 0 1.6rem .5rem 0; font: 600 16px/1.35 var(--sans); }
+.floor-panel ul { margin: .3rem 0 .9rem; padding-left: 1.1rem; }
+.floor-panel li { margin: .18rem 0; }
+.floor-why { margin: .2rem 0 .9rem; color: var(--ink); }
+.floor-sub {
+  margin: 0 0 .1rem; font: 600 11px/1 var(--mono);
+  letter-spacing: .08em; text-transform: uppercase; color: var(--soft);
+}
+.floor-marks { margin: 0 0 .6rem; display: flex; gap: .35rem; flex-wrap: wrap; }
+.floor-marks .mark {
+  font: 500 11px/1 var(--mono); padding: .28rem .45rem; border-radius: 4px;
+  background: var(--accent-tint); color: var(--accent);
+}
+.floor-anchors a { font: 400 13px/1.5 var(--mono); word-break: break-all; }
+.floor-noconfig {
+  margin: 1rem 0 0; padding-top: .7rem; border-top: 1px solid var(--rule);
+  font-size: 12.5px; color: var(--soft);
+}
+.floor-panel-close {
+  position: absolute; top: .5rem; right: .6rem;
+  font-size: 20px; line-height: 1; padding: .1rem .35rem;
+  background: none; border: 0; color: var(--soft); cursor: pointer;
+}
+.floor-panel-close:hover { color: var(--ink); }
+.floor-hint { margin: .45rem 0 0; font: 400 12.5px/1.5 var(--mono); color: var(--soft); }
+
+@media (max-width: 700px) {
+  .floor-stage { height: 58vh; }
+  .floor-panel { width: 100%; }
+  .floor-transport { margin-left: 0; }
+}
+.floor-anchors li { margin: .35rem 0; }
+.floor-anchors a { display: block; font: 400 13px/1.45 var(--sans); }
+.floor-anchors .floor-path { display: block; font: 400 11px/1.4 var(--mono); color: var(--soft); }
+
+/* A walkthrough always has a floor. When its scene data cannot be fetched, say so
+   where the floor would have been — silence reads as "there was never one here". */
+.floor-absent {
+  margin: 0 0 2.25rem; padding: 1rem 1.2rem;
+  border: 1px solid var(--accent); border-radius: 8px; background: var(--accent-tint);
+  font-size: 14px;
+}
+.floor-absent p { margin: .35rem 0; }
+.floor-absent-head { font-weight: 600; }
+.floor-absent pre { margin: .7rem 0 .4rem; }
+.floor-absent-detail { font: 400 12px/1.5 var(--mono); color: var(--soft); }

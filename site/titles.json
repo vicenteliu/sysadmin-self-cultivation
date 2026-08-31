@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 200,
+  "count": 211,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -85,6 +85,12 @@
     "docs/adr/0006-the-viewer-vendors-its-dependencies.md": "The viewer vendors its dependencies instead of adopting a site generator",
     "docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md": "A figure's medium is decided by what renders it",
     "docs/adr/0008-a-count-is-not-a-bound.md": "A count is not a bound",
+    "docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md": "The walkthrough ships its script, not its audio",
+    "docs/adr/0010-a-spoken-script-has-no-translation.md": "A spoken script has no translation",
+    "docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md": "The floor renders the reference office and may not compute it",
+    "docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md": "Alignment is by beat, not by timestamp",
+    "docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md": "Godot is a design tool, and the floor keeps one palette",
+    "docs/adr/0014-the-plate-stops-at-topology.md": "The plate stops at topology",
     "docs/questions.md": "Open questions",
     "docs/zh/README.md": "系统管理员的自我修养",
     "docs/zh/cross-cutting/kubernetes-support.md": "Kubernetes 支持 —— Linux sysadmin 的转轨指南",
@@ -112,6 +118,7 @@
     "docs/zh/toolbox/user-lifecycle/README.md": "user-lifecycle",
     "docs/zh/toolbox/vm-migration-assess/README.md": "vm-migration-assess",
     "docs/zh/toolbox/vsphere-inventory/README.md": "vsphere-inventory",
+    "docs/zh/walkthrough/README.md": "走读 —— 把参考办公室讲出来",
     "endpoint/README.md": "Endpoint & MDM",
     "foundations/README.md": "Foundations — Linux & scripting",
     "foundations/labs/idempotence-drill/README.md": "Lab — Idempotence & set -euo pipefail (fragile vs. safe, felt in bash)",
@@ -203,6 +210,10 @@
     "toolbox/snapshot-audit/README.md": "snapshot-audit",
     "toolbox/user-lifecycle/README.md": "user-lifecycle",
     "toolbox/vm-migration-assess/README.md": "vm-migration-assess",
-    "toolbox/vsphere-inventory/README.md": "vsphere-inventory"
+    "toolbox/vsphere-inventory/README.md": "vsphere-inventory",
+    "tools/floor/README.md": "tools/floor — the floor's design-time side",
+    "walkthrough/01-the-network.en.md": "Episode 01 · The network — one floor, four segments, and the radios in the ceiling",
+    "walkthrough/01-the-network.zh.md": "第一集 · 网络——一层楼、四个网段，和天花板上的那几个天线",
+    "walkthrough/README.md": "The Walkthrough — the reference office, told out loud"
   }
 }

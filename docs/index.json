@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 200,
+  "count": 211,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -752,6 +752,52 @@
       "platforms": [],
       "summary": "ADR-0007 bounded hero diagrams at four and said a fifth would need an argument. Three more were added without that argument ever being made, and nobody noticed — because a bound written as a count cannot tell you it has been crossed."
     },
+    "docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The repo is adding a narrated walkthrough of the reference office — the first material here meant to be heard rather than read, and the first with a distribution channel outside the repository. The audio for it will not be in the tree, which needs a reason on the record."
+    },
+    "docs/adr/0010-a-spoken-script-has-no-translation.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "English is this repo's source of truth and docs/zh/ is a mirror that may lag. A walkthrough script breaks that model, because the thing a translation destroys is the thing a spoken script is made of."
+    },
+    "docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "The viewer is gaining an interactive 2D office — pan, zoom, clickable props, a cast of people who are the wireless load. It is the most capable thing this repo has ever rendered, which makes it the most likely to start deciding things, so the line it may not cross is drawn here."
+    },
+    "docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The floor has to move in step with the narration, and the obvious way to do that is timestamps. Timestamps cannot work here, because there is no single recording to time against."
+    },
+    "docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The floor is a game scene, and a game engine is the obvious way to build one. Shipping that engine would undo the decision that the viewer installs nothing — so Godot stops at the export step, and the pixel art that comes out of it does not follow the reader's theme."
+    },
+    "docs/adr/0014-the-plate-stops-at-topology.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "The floor the walkthrough plays over was structurally wrong: rooms floating in the middle of the plate with no circulation, no core and doors opening into the desks. Fixing it means drawing a floor plan, and a floor plan is architecture — which this repo has already judged is not its depth."
+    },
     "docs/questions.md": {
       "kind": "questions",
       "axis": "meta",
@@ -1098,6 +1144,16 @@
       "marker": "🔨",
       "language": "zh",
       "mirrors": "toolbox/vsphere-inventory/README.md",
+      "derived": true
+    },
+    "docs/zh/walkthrough/README.md": {
+      "kind": "index",
+      "axis": "walkthrough",
+      "themes": [],
+      "platforms": [],
+      "summary": "A narrated route through the reference office — written to be spoken by a machine and heard by a person, in two languages that are not translations of each other.",
+      "language": "zh",
+      "mirrors": "walkthrough/README.md",
       "derived": true
     },
     "endpoint/README.md": {
@@ -2123,6 +2179,50 @@
       ],
       "summary": "Inputs: --server host[:port], --user, password via VSPHEREPASSWORD · Outputs: one JSON inventory document (stdout or --out), optional per-VM CSV · Risk: read-only — logs in, reads properties, logs…",
       "marker": "🔨"
+    },
+    "tools/floor/README.md": {
+      "kind": "tool",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Inputs: hand-drawn ASCII tiles · Outputs: the floor's sprite sheet and its index under site/assets/floor/ · Risk: writes two generated files, nothing else · Root: not needed"
+    },
+    "walkthrough/01-the-network.en.md": {
+      "kind": "walkthrough",
+      "axis": "walkthrough",
+      "themes": [
+        "networking",
+        "identity"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Episode one: an empty floor plate, a hundred people, four segments, and how many radios end up in the ceiling — walked from the lift doors to the rack, deciding on the way.",
+      "marker": "mixed",
+      "language": "en",
+      "counterpart": "walkthrough/01-the-network.zh.md"
+    },
+    "walkthrough/01-the-network.zh.md": {
+      "kind": "walkthrough",
+      "axis": "walkthrough",
+      "themes": [
+        "networking",
+        "identity"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "第一集：一层空楼面、一百个人、四个网段，还有天花板上到底要几个天线——从电梯口一路走到机柜前，边走边决定。",
+      "marker": "mixed",
+      "language": "zh",
+      "counterpart": "walkthrough/01-the-network.en.md"
+    },
+    "walkthrough/README.md": {
+      "kind": "index",
+      "axis": "walkthrough",
+      "themes": [],
+      "platforms": [],
+      "summary": "A narrated route through the reference office — written to be spoken by a machine and heard by a person, in two languages that are not translations of each other."
     }
   }
 }

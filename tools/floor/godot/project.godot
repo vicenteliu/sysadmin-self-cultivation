@@ -1,0 +1,15 @@
+; Design-time and check-time only. This project is never exported and never reaches a
+; browser — see docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md.
+; It exists to prove one thing about the plate: that you can walk the floor.
+
+config_version=5
+
+[application]
+
+config/name="reference-office-plate"
+config/features=PackedStringArray("4.4")
+run/main_scene=""
+
+[headless]
+
+enabled=true

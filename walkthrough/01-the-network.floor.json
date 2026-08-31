@@ -1,0 +1,1102 @@
+{
+  "$schema": "./floor.schema.md",
+  "version": 2,
+  "episode": "01-the-network",
+  "plate": "reference-office.plate.json",
+  "scripts": [
+    "01-the-network.zh.md",
+    "01-the-network.en.md"
+  ],
+  "note": "Beat entries are partial. A beat with no entry inherits the state of the beat before it, so only changes are written down. The first beat must always carry a full state.",
+  "props": [
+    {
+      "id": "ap-large-room",
+      "kind": "ap",
+      "at": [
+        40,
+        4
+      ],
+      "segment": "seg-management",
+      "label": {
+        "zh": "接入点 · 大会议室专属",
+        "en": "Access point — the large room's own"
+      },
+      "why": {
+        "zh": "这一个不是按覆盖摆的，是按放置摆的。大会议室是这层楼唯一一个会出现二十个人同时开摄像头的地方，而那一刻周围的走廊上并没有二十个人。均匀布点服务不了这种峰值。",
+        "en": "This one is placed, not spaced. The large room is the only square metre on this floor where twenty cameras come on at once, and at that moment the corridor outside holds nobody. Uniform spacing cannot serve that peak."
+      },
+      "criteria": {
+        "zh": [
+          "当代射频",
+          "每 SSID 映射到 VLAN",
+          "802.3bt 供电与 2.5GbE 接入口",
+          "固件支持年限以年计"
+        ],
+        "en": [
+          "Current-generation radios",
+          "Per-SSID VLAN mapping",
+          "802.3bt power and a 2.5GbE access port",
+          "Firmware support life stated in years"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "wireless--count-it-twice-and-take-the-larger",
+          "marker": "🧭"
+        },
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "wireless--density-not-coverage-",
+          "marker": "🧭"
+        },
+        {
+          "path": "the-reference-office.md",
+          "frag": "requirements-to-specify-in-criteria",
+          "marker": "🧭"
+        }
+      ]
+    },
+    {
+      "id": "ap-north",
+      "kind": "ap",
+      "at": [
+        21,
+        9
+      ],
+      "segment": "seg-management",
+      "label": {
+        "zh": "接入点 · 北侧",
+        "en": "Access point — north"
+      },
+      "why": {
+        "zh": "数两遍取大的：按客户端数三个，按吞吐一个，取三个。再拿覆盖卡一次，一万一千平方英尺除以两千七百五得四个。绑住数量的是覆盖，不是容量。",
+        "en": "Counted twice and the larger taken: three by client count, one by throughput. Then checked against coverage — eleven thousand square feet over about twenty-seven hundred gives four. Coverage binds the count, not capacity."
+      },
+      "criteria": {
+        "zh": [
+          "每射频约 25 个活跃客户端",
+          "每 AP 约 50 个",
+          "每 2500 至 3000 平方英尺一个的覆盖底线"
+        ],
+        "en": [
+          "About 25 active clients per radio",
+          "About 50 per AP",
+          "A coverage floor near one AP per 2,500–3,000 sq ft"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "wireless--count-it-twice-and-take-the-larger",
+          "marker": "🧭"
+        },
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "wireless--density-not-coverage-",
+          "marker": "🧭"
+        }
+      ]
+    },
+    {
+      "id": "ap-west",
+      "kind": "ap",
+      "at": [
+        12,
+        17
+      ],
+      "segment": "seg-management",
+      "sameAs": "ap-north",
+      "label": {
+        "zh": "接入点 · 西侧",
+        "en": "Access point — west"
+      }
+    },
+    {
+      "id": "ap-east",
+      "kind": "ap",
+      "at": [
+        32,
+        17
+      ],
+      "segment": "seg-management",
+      "sameAs": "ap-north",
+      "label": {
+        "zh": "接入点 · 东侧",
+        "en": "Access point — east"
+      }
+    },
+    {
+      "id": "ap-south",
+      "kind": "ap",
+      "at": [
+        21,
+        24
+      ],
+      "segment": "seg-management",
+      "sameAs": "ap-north",
+      "label": {
+        "zh": "接入点 · 南侧",
+        "en": "Access point — south"
+      }
+    },
+    {
+      "id": "ap-lobby",
+      "kind": "ap",
+      "at": [
+        5,
+        5
+      ],
+      "segment": "seg-management",
+      "sameAs": "ap-north",
+      "label": {
+        "zh": "接入点 · 前台",
+        "en": "Access point — lobby"
+      }
+    },
+    {
+      "id": "idf",
+      "kind": "idf",
+      "at": [
+        4,
+        12
+      ],
+      "segment": "seg-management",
+      "label": {
+        "zh": "IDF — 三台接入交换机",
+        "en": "IDF — three access switches"
+      },
+      "why": {
+        "zh": "约一百一十个在用端口，加上长到一百三十人的增长，是一百三十五，三台四十八口。但决定买哪一台的往往不是口数：六个 AP 加会议室、电话亭和门禁，同时工作大约五百瓦，而同样四十八口的两台机器供电预算能差一倍以上。",
+        "en": "About a hundred and ten active ports, plus growth to a hundred and thirty people, is a hundred and thirty-five — three 48-port switches. But port count rarely picks the switch: six APs plus room, booth and door devices land near five hundred watts, and two switches with identical port counts can differ by more than a factor of two on PoE budget."
+      },
+      "criteria": {
+        "zh": [
+          "同时负载下的 PoE 瓦数",
+          "AP 面向端口用多千兆",
+          "上联容量按接入层之外的总和算",
+          "支持 802.1X",
+          "管理口只从管理网可达"
+        ],
+        "en": [
+          "PoE budget in watts under simultaneous load",
+          "Multi-gig on AP-facing ports",
+          "Uplink capacity sized past the access layer",
+          "802.1X support",
+          "Management interfaces reachable only from the management segment"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "wired--ports-then-the-two-things-that-get-under-specified",
+          "marker": "🧭"
+        },
+        {
+          "path": "the-reference-office.md",
+          "frag": "requirements-to-specify-in-criteria",
+          "marker": "🧭"
+        },
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "wired--what-still-needs-a-cable-",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "uplink",
+      "kind": "uplink",
+      "at": [
+        7,
+        13
+      ],
+      "segment": "seg-management",
+      "label": {
+        "zh": "上联与堆叠 —— 没人数的那条路径",
+        "en": "Uplink and stacking — the path nobody counts"
+      },
+      "why": {
+        "zh": "三个档位在不同时间升级。桌面口是楼里最不饿的一段，先升级它是最经典的误读。AP 上联才是真正在动的那一档，因为一个千兆口会把 AP 变成它本来要消除的瓶颈。而接入到核心这条路径不出现在任何一张端口清单上，所以没人去数它——设计就是在这里被悄悄封顶的。",
+        "en": "Three tiers upgrade on three schedules. The desk is the least starved link in the building and upgrading it first is the classic misread. The AP uplink is the tier that actually moves, because a 1GbE drop makes the AP the bottleneck it was bought to remove. And the path from access to core appears on no port count, so nobody counts it — which is where the design gets quietly capped."
+      },
+      "criteria": {
+        "zh": [
+          "桌面口 1GbE",
+          "AP 面向端口多千兆",
+          "接入到核心 10GbE，按落在它上面的总和定"
+        ],
+        "en": [
+          "Desk ports at 1GbE",
+          "Multi-gig on AP-facing ports",
+          "10GbE access-to-core, sized against the sum of what lands on it"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "speed-is-a-per-tier-decision-and-the-tiers-move-at-different-times",
+          "marker": "🔨"
+        },
+        {
+          "path": "the-reference-office.md",
+          "frag": "wired--ports-then-the-two-things-that-get-under-specified",
+          "marker": "🧭"
+        }
+      ]
+    },
+    {
+      "id": "room-large",
+      "kind": "room",
+      "at": [
+        40,
+        4
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "大会议室 —— 建得最多、用得最少的那一间",
+        "en": "The large room — the one most built and least used"
+      },
+      "why": {
+        "zh": "十三个国家、一百七十三栋楼、两万七千多个工位的传感器数据：八成的会议发生在六个人以内的房间，而能坐十七人以上的房间利用率是百分之十二。所以七间里只有一间是大的。",
+        "en": "Sensor data across 173 buildings, 13 countries and more than 27,000 workspaces: 80 percent of meetings happen in rooms built for six or fewer, while rooms built for seventeen or more sit at 12 percent utilisation. That is why only one of the seven is large."
+      },
+      "criteria": {
+        "zh": [
+          "约一半的房间坐两到四人",
+          "四分之一坐五到八人",
+          "七八间里只有一间需要大的"
+        ],
+        "en": [
+          "About half the rooms seat two to four",
+          "A quarter seat five to eight",
+          "Only one in seven or eight needs to be large"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🧭"
+        },
+        {
+          "path": "build-out/05-network.md",
+          "frag": "questions-to-ask-first",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "booths",
+      "kind": "booth",
+      "at": [
+        21,
+        27
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "六个电话亭 —— 不是小号会议室",
+        "en": "Six phone booths — not small meeting rooms"
+      },
+      "why": {
+        "zh": "它们解决的是另一件事：一个人要打个电话。配比大约是每十到十五个在场的人一个，而且要跟会议室分开数。把它们算进会议室数量里，是一层楼最后变成没地方接电话的标准做法。",
+        "en": "They serve a different need — one person taking a call — at about one per ten to fifteen people in the office, and they are counted separately. Counting them as meeting rooms is how a floor ends up with nowhere to take a call."
+      },
+      "criteria": {
+        "zh": [
+          "每十到十五个在场的人一个",
+          "与会议室分开计数"
+        ],
+        "en": [
+          "One per ten to fifteen in-office people",
+          "Counted separately from meeting rooms"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🧭"
+        }
+      ]
+    },
+    {
+      "id": "desks",
+      "kind": "desk",
+      "at": [
+        21,
+        17
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "七十张桌子 —— 给六十五个人",
+        "en": "Seventy desks — for sixty-five people"
+      },
+      "why": {
+        "zh": "一百是工资单上的数字。周中到场率在百分之六十五上下，周一五十出头，周五三十几。混合办公的配比是每人零点六到零点八张桌子，取零点七就是七十张。按星期二定尺寸：按一百定，买的是一年到头都空一半的地方；按星期五定，星期二就装不下。",
+        "en": "A hundred is a payroll number. Midweek attendance runs in the mid sixties percent, Monday low fifties, Friday high thirties. Hybrid offices provision 0.6 to 0.8 desks per employee; at 0.7 that is seventy. Size for Tuesday: sizing for a hundred buys space empty every day of the year, and sizing for Friday means Tuesday does not fit."
+      },
+      "criteria": {
+        "zh": [
+          "每人 0.6 到 0.8 张桌子",
+          "按峰值日定尺寸，不按工资单"
+        ],
+        "en": [
+          "0.6 to 0.8 desks per employee",
+          "Size for the peak day, not for the payroll"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🧭"
+        }
+      ]
+    },
+    {
+      "id": "seg-staff",
+      "kind": "segment",
+      "at": [
+        24,
+        13
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "网段 · 员工",
+        "en": "Segment — Staff"
+      },
+      "why": {
+        "zh": "默认的那个：认证过的人，和他们手上被管理的设备。",
+        "en": "The default: authenticated humans and their managed devices."
+      },
+      "criteria": {
+        "zh": [
+          "按信任级别分，不按设备类型"
+        ],
+        "en": [
+          "A segment per trust level, never per device type"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "segmentation--a-reason-per-segment-",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "seg-guest",
+      "kind": "segment",
+      "at": [
+        5,
+        3
+      ],
+      "segment": "seg-guest",
+      "label": {
+        "zh": "网段 · 访客",
+        "en": "Segment — Guest"
+      },
+      "why": {
+        "zh": "不被信任的人，只给上网，隔离要可证明——客户端之间互相隔离，只出不进，而且你要能演示给别人看，不是能在图上指给别人看。",
+        "en": "Untrusted people, internet only, and the isolation has to be provable — client isolation on, outbound only, and demonstrable rather than pointed at on a diagram."
+      },
+      "criteria": {
+        "zh": [
+          "访客网开客户端隔离",
+          "只出不进"
+        ],
+        "en": [
+          "Client isolation on guest",
+          "Outbound only"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "the-guest-network--provable-isolation-",
+          "marker": "🔨"
+        },
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "segmentation--a-reason-per-segment-",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "seg-unpatchable",
+      "kind": "segment",
+      "at": [
+        14,
+        24
+      ],
+      "segment": "seg-unpatchable",
+      "label": {
+        "zh": "网段 · 打不了补丁的",
+        "en": "Segment — Unpatchable"
+      },
+      "why": {
+        "zh": "门禁控制器、打印机、会议室一体机、实验台设备。共同点不是都是硬件，而是：跑厂商固件、按厂商的时间表更新、并且就摆在任何人都能走过去伸手够到的地方。",
+        "en": "Door controllers, printers, room appliances, lab gear. What they share is not being hardware — it is vendor firmware on a vendor's schedule, sitting where anyone can walk up to them."
+      },
+      "criteria": {
+        "zh": [
+          "有线口比无线客户端更容易钉在一个 VLAN 上"
+        ],
+        "en": [
+          "A wired port is easier to pin to a VLAN than a wireless client is"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "segmentation--a-reason-per-segment-",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "seg-management",
+      "kind": "segment",
+      "at": [
+        4,
+        11
+      ],
+      "segment": "seg-management",
+      "label": {
+        "zh": "网段 · 管理",
+        "en": "Segment — Management"
+      },
+      "why": {
+        "zh": "交换机和 AP 的管理口，只能从一个地方够得着。四个网段通常是对的，五个通常是错的——每多一个网段，就是一年后要有人站出来解释的一套规则。",
+        "en": "Switch and AP management interfaces, reachable from one place. Four segments is usually right and five is usually a mistake: every additional segment is a rule set somebody has to explain in a year."
+      },
+      "criteria": {
+        "zh": [
+          "管理接口只从管理网可达"
+        ],
+        "en": [
+          "Management interfaces reachable only from the management segment"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "segmentation--a-reason-per-segment-",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "addressing",
+      "kind": "plan",
+      "at": [
+        30,
+        13
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "地址规划 —— 要挺过一次合并",
+        "en": "The address plan — it has to survive a merge"
+      },
+      "why": {
+        "zh": "在第一个子网存在之前写完，而且对着那个将来会撞坏它的东西写：某个你有一天要打隧道过去的地方。每个站点、分支、VPN 池和云网络都不重叠，核对过而不是应该没事。别选 192.168.0.0 和 192.168.1.0。按租约里的增长算，故意留空。",
+        "en": "Written before the first subnet exists, and written against the thing that will break it: something you will one day tunnel to. Non-overlapping across every site, branch, VPN pool and cloud network — checked, not probably fine. Do not pick 192.168.0.0 or 192.168.1.0. Size for the growth in the lease, and leave gaps on purpose."
+      },
+      "criteria": {
+        "zh": [
+          "跨全部站点不重叠，且核对过",
+          "避开家用路由器的默认段",
+          "按租约增长定容量",
+          "为将来的汇总留空"
+        ],
+        "en": [
+          "Non-overlapping everywhere, and checked",
+          "Avoid the home-router defaults",
+          "Size for the growth in the lease",
+          "Leave gaps so a summary route stays possible"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "addressing--the-plan-that-survives-a-merge-",
+          "marker": "🔨"
+        },
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "when-the-size-changes-the-design",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "authentication",
+      "kind": "plan",
+      "at": [
+        14,
+        13
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "端口认证 —— 身份戴了顶网络的帽子",
+        "en": "Port authentication — identity wearing a networking hat"
+      },
+      "why": {
+        "zh": "端口上做认证的是 802.1X，站在它后面回答这个人是谁的通常是 RADIUS，而 RADIUS 背后连的是你的目录。交换机之间报家门的是 LLDP，跨网段转 DHCP 请求的是 DHCP 中继。这里点名是为了让你走进一个陌生机房时认得出自己在哪，不是为了讲它们怎么握手。",
+        "en": "802.1X does the authenticating on the port, RADIUS usually answers who this is, and behind RADIUS sits your directory. LLDP is how switches announce themselves; a DHCP relay is what carries a request across a segment. These are named so you can recognise where you are, not so you can recite a handshake."
+      },
+      "criteria": {
+        "zh": [
+          "交换机与 AP 支持 802.1X",
+          "DNS 与 DHCP 的所有权先说清楚"
+        ],
+        "en": [
+          "802.1X support on switching and wireless",
+          "DNS and DHCP ownership settled before anything else"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "network-authentication--identity-wearing-a-networking-hat-",
+          "marker": "🔨"
+        },
+        {
+          "path": "cross-cutting/site-network-design.md",
+          "frag": "dns--dhcp--who-answers-a-name-",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "kind": "space",
+      "at": [
+        4,
+        16
+      ],
+      "segment": "seg-unpatchable",
+      "label": {
+        "zh": "库房 —— 有一扇能锁的门",
+        "en": "The store — with a door that locks"
+      },
+      "why": {
+        "zh": "笔记本是装在箱子里到的，备件、返修件和快递都得落在某个不是工位的地方。一份资产台账，如果它的物理对应物是「Dave 身后那个角落」，那它三个月内一定和现实对不上。它挨着 IDF，因为一台坏笔记本走的就是这条路。",
+        "en": "Laptops arrive in boxes, and stock, spares, returns and deliveries need somewhere that is not a desk. An asset register whose physical counterpart is the corner behind Dave will disagree with reality inside a quarter. It sits beside the IDF because that is the path a broken laptop takes."
+      },
+      "criteria": {
+        "zh": [
+          "一扇能锁的门",
+          "紧邻 IDF 与服务台",
+          "货架而不是桌面"
+        ],
+        "en": [
+          "A door that locks",
+          "Next to the IDF and the service desk",
+          "Shelving, not desk space"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🧭"
+        },
+        {
+          "path": "build-out/11-assets-and-tickets.md",
+          "frag": "what-this-step-produces",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "kind": "space",
+      "at": [
+        4,
+        20
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "服务台 —— 一个能走过去的位置",
+        "en": "The service desk — a place you can walk to"
+      },
+      "why": {
+        "zh": "多少个 IT 人这个问题，要等整个环境被清点完才答得了。但「坐哪」这半边现在就能答：在动线上、从楼面看得见、靠着它取件的库房、靠着它第一个响应的 IDF。把它塞进后台办公室，走过来的人就变成了工单——那是工作量的变化，伪装成家具的变化。",
+        "en": "How many IT people is unanswerable until the estate is enumerated. The placement half is answerable now: on the circulation route, visible from the floor, beside the store it draws stock from and the IDF it is first responder for. Put it in a back office and the walk-ups become tickets, which is a change in workload disguised as a change in furniture."
+      },
+      "criteria": {
+        "zh": [
+          "在动线上，不在后台",
+          "从开放区看得见",
+          "紧邻库房与 IDF"
+        ],
+        "en": [
+          "On the circulation route, not in a back office",
+          "Visible from the open plan",
+          "Adjacent to the store and the IDF"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🧭"
+        },
+        {
+          "path": "build-out/13-the-help-desk.md",
+          "frag": "questions-to-ask-first",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "pantry",
+      "kind": "space",
+      "at": [
+        42,
+        24
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "茶水间 —— 唯一以制造噪音为职责的空间",
+        "en": "The tea point — the one space whose job is noise"
+      },
+      "why": {
+        "zh": "一层一个，按峰值日到场人数定，而不是按工资单。它放在离工位、库房和服务台都最远的地方，因为它的职责就是吵。真正的失败模式不是不舒服——是人为了一杯咖啡离开这层楼，于是这层楼的到场数字不再描述任何人在哪。",
+        "en": "One per floor, sized on peak-day attendance rather than headcount, and put as far from the desks, the store and the service desk as the plate allows, because its job is noise. The failure mode is not discomfort: it is that people leave the floor for coffee and the floor's occupancy numbers stop describing where anybody is."
+      },
+      "criteria": {
+        "zh": [
+          "按峰值日到场人数定，不按人头",
+          "远离工位与服务台",
+          "一层一个"
+        ],
+        "en": [
+          "Sized on peak-day attendance, not headcount",
+          "Away from the desks and the service desk",
+          "One per floor"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🧭"
+        },
+        {
+          "path": "the-reference-office.md",
+          "frag": "parameters",
+          "marker": "🧭"
+        }
+      ]
+    }
+  ],
+  "beats": {
+    "arrive-empty-floor": {
+      "zoom": "floor",
+      "cast": "empty",
+      "focus": null,
+      "highlight": [],
+      "marker": null
+    },
+    "tuesday-is-sixty-five": {
+      "cast": "tue",
+      "highlight": [
+        "desks"
+      ]
+    },
+    "monday-and-friday": {
+      "cast": "fri"
+    },
+    "size-for-tuesday": {
+      "cast": "tue"
+    },
+    "why-not-hundred": {
+      "cast": "tue",
+      "overlay": "payroll"
+    },
+    "why-not-friday": {
+      "cast": "fri"
+    },
+    "seventy-desks": {
+      "cast": "tue",
+      "focus": "desks",
+      "highlight": [
+        "desks"
+      ]
+    },
+    "seven-rooms": {
+      "focus": null,
+      "highlight": [
+        "room-large"
+      ],
+      "overlay": "rooms"
+    },
+    "the-mix": {
+      "highlight": [
+        "room-large"
+      ]
+    },
+    "boardroom-empty": {
+      "zoom": "room",
+      "focus": "room-large",
+      "highlight": [
+        "room-large"
+      ]
+    },
+    "the-mix-answer": {
+      "zoom": "floor",
+      "focus": null,
+      "overlay": "rooms"
+    },
+    "six-booths": {
+      "focus": "booths",
+      "highlight": [
+        "booths"
+      ],
+      "overlay": null
+    },
+    "now-the-network": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": []
+    },
+    "four-questions": {
+      "overlay": "segments"
+    },
+    "q1-who-talks-to-whom": {
+      "highlight": [
+        "seg-staff",
+        "seg-guest",
+        "seg-unpatchable",
+        "seg-management"
+      ]
+    },
+    "q2-addresses": {
+      "highlight": [
+        "addressing"
+      ],
+      "overlay": "addressing"
+    },
+    "q3-how-they-get-on": {
+      "highlight": [
+        "ap-north",
+        "ap-west",
+        "ap-east",
+        "ap-south",
+        "ap-lobby",
+        "ap-large-room"
+      ],
+      "overlay": null
+    },
+    "q4-who-answers-a-name": {
+      "highlight": [
+        "authentication"
+      ]
+    },
+    "the-classic-failure": {
+      "highlight": [],
+      "overlay": null
+    },
+    "segment-per-trust": {
+      "overlay": "segments",
+      "highlight": []
+    },
+    "staff": {
+      "focus": "seg-staff",
+      "highlight": [
+        "seg-staff"
+      ]
+    },
+    "guest": {
+      "focus": "seg-guest",
+      "highlight": [
+        "seg-guest"
+      ]
+    },
+    "unpatchable": {
+      "focus": "seg-unpatchable",
+      "highlight": [
+        "seg-unpatchable"
+      ]
+    },
+    "management": {
+      "focus": "seg-management",
+      "highlight": [
+        "seg-management"
+      ]
+    },
+    "four-is-right": {
+      "focus": null,
+      "highlight": [
+        "seg-staff",
+        "seg-guest",
+        "seg-unpatchable",
+        "seg-management"
+      ]
+    },
+    "five-is-a-mistake": {
+      "highlight": []
+    },
+    "the-real-test": {
+      "overlay": "segments"
+    },
+    "before-the-first-subnet": {
+      "overlay": "addressing",
+      "focus": "addressing",
+      "highlight": [
+        "addressing"
+      ]
+    },
+    "non-overlapping": {
+      "overlay": "addressing"
+    },
+    "the-merge": {
+      "overlay": "collision"
+    },
+    "three-options": {
+      "overlay": "collision"
+    },
+    "all-three-are-projects": {
+      "overlay": "addressing"
+    },
+    "wireless-is-the-access-layer": {
+      "zoom": "floor",
+      "overlay": null,
+      "focus": null,
+      "highlight": []
+    },
+    "aps-want-copper": {
+      "zoom": "room",
+      "focus": "ap-north",
+      "highlight": [
+        "ap-north"
+      ]
+    },
+    "aps-drive-the-switch": {
+      "highlight": [
+        "ap-north",
+        "idf"
+      ]
+    },
+    "room-systems": {
+      "focus": "room-large",
+      "highlight": [
+        "room-large"
+      ]
+    },
+    "unpatchable-wants-cable": {
+      "focus": "seg-unpatchable",
+      "highlight": [
+        "seg-unpatchable"
+      ]
+    },
+    "desks-still": {
+      "focus": "desks",
+      "highlight": [
+        "desks"
+      ]
+    },
+    "cable-during-fitout": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": []
+    },
+    "is-it-still-gigabit": {
+      "zoom": "rack",
+      "focus": "uplink",
+      "highlight": [
+        "uplink"
+      ],
+      "overlay": "tiers"
+    },
+    "desk-least-starved": {
+      "highlight": [
+        "desks"
+      ],
+      "overlay": "tiers"
+    },
+    "ap-uplink-moves": {
+      "highlight": [
+        "ap-north"
+      ],
+      "overlay": "tiers"
+    },
+    "aggregation-oversubscription": {
+      "highlight": [
+        "uplink"
+      ],
+      "overlay": "tiers"
+    },
+    "uplink-is-uncounted": {
+      "highlight": [
+        "uplink"
+      ]
+    },
+    "who-answers-a-name": {
+      "zoom": "floor",
+      "focus": "authentication",
+      "highlight": [
+        "authentication"
+      ],
+      "overlay": null
+    },
+    "network-auth-is-identity": {
+      "highlight": [
+        "authentication"
+      ]
+    },
+    "802-1x-radius": {
+      "highlight": [
+        "authentication"
+      ]
+    },
+    "guest-provable": {
+      "focus": "seg-guest",
+      "highlight": [
+        "seg-guest"
+      ]
+    },
+    "now-the-radios": {
+      "zoom": "room",
+      "focus": "ap-north",
+      "highlight": [],
+      "overlay": "coverage"
+    },
+    "the-footing-change": {
+      "marker": "🧭",
+      "highlight": []
+    },
+    "what-it-is": {
+      "marker": "🧭"
+    },
+    "count-it-twice": {
+      "marker": "🧭",
+      "overlay": "coverage"
+    },
+    "by-client-count": {
+      "marker": "🧭",
+      "cast": "tue",
+      "highlight": [
+        "desks"
+      ]
+    },
+    "the-devices": {
+      "marker": "🧭",
+      "overlay": "devices"
+    },
+    "145-over-50": {
+      "marker": "🧭",
+      "overlay": "devices"
+    },
+    "by-throughput": {
+      "marker": "🧭",
+      "overlay": "devices"
+    },
+    "take-larger": {
+      "marker": "🧭",
+      "overlay": "coverage"
+    },
+    "coverage-floor": {
+      "marker": "🧭",
+      "overlay": "coverage",
+      "highlight": [
+        "ap-north",
+        "ap-west",
+        "ap-east",
+        "ap-south"
+      ]
+    },
+    "the-surprise": {
+      "marker": "🧭",
+      "overlay": "coverage"
+    },
+    "placement": {
+      "marker": "🧭",
+      "overlay": "coverage"
+    },
+    "large-room-earns-a-radio": {
+      "marker": "🧭",
+      "zoom": "room",
+      "focus": "ap-large-room",
+      "highlight": [
+        "ap-large-room"
+      ],
+      "overlay": "room-full"
+    },
+    "five-or-six": {
+      "marker": "🧭",
+      "zoom": "floor",
+      "focus": null,
+      "overlay": "coverage",
+      "highlight": [
+        "ap-north",
+        "ap-west",
+        "ap-east",
+        "ap-south",
+        "ap-lobby",
+        "ap-large-room"
+      ]
+    },
+    "density-decides-where": {
+      "marker": "🧭"
+    },
+    "now-down-to-the-rack": {
+      "marker": null,
+      "zoom": "rack",
+      "focus": "idf",
+      "highlight": [
+        "idf"
+      ],
+      "overlay": "ports"
+    },
+    "count-the-ports": {
+      "overlay": "ports"
+    },
+    "110-active": {
+      "overlay": "ports"
+    },
+    "growth-135": {
+      "overlay": "ports",
+      "highlight": [
+        "idf"
+      ]
+    },
+    "poe-watts": {
+      "overlay": "poe",
+      "highlight": [
+        "idf"
+      ]
+    },
+    "specify-watts": {
+      "overlay": "poe"
+    },
+    "uplink-stacking-again": {
+      "overlay": "tiers",
+      "focus": "uplink",
+      "highlight": [
+        "uplink"
+      ]
+    },
+    "closing-what-bound": {
+      "zoom": "floor",
+      "focus": null,
+      "cast": "tue",
+      "overlay": null,
+      "highlight": [
+        "desks",
+        "room-large",
+        "ap-north",
+        "idf"
+      ]
+    },
+    "closing": {
+      "highlight": [],
+      "cast": "tue"
+    }
+  }
+}

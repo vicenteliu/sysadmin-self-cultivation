@@ -47,7 +47,7 @@ would compress the only part of them worth keeping.
 | 10 | What are the basic troubleshooting commands? | ⏳ | a debug-ladder companion — **per rung, not a reference** — see [Boundaries](#boundaries) |
 | 11 | How do IPv4 and IPv6 coexist now, and how is it configured? | ✅ | [`the-stack/02`](../the-stack/02-network.md) |
 | 12 | What changed about speed? It cannot still be gigabit everywhere. | ✅ current · ⏳ history | [`site-network-design.md`](../cross-cutting/site-network-design.md) + [`Selection rules`](../the-reference-office.md#selection-rules); the fifteen-year arc belongs to the evolution note |
-| 13 | How is the low-voltage network actually wired? Show a topology. | ⏳ | a network-side topology — **not the construction side** — see [Boundaries](#boundaries) |
+| 13 | How is the low-voltage network actually wired? Show a topology. | ⏳ | the **floor**'s near register — MDF/IDF, riser, path to the edge — in [`walkthrough/`](../walkthrough/README.md); still **not the construction side**, see [Boundaries](#boundaries) |
 
 **Five answered, eight open.** The eight are not a wish-list: each has a named
 destination, which is what separates this from a list of things that would be nice.

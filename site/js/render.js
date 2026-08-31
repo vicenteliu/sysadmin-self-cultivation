@@ -13,6 +13,8 @@
       hero SVG are the same drawing in two media, not two visual languages. */
 
 import { t, label, getLang, setLang } from "./i18n.js";
+import { mountFloor, unmountFloor } from "./floor.js";
+import { inThisLanguage } from "./nav.js";
 
 // The one piece of deployment knowledge the viewer holds. It is used only for files
 // the allowlist does not serve; every Markdown link stays inside the viewer.
@@ -212,6 +214,10 @@ export async function renderDoc(path, state, anchor) {
   article.className = "doc";
   article.append(metaBar(path, state));
 
+  // The floor goes above the prose, and only for a walkthrough script. Everything it
+  // draws comes from the scene data beside that script — never from here (ADR-0011).
+  const floorHost = document.createElement("div");
+
   const body = document.createElement("div");
   body.innerHTML = globalThis.marked.parse(markdown);
   promoteMermaid(body);
@@ -219,7 +225,9 @@ export async function renderDoc(path, state, anchor) {
   numberHeadings(body);
   article.append(body);
 
-  main.replaceChildren(article);
+  main.replaceChildren(floorHost, article);
+  unmountFloor();
+  if (!await mountFloor(floorHost, path, markdown)) floorHost.remove();
   buildToc(body);
   retheme();
   await runMermaid();
@@ -302,6 +310,18 @@ function metaBar(path, state) {
 }
 
 function mirrorControl(path, state, rec) {
+  if (rec.counterpart && state.index.files[rec.counterpart]) {
+    // Two canonical scripts, neither a translation of the other. The label is in the
+    // language you would be going to, because that is the only thing it can promise.
+    const target = state.index.files[rec.counterpart].language === "zh" ? "zh" : "en";
+    const to = document.createElement("a");
+    to.className = "mirror";
+    to.href = `#/${rec.counterpart}`;
+    to.title = t("scriptSibling");
+    to.textContent = `🌐 ${target === "zh" ? "中文" : "English"}`;
+    to.addEventListener("click", () => setLang(target));
+    return to;
+  }
   if (rec.derived && rec.mirrors) {                       // we are on the Chinese mirror
     const back = document.createElement("a");
     back.className = "mirror";
@@ -365,11 +385,15 @@ const AXIS_BLURB = {
   "platforms":     { en: "Seven platforms, one shape each.",           zh: "七个平台，每个一副骨架。" },
   "cross-cutting": { en: "Themes that cut across every platform.",     zh: "横穿所有平台的主题。" },
   "build-out":     { en: "One route across the axes.",                 zh: "横穿这些轴的一条路线。" },
+  "walkthrough":   { en: "One office, told out loud.",                 zh: "一间办公室，讲出来。" },
   "toolbox":       { en: "Scripts and roles that run.",                zh: "能跑的脚本与角色。" },
   "meta":          { en: "Decisions, questions, translations.",        zh: "决策、问题与翻译。" },
 };
 const AXIS_ORDER = ["start-here", "foundations", "the-stack", "platforms",
-                    "cross-cutting", "build-out", "toolbox", "meta"];
+                    "cross-cutting", "build-out", "walkthrough", "toolbox", "meta"];
+// A route is not an axis and does not get a card — ADR-0001 for build-out/, ADR-0009
+// for walkthrough/. Drawing either as a seventh card re-makes that mistake in pixels.
+const ROUTES = ["build-out", "walkthrough"];
 
 export function renderHome(state) {
   const lang = getLang();
@@ -377,7 +401,7 @@ export function renderHome(state) {
   const counts = new Map();
   let labs = 0, tools = 0, skills = 0;
   for (const [path, rec] of Object.entries(state.index.files)) {
-    if (rec.derived || !path.endsWith(".md")) continue;
+    if (rec.derived || !path.endsWith(".md") || !inThisLanguage(rec)) continue;
     counts.set(rec.axis, (counts.get(rec.axis) ?? 0) + 1);
     if (rec.kind === "lab") labs += 1;
     // Scoped to the toolbox axis on purpose: site/README.md is a tool too, but it is not
@@ -409,7 +433,7 @@ export function renderHome(state) {
 
       <p class="section-label">${t("homeAxes")}</p>
       <div class="axis-grid">
-        ${AXIS_ORDER.filter((a) => a !== "build-out").map((axis) => `
+        ${AXIS_ORDER.filter((a) => !ROUTES.includes(a)).map((axis) => `
           <a class="axis-card" href="#/${entryPath(state, axis)}">
             <span class="name">${label("axis", axis)}</span>
             <span class="desc">${AXIS_BLURB[axis]?.[lang] ?? ""}</span>
@@ -420,6 +444,8 @@ export function renderHome(state) {
       <p class="section-label">${t("homeRoute")}</p>
       <p class="lead">${t("homeRouteLead")}</p>
       <a class="route-cta" href="#/route">${t("startRoute")} →</a>
+      <p class="lead">${t("homeWalkthroughLead")}</p>
+      <a class="route-cta" href="#/walkthrough/README.md">${t("startWalkthrough")} →</a>
     </div>`;
   document.getElementById("toc").replaceChildren();
 }

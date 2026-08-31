@@ -1,0 +1,557 @@
+{
+  "version": 1,
+  "id": "reference-office",
+  "note": "What this floor is: the spaces, what each is next to, and how you walk between them. It stops at topology — no corridor widths, no egress distances, no sanitary provision, no claim that the plan would pass anything. See docs/adr/0014-the-plate-stops-at-topology.md.",
+  "grid": {
+    "w": 48,
+    "h": 30,
+    "tile": 16
+  },
+  "circulation": [
+    {
+      "id": "ring-n",
+      "rect": [
+        8,
+        9,
+        30,
+        1
+      ],
+      "label": {
+        "zh": "北廊",
+        "en": "North leg"
+      }
+    },
+    {
+      "id": "ring-w",
+      "rect": [
+        8,
+        10,
+        2,
+        14
+      ],
+      "label": {
+        "zh": "西廊",
+        "en": "West leg"
+      }
+    },
+    {
+      "id": "ring-e",
+      "rect": [
+        36,
+        10,
+        2,
+        14
+      ],
+      "label": {
+        "zh": "东廊",
+        "en": "East leg"
+      }
+    },
+    {
+      "id": "ring-s",
+      "rect": [
+        8,
+        24,
+        30,
+        1
+      ],
+      "label": {
+        "zh": "南廊",
+        "en": "South leg"
+      }
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room-small-1",
+      "rect": [
+        10,
+        1,
+        7,
+        8
+      ],
+      "seats": 4,
+      "size": "small",
+      "label": {
+        "zh": "小会议室 1",
+        "en": "Small room 1"
+      },
+      "door": {
+        "side": "s",
+        "at": 13
+      }
+    },
+    {
+      "id": "room-small-2",
+      "rect": [
+        16,
+        1,
+        7,
+        8
+      ],
+      "seats": 4,
+      "size": "small",
+      "label": {
+        "zh": "小会议室 2",
+        "en": "Small room 2"
+      },
+      "door": {
+        "side": "s",
+        "at": 19
+      }
+    },
+    {
+      "id": "room-small-3",
+      "rect": [
+        22,
+        1,
+        7,
+        8
+      ],
+      "seats": 3,
+      "size": "small",
+      "label": {
+        "zh": "小会议室 3",
+        "en": "Small room 3"
+      },
+      "door": {
+        "side": "s",
+        "at": 25
+      }
+    },
+    {
+      "id": "room-small-4",
+      "rect": [
+        28,
+        1,
+        7,
+        8
+      ],
+      "seats": 3,
+      "size": "small",
+      "label": {
+        "zh": "小会议室 4",
+        "en": "Small room 4"
+      },
+      "door": {
+        "side": "s",
+        "at": 31
+      }
+    },
+    {
+      "id": "room-large",
+      "rect": [
+        34,
+        1,
+        13,
+        8
+      ],
+      "seats": 18,
+      "size": "large",
+      "label": {
+        "zh": "大会议室",
+        "en": "Large room"
+      },
+      "door": {
+        "side": "s",
+        "at": 36
+      }
+    },
+    {
+      "id": "room-medium-1",
+      "rect": [
+        38,
+        8,
+        9,
+        7
+      ],
+      "seats": 8,
+      "size": "medium",
+      "label": {
+        "zh": "中会议室 A",
+        "en": "Medium room A"
+      },
+      "door": {
+        "side": "w",
+        "at": 11
+      }
+    },
+    {
+      "id": "room-medium-2",
+      "rect": [
+        38,
+        14,
+        9,
+        7
+      ],
+      "seats": 6,
+      "size": "medium",
+      "label": {
+        "zh": "中会议室 B",
+        "en": "Medium room B"
+      },
+      "door": {
+        "side": "w",
+        "at": 17
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "id": "lobby",
+      "kind": "lobby",
+      "rect": [
+        1,
+        1,
+        10,
+        8
+      ],
+      "label": {
+        "zh": "前台与电梯厅",
+        "en": "Lobby and lifts"
+      },
+      "door": {
+        "side": "s",
+        "at": 9
+      }
+    },
+    {
+      "id": "idf",
+      "kind": "idf",
+      "rect": [
+        1,
+        10,
+        7,
+        5
+      ],
+      "label": {
+        "zh": "IDF 机柜间",
+        "en": "IDF"
+      },
+      "door": {
+        "side": "e",
+        "at": 12
+      }
+    },
+    {
+      "id": "store",
+      "kind": "store",
+      "rect": [
+        1,
+        14,
+        7,
+        5
+      ],
+      "label": {
+        "zh": "库房",
+        "en": "Store"
+      },
+      "door": {
+        "side": "e",
+        "at": 16
+      }
+    },
+    {
+      "id": "service",
+      "kind": "service",
+      "rect": [
+        1,
+        18,
+        7,
+        6
+      ],
+      "label": {
+        "zh": "服务台",
+        "en": "Service desk"
+      },
+      "door": {
+        "side": "e",
+        "at": 20
+      }
+    },
+    {
+      "id": "pantry",
+      "kind": "pantry",
+      "rect": [
+        38,
+        20,
+        9,
+        9
+      ],
+      "label": {
+        "zh": "茶水间",
+        "en": "Tea point"
+      },
+      "door": {
+        "side": "w",
+        "at": 24
+      }
+    }
+  ],
+  "booths": [
+    {
+      "id": "booth-1",
+      "rect": [
+        9,
+        25,
+        4,
+        4
+      ],
+      "door": {
+        "side": "n",
+        "at": 10
+      }
+    },
+    {
+      "id": "booth-2",
+      "rect": [
+        14,
+        25,
+        4,
+        4
+      ],
+      "door": {
+        "side": "n",
+        "at": 15
+      }
+    },
+    {
+      "id": "booth-3",
+      "rect": [
+        19,
+        25,
+        4,
+        4
+      ],
+      "door": {
+        "side": "n",
+        "at": 20
+      }
+    },
+    {
+      "id": "booth-4",
+      "rect": [
+        24,
+        25,
+        4,
+        4
+      ],
+      "door": {
+        "side": "n",
+        "at": 25
+      }
+    },
+    {
+      "id": "booth-5",
+      "rect": [
+        29,
+        25,
+        4,
+        4
+      ],
+      "door": {
+        "side": "n",
+        "at": 30
+      }
+    },
+    {
+      "id": "booth-6",
+      "rect": [
+        34,
+        25,
+        4,
+        4
+      ],
+      "door": {
+        "side": "n",
+        "at": 35
+      }
+    }
+  ],
+  "desks": {
+    "total": 70,
+    "pods": [
+      {
+        "at": [
+          10,
+          10
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          17,
+          10
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          24,
+          10
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          31,
+          10
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          10,
+          15
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          17,
+          15
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          24,
+          15
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          31,
+          15
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          10,
+          20
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          17,
+          20
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          24,
+          20
+        ],
+        "seats": 6
+      },
+      {
+        "at": [
+          31,
+          20
+        ],
+        "seats": 4
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "seg-staff",
+      "tone": "staff",
+      "label": {
+        "zh": "员工",
+        "en": "Staff"
+      }
+    },
+    {
+      "id": "seg-guest",
+      "tone": "guest",
+      "label": {
+        "zh": "访客",
+        "en": "Guest"
+      }
+    },
+    {
+      "id": "seg-unpatchable",
+      "tone": "unpatchable",
+      "label": {
+        "zh": "打不了补丁的",
+        "en": "Unpatchable"
+      }
+    },
+    {
+      "id": "seg-management",
+      "tone": "management",
+      "label": {
+        "zh": "管理",
+        "en": "Management"
+      }
+    }
+  ],
+  "occupancy": {
+    "empty": 0,
+    "fri": 38,
+    "mon": 52,
+    "tue": 65,
+    "label": {
+      "zh": {
+        "empty": "空楼面",
+        "fri": "星期五",
+        "mon": "星期一",
+        "tue": "星期二"
+      },
+      "en": {
+        "empty": "Empty floor",
+        "fri": "Friday",
+        "mon": "Monday",
+        "tue": "Tuesday"
+      }
+    }
+  },
+  "core": [
+    {
+      "id": "stairs",
+      "at": [
+        2,
+        6
+      ],
+      "label": {
+        "zh": "楼梯",
+        "en": "Stairs"
+      }
+    },
+    {
+      "id": "wc",
+      "at": [
+        8,
+        6
+      ],
+      "label": {
+        "zh": "卫生间",
+        "en": "WC"
+      }
+    },
+    {
+      "id": "riser",
+      "at": [
+        2,
+        11
+      ],
+      "label": {
+        "zh": "竖井",
+        "en": "Riser"
+      }
+    }
+  ],
+  "entry": "lobby",
+  "topology": {
+    "proves": "From the lift lobby, along circulation only, every room and space is reachable without crossing a desk cell.",
+    "verified": "2026-08-31",
+    "fingerprint": "6acc579e067a40b7",
+    "reached": 561,
+    "spaces": 18
+  }
+}
