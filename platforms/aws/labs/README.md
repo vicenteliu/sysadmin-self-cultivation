@@ -72,7 +72,7 @@ aws ssm start-session --target "$(terraform output -raw instance_id)"
 terraform destroy       # tear down cleanly — no orphaned billing resources
 ```
 
-### Lab 03 — Secure defaults + a budget guardrail 🚧 CLI walkthrough
+### Lab 03 — Secure defaults + a budget guardrail 🚧 guided CLI run
 
 The "right defaults" muscle and the cost guardrail, entirely from the CLI:
 

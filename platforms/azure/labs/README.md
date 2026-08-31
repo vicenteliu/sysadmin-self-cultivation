@@ -51,7 +51,7 @@ vanish from results — the scoping made visible.
 
 A VNet + subnet, an **NSG with no inbound**, one VM with a **managed identity** and
 **no public IP**, reachable via Bastion. From the CLI (Terraform/Bicep is the
-persistent form; here's the imperative walkthrough):
+persistent form; here's the imperative sequence):
 
 ```bash
 az group create -n lab-rg -l eastus

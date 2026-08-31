@@ -35,6 +35,12 @@ _allow = {"mtime": None, "paths": frozenset()}
 def allowlist():
     """Every Markdown path the retrieval index lists, re-read when the index changes.
 
+    Plus one derived family: a walkthrough script's sibling `*.floor.json`, which the
+    floor needs and the index does not record because it is not a document. It is
+    *derived* from the index rather than listed by hand, so a walkthrough that has not
+    been written cannot have its scene data served, and nothing here needs maintaining
+    when one is added.
+
     Reading it once at startup was the first version, and it was wrong in the way that
     matters: you write a new document, run `docs/build-index.py`, reload — and the
     server 404s the file you just wrote until you restart it. Stat-then-maybe-read is
@@ -46,8 +52,14 @@ def allowlist():
         return _allow["paths"]
     if mtime != _allow["mtime"]:
         with open(INDEX_PATH, encoding="utf-8") as handle:
-            _allow["paths"] = frozenset(
-                p for p in json.load(handle)["files"] if p.endswith(".md"))
+            paths = {p for p in json.load(handle)["files"] if p.endswith(".md")}
+            for p in list(paths):
+                if p.startswith("walkthrough/") and p.count(".") >= 2:
+                    for scene in (p.rsplit(".", 2)[0] + ".floor.json",
+                                  "walkthrough/reference-office.plate.json"):
+                        if os.path.exists(os.path.join(ROOT, scene)):
+                            paths.add(scene)
+            _allow["paths"] = frozenset(paths)
         _allow["mtime"] = mtime
     return _allow["paths"]
 
@@ -79,7 +91,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         if rel not in allowlist():
             self.send_error(404, "Not in the retrieval index")
             return True
-        return self.send_file(os.path.join(ROOT, rel), "text/markdown; charset=utf-8", body)
+        kind = ("application/json" if rel.endswith(".json") else "text/markdown")
+        return self.send_file(os.path.join(ROOT, rel), f"{kind}; charset=utf-8", body)
 
     def send_file(self, full, content_type, body=True):
         try:

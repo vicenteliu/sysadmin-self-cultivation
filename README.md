@@ -46,6 +46,13 @@ know what to ask.
 The route is not a seventh body of material: it teaches no new page, it decides the
 **order** ([ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)).
 
+A **second route** is now open on the same test: [`walkthrough/`](walkthrough/README.md)
+walks the reference office and tells you why, in a script written to be **spoken and
+heard** rather than read ([ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)).
+The first episode is written: **[the network](walkthrough/01-the-network.zh.md)**, 106
+beats, about twenty minutes spoken, over an interactive 2D floor of the reference office.
+The figure above does not show the second route, and will not until there are a few more.
+
 The distinctive axis is **The Stack** — it reads the stack *bottom-up*, comparing all
 seven platforms at **every layer**, written from the machine room up rather than the
 console down. Cross-cutting carries one extra view rather than an extra axis:
@@ -69,10 +76,11 @@ Every module in every axis, one page: [`CONTENTS.md`](CONTENTS.md).
 | **Use AI on an ordinary Tuesday** | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — triage → change → incident → write-up → sweep, and where you take it back |
 | **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
-| **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — eight decisions and the options they beat |
+| **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — thirteen decisions and the options they beat |
 | **See what it cannot answer yet** | [`docs/questions.md`](docs/questions.md) — questions asked of this repo: open, answered, or out of scope with the reason |
 | **Take runnable tools with me** | [`toolbox/`](toolbox/) — ten find/audit scripts (incl. a VMware→Proxmox virtualization quartet), three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
 | **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — ten Agent Skills: seven for the method (ramp · audit · author · lab · diagram · mirror · drill), three that drive the toolbox |
+| **Listen to it instead** | [`walkthrough/`](walkthrough/README.md) — the reference office told out loud: a spoken script, an interactive 2D floor, and no audio in the tree |
 | **Read it in a browser** | [`site/`](site/README.md) — `python3 site/serve.py`, or `docker compose -f site/docker-compose.yml up`. Full-text search, facets, a 🌐 switcher, rendered diagrams. Nothing to install |
 | **Let an agent search it** | [`docs/index.json`](docs/index.json) — one record per file, generated from front-matter by [`docs/build-index.py`](docs/build-index.py) |
 
@@ -93,6 +101,7 @@ far), and demand-first deepening.
 | ✅ | **Support notes** — break-fix craft | For surfaces you *inherit*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
 | ✅ | **Toolbox** — run it | [ten scripts + three Ansible roles](toolbox/) pairing audit→fix, and a [pack generator](toolbox/generate/). Safe by default; every tool carries its own `Tested on:` line |
 | ✅ | **Agent Skills** — the method, invokable | [ten of them](.claude/skills/) — seven package the method, three drive the toolbox |
+| ✅ | **Walkthrough** — heard, not read | [`walkthrough/`](walkthrough/README.md) — episode 01, [中文](walkthrough/01-the-network.zh.md) · [EN](walkthrough/01-the-network.en.md), 106 beats over an interactive **2D floor** you can pan, zoom and click. Scripts ship here; audio never does |
 | ✅ | **Browser & retrieval** | [`site/`](site/README.md) — full-text search over the lot, nothing to install · [`docs/index.json`](docs/index.json) — one record per file, for an agent |
 
 **Twenty runnable, self-verifying labs** sit under those axes — exit `0` means the lesson
@@ -105,7 +114,7 @@ carry the deeper architecture · operations · automation trio**:
 
 | Platform | Module | Arch · Ops · Auto | Lab arc (specced) | Labs built | Honesty |
 | --- | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ | 3 (boto3 / Terraform) | **01–02 built**; 03 is a walkthrough · + [iam-deny](platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
+| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ | 3 (boto3 / Terraform) | **01–02 built**; 03 is a guided CLI run · + [iam-deny](platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
 | **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ | 3 (`az`) | none of the arc · [two-planes](platforms/azure/labs/global-admin-is-not-owner/) stands alone | 🧭 + Entra/identity 🔨 |
 | **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ | 3 (`gcloud`) | none of the arc · [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac/) stands alone | 🧭 ramp |
 | **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ | 3 (`oci`) | none of the arc · [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account/) stands alone | 🧭 ramp |

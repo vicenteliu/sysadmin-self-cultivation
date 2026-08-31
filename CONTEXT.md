@@ -111,6 +111,85 @@ which medium a figure belongs in, and both are subject to the rule above them �
 figure must carry what the prose does not.
 _Avoid_: illustration, graphic, branded diagram, figure (that is either of the two)
 
+### The walkthrough
+
+**Walkthrough**:
+A narrated pass through [`the-reference-office.md`](the-reference-office.md), written to
+be **spoken by a text-to-speech engine and heard** — never read. One file per episode
+lives in [`walkthrough/`](walkthrough/), in two languages side by side. It is a **route**,
+not an axis: it teaches no page this repo does not already hold, and decides only the
+**order and the register**
+([ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)). Its
+sequence is its own — it is not `build-out/`'s sixteen steps with a voice on top, and the
+numbers do not correspond.
+_Avoid_: episode (that is the published audio, below), script, narration, tour, podcast.
+Four places used *walkthrough* for a guided lab sequence before this term existed and
+were reworded when it did; **the word is reserved** — a step-by-step lab is a *guided
+run*, and a **lab** is the self-verifying kind.
+
+**Beat**:
+The unit a walkthrough is made of: **one paragraph, one TTS call, one audio segment, one
+floor state.** Delimited by an HTML comment carrying a **stable id** —
+`<!-- beat: coverage-not-capacity -->` — which GitHub, the viewer and the speech engine
+all ignore, so the visible file stays nothing but the words that get spoken. The id is
+never an ordinal, because inserting a paragraph must not silently shift every scene cue
+after it by one. Alignment is by beat and never by timestamp
+([ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)).
+_Avoid_: paragraph, segment, cue, chapter, timestamp
+
+**Episode**:
+**One published audio recording**, on a podcast host, outside this repo. A walkthrough is
+material; an episode is a channel. The two words are kept apart because
+[ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)
+already ruled on the coupling — *content that exists to serve a recording belongs with the
+recording* — which is why the directory is named for the route and not for the feed.
+_Avoid_: using "episode" for the Markdown file (that is a walkthrough)
+
+**The plate**:
+What this floor *is* — the spaces, what each one is, what it is next to, and how you walk
+from any of them to any other. It lives in
+[`walkthrough/reference-office.plate.json`](walkthrough/README.md), it is shared by every
+episode, and it **stops at topology**: no corridor widths, no egress distances, no
+sanitary counts, no claim that the plan would pass anything
+([ADR-0014](docs/adr/0014-the-plate-stops-at-topology.md)). Its circulation is written
+down rather than inferred from where the furniture is not, and a headless Godot project
+proves the whole of it is reachable from the lift lobby without crossing a desk.
+Deliberately not called *the plan* — that is the **address plan**, one entry down — and
+not *the office*, which is [the reference office](the-reference-office.md), the parameters
+it is built from.
+_Avoid_: the plan, the office, the map, the layout, the blueprint
+
+**The floor**:
+What the plate *looks like when it is drawn* — the interactive 2D scene in the viewer that
+a walkthrough plays over, with pan, zoom, clickable props and a cast. **The plate is the
+floor's subject; the floor is the plate's rendering**, which is why moving a wall is a
+plate edit and recolouring one is not. It is a **view**: it renders facts that already
+exist in Markdown and computes none
+([ADR-0011](docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)).
+Distinct from a **hero diagram**, which is static and derived from an HTML source. Named
+*floor* rather than *site* on purpose: that word already means both the viewer at
+[`site/`](site/README.md) and one physical place in
+[`site-network-design.md`](cross-cutting/site-network-design.md), and a third sense would
+have been one too many.
+_Avoid_: the map, the scene, the simulation, the site, the office (that is the reference
+office), the plate (that is what it draws)
+
+**Prop**:
+A clickable object on the floor — an access point, a switch, a room, an IDF, a segment.
+Its id and its bindings to Markdown anchors live in the walkthrough's `*.floor.json`,
+beside the script rather than under `site/`, because a fact the viewer holds alone is a
+fact lost the moment the viewer is deleted. A prop's panel shows **the judgement and the
+criteria** and never a configuration: this repo holds no device configurations, and it
+does not grow one to fill a panel.
+_Avoid_: object, entity, hotspot, marker
+
+**Cast**:
+The figures on the floor, which **are the wireless load and not decoration** — the
+reference office's occupancy curve made visible, at the device count that drives the
+access-point derivation. The cast may be *rendered* from numbers the repo states and may
+never be used to *compute* numbers it does not.
+_Avoid_: characters, sprites, agents, avatars, NPCs
+
 ### Tiers, in a skill map
 
 **Core / Working / Depth**:
@@ -147,6 +226,16 @@ The test: *does this name help someone recognise where they are, or is it tellin
 them what to buy?* The first transfers and the second expires.
 _Avoid_: model name (that is narrower — ADR-0002 forbids those in Selection rules
 specifically), brand, product
+
+**Protocol name**:
+The same two jobs as a **vendor name** above, and the same test. As a **signature** it is
+allowed — naming what a reader will *see* and have to recognise: 802.1X and RADIUS on the
+ports, LLDP on the switch, a DHCP relay in the path. As **mechanism** it is out of
+altitude everywhere in this repo: how the handshake completes, how a frame finds a switch
+port, how a lease is renewed. The test: *does naming it tell someone where they are, or
+does explaining it tell them what the wire is doing?* The first is a signature; the second
+is a different ability, and only the first one is here.
+_Avoid_: protocol (unqualified, when the mechanism is meant), standard, RFC
 
 **Altitude**:
 How high above the mechanism a piece of work sits. Two uses, related and distinct.

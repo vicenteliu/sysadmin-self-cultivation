@@ -52,8 +52,9 @@ docker run --rm -p 8099:8080 sysadmin-docs
 | **Search** | Full text over every document, English and Chinese. `/` focuses the box. |
 | **Facets** | The sidebar regroups by axis, platform, theme or kind — the same front-matter the retrieval index is built from. |
 | **Languages** | 🌐 swaps a document for its Chinese mirror and the interface with it. A document with no mirror says so instead of silently falling back. |
-| **Theme** | Follows the system setting; the toggle overrides it. Mermaid re-renders and hero diagrams swap variants with it. |
+| **Theme** | Follows the system setting; the toggle overrides it. Mermaid re-renders and hero diagrams swap variants with it — **except the floor**, which keeps one palette because raster pixel art cannot be inverted mechanically ([ADR-0013](../docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)). |
 | **The route** | `build-out/`'s sixteen steps as a linear track — deliberately not an axis card. |
+| **The floor** | A [walkthrough](../walkthrough/README.md) script opens over an interactive 2D office: drag to pan, scroll through three semantic zoom registers, click a thing to see why it is there. It renders numbers the Markdown states and computes none ([ADR-0011](../docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)), works in silence, and speaks a beat at a time where the browser can. |
 
 ## What is generated
 
@@ -65,6 +66,9 @@ python3 docs/build-index.py --check     # docs/index.json  ← every file's fron
 python3 site/build-corpus.py --check    # titles.json + corpus.json ← the prose
 python3 site/build-diagrams.py --check  # 12 diagram artifacts ← 4 HTML sources,
                                         # and the token table ← the style profile
+python3 tools/floor/build-tiles.py --check   # the floor's sprite sheet ← tiles.tiles
+python3 tools/floor/prove-topology.py --check  # the plate, still proved walkable?
+python3 walkthrough/build-walkthrough.py     # beats ↔ plate ↔ sources, and the freeze
 ```
 
 The diagram check covers one more thing than staleness. `diagram-design` resolves style
@@ -107,6 +111,8 @@ site/
 ├── index.html  style.css  strings.json
 ├── js/                 router · nav · search · render · i18n  (native ES modules)
 ├── assets/diagrams/    4 hand-authored hero sources + 12 derived files
+├── js/floor.js         the walkthrough's interactive 2D office — Canvas2D, no framework
+├── assets/floor/       tiles.png + tiles.json   generated — see tools/floor/
 ├── vendor/             marked + mermaid, committed on purpose
 ├── nginx.conf  docker-compose.yml  Dockerfile
 └── titles.json  corpus.json        generated — do not edit

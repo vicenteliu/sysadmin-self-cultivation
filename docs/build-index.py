@@ -131,6 +131,13 @@ def build():
             lifted.append(f"{path}: summary {why}")
         if "marker" in fm:
             records[path]["marker"] = fm["marker"]
+        # A walkthrough carries two canonical scripts and neither is a mirror of the
+        # other (ADR-0010), so the viewer cannot reach for `mirrors:` to tell them
+        # apart. It needs the language each one is written in, and its sibling.
+        if "language" in fm:
+            records[path]["language"] = fm["language"]
+        if "counterpart" in fm:
+            records[path]["counterpart"] = fm["counterpart"]
 
     for path in walk_markdown():                       # derive the mirrors
         if not path.startswith("docs/zh/"):

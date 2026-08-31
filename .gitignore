@@ -36,3 +36,6 @@ Thumbs.db
 
 # Serena MCP local project state
 .serena/
+
+# Godot regenerates this on open; the project and its script are the source
+.godot/

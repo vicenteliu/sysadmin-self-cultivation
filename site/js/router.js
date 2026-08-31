@@ -65,9 +65,10 @@ async function route() {
     renderNotFound(target.path);
     buildNav(state, null);
   } else {
-    // Landing on a mirror is itself a language choice; follow it.
+    // Landing on a document that names its own language is a language choice; follow
+    // it. Mirrors always say "zh"; a walkthrough script says which of the two it is.
     const rec = state.index.files[target.path];
-    if (rec.language === "zh" && getLang() !== "zh") setLang("zh");
+    if (rec.language && rec.language !== getLang()) setLang(rec.language);
     buildNav(state, target.path);
     await renderDoc(target.path, state, target.anchor);
   }

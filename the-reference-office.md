@@ -55,6 +55,9 @@ the file follows.
 | Meeting rooms | 7 | One per 10 to 20, open-plan end of the range |
 | Room mix | 1 large, 2 medium, 4 small | 80 percent of meetings are six people or fewer |
 | Phone booths | 6 | One per 10 to 15 in-office, counted separately from rooms |
+| Tea point | 1, seating ~16 | One per floor; seats sized on peak-day attendance, not headcount |
+| Store | 1 | Stock, spares and deliveries have to land somewhere with a door |
+| Service desk | 1 walk-up position | A staffed point people can walk to, sited on the circulation route |
 
 ## Why these numbers
 
@@ -86,6 +89,42 @@ seven or eight needs to be large.
 **Phone booths are not small meeting rooms.** They serve a different need, they get
 provisioned at about one per ten to fifteen in-office people, and counting them as meeting
 rooms is how a floor ends up with nowhere to take a call.
+
+**Three support spaces are load-bearing and get left off plans anyway.** None of them is
+derived from a ratio; each exists because a step of the build-out asks a question that has
+no answer without it.
+
+- **A tea point, with tables people can eat at.** One per floor, sited away from the desks
+  it would otherwise disrupt, and — the half that gets left off — **seated**. A counter and
+  a kettle with nowhere to sit is a corridor, and it sends everyone out of the building at
+  midday. Seats scale on peak-day attendance rather than headcount, at roughly a quarter of
+  the peak eating on the floor at once: about sixteen here. The failure mode is not
+  discomfort; it is that people leave the floor for lunch and the floor's occupancy numbers
+  stop describing where anybody is.
+- **A store, with a door that locks.** [Step 11](build-out/11-assets-and-tickets.md) asks
+  the estate to be enumerated from device one; [step 04](build-out/04-devices-and-images.md)
+  has laptops arriving in boxes. Stock, spares, returns and deliveries need somewhere that
+  is not a desk, and an asset register whose physical counterpart is "the corner behind
+  Dave" is a register that will disagree with reality inside a quarter.
+- **A service-desk position.** [Step 13](build-out/13-the-help-desk.md) asks how many IT
+  people a hundred people need and cannot answer it until the estate is known. It is also
+  a *placement* question and that half is answerable now: a walk-up point on the
+  circulation route, visible from the floor, near the store it draws stock from and near
+  the IDF it is the first responder for. Put it in a back office and the walk-ups become
+  tickets, which is a change in workload disguised as a change in furniture.
+
+**Where these three sit is a network decision as much as a facilities one.** The store and
+the service desk sit beside the IDF because that is the path a broken laptop takes; the
+tea point sits away from all three because it is the one space whose job is noise.
+
+**Those adjacencies are drawn, and the drawing stops where this repo's depth does.**
+[`walkthrough/reference-office.plate.json`](walkthrough/README.md) carries the *topology*
+of this floor — which space is next to which, and how you walk between them — and a
+headless proof checks that every space is reachable from the lift lobby along circulation
+without crossing a desk. It carries **no corridor widths, no egress distances, no sanitary
+provision and no claim that the plan would pass anything**, because that is architecture
+and [`build-out/GAPS.md`](build-out/GAPS.md) already judged the building side a 🧭 that
+stays one. The reasoning is [ADR-0014](docs/adr/0014-the-plate-stops-at-topology.md).
 
 **Room area follows the seat count.** A workable estimate is fifty square feet for the
 room plus twenty-five per seated person, which is what turns *seven rooms* into a number a
