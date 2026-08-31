@@ -121,6 +121,10 @@ class Floor {
     this.selected = null;
     this.index = -1;
     this.speaking = false;
+    // What the beat says and what the reader is looking at are two different things.
+    // Conflating them meant any resize replayed the beat and threw away a register the
+    // reader had just chosen — the button said Rack and the camera went back to Floor.
+    this.browsing = false;
     this.build(host);
   }
 
@@ -179,8 +183,14 @@ class Floor {
       const reg = e.target.closest("[data-reg]");
       const day = e.target.closest("[data-day]");
       const act = e.target.closest("[data-act]");
-      if (reg) { this.state.zoom = reg.dataset.reg; this.view.user = false; this.frame(); }
-      if (day) { this.state.cast = day.dataset.day; this.frame(); }
+      if (reg) {
+        this.state.zoom = reg.dataset.reg;
+        this.state.focus = this.subjectFor(reg.dataset.reg);
+        this.browsing = true;
+        this.view.user = false;
+        this.frame();
+      }
+      if (day) { this.state.cast = day.dataset.day; this.browsing = true; this.frame(); }
       if (act) this.transport(act.dataset.act);
       if (e.target.closest(".floor-panel-close")) this.select(null);
     });
@@ -234,7 +244,9 @@ class Floor {
     // resize that only recentres lets the register drift out of step with the
     // narration — the camera stays where it was while the words have moved on, and
     // nothing looks broken enough to notice.
-    if (this.index >= 0) this.goto(this.index); else this.frame();
+    // Replay the beat so the register cannot drift out of step with the narration —
+    // unless the reader has taken over, in which case re-frame and leave their view alone.
+    if (this.index >= 0 && !this.browsing) this.goto(this.index); else this.frame();
   }
 
   /** Put the current focus in the middle at the current register, unless the reader
@@ -251,6 +263,32 @@ class Floor {
     }
     this.syncBar();
     this.draw();
+  }
+
+  /** A register names what you are meant to be looking at, so it has to point at one.
+      Changing the scale and leaving the camera on the middle of the plate put the rack
+      register six times into a desk pod — the button said rack and showed furniture.
+
+      Floor is the whole plate. Rack is the IDF, of which there is one. Room keeps the
+      enclosure you were already in — or the one holding the prop you were looking at,
+      so clicking an access point and then Room does not throw you across the floor —
+      and otherwise opens the large one. */
+  subjectFor(register) {
+    if (register === "floor") return null;
+    if (register === "rack") return "idf";
+    const enclosures = [...this.scene.stage.rooms, ...this.scene.stage.spaces,
+                        ...this.scene.stage.booths];
+    if (this.state.focus && enclosures.some((o) => o.id === this.state.focus)) {
+      return this.state.focus;
+    }
+    const p = this.state.focus ? this.prop(this.state.focus) : null;
+    if (p && p.at) {
+      const inside = enclosures.find((o) =>
+        p.at[0] >= o.rect[0] && p.at[0] < o.rect[0] + o.rect[2] &&
+        p.at[1] >= o.rect[1] && p.at[1] < o.rect[1] + o.rect[3]);
+      if (inside) return inside.id;
+    }
+    return "room-large";
   }
 
   focusPoint() {
@@ -761,6 +799,7 @@ class Floor {
       own inherits the one before it, which is why only changes are written down. */
   goto(i) {
     if (!this.beats.length) return;
+    this.browsing = false;                      // the narration is driving again
     this.index = Math.max(0, Math.min(this.beats.length - 1, i));
     const state = { zoom: "floor", cast: "empty", focus: null, highlight: [], overlay: null, marker: null };
     for (let n = 0; n <= this.index; n += 1) {
