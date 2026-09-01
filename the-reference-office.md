@@ -28,8 +28,10 @@ The sections below age at very different speeds, so they are kept apart on purpo
 | Parameters | Years. A hundred people need roughly this much room in most decades. |
 | Why these numbers | Longest. These are the derivations, and they outlive any product. |
 | Selection rules | Years. Criteria, deliberately without model names. |
+| Where things run | Years, once written. What cannot leave the building changes slowly. |
 | Reference build | Short. Dated, and meant to be replaced whole. |
 | Cost shape | Medium, and relative only. No currency figures. |
+| What this office does not yet say | Shortest. It is a ledger, and it empties. |
 
 **If you only read one section, read *Why these numbers*.** The rest is an instance. That
 one is the method.
@@ -238,6 +240,37 @@ from having designed and then lived with an office wireless deployment. See
 [`site-network-design.md`](cross-cutting/site-network-design.md#honest-boundaries) for
 the boundary stated in full.
 
+## Where things run
+
+⏳ **Not written yet, and it has two halves with two different entry conditions.**
+
+**On premises.** [Step 02](build-out/02-the-building.md) shrank this room to *switches, an
+access controller, a print device, a little lab gear*, because workloads left the
+building; [step 04](build-out/04-devices-and-images.md) put the image with the OS vendor
+rather than on-site. So the question this half answers is not *what should we run here* —
+it is **what cannot leave**, and that list is currently unwritten because nothing has
+needed it. *Entry condition: a build-out step or a lab needs something on this floor that
+cannot be somebody else's service.*
+
+**In a cloud.** Nothing in this repo has yet been forced to invent this office's cloud
+numbers. Four labs anchor to *a hundred-person office* — [help desk
+queue](cross-cutting/labs/help-desk-queue/), [asset
+reconciliation](cross-cutting/labs/asset-reconciliation/), [permission
+sprawl](cross-cutting/labs/permission-sprawl/) and [mail
+authentication](cross-cutting/labs/mail-authentication-alignment/) — and not one of them
+is about cloud. *Entry condition: a step or a lab is forced to invent a cloud number for
+this office, and every line written here answers **why is this not in the IDF**.*
+
+**The two halves are one section because they are defined against each other.** A cloud
+entry earns its place by naming what the on-premises side could not do, and the reverse.
+Split apart, each would drift into a general tour of its side — which is
+[`platforms/`](platforms/)' job, at `mixed` footing, and not this file's.
+
+**What neither half may hold** is set by
+[ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md):
+this office consumes services and operates none. No traffic, no release cadence, no error
+budget, no customers.
+
 ## Reference build
 
 ⏳ **Still not written, and the entry condition explains why.** It gets written when a
@@ -271,6 +304,35 @@ that is deliberate — it is written once, in one place.
 - **Runnable tooling** in [`toolbox/`](toolbox/) — the scripts, not descriptions of them.
 - **Working with AI** in
   [`ai-workflow/`](ai-workflow/how-i-use-ai-to-learn-and-operate.md).
+
+## What this office does not yet say
+
+**Derived, not planned**, in the manner of [`build-out/GAPS.md`](build-out/GAPS.md). A
+parameter earns a line here when **something else in this repo was already forced to
+invent it** because this file is silent. Not a wish list: a domain nobody has needed is
+not a gap, it is a ⏳ section with an entry condition — see *Where things run* above.
+
+The distinction is the whole point. A ⏳ section says *named, and waiting to be asked*. A
+line here says *asked already, and answered somewhere it should not have been*.
+
+| Parameter | Who was forced to invent it | State |
+|---|---|---|
+| **People flow** — joiner, mover and leaver rates | [transcript retention](cross-cutting/labs/transcript-retention/) needs somebody joining on day 700; and *growth to about 130* sits in [Parameters](#parameters) as a scenario choice with no rule under it | ⏳ open |
+| **Endpoints and spares** | [asset reconciliation](cross-cutting/labs/asset-reconciliation/) invented 97 devices; the store below is sized for *stock, spares and returns* and states no quantity | ⏳ open |
+| **Identity shape** — teams, admin and service accounts, guests | [permission sprawl](cross-cutting/labs/permission-sprawl/) built two estates for *the same hundred people*; the plate carries four segments with no population behind them | ⏳ open |
+| **SaaS estate** — how many, how many seats, who owns each, how many outside SSO | [permission sprawl](cross-cutting/labs/permission-sprawl/) again, and [mail authentication](cross-cutting/labs/mail-authentication-alignment/)'s sender inventory | ⏳ open |
+| **Support load** — arrival rate by category, the support window | [help desk queue](cross-cutting/labs/help-desk-queue/) invented seven categories, their arrival rates and a fifty-hour window | ⏳ open |
+| **Data and recovery** — what data exists, and the objective per category | [Step 09](build-out/09-backup-and-the-restore-drill.md) asks for *a recovery objective per category* and this file names no categories | ⏳ open |
+
+**Every line here is the same failure.** A number this file should hold was invented
+somewhere downstream instead, which is how a repo ends up with more than one
+hundred-person office. It has one: *the reference office* is this file, and *a
+hundred-person office* elsewhere is a generic phrase — a distinction now written into
+[`CONTEXT.md`](CONTEXT.md).
+
+**The table empties as they are written**, and a closed line moves below with what it
+settled. An empty table is a state, not a finish: a parameter returns here the moment
+something is forced to invent it again.
 
 ## How interviews ask about this
 
