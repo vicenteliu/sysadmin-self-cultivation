@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 271,
+  "count": 275,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1242,6 +1242,49 @@
       "mirrors": "cross-cutting/README.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/cost.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "cost"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "On the clouds, cost is not the finance team's problem — it's a signal on your dashboard, an alarm that should page you, and a design constraint that shapes architecture.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/cost.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/identity-iam.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws",
+        "azure"
+      ],
+      "summary": "The densest, most-transferable surface there is.",
+      "language": "zh",
+      "mirrors": "cross-cutting/identity-iam.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/itsm-and-assets.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "The part of the job the cloud-native roadmaps skip and every real IT org runs on: the ticket queue, the asset inventory, the access requests, and the audit that proves it all.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/itsm-and-assets.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/kubernetes-support.md": {
       "kind": "support-note",
       "axis": "cross-cutting",
@@ -1284,6 +1327,19 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/multi-cloud-support.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/saas-admin.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "The clouds run your infrastructure; SaaS runs your company.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/saas-admin.md",
       "derived": true
     },
     "docs/zh/cross-cutting/terraform-support.md": {

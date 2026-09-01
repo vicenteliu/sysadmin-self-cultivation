@@ -7,6 +7,8 @@ summary: "The densest, most-transferable surface there is."
 ---
 # Identity & Access (IAM)
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/identity-iam.md)
+
 > The densest, most-transferable surface there is. Get identity right and everything
 > else has a front door with a lock on it; get it wrong and nothing else matters.
 > This is the concept layer — the *same* discipline whether it's Active Directory,

@@ -8,6 +8,8 @@ summary: "The clouds run your infrastructure; SaaS runs your company."
 ---
 # SaaS & Collaboration Administration
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/saas-admin.md)
+
 > The clouds run your infrastructure; SaaS runs your company. Google Workspace,
 > Microsoft 365, and the identity fabric under them are where most employees
 > actually live — and administering them well is a distinct, high-demand craft the

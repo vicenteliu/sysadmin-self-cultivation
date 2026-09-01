@@ -8,6 +8,8 @@ summary: "On the clouds, cost is not the finance team's problem — it's a signa
 ---
 # Cost as an Operational Control
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/cost.md)
+
 > On the clouds, cost is not the finance team's problem — it's a signal on your
 > dashboard, an alarm that should page you, and a design constraint that shapes
 > architecture. A runaway loop pages you as a *bill*. This note treats money as
