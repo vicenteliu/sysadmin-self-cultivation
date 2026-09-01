@@ -98,7 +98,7 @@ Kubernetes 修/救就是 **describe → logs → events** 反射——你的 `sy
 ## AI 辅助的 ramp（Kubernetes 口味）
 
 - **从你已知的翻译过来——并索要 deltas:** *"我懂 Linux、Docker、systemd —— 把 Pod/Deployment/Service 和收敛环映射到进程/unit/主机网络上,只标出真正的差异。"* K8s 奖励 translate-then-verify——但 **收敛、cattle-不是-pets、readiness-门控-endpoints、QoS/OOMKill 在单机上没有对应物**,所以那些要往死里验证(lab 就是干这个的)。像 **k8sgpt** 这类工具能用大白话解释一个失败资源——快速的第一遍,不是 describe→logs→events 反射的替代品。
-- **让它起草 manifest;你掌控收敛行为。** AI 写 YAML 很强——而它也会**漏掉 requests/limits**(BestEffort/OOMKill 惊吓)、**跳过 readiness 探针**(静默"服务挂了")、**让 selector 和 pod label 不匹配**(零 endpoints)、并**对活对象 `kubectl edit`** 而非改源。绝不 apply 一份你没读过的 AI 草稿 manifest,并先在 **kind/minikube** 一次性集群里跑。同一套往死里验证的纪律——见 [`ai-workflow/`](../../../ai-workflow/) 和 [`kubernetes.md`](../../../cross-cutting/kubernetes.md)。
+- **让它起草 manifest;你掌控收敛行为。** AI 写 YAML 很强——而它也会**漏掉 requests/limits**(BestEffort/OOMKill 惊吓)、**跳过 readiness 探针**(静默"服务挂了")、**让 selector 和 pod label 不匹配**(零 endpoints)、并**对活对象 `kubectl edit`** 而非改源。绝不 apply 一份你没读过的 AI 草稿 manifest,并先在 **kind/minikube** 一次性集群里跑。同一套往死里验证的纪律——见 [`ai-workflow/`](../ai-workflow/) 和 [`kubernetes.md`](../../../cross-cutting/kubernetes.md)。
 
 ## 诚实边界
 

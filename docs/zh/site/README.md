@@ -44,7 +44,7 @@ docker run --rm -p 8099:8080 sysadmin-docs
 | **语言** | 🌐 把文档换成它的中文镜像，界面文案跟着一起换。没有镜像的文档会**明说**，而不是静默回落到英文。 |
 | **主题** | 跟随系统设置，切换按钮可覆盖。mermaid 会重新渲染，门面图会换成对应的明暗版本；**但楼面只有一套色板**，因为像素画不能靠机械反色得到可信的另一套（[ADR-0013](../../adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）。 |
 | **路线** | `build-out/` 的十六步做成一条线性轨道——刻意不做成 axis 卡片。 |
-| **楼面** | 一份[走读](../../../walkthrough/README.md)稿会在可交互的二维办公室上播放：拖动平移、滚轮缩放，或选 **楼面 / 房间 / 机柜** 让镜头对准一个有名字的对象。点一件东西，就能看它为什么在那里。它只渲染 Markdown 已经陈述的数字，自己不计算（[ADR-0011](../../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。 |
+| **楼面** | 一份[走读](../walkthrough/README.md)稿会在可交互的二维办公室上播放：拖动平移、滚轮缩放，或选 **楼面 / 房间 / 机柜** 让镜头对准一个有名字的对象。点一件东西，就能看它为什么在那里。它只渲染 Markdown 已经陈述的数字，自己不计算（[ADR-0011](../../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。 |
 
 ### 试一次楼面
 
@@ -85,9 +85,9 @@ python3 site/build-diagrams.py --install-profile
 ```
 
 `corpus.json` 是**搜索语料（search corpus）**——1.2 MB 全文，只在有人真正搜索时才拉取。
-它**不是** index：[`CONTENTS.md`](../../../CONTENTS.md) 是给人看的目录，目录下的
+它**不是** index：[`CONTENTS.md`](../CONTENTS.md) 是给人看的目录，目录下的
 `README.md` 是那个文件夹的索引，`docs/index.json` 是 retrieval index。见
-[`CONTEXT.md`](../../../CONTEXT.md)。
+[`CONTEXT.md`](../CONTEXT.md)。
 
 ## URL 契约
 

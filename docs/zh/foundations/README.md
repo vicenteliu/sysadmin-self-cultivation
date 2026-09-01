@@ -29,7 +29,7 @@ Bash 作为日常工具用了十年以上。这里其余的一切，都是从这
 [`WHY.md`](../WHY.md) 论证 AI 让工具查找变得便宜，并把考题往上推到判断力。Foundations 正是
 那份判断力被**建起来**的地方。你可以 prompt 出一条 `kubectl` 命令或一段 Terraform，但你
 prompt 不出那种说*"那个输出在骗我"*的直觉 —— 那来自多年阅读 Linux 实际告诉你的东西。云是
-这一层之上的抽象；当抽象渗漏时（而 [`the-stack`](../../../the-stack/) 就是一本"它在哪里渗漏"
+这一层之上的抽象；当抽象渗漏时（而 [`the-stack`](../the-stack/) 就是一本"它在哪里渗漏"
 的目录），你退回来落在的恰恰是这些技能上。AI 抬高天花板；foundations 是地板，而地板是承重的。
 
 ## Linux 心智模型
@@ -48,7 +48,7 @@ prompt 不出那种说*"那个输出在骗我"*的直觉 —— 那来自多年�
 
 **权限和身份为一切把关。** user、group、other；读、写、执行；再加上归属。多数"它跑不起来"
 和"permission denied"的事故就是这个模型，而修法是把它读对，不是 `chmod 777`（那个把一个权限
-bug 变成一个安全 bug 的反射）。[身份那一章](../../../cross-cutting/identity-iam.md)的最小
+bug 变成一个安全 bug 的反射）。[身份那一章](../cross-cutting/identity-iam.md)的最小
 权限纪律就是从这里起步的 —— 在一台机器上，对着一个文件。
 
 **systemd 拥有正在运行的这个系统。** 启动路径（固件 → 引导器 → 内核 → init → systemd →
@@ -61,8 +61,8 @@ flowchart LR
   fw["固件 / UEFI"] --> boot["引导器 GRUB"] --> kern["内核 + initramfs"] --> init["systemd PID 1"] --> units["unit 服务 socket target"] --> up["multi-user.target 系统起来了"]
 ```
 
-这和 [`the-stack/01`](../../../the-stack/01-physical.md) 从串口控制台调试的、以及
-[`the-stack/03`](../../../the-stack/03-compute-and-images.md) 用 cloud-init 个性化的，是同一
+这和 [`the-stack/01`](../the-stack/01-physical.md) 从串口控制台调试的、以及
+[`the-stack/03`](../the-stack/03-compute-and-images.md) 用 cloud-init 个性化的，是同一
 条启动路径 —— foundations 是你学会读它的地方。
 
 ## 调试反射 —— 真正的区分点
@@ -135,7 +135,7 @@ mkdir -p "$target"                     # 幂等：已存在也没关系
 
 PowerShell 是真东西、也值得会 —— 传对象的管道在 Windows 管理上确实比 Bash 的文本流好用 ——
 但在这里诚实地界定：它是用于 **Windows Server 维护和 M365/Entra 管理面**
-（[`cross-cutting/saas-admin.md`](../../../cross-cutting/saas-admin.md)）的工具，而不是一个
+（[`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md)）的工具，而不是一个
 以 Linux 和 macOS 为主的机队里的主力自动化语言。那些概念（管道、对象、cmdlet）从 Bash/Python
 的底子上迁移过去很快；要点是知道它**什么时候**是对的工具 —— 管理 Windows 和微软的云 ——
 而不是默认就伸手去拿它。
@@ -163,7 +163,7 @@ Foundations 是 AI **最**立竿见影有用、也**最**危险去信任的那�
 
 🔨 **亲手做过的深度 —— 这个仓库里最直接的一处。** Linux（RHEL/CentOS/Ubuntu）在机队规模上
 运维过，RHCE 认证，十余年间以 Python 和 Bash 作为日常自动化工具 —— 发放流水线、审计对账脚本，
-以及 [`the-stack`](../../../the-stack/) 各章所依据的那些跨栈排障。PowerShell 是真的，但被
+以及 [`the-stack`](../the-stack/) 各章所依据的那些跨栈排障。PowerShell 是真的，但被
 界定了范围（Windows Server 维护、M365/Entra 管理）并被这样标注，没有被吹成一门主力语言。
 这个模块里没有 🧭，因为这里没有任何东西是一条 ramp —— 这是那些 ramp 起飞所依据的地面。
 

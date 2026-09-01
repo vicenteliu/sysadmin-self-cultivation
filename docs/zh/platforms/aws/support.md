@@ -12,7 +12,7 @@
 
 ## 支持 AWS 让你要为什么负责
 
-映射到 [seven surfaces](../../../../00-the-operating-model.md)，按工单到达顺序：
+映射到 [seven surfaces](../../00-the-operating-model.md)，按工单到达顺序：
 
 | Surface | 你要为之负责的事 |
 | --- | --- |
@@ -45,7 +45,7 @@ AWS 的修/救本质是在一小组控制台和日志上做模式识别。你要
 
 **RDS。** 连不上是 DB 的 security group 没放行客户端到 **3306/5432**，或 "Publicly accessible = No" 却没有 IGW 路径。存储吃紧表现为状态 **`storage-full`** 和 CloudWatch **`FreeStorageSpace`** —— 启用 **storage autoscaling**。还有参数组陷阱：**static** 参数改动要**手动重启**才生效，而且你**改不了默认参数组**（新建一个自定义的）。
 
-**成本 —— 意外账单也是工单。** 那些经典款：一个 **NAT Gateway** 按小时费**加上**按 GB 处理费，*即使流量去 S3、根本不出 AWS*（修法：一个免费的 **Gateway VPC Endpoint**）；你以为"内部"的 **cross-AZ 和 egress** 数据传输；**每公网 IPv4 每小时 $0.005**（2024-02 起，无论挂着还是空闲）；以及孤儿 —— **未挂载的 EBS 卷、AMI 留下的 snapshot、未关联的 Elastic IP** —— 都在悄悄计费。*去哪查：* **Cost Explorer**、**Budgets**、**Cost Anomaly Detection**（[`cross-cutting/cost.md`](../../../../cross-cutting/cost.md)）。
+**成本 —— 意外账单也是工单。** 那些经典款：一个 **NAT Gateway** 按小时费**加上**按 GB 处理费，*即使流量去 S3、根本不出 AWS*（修法：一个免费的 **Gateway VPC Endpoint**）；你以为"内部"的 **cross-AZ 和 egress** 数据传输；**每公网 IPv4 每小时 $0.005**（2024-02 起，无论挂着还是空闲）；以及孤儿 —— **未挂载的 EBS 卷、AMI 留下的 snapshot、未关联的 Elastic IP** —— 都在悄悄计费。*去哪查：* **Cost Explorer**、**Budgets**、**Cost Anomaly Detection**（[`cross-cutting/cost.md`](../../cross-cutting/cost.md)）。
 
 **配额与限流。** 分清两件事：**count 配额**（`LimitExceeded` —— 你的启动撞到了 per-region 上限 → 在 **Service Quotas** 里提前提额）和 **API 速率限流**（`RequestLimitExceeded` / `ThrottlingException` "Rate exceeded" —— 你的脚本调太快 → **指数退避 + jitter**；SDK 已经会重试，但手搓的 `boto3`/CLI 循环不会）。
 
@@ -101,11 +101,11 @@ AWS 的修/救本质是在一小组控制台和日志上做模式识别。你要
 ## AI 辅助的 ramp（AWS-support 口味）
 
 - **把你的直觉翻译成 AWS 的行话：** *"我会 `tcpdump` 那个网口、grep 防火墙日志 —— '这个到不了那个'在 AWS 的等价做法是什么，我又有哪些看不到？"* 那个诚实的答案（Reachability Analyzer + Flow Logs + shared-responsibility 那条线）恰恰是 AI 擅长压缩的东西。
-- **让它起草 policy/命令，你亲手做最小权限。** AI 在 **IAM JSON、`aws` CLI、`boto3`、Terraform** 上是真强 —— 而它也会**发明不存在的 IAM action 和 API 调用**、**过度放开到 `"*"`**、并爽快地提一个 **blast radius 是整个账号**的 security-group 或 policy 改动。每一段生成的 policy 都要对着文档（和一个 linter —— 见 field kit）核验、并在一个**一次性账号**里跑过，才允许碰生产。这跟本仓库其余部分是同一套"往死里验证"的纪律 —— 见 [`ai-workflow/`](../../../../ai-workflow/) 和[运营环](../../../../platforms/aws/operations.md#how-ai-assists-the-operating-work-not-just-the-learning)。
+- **让它起草 policy/命令，你亲手做最小权限。** AI 在 **IAM JSON、`aws` CLI、`boto3`、Terraform** 上是真强 —— 而它也会**发明不存在的 IAM action 和 API 调用**、**过度放开到 `"*"`**、并爽快地提一个 **blast radius 是整个账号**的 security-group 或 policy 改动。每一段生成的 policy 都要对着文档（和一个 linter —— 见 field kit）核验、并在一个**一次性账号**里跑过，才允许碰生产。这跟本仓库其余部分是同一套"往死里验证"的纪律 —— 见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](../../../../platforms/aws/operations.md#how-ai-assists-the-operating-work-not-just-the-learning)。
 
 ## 诚实边界
 
-**AWS 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 让这个 ramp 快的，是那些**🔨 可迁移、且真实**的基本功在承重：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../../../the-stack/02-network.md)）、以及**身份与最小权限思维**（[`identity-iam.md`](../../../../cross-cutting/identity-iam.md)）—— AWS support 里那些*本来就是*这些技能、只是换了 AWS 名字的部分。AWS 特有的机制（deny-by-default 的策略评估、VPC 的分层、服务目录、计费的边）是被映射、对着文档核验、并在可跑的 [labs](../../../../platforms/aws/labs/) 里练过的 —— **不是**声称成多年生产资历。这里的声明就是[平台 README](../../../../platforms/aws/README.md) 做的那一个：*一套可迁移的操作模型，加一条 AI 加速、在本仓库里可验证、能快速到达"胜任"的 ramp* —— 而上面那些 support 反射就是这条 ramp 落到实处。某个具体服务上更深、规模化的生产 AWS 仍在前方，注释如实说明、绝不吹。
+**AWS 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 让这个 ramp 快的，是那些**🔨 可迁移、且真实**的基本功在承重：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、以及**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）—— AWS support 里那些*本来就是*这些技能、只是换了 AWS 名字的部分。AWS 特有的机制（deny-by-default 的策略评估、VPC 的分层、服务目录、计费的边）是被映射、对着文档核验、并在可跑的 [labs](../../../../platforms/aws/labs/) 里练过的 —— **不是**声称成多年生产资历。这里的声明就是[平台 README](../../../../platforms/aws/README.md) 做的那一个：*一套可迁移的操作模型，加一条 AI 加速、在本仓库里可验证、能快速到达"胜任"的 ramp* —— 而上面那些 support 反射就是这条 ramp 落到实处。某个具体服务上更深、规模化的生产 AWS 仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 

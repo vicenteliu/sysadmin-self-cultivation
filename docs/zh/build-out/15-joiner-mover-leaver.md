@@ -75,11 +75,11 @@ SCIM 的 SaaS 产品里的孤儿。同样是检测，不是行动。
 
 ## 往深里读
 
-- [`cross-cutting/identity-iam.md`](../../../cross-cutting/identity-iam.md) —— JML 那一节，
+- [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) —— JML 那一节，
   以及把 SCIM 当作 API 化的开通
-- [`cross-cutting/saas-admin.md`](../../../cross-cutting/saas-admin.md) —— 横跨 SaaS 估算面
+- [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) —— 横跨 SaaS 估算面
   的身份主干，而 Leaver 真正变难就是在那儿
-- [`cross-cutting/itsm-and-assets.md`](../../../cross-cutting/itsm-and-assets.md) —— 访问
+- [`cross-cutting/itsm-and-assets.md`](../cross-cutting/itsm-and-assets.md) —— 访问
   治理，以及离职流程里设备那一半
 - [`foundations/`](../foundations/README.md) —— 脚本能力，以及这件事需要的那份幂等习惯
 - [参考办公室](../the-reference-office.md#parameters) —— 一间百人办公室实际产生多少入职、

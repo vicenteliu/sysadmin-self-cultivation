@@ -66,12 +66,12 @@ summary: "🔨 亲手做过 —— 访问治理、资产对账与审计自动化
 
 ## 往深里读
 
-- [`cross-cutting/itsm-and-assets.md`](../../../cross-cutting/itsm-and-assets.md) ——
+- [`cross-cutting/itsm-and-assets.md`](../cross-cutting/itsm-and-assets.md) ——
   访问治理与证明最小权限，这一步的核心
-- [`cross-cutting/identity-iam.md`](../../../cross-cutting/identity-iam.md) —— 最小权限，
+- [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) —— 最小权限，
   多数控制都是它的重述
-- [`the-stack/07-security.md`](../../../the-stack/07-security.md) —— 那些控制本身
-- [`the-stack/06-observability.md`](../../../the-stack/06-observability.md) —— 因为证据和
+- [`the-stack/07-security.md`](../the-stack/07-security.md) —— 那些控制本身
+- [`the-stack/06-observability.md`](../the-stack/06-observability.md) —— 因为证据和
   遥测是同一条流水线，只是出于不同的理由被保留
 - [`cross-cutting/working-with-security.md`](../../../cross-cutting/working-with-security.md)
 

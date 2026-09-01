@@ -6,7 +6,7 @@
 
 ---
 
-> [平台篇](../../../platforms/)一次读一朵云;[`the-stack/`](../../../the-stack/) 横跨它们读一层。本篇是收官之作:**把多云支持当作一门修/救（break-fix）手艺**——反复出现在云*之间*的工单、精确的排查落点,以及**一个强单云 sysadmin 在几朵云必须协同工作时,哪些直觉会被烧到。** 诚实标记先说清:本篇是 **🧭 ramp**——我的多云亲手经验是 **exposure**(AWS/Azure/GCP/OCI 都映射并实验核验过,真正 🔨 只在 Azure/Entra 身份上),由一个真实资产承载——我**给全部四朵云都写了诚实的逐云支持笔记**([AWS](../../../platforms/aws/support.md) · [Azure](../../../platforms/azure/support.md) · [GCP](../../../platforms/gcp/support.md) · [OCI](../../../platforms/oci/support.md)),*而那份综合本身就是多云技能。* 它的权威来自研究(厂商文档 + practitioner 失效模式 + 一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑)),不是跨三家的生产资历。
+> [平台篇](../platforms/)一次读一朵云;[`the-stack/`](../the-stack/) 横跨它们读一层。本篇是收官之作:**把多云支持当作一门修/救（break-fix）手艺**——反复出现在云*之间*的工单、精确的排查落点,以及**一个强单云 sysadmin 在几朵云必须协同工作时,哪些直觉会被烧到。** 诚实标记先说清:本篇是 **🧭 ramp**——我的多云亲手经验是 **exposure**(AWS/Azure/GCP/OCI 都映射并实验核验过,真正 🔨 只在 Azure/Entra 身份上),由一个真实资产承载——我**给全部四朵云都写了诚实的逐云支持笔记**([AWS](../platforms/aws/support.md) · [Azure](../platforms/azure/support.md) · [GCP](../platforms/gcp/support.md) · [OCI](../platforms/oci/support.md)),*而那份综合本身就是多云技能。* 它的权威来自研究(厂商文档 + practitioner 失效模式 + 一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑)),不是跨三家的生产资历。
 
 **多云是一种姿态,不是一个产品。** 没有一个你装上去的统一控制面——每朵云保有自己的 IAM、网络、配额、账单、遥测模型,而工作是拥有**它们之间的接缝。** 一个单云管理员带着一种虚假的踏实上手:"我懂云。" 但昂贵的错误不住在任何一朵云里(那些你学过了);它们住在四条接缝里——**CIDR/路由、跨云身份、egress/data-gravity、一致的安全姿态**——那里单云直觉假设了一种并不存在的对等。本篇把接缝职责、反复出现的跨云工单、以及失灵的直觉一一点名——全程倚靠四篇平台笔记,因为*多云就是那四个模型同时在跑。*
 
@@ -16,7 +16,7 @@
 
 | 接缝 | 你要为之负责的事 |
 | --- | --- |
-| **跨云身份** | **没有单一身份面**——四个结构不同的 IAM 模型([AWS](../../../platforms/aws/support.md) explicit-deny-wins JSON、[Azure](../../../platforms/azure/support.md) Entra-vs-RBAC 两平面、[GCP](../../../platforms/gcp/support.md) additive/继承 binding、[OCI](../../../platforms/oci/support.md) verb+compartment)。**workload identity federation**(OIDC/STS token 交换换短时凭证)*取代*复制的长期密钥;凭证/密钥泛滥。 |
+| **跨云身份** | **没有单一身份面**——四个结构不同的 IAM 模型([AWS](../platforms/aws/support.md) explicit-deny-wins JSON、[Azure](../platforms/azure/support.md) Entra-vs-RBAC 两平面、[GCP](../platforms/gcp/support.md) additive/继承 binding、[OCI](../platforms/oci/support.md) verb+compartment)。**workload identity federation**(OIDC/STS token 交换换短时凭证)*取代*复制的长期密钥;凭证/密钥泛滥。 |
 | **云间网络** | 互联(site-to-site VPN / Direct Connect / ExpressRoute / Cloud Interconnect);各云的 transit hub(Transit Gateway / Virtual WAN / Network Connectivity Center)**不跨云联邦**;头号阻塞——**跨所有云 + on-prem 的非重叠 CIDR 规划**(没有中央 IPAM);跨云 **DNS**(条件转发);非对称路由。 |
 | **成本与 egress** | **跨云数据传输(egress)——两侧都计费**,沉默的杀手;**data gravity**;N 个不同账单模型 + 被侵蚀的 committed-use 折扣;跨云 FinOps 可见性。 |
 | **安全姿态** | 各云 secure-by-default 不同 → 同一意图产生不同暴露;一个**跨云 CSPM 计划**(不是一个开关);跨云的爆炸半径;最弱/最不熟的那朵云就是你的暴露。 |
@@ -59,7 +59,7 @@
 
 | 强迁移 | 带保留地迁移 | 别带过来 |
 | --- | --- | --- |
-| **逐云操作模型**([seven surfaces](../../../00-the-operating-model.md))——每朵云跑一次,预期不同答案 | 最小权限*思维*——意图迁移;编码(4 个 IAM 模型)不迁移 | "一个 IAM"——四个不兼容的授权模型 |
+| **逐云操作模型**([seven surfaces](../00-the-operating-model.md))——每朵云跑一次,预期不同答案 | 最小权限*思维*——意图迁移;编码(4 个 IAM 模型)不迁移 | "一个 IAM"——四个不兼容的授权模型 |
 | **网络基本功**——CIDR、路由、DNS、BGP、非重叠纪律;on-prem IPAM 是真资产 | 云/API 熟悉度——但每个 provider 的原语不同 | "一个网络 / 一个中央路由器"——逐云路由,没有中央 IPAM |
 | **IaC 纪律**——plan-before-apply、state、评审(*工作流*经 Terraform 移植) | 托管服务反射——可移植性要它的命(LCD 张力) | "Terraform 统一模型"——它统一*工作流*,不统一语义/module |
 | **成本意识**——尺寸、配额、committed-use 推理 | 可观测习惯——但指标/日志在 N 个独立栈里 | "single pane of glass"——不存在;K8s 只覆盖工作负载 |
@@ -71,7 +71,7 @@
 **第一周。**
 1. **跨所有云 + on-prem 规划非重叠 CIDR——在任何 peering/VPN 之前。** 这是唯一难以逆转的决定(给活 subnet 重新编址)。采用一份主地址计划 + 中央 IPAM;核实*整个*拓扑无重叠。
 2. **用 workload identity federation,绝不复制长期密钥。** 立 OIDC/STS trust;审计资产里存储的跨云静态密钥 → 目标归零。
-3. **脑子里保持每朵云一份权威模型——假设零对等。** 每朵云一页简短的"这里 auth / 路由 / secure-by-default 怎么运作"。那四篇[平台](../../../platforms/aws/support.md)[支持](../../../platforms/azure/support.md)[笔记](../../../platforms/gcp/support.md)[就是](../../../platforms/oci/support.md)这个,写下来了。
+3. **脑子里保持每朵云一份权威模型——假设零对等。** 每朵云一页简短的"这里 auth / 路由 / secure-by-default 怎么运作"。那四篇[平台](../platforms/aws/support.md)[支持](../platforms/azure/support.md)[笔记](../platforms/gcp/support.md)[就是](../platforms/oci/support.md)这个,写下来了。
 4. **把每个跨云工单重构为"某朵云、还是云之间的接缝?"**——最昂贵的都是接缝。
 
 **前 30 天。**
@@ -89,11 +89,11 @@
 ## AI 辅助的 ramp（多云口味）
 
 - **在云之间翻译——并索要非对等:** *"我懂 AWS IAM 和 VPC —— 把 Azure 两平面 RBAC、GCP additive binding、OCI verb/compartment 模型映射到它们上,并标出它们**不**等价的每一处。"* AI 在逐云翻译上很有用(就是平台笔记那套 translate-then-verify)——但**四路 IAM 分歧、重叠-CIDR 阻塞、egress 经济学在单云里没有对应物**,那些要往死里验证。
-- **让它起草逐云 IaC;你掌控接缝。** AI 会乐呵呵地**把一个 AWS module 复制到 Azure**(不移植)、**建议跨云复制密钥**(用 WIF)、**把两个网络都默认成 10.0.0.0/16**(重叠)、并**假设一个不存在的单一控制面**。绝不 apply 你没逐 provider 推理过的跨云改动,并在任何东西跨边界对话前核实 CIDR 非重叠 + federation。同一套往死里验证的纪律——见 [`ai-workflow/`](../../../ai-workflow/)、[`terraform-support.md`](../../../cross-cutting/terraform-support.md)、[`kubernetes-support.md`](../../../cross-cutting/kubernetes-support.md)。
+- **让它起草逐云 IaC;你掌控接缝。** AI 会乐呵呵地**把一个 AWS module 复制到 Azure**(不移植)、**建议跨云复制密钥**(用 WIF)、**把两个网络都默认成 10.0.0.0/16**(重叠)、并**假设一个不存在的单一控制面**。绝不 apply 你没逐 provider 推理过的跨云改动,并在任何东西跨边界对话前核实 CIDR 非重叠 + federation。同一套往死里验证的纪律——见 [`ai-workflow/`](../ai-workflow/)、[`terraform-support.md`](terraform-support.md)、[`kubernetes-support.md`](kubernetes-support.md)。
 
 ## 诚实边界
 
-本篇是 **🧭 ramp,而且明说。** 我的多云亲手经验是 **exposure**——每朵云的操作模型都映射并实验核验过,真正 🔨 深度只在 **Azure/Entra 身份**上(以及 🔨 on-prem 网络/IPAM,它在这里强迁移)。承载它的是那个真实资产:我**给全部四朵云都写了诚实、有据可查的支持笔记**([AWS](../../../platforms/aws/support.md) · [Azure](../../../platforms/azure/support.md) · [GCP](../../../platforms/gcp/support.md) · [OCI](../../../platforms/oci/support.md))外加 [`identity-iam.md`](../../../cross-cutting/identity-iam.md) 和 [`cost.md`](../../../cross-cutting/cost.md)——而**多云支持*就是*那份综合**用在接缝上,由 🔨 网络基本功和一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑) 撑着。上面那些接缝机制——federation、CIDR/IPAM、egress 经济学、跨云姿态——是映射并文档核验过的,**不是资历。** 更深的生产多云(跨三家真跑工作负载、一张活的跨云网络 fabric、规模化的多云 FinOps + CSPM 计划)仍在前方;注释如实说明、绝不吹。这是一个先记录每朵云、再记录它们之间接缝的 sysadmin 的诚实收官之作——公开记录、🔨/🧭 标注。
+本篇是 **🧭 ramp,而且明说。** 我的多云亲手经验是 **exposure**——每朵云的操作模型都映射并实验核验过,真正 🔨 深度只在 **Azure/Entra 身份**上(以及 🔨 on-prem 网络/IPAM,它在这里强迁移)。承载它的是那个真实资产:我**给全部四朵云都写了诚实、有据可查的支持笔记**([AWS](../platforms/aws/support.md) · [Azure](../platforms/azure/support.md) · [GCP](../platforms/gcp/support.md) · [OCI](../platforms/oci/support.md))外加 [`identity-iam.md`](identity-iam.md) 和 [`cost.md`](cost.md)——而**多云支持*就是*那份综合**用在接缝上,由 🔨 网络基本功和一个可跑的 [lab](#lab--重叠-cidr-断开互联--可跑) 撑着。上面那些接缝机制——federation、CIDR/IPAM、egress 经济学、跨云姿态——是映射并文档核验过的,**不是资历。** 更深的生产多云(跨三家真跑工作负载、一张活的跨云网络 fabric、规模化的多云 FinOps + CSPM 计划)仍在前方;注释如实说明、绝不吹。这是一个先记录每朵云、再记录它们之间接缝的 sysadmin 的诚实收官之作——公开记录、🔨/🧭 标注。
 
 ## Field kit —— 真实工具与参考
 

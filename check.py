@@ -157,9 +157,50 @@ def check_links(verbose=False):
                     near = sorted(h for h in have if frag[:12] and frag[:12] in h)
                     hint = f" — did you mean `{near[0]}`?" if near else ""
                     problems.append(f"{rel}: `{target}#{frag}` is not a heading there{hint}")
+    problems += check_mirror_links()
     if verbose:
         print(f"    {checked} links across {len(list(markdown_files()))} files")
     return problems, checked
+
+
+def check_mirror_links():
+    """A mirror must link to a mirror where one exists.
+
+    docs/README.md's convention is that each language folder mirrors the English tree,
+    so a link inside docs/zh/ that reaches back to the English canonical is correct only
+    while that target has no mirror. The moment it gets one the link is stale, and
+    nothing notices: it still resolves, and it still lands on a real document — in the
+    wrong language, silently ending the reader's Chinese path.
+
+    This is the failure the mirror batches actually create. Writing a batch means
+    pointing at the English canonical for everything the next batch will mirror, and
+    the next batch has no way to know which links to come back for."""
+    problems = []
+    for rel in markdown_files():
+        if not rel.startswith("docs/zh/"):
+            continue
+        here = os.path.dirname(rel)
+        text = open(os.path.join(ROOT, rel), encoding="utf-8").read()
+        text = FENCE_RE.sub("", text)
+        text = CODE_RE.sub("", text)
+        for line in text.splitlines():
+            # The 🌐 switcher points at the English canonical on purpose — that is the
+            # one link on the page whose whole job is to leave the mirror.
+            if line.lstrip().startswith("> 🌐"):
+                continue
+            for m in LINK_RE.finditer(line):
+                target = m.group(1)
+                if not target:
+                    continue
+                dest = os.path.normpath(os.path.join(here, target))
+                if dest.startswith("docs/zh/"):
+                    continue
+                mirror = os.path.join("docs", "zh", dest)
+                if os.path.exists(os.path.join(ROOT, mirror)):
+                    problems.append(
+                        f"{rel}: links to `{target}` in the English tree, but "
+                        f"`{mirror}` exists — a mirror links to a mirror")
+    return problems
 
 
 # --- the counts check ---------------------------------------------------------

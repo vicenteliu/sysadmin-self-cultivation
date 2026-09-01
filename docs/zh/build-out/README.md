@@ -37,13 +37,13 @@ summary: "一条横穿其他各轴的路线，不是又一条轴。"
 这话听起来很抽象，直到你给它标价。写这十六步的过程中掉出三件事，而无论把那些轴读多少遍都
 不会浮现出来：
 
-- **[身份](../../../build-out/03-identity.md)的 `Before` 列表是空的。** 它是一次 build-out
+- **[身份](03-identity.md)的 `Before` 列表是空的。** 它是一次 build-out
   里唯一一个没有物理前置条件的步骤 —— 它可以在还没有楼的时候就开始，而后面有八步挂在它
   上面。把它放在硬件之后，你不是排序排差了，你是承诺了要把每一张桌子上的机器重装一遍。
-- **[资产](../../../build-out/11-assets-and-tickets.md)编号第十一，却必须从第 1 台设备就
+- **[资产](11-assets-and-tickets.md)编号第十一，却必须从第 1 台设备就
   开始。** 这个编号对依赖是诚实的，对时间是撒谎的。一个把编号当日程表来跟的读者会把这件事
   彻底搞反，所以这一步在它的第一行就说了。
-- **[人手](../../../build-out/13-the-help-desk.md)在第十二步之前无法回答。** "一百个人需要
+- **[人手](13-the-help-desk.md)在第十二步之前无法回答。** "一百个人需要
   几个 IT" 在估算面被枚举清楚、并且你知道步骤 04、08、15 移除了哪几类工作之前，没有诚实的
   答案。
 
@@ -71,27 +71,27 @@ SCIM 怎么工作，它就失败了，而那段解释属于上游。
 
 | # | 步骤 | 🔨/🧭 |
 |---:|---|:--:|
-| 00 | [签租约之前要问的问题](../../../build-out/00-before-the-lease.md) | 🧭 |
-| 01 | [上联 —— 运营商、带宽、冗余](../../../build-out/01-uplink.md) | 🧭 / 🔨 |
-| 02 | [这栋楼 —— 竖井、IDF、供电、制冷、走线路径](../../../build-out/02-the-building.md) | 🧭 / 🔨 |
-| 03 | [**身份** —— 目录、组、SSO](../../../build-out/03-identity.md) | 🔨 |
-| 04 | [设备与镜像 —— 采购、构建、纳管](../../../build-out/04-devices-and-images.md) | 🔨 |
-| 05 | [网络 —— VLAN、无线、访客、打印、门禁](../../../build-out/05-network.md) | 🔨 |
-| 06 | [租户与邮件 —— 域名、路由、SPF/DKIM/DMARC](../../../build-out/06-tenant-and-mail.md) | 🔨 |
-| 07 | [文件与协作 —— 状态住在哪、谁能看见它](../../../build-out/07-files-and-collaboration.md) | 🔨 |
-| 08 | [终端安全与打补丁](../../../build-out/08-endpoint-security-and-patching.md) | 🔨 |
-| 09 | [备份 —— 以及还原演练](../../../build-out/09-backup-and-the-restore-drill.md) | 🔨 |
-| 10 | [远程访问 —— VPN，或者取代了它的那个东西](../../../build-out/10-remote-access.md) | 🔨 |
-| 11 | [**资产与工单** —— 那本从第 1 台设备就开始的记录](../../../build-out/11-assets-and-tickets.md) | 🔨 |
-| 12 | [会议室、AV 与 UC —— 没人认领的那个孤儿](../../../build-out/12-meeting-rooms-av-and-uc.md) | 🧭 |
-| 13 | [服务台本身 —— 以及这需要几个人](../../../build-out/13-the-help-desk.md) | 🔨 |
-| 14 | [合规证据 —— 一次审计实际要什么](../../../build-out/14-compliance-evidence.md) | 🔨 |
-| 15 | [入转离，自动化](../../../build-out/15-joiner-mover-leaver.md) | 🔨 |
+| 00 | [签租约之前要问的问题](00-before-the-lease.md) | 🧭 |
+| 01 | [上联 —— 运营商、带宽、冗余](01-uplink.md) | 🧭 / 🔨 |
+| 02 | [这栋楼 —— 竖井、IDF、供电、制冷、走线路径](02-the-building.md) | 🧭 / 🔨 |
+| 03 | [**身份** —— 目录、组、SSO](03-identity.md) | 🔨 |
+| 04 | [设备与镜像 —— 采购、构建、纳管](04-devices-and-images.md) | 🔨 |
+| 05 | [网络 —— VLAN、无线、访客、打印、门禁](05-network.md) | 🔨 |
+| 06 | [租户与邮件 —— 域名、路由、SPF/DKIM/DMARC](06-tenant-and-mail.md) | 🔨 |
+| 07 | [文件与协作 —— 状态住在哪、谁能看见它](07-files-and-collaboration.md) | 🔨 |
+| 08 | [终端安全与打补丁](08-endpoint-security-and-patching.md) | 🔨 |
+| 09 | [备份 —— 以及还原演练](09-backup-and-the-restore-drill.md) | 🔨 |
+| 10 | [远程访问 —— VPN，或者取代了它的那个东西](10-remote-access.md) | 🔨 |
+| 11 | [**资产与工单** —— 那本从第 1 台设备就开始的记录](11-assets-and-tickets.md) | 🔨 |
+| 12 | [会议室、AV 与 UC —— 没人认领的那个孤儿](12-meeting-rooms-av-and-uc.md) | 🧭 |
+| 13 | [服务台本身 —— 以及这需要几个人](13-the-help-desk.md) | 🔨 |
+| 14 | [合规证据 —— 一次审计实际要什么](14-compliance-evidence.md) | 🔨 |
+| 15 | [入转离，自动化](15-joiner-mover-leaver.md) | 🔨 |
 
 **预算与采购是每一步里的一个小节，而不是它们自己的一步** —— 钱在这里的每一步上都要决定，
 而把它们收进一个文件会产出一章没人读的财务内容。
 
-这个场景浮出来的缺口：[`GAPS.md`](../../../build-out/GAPS.md)。
+这个场景浮出来的缺口：[`GAPS.md`](GAPS.md)。
 
 ## 一步的形状
 
@@ -117,10 +117,10 @@ SCIM 怎么工作，它就失败了，而那段解释属于上游。
 文件和发放这几处从 2015 到今天的变化是 SaaS 化，而把它记在一个模型头上，是在邀请第一个正确
 的反驳。
 
-[步骤 12](../../../build-out/12-meeting-rooms-av-and-uc.md) 是那个例外，而它存在的部分理由
+[步骤 12](12-meeting-rooms-av-and-uc.md) 是那个例外，而它存在的部分理由
 正是要证明这一栏是在**测量**而不是在**断言**：实时转写、说话人归属和摘要是真正由模型驱动
 的，也是真正新的。**一个永远给同一个答案的系列，什么都没有在测量。**
 
 在 AI 确实出现的地方，它站在一条每一步都用同样方式划出的线的一侧：**让它去找到那样东西；
 不要让它去改动那样东西。** 这条线在这里不是一种意见 —— 它是从业者实际授权的边界，而
-[步骤 08](../../../build-out/08-endpoint-security-and-patching.md) 带着那些数字。
+[步骤 08](08-endpoint-security-and-patching.md) 带着那些数字。

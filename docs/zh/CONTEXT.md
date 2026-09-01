@@ -112,9 +112,9 @@ _避免_：插图、图形、品牌图、figure（那指这两种中的任一种
 ### 参考办公室
 
 **The reference office（参考办公室）**：
-一个虚构的**专名**：写在 [`the-reference-office.md`](../../the-reference-office.md) 里的
+一个虚构的**专名**：写在 [`the-reference-office.md`](the-reference-office.md) 里的
 那间一百人、单层、混合办公的办公室，它的 scenario choice 是设定的，其余一切都从一条写明
-的规则推导而来。当 [`build-out/`](../../build-out/) 的某一步说*一百个人*时，指的就是它；
+的规则推导而来。当 [`build-out/`](build-out/) 的某一步说*一百个人*时，指的就是它；
 而它是**参数，绝不是采购清单**
 （[ADR-0002](../adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)）。
 它**只消费服务、不运营服务** —— 没有产品、没有客户流量、没有它要负责的公开端点
@@ -132,9 +132,9 @@ _避免_：the office（不加限定、而实指 plate 时）、场景、示例�
 ### 走读
 
 **Walkthrough（走读）**：
-一次穿过 [`the-reference-office.md`](../../the-reference-office.md) 的叙述，写来
+一次穿过 [`the-reference-office.md`](the-reference-office.md) 的叙述，写来
 **被 TTS 引擎念出口、被听见** —— 绝不是读的。每篇走读一个文件，住在
-[`walkthrough/`](../../walkthrough/)，两种语言并排。它是一条**路线**，不是一条轴：它不
+[`walkthrough/`](walkthrough/)，两种语言并排。它是一条**路线**，不是一条轴：它不
 教任何这个仓库尚未持有的页面，只决定**顺序和语域**
 （[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。它的次序
 是它自己的 —— 它不是 `build-out/` 的十六步配个声音，编号也不对应。
@@ -170,13 +170,13 @@ _勘误_：有七条决策记录早于这个词条，用 *episode* 指文件 —
 
 **The plate**：
 这层楼**是什么** —— 有哪些空间、每个是什么、挨着谁，以及你怎么从其中任一处走到另一处。
-它住在 [`walkthrough/reference-office.plate.json`](../../walkthrough/README.md)，被每一篇
+它住在 [`walkthrough/reference-office.plate.json`](walkthrough/README.md)，被每一篇
 走读共享，而且它**止步于拓扑**：没有走廊宽度、没有疏散距离、没有卫生洁具数量、不声称这
 张图能通过任何审查
 （[ADR-0014](../adr/0014-the-plate-stops-at-topology.md)）。它的动线是写下来的，而不是从
 "家具没占的地方"推断出来的，并且一个 headless Godot 工程证明了它整个都能从电梯厅走到，
 且不穿过任何一张桌子。刻意不叫 *the plan* —— 那是**地址规划**，下一条 —— 也不叫
-*the office*，那是[参考办公室](../../the-reference-office.md)，是它被建出来所依据的参数。
+*the office*，那是[参考办公室](the-reference-office.md)，是它被建出来所依据的参数。
 _避免_：the plan、the office、地图、布局、蓝图
 
 **The floor（楼面）**：
@@ -222,7 +222,7 @@ _避免_：IDP（大写 D）、身份平台
 
 **Anchor（锚定）**：
 一个**转轨**的动词，不是深度断言：把一个陌生平台拴到你已经会的东西上。是
-[`ai-workflow/`](../../ai-workflow/how-i-use-ai-to-learn-and-operate.md) 编号规则里的
+[`ai-workflow/`](ai-workflow/how-i-use-ai-to-learn-and-operate.md) 编号规则里的
 第 2 条。它属于 🧭，这也是 ⚓ 被否决为深度标记的原因。
 _避免_：用 "anchor" 表示已确立的专长
 
@@ -262,8 +262,8 @@ _避免_：在读者分不清笔记本还是服务器的地方不加限定地用
 **Deployment（部署）**：
 **在这个仓库里是两件不相干的活，而且哪一件都不配拿这个光秃秃的词。** 在
 [`ci-cd.md`](../../cross-cutting/ci-cd.md) 及其下游，deploy 指**把代码送到某个环境**。
-在 [`endpoint/`](../../endpoint/README.md) 和
-[`build-out/04`](../../build-out/04-devices-and-images.md) 里，同一个英文词指**把一台机器
+在 [`endpoint/`](endpoint/README.md) 和
+[`build-out/04`](build-out/04-devices-and-images.md) 里，同一个英文词指**把一台机器
 交到一个人手上**。两种用法都已确立，也都不会被改名，所以设备那一侧说 **provisioning**
 —— 或者专指构建那半时说 **imaging** —— 而代码那一侧保留 *deployment*。一个需要用光秃秃
 那个词的句子，是一个出现在错误章节里的句子。
@@ -271,7 +271,7 @@ _避免_：用 deployment 指设备；两边都别用 rollout，因为它藏起�
 
 **File server / suite storage（文件服务器 / 套件存储）**：
 对*文件住在哪*的两个答案，而
-[`build-out/07`](../../build-out/07-files-and-collaboration.md) 已经把两者之间的迁移叫作
+[`build-out/07`](build-out/07-files-and-collaboration.md) 已经把两者之间的迁移叫作
 SaaS 化。**file server** 是这间办公室自己运行的存储：一台机器、一个文件系统、目录上的
 权限，以及一份现在归你负责的备份。**suite storage** 是生产力租户里的那个云盘，决定谁能读
 什么的是分享模型而不是文件系统 —— 这也是为什么
@@ -295,14 +295,14 @@ _避免_：CMDB（那是登记册的一种实现）、资产清单、实指登�
 一件工作坐在机制之上多高的位置。两种用法，相关但不同。
 **工具海拔** —— 你从哪一层去驱动一个 API（CLI、SDK、IaC），而伸手去够错的那一层，正是
 `automation.md` 系列 companion 反复点名的那个错误。**内容海拔** —— 一份文档刻意在哪里
-停住，这是一条编辑规则而不是一句描述：[`the-stack/02`](../../the-stack/02-network.md) 停
+停住，这是一条编辑规则而不是一句描述：[`the-stack/02`](the-stack/02-network.md) 停
 在"某个人必须做出并且负责的决策"，刻意排除协议机制，因为*会运维一个网络和会说出线上正在
 发生什么，是两种不同的能力。* 一个漂到自己声明的海拔以下的小节是一个缺陷，哪怕它里面每
 一句话都是真的。
 _避免_：level、depth（那是 🔨 的断言）、layer（那是 `the-stack/`）
 
 **Gap（缺口）**：
-[`build-out/GAPS.md`](../../build-out/GAPS.md) 记录的东西：百人办公室场景里的某一步，
+[`build-out/GAPS.md`](build-out/GAPS.md) 记录的东西：百人办公室场景里的某一步，
 **本应**指向一个可跑 lab 或一个 [`toolbox/`](toolbox/) 工具却指不出来。**只从那个场景
 派生。** 仓库里别处缺的材料不是 gap，也不进那个文件。
 _避免_：todo、backlog 条目、缺的那块

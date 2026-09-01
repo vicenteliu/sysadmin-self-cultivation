@@ -60,7 +60,7 @@ AWS IAM policy 还是一次 Azure role assignment。subnet 就是 subnet。幂�
 
 **不会迁移** —— **名字**、**默认值**、**怪癖**和**故障模式**。而这一层恰恰是错误和
 故障的来源，也恰恰是"我读过营销页"会把你烧到的地方。它同时也是 AI 最擅长压缩的一层
-—— **前提是**你去验证（见 [`ai-workflow/`](../../ai-workflow/)）。
+—— **前提是**你去验证（见 [`ai-workflow/`](ai-workflow/)）。
 
 ## 让它落地的那份纪律
 

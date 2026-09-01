@@ -74,10 +74,10 @@ summary: "🧭 经过验证的 ramp。房间 AV 集成不是这位作者亲手�
 
 ## 往深里读
 
-- [`the-stack/02-network.md`](../../../the-stack/02-network.md) —— 为你不控制的设备做分段
-- [`cross-cutting/saas-admin.md`](../../../cross-cutting/saas-admin.md) —— 房间账号和资源
+- [`the-stack/02-network.md`](../the-stack/02-network.md) —— 为你不控制的设备做分段
+- [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) —— 房间账号和资源
   日历都是目录对象
-- [`cross-cutting/itsm-and-assets.md`](../../../cross-cutting/itsm-and-assets.md) —— 房间
+- [`cross-cutting/itsm-and-assets.md`](../cross-cutting/itsm-and-assets.md) —— 房间
   系统是资产，而且是盘点里最常缺失的那一类
 
 ## 动手做
@@ -87,7 +87,7 @@ summary: "🧭 经过验证的 ramp。房间 AV 集成不是这位作者亲手�
   为什么在那个数字翻了三倍的同时每一次访问复审都通过。
 
 🔨 **AV 那一半保持为一条边界。** 交付一个房间是与供应商一起完成的物理工作，而为它编一个练习
-会歪曲这一步。作为边界记录在 [`GAPS.md`](../../../build-out/GAPS.md) 里。
+会歪曲这一步。作为边界记录在 [`GAPS.md`](GAPS.md) 里。
 
 ## 把它做反了会怎样
 

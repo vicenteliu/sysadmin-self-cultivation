@@ -6,7 +6,7 @@
 
 ---
 
-> [`saas-admin.md`](../../../cross-cutting/saas-admin.md) 讲的是把 M365 当作一份**受管资产（managed estate）** —— 生命周期与 admin-center 层面的工程。本篇讲另一半：**M365 支持（support）**，也就是让邮件、身份、协作对真实的人**保持可用**的那门修/救（break-fix）手艺 —— 并且专门讲清楚：**一个来自别的方向的强 sysadmin 接手它时，哪些直觉会坑他。** 支持这门手艺是 🔨 亲手做过；再往深的租户工程尾巴是 🧭 ramp，如实标注。
+> [`saas-admin.md`](saas-admin.md) 讲的是把 M365 当作一份**受管资产（managed estate）** —— 生命周期与 admin-center 层面的工程。本篇讲另一半：**M365 支持（support）**，也就是让邮件、身份、协作对真实的人**保持可用**的那门修/救（break-fix）手艺 —— 并且专门讲清楚：**一个来自别的方向的强 sysadmin 接手它时，哪些直觉会坑他。** 支持这门手艺是 🔨 亲手做过；再往深的租户工程尾巴是 🧭 ramp，如实标注。
 
 一个熟练的 Linux / 网络 / on-prem-AD / 云运维，接手 M365 支持通常比一个新招的 helpdesk 快 —— **前提是**他能察觉自己哪些直觉已经不再适用。这段转轨里的痛，大多不是"不懂"，而是**把一身自信的肌肉记忆，指向了一个会打破自己规则的系统**。本篇把职责、真正反复出现的工单、以及有经验老手的反射恰好失灵的那几处一一点名 —— 让这次迁移变成一张核对清单，而不是一连串自找的故障。
 
@@ -99,13 +99,13 @@ M365 的修/救本质是在一小组界面上做模式识别。你要练成的�
 ## AI 辅助的 ramp（M365-support 口味）
 
 - **把你的直觉翻译成 M365 的行话：** *"我会 `tcpdump` 然后 grep 邮件日志 —— 一封没投递的邮件，Exchange Online 的等价做法是什么，我又有哪些看不到？"* 那个诚实的答案（Message Trace + 它的盲区）恰恰是 AI 擅长压缩的东西。
-- **让它起草 cmdlet，你亲手做最小权限。** AI 在 **PowerShell / Graph** 上是真强 —— 而它也会**发明不存在的 cmdlet 和 Graph endpoint**、**把 Entra 角色和 Exchange RBAC 混为一谈**、并且爽快地给你一条**爆炸半径是整个租户的 transport rule 或共享改动**。每一段生成的脚本都要对着[官方 cmdlet 参考](#field-kit--真实工具与参考)核验、并先试点，才允许碰生产。这跟本仓库其余部分是同一套"往死里验证"的纪律 —— 见 [`ai-workflow/`](../../../ai-workflow/)。
+- **让它起草 cmdlet，你亲手做最小权限。** AI 在 **PowerShell / Graph** 上是真强 —— 而它也会**发明不存在的 cmdlet 和 Graph endpoint**、**把 Entra 角色和 Exchange RBAC 混为一谈**、并且爽快地给你一条**爆炸半径是整个租户的 transport rule 或共享改动**。每一段生成的脚本都要对着[官方 cmdlet 参考](#field-kit--真实工具与参考)核验、并先试点，才允许碰生产。这跟本仓库其余部分是同一套"往死里验证"的纪律 —— 见 [`ai-workflow/`](../ai-workflow/)。
 
 ## 诚实边界
 
-🔨 **支持这门手艺是亲手做过的**，而且它靠着真实的相邻深度：**M365 admin 运维**（Exchange 邮箱/shared mailbox/transport rule、SharePoint 权限、Teams —— 见 [`saas-admin.md`](../../../cross-cutting/saas-admin.md)）、**Entra ID 初始搭建**（租户级 MFA、一条 Conditional Access 策略、PIM —— 见 [`identity-iam.md`](../../../cross-cutting/identity-iam.md)）、以及 Intune 合规会 gate 访问的 **endpoint** 相邻面（[`endpoint/`](../../../endpoint/)）。DNS/TLS/身份这些基本功直接迁移。
+🔨 **支持这门手艺是亲手做过的**，而且它靠着真实的相邻深度：**M365 admin 运维**（Exchange 邮箱/shared mailbox/transport rule、SharePoint 权限、Teams —— 见 [`saas-admin.md`](saas-admin.md)）、**Entra ID 初始搭建**（租户级 MFA、一条 Conditional Access 策略、PIM —— 见 [`identity-iam.md`](identity-iam.md)）、以及 Intune 合规会 gate 访问的 **endpoint** 相邻面（[`endpoint/`](../endpoint/)）。DNS/TLS/身份这些基本功直接迁移。
 
-🧭 **尾巴是 ramp，并且如实标为 ramp** —— 15 万用户规模的**深度 Exchange Online 租户工程**、专职的 **Defender for Office 365 / Proofpoint** 运营、**DMARC/DKIM 强制**推行、以及下面的 **DFIR / 入侵取证**工具，都是专精赛道，不是声明。这条线和 [`saas-admin.md`](../../../cross-cutting/saas-admin.md) 与 [`working-with-security.md`](../../../cross-cutting/working-with-security.md) 里画的是同一条：运维-排障是强项，跑整个安全项目是 ramp。
+🧭 **尾巴是 ramp，并且如实标为 ramp** —— 15 万用户规模的**深度 Exchange Online 租户工程**、专职的 **Defender for Office 365 / Proofpoint** 运营、**DMARC/DKIM 强制**推行、以及下面的 **DFIR / 入侵取证**工具，都是专精赛道，不是声明。这条线和 [`saas-admin.md`](saas-admin.md) 与 [`working-with-security.md`](../../../cross-cutting/working-with-security.md) 里画的是同一条：运维-排障是强项，跑整个安全项目是 ramp。
 
 ## Field kit —— 真实工具与参考
 

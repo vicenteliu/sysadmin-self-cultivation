@@ -65,9 +65,9 @@ summary: "🔨 亲手做过（ServiceNow 约五年；资产对账与审计自动
 
 ## 往深里读
 
-- [`cross-cutting/itsm-and-assets.md`](../../../cross-cutting/itsm-and-assets.md) ——
+- [`cross-cutting/itsm-and-assets.md`](../cross-cutting/itsm-and-assets.md) ——
   ITSM 追踪的那四样东西、那本让你保持诚实的盘点、访问治理
-- [`cross-cutting/identity-iam.md`](../../../cross-cutting/identity-iam.md) —— 因为一条没有
+- [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) —— 因为一条没有
   归属身份的设备记录是半条记录
 - [`endpoint/`](../endpoint/README.md) —— 状态数据从哪儿来
 - [参考办公室](../the-reference-office.md#parameters) —— 这一步底下的算术：一年约 123 次登记

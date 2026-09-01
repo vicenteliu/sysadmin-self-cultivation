@@ -71,11 +71,11 @@ summary: "🔨 亲手做过 —— M365 租户工作以及围绕它的修/救手
 
 - [`cross-cutting/m365-support.md`](../cross-cutting/m365-support.md) —— 这个面上的 🔨
   修/救手艺
-- [`cross-cutting/saas-admin.md`](../../../cross-cutting/saas-admin.md) —— 横跨 Workspace
+- [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) —— 横跨 Workspace
   和 M365 的身份主干，以及 SCIM 生命周期
 - [`cross-cutting/web-and-tls.md`](../../../cross-cutting/web-and-tls.md) —— 证书与 DNS
   记录卫生，和邮件记录是同一门纪律
-- [`cross-cutting/identity-iam.md`](../../../cross-cutting/identity-iam.md)
+- [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md)
 
 ## 动手做
 

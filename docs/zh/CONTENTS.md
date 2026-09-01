@@ -41,44 +41,44 @@ summary: "详细索引：每个模块是什么、住在哪。"
 | --- | --- | --- |
 | [`WHY.md`](WHY.md) | 这个项目为什么存在；AI 时代这门手艺往哪走 | ✅ |
 | [`00-the-operating-model.md`](00-the-operating-model.md) | 可迁移的骨架 —— 三个动作、七个面 | ✅ |
-| [`ai-workflow/`](../../ai-workflow/) | 怎么用 AI 学习和运维 —— 以及怎么约束它诚实 | ✅ |
+| [`ai-workflow/`](ai-workflow/) | 怎么用 AI 学习和运维 —— 以及怎么约束它诚实 | ✅ |
 
 ## II. Foundations —— 一切默认你有的底子
 
 | 模块 | 是什么 | 状态 |
 | --- | --- | --- |
-| [`foundations/`](../../foundations/) | Linux + 脚本（Python/Bash/PowerShell）—— 每个岗位脚下的地板 | ✅ |
+| [`foundations/`](foundations/) | Linux + 脚本（Python/Bash/PowerShell）—— 每个岗位脚下的地板 | ✅ |
 
 ## III. The Stack —— 按层读，自底向上（✅ 完成，01→07）
 
 七个平台在每一层被对比，从机房往上写。这个项目最有特色的一条轴。见
-[`the-stack/`](../../the-stack/)。
+[`the-stack/`](the-stack/)。
 
 | 章 | 覆盖 | 状态 |
 | --- | --- | --- |
-| [`01-physical`](../../the-stack/01-physical.md) | 数据中心、硬件、hypervisor、故障域 | ✅ |
-| [`02-network`](../../the-stack/02-network.md) | underlay/overlay、VPC 模型、出网计费表、调试阶梯 | ✅ |
-| [`03-compute-and-images`](../../the-stack/03-compute-and-images.md) | 计算形态、镜像流水线、bake vs fry、cloud-init | ✅ |
-| [`04-storage`](../../the-stack/04-storage.md) | block/file/object、备份的恐惧 · **+ 可跑 [lab](../../the-stack/labs/04-backup-not-snapshot/)** | ✅ |
-| [`05-platform-services`](../../the-stack/05-platform-services.md) | 容器、serverless、托管数据库、自建 vs 租用 | ✅ |
-| [`06-observability`](../../the-stack/06-observability.md) | metric/log/trace、SLI/SLO、OpenTelemetry | ✅ |
-| [`07-security`](../../the-stack/07-security.md) | 责任共担、纵深防御、CSPM/EDR/SIEM | ✅ |
+| [`01-physical`](the-stack/01-physical.md) | 数据中心、硬件、hypervisor、故障域 | ✅ |
+| [`02-network`](the-stack/02-network.md) | underlay/overlay、VPC 模型、出网计费表、调试阶梯 | ✅ |
+| [`03-compute-and-images`](the-stack/03-compute-and-images.md) | 计算形态、镜像流水线、bake vs fry、cloud-init | ✅ |
+| [`04-storage`](the-stack/04-storage.md) | block/file/object、备份的恐惧 · **+ 可跑 [lab](../../the-stack/labs/04-backup-not-snapshot/)** | ✅ |
+| [`05-platform-services`](the-stack/05-platform-services.md) | 容器、serverless、托管数据库、自建 vs 租用 | ✅ |
+| [`06-observability`](the-stack/06-observability.md) | metric/log/trace、SLI/SLO、OpenTelemetry | ✅ |
+| [`07-security`](the-stack/07-security.md) | 责任共担、纵深防御、CSPM/EDR/SIEM | ✅ |
 
 ## IV. Platforms —— 按平台读（全部七个）
 
 每个模块都有 `README`（是什么 + 技能图 + AI-ramp 摘要）· `skills-map` · `ai-ramp` ·
 `labs/` 里一条**三段式 CLI arc**；公有云另加更深的 **architecture · operations ·
 automation** 三件套。The Stack 里对比的七个平台都有模块。见
-[`platforms/`](../../platforms/)。
+[`platforms/`](platforms/)。
 
 **公有云** —— 一个你用 API 驱动的租来的数据中心：
 
 | 平台 | 有什么 · 诚实标注 |
 | --- | --- |
-| [`aws/`](../../platforms/aws/) | ✅ 范例 + [architecture](../../platforms/aws/architecture.md)/[operations](../../platforms/aws/operations.md)/[automation](../../platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs（**2 个可跑** + 三段式 CLI arc）。先读它。· 🧭 |
-| [`azure/`](../../platforms/azure/) | ✅ + [architecture](../../platforms/azure/architecture.md)/[operations](../../platforms/azure/operations.md)/[automation](../../platforms/azure/automation.md)/[support](platforms/azure/support.md) + 三段式 CLI arc。· 🧭，**Entra/身份 🔨** |
-| [`gcp/`](../../platforms/gcp/) | ✅ + [architecture](../../platforms/gcp/architecture.md)/[operations](../../platforms/gcp/operations.md)/[automation](../../platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 三段式 CLI arc。global-VPC 是那个异类。· 🧭 |
-| [`oci/`](../../platforms/oci/) | ✅ + [architecture](../../platforms/oci/architecture.md)/[operations](../../platforms/oci/operations.md)/[automation](../../platforms/oci/automation.md)/[support](platforms/oci/support.md) + 三段式 CLI arc + [compartment/verb lab](../../platforms/oci/labs/a-compartment-is-not-an-account/)。最年轻的超大规模云 —— compartment、OCPU、裸金属优先、便宜出网。· 🧭 |
+| [`aws/`](platforms/aws/) | ✅ 范例 + [architecture](../../platforms/aws/architecture.md)/[operations](../../platforms/aws/operations.md)/[automation](../../platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs（**2 个可跑** + 三段式 CLI arc）。先读它。· 🧭 |
+| [`azure/`](platforms/azure/) | ✅ + [architecture](../../platforms/azure/architecture.md)/[operations](../../platforms/azure/operations.md)/[automation](../../platforms/azure/automation.md)/[support](platforms/azure/support.md) + 三段式 CLI arc。· 🧭，**Entra/身份 🔨** |
+| [`gcp/`](platforms/gcp/) | ✅ + [architecture](../../platforms/gcp/architecture.md)/[operations](../../platforms/gcp/operations.md)/[automation](../../platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 三段式 CLI arc。global-VPC 是那个异类。· 🧭 |
+| [`oci/`](platforms/oci/) | ✅ + [architecture](../../platforms/oci/architecture.md)/[operations](../../platforms/oci/operations.md)/[automation](../../platforms/oci/automation.md)/[support](platforms/oci/support.md) + 三段式 CLI arc + [compartment/verb lab](../../platforms/oci/labs/a-compartment-is-not-an-account/)。最年轻的超大规模云 —— compartment、OCPU、裸金属优先、便宜出网。· 🧭 |
 
 **私有云 / 本地** —— 跑在**你自己**硬件上的平台：
 
@@ -91,18 +91,18 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 ## V. Cross-cutting —— 按主题读（可迁移的那些面）
 
 跨每个平台迁移的那几层。有些是**专门笔记**；有些按层读更自然，于是放在 The Stack 里，
-这里**交叉链接而不重复**。见 [`cross-cutting/`](../../cross-cutting/)。
+这里**交叉链接而不重复**。见 [`cross-cutting/`](cross-cutting/)。
 
 | 主题 | 归处 | 状态 |
 | --- | --- | --- |
-| [`identity-iam`](../../cross-cutting/identity-iam.md) | 专门笔记 | ✅ |
+| [`identity-iam`](cross-cutting/identity-iam.md) | 专门笔记 | ✅ |
 | [`iac-and-config`](../../cross-cutting/iac-and-config.md) | 专门笔记（Terraform/Ansible/Puppet） | ✅ |
 | [`terraform-support`](cross-cutting/terraform-support.md) | 专门笔记（Terraform 修/救手艺 + Ansible sysadmin 的 ramp；state/漂移/替换）—— **🧭** | ✅ |
 | [`ci-cd`](../../cross-cutting/ci-cd.md) | 专门笔记（CI/CD 流水线、GitOps、回滚） | ✅ |
 | [`databases`](../../cross-cutting/databases.md) | 专门笔记（备份/PITR、复制、自建 vs 托管）—— **🔨** | ✅ |
-| [`itsm-and-assets`](../../cross-cutting/itsm-and-assets.md) | 专门笔记（ITSM、CMDB、资产对账、访问治理）—— **🔨** | ✅ |
-| [`endpoint/`](../../endpoint/) | 专门轨道（Jamf/Intune/PXE/打补丁）+ 三篇 companion —— [provisioning](../../endpoint/provisioning.md) · [management](../../endpoint/management.md) · [encryption and keys](../../endpoint/encryption-and-keys.md) | ✅ |
-| [`saas-admin`](../../cross-cutting/saas-admin.md) | 专门笔记（Google Workspace / M365） | ✅ |
+| [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | 专门笔记（ITSM、CMDB、资产对账、访问治理）—— **🔨** | ✅ |
+| [`endpoint/`](endpoint/) | 专门轨道（Jamf/Intune/PXE/打补丁）+ 三篇 companion —— [provisioning](../../endpoint/provisioning.md) · [management](../../endpoint/management.md) · [encryption and keys](../../endpoint/encryption-and-keys.md) | ✅ |
+| [`saas-admin`](cross-cutting/saas-admin.md) | 专门笔记（Google Workspace / M365） | ✅ |
 | [`m365-support`](cross-cutting/m365-support.md) | 专门笔记（M365 修/救手艺 + 跨方向转轨）—— **🔨** | ✅ |
 | [`kubernetes`](../../cross-cutting/kubernetes.md) | 专门笔记（比 the-stack/05 更深） | ✅ |
 | [`kubernetes-support`](cross-cutting/kubernetes-support.md) | 专门笔记（K8s 修/救手艺 + Linux sysadmin 的 ramp；调谐环 / cattle-not-pets / endpoints）—— **🧭** | ✅ |
@@ -115,12 +115,12 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`vpn-and-remote-access`](../../cross-cutting/vpn-and-remote-access.md) | 专门笔记（从连接到够到之间的五个决策；网段、路由、解析器、会话寿命）—— **🔨**。收窄到决策，绝不写机制 | ✅ |
 | [`network-evolution`](../../cross-cutting/network-evolution.md) | 专门笔记（十五年里变了什么、没变什么；防火墙的轴、F5 类设备、无线的代际、往上和往旁边搬走的速度）—— 有线 **🔨**、无线 **🧭**。关掉六个问题 | ✅ |
 | [`site-network-design`](../../cross-cutting/site-network-design.md) | 专门笔记（一个物理站点：分段、编址、有线/无线、DNS-DHCP、802.1X、访客）—— **🔨**，无线部分 **🧭** | ✅ |
-| [`cost`](../../cross-cutting/cost.md) | 专门笔记（把成本当作一种控制） | ✅ |
-| 网络 | → [`the-stack/02`](../../the-stack/02-network.md) | ✅ 在 The Stack 里 |
-| 存储 | → [`the-stack/04`](../../the-stack/04-storage.md) | ✅ 在 The Stack 里 |
-| 虚拟化 | → [`the-stack/01`](../../the-stack/01-physical.md) | ✅ 在 The Stack 里 |
-| 可观测 | → [`the-stack/06`](../../the-stack/06-observability.md) | ✅ 在 The Stack 里 |
-| 安全与合规 | → [`the-stack/07`](../../the-stack/07-security.md) | ✅ 在 The Stack 里 |
+| [`cost`](cross-cutting/cost.md) | 专门笔记（把成本当作一种控制） | ✅ |
+| 网络 | → [`the-stack/02`](the-stack/02-network.md) | ✅ 在 The Stack 里 |
+| 存储 | → [`the-stack/04`](the-stack/04-storage.md) | ✅ 在 The Stack 里 |
+| 虚拟化 | → [`the-stack/01`](the-stack/01-physical.md) | ✅ 在 The Stack 里 |
+| 可观测 | → [`the-stack/06`](the-stack/06-observability.md) | ✅ 在 The Stack 里 |
+| 安全与合规 | → [`the-stack/07`](the-stack/07-security.md) | ✅ 在 The Stack 里 |
 
 **技能图** —— 同一批材料做成可勾选的能力清单，从平台图转置而来：一个主题横跨全部七个
 平台，按每项技能能走多远分层。marker 落在这里的小节上，不落在文件上。
@@ -166,12 +166,12 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 
 | 条目 | 说明 | 状态 |
 |---|---|---|
-| [`build-out/`](../../build-out/) | **16 步全部写完。** 依赖图已验证无环且完全对称；16 步里有 15 步指向一个可跑 lab 或工具（94%） | ✅ |
-| [`build-out/03-identity.md`](../../build-out/03-identity.md) | `Before` 为空的那一步 —— 身份没有物理前置条件，而有八步挂在它上面 | ✅ 🔨 |
-| [`build-out/11-assets-and-tickets.md`](../../build-out/11-assets-and-tickets.md) | 编号第十一，却必须从第 1 台设备就开始 —— 对依赖诚实，对时间撒谎 | ✅ 🔨 |
-| [`build-out/13-the-help-desk.md`](../../build-out/13-the-help-desk.md) | 一百个人需要几个 IT —— 在估算面被枚举清楚之前无法回答 | ✅ 🔨 |
+| [`build-out/`](build-out/) | **16 步全部写完。** 依赖图已验证无环且完全对称；16 步里有 15 步指向一个可跑 lab 或工具（94%） | ✅ |
+| [`build-out/03-identity.md`](build-out/03-identity.md) | `Before` 为空的那一步 —— 身份没有物理前置条件，而有八步挂在它上面 | ✅ 🔨 |
+| [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | 编号第十一，却必须从第 1 台设备就开始 —— 对依赖诚实，对时间撒谎 | ✅ 🔨 |
+| [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | 一百个人需要几个 IT —— 在估算面被枚举清楚之前无法回答 | ✅ 🔨 |
 | [`docs/questions.md`](../questions.md) | 有人问过这个仓库、而它还答不上的问题 —— **七个域三十问**，全部已答。索引，加上划在边界外的理由；各域是 [`docs/questions/`](../questions/) 下的文件，其中 4 个是先被收窄才答的，理由都留着 | ✅ |
-| [`build-out/GAPS.md`](../../build-out/GAPS.md) | 场景浮出来的六个真缺口，其中四个是同一个形状 —— **六个现在全部关闭**，靠 [`remote-access-four-causes`](../../cross-cutting/labs/remote-access-four-causes/)、[`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/)、[`mail-authentication-alignment`](../../cross-cutting/labs/mail-authentication-alignment/)、[`asset-reconciliation`](../../cross-cutting/labs/asset-reconciliation/)、[`help-desk-queue`](../../cross-cutting/labs/help-desk-queue/) 和 [`transcript-retention`](../../cross-cutting/labs/transcript-retention/) | ✅ 活的 |
+| [`build-out/GAPS.md`](build-out/GAPS.md) | 场景浮出来的六个真缺口，其中四个是同一个形状 —— **六个现在全部关闭**，靠 [`remote-access-four-causes`](../../cross-cutting/labs/remote-access-four-causes/)、[`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/)、[`mail-authentication-alignment`](../../cross-cutting/labs/mail-authentication-alignment/)、[`asset-reconciliation`](../../cross-cutting/labs/asset-reconciliation/)、[`help-desk-queue`](../../cross-cutting/labs/help-desk-queue/) 和 [`transcript-retention`](../../cross-cutting/labs/transcript-retention/) | ✅ 活的 |
 
 ## VIII. 走读 —— 第二条路线，是听的不是读的
 
@@ -235,8 +235,8 @@ docker compose -f site/docker-compose.yml up    # http://127.0.0.1:8099
 —— 而这个标注是承重的，不是装饰。七个平台里有两个是 **🔨**：
 [vSphere](../../platforms/vsphere/)（一套生产 vCenter 估算面，VCP6-DCV/NV）和
 [self-host](../../platforms/self-host/)（10 万+ 设备的机队），以及那些横切的强项 ——
-Linux、[endpoint](../../endpoint/)、[身份](../../cross-cutting/identity-iam.md)、
-[SaaS 管理](../../cross-cutting/saas-admin.md)，和那份自动化纪律。公有云、OpenStack 的
+Linux、[endpoint](endpoint/)、[身份](cross-cutting/identity-iam.md)、
+[SaaS 管理](cross-cutting/saas-admin.md)，和那份自动化纪律。公有云、OpenStack 的
 控制面，以及深度 Kubernetes 是诚实的 **🧭** ramp —— 测绘过、验证过、可跑，从不吹。
 这个区分就是全部的意义（[`WHY.md`](WHY.md) 解释了为什么它在 AI 时代更要紧，而不是更不
 要紧）。

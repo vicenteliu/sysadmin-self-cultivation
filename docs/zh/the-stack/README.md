@@ -48,9 +48,9 @@ summary: "这个仓库的第三条轴。platforms/ 一次读一朵云；cross-cu
 | --- | --- | --- | --- |
 | **你来建** | [自建裸金属](../../../platforms/self-host/) · VMware [vSphere](../../../platforms/vsphere/) | 你 | 🔨 亲手做过的深度 |
 | **你来建一朵云** | [OpenStack](../../../platforms/openstack/) | 你（外加一个你现在得运维的控制面） | 🧭 ramp（与 KVM 邻接的 🔨） |
-| **他们来建** | [AWS](../../../platforms/aws/) · [Azure](../../../platforms/azure/) · [GCP](../../../platforms/gcp/) · [OCI](../../../platforms/oci/) | 提供方 | 🧭 ramp |
+| **他们来建** | [AWS](../platforms/aws/) · [Azure](../platforms/azure/) · [GCP](../platforms/gcp/) · [OCI](../platforms/oci/) | 提供方 | 🧭 ramp |
 
-**七个全部**现在都有一个专门的 **[`platforms/`](../../../platforms/)** 模块（"端到端运维
+**七个全部**现在都有一个专门的 **[`platforms/`](../platforms/)** 模块（"端到端运维
 这一个"的视图）；这个系列是"逐层对比它们"的视图。
 
 🔨/🧭 标记遵循仓库的规则（[`WHY.md`](../WHY.md)）：亲手做过的深度只在它确实存在的地方声称；
@@ -127,13 +127,13 @@ mindmap
 
 | 章 | 状态 |
 | --- | --- |
-| [`01-physical.md`](../../../the-stack/01-physical.md) —— 物理层：数据中心、硬件、hypervisor、故障域 | ✅ |
-| [`02-network.md`](../../../the-stack/02-network.md) —— underlay/overlay、VPC 模型、出网计费表、调试阶梯 | ✅ |
-| [`03-compute-and-images.md`](../../../the-stack/03-compute-and-images.md) —— 计算形态、镜像流水线、bake vs fry、处处 cloud-init | ✅ |
-| [`04-storage.md`](../../../the-stack/04-storage.md) —— block/file/object、SAN/NAS 的现实 vs 云盘、备份的恐惧 | ✅ |
-| [`05-platform-services.md`](../../../the-stack/05-platform-services.md) —— 容器、serverless、托管数据库、自建与租用的那条线 | ✅ |
-| [`06-observability.md`](../../../the-stack/06-observability.md) —— 三支柱、监控 vs 可观测、SLI/SLO/error budget、OTel | ✅ |
-| [`07-security.md`](../../../the-stack/07-security.md) —— 责任共担、纵深防御、CSPM/EDR/SIEM/secret、合规 | ✅ |
+| [`01-physical.md`](01-physical.md) —— 物理层：数据中心、硬件、hypervisor、故障域 | ✅ |
+| [`02-network.md`](02-network.md) —— underlay/overlay、VPC 模型、出网计费表、调试阶梯 | ✅ |
+| [`03-compute-and-images.md`](03-compute-and-images.md) —— 计算形态、镜像流水线、bake vs fry、处处 cloud-init | ✅ |
+| [`04-storage.md`](04-storage.md) —— block/file/object、SAN/NAS 的现实 vs 云盘、备份的恐惧 | ✅ |
+| [`05-platform-services.md`](05-platform-services.md) —— 容器、serverless、托管数据库、自建与租用的那条线 | ✅ |
+| [`06-observability.md`](06-observability.md) —— 三支柱、监控 vs 可观测、SLI/SLO/error budget、OTel | ✅ |
+| [`07-security.md`](07-security.md) —— 责任共担、纵深防御、CSPM/EDR/SIEM/secret、合规 | ✅ |
 
 **这副栈已经完整：自底向上五层（01–05），加上骑在它们全部之上的那两个横切层 —— 可观测
 （06，你怎么**看见**它）和安全（07，你怎么**守住**它）。** 01–05 章是按它实际被运维的方向

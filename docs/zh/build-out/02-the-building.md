@@ -64,7 +64,7 @@ summary: "把一个新站点建起来是 🧭；之后机柜里发生的事是 �
 
 ## 往深里读
 
-- [`the-stack/01-physical.md`](../../../the-stack/01-physical.md) —— 跨七个平台对比的物理层；
+- [`the-stack/01-physical.md`](../the-stack/01-physical.md) —— 跨七个平台对比的物理层；
   一个可用区实际上是什么
 - [`platforms/self-host/architecture.md`](../../../platforms/self-host/architecture.md) 和
   [`operations.md`](../../../platforms/self-host/operations.md) —— 那些 🔨 材料，来自运行
@@ -80,7 +80,7 @@ summary: "把一个新站点建起来是 🧭；之后机柜里发生的事是 �
   那套推理对一间弱电间的适用性，和对一个 region 一样直接。
 
 🔴 **缺口：** 这里没有任何东西覆盖施工本身 —— 没有一张把毛坯建成机房的检查清单。那是一条
-边界而不是一个洞，并在 [`GAPS.md`](../../../build-out/GAPS.md) 里被这样标注。
+边界而不是一个洞，并在 [`GAPS.md`](GAPS.md) 里被这样标注。
 
 ## 把它做反了会怎样
 
