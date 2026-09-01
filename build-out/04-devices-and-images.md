@@ -8,6 +8,8 @@ summary: "🔨 hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, ha
 ---
 # 04 · Devices and images — purchase, build, enroll
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/04-devices-and-images.md)
+
 > 🔨 hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, hardware lifecycle
 > **Before:** 02 the building · 03 identity. **After:** 05 network · 08 endpoint security · 11 assets · 13 the help desk
 

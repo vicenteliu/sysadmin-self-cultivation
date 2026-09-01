@@ -8,6 +8,8 @@ summary: "🔨 hands-on — SaaS administration and the sharing/permission surfa
 ---
 # 07 · Files and collaboration — where state lives, who can see it
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/07-files-and-collaboration.md)
+
 > 🔨 hands-on — SaaS administration and the sharing/permission surface
 > **Before:** 03 identity · 05 network · 06 tenant. **After:** 09 backup · 14 compliance evidence
 
