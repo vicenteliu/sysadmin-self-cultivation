@@ -8,6 +8,8 @@ summary: "Chapter 01 ended on a promise: the real lock-in lives up here."
 ---
 # 02 — The Network Layer
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/02-network.md)
+
 > Chapter 01 ended on a promise: the real lock-in lives up here. The network layer
 > is where the seven platforms differ most, where the money quietly leaks, and
 > where "it's always DNS" was coined by someone who had already checked DNS twice.

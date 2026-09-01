@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 262,
+  "count": 264,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1423,6 +1423,42 @@
       "summary": "Every step in the build-out says a hundred people.",
       "language": "zh",
       "mirrors": "the-reference-office.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/01-physical.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "Every cloud is somebody's data center. The only question is whose pager goes off when a disk dies — and whether you can see it happen.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "the-stack/01-physical.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/02-network.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "Chapter 01 ended on a promise: the real lock-in lives up here.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "the-stack/02-network.md",
       "derived": true
     },
     "docs/zh/the-stack/README.md": {

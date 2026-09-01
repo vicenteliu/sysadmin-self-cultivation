@@ -8,6 +8,8 @@ summary: "Every cloud is somebody's data center. The only question is whose page
 ---
 # 01 — The Physical Layer
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/01-physical.md)
+
 > Every cloud is somebody's data center. The only question is whose pager goes off
 > when a disk dies — and whether you can see it happen. Start here and the rest of
 > the stack stops being magic.
