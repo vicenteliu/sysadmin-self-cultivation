@@ -1,0 +1,762 @@
+{
+ "version": 2,
+ "walkthrough": "03-the-day-it-breaks",
+ "plate": "reference-office.plate.json",
+ "scripts": [
+  "03-the-day-it-breaks.zh.md",
+  "03-the-day-it-breaks.en.md"
+ ],
+ "note": "Beat entries are partial. A beat with no entry inherits the state of the beat before it, so only changes are written down. The first beat must always carry a full state. The plate is shared with walkthroughs one and two; what belongs to this one is the panels and the cues, and every panel here is about the response rather than about the network or the joiner. Three props are plans rather than places, because the decision, the ladder and the record are the things this walkthrough is actually about and none of them has a location on a floor.",
+ "props": [
+  {
+   "id": "service",
+   "kind": "space",
+   "at": [
+    4,
+    20
+   ],
+   "segment": "seg-staff",
+   "label": {
+    "zh": "服务台 · 九点十二分",
+    "en": "Service desk — twelve past nine"
+   },
+   "why": {
+    "zh": "今天上午，这张台子就是这栋楼的检测系统。它在动线上，所以人不用决定要来报障——他们路过。九十秒内的两句一模一样的话不是两条信息，是一条被说了两遍，而这栋楼没有别的东西比它更早知道。",
+    "en": "This morning this desk is the building's detection system. It sits on the route, so nobody decides to report — they walk past. Two identical sentences ninety seconds apart are one piece of information said twice, and nothing else in this building knew sooner."
+   },
+   "criteria": {
+    "zh": [
+     "一个走读席位，就一个",
+     "支持窗口五十小时，对着四十小时的工时",
+     "自动化之后每周约 48 张工单"
+    ],
+    "en": [
+     "One walk-up position, and only one",
+     "A fifty-hour window against a forty-hour week",
+     "About 48 tickets a week after the automation"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "the-reference-office.md",
+     "frag": "parameters",
+     "marker": "🔨"
+    }
+   ]
+  },
+  {
+   "id": "the-decision",
+   "kind": "plan",
+   "at": [
+    14,
+    13
+   ],
+   "segment": "seg-staff",
+   "label": {
+    "zh": "先缓解还是先诊断",
+    "en": "Mitigate or diagnose"
+   },
+   "why": {
+    "zh": "头十分钟里后果最重的那件事，而它不是技术决定。先缓解平均省九分钟，尾部付六分钟——而那六分钟恰好就是缓解窗口。口号只报前一半的人是在推销。",
+    "en": "The most consequential thing in the first ten minutes, and it is not a technical decision. Mitigating first saves nine minutes of mean and pays six in the tail — and the six is exactly the mitigation window. Anybody quoting only the first half is selling."
+   },
+   "criteria": {
+    "zh": [
+     "通用缓解覆盖不到约四成成因时，翻转",
+     "缓解本身的期望损失超过约十分钟时，翻转",
+     "所以演练过的切换与恢复，是这个直觉成立的前提"
+    ],
+    "en": [
+     "Inverts below about 40% mitigation coverage",
+     "Inverts past about ten minutes of expected mitigation damage",
+     "So the rehearsed failover is what makes the instinct correct"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "cross-cutting/incident-response.md",
+     "frag": "the-incident-lifecycle",
+     "marker": "🔨"
+    },
+    {
+     "path": "cross-cutting/labs/mitigate-before-diagnose/README.md",
+     "frag": "the-point",
+     "marker": "🔨"
+    }
+   ]
+  },
+  {
+   "id": "the-ladder",
+   "kind": "plan",
+   "at": [
+    30,
+    13
+   ],
+   "segment": "seg-staff",
+   "label": {
+    "zh": "那架梯子 · 一级排除一件事",
+    "en": "The ladder — a rung eliminates something"
+   },
+   "why": {
+    "zh": "一个检查凭它排除了什么赢得位置，不是凭它报告了什么。重启客户端什么都排除不掉；隧道连上了吗什么都排除不掉。它们让人觉得有进展，是因为产出了结果，不是因为去掉了可能。",
+    "en": "A check earns its place by what it eliminates, not by what it reports. Restart the client eliminates nothing; is the tunnel connected eliminates nothing. They feel like progress because they produce a result, not because they remove a possibility."
+   },
+   "criteria": {
+    "zh": [
+     "第 0 级：准确的名字、哪台机器、「好了」长什么样",
+     "拒绝，用一个词排除三级；超时，你什么都不知道",
+     "抓包是最后一级，因为它最贵而不是因为它最难"
+    ],
+    "en": [
+     "Rung 0: the exact name, which machine, what working looks like",
+     "Refused eliminates three rungs in one word; timed out tells you nothing",
+     "The capture is last because it is the most expensive, not the hardest"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "cross-cutting/debug-ladder.md",
+     "frag": "why-the-order-is-the-order",
+     "marker": "🔨"
+    },
+    {
+     "path": "cross-cutting/labs/remote-access-four-causes/README.md",
+     "frag": "the-point",
+     "marker": "🔨"
+    }
+   ]
+  },
+  {
+   "id": "uplink",
+   "kind": "uplink",
+   "at": [
+    7,
+    13
+   ],
+   "segment": "seg-management",
+   "label": {
+    "zh": "上行 · 这门生意本身",
+    "en": "The uplink — the business itself"
+   },
+   "why": {
+    "zh": "十年前线路断了意味着没邮件，而文件服务器还在隔壁跑。今天线路断了意味着没有人能登录。这层楼上没有任何东西坏了——这不是让人松口气的事，这就是问题的形状。",
+    "en": "Ten years ago a dead circuit meant no email while the file server kept running next door. Today a dead circuit means nobody can log in. Nothing on this floor is broken, and that is not a relief — it is the shape of the problem."
+   },
+   "criteria": {
+    "zh": [
+     "两家运营商、两条进楼路径，或者写下来放弃了哪一条",
+     "靠拔掉一根线测过，有日期，有结果",
+     "分支办公室同时决定，因为它以同样的方式坏掉"
+    ],
+    "en": [
+     "Two carriers on two paths, or a written note of which was given up",
+     "Tested by unplugging something, on a date, with the result written down",
+     "The branch link decided at the same time, because it fails the same way"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "build-out/01-uplink.md",
+     "frag": "2015--today",
+     "marker": "🔨"
+    }
+   ]
+  },
+  {
+   "id": "lobby",
+   "kind": "space",
+   "at": [
+    5,
+    5
+   ],
+   "segment": "seg-guest",
+   "label": {
+    "zh": "电梯厅 · 门还是开的",
+    "en": "Lift lobby — the doors still open"
+   },
+   "why": {
+    "zh": "上行断掉的那一天，这里必须继续工作的诚实清单只有三样：进得了楼、出得了楼、消防盘。所有人的工作都在一个他们本来就够不着的租户里。这间办公室需要的本地续命能力，是给门的，不是给活的。",
+    "en": "On a day the uplink is down, the honest list of what must keep working here is three things: getting in, getting out, and the fire panel. Everybody's work is in a tenant they cannot reach anyway. The local continuity this office needs is for its doors, not for its work."
+   },
+   "criteria": {
+    "zh": [
+     "它作用于这栋楼",
+     "上行断了它也必须工作",
+     "它是你故意弄坏的那个东西"
+    ],
+    "en": [
+     "It acts on the building",
+     "It has to work when the uplink does not",
+     "It is the thing you break on purpose"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "the-reference-office.md",
+     "frag": "where-things-run",
+     "marker": "🔨"
+    }
+   ]
+  },
+  {
+   "id": "desks",
+   "kind": "desk",
+   "at": [
+    21,
+    17
+   ],
+   "segment": "seg-staff",
+   "label": {
+    "zh": "工位 · 六十五个人登不进去",
+    "en": "The desks — sixty-five people who cannot log in"
+   },
+   "why": {
+    "zh": "星期二是最满的一天，所以这是这层楼一次能停掉的最多人数。加人去修不是线性的：每多一个都要有人把已知的讲给他，而讲的时间和修的时间是同一批分钟。到大约第五个就不再划算——而这间办公室没有五个。",
+    "en": "Tuesday is the full day, so this is the most people this floor can stop at once. Adding responders is not linear: each one has to be told what is known, and the telling comes out of the same minutes as the fixing. It stops paying at about five — and this office does not have five."
+   },
+   "criteria": {
+    "zh": [
+     "事故指挥官在这里不是角色，是一顶帽子",
+     "有人在决定，有人在记录，哪怕是同一个人",
+     "还在处理，十五分钟后再更新一次"
+    ],
+    "en": [
+     "Incident commander here is not a role, it is a hat",
+     "Somebody is deciding and somebody is recording, even if it is one person",
+     "Still working, next update in fifteen"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "cross-cutting/incident-response.md",
+     "frag": "the-human-system--roles-and-communication",
+     "marker": "🧭"
+    }
+   ]
+  },
+  {
+   "id": "seg-unpatchable",
+   "kind": "segment",
+   "at": [
+    14,
+    24
+   ],
+   "segment": "seg-unpatchable",
+   "label": {
+    "zh": "不可打补丁段 · 约 26 样什么都不说的东西",
+    "en": "Unpatchable — about 26 things that tell you nothing"
+   },
+   "why": {
+    "zh": "门禁控制器、打印机、会议室系统、电话亭设备。你能看见它们答不答，你看不见它们在做什么，而且没有哪笔采购能改变这件事。监控的第一道限制不在你的工具，在对面那一端。",
+    "en": "Door controllers, printers, room systems, booth devices. You can see whether they answer; you cannot see what they are doing, and no purchase changes that. The first limit on monitoring is not your tooling — it is the other end."
+   },
+   "criteria": {
+    "zh": [
+     "厂商固件，走厂商的日程",
+     "按 Selection rules 每一个都持有一份 802.1X 凭据",
+     "日历上没有任何东西会让人去看它们一眼"
+    ],
+    "en": [
+     "Vendor firmware on the vendor's schedule",
+     "Each holds an 802.1X credential, because the selection rules ask for it",
+     "Nothing in the calendar ever makes anyone look at them"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "the-stack/06-observability.md",
+     "frag": "can-you-monitor-everything",
+     "marker": "🧭"
+    }
+   ]
+  },
+  {
+   "id": "seg-management",
+   "kind": "segment",
+   "at": [
+    4,
+    11
+   ],
+   "segment": "seg-management",
+   "label": {
+    "zh": "管理段 · 覆盖率的代价是凭据",
+    "en": "Management — coverage costs credentials"
+   },
+   "why": {
+    "zh": "三台接入交换机、一台核心、六个射频、一台控制器——大约十一个管理接口。每一个被监控的东西都要一个身份，而那个身份没有入职日期、没有主管、也没有最后一天。全覆盖之下，监控平台是这栋楼里权限最高的系统。",
+    "en": "Three access switches, a core, six radios, a controller — about eleven management interfaces. Every monitored thing needs an identity, and that identity has no start date, no manager and no last day. At full coverage the monitoring platform is the most privileged system in this building."
+   },
+   "criteria": {
+    "zh": [
+     "覆盖率是对着一份清册量的；清册是子集，百分比就是关于子集的",
+     "覆盖不是检测——没人去动的告警是一块仪表盘",
+     "把目标换成：知道你没在监控什么"
+    ],
+    "en": [
+     "Coverage is measured against an inventory; a subset inventory measures the subset",
+     "Coverage is not detection — an alert nobody acts on is a dashboard",
+     "Replace the objective: know what you are not monitoring"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "the-stack/06-observability.md",
+     "frag": "can-you-monitor-everything",
+     "marker": "🧭"
+    }
+   ]
+  },
+  {
+   "id": "idf",
+   "kind": "idf",
+   "at": [
+    4,
+    12
+   ],
+   "segment": "seg-management",
+   "label": {
+    "zh": "机柜 · 里面每一样都在",
+    "en": "The rack — every single thing in it is up"
+   },
+   "why": {
+    "zh": "第一次走读带你进过这个房间。今天上午它完全正常，而这恰恰是不能让人松口气的地方：故障不在这层楼上，所以这层楼上没有一个可以看的地方。这也是这个房间里为什么有一套 staging 环——那是你故意弄坏的东西，而你没法在别人的机队上做这件事。",
+    "en": "The first walkthrough took you into this room. This morning it is entirely fine, which is exactly why that is no relief: the fault is not on this floor, so there is nowhere on this floor to look. It is also why this room holds a staging ring — the thing you break on purpose, and you cannot break it on somebody else's fleet."
+   },
+   "criteria": {
+    "zh": [
+     "交换与接入层：这层楼自己的转发",
+     "门禁：断网的那天门也得开",
+     "staging 环：先自己的机器，再友好团队，最后所有人"
+    ],
+    "en": [
+     "Switching and the access layer: this floor's own forwarding",
+     "Door control: the doors open on a day the internet does not",
+     "The staging ring: your own machines, then a friendly team, then everyone"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "the-reference-office.md",
+     "frag": "where-things-run",
+     "marker": "🔨"
+    }
+   ]
+  },
+  {
+   "id": "the-record",
+   "kind": "plan",
+   "at": [
+    38,
+    20
+   ],
+   "segment": "seg-staff",
+   "label": {
+    "zh": "那份记录 · 以及一年一次的恢复演练",
+    "en": "The record — and the one restore drill a year"
+   },
+   "why": {
+    "zh": "修好它不是交付物。交付物是那个被暴露出来的缺口，被补上。而公司信息住在五个地方，其中四个能被赋予恢复目标——第五个不能，理由不是预算：你没法为一个你没盘点过的系统设定恢复目标。这就是那道监控限制，从另一侧走过来。",
+    "en": "The fix is not the deliverable; the gap it exposed, closed, is. Company information lives in five places and four of them can be given a recovery objective — the fifth cannot, and the reason is not budget: you cannot set one for a system you have not inventoried. That is the monitoring limit again, arriving from the other side."
+   },
+   "criteria": {
+    "zh": [
+     "复盘不追责，因为追责会让人漏掉事情",
+     "时间线的质量上限，就是当时有人写下来的东西",
+     "一年一次恢复演练，做过并记录——那是「我们恢复得了」不再是意见的唯一地方"
+    ],
+    "en": [
+     "Blameless, because blame makes people leave things out",
+     "A timeline is only ever as good as what somebody wrote down at the time",
+     "One restore drill a year, performed and recorded — the only place we can recover stops being an opinion"
+    ]
+   },
+   "anchors": [
+    {
+     "path": "cross-cutting/incident-response.md",
+     "frag": "the-blameless-post-mortem--the-point-of-the-whole-thing",
+     "marker": "🧭"
+    },
+    {
+     "path": "the-reference-office.md",
+     "frag": "parameters",
+     "marker": "🔨"
+    }
+   ]
+  }
+ ],
+ "beats": {
+  "tuesday-twelve-past-nine": {
+   "zoom": "room",
+   "cast": "tue",
+   "focus": "service",
+   "highlight": [
+    "service"
+   ],
+   "marker": null
+  },
+  "somebody-walks-up": {
+   "highlight": [
+    "service",
+    "lobby"
+   ]
+  },
+  "the-sentence": {
+   "highlight": [
+    "service"
+   ],
+   "focus": "service"
+  },
+  "a-second-person": {
+   "highlight": [
+    "service",
+    "desks"
+   ]
+  },
+  "two-is-not-two": {
+   "highlight": [
+    "service"
+   ]
+  },
+  "four-causes": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "byte-identical": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "it-is-what-is-it": {
+   "zoom": "room",
+   "focus": "the-ladder",
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "rung-zero": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "sympathising": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "the-wrong-target": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "look-up-from-the-desk": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": []
+  },
+  "the-doors-open": {
+   "highlight": [
+    "lobby"
+   ],
+   "focus": "lobby"
+  },
+  "the-idf": {
+   "zoom": "rack",
+   "focus": "idf",
+   "highlight": [
+    "idf",
+    "seg-management"
+   ]
+  },
+  "nothing-here-is-broken": {
+   "highlight": [
+    "idf"
+   ]
+  },
+  "the-old-answer": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "idf"
+   ]
+  },
+  "today": {
+   "highlight": [
+    "uplink"
+   ],
+   "focus": "uplink"
+  },
+  "test-two": {
+   "highlight": [
+    "uplink",
+    "lobby"
+   ]
+  },
+  "the-honest-list": {
+   "highlight": [
+    "lobby"
+   ],
+   "focus": "lobby"
+  },
+  "not-your-work": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "desks",
+    "uplink"
+   ]
+  },
+  "the-first-decision": {
+   "zoom": "room",
+   "focus": "the-decision",
+   "highlight": [
+    "the-decision"
+   ]
+  },
+  "mitigate-or-diagnose": {
+   "highlight": [
+    "the-decision"
+   ]
+  },
+  "nine-minutes": {
+   "highlight": [
+    "the-decision"
+   ]
+  },
+  "six-in-the-tail": {
+   "highlight": [
+    "the-decision"
+   ]
+  },
+  "the-crossover": {
+   "highlight": [
+    "the-decision"
+   ]
+  },
+  "what-to-be-able-to-say": {
+   "highlight": [
+    "the-decision",
+    "the-record"
+   ]
+  },
+  "now-the-ladder": {
+   "zoom": "room",
+   "focus": "the-ladder",
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "five-rungs": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "the-rule": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "ping-eliminates-nothing": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "refused": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "timed-out": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "now-you-may-look": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "back-to-the-four": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "worse-than-useless": {
+   "highlight": [
+    "the-ladder"
+   ]
+  },
+  "footing-changes": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [],
+   "marker": "🧭"
+  },
+  "who-is-here": {
+   "zoom": "room",
+   "focus": "service",
+   "highlight": [
+    "service"
+   ]
+  },
+  "one-position": {
+   "highlight": [
+    "service"
+   ]
+  },
+  "fifty-hours": {
+   "highlight": [
+    "service"
+   ]
+  },
+  "more-hands": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "service",
+    "desks"
+   ]
+  },
+  "it-stops-paying": {
+   "highlight": [
+    "desks"
+   ],
+   "focus": "desks"
+  },
+  "so-the-ic-is-a-hat": {
+   "highlight": [
+    "service",
+    "desks"
+   ]
+  },
+  "the-record": {
+   "highlight": [
+    "the-record"
+   ],
+   "focus": "the-record"
+  },
+  "while-that-happens": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "seg-unpatchable"
+   ]
+  },
+  "twenty-six": {
+   "highlight": [
+    "seg-unpatchable"
+   ],
+   "focus": "seg-unpatchable"
+  },
+  "they-answer-a-ping": {
+   "highlight": [
+    "seg-unpatchable"
+   ]
+  },
+  "the-second-limit": {
+   "highlight": [
+    "seg-unpatchable",
+    "seg-management"
+   ]
+  },
+  "third-limit": {
+   "highlight": [
+    "seg-management"
+   ],
+   "focus": "seg-management"
+  },
+  "fourth-limit": {
+   "highlight": [
+    "seg-management"
+   ]
+  },
+  "know-what-you-are-not": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "seg-unpatchable",
+    "seg-management"
+   ]
+  },
+  "it-comes-back": {
+   "cast": "tue",
+   "highlight": [
+    "desks"
+   ]
+  },
+  "the-fix-is-not-the-deliverable": {
+   "highlight": [
+    "the-record"
+   ],
+   "focus": "the-record"
+  },
+  "the-gap": {
+   "highlight": [
+    "the-record",
+    "seg-management"
+   ]
+  },
+  "blameless": {
+   "highlight": [
+    "the-record"
+   ]
+  },
+  "the-other-side-of-the-same-limit": {
+   "zoom": "room",
+   "focus": "the-record",
+   "highlight": [
+    "the-record"
+   ]
+  },
+  "five-places": {
+   "highlight": [
+    "the-record",
+    "seg-unpatchable"
+   ]
+  },
+  "same-limit": {
+   "highlight": [
+    "the-record",
+    "seg-management"
+   ]
+  },
+  "once-a-year": {
+   "highlight": [
+    "the-record"
+   ]
+  },
+  "not-paperwork": {
+   "highlight": [
+    "the-record"
+   ]
+  },
+  "the-floor-fills-again": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [
+    "desks"
+   ],
+   "cast": "tue"
+  },
+  "nobody-remembers": {
+   "highlight": []
+  },
+  "count-the-minutes": {
+   "highlight": [
+    "service",
+    "the-ladder",
+    "the-decision"
+   ]
+  },
+  "closing": {
+   "zoom": "floor",
+   "focus": null,
+   "highlight": [],
+   "cast": "tue"
+  }
+ }
+}

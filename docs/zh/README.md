@@ -43,10 +43,11 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 
 现在还有第二条同样的路线：[`walkthrough/`](walkthrough/README.md)
 带你走过参考办公室，并用一份写来**被念、被听**而不是被阅读的稿子，讲清每样东西为什么在那里
-（[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。目前共两篇走读，
+（[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。目前共三篇走读，
 播放在同一张可平移、缩放、点击的二维楼面上：**[网络](../../walkthrough/01-the-network.zh.md)**，
-106 拍；以及**[第一个星期一](../../walkthrough/02-the-first-monday.zh.md)**，93 拍 —— 念出来
-分别约二十分钟和约十八分钟。
+106 拍；**[第一个星期一](../../walkthrough/02-the-first-monday.zh.md)**，93 拍；以及
+**[它坏掉的那一天](../../walkthrough/03-the-day-it-breaks.zh.md)**，102 拍 —— 同一层楼看三遍：
+一次当图纸，一次当估算面，一次当一只钟。
 
 最有特色的一条轴是 **The Stack**：它**自底向上**读技术栈，在**每一层**都把七个平台放
 一起对比 —— 从机房往上写，不是从控制台往下写。横切（cross-cutting）多的是一个视图而
@@ -94,7 +95,7 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
 | ✅ | **工具箱** —— 拿去就能跑 | [十个脚本 + 三个 Ansible roles](toolbox/) 配对成 audit→fix，加一个[打包生成器](toolbox/generate/)。安全默认，每个工具带自己的 `Tested on:` 行 |
 | ✅ | **Agent Skills** —— 方法，可调用 | [十个](../../.claude/skills/) —— 七个包装方法，三个驱动工具箱 |
-| ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 目前共两篇走读，播放在同一张可平移、缩放、点击的二维楼面上：**01 · 网络**（[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍）与 **02 · 第一个星期一**（[中文](../../walkthrough/02-the-first-monday.zh.md) · [EN](../../walkthrough/02-the-first-monday.en.md)，93 拍）；稿子放在仓库里，音频不放 |
+| ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 目前共三篇走读，播放在同一张可平移、缩放、点击的二维楼面上：**01 · 网络**（[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍）、**02 · 第一个星期一**（[中文](../../walkthrough/02-the-first-monday.zh.md) · [EN](../../walkthrough/02-the-first-monday.en.md)，93 拍）与 **03 · 它坏掉的那一天**（[中文](../../walkthrough/03-the-day-it-breaks.zh.md) · [EN](../../walkthrough/03-the-day-it-breaks.en.md)，102 拍）；稿子放在仓库里，音频不放 |
 | ✅ | **浏览器与检索** | [`site/`](site/README.md) —— 全文搜索，零安装：`python3 site/serve.py` 或 `docker compose -f site/docker-compose.yml up` · [`docs/index.json`](../index.json) —— 每个文件一条记录，给 agent 用 |
 
 **十八个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，多数还带一个

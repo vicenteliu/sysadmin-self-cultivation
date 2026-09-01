@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 269,
+  "count": 271,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -272,6 +272,8 @@
     "walkthrough/01-the-network.zh.md": "走读 01 · 网络——一层楼、四个网段，和天花板上的那几个天线",
     "walkthrough/02-the-first-monday.en.md": "Walkthrough 02 · The first Monday — one joiner, and the two things nothing ever triggers",
     "walkthrough/02-the-first-monday.zh.md": "走读 02 · 第一个星期一——一个新人，和两件永远没人触发的事",
+    "walkthrough/03-the-day-it-breaks.en.md": "Walkthrough 03 · The day it breaks — the first ten minutes, and why the order matters",
+    "walkthrough/03-the-day-it-breaks.zh.md": "走读 03 · 它坏掉的那一天——头十分钟，以及顺序为什么要紧",
     "walkthrough/README.md": "The Walkthrough — the reference office, told out loud"
   }
 }

@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 269,
+  "count": 271,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2917,6 +2917,34 @@
       "marker": "mixed",
       "language": "zh",
       "counterpart": "walkthrough/02-the-first-monday.en.md"
+    },
+    "walkthrough/03-the-day-it-breaks.en.md": {
+      "kind": "walkthrough",
+      "axis": "walkthrough",
+      "themes": [
+        "incident",
+        "networking",
+        "observability"
+      ],
+      "platforms": [],
+      "summary": "Walkthrough three: twelve minutes past nine on a Tuesday, and two people say the same sentence. The first ten minutes of an incident in a hundred-person office — which decisions are yours, which checks eliminate nothing, and why the fix is not the deliverable.",
+      "marker": "mixed",
+      "language": "en",
+      "counterpart": "walkthrough/03-the-day-it-breaks.zh.md"
+    },
+    "walkthrough/03-the-day-it-breaks.zh.md": {
+      "kind": "walkthrough",
+      "axis": "walkthrough",
+      "themes": [
+        "incident",
+        "networking",
+        "observability"
+      ],
+      "platforms": [],
+      "summary": "走读 03：星期二上午九点十二分，两个人说了同一句话。一间百人办公室里，一次故障的头十分钟——哪些决定是你的，哪些检查什么都排除不掉，以及为什么修好它不是交付物。",
+      "marker": "mixed",
+      "language": "zh",
+      "counterpart": "walkthrough/03-the-day-it-breaks.en.md"
     },
     "walkthrough/README.md": {
       "kind": "index",
