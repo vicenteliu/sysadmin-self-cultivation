@@ -12,7 +12,7 @@ summary: "Questions asked of this repo about the endpoint estate — provisionin
 
 | # | Question | Status | Where |
 |---|---|---|---|
-| 1 | How is a provisioning platform designed when it has to cover Windows, macOS **and** Linux? | ⏳ | [`endpoint/provisioning.md`](../../endpoint/README.md) — 🔨, the deepest claim in the repo and the one with least written behind it |
-| 2 | What does an MDM actually manage, and how do the estates differ in practice? | ⏳ | `endpoint/management.md` — **as signatures, not a recommendation**: Jamf and Workspace ONE are 🔨, Intune/Autopilot/ConfigMgr are 🧭 and [`endpoint/`](../../endpoint/README.md) already says so |
-| 3 | Where are full-disk encryption recovery keys stored, and who is allowed to retrieve one? | ⏳ | `endpoint/encryption-and-keys.md` — [step 08](../../build-out/08-endpoint-security-and-patching.md) calls escrow *the actual work* and [`endpoint/`](../../endpoint/README.md) calls it *key escrow, recovery-key custody, and a process*. **Named three times, shown zero** |
+| 1 | How is a provisioning platform designed when it has to cover Windows, macOS **and** Linux? | ✅ | [`endpoint/provisioning.md`](../../endpoint/provisioning.md) — the two eras, what the three systems genuinely share, and hardware diversity as the constraint |
+| 2 | What does an MDM actually manage, and how do the estates differ in practice? | ✅ | [`endpoint/management.md`](../../endpoint/management.md) — the rented management surface, and an Apple estate's shape read **as signatures, not a recommendation** |
+| 3 | Where are full-disk encryption recovery keys stored, and who is allowed to retrieve one? | ✅ | [`endpoint/encryption-and-keys.md`](../../endpoint/encryption-and-keys.md) — escrow concentrates the risk it removes, and the keys outlive the machines |
 | 4 | What is the blast radius of a policy before you run it on three thousand machines? | ⏳ | the endpoint lab — currently a 🚧 spec that cannot be built as written, because it needs a live MDM and every lab here is pure-local |

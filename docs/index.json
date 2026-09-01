@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 221,
+  "count": 224,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1224,6 +1224,38 @@
       ],
       "platforms": [],
       "summary": "One of the densest demand clusters in the whole signal, and the platform folders don't cover it: managing the fleet of laptops and phones that people actually work on."
+    },
+    "endpoint/encryption-and-keys.md": {
+      "kind": "companion",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint",
+        "security"
+      ],
+      "platforms": [],
+      "summary": "Three places in this repo call recovery-key escrow the actual work and none of them shows it. This is it — why escrow moves the risk rather than removing it, the circular dependency at the centre of every design, and the keys that outlive the machines they unlocked.",
+      "marker": "🔨"
+    },
+    "endpoint/management.md": {
+      "kind": "companion",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint",
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "What an MDM actually manages once the machine is in someone's hands — the rented management surface, why enrolled and managed are different claims, what you find in an Apple estate and what it tells you, and the scoping problem that has a time axis.",
+      "marker": "mixed"
+    },
+    "endpoint/provisioning.md": {
+      "kind": "companion",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint"
+      ],
+      "platforms": [],
+      "summary": "The README names the imaging pipeline in four bullets; this note is the design underneath — what one platform across Windows, macOS and Linux genuinely shares, which of the two provisioning eras you are actually in, and why hardware diversity is the thing that breaks it.",
+      "marker": "🔨"
     },
     "foundations/README.md": {
       "kind": "index",

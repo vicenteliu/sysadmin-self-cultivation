@@ -63,7 +63,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Figures | 4 branded hero diagrams (axis map · the stack · the ramp · the route), authored once and derived into 12 artifacts by [`site/build-diagrams.py`](site/build-diagrams.py), plus the 109 in-document mermaid diagrams (119 counting the Chinese mirrors). Medium decided by [ADR-0007](docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) | ✅ |
 | Framework | [`CONTENTS.md`](CONTENTS.md) + opening for every planned module (foundations/endpoint/iac/saas/k8s/cost/gcp) | ✅ |
 | Foundations | [`foundations/`](foundations/) — Linux mental model, debugging reflex, scripting, honest scope (Tier-3 #10) | ✅ written |
-| Endpoint | [`endpoint/`](endpoint/) — MDM model, imaging pipeline, patch/EDR, BYOD, Intune-as-ramp (Tier-2 #5) | ✅ written |
+| Endpoint | [`endpoint/`](endpoint/) — MDM model, imaging pipeline, patch/EDR, BYOD, Intune-as-ramp (Tier-2 #5), plus three companions carrying the design underneath: [provisioning](endpoint/provisioning.md) across three operating systems, [management](endpoint/management.md), and [encryption and keys](endpoint/encryption-and-keys.md) — the escrow work this repo had named three times and never shown | ✅ |
 | SaaS admin | [`cross-cutting/saas-admin.md`](cross-cutting/saas-admin.md) — Google Workspace / M365, identity spine, SCIM lifecycle (Tier-3 #11) | ✅ written |
 | IaC & config | [`cross-cutting/iac-and-config.md`](cross-cutting/iac-and-config.md) — provisioning vs. config, Terraform state, Ansible, drift (Tier-1 #3) | ✅ written |
 | Cost | [`cross-cutting/cost.md`](cross-cutting/cost.md) — cost as an ops signal, shapes, surprises, right-sizing, anomaly alerts | ✅ written |
