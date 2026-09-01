@@ -33,6 +33,10 @@ re-doing work you have already paid for.
   first-time hire breaks inside the first year.
 - **Two break-glass accounts**, excluded from conditional access, credentials
   physically retrievable by someone who is not you.
+- A count of the **identities that are not people**. In the reference office the network
+  alone requires
+  [about twenty-six device credentials](../the-reference-office.md#parameters) before a
+  single integration is bought, and none of them has a leaver event.
 - A named answer to: *what system decides whether a person is still an employee?*
 
 ## Questions to ask first

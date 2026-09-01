@@ -49,6 +49,7 @@ the file follows.
 | Growth assumed over the lease | To about 130 without moving |
 | Lease term | 5 years |
 | Endpoint refresh | Every 3 years |
+| Functions | 8 |
 
 **Derived** — every one of these comes from a rule in the next section.
 
@@ -71,6 +72,10 @@ the file follows.
 | Replacements | ~38 a year | Average fleet of 115 on a 3-year refresh |
 | Devices purchased | ~44 a year | Replacements plus net growth |
 | Devices over the lease | ~220 | To hold about 115. The register's population is twice the fleet's |
+| Privileged identities | ~3, plus 2 break-glass | Separate from the person's own account; break-glass count is [step 03](build-out/03-identity.md)'s |
+| Devices needing an 802.1X credential | ~26 | The fixed population: room displays and systems, booths, printers, door controllers |
+| Management interfaces | ~11 | Three access switches, a core, six APs, a controller |
+| Registered guests | none | Guest is sized by the peak day, not by a register — that is what makes it guest |
 
 ## Why these numbers
 
@@ -190,6 +195,39 @@ and the failures and accidents in that month are a fraction of one on a fleet th
 Five covers both with room for a loaner, which is why the store needs a shelf and not a
 room. **The part of this that varies most by fleet is breakage**, and a place that issues
 laptops to a field team should not take five from here.
+
+**The four segments on the floor have populations, and they are already counted
+elsewhere in this file.** The plate draws staff, guest, unpatchable and management; the
+port table above says how many things are in each without ever using those words.
+
+| Segment | What is on it | How many | How often it changes |
+|---|---|---|---|
+| **Staff** | The managed fleet, and the phones that come with the people | ~100 endpoints rising to ~130; about 130 associated on the peak day | 40 people events and 82 device events a year |
+| **Guest** | Whatever a visitor brought | Unbounded and unregistered **by design** | Every day |
+| **Unpatchable** | Room displays and systems, booth devices, printers, door controllers | ~26 by port count, about twenty by wireless association — the same permanent population counted two ways | Almost never |
+| **Management** | Three access switches, a core, six access points, a controller | ~11 interfaces | When the network changes |
+
+**Two of those four never churn, and that is the problem with them.** Staff turns over
+forty times a year and every one of those events has an owner, a date and a ticket.
+Unpatchable and management change almost never — and because
+[Selection rules](#selection-rules) require 802.1X, each of those thirty-seven things holds
+a credential. **Nothing in the calendar ever makes anyone look at them.** A leaver forces a
+review of one person's access; nothing forces a review of a door controller's.
+
+**Which is the same shape as the mover, one layer down.** A human identity has a leaver
+event. **A service account does not.** The device credentials above, the integrations that
+will arrive with the SaaS estate, the enrolment connector, the monitoring account — none
+of them has a last day, a manager, or anybody who notices. The count of those is not in
+this file yet because it depends on how many services the office buys, which is the next
+line of the ledger; what is already fixed is that **the non-human half of the directory is
+the half with no natural end.**
+
+**The two device numbers in this file are not in conflict, and it is worth saying why.**
+The fleet is *~100 managed endpoints rising to ~130* — every employee, whether or not they
+came in today. The wireless derivation is *~145 associated devices* — sixty-five people at
+two devices each on the peak day, plus the fixed population. Different denominators: one
+counts what the office owns, the other counts what is in the air on a Tuesday. A hundred
+laptops and a hundred and forty-five associations are the same office.
 
 **Put the two estates together and you get the reconciliation problem, not a description
 of it.** Forty joiner-or-leaver events a year, forty-four purchases, thirty-eight
@@ -409,7 +447,6 @@ line here says *asked already, and answered somewhere it should not have been*.
 
 | Parameter | Who was forced to invent it | State |
 |---|---|---|
-| **Identity shape** — teams, admin and service accounts, guests | [permission sprawl](cross-cutting/labs/permission-sprawl/) built two estates for *the same hundred people*; the plate carries four segments with no population behind them | ⏳ open |
 | **SaaS estate** — how many, how many seats, who owns each, how many outside SSO | [permission sprawl](cross-cutting/labs/permission-sprawl/) again, and [mail authentication](cross-cutting/labs/mail-authentication-alignment/)'s sender inventory | ⏳ open |
 | **Support load** — arrival rate by category, the support window | [help desk queue](cross-cutting/labs/help-desk-queue/) invented seven categories, their arrival rates and a fifty-hour window | ⏳ open |
 | **Data and recovery** — what data exists, and the objective per category | [Step 09](build-out/09-backup-and-the-restore-drill.md) asks for *a recovery objective per category* and this file names no categories | ⏳ open |
@@ -447,6 +484,29 @@ against twenty-three joiners, so **fewer than four in ten device handovers are b
 somebody joined**. About two hundred and twenty machines are bought across the lease to
 hold a hundred and fifteen — the same roughly-twice-the-office shape the directory has,
 because an office is a snapshot and a register is a history.
+
+✅ **Identity shape.** The plate's four segments get their populations, and they were
+already in the port table under other names: ~26 fixed devices on unpatchable, ~11
+interfaces on management, the fleet on staff, and nothing at all on guest — **guest is
+sized by the peak day and not by a register, which is what makes it guest.**
+
+The finding is which segments *do not* move. Staff churns forty times a year and every
+event has an owner and a date. Unpatchable and management change almost never, and because
+[Selection rules](#selection-rules) require 802.1X, those thirty-seven things each hold a
+credential **that nothing in the calendar ever makes anyone look at**. That is the mover's
+problem one layer down, and it has a sharper form: a human identity has a leaver event and
+**a service account does not**.
+
+The count of non-human identities is deliberately *not* here. It depends on how many
+services the office buys, which is the next open line — an example of the entry condition
+working rather than a gap in this one.
+
+**No conflict with [permission sprawl](cross-cutting/labs/permission-sprawl/).** Its
+estate is a hundred people with a finance function of eight and a nested core of three,
+which is what eight functions across a hundred people produces; nothing needed changing.
+What this file adds is why its ninety-three-reader gap is structural rather than careless
+— the estate holding that document is administered against a population that turns over
+forty times a year, and a sharing link is the one grant path that no leaver event touches.
 
 **No conflict with [asset reconciliation](cross-cutting/labs/asset-reconciliation/)
 either, and the check was worth running.** Its ninety-seven is a snapshot of *a*
