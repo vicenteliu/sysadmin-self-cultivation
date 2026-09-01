@@ -8,6 +8,8 @@ summary: "🔨 hands-on (Entra/Azure AD, M365 tenant work, JML at scale) Before:
 ---
 # 03 · Identity — directory, groups, SSO
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/03-identity.md)
+
 > 🔨 hands-on (Entra/Azure AD, M365 tenant work, JML at scale)
 > **Before:** nothing. **After:** 04 devices · 05 network (802.1X) · 06 tenant and mail ·
 > 07 files · 08 endpoint security · 10 remote access · 11 assets · 14 compliance evidence · 15 JML

@@ -8,6 +8,8 @@ summary: "🧭 verified ramp, not hands-on. This step is written as a question l
 ---
 # 00 · Questions to ask before the lease is signed
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/00-before-the-lease.md)
+
 > 🧭 **verified ramp, not hands-on.** This step is written as a question list, not
 > as negotiating advice — a question list can be derived from first principles;
 > negotiating cannot, and this author has not sat on that side of the table.

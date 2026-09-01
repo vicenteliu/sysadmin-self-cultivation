@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 245,
+  "count": 249,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1000,6 +1000,56 @@
       "summary": "The meta-layer. Every platform module has its own AI-ramp; this is the shared philosophy behind them — and the part that keeps AI from quietly wrecking things.",
       "language": "zh",
       "mirrors": "ai-workflow/how-i-use-ai-to-learn-and-operate.md",
+      "derived": true
+    },
+    "docs/zh/build-out/00-before-the-lease.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "🧭 verified ramp, not hands-on. This step is written as a question list, not as negotiating advice — a question list can be derived from first principles; negotiating cannot, and this author has not…",
+      "marker": "🧭",
+      "language": "zh",
+      "mirrors": "build-out/00-before-the-lease.md",
+      "derived": true
+    },
+    "docs/zh/build-out/01-uplink.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "🧭 verified ramp for procurement and carrier negotiation; 🔨 for what the circuit is carrying and how it fails once it is live.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "build-out/01-uplink.md",
+      "derived": true
+    },
+    "docs/zh/build-out/02-the-building.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "🧭 for commissioning a new site; 🔨 for what happens in the rack afterwards (PXE/imaging fleets, BMC/IPMI, DNS and RAID at scale — see platforms/self-host/).",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "build-out/02-the-building.md",
+      "derived": true
+    },
+    "docs/zh/build-out/03-identity.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on (Entra/Azure AD, M365 tenant work, JML at scale) Before: nothing.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/03-identity.md",
       "derived": true
     },
     "docs/zh/build-out/README.md": {
