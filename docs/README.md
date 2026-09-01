@@ -7,6 +7,8 @@ summary: "The project's default language is English; the canonical docs live at 
 ---
 # docs/ — Documentation & translations
 
+> 🌐 **Languages:** English (default) · [中文](zh/docs/README.md)
+
 The project's **default language is English**; the canonical docs live at the repo
 root and under `platforms/`, `cross-cutting/`, and `ai-workflow/`.
 

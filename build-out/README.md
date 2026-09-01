@@ -7,6 +7,8 @@ summary: "A route through the other axes, not another axis."
 ---
 # The Build-Out — one office, first day to open for business
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/README.md)
+
 > A **route through** the other axes, not another axis. Every step says what it
 > produces, what must be true first, what depends on it — then points into
 > `platforms/`, `the-stack/`, `cross-cutting/`, `foundations/`, `endpoint/` and

@@ -7,6 +7,8 @@ summary: "The layers that transfer across every cloud."
 ---
 # cross-cutting/
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/README.md)
+
 The layers that transfer across **every** cloud. Learn these as concepts once and
 you're mostly translating vocabulary on each platform. This is where a systems
 admin's existing depth (Linux, networking, identity, automation) pays off the most.
