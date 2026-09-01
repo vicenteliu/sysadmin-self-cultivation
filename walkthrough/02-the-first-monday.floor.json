@@ -1,0 +1,844 @@
+{
+  "version": 2,
+  "walkthrough": "02-the-first-monday",
+  "plate": "reference-office.plate.json",
+  "scripts": [
+    "02-the-first-monday.zh.md",
+    "02-the-first-monday.en.md"
+  ],
+  "note": "Beat entries are partial. A beat with no entry inherits the state of the beat before it, so only changes are written down. The first beat must always carry a full state. The plate is shared with walkthrough 01; what belongs to this walkthrough is the panels and the cues, and every panel here is about identity and lifecycle rather than about the network.",
+  "props": [
+    {
+      "id": "lobby",
+      "kind": "space",
+      "at": [
+        5,
+        5
+      ],
+      "segment": "seg-guest",
+      "label": {
+        "zh": "电梯厅 · 八点五十",
+        "en": "Lift lobby — ten to nine"
+      },
+      "why": {
+        "zh": "走读 01 从这里看见一层空楼。这一次楼是满的，站在这里的是一个人——一年二十三个里的一个。他需要的四样东西，没有一样是今天建的。",
+        "en": "Walkthrough one saw an empty plate from here. This time the floor is full and what is standing here is a person — one of about twenty-three this year. Not one of the four things they need gets built today."
+      },
+      "criteria": {
+        "zh": [
+          "入职约 23 人/年",
+          "离职约 17 人/年 🧭",
+          "约每六个工作日一次事件"
+        ],
+        "en": [
+          "About 23 joiners a year",
+          "About 17 leavers a year 🧭",
+          "One event about every six working days"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "parameters",
+          "marker": "🧭"
+        },
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🧭"
+        }
+      ]
+    },
+    {
+      "id": "authentication",
+      "kind": "plan",
+      "at": [
+        14,
+        13
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "触发器 · 谁说了算",
+        "en": "The trigger — what decides"
+      },
+      "why": {
+        "zh": "哪个系统说了算：这个人还不还是员工？必须有一个，有名字的，别的都信它。如果答案是「一张工单」，下游的一切都会迟到或不全。",
+        "en": "What system decides whether a person is still an employee? There has to be one, named, that everything else believes. If the answer is a ticket, everything downstream is late or incomplete."
+      },
+      "criteria": {
+        "zh": [
+          "一个有名字的权威源",
+          "组 = 岗位职能 或 权限束，绝不两者都是",
+          "两个 break-glass 账号"
+        ],
+        "en": [
+          "One named source of truth",
+          "A group means a job function or an access bundle, never both",
+          "Two break-glass accounts"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "build-out/03-identity.md",
+          "frag": "what-this-step-produces",
+          "marker": "🔨"
+        },
+        {
+          "path": "build-out/03-identity.md",
+          "frag": "getting-it-backwards",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "kind": "space",
+      "at": [
+        4,
+        16
+      ],
+      "segment": "seg-unpatchable",
+      "label": {
+        "zh": "库房 · 一层货架",
+        "en": "The store — one shelf"
+      },
+      "why": {
+        "zh": "箱子周四到的。库房要盖住的是下一批货到之前来报到的新人，加上同一个月坏掉的机器。这是交付周期的数，不是库存政策——所以它是一层货架，不是一个房间。",
+        "en": "The box arrived on Thursday. The store covers the joiners arriving before the next order lands plus the machines that die in that month. A lead-time number, not a stock policy — which is why it is a shelf and not a room."
+      },
+      "criteria": {
+        "zh": [
+          "约 5 台备机",
+          "一年约 44 台进、38 台出",
+          "一扇能锁的门"
+        ],
+        "en": [
+          "About 5 spares",
+          "About 44 in and 38 out a year",
+          "A door that locks"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "parameters",
+          "marker": "🔨"
+        },
+        {
+          "path": "build-out/04-devices-and-images.md",
+          "frag": "what-this-step-produces",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "kind": "space",
+      "at": [
+        4,
+        20
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "服务台 · 在动线上",
+        "en": "Service desk — on the route"
+      },
+      "why": {
+        "zh": "从电梯到工位会经过它，这不是巧合。把同一个位置挪进后勤办公室，走过来问的人就变成开工单的人——没人决定要改变工作量，有人只是挪了一张桌子。",
+        "en": "The walk from the lift to the desk goes past it, and that is not an accident. Move the same position into a back office and walk-ups become tickets. Nobody decided to change the workload; somebody moved a desk."
+      },
+      "criteria": {
+        "zh": [
+          "在动线上，从开放区看得见",
+          "靠着取件的库房",
+          "靠着它作为第一响应人的机柜"
+        ],
+        "en": [
+          "On the circulation route, visible from the floor",
+          "Beside the store it draws stock from",
+          "Beside the rack it is first responder for"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "desks",
+      "kind": "desk",
+      "at": [
+        21,
+        17
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "工位 · 七十张里的一张",
+        "en": "The desk — one of seventy"
+      },
+      "why": {
+        "zh": "一台从没开过机的机器。它问的是「拿着我的人是谁」，不是「我是什么」。镜像不在这栋楼里——厂商发货前就把它登记到了公司名下，开机第一次联网自己拉策略。",
+        "en": "A machine that has never been switched on. It asks who is holding it, not what it is. The image does not live in this building: the vendor registers it before it ships and first boot pulls its own policy."
+      },
+      "criteria": {
+        "zh": [
+          "零接触，镜像归 OS 厂商",
+          "前提是身份先做对了",
+          "否则这是套着零接触外衣的重装项目"
+        ],
+        "en": [
+          "Zero-touch, the image is mostly the OS vendor's",
+          "Only if the identity work was done first",
+          "Otherwise it is a re-imaging project in costume"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "build-out/04-devices-and-images.md",
+          "frag": "2015--today",
+          "marker": "🔨"
+        },
+        {
+          "path": "build-out/04-devices-and-images.md",
+          "frag": "what-this-step-produces",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "idf",
+      "kind": "space",
+      "at": [
+        4,
+        12
+      ],
+      "segment": "seg-management",
+      "label": {
+        "zh": "机柜 · 网络问同一个问题",
+        "en": "The rack — the network asks the same question"
+      },
+      "why": {
+        "zh": "802.1X，背后是 RADIUS，再背后是签发那个账号的同一个目录。端口什么都不决定：这台机器抱到哪张桌子上，落到的段都一样。",
+        "en": "802.1X, behind it RADIUS, and behind that the same directory that issued the account. The port decides nothing — carry the machine to any desk and it lands in the same place."
+      },
+      "criteria": {
+        "zh": [
+          "认证决定段，端口不决定",
+          "管理接口只从管理段可达",
+          "约 11 个管理接口"
+        ],
+        "en": [
+          "Authentication picks the segment, the port does not",
+          "Management interfaces reachable only from the management segment",
+          "About 11 management interfaces"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "requirements-to-specify-in-criteria",
+          "marker": "🔨"
+        },
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "seg-staff",
+      "kind": "segment",
+      "at": [
+        24,
+        13
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "员工段 · 每年动四十次",
+        "en": "Staff — forty events a year"
+      },
+      "why": {
+        "zh": "他落在这里，因为他通过了认证。这是四个段里唯一一个高频变动的：一年四十次人员事件、八十二次设备事件，每一次都有主人、有日期、有工单。",
+        "en": "They land here because they authenticated. It is the only one of the four that churns: forty people events and eighty-two device events a year, each with an owner, a date and a ticket."
+      },
+      "criteria": {
+        "zh": [
+          "认证过的人和他们的受管设备",
+          "约 100 台在役，升到 130",
+          "高峰日约 130 个关联"
+        ],
+        "en": [
+          "Authenticated humans and their managed devices",
+          "About 100 endpoints in service rising to 130",
+          "About 130 associations on the peak day"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "parameters",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "seg-unpatchable",
+      "kind": "segment",
+      "at": [
+        14,
+        24
+      ],
+      "segment": "seg-unpatchable",
+      "label": {
+        "zh": "打不了补丁的 · 二十六份没人看的凭据",
+        "en": "Unpatchable — 26 credentials nobody reviews"
+      },
+      "why": {
+        "zh": "门禁控制器、打印机、房间系统、电话亭设备。因为要 802.1X，它们每一样都持有一份凭据。一次离职会强制审查一个人的权限；没有任何东西会强制审查一台门禁控制器的。",
+        "en": "Door controllers, printers, room systems, booth devices. Because 802.1X is required, each one holds a credential. A leaver forces a review of one person's access. Nothing forces a review of a door controller's."
+      },
+      "criteria": {
+        "zh": [
+          "约 26 样，几乎从不变动",
+          "厂商固件按厂商的节奏",
+          "装修时签发，租约到期还在"
+        ],
+        "en": [
+          "About 26 things, changing almost never",
+          "Vendor firmware on a vendor's schedule",
+          "Issued at fit-out, still there when the lease ends"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "why-these-numbers",
+          "marker": "🔨"
+        },
+        {
+          "path": "build-out/03-identity.md",
+          "frag": "what-this-step-produces",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "seg-guest",
+      "kind": "segment",
+      "at": [
+        5,
+        3
+      ],
+      "segment": "seg-guest",
+      "label": {
+        "zh": "访客段 · 唯一没有登记册的",
+        "en": "Guest — the only one with no register"
+      },
+      "why": {
+        "zh": "你不会给来访者做纳管。按高峰日定容量，然后让它保持不受信任——刻意地不受信任，正是它安全的原因。",
+        "en": "You do not enrol a visitor. Size it by the peak day and let it stay untrusted. Being untrusted on purpose is what makes it safe."
+      },
+      "criteria": {
+        "zh": [
+          "只出公网",
+          "可证明的隔离",
+          "按高峰日定容量，不按登记册"
+        ],
+        "en": [
+          "Internet only",
+          "Provably isolated",
+          "Sized by the peak day, not by a register"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "the-reference-office.md",
+          "frag": "parameters",
+          "marker": "🔨"
+        }
+      ]
+    },
+    {
+      "id": "addressing",
+      "kind": "plan",
+      "at": [
+        30,
+        13
+      ],
+      "segment": "seg-staff",
+      "label": {
+        "zh": "没有触发器的两件事",
+        "en": "The two things nothing triggers"
+      },
+      "why": {
+        "zh": "入职有入职日，离职有最后一天，转岗只有一次谈话——没有事件触发，所以它只加不减。而四十个非人身份里，没有一个有入职日、有主管、或有最后一天。",
+        "en": "A joiner has a start date, a leaver has a last day, a mover has a conversation. No event fires, so the mover only ever adds. And of the forty non-human identities, not one has a start date, a manager, or a last day."
+      },
+      "criteria": {
+        "zh": [
+          "约 40 个非人身份，五分之二",
+          "26 份设备凭据 + 约 12 个集成 + 2 个 break-glass",
+          "尾部服务:没有任何离职事件到得了"
+        ],
+        "en": [
+          "About 40 non-human identities, two in five",
+          "26 device credentials, ~12 integrations, 2 break-glass",
+          "The tail service: no leaver event reaches it at all"
+        ]
+      },
+      "anchors": [
+        {
+          "path": "build-out/15-joiner-mover-leaver.md",
+          "frag": "getting-it-backwards",
+          "marker": "🔨"
+        },
+        {
+          "path": "the-reference-office.md",
+          "frag": "parameters",
+          "marker": "🔨"
+        },
+        {
+          "path": "build-out/15-joiner-mover-leaver.md",
+          "frag": "what-this-step-produces",
+          "marker": "🔨"
+        }
+      ]
+    }
+  ],
+  "beats": {
+    "monday-ten-to-nine": {
+      "zoom": "room",
+      "cast": "tue",
+      "focus": "lobby",
+      "highlight": [
+        "lobby"
+      ],
+      "marker": null
+    },
+    "floor-is-not-empty": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "desks",
+        "room-large",
+        "booth-1"
+      ]
+    },
+    "one-of-twenty-three": {
+      "highlight": [
+        "lobby"
+      ],
+      "focus": "lobby"
+    },
+    "what-they-need": {
+      "highlight": [
+        "authentication",
+        "desks",
+        "idf",
+        "addressing"
+      ]
+    },
+    "none-of-it-happens-today": {
+      "highlight": []
+    },
+    "monday-is-a-test": {
+      "zoom": "floor",
+      "focus": null
+    },
+    "the-trigger-question": {
+      "zoom": "room",
+      "focus": "authentication",
+      "highlight": [
+        "authentication"
+      ]
+    },
+    "not-a-ticket": {
+      "highlight": [
+        "service"
+      ]
+    },
+    "the-real-question": {
+      "highlight": [
+        "authentication"
+      ],
+      "focus": "authentication"
+    },
+    "usually-hr": {
+      "highlight": [
+        "authentication"
+      ]
+    },
+    "the-groups-are-hard": {
+      "highlight": [
+        "authentication",
+        "seg-staff"
+      ]
+    },
+    "the-group-rule": {
+      "highlight": [
+        "authentication"
+      ]
+    },
+    "eight-functions": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "desks"
+      ]
+    },
+    "the-device-was-ordered": {
+      "zoom": "room",
+      "focus": "store",
+      "highlight": [
+        "store"
+      ]
+    },
+    "where-the-image-lives": {
+      "highlight": [
+        "desks"
+      ],
+      "focus": "desks"
+    },
+    "the-box-arrived": {
+      "zoom": "rack",
+      "focus": "store",
+      "highlight": [
+        "store"
+      ]
+    },
+    "store-is-a-shelf": {
+      "highlight": [
+        "store"
+      ]
+    },
+    "what-five-covers": {
+      "highlight": [
+        "store"
+      ]
+    },
+    "ten-services": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "addressing"
+      ]
+    },
+    "and-one-more": {
+      "highlight": [
+        "addressing"
+      ]
+    },
+    "back-to-the-lobby": {
+      "zoom": "room",
+      "focus": "lobby",
+      "highlight": [
+        "lobby"
+      ],
+      "cast": "mon"
+    },
+    "walk-past-the-desk": {
+      "focus": "service",
+      "highlight": [
+        "service",
+        "store",
+        "idf"
+      ]
+    },
+    "why-placement-matters": {
+      "highlight": [
+        "service"
+      ]
+    },
+    "their-desk": {
+      "zoom": "room",
+      "focus": "desks",
+      "highlight": [
+        "desks"
+      ],
+      "cast": "tue"
+    },
+    "first-boot": {
+      "zoom": "rack",
+      "focus": "desks",
+      "highlight": [
+        "desks"
+      ]
+    },
+    "the-network-asks-the-same": {
+      "focus": "idf",
+      "highlight": [
+        "idf",
+        "seg-management"
+      ]
+    },
+    "the-port-does-not-decide": {
+      "highlight": [
+        "idf"
+      ]
+    },
+    "which-segment": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "seg-staff"
+      ]
+    },
+    "the-other-three": {
+      "highlight": [
+        "seg-guest",
+        "seg-unpatchable",
+        "seg-management"
+      ]
+    },
+    "guest-has-no-register": {
+      "focus": "seg-guest",
+      "highlight": [
+        "seg-guest"
+      ]
+    },
+    "by-lunchtime": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "desks"
+      ],
+      "cast": "tue"
+    },
+    "how-many-tickets": {
+      "highlight": [
+        "service"
+      ],
+      "focus": "service"
+    },
+    "fifty-three-and-sixty-two": {
+      "highlight": [
+        "service",
+        "store"
+      ]
+    },
+    "seven-for-eight": {
+      "highlight": [
+        "store"
+      ]
+    },
+    "now-do-it-again": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "lobby"
+      ]
+    },
+    "and-seventeen-out": {
+      "highlight": [
+        "lobby"
+      ],
+      "cast": "fri"
+    },
+    "footing-changes-here": {
+      "marker": "🧭",
+      "highlight": []
+    },
+    "what-is-borrowed": {
+      "marker": "🧭",
+      "highlight": [
+        "lobby"
+      ]
+    },
+    "what-is-not-borrowed": {
+      "marker": "🧭"
+    },
+    "move-the-band": {
+      "marker": "🧭"
+    },
+    "forty-events": {
+      "marker": null,
+      "highlight": [
+        "lobby"
+      ],
+      "cast": "tue"
+    },
+    "five-years": {
+      "zoom": "floor",
+      "highlight": []
+    },
+    "two-hundred-and-sixteen": {
+      "highlight": [
+        "authentication",
+        "seg-staff"
+      ]
+    },
+    "for-a-floor-of-one-thirty": {
+      "highlight": [
+        "desks"
+      ],
+      "cast": "tue"
+    },
+    "the-directory-is-not-the-office": {
+      "focus": "authentication",
+      "highlight": [
+        "authentication"
+      ]
+    },
+    "snapshot-and-history": {
+      "highlight": []
+    },
+    "devices-do-the-same": {
+      "highlight": [
+        "store",
+        "desks"
+      ]
+    },
+    "back-to-the-person": {
+      "zoom": "room",
+      "focus": "desks",
+      "highlight": [
+        "desks"
+      ]
+    },
+    "a-mover-has": {
+      "zoom": "floor",
+      "focus": "addressing",
+      "highlight": [
+        "addressing"
+      ]
+    },
+    "no-event-fires": {
+      "highlight": [
+        "addressing"
+      ]
+    },
+    "mover-that-only-adds": {
+      "highlight": [
+        "addressing",
+        "seg-staff"
+      ]
+    },
+    "two-years-later": {
+      "highlight": [
+        "seg-staff"
+      ]
+    },
+    "that-is-one": {
+      "focus": "addressing",
+      "highlight": [
+        "addressing"
+      ]
+    },
+    "forty-identities": {
+      "zoom": "floor",
+      "highlight": [
+        "seg-unpatchable",
+        "seg-management"
+      ]
+    },
+    "what-they-are": {
+      "highlight": [
+        "seg-unpatchable",
+        "seg-management",
+        "idf"
+      ]
+    },
+    "two-in-five": {
+      "highlight": [
+        "seg-unpatchable"
+      ]
+    },
+    "none-has-a-last-day": {
+      "focus": "seg-unpatchable",
+      "highlight": [
+        "seg-unpatchable"
+      ]
+    },
+    "the-door-controller": {
+      "zoom": "room",
+      "focus": "seg-unpatchable",
+      "highlight": [
+        "seg-unpatchable"
+      ]
+    },
+    "the-tail-service": {
+      "zoom": "floor",
+      "focus": "addressing",
+      "highlight": [
+        "addressing"
+      ]
+    },
+    "no-leaver-reaches-it": {
+      "highlight": [
+        "addressing"
+      ],
+      "cast": "fri"
+    },
+    "eighty-six-departures": {
+      "highlight": [
+        "lobby"
+      ]
+    },
+    "the-queue-knows": {
+      "zoom": "room",
+      "focus": "service",
+      "highlight": [
+        "service"
+      ],
+      "cast": "tue"
+    },
+    "the-automation-works": {
+      "highlight": [
+        "service"
+      ]
+    },
+    "what-does-not-move": {
+      "highlight": [
+        "service",
+        "addressing"
+      ]
+    },
+    "not-a-gap": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "addressing",
+        "seg-unpatchable"
+      ]
+    },
+    "what-survives": {
+      "highlight": [
+        "service"
+      ]
+    },
+    "monday-again": {
+      "zoom": "room",
+      "focus": "lobby",
+      "highlight": [
+        "lobby"
+      ],
+      "cast": "mon"
+    },
+    "the-floor-empties": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [
+        "desks"
+      ],
+      "cast": "fri"
+    },
+    "the-estate-does-not": {
+      "highlight": [
+        "authentication",
+        "addressing",
+        "seg-unpatchable"
+      ],
+      "cast": "empty"
+    },
+    "closing": {
+      "zoom": "floor",
+      "focus": null,
+      "highlight": [],
+      "cast": "tue"
+    }
+  }
+}

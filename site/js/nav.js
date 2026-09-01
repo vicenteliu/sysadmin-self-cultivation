@@ -3,7 +3,7 @@
    The nav lists canonical (English) documents only — the 27 Chinese mirrors are not
    separate entries, they are the same document in another language. In Chinese, an
    entry that HAS a mirror links to it and shows its Chinese title; one that does not
-   is tagged `EN`, because 27 of 184 canonical documents have a mirror — a fact a
+   is tagged `EN`, because 27 of 187 canonical documents have a mirror — a fact a
    reader should see rather than discover. */
 
 import { t, label, getLang } from "./i18n.js";

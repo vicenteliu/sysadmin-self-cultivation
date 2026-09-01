@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 212,
+  "count": 214,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2223,6 +2223,36 @@
       "marker": "mixed",
       "language": "zh",
       "counterpart": "walkthrough/01-the-network.en.md"
+    },
+    "walkthrough/02-the-first-monday.en.md": {
+      "kind": "walkthrough",
+      "axis": "walkthrough",
+      "themes": [
+        "identity",
+        "endpoint"
+      ],
+      "platforms": [
+        "m365"
+      ],
+      "summary": "Walkthrough two: one person arrives on a Monday, and everything they need was decided the week before. What it takes to seat one joiner, twenty-three times a year — and the two things in this office that no event ever triggers.",
+      "marker": "mixed",
+      "language": "en",
+      "counterpart": "walkthrough/02-the-first-monday.zh.md"
+    },
+    "walkthrough/02-the-first-monday.zh.md": {
+      "kind": "walkthrough",
+      "axis": "walkthrough",
+      "themes": [
+        "identity",
+        "endpoint"
+      ],
+      "platforms": [
+        "m365"
+      ],
+      "summary": "走读 02：一个人在星期一到岗，而他需要的每一样东西，上周就已经决定完了。安置一个新人要做些什么，一年二十三次——以及这间办公室里，那两件永远没有事件去触发的事。",
+      "marker": "mixed",
+      "language": "zh",
+      "counterpart": "walkthrough/02-the-first-monday.en.md"
     },
     "walkthrough/README.md": {
       "kind": "index",
