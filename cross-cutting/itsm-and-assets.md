@@ -8,6 +8,8 @@ summary: "The part of the job the cloud-native roadmaps skip and every real IT o
 ---
 # ITSM, Asset Management & Governance — the operational spine
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/itsm-and-assets.md)
+
 > The part of the job the cloud-native roadmaps skip and every real IT org runs on:
 > the ticket queue, the asset inventory, the access requests, and the audit that
 > proves it all. It's unglamorous, it's where compliance actually lives, and it's
