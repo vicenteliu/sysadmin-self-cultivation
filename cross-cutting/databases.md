@@ -84,6 +84,65 @@ the *dangerous* toil. But the responsibility that does **not** transfer with the
 designing the schema, and taming the connection count. "It's managed" has ended more
 data stories than it has saved.
 
+## When half the data belongs to somebody else
+
+The build-versus-rent table above assumes the database is yours. The common case in an
+internal-tools estate is messier and gets asked constantly: **you are standing up a
+database for something you are building, and a meaningful part of what it holds is a
+copy of state that lives in somebody else's service.** An inventory system reading a
+device-management console. A dashboard pulling from a ticketing platform. A warehouse
+joining three SaaS exports.
+
+That shape has three decisions in it and they are usually made by accident.
+
+**1. Which side is authoritative, per field — not per system.** This is the whole game
+and it is almost never written down. Your database is authoritative for what you created
+in it: an owner, a cost centre, a note somebody typed. The remote service is
+authoritative for what it observes: a device's last check-in, a ticket's state. **The
+failure is not disagreement, it is a field with two authorities**, and it looks exactly
+like a working system until the day the two answers matter. This is
+[`asset-reconciliation`](labs/asset-reconciliation/) stated as a schema problem: two
+systems both reporting ninety-seven, three records wrong, and the join key deciding how
+much of the estate is fiction.
+
+**2. A copy has an age, and the age belongs in the row.** A synchronised table without a
+`fetched_at` is a table that lies confidently. Every row that came from elsewhere should
+carry when it came, and every read path should be able to answer *how stale is this*.
+The cheapest version of this discipline pays for itself the first time somebody asks why
+the report disagrees with the console.
+
+**3. Sync direction is a one-way decision you should make on purpose.** Pull-only is
+boring, safe and almost always right for an internal tool: you read, you never write
+back, and the worst case is staleness. The moment you write back you have built a second
+authority for that field, and you now own conflict resolution — which is a genuinely
+hard problem that arrives disguised as a small feature.
+
+### And backup, which is a different question than it looks
+
+The instinct is to back up the whole database. **That is right, and it is also the least
+interesting half**, because what you must be able to reconstruct splits cleanly:
+
+| What is in the database | If you lose it | So the backup requirement is |
+|---|---|---|
+| **Rows you created** — owners, notes, decisions, anything typed by a person | It is gone. Nothing else in the world has it | **This is the only irreplaceable data**, and it is usually a small fraction of the volume |
+| **Rows you synchronised** | Re-fetch them | A working sync job and the credentials it needs — which is a *runbook* requirement, not a backup one |
+| **Derived tables and caches** | Recompute | Nothing. Excluding them is free and shrinks the restore |
+
+**So the recovery objective for a hybrid database is not one number.** The typed rows may
+need an hour; the synchronised copy may honestly need *nothing*, provided somebody has
+checked that the sync can actually be re-run from cold — which is the part nobody tests,
+because it works every day in the steady state and has never been asked to start from
+empty.
+
+**The reference office reaches the same conclusion from the other end** and refuses to
+self-host a database at all: [it runs no service whose state would live in
+one](../the-reference-office.md#on-premises--what-cannot-leave). The material above is
+for the estate one size band up — an internal tool with real users — where the question
+is not *should this exist* but *which half of it is actually mine*.
+
+Everything else here still applies, and one line applies harder than the rest: the
+replica is not the backup, and a synchronisation job is even less of one.
+
 ## Ops notes — what pages you (and what ends careers)
 
 - **The untested backup** — chapter 04's law, sharpest here: a backup you have never

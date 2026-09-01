@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 224,
+  "count": 225,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -193,6 +193,7 @@
     "platforms/vsphere/labs/README.md": "vSphere — Labs",
     "platforms/vsphere/operations.md": "vSphere — Operating It (the day-2 reality)",
     "platforms/vsphere/skills-map.md": "vSphere — Admin Skill Map",
+    "platforms/vsphere/vcenter-and-proxmox.md": "vCenter and Proxmox — what actually differs",
     "site/README.md": "site — the documentation browser",
     "the-reference-office.md": "The reference office",
     "the-stack/01-physical.md": "01 — The Physical Layer",

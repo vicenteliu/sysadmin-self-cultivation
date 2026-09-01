@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 224,
+  "count": 225,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1967,6 +1967,19 @@
         "vsphere"
       ],
       "summary": "Check a box when you can do it and explain the failure modes — not when you've read about it."
+    },
+    "platforms/vsphere/vcenter-and-proxmox.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere",
+        "self-host"
+      ],
+      "summary": "The difference between vCenter and Proxmox is almost never asked in the abstract — it is asked while standing in a migration. Answered that way: where each control plane lives and what you lose when it fails, what actually fights the move, and why the VMs are the easy part.",
+      "marker": "mixed"
     },
     "site/README.md": {
       "kind": "tool",

@@ -118,6 +118,14 @@ written from production experience, not a ramp:
   operation model, the altitude ladder (PowerCLI / govc / Terraform vsphere provider),
   credential handling, and `Get-*`-until-proven with `-WhatIf` on every mutation.
 
+## Companion
+
+[`vcenter-and-proxmox.md`](vcenter-and-proxmox.md) — what actually differs, answered the
+way the question arrives: from inside a migration. Where each control plane lives and
+what you lose when it dies, the four surfaces that genuinely diverge, and the rule set
+[`vm-migration-assess`](../../toolbox/vm-migration-assess/) applies — whose hard findings
+are storage abstractions and guest driver support, and never the hypervisor itself.
+
 ## Honest boundaries
 
 🔨 **hands-on depth — one of the deepest in the repo.** Operated as the **regional
