@@ -299,7 +299,9 @@ marked 🧭 in the same place. The debug ladder, though, is platform-independent
 scar-tissue-tested: it was learned on hardware, and it works identically on
 overlays someone else runs.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **Same network, three ways.** One three-tier design (public LB / private app /
 isolated data + NAT egress), built three times:

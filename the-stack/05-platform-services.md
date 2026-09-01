@@ -227,7 +227,9 @@ the word "managed" — plus the verified-ramp method to get operational on any
 specific service fast. On a layer defined by *renting outcomes*, knowing what you're
 trading away is the durable skill, and it's the one this whole repo argues for.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **Same app, two points on the spectrum.**
 

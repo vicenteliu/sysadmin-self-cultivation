@@ -143,7 +143,9 @@ tuning — mapped and verified, not claimed as production scale. The transferabl
 solid web-server, reverse-proxy, and TLS-lifecycle fundamentals, plus a fast ramp onto
 whichever proxy is in front of you.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **A hardened front door, from zero.** Pure-local (a VM/container, or two):
 

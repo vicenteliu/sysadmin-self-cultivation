@@ -143,7 +143,9 @@ specialty. The transferable claim: cost read as an engineering signal — budget
 right-sizing, anomaly alerts, the surprise line items — not a spreadsheet discipline
 owned by finance.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **See the money before the invoice does.** On any one cloud sandbox (and free-tier
 safe):

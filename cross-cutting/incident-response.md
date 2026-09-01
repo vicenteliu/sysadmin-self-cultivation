@@ -151,21 +151,42 @@ verified, not claimed as running a production SRE org. The most transferable �
 here is exactly what [`WHY.md`](../WHY.md) says survives the AI era: the judgment and
 calm to structure a messy, high-stakes situation — which no model provides.
 
-## Lab (🚧 planned — spec)
+## Lab (✅ built)
 
-**Rehearse the response, not just the fix.** A tabletop or a live game-day:
+[`labs/mitigate-before-diagnose/`](labs/mitigate-before-diagnose/) — **the chapter's
+central claim, measured instead of repeated.** Mitigating first saves nine minutes of
+mean downtime and costs six in the tail, and the tail cost is *exactly the mitigation
+window* spent on a cause the generic mitigation was never going to cover.
 
-1. **Tabletop:** take one plausible outage (a full disk, an expired cert, a bad
-   deploy) and walk the lifecycle out loud — who's IC, what's the mitigation *before*
-   diagnosis, who communicates, what's the timeline. No system needed; the muscle is
-   the process.
-2. **Game-day (live):** break something on purpose in a lab (kill a service, expire a
-   cert from the [web/TLS lab](web-and-tls.md), drop a table in the
-   [backup drill](../the-stack/labs/04-backup-not-snapshot/)) and run the real
-   response — mitigate, then resolve, on the clock.
-3. **The deliverable:** write the **blameless post-mortem** — timeline, root cause,
-   and at least one **action item that becomes a guardrail** so this exact incident
-   can't recur.
+The number worth carrying is the crossover: **below about 40% mitigation coverage the
+advice inverts**, which makes it falsifiable rather than merely true. And it depends on
+a cheap mitigation — past about ten minutes of expected penalty when the failover
+misbehaves, diagnosing first is the better call. That is why the rehearsed restore and
+the practised failover elsewhere in this repo matter: **they are not insurance against
+the incident, they are what makes this instinct correct.**
+
+`--break-it` diagnoses first, which is what a careful engineer does and what you will
+do under pressure unless you decided otherwise in advance.
+
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so
+nothing here can assert that you did it and CI cannot run it — which is not a
+demotion, because a tabletop reaches something no model does: the room, the arguing,
+and finding out who actually decides.
+
+**Rehearse the response, not just the fix.**
+
+1. **Tabletop:** take one plausible outage — a full disk, an expired cert, a bad
+   deploy — and walk the lifecycle out loud: who is IC, what is the mitigation *before*
+   diagnosis, who communicates, what the timeline looks like. No system needed; the
+   muscle is the process.
+2. **Game-day (live):** break something on purpose — kill a service, expire a cert,
+   drop a table in the [backup drill](../the-stack/labs/04-backup-not-snapshot/) — and
+   run the real response, mitigate then resolve, on the clock.
+3. **The deliverable:** the **blameless post-mortem** — timeline, root cause, and at
+   least one action item that becomes a **guardrail**, so this exact incident cannot
+   recur.
 
 ## The chapter on one screen
 
