@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 227,
+  "count": 228,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -75,6 +75,7 @@
     "cross-cutting/skills-maps/identity.md": "Identity & Access — Theme Skill Map",
     "cross-cutting/skills-maps/networking.md": "Networking — Theme Skill Map",
     "cross-cutting/terraform-support.md": "Terraform Support — the config-management sysadmin's transition guide",
+    "cross-cutting/vpn-and-remote-access.md": "How a remote user lands on the office network",
     "cross-cutting/web-and-tls.md": "Web Servers, Reverse Proxies & TLS — the front door to everything",
     "cross-cutting/working-with-security.md": "Working with Security — ATT&CK awareness for operators",
     "docs/README.md": "docs/ — Documentation & translations",
