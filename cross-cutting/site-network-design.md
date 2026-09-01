@@ -8,6 +8,8 @@ summary: "Designing the network for one physical place: segmentation with a reas
 ---
 # Designing a Site Network
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/site-network-design.md)
+
 > [`the-stack/02-network.md`](../the-stack/02-network.md) reads the network layer
 > across seven platforms. This reads **one physical place**: an office, a floor, a
 > site. The decisions are the same every time you do it, which is what makes them

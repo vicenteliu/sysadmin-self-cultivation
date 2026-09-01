@@ -73,7 +73,7 @@ summary: "🔨 亲手做过 —— 访问治理、资产对账与审计自动化
 - [`the-stack/07-security.md`](../the-stack/07-security.md) —— 那些控制本身
 - [`the-stack/06-observability.md`](../the-stack/06-observability.md) —— 因为证据和
   遥测是同一条流水线，只是出于不同的理由被保留
-- [`cross-cutting/working-with-security.md`](../../../cross-cutting/working-with-security.md)
+- [`cross-cutting/working-with-security.md`](../cross-cutting/working-with-security.md)
 
 ## 动手做
 

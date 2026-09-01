@@ -99,7 +99,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`iac-and-config`](cross-cutting/iac-and-config.md) | 专门笔记（Terraform/Ansible/Puppet） | ✅ |
 | [`terraform-support`](cross-cutting/terraform-support.md) | 专门笔记（Terraform 修/救手艺 + Ansible sysadmin 的 ramp；state/漂移/替换）—— **🧭** | ✅ |
 | [`ci-cd`](cross-cutting/ci-cd.md) | 专门笔记（CI/CD 流水线、GitOps、回滚） | ✅ |
-| [`databases`](../../cross-cutting/databases.md) | 专门笔记（备份/PITR、复制、自建 vs 托管）—— **🔨** | ✅ |
+| [`databases`](cross-cutting/databases.md) | 专门笔记（备份/PITR、复制、自建 vs 托管）—— **🔨** | ✅ |
 | [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | 专门笔记（ITSM、CMDB、资产对账、访问治理）—— **🔨** | ✅ |
 | [`endpoint/`](endpoint/) | 专门轨道（Jamf/Intune/PXE/打补丁）+ 三篇 companion —— [provisioning](../../endpoint/provisioning.md) · [management](../../endpoint/management.md) · [encryption and keys](../../endpoint/encryption-and-keys.md) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | 专门笔记（Google Workspace / M365） | ✅ |
@@ -109,12 +109,12 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`multi-cloud-support`](cross-cutting/multi-cloud-support.md) | 专门笔记（多云修/救手艺 —— 那些接缝：CIDR/身份/出网/态势；综合四篇平台笔记）—— **🧭** | ✅ |
 | [`service-mesh`](cross-cutting/service-mesh.md) | 专门笔记（服务发现 + mesh；以及什么时候不要） | ✅ |
 | [`web-and-tls`](cross-cutting/web-and-tls.md) | 专门笔记（反向代理、TLS/证书生命周期）—— **🔨** 基本功 | ✅ |
-| [`incident-response`](../../cross-cutting/incident-response.md) | 专门笔记（事件生命周期、on-call、无指责复盘） | ✅ |
-| [`working-with-security`](../../cross-cutting/working-with-security.md) | 专门笔记（与 InfoSec/SOC 协作 + 运维者的 ATT&CK 意识）—— **🔨** 运维安全 | ✅ |
+| [`incident-response`](cross-cutting/incident-response.md) | 专门笔记（事件生命周期、on-call、无指责复盘） | ✅ |
+| [`working-with-security`](cross-cutting/working-with-security.md) | 专门笔记（与 InfoSec/SOC 协作 + 运维者的 ATT&CK 意识）—— **🔨** 运维安全 | ✅ |
 | [`debug-ladder`](cross-cutting/debug-ladder.md) | 专门笔记（每一级一条命令，按它排除了什么来评判；refused vs timed out；为什么 *ping* 没有自己的一级）—— **🔨**。从命令手册收窄而来 | ✅ |
 | [`vpn-and-remote-access`](cross-cutting/vpn-and-remote-access.md) | 专门笔记（从连接到够到之间的五个决策；网段、路由、解析器、会话寿命）—— **🔨**。收窄到决策，绝不写机制 | ✅ |
 | [`network-evolution`](cross-cutting/network-evolution.md) | 专门笔记（十五年里变了什么、没变什么；防火墙的轴、F5 类设备、无线的代际、往上和往旁边搬走的速度）—— 有线 **🔨**、无线 **🧭**。关掉六个问题 | ✅ |
-| [`site-network-design`](../../cross-cutting/site-network-design.md) | 专门笔记（一个物理站点：分段、编址、有线/无线、DNS-DHCP、802.1X、访客）—— **🔨**，无线部分 **🧭** | ✅ |
+| [`site-network-design`](cross-cutting/site-network-design.md) | 专门笔记（一个物理站点：分段、编址、有线/无线、DNS-DHCP、802.1X、访客）—— **🔨**，无线部分 **🧭** | ✅ |
 | [`cost`](cross-cutting/cost.md) | 专门笔记（把成本当作一种控制） | ✅ |
 | 网络 | → [`the-stack/02`](the-stack/02-network.md) | ✅ 在 The Stack 里 |
 | 存储 | → [`the-stack/04`](the-stack/04-storage.md) | ✅ 在 The Stack 里 |

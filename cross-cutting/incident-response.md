@@ -8,6 +8,8 @@ summary: "foundations/ built the technical half of debugging — the reflex that
 ---
 # Incident Response & On-Call — staying calm when it breaks
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/incident-response.md)
+
 > [`foundations/`](../foundations/) built the *technical* half of debugging — the
 > reflex that finds what's wrong. This note is the *other* half the SRE roadmaps put
 > at the center: the **process and the human system** around a live outage — roles,

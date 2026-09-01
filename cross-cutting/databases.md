@@ -8,6 +8,8 @@ summary: "the-stack/04 taught that state is the thing no pipeline recreates; the
 ---
 # Databases — operating the stateful hard part
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/databases.md)
+
 > [`the-stack/04`](../the-stack/04-storage.md) taught that state is the thing no
 > pipeline recreates; [`the-stack/05`](../the-stack/05-platform-services.md) said the
 > managed database is usually the highest-value rent. This note is the layer between:

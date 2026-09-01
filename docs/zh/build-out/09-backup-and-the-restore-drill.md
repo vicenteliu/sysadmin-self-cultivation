@@ -71,7 +71,7 @@ AI 用法，会是"AI 那一栏已经变成装饰"最清楚的迹象。
 
 - [`the-stack/04-storage.md`](../the-stack/04-storage.md) —— block、file、object，
   以及把备份当作一个存储层的关注点
-- [`cross-cutting/databases.md`](../../../cross-cutting/databases.md) —— 当数据是一个数据库
+- [`cross-cutting/databases.md`](../cross-cutting/databases.md) —— 当数据是一个数据库
   而不是一个文件时的备份与 PITR
 - [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) —— 一套 SaaS 估算面
   里的责任共担边界

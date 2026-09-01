@@ -45,7 +45,7 @@ summary: "十五年办公网变迁，以及那一个解释了其中大部分的�
 | **LAN 承载什么** | 通往楼里那些服务器的流量 | 通往这栋楼边缘、然后出去的流量 |
 | **价值集中在哪** | 核心交换机和那些服务器 VLAN | 上行链路，以及为它把门的那个身份 |
 | **边界** | 围着一个**地方**的界 | 围着一次**会话**的界 —— 工作离开之后，那个地方就不再守得住了 |
-| **一个网段意味着什么** | 常常是一个部门或一个楼层 | 一个信任级别，而它们大约有四个（[`site-network-design.md`](../../../cross-cutting/site-network-design.md#segmentation--a-reason-per-segment-)） |
+| **一个网段意味着什么** | 常常是一个部门或一个楼层 | 一个信任级别，而它们大约有四个（[`site-network-design.md`](site-network-design.md#分段--每个网段一个理由-)） |
 | **冗余在哪** | 机柜里每样东西两份 | 出楼有两条路；楼里大多数东西只有一份 |
 | **什么会让办公室停摆** | 那个机房 | 上行链路，以及那个同样不在楼里的身份提供方 |
 
@@ -83,7 +83,7 @@ summary: "十五年办公网变迁，以及那一个解释了其中大部分的�
   给这个门类改了名的那次变化；跟它一起被营销的其他一切都是功能。
 - **用户身份。** 一条说*财务可以够到工资服务*的规则值得写；一条说 *10.20.4.0/24 可以够到
   203.0.113.7* 的规则是一条关于家具的规则。这也是为什么
-  [`site-network-design.md`](../../../cross-cutting/site-network-design.md) 把网络认证当成一个身份决定而不是一个网络
+  [`site-network-design.md`](site-network-design.md) 把网络认证当成一个身份决定而不是一个网络
   决定，以及为什么 802.1X 在 [`build-out/05`](../build-out/05-network.md) 里坐在它现在那个位置。
 
 **作为签名：** 一片估算面里有一台 Palo Alto 级别的盒子，告诉你有人买了应用和用户可见性，通常是在
@@ -118,7 +118,7 @@ summary: "十五年办公网变迁，以及那一个解释了其中大部分的�
 ## 无线 🧭
 
 **先说立足点**，因为这一节的立足点和这篇笔记其余部分不一样。无线设计是
-[`site-network-design.md`](../../../cross-cutting/site-network-design.md#honest-boundaries) 里的那个 🧭，在这里它仍然是
+[`site-network-design.md`](site-network-design.md#诚实边界) 里的那个 🧭，在这里它仍然是
 🧭：下面那段代际历史，是从公开的工程指南里得来、并检查过内部一致性的，不是从规划过一层楼的射频、
 然后跟它一起生活过而来。
 
@@ -159,7 +159,7 @@ VLAN、横跨办公室与数据中心的防火墙与 VPN —— CCNP 级别的�
 架构、速度和防火墙那几节就是那片地面。
 
 🧭 **无线**，如它自己那一节所标，并与
-[`site-network-design.md`](../../../cross-cutting/site-network-design.md#honest-boundaries) 保持一致。
+[`site-network-design.md`](site-network-design.md#诚实边界) 保持一致。
 
 🧭 **市场史和厂商史不是一回事。** 这篇笔记说的是一类设备做了什么、取代了什么。它不说哪个厂商赢了
 哪个季度，也不说一份当前授权卖多少钱，因为这两样比这里其他任何东西都过期得快，而且都不可迁移。
@@ -168,7 +168,7 @@ VLAN、横跨办公室与数据中心的防火墙与 VPN —— CCNP 级别的�
 
 ## 往深里读
 
-- [`site-network-design.md`](../../../cross-cutting/site-network-design.md) —— 当前的状态，是被设计出来的而不是被叙述
+- [`site-network-design.md`](site-network-design.md) —— 当前的状态，是被设计出来的而不是被叙述
   出来的
 - [`the-stack/02`](../the-stack/02-network.md) —— 同一层横跨七个平台的对比，包括 LB 和 DNS 那两
   行签名

@@ -159,4 +159,4 @@ summary: "网络调试梯子每一级配一条命令，挑选的依据是它排�
   —— 那架梯子被演练过：一条消息、四个成因，排除法解开四个而习惯解开两个
 - [`vpn-and-remote-access.md`](vpn-and-remote-access.md) —— 第 1 级那个假顶，从隧道那一侧看
 - [`foundations/`](../foundations/README.md) —— 这架梯子只是其中一个实例的那份调试反射
-- [`site-network-design.md`](../../../cross-cutting/site-network-design.md) —— 这架梯子所对着爬的那份设计
+- [`site-network-design.md`](site-network-design.md) —— 这架梯子所对着爬的那份设计

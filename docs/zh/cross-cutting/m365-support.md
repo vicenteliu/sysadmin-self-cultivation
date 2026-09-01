@@ -105,7 +105,7 @@ M365 的修/救本质是在一小组界面上做模式识别。你要练成的�
 
 🔨 **支持这门手艺是亲手做过的**，而且它靠着真实的相邻深度：**M365 admin 运维**（Exchange 邮箱/shared mailbox/transport rule、SharePoint 权限、Teams —— 见 [`saas-admin.md`](saas-admin.md)）、**Entra ID 初始搭建**（租户级 MFA、一条 Conditional Access 策略、PIM —— 见 [`identity-iam.md`](identity-iam.md)）、以及 Intune 合规会 gate 访问的 **endpoint** 相邻面（[`endpoint/`](../endpoint/)）。DNS/TLS/身份这些基本功直接迁移。
 
-🧭 **尾巴是 ramp，并且如实标为 ramp** —— 15 万用户规模的**深度 Exchange Online 租户工程**、专职的 **Defender for Office 365 / Proofpoint** 运营、**DMARC/DKIM 强制**推行、以及下面的 **DFIR / 入侵取证**工具，都是专精赛道，不是声明。这条线和 [`saas-admin.md`](saas-admin.md) 与 [`working-with-security.md`](../../../cross-cutting/working-with-security.md) 里画的是同一条：运维-排障是强项，跑整个安全项目是 ramp。
+🧭 **尾巴是 ramp，并且如实标为 ramp** —— 15 万用户规模的**深度 Exchange Online 租户工程**、专职的 **Defender for Office 365 / Proofpoint** 运营、**DMARC/DKIM 强制**推行、以及下面的 **DFIR / 入侵取证**工具，都是专精赛道，不是声明。这条线和 [`saas-admin.md`](saas-admin.md) 与 [`working-with-security.md`](working-with-security.md) 里画的是同一条：运维-排障是强项，跑整个安全项目是 ramp。
 
 ## Field kit —— 真实工具与参考
 

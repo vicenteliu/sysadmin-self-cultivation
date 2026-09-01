@@ -73,7 +73,7 @@ summary: "🔨 亲手做过 —— 服务台运维与 ITSM 实践。Before：04 
 
 - [`cross-cutting/itsm-and-assets.md`](../cross-cutting/itsm-and-assets.md) ——
   ITSM 追踪的那四样东西，以及这一步所坐的那根运维脊柱
-- [`cross-cutting/incident-response.md`](../../../cross-cutting/incident-response.md) ——
+- [`cross-cutting/incident-response.md`](../cross-cutting/incident-response.md) ——
   生命周期、on-call 与复盘，为一个请求变成一次事件的时候准备
 - [`ai-workflow/how-i-use-ai-to-learn-and-operate.md`](../ai-workflow/how-i-use-ai-to-learn-and-operate.md)
   —— 那套方法，施加到日常运维工作上

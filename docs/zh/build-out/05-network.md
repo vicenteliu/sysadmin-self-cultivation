@@ -67,9 +67,9 @@ summary: "🔨 亲手做过 —— 交换、DNS/DHCP、启动路径，以及那�
 
 ## 往深里读
 
-- [`cross-cutting/site-network-design.md`](../../../cross-cutting/site-network-design.md)
+- [`cross-cutting/site-network-design.md`](../cross-cutting/site-network-design.md)
   —— 上面每一个问题背后的设计决策，按顺序，以及针对这个场景的
-  [一次落地实例](../../../cross-cutting/site-network-design.md#applying-it-to-the-reference-office)；
+  [一次落地实例](../cross-cutting/site-network-design.md#把它应用到参考办公室)；
   还有[参考办公室的 Selection rules](../the-reference-office.md#selection-rules)，那里有这
   一步提出却没有回答的无线与端口算术
 - [`the-stack/02-network.md`](../the-stack/02-network.md) —— 跨七个平台的网络层
