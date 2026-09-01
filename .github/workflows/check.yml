@@ -1,0 +1,33 @@
+# Every check this repo has, on every push and pull request.
+#
+# There is exactly one entry point on purpose. Before check.py the checks were real
+# and the list of them was not — five builders, a walkthrough checker, a viewer smoke
+# test and a growing set of labs, named across four READMEs and remembered by hand.
+# This file must never grow a second list; if a check is missing here it is missing
+# from check.py, which is where to add it.
+#
+# No credentials, no network, no services. Everything below is stdlib Python against
+# files already in the checkout, which is why it needs no permissions beyond read.
+
+name: check
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: What will run
+        run: python3 check.py --list
+      - name: Run it
+        run: python3 check.py
