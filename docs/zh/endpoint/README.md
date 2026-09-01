@@ -59,7 +59,7 @@ flowchart LR
   [身份](../cross-cutting/identity-iam.md)那边"注册一个受限范围的 principal"）。
   用户自有（BYOD）和公司自有正是在这里分叉的。
 - **配置** —— 声明式的 **profile** 描述期望状态：设置、限制、证书、wifi/VPN 载荷。和
-  [IaC](../../../cross-cutting/iac-and-config.md) 是同一个本能：描述终态，让平台把设备收敛
+  [IaC](../cross-cutting/iac-and-config.md) 是同一个本能：描述终态，让平台把设备收敛
   过去。
 - **强制合规** —— 这台设备**仍然**是策略要求的样子吗：加密的、打过补丁的、没越狱的、跑在
   受支持的 OS 上？合规是一次持续的检查，不是一道一次性的闸门。

@@ -8,6 +8,8 @@ summary: "The one topic the standard roadmaps put at the center that this repo o
 ---
 # CI/CD & GitOps — the deployment pipeline
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/ci-cd.md)
+
 > The one topic the standard roadmaps put at the center that this repo owed a
 > dedicated note. Everything else here is about *what* you run; CI/CD is about *how
 > changes reach production* — safely, repeatably, and without a human hand-carrying a

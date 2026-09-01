@@ -248,10 +248,10 @@ _避免_：protocol（不加限定、而实指机制时）、标准、RFC
 
 **Fleet（机队）**：
 在这个仓库里有歧义，因此**绝不单独承重**。它已经出现在两个意思里：*配置管理之下的服务器
-或 VM*（[`iac-and-config.md`](../../cross-cutting/iac-and-config.md)、
-[`ci-cd.md`](../../cross-cutting/ci-cd.md)、
+或 VM*（[`iac-and-config.md`](cross-cutting/iac-and-config.md)、
+[`ci-cd.md`](cross-cutting/ci-cd.md)、
 [`web-and-tls.md`](../../cross-cutting/web-and-tls.md)、
-[`kubernetes.md`](../../cross-cutting/kubernetes.md)）以及*受管的终端人口*
+[`kubernetes.md`](cross-cutting/kubernetes.md)）以及*受管的终端人口*
 （[`ROADMAP.md`](ROADMAP.md) 里的 "macOS/Windows fleet"、
 [`platforms/self-host/`](../../platforms/self-host/) 里的 "PXE and image pipelines at
 fleet scale"）。两者都已确立，也都不会被改名。**要么加限定，要么用更具体的词** ——
@@ -261,7 +261,7 @@ _避免_：在读者分不清笔记本还是服务器的地方不加限定地用
 
 **Deployment（部署）**：
 **在这个仓库里是两件不相干的活，而且哪一件都不配拿这个光秃秃的词。** 在
-[`ci-cd.md`](../../cross-cutting/ci-cd.md) 及其下游，deploy 指**把代码送到某个环境**。
+[`ci-cd.md`](cross-cutting/ci-cd.md) 及其下游，deploy 指**把代码送到某个环境**。
 在 [`endpoint/`](endpoint/README.md) 和
 [`build-out/04`](build-out/04-devices-and-images.md) 里，同一个英文词指**把一台机器
 交到一个人手上**。两种用法都已确立，也都不会被改名，所以设备那一侧说 **provisioning**

@@ -8,6 +8,8 @@ summary: "Once you have many small services instead of a few big ones (the-stack
 ---
 # Service Discovery & Service Mesh — how services find and trust each other
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/service-mesh.md)
+
 > Once you have many small services instead of a few big ones
 > ([`the-stack/05`](../the-stack/05-platform-services.md)), two new questions appear
 > that a monolith never had: *how does service A find service B when B's addresses

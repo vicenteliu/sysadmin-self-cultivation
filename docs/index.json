@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 275,
+  "count": 279,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1242,6 +1242,19 @@
       "mirrors": "cross-cutting/README.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/ci-cd.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "ci-cd"
+      ],
+      "platforms": [],
+      "summary": "The one topic the standard roadmaps put at the center that this repo owed a dedicated note.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/ci-cd.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/cost.md": {
       "kind": "note",
       "axis": "cross-cutting",
@@ -1255,6 +1268,21 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/cost.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/iac-and-config.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The universal control plane. Move #3 of the operating model — drive the platform through its API and codify it — made into its own discipline.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/iac-and-config.md",
       "derived": true
     },
     "docs/zh/cross-cutting/identity-iam.md": {
@@ -1296,6 +1324,19 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/kubernetes-support.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/kubernetes.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "containers"
+      ],
+      "platforms": [],
+      "summary": "the-stack/05 placed Kubernetes on the build-vs-rent spectrum; this note goes a layer deeper into the thing itself — because \"managed Kubernetes\" still requires you to understand Kubernetes the moment it misbehaves.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/kubernetes.md",
       "derived": true
     },
     "docs/zh/cross-cutting/m365-support.md": {
@@ -1340,6 +1381,19 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/saas-admin.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/service-mesh.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Once you have many small services instead of a few big ones (the-stack/05), two new questions appear that a monolith never had: how does service A find service B when B's addresses change constantly?",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/service-mesh.md",
       "derived": true
     },
     "docs/zh/cross-cutting/terraform-support.md": {

@@ -112,7 +112,7 @@ flowchart TD
 **幂等是让一个脚本值得信任的那个性质。** 一个你可以安全地跑两遍的脚本 —— 它收敛到同一个
 状态而不是把它翻倍 —— 是基础设施；一个第二次跑就坏掉或者重复的脚本，是一份你得看着的负债。
 "如果用户**不存在**就创建"、"**只在缺失时**追加这一行"、"创建目录**而在它已存在时不失败**"。
-这和 Ansible（[`cross-cutting/iac-and-config.md`](../../../cross-cutting/iac-and-config.md)）
+这和 Ansible（[`cross-cutting/iac-and-config.md`](../cross-cutting/iac-and-config.md)）
 建立它整个模型所依据的是同一个想法 —— foundations 是你学会**想要**它的地方。
 
 **错误处理把一个工具和一把走火的枪区分开。** 一个没有 `set -euo pipefail` 的 Bash 脚本会
