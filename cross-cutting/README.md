@@ -30,6 +30,7 @@ admin's existing depth (Linux, networking, identity, automation) pays off the mo
 | [`web-and-tls.md`](web-and-tls.md) | Web servers, reverse proxies & TLS: termination, routing, cert lifecycle + ACME, the hardened front door. **🔨** fundamentals | ✅ |
 | [`incident-response.md`](incident-response.md) | Incident response & on-call: the lifecycle (mitigate-first), IC roles, humane on-call, the blameless post-mortem. | ✅ |
 | [`working-with-security.md`](working-with-security.md) | The operator's half of security: working with InfoSec/SOC + MITRE ATT&CK awareness (harden the right things), honest 🔨 ops-security vs 🧭 specialist. | ✅ |
+| [`network-evolution.md`](network-evolution.md) | Fifteen years of office network change, and the one move that explains most of it: the network stopped being the path to your work and became the path to the internet. What that did to the firewall's axis, the load balancer, the desk port and the radios — **🔨** on the wired side, **🧭** on wireless |
 | [`site-network-design.md`](site-network-design.md) | Designing the network for one physical place: segmentation with a reason per segment, an address plan that survives a merge, wired vs wireless, DNS/DHCP ownership, 802.1X, provable guest isolation. **🔨** except wireless, which is **🧭**. |
 | [`cost.md`](cost.md) | Cost as a first-class operational control: budgets, alarms, right-sizing, the "forgotten GPU instance" problem. | ✅ |
 
