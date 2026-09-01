@@ -51,7 +51,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 
 最有特色的一条轴是 **The Stack**：它**自底向上**读技术栈，在**每一层**都把七个平台放
 一起对比 —— 从机房往上写，不是从控制台往下写。横切（cross-cutting）多的是一个视图而
-不是一条轴：[`skills-maps/`](../../cross-cutting/skills-maps/README.md) 把各平台的技能图
+不是一条轴：[`skills-maps/`](cross-cutting/skills-maps/README.md) 把各平台的技能图
 **转置** —— 一个主题横切全部七个平台，做成可勾选的框，按这项技能能走多远来分层，而不是
 按它属于哪朵云。
 
@@ -66,8 +66,8 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **深入一个平台** | [`platforms/`](platforms/) —— **AWS 是完整样板**，从头读到尾 |
 | **按层读技术栈** | [`the-stack/`](the-stack/README.md) —— 物理层 → 安全，七平台逐层对比（01–07 全部已镜像） |
 | **学一项可迁移技能** | [`cross-cutting/`](cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
-| **核对我究竟会什么** | [`cross-cutting/skills-maps/`](../../cross-cutting/skills-maps/README.md) —— 一个主题横切全部七个平台，按技能能走多远分层 |
-| **准备面试** | [`cross-cutting/interview/`](../../cross-cutting/interview/README.md) —— 同样的章节从桌子另一侧看：他们问什么、在探什么、答案什么形状 |
+| **核对我究竟会什么** | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/README.md) —— 一个主题横切全部七个平台，按技能能走多远分层 |
+| **准备面试** | [`cross-cutting/interview/`](cross-cutting/interview/README.md) —— 同样的章节从桌子另一侧看：他们问什么、在探什么、答案什么形状 |
 | **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](ai-workflow/) —— 方法及其护栏 |
@@ -83,15 +83,15 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 81 篇；`build-out/` 十六步与 `the-stack/` 七章都已补齐，`cross-cutting/` 的 22 篇正文正在逐批补，已补 16 篇，`platforms/` 的逐平台目录尚未镜像），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 87 篇；`build-out/` 十六步、`the-stack/` 七章与 `cross-cutting/` 的 22 篇正文都已补齐；`cross-cutting/labs/` 的 13 篇 README 与 `platforms/` 的逐平台目录尚未镜像），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
 | ✅ | **基础与方法** | [WHY](WHY.md) · [操作模型](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) |
 | ✅ | **技术栈 01→07** | [`the-stack/`](the-stack/README.md) —— 每层对比七个平台，另加两个可跑 lab。中文镜像已补齐：[01 物理](the-stack/01-physical.md) · [02 网络](the-stack/02-network.md) · [03 计算与镜像](the-stack/03-compute-and-images.md) · [04 存储](the-stack/04-storage.md) · [05 平台服务](the-stack/05-platform-services.md) · [06 可观测性](the-stack/06-observability.md) · [07 安全](the-stack/07-security.md) |
 | ✅ | **横切与端点** | [`cross-cutting/`](cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](endpoint/) |
-| ✅ | **技能图** —— 自查用 | [网络](../../cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](../../cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |
-| ✅ | **面试图** —— 桌子的另一侧 | [网络](../../cross-cutting/interview/networking.md)（21 题）· [身份](../../cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)） |
+| ✅ | **技能图** —— 自查用 | [网络](cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |
+| ✅ | **面试图** —— 桌子的另一侧 | [网络](cross-cutting/interview/networking.md)（21 题）· [身份](cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)） |
 | ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
 | ✅ | **工具箱** —— 拿去就能跑 | [十个脚本 + 三个 Ansible roles](toolbox/) 配对成 audit→fix，加一个[打包生成器](toolbox/generate/)。安全默认，每个工具带自己的 `Tested on:` 行 |
 | ✅ | **Agent Skills** —— 方法，可调用 | [十个](../../.claude/skills/) —— 七个包装方法，三个驱动工具箱 |

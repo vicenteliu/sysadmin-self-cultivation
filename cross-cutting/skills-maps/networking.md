@@ -8,6 +8,8 @@ summary: "One theme, cut across every platform. The substance lives in the-stack
 ---
 # Networking — Theme Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/cross-cutting/skills-maps/networking.md)
+
 > One theme, cut across every platform. The substance lives in
 > [`the-stack/02-network.md`](../../the-stack/02-network.md) — this is the
 > checkable version of it. Conventions, tier anchors and the marker rule are in

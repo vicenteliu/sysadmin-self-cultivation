@@ -719,5 +719,5 @@ drill 的，步骤 13 是 🔨 地面，而这个文件里没有任何东西独�
 
 **上面每一行里，追问都比问题本身更要紧。** 一个面试官学到最多的地方，是第一个答案被挑战
 之后发生了什么 —— 而这正是
-[`cross-cutting/interview/`](../../cross-cutting/interview/README.md) 的全部前提，那里把
+[`cross-cutting/interview/`](cross-cutting/interview/README.md) 的全部前提，那里把
 同样的纪律施加在别人问你的问题上，而不是施加在这个文件自己的数字上。

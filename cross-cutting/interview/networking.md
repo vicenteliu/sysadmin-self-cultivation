@@ -8,6 +8,8 @@ summary: "Pairs with skills-maps/networking.md, section for section."
 ---
 # Networking — Interview Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/cross-cutting/interview/networking.md)
+
 > Pairs with [`skills-maps/networking.md`](../skills-maps/networking.md), section for
 > section. Format, marker rules and the anonymisation discipline are in
 > [`README.md`](README.md).

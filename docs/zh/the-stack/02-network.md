@@ -226,7 +226,7 @@ flowchart TD
 DNS；以及把一份**出网账单**读到能说出那些 GB 是在哪里跨过一条计费边界的。
 
 这一切的可核对版本 —— 十一节共 63 格，按每项技能能走多远而不是按平台分层 —— 在
-[`cross-cutting/skills-maps/networking.md`](../../../cross-cutting/skills-maps/networking.md)。
+[`cross-cutting/skills-maps/networking.md`](../cross-cutting/skills-maps/networking.md)。
 
 ## AI 辅助的 ramp（网络口味）
 

@@ -29,7 +29,7 @@ summary: "这个仓库的词表 —— 在这里有特定含义的词，以及�
 一份可勾选的能力清单 —— `- [ ]` 格子，按 **Core / Working / Depth** 分层，勾上一格
 意味着你**做得到**这件事并且**讲得清它的故障模式**。存在两种取向：
 [`platforms/*/skills-map.md`](../../platforms/aws/skills-map.md)（一个平台横跨所有主题）
-与 [`cross-cutting/skills-maps/*.md`](../../cross-cutting/skills-maps/README.md)
+与 [`cross-cutting/skills-maps/*.md`](cross-cutting/skills-maps/README.md)
 （一个主题横跨所有平台）。
 _避免_：skill list、能力矩阵、checklist
 
@@ -64,8 +64,8 @@ _避免_：熟悉、接触过、了解、🧗（已退役 —— 见 ADR-0003）
 
 **Interview question（面试问题）**：
 一个面试官真的会问的问题，配上**它在探什么** —— 被测的是判断力，不是被回忆的事实。
-住在 [`cross-cutting/interview/`](../../cross-cutting/interview/README.md)，按与对应
-[技能图](../../cross-cutting/skills-maps/README.md)相同的小节分组。技能图的一格说
+住在 [`cross-cutting/interview/`](cross-cutting/interview/README.md)，按与对应
+[技能图](cross-cutting/skills-maps/README.md)相同的小节分组。技能图的一格说
 *你能做什么*；一个面试问题说*他们怎么查*。
 _避免_：测验题、闪卡、备考题
 
