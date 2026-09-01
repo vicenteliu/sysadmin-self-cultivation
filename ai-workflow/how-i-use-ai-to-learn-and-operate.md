@@ -7,6 +7,8 @@ summary: "The meta-layer. Every platform module has its own AI-ramp; this is the
 ---
 # How I Use AI to Learn and Operate
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/ai-workflow/how-i-use-ai-to-learn-and-operate.md)
+
 > The meta-layer. Every platform module has its own AI-ramp; this is the shared
 > philosophy behind them — and the part that keeps AI from quietly wrecking things.
 
