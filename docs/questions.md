@@ -42,14 +42,14 @@ not edited to follow a file that moved.
 
 | Domain | Asked | Answered | Open |
 |---|---|---|---|
-| [Networking](questions/networking.md) | 13 | 11 | 2 |
+| [Networking](questions/networking.md) | 13 | 12 | 1 |
 | [Endpoint](questions/endpoint.md) | 4 | 4 | 0 |
 | [Storage and data](questions/storage.md) | 4 | 4 | 0 |
 | [Platforms and virtualisation](questions/platforms.md) | 2 | 2 | 0 |
 | [Observability](questions/observability.md) | 3 | 3 | 0 |
 | [Identity](questions/identity.md) | 2 | 2 | 0 |
 | [Inventory and assets](questions/assets.md) | 2 | 2 | 0 |
-| | **30** | **28** | **2** |
+| | **30** | **29** | **1** |
 
 **The split happened when the rule below said it would.** This was one file with one
 domain until seven more arrived at once; *a third domain appearing* was the stated
@@ -57,7 +57,7 @@ threshold and it was crossed by four. Recording that here rather than quietly
 reorganising is the point — a threshold nobody notices being crossed is
 [ADR-0008](adr/0008-a-count-is-not-a-bound.md)'s entire subject.
 
-**Two open, and the shape of them is worth a sentence.** They are all networking, and
+**One open, and the shape of it is worth a sentence.** They are all networking, and
 the six that used to point at *the evolution note* are now answered by one — which was
 the argument for writing it before anything else on the list. The endpoint four sat on the
 repo's **deepest** hands-on claim and its least-written axis — which was not a

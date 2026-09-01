@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 228,
+  "count": 229,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -45,6 +45,7 @@
     "cross-cutting/ci-cd.md": "CI/CD & GitOps — the deployment pipeline",
     "cross-cutting/cost.md": "Cost as an Operational Control",
     "cross-cutting/databases.md": "Databases — operating the stateful hard part",
+    "cross-cutting/debug-ladder.md": "The debug ladder, one rung at a time",
     "cross-cutting/iac-and-config.md": "Infrastructure-as-Code & Configuration Management",
     "cross-cutting/identity-iam.md": "Identity & Access (IAM)",
     "cross-cutting/incident-response.md": "Incident Response & On-Call — staying calm when it breaks",

@@ -3,7 +3,7 @@ kind: questions
 axis: meta
 themes: [networking]
 platforms: []
-summary: "Questions asked of this repo about networking — eleven answered, two open, each open one with a named destination."
+summary: "Questions asked of this repo about networking — twelve answered, one open, with a named destination."
 ---
 # Questions · Networking
 
@@ -21,7 +21,7 @@ summary: "Questions asked of this repo about networking — eleven answered, two
 | 7 | How have wireless and its protocols changed? | ✅ 🧭 | [`network-evolution.md`](../../cross-cutting/network-evolution.md#wireless-) — capacity per square metre rose, clients-per-radio barely moved. Marked 🧭 there, consistently with [`site-network-design.md`](../../cross-cutting/site-network-design.md#honest-boundaries) |
 | 8 | How does a large office's network differ from a small one's? | ✅ | [`site-network-design.md`](../../cross-cutting/site-network-design.md#when-the-size-changes-the-design) |
 | 9 | How does a VPN actually land a user on the office network? | ✅ | [`vpn-and-remote-access.md`](../../cross-cutting/vpn-and-remote-access.md) — **narrowed to the decisions, not the mechanism**: a VPN does not put you on the network, it gives you an address on a segment and a set of routes. Five decisions, and the one that breaks is DNS rather than routing |
-| 10 | What are the basic troubleshooting commands? | ⏳ | a debug-ladder companion — **per rung, not a reference** — see [Boundaries](../questions.md#boundaries) |
+| 10 | What are the basic troubleshooting commands? | ✅ | [`debug-ladder.md`](../../cross-cutting/debug-ladder.md) — **per rung, not a reference**, as the narrowing required. Each command is judged by what a pass lets you stop considering, and the highest-information answer on the page is *refused* versus *timed out* |
 | 11 | How do IPv4 and IPv6 coexist now, and how is it configured? | ✅ | [`the-stack/02`](../../the-stack/02-network.md) |
 | 12 | What changed about speed? It cannot still be gigabit everywhere. | ✅ | current in [`site-network-design.md`](../../cross-cutting/site-network-design.md); history in [`network-evolution.md`](../../cross-cutting/network-evolution.md#speed-which-did-not-increase-where-people-expect) — the money moved **up and sideways**, into the uplink and the radios, and the desk is the one tier that never needed it |
 | 13 | How is the low-voltage network actually wired? Show a topology. | ⏳ | the **floor**'s near register — MDF/IDF, riser, path to the edge — in [`walkthrough/`](../../walkthrough/README.md); still **not the construction side**, see [Boundaries](../questions.md#boundaries) |
