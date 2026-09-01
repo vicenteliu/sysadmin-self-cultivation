@@ -28,7 +28,7 @@ The sections below age at very different speeds, so they are kept apart on purpo
 | Parameters | Years. A hundred people need roughly this much room in most decades. |
 | Why these numbers | Longest. These are the derivations, and they outlive any product. |
 | Selection rules | Years. Criteria, deliberately without model names. |
-| Where things run | Years. What cannot leave the building changes slowly, and the refusals change more slowly still. |
+| Where things run | Years. What cannot leave the building changes slowly, and the refusals change more slowly still. Four rows and six refusals — the shortness is the finding. |
 | Reference build | Short. Dated, and meant to be replaced whole. |
 | Cost shape | Medium, and relative only. No currency figures. |
 | What this office does not yet say | Shortest. It is a ledger, and it empties. |
@@ -486,9 +486,10 @@ the boundary stated in full.
 
 ## Where things run
 
-**Two halves with two different entry conditions.** The on-premises half fired when
-[`endpoint/`](endpoint/README.md)'s companions needed a staging ring; the cloud half has
-not fired and stays ⏳ below.
+**Two halves, two entry conditions, both now fired.** The on-premises half fired when
+[`endpoint/`](endpoint/README.md)'s companions needed a staging ring. The cloud half
+fired from an unexpected direction — not a cloud lab, but three places that began
+assuming a scheduler exists without saying where it runs.
 
 ### On premises — what cannot leave
 
@@ -554,14 +555,50 @@ at the top, which is why they are stated before the list rather than after it.
 
 ### In a cloud
 
-⏳ **Not written yet.** Nothing in this repo has yet been forced to invent this office's
-cloud numbers. Four labs anchor to *a hundred-person office* — [help desk
-queue](cross-cutting/labs/help-desk-queue/), [asset
-reconciliation](cross-cutting/labs/asset-reconciliation/), [permission
-sprawl](cross-cutting/labs/permission-sprawl/) and [mail
-authentication](cross-cutting/labs/mail-authentication-alignment/) — and not one of them
-is about cloud. *Entry condition: a step or a lab is forced to invent a cloud number for
-this office, and every line written here answers **why is this not in the IDF**.*
+**The entry condition fired, and not from where it was expected.** It read: *a step or
+a lab is forced to invent a cloud number for this office.* No lab about cloud ever
+appeared. What happened instead is that **three separate places began assuming this
+office runs scheduled automation, and none of them said where it runs**:
+
+- [Mail authentication](cross-cutting/labs/mail-authentication-alignment/) invented a
+  **CI runner** sending a hundred and forty-five messages a year as this domain,
+  described in its own model as *a host nobody added to the record*. A lab was forced to
+  invent a machine.
+- [`endpoint/encryption-and-keys.md`](endpoint/encryption-and-keys.md) calls the
+  escrow-to-register comparison **a quarterly query, not a project**.
+- [`endpoint/management.md`](endpoint/management.md) asks for a policy's reach to be
+  **re-derived on a cadence** with an alert on the delta.
+
+Each of those needs a thing that wakes up on a schedule and talks to APIs. This office
+has one, it has never been written down, and every entry below answers the same
+question: **why is this not in the IDF?**
+
+**What runs here, and why not downstairs**
+
+| What | Why not in the IDF |
+|---|---|
+| **The automation host** — the scheduler behind the reconciliations, the lifecycle runs, and the alerting the sections above ask for | Three reasons and each is sufficient. It must run **when the floor is empty**, which is most of the time. What it talks to is **almost entirely cloud APIs** — the directory, the device management, the tenant, procurement — and almost never the floor. And it must **survive the building**: a job whose whole purpose is to reconcile the asset register cannot live on a machine that register is about |
+| **The off-platform copy of anything backed up** | [Step 09](build-out/09-backup-and-the-restore-drill.md) requires backups to **leave the platform they protect**. For a floor whose only on-site dependency is one room with one door, the IDF is not *away* — it is the failure the copy exists to survive |
+
+**Why the automation host is not the staging ring**, which is the nearest thing on the
+other half and the obvious place to put it: **the staging ring exists to be broken.**
+That is its entire function. An automation host that reconciles the estate must be the
+most boring machine you own. Two workloads with opposite requirements do not share a
+host, and noticing that is the whole reason these two halves are one section.
+
+**What does not go here either.** The same discipline as the on-premises refusals, and
+for the same reason.
+
+| Considered | Verdict |
+|---|---|
+| **A jump host or bastion** | **No.** There is nothing to jump to. [The on-premises half](#on-premises--what-cannot-leave) holds no servers, and the staging ring is reached from the floor it sits on |
+| **Anything hosting a service for anyone outside the building** | **No**, by [ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md). Not a sizing judgement — a statement about what this office *is* |
+| **The bought services themselves** — the tenant, the directory, the device management, the escrow inside it | **Not here.** Those are the [SaaS estate](#parameters), which counts what the office *buys*. This half holds only what IT itself **operates**, which is why it is two rows long and the SaaS estate is about ten plus a tail nobody can count |
+
+**Two rows is the finding.** An office that consumes services and operates none has
+almost nothing of its own running anywhere — and the little it does have exists to
+*check the things it bought*. Neither of those rows would appear on a diagram anybody
+draws of this office, and both would be discovered during an incident.
 
 **The two halves are one section because they are defined against each other.** A cloud
 entry earns its place by naming what the on-premises side could not do, and the reverse.
