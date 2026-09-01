@@ -7,6 +7,8 @@ summary: "Every step in the build-out says a hundred people."
 ---
 # The reference office
 
+> 🌐 **Languages:** English (default) · [中文](docs/zh/the-reference-office.md)
+
 Every step in the build-out says *a hundred people*. This file is where that stops being
 a word and becomes numbers you can plan against.
 

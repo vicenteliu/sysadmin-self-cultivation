@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 236,
+  "count": 237,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1117,6 +1117,16 @@
       "summary": "Inputs: the Markdown already in this repo · Outputs: a browsable, searchable view of it at http://127.0.0.1:8000 · Risk: read-only, localhost-only, and it can only reach files the retrieval index already lists · Root: not needed",
       "language": "zh",
       "mirrors": "site/README.md",
+      "derived": true
+    },
+    "docs/zh/the-reference-office.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "Every step in the build-out says a hundred people.",
+      "language": "zh",
+      "mirrors": "the-reference-office.md",
       "derived": true
     },
     "docs/zh/toolbox/README.md": {
