@@ -238,6 +238,17 @@ be slower, deliberately, and here is why for each line.
 That list is the deliverable. It is also the one artefact in this chapter that survives
 a change of tooling.
 
+**And the same limit governs recovery, which is worth noticing because it arrives from the
+other direction.** [The reference office](../the-reference-office.md#parameters) finds that
+company information lives in five categories and that **four of the five can be given a
+recovery objective** — the fifth cannot, and the stated reason is not budget or effort:
+*you cannot set an objective for a system you have not inventoried.* That is this section's
+second wall, wearing different clothes. Monitoring coverage is measured against the list;
+a recovery objective is set against the list; and neither of them tells you where the list
+ends. **Two of the most expensive guarantees an IT function makes both stop at the same
+edge**, so an estate that improves its inventory improves both at once — which is the only
+reason a dull reconciliation exercise outranks buying another platform.
+
 ## The admin discipline (what to be able to do)
 
 - Instrument a service with the **three pillars** and say what question each answers.
