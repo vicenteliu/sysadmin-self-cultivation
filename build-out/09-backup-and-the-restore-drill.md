@@ -26,6 +26,10 @@ line-of-business SaaS products nobody listed.
   data you have never thought of as yours to protect.
 - A recovery objective per category — how much time you can lose, how long you can
   be down — decided by the business and written down.
+  [The reference office](../the-reference-office.md#parameters) names five categories and
+  finds that **one of them cannot have an objective at all**, because you cannot set one
+  for a system nobody has inventoried — and that three of them need a **ceiling** on
+  retention as well as a floor, which no step here asks for.
 - Backups that leave the platform they protect. Retention inside a suite is not
   backup; a mistake or a compromise that reaches the tenant reaches its recycle bin.
 - 🔴 **A restore, performed, on a date, by a person, with the result recorded.** This

@@ -51,6 +51,7 @@ the file follows.
 | Endpoint refresh | Every 3 years |
 | Functions | 8 |
 | Support window | 08:00–18:00, Mon–Fri — 50 hours |
+| Restore drill | Once a year, performed and recorded |
 
 **Derived** — every one of these comes from a rule in the next section.
 
@@ -84,6 +85,9 @@ the file follows.
 | Tickets, before automation | ~79 a week | Seven categories at the rates the [help-desk drill](cross-cutting/labs/help-desk-queue/) models |
 | Tickets, once the build-out is built | ~48 a week | Steps 04, 08 and 15 remove 39% of the volume |
 | Largest surviving category | Access and permissions, ~37% | Nothing in the sixteen steps removes it, and [the reason is above](#why-these-numbers) |
+| Places company state lives | 5 categories | The tenant · the endpoints · the directory · IT's own records · the services nobody listed |
+| Categories that can have a recovery objective | 4 of the 5 | You cannot set an objective for a system you have not inventoried |
+| Categories needing an **expiry** as well | 3 of the 5 | Anything holding a record of a person, a meeting or a decision |
 
 ## Why these numbers
 
@@ -295,6 +299,42 @@ register alone. Automating a request path does not shrink that. **The categories
 sixteen steps remove are the ones with a deterministic answer; the one that survives is
 the one that ends in a human deciding whether somebody should have something** — which is
 the same boundary every AI column in the build-out lands on.
+
+**[Step 09](build-out/09-backup-and-the-restore-drill.md) asks for a recovery objective
+per category and this file never said what the categories were.** Everything above now
+does. State lives in five places: the **tenant** the office works in, the **endpoints**
+that should hold nothing but do, the **directory** everything else authenticates against,
+**IT's own records** — the asset register and the ticket history that change a hundred and
+twenty-three times a year — and **the services nobody listed**, which step 09 names
+outright as *two or three line-of-business SaaS products* and which
+[the estate above](#parameters) has already established the office cannot count.
+
+**Four of the five can have an objective. The fifth cannot, and not because it is
+hard.** *How much work can we afford to lose* is answerable for a system somebody has
+written down. For the tail there is no bad answer available — there is **no question**,
+because setting an objective requires knowing the system exists. The correct entry for
+that category is not a number of hours; it is that the inventory is the deliverable and
+everything else waits on it.
+
+**And there is a second objective on the same axis, pointing the other way, that no step
+asks for.** A recovery objective is a **floor** on retention: do not lose more than this.
+What several of these categories also need is a **ceiling**: do not keep longer than
+this. The two are not variants of one setting, they are opposite constraints, and backup
+practice supplies only the first.
+
+**The cost of having only the floor is measured in
+[the transcript drill](cross-cutting/labs/transcript-retention/).** A meeting recording
+expired on day thirty, exactly as the platform intended. The summary written from it had
+no retention at all, so on day one thousand and ninety-five it was still there, still
+readable, still carrying one misattributed line — **one thousand and sixty-five days after
+the only artefact that could have checked it stopped existing.** Nothing was
+misconfigured. Every access review passed truthfully. The control that was missing was
+never an access control; it was an expiry, and no *recovery* objective would ever have
+produced one.
+
+So three of the five categories — the tenant, IT's own records, and whatever the tail
+turns out to hold — need both numbers written down, and this file names the second one
+rather than letting *retention* mean only the reassuring half.
 
 **The two device numbers in this file are not in conflict, and it is worth saying why.**
 The fleet is *~100 managed endpoints rising to ~130* — every employee, whether or not they
@@ -519,19 +559,25 @@ not a gap, it is a ⏳ section with an entry condition — see *Where things run
 The distinction is the whole point. A ⏳ section says *named, and waiting to be asked*. A
 line here says *asked already, and answered somewhere it should not have been*.
 
-| Parameter | Who was forced to invent it | State |
-|---|---|---|
-| **Data and recovery** — what data exists, and the objective per category | [Step 09](build-out/09-backup-and-the-restore-drill.md) asks for *a recovery objective per category* and this file names no categories | ⏳ open |
+**None open.** All six the ledger found are written; see [Closed](#closed) below.
 
-**Every line here is the same failure.** A number this file should hold was invented
-somewhere downstream instead, which is how a repo ends up with more than one
+A parameter earns a line back here the moment something in this repo has to invent it
+again. **The list being empty is a state, not a finish.**
+
+**Every line it held was the same failure.** A number this file should have carried was
+invented somewhere downstream instead, which is how a repo ends up with more than one
 hundred-person office. It has one: *the reference office* is this file, and *a
 hundred-person office* elsewhere is a generic phrase — a distinction now written into
 [`CONTEXT.md`](CONTEXT.md).
 
-**The table empties as they are written**, and a closed line moves below with what it
-settled. An empty table is a state, not a finish: a parameter returns here the moment
-something is forced to invent it again.
+**And the six did not divide evenly into corrections.** Five of the labs that forced a
+parameter turned out to need no change at all: their numbers sat inside what this file
+derives, and what the derivations did was explain *why* each lab's finding is structural
+rather than contrived. One went the other way — the support load is the drill's arithmetic
+and this file adopted it. [Q7's rule](#closed) — the derivation wins a real conflict — was
+never needed, because there was never a real conflict. That was worth finding out rather
+than assuming in either direction.
+
 
 ### Closed
 
@@ -635,6 +681,25 @@ warranty swap is breakage. The disposal that was never filed is a retirement, an
 are thirty-eight of those a year. **A hundred and twenty-three register changes a year,
 one every two working days, reconciled annually** — the lab's three wrong records are what
 that arithmetic produces, not what carelessness produces.
+
+✅ **Data and recovery.** [Step 09](build-out/09-backup-and-the-restore-drill.md) asked
+for a recovery objective per category against a file that named no categories; the five
+other domains named them without meaning to. State lives in the tenant, the endpoints, the
+directory, IT's own records, and the services nobody listed.
+
+**Four of the five can have an objective and the fifth cannot** — not because it is hard,
+but because setting one requires knowing the system exists. For that category the
+inventory *is* the deliverable.
+
+The finding is a second objective, on the same axis, pointing the other way. A recovery
+objective is a **floor** on retention: do not lose more than this. Three of these
+categories also need a **ceiling**: do not keep longer than this. Backup practice supplies
+only the first, and
+[the transcript drill](cross-cutting/labs/transcript-retention/) already measured what the
+missing second one costs — a summary still readable one thousand and sixty-five days after
+the recording that could have checked it expired, with nothing misconfigured and every
+access review passing truthfully. **The control that was missing was never an access
+control; it was an expiry**, and no recovery objective would ever have produced one.
 
 **No conflict with [transcript retention](cross-cutting/labs/transcript-retention/).** The
 ledger listed it as the source of demand, and on inspection the lab models *group*
