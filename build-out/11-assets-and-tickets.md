@@ -72,6 +72,9 @@ let it explain the discrepancy, let a person decide which record is true.
 - [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) — because a
   device record without an owner identity is half a record
 - [`endpoint/`](../endpoint/) — where the state data comes from
+- [the reference office](../the-reference-office.md#parameters) — the arithmetic under
+  this step: about 123 register changes a year, one every two working days, against a
+  reconciliation that runs annually
 
 ## Do it
 
