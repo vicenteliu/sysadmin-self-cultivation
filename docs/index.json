@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 211,
+  "count": 212,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -797,6 +797,13 @@
       ],
       "platforms": [],
       "summary": "The floor the walkthrough plays over was structurally wrong: rooms floating in the middle of the plate with no circulation, no core and doors opening into the desks. Fixing it means drawing a floor plan, and a floor plan is architecture — which this repo has already judged is not its depth."
+    },
+    "docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The reference office was asked to grow parameters for a cloud footprint and an online service, and nobody had ever said whether this office operates anything. It does not: it is a hundred-person company's IT department, and the material that would back a product side is the material this repo teaches generally rather than lives in."
     },
     "docs/questions.md": {
       "kind": "questions",

@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 211,
+  "count": 212,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -91,6 +91,7 @@
     "docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md": "Alignment is by beat, not by timestamp",
     "docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md": "Godot is a design tool, and the floor keeps one palette",
     "docs/adr/0014-the-plate-stops-at-topology.md": "The plate stops at topology",
+    "docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md": "The reference office consumes services and operates none",
     "docs/questions.md": "Open questions",
     "docs/zh/README.md": "系统管理员的自我修养",
     "docs/zh/cross-cutting/kubernetes-support.md": "Kubernetes 支持 —— Linux sysadmin 的转轨指南",
