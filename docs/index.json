@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 287,
+  "count": 293,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1341,6 +1341,45 @@
       "mirrors": "cross-cutting/incident-response.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/interview/README.md": {
+      "kind": "interview",
+      "axis": "cross-cutting",
+      "themes": [],
+      "platforms": [],
+      "summary": "skills-maps/ answers what can I do. This answers how do they check — the same material, same sections, from the other side of the table.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/interview/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/interview/identity.md": {
+      "kind": "interview",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Pairs with skills-maps/identity.md, section for section.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/interview/identity.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/interview/networking.md": {
+      "kind": "interview",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Pairs with skills-maps/networking.md, section for section.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/interview/networking.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/itsm-and-assets.md": {
       "kind": "note",
       "axis": "cross-cutting",
@@ -1466,6 +1505,49 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/site-network-design.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/skills-maps/README.md": {
+      "kind": "skill-map",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Every platform folder carries a skill map: one platform, cut across every theme.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/skills-maps/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/skills-maps/identity.md": {
+      "kind": "skill-map",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "One theme, cut across every platform. The substance lives in cross-cutting/identity-iam.md — this is the checkable version of it.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/skills-maps/identity.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/skills-maps/networking.md": {
+      "kind": "skill-map",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "One theme, cut across every platform. The substance lives in the-stack/02-network.md — this is the checkable version of it.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/skills-maps/networking.md",
       "derived": true
     },
     "docs/zh/cross-cutting/terraform-support.md": {

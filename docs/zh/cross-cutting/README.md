@@ -73,21 +73,21 @@ Terraform 和 Kubernetes 之间会坏什么不是。
 
 **技能图** —— [平台技能图](../../../platforms/aws/skills-map.md)的转置：一个主题横切每一个
 平台，按每项技能能走多远而不是按它属于哪朵云来分层。见
-[`skills-maps/`](../../../cross-cutting/skills-maps/README.md)。
+[`skills-maps/`](skills-maps/README.md)。
 
 | 图 | 覆盖 | Marker |
 | --- | --- | --- |
-| [`skills-maps/networking.md`](../../../cross-cutting/skills-maps/networking.md) | 编址、路由、L2/overlay、DNS、DHCP、过滤规则、负载均衡、TLS、远程访问、流分析、跨云 —— 63 格 | 🔨 ×9 · 🧭 ×2 |
-| [`skills-maps/identity.md`](../../../cross-cutting/skills-maps/identity.md) | 目录、认证/授权、联邦与 SSO、运营一个 IdP、SCIM/JML、RBAC、条件访问、特权访问、访问复审、工作负载身份 —— 58 格 | 🔨 ×8 · 🧭 ×2 |
+| [`skills-maps/networking.md`](skills-maps/networking.md) | 编址、路由、L2/overlay、DNS、DHCP、过滤规则、负载均衡、TLS、远程访问、流分析、跨云 —— 63 格 | 🔨 ×9 · 🧭 ×2 |
+| [`skills-maps/identity.md`](skills-maps/identity.md) | 目录、认证/授权、联邦与 SSO、运营一个 IdP、SCIM/JML、RBAC、条件访问、特权访问、访问复审、工作负载身份 —— 58 格 | 🔨 ×8 · 🧭 ×2 |
 
-**面试图** —— [技能图](../../../cross-cutting/skills-maps/README.md)再转置一次，从桌子的另
+**面试图** —— [技能图](skills-maps/README.md)再转置一次，从桌子的另
 一侧看：会被问什么、每个问题探什么，以及那个形状随小节 marker 而定的答案。见
-[`interview/`](../../../cross-cutting/interview/README.md)。
+[`interview/`](interview/README.md)。
 
 | 图 | 配对 | 问题数 |
 | --- | --- | --- |
-| [`interview/networking.md`](../../../cross-cutting/interview/networking.md) | [`skills-maps/networking.md`](../../../cross-cutting/skills-maps/networking.md) | 11 节共 21 问 |
-| [`interview/identity.md`](../../../cross-cutting/interview/identity.md) | [`skills-maps/identity.md`](../../../cross-cutting/skills-maps/identity.md) | 10 节共 19 问 |
+| [`interview/networking.md`](interview/networking.md) | [`skills-maps/networking.md`](skills-maps/networking.md) | 11 节共 21 问 |
+| [`interview/identity.md`](interview/identity.md) | [`skills-maps/identity.md`](skills-maps/identity.md) | 10 节共 19 问 |
 
 **在 [`the-stack/`](../the-stack/) 里按层覆盖** —— 交叉链接，不重复（这些按层读比
 当作独立主题读更自然）：

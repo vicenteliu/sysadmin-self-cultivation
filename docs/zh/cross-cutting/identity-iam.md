@@ -112,7 +112,7 @@ OAuth 外挂了一层身份。**
 以及把一次**被拒绝的请求**读到能点名是哪一条规则、在哪个范围上拒绝的。
 
 这一切的可勾选版本 —— 十节 58 个框，按每项技能能走多远分层而不是按平台分 —— 在
-[`skills-maps/identity.md`](../../../cross-cutting/skills-maps/identity.md)。
+[`skills-maps/identity.md`](skills-maps/identity.md)。
 
 ## AI 辅助的 ramp（身份口味）
 

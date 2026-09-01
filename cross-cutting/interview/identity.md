@@ -8,6 +8,8 @@ summary: "Pairs with skills-maps/identity.md, section for section."
 ---
 # Identity & Access — Interview Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/cross-cutting/interview/identity.md)
+
 > Pairs with [`skills-maps/identity.md`](../skills-maps/identity.md), section for
 > section. Format, marker rules and the anonymisation discipline are in
 > [`README.md`](README.md).

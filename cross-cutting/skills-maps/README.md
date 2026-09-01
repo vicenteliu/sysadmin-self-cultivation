@@ -8,6 +8,8 @@ summary: "Every platform folder carries a skill map: one platform, cut across ev
 ---
 # cross-cutting/skills-maps/
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/cross-cutting/skills-maps/README.md)
+
 > Every platform folder carries a [skill map](../../platforms/aws/skills-map.md):
 > **one platform, cut across every theme.** This folder is the transpose —
 > **one theme, cut across every platform.** Same checkbox format, same question

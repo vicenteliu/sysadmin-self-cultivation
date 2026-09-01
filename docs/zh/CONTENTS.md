@@ -127,16 +127,16 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 
 | 图 | 是什么 | 状态 |
 | --- | --- | --- |
-| [`skills-maps/networking.md`](../../cross-cutting/skills-maps/networking.md) | 11 节 / 63 格；4 格指向可跑的东西 | ✅ |
-| [`skills-maps/identity.md`](../../cross-cutting/skills-maps/identity.md) | 10 节 / 58 格；5 格指向可跑的东西 | ✅ |
+| [`skills-maps/networking.md`](cross-cutting/skills-maps/networking.md) | 11 节 / 63 格；4 格指向可跑的东西 | ✅ |
+| [`skills-maps/identity.md`](cross-cutting/skills-maps/identity.md) | 10 节 / 58 格；5 格指向可跑的东西 | ✅ |
 
 **面试图** —— 同样的小节，从面试官那一侧看。每个问题都带着它在测什么，以及一个形状由
 该小节 marker 决定的答案（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)）。
 
 | 图 | 是什么 | 状态 |
 | --- | --- | --- |
-| [`interview/networking.md`](../../cross-cutting/interview/networking.md) | 21 问 / 11 节；4 个答案仍是 ⏳ | ✅ |
-| [`interview/identity.md`](../../cross-cutting/interview/identity.md) | 19 问 / 10 节；2 个答案仍是 ⏳ | ✅ |
+| [`interview/networking.md`](cross-cutting/interview/networking.md) | 21 问 / 11 节；4 个答案仍是 ⏳ | ✅ |
+| [`interview/identity.md`](cross-cutting/interview/identity.md) | 19 问 / 10 节；2 个答案仍是 ⏳ | ✅ |
 
 ---
 

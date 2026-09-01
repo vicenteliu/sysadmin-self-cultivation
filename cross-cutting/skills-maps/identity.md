@@ -8,6 +8,8 @@ summary: "One theme, cut across every platform. The substance lives in cross-cut
 ---
 # Identity & Access — Theme Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/cross-cutting/skills-maps/identity.md)
+
 > One theme, cut across every platform. The substance lives in
 > [`cross-cutting/identity-iam.md`](../identity-iam.md) — this is the checkable
 > version of it. Conventions, tier anchors and the marker rule are in
