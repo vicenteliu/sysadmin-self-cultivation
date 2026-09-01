@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 225,
+  "count": 226,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1234,6 +1234,17 @@
       ],
       "platforms": [],
       "summary": "Three places in this repo call recovery-key escrow the actual work and none of them shows it. This is it — why escrow moves the risk rather than removing it, the circular dependency at the centre of every design, and the keys that outlive the machines they unlocked.",
+      "marker": "🔨"
+    },
+    "endpoint/labs/policy-blast-radius/README.md": {
+      "kind": "lab",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint",
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "The console says the policy reaches 3. It reaches 22. Three years later it reaches 30 and nobody edited it — because the group it is scoped to is populated by joiner-mover-leaver, and a blast radius is a function of time.",
       "marker": "🔨"
     },
     "endpoint/management.md": {

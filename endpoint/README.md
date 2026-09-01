@@ -175,19 +175,19 @@ console, same discipline) and deep **iOS/Android fleet compliance-profile
 engineering** (enrollment and lifecycle are 🔨; fleet-profile mastery is the ramp).
 This is the track that most directly *is* the job the whole repo is aimed at.
 
-## Lab (🚧 planned — spec)
+## Lab (✅ built)
 
-**Enroll, configure, comply — end to end, on one device.** Using a free-tier or
-trial MDM and a spare device or VM:
+[`labs/policy-blast-radius/`](labs/policy-blast-radius/) — **the console says the
+policy reaches 3, it reaches 22, and three years later it reaches 30 with nobody
+having edited it.** The scoped group is populated by joiner-mover-leaver, so a blast
+radius is a function of time and it is reviewed as a constant. `--break-it` counts the
+way the console does and returns a stable, confident **3** at both ends.
 
-1. **Enroll** a device and push a **configuration profile** (a wifi payload or a
-   restriction) — watch desired state converge, the IaC-for-devices moment.
-2. Write a **compliance policy** (must be encrypted / must be on a supported OS) and
-   deliberately fail it, then watch the device fall out of compliance and a
-   remediation act fire.
-3. **The drill:** scope an app deployment to a group, prove it lands only on the
-   targeted device, and — the endpoint lesson — write down the blast radius of the
-   policy you just wrote *before* you'd run it on 3,000 machines.
+**The spec this replaces asked for a trial MDM and a spare device**, which would have
+been a *guided run* rather than a lab — and it could not have taught the lesson,
+because you cannot watch three years pass on a trial tenant. What was worth keeping
+from it was its third step, *write down the blast radius before you'd run it on 3,000
+machines*, and that turns out to be fully expressible as a model.
 
 ## The chapter on one screen
 
