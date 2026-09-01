@@ -184,6 +184,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 |---|---|---|
 | [`walkthrough/`](walkthrough/README.md) | 这条路线、它的格式和它的五条决定 | ✅ |
 | **01 · 网络** | [中文](../../walkthrough/01-the-network.zh.md) · [English](../../walkthrough/01-the-network.en.md) —— 106 拍，念出来约二十分钟。取材于两条轴上的三份文档外加根目录 | ✅ |
+| **02 · 第一个星期一** | [中文](../../walkthrough/02-the-first-monday.zh.md) · [English](../../walkthrough/02-the-first-monday.en.md) —— 93 拍。一个入职者，以及那两样没有任何东西会触发的事。与 01 同一张 plate；不同的是那些面板 | ✅ |
 | 每篇走读两份稿 | 并排放着，而且**互不是译本** —— 语流经不起翻译（[ADR-0010](../adr/0010-a-spoken-script-has-no-translation.md)） | ✅ |
 | 音频 | **永不进这棵树。** 你用自己的 TTS 生成，或者去听已发布的那一集 | — |
 | 拍 | 一段话、一次 TTS 调用、一个音频片段、一个楼面状态 —— 按稳定 id 对齐，绝不按时间戳（[ADR-0012](../adr/0012-alignment-is-by-beat-not-by-timestamp.md)） | ✅ |
