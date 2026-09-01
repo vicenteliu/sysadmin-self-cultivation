@@ -290,6 +290,41 @@ reference office's endpoint parameters are titled *Endpoints and spares*, not *t
 so that a third sense is never coined.
 _Avoid_: fleet unqualified where the reader cannot tell laptops from servers
 
+**Deployment**:
+**Two unrelated jobs in this repo, and neither gets the bare word.** In
+[`ci-cd.md`](cross-cutting/ci-cd.md) and everything downstream of it, deploying means
+**shipping code to an environment**. In [`endpoint/`](endpoint/README.md) and
+[`build-out/04`](build-out/04-devices-and-images.md) the same English word means
+**putting a machine into a person's hands**. Both usages are established and neither is
+being renamed, so the device side says **provisioning** — or **imaging** for the build
+half specifically — and the code side keeps *deployment*. A sentence that needs the bare
+word is a sentence in the wrong chapter.
+_Avoid_: deployment for devices; rollout for either, since it hides which one is meant
+
+**File server** / **suite storage**:
+Two answers to *where do the files live*, and [`build-out/07`](build-out/07-files-and-collaboration.md)
+already calls the move between them SaaS-ification. A **file server** is storage this
+office runs: a box, a filesystem, permissions on directories, and a backup that is now
+your problem. **Suite storage** is the drive inside a productivity tenant, where the
+sharing model — not the filesystem — decides who can read what, which is why
+[`permission-sprawl`](cross-cutting/labs/permission-sprawl/) is a lab about links rather
+than about ACLs. The distinction is load-bearing because the two fail differently: a file
+server loses data, and suite storage loses track of who can see it.
+_Avoid_: network drive, shared drive, cloud drive, 网盘 — each of them names one of the
+two while sounding like it names both
+
+**Inventory** / **asset register**:
+**An inventory is what you discovered. An asset register is what you wrote down.** The
+first comes from something that looks — a scan, an agent, a management console. The
+second is a record with an owner, a cost centre and a lifecycle state. They are never
+equal, and **the gap between them is not an error to be eliminated**: it is the estate's
+actual condition, and measuring it is the whole of
+[`asset-reconciliation`](cross-cutting/labs/asset-reconciliation/), where two systems both
+report ninety-seven devices and three records are still wrong. A tool that reconciles them
+to zero has hidden the finding, not fixed it.
+_Avoid_: CMDB (that is one implementation of the register), asset list, inventory system
+when the register is meant
+
 **Altitude**:
 How high above the mechanism a piece of work sits. Two uses, related and distinct.
 **Tooling altitude** — which layer you drive an API from (CLI, SDK, IaC), where
