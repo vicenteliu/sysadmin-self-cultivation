@@ -190,6 +190,52 @@ being as sticky as chapter 05's managed services.
   exactly the 0.1% you needed. Know your sampling strategy before it eats your
   evidence.
 
+## Can you monitor everything?
+
+Asked often enough to deserve a straight answer: **no — and the reason is not budget,
+which is what makes it worth writing down.** Four walls, in the order you hit them.
+
+**1. You can only monitor what emits.** A large part of a real estate emits nothing
+useful and cannot be made to. In [the reference office](../the-reference-office.md#why-these-numbers)
+that is the unpatchable segment — about twenty-six door controllers, printers, room
+systems and booth devices running vendor firmware on a vendor's schedule. You can watch
+whether they answer a ping. You cannot watch what they are doing, and no purchase changes
+that. **The first limit is not your tooling, it is the other end.**
+
+**2. You can only monitor what you know about.** The estate you can enumerate is smaller
+than the estate that exists, and this repo has already put a number on the gap from two
+directions: the SaaS side, where the count of services IT can name is about ten and
+[the count that exists is not a number anybody holds](../the-reference-office.md#parameters);
+and the device side, where two systems can both report ninety-seven and
+[three records are still wrong](../cross-cutting/labs/asset-reconciliation/). Monitoring
+coverage is measured against an inventory. **If the inventory is a subset, the coverage
+percentage is a statement about the subset**, and it will read as ninety-eight percent
+while the thing that breaks is outside it.
+
+**3. Every monitored thing costs a credential.** An agent or an integration needs an
+identity, and that identity has no start date, no manager and no last day — the reference
+office's [forty non-human identities](../the-reference-office.md#why-these-numbers)
+before you count recovery keys. Total coverage means an agent on everything, which means
+the monitoring system holds a credential to everything. **At full coverage the
+observability platform is the most privileged system you own**, and almost nobody
+designs it as though it were.
+
+**4. Coverage is not detection.** You can collect everything and detect nothing. The
+ceiling here is human: an alert nobody acts on is a dashboard, and the *Ops notes* above
+name alert fatigue as the silent killer for exactly this reason. Doubling collection
+without doubling the capacity to respond moves the failure from *we did not see it* to
+*we saw it and it scrolled past*, which is worse because it looks like coverage.
+
+**So replace the objective.** *Monitor everything* is unachievable and, more usefully,
+unfalsifiable — there is no test that says you got there. **Know what you are not
+monitoring** is achievable, checkable, and the thing that actually helps at three in the
+morning. It turns coverage from an aspiration into a subtraction: this is the enumerated
+estate, this is what reports, and this list in between is the part where an incident will
+be slower, deliberately, and here is why for each line.
+
+That list is the deliverable. It is also the one artefact in this chapter that survives
+a change of tooling.
+
 ## The admin discipline (what to be able to do)
 
 - Instrument a service with the **three pillars** and say what question each answers.
