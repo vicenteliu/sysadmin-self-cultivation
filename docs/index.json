@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 228,
+  "count": 229,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -366,6 +366,18 @@
       "platforms": [],
       "summary": "the-stack/04 taught that state is the thing no pipeline recreates; the-stack/05 said the managed database is usually the highest-value rent.",
       "marker": "mixed"
+    },
+    "cross-cutting/debug-ladder.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "One command per rung of the network debug ladder, chosen for what it eliminates rather than what it reports — and the two answers that carry more information than everything else on this page.",
+      "marker": "🔨"
     },
     "cross-cutting/iac-and-config.md": {
       "kind": "note",
@@ -869,7 +881,7 @@
         "networking"
       ],
       "platforms": [],
-      "summary": "Questions asked of this repo about networking — eleven answered, two open, each open one with a named destination."
+      "summary": "Questions asked of this repo about networking — twelve answered, one open, with a named destination."
     },
     "docs/questions/observability.md": {
       "kind": "questions",
