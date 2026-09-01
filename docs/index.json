@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 226,
+  "count": 227,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -590,6 +590,18 @@
       "summary": "The capstone support note: multi-cloud is a posture, not a product. There is no unifying control plane to install — each cloud keeps its own IAM, network, quota and billing model, and the job is owning the seams between them.",
       "marker": "mixed"
     },
+    "cross-cutting/network-evolution.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Fifteen years of office network change, and the single move that explains most of it — the network stopped being the path to your work and became the path to the internet. What that did to the firewall, the load balancer, the desk port and the radios.",
+      "marker": "mixed"
+    },
     "cross-cutting/saas-admin.md": {
       "kind": "note",
       "axis": "cross-cutting",
@@ -844,7 +856,7 @@
         "networking"
       ],
       "platforms": [],
-      "summary": "Questions asked of this repo about networking — five answered, eight open, each open one with a named destination."
+      "summary": "Questions asked of this repo about networking — eleven answered, two open, each open one with a named destination."
     },
     "docs/questions/observability.md": {
       "kind": "questions",

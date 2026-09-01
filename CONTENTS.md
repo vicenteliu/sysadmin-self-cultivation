@@ -106,6 +106,7 @@ See [`cross-cutting/`](cross-cutting/).
 | [`web-and-tls`](cross-cutting/web-and-tls.md) | dedicated note (reverse proxy, TLS/cert lifecycle) — **🔨** fundamentals | ✅ |
 | [`incident-response`](cross-cutting/incident-response.md) | dedicated note (incident lifecycle, on-call, blameless post-mortem) | ✅ |
 | [`working-with-security`](cross-cutting/working-with-security.md) | dedicated note (working with InfoSec/SOC + ATT&CK awareness for operators) — **🔨** ops-security | ✅ |
+| [`network-evolution`](cross-cutting/network-evolution.md) | dedicated note (what changed in fifteen years and what did not; firewall axis, F5-class devices, wireless generations, the speed that moved up and sideways) — **🔨** wired, **🧭** wireless. Closes six questions | ✅ |
 | [`site-network-design`](cross-cutting/site-network-design.md) | dedicated note (one physical site: segmentation, addressing, wired/wireless, DNS-DHCP, 802.1X, guest) — **🔨** with wireless **🧭** | ✅ |
 | [`cost`](cross-cutting/cost.md) | dedicated note (cost as a control) | ✅ |
 | networking | → [`the-stack/02`](the-stack/02-network.md) | ✅ in The Stack |

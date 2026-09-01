@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 226,
+  "count": 227,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -67,6 +67,7 @@
     "cross-cutting/labs/transcript-retention/README.md": "Lab — the estate that passed the permission lab is the one that fails this one",
     "cross-cutting/m365-support.md": "Microsoft 365 Support — the operator's transition guide",
     "cross-cutting/multi-cloud-support.md": "Multi-Cloud Support — the single-cloud sysadmin's transition guide",
+    "cross-cutting/network-evolution.md": "What changed in the office network, and what did not",
     "cross-cutting/saas-admin.md": "SaaS & Collaboration Administration",
     "cross-cutting/service-mesh.md": "Service Discovery & Service Mesh — how services find and trust each other",
     "cross-cutting/site-network-design.md": "Designing a Site Network",
