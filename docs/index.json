@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 264,
+  "count": 269,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1459,6 +1459,91 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "the-stack/02-network.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/03-compute-and-images.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "A VM is just a rented server. The durable asset — the thing worth engineering — is the pipeline that turns a blank machine into a working one with no hands on it.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "the-stack/03-compute-and-images.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/04-storage.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "storage-backup"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "oci",
+        "vsphere"
+      ],
+      "summary": "Compute is disposable; storage is where the fear lives.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "the-stack/04-storage.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/05-platform-services.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure",
+        "self-host"
+      ],
+      "summary": "The layers below asked how do I build it?",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "the-stack/05-platform-services.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/06-observability.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "observability"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "The bottom-up climb ended at platform services you can't SSH into.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "the-stack/06-observability.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/07-security.md": {
+      "kind": "note",
+      "axis": "the-stack",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [
+        "aws",
+        "azure",
+        "oci",
+        "self-host"
+      ],
+      "summary": "Observability was the layer that sees the whole stack; security is the layer that guards it.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "the-stack/07-security.md",
       "derived": true
     },
     "docs/zh/the-stack/README.md": {

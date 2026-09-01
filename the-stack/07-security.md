@@ -8,6 +8,8 @@ summary: "Observability was the layer that sees the whole stack; security is the
 ---
 # 07 — Security
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/07-security.md)
+
 > Observability was the layer that *sees* the whole stack; security is the layer
 > that *guards* it. Both are cross-cutting — they ride over chapters 01–05 rather
 > than sitting inside one. And security has a property none of the others do:

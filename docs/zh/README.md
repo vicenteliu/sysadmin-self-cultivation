@@ -31,7 +31,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 整体形状
 
 六条轴切同一批材料 —— 从哪条最贴你的问题就从哪进 —— 外加一条**横穿全部六条的路线**
-[`build-out/`](../../build-out/)，给还不知道该问什么的读者。
+[`build-out/`](build-out/README.md)，给还不知道该问什么的读者。
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../../site/assets/diagrams/repo-map.dark.svg">
@@ -62,7 +62,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **看整体形状** | [`CONTENTS.md`](CONTENTS.md) —— 每个模块、六条轴，一页看全 |
 | **懂背后的哲学** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
 | **深入一个平台** | [`platforms/`](../../platforms/) —— **AWS 是完整样板**，从头读到尾 |
-| **按层读技术栈** | [`the-stack/`](../../the-stack/) —— 物理层 → 安全，七平台逐层对比 |
+| **按层读技术栈** | [`the-stack/`](the-stack/README.md) —— 物理层 → 安全，七平台逐层对比（01–07 全部已镜像） |
 | **学一项可迁移技能** | [`cross-cutting/`](../../cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
 | **核对我究竟会什么** | [`cross-cutting/skills-maps/`](../../cross-cutting/skills-maps/README.md) —— 一个主题横切全部七个平台，按技能能走多远分层 |
 | **准备面试** | [`cross-cutting/interview/`](../../cross-cutting/interview/README.md) —— 同样的章节从桌子另一侧看：他们问什么、在探什么、答案什么形状 |
@@ -80,12 +80,12 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（本页目前覆盖 27 篇），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 65 篇；`build-out/` 十六步与 `the-stack/` 七章都已补齐，`platforms/` 的逐平台目录尚未镜像），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
 | ✅ | **基础与方法** | [WHY](WHY.md) · [操作模型](00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/) |
-| ✅ | **技术栈 01→07** | [`the-stack/`](../../the-stack/) —— 每层对比七个平台，另加两个可跑 lab |
+| ✅ | **技术栈 01→07** | [`the-stack/`](the-stack/README.md) —— 每层对比七个平台，另加两个可跑 lab。中文镜像已补齐：[01 物理](the-stack/01-physical.md) · [02 网络](the-stack/02-network.md) · [03 计算与镜像](the-stack/03-compute-and-images.md) · [04 存储](the-stack/04-storage.md) · [05 平台服务](the-stack/05-platform-services.md) · [06 可观测性](the-stack/06-observability.md) · [07 安全](the-stack/07-security.md) |
 | ✅ | **横切与端点** | [`cross-cutting/`](../../cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](../../endpoint/) |
 | ✅ | **技能图** —— 自查用 | [网络](../../cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](../../cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |
 | ✅ | **面试图** —— 桌子的另一侧 | [网络](../../cross-cutting/interview/networking.md)（21 题）· [身份](../../cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)） |

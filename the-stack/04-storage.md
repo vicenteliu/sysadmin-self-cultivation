@@ -8,6 +8,8 @@ summary: "Compute is disposable; storage is where the fear lives."
 ---
 # 04 — Storage
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/04-storage.md)
+
 > Compute is disposable; storage is where the fear lives. You can rebuild any
 > instance from chapter 03 in minutes — but the data on it is the one thing no
 > pipeline recreates. This is the layer where "delete and re-provision" stops
