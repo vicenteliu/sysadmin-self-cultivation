@@ -8,6 +8,8 @@ summary: "🧭 verified ramp for procurement and carrier negotiation; 🔨 for w
 ---
 # 01 · Uplink — carriers, bandwidth, redundancy
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/01-uplink.md)
+
 > 🧭 **verified ramp** for procurement and carrier negotiation; 🔨 for what the
 > circuit is carrying and how it fails once it is live.
 > **Before:** 00 lease questions. **After:** 02 the building · 05 network · 10 remote access

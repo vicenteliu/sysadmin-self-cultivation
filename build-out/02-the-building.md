@@ -8,6 +8,8 @@ summary: "🧭 for commissioning a new site; 🔨 for what happens in the rack a
 ---
 # 02 · The building — riser, IDF, power, cooling, cable paths
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/02-the-building.md)
+
 > 🧭 for **commissioning a new site**; 🔨 for **what happens in the rack afterwards**
 > (PXE/imaging fleets, BMC/IPMI, DNS and RAID at scale — see
 > [`platforms/self-host/`](../platforms/self-host/)). The distinction is deliberate:
