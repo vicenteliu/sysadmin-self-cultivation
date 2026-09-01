@@ -44,7 +44,7 @@ summary: "skills-maps/ 回答「我会什么」。这里回答「他们怎么查
 **在 `🔨` 之下，那个答案是一个工作实例** —— 真的发生过、并且被匿名讲述的某件事。它不是一段拿来背
 的稿子。它是**那个标记的证据**：一个背后什么都没有的 `🔨`，是一次藏在任何审计所能及之处再下一层
 的过度声称，而那正是
-[ADR-0004](../../../adr/0004-interview-answers-are-evidence-for-a-marker.md)
+[ADR-0004](../../docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)
 的全部论点。
 
 **在 `🧭` 之下，那个答案是那条诚实的 ramp** —— 什么被测绘并验证过、什么可迁移，以及那条边界坐在

@@ -9,7 +9,7 @@
 二十万词已经超过了"翻目录"能应付的规模。这是同一批材料，外加导航、全文搜索、语言
 切换和图形渲染——**仅此而已**。它显示的每一个字都是 GitHub 同样会渲染的文件；它是一个
 **视图**，绝不是事实首次出现的地方（见
-[ADR-0005](../../../docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
+[ADR-0005](../docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
 
 ## 跑起来
 
@@ -25,7 +25,7 @@ docker compose -f site/docker-compose.yml up       # http://127.0.0.1:8099
 **两条路都不需要安装任何东西。** 直启只用 Python 标准库；`marked` 和 `mermaid` 已经
 提交在 `site/vendor/` 下，所以它在离线、飞机上、隔离网环境里都能用。这就是仓库里为什么
 躺着一个 2.5 MB 的 bundle——理由以及它击败的四个备选方案记在
-[ADR-0006](../../../docs/adr/0006-the-viewer-vendors-its-dependencies.md)。
+[ADR-0006](../docs/adr/0006-the-viewer-vendors-its-dependencies.md)。
 
 要把整套东西交给一个没有 clone 的人，烤一个自包含镜像：
 
@@ -42,9 +42,9 @@ docker run --rm -p 8099:8080 sysadmin-docs
 | **搜索** | 对每一篇文档做全文搜索，中英文都行。`/` 聚焦搜索框。 |
 | **分面** | 侧栏可按 axis、platform、theme、kind 重新分组——用的就是 retrieval index 所依据的那份 front-matter。 |
 | **语言** | 🌐 把文档换成它的中文镜像，界面文案跟着一起换。没有镜像的文档会**明说**，而不是静默回落到英文。 |
-| **主题** | 跟随系统设置，切换按钮可覆盖。mermaid 会重新渲染，门面图会换成对应的明暗版本；**但楼面只有一套色板**，因为像素画不能靠机械反色得到可信的另一套（[ADR-0013](../../adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）。 |
+| **主题** | 跟随系统设置，切换按钮可覆盖。mermaid 会重新渲染，门面图会换成对应的明暗版本；**但楼面只有一套色板**，因为像素画不能靠机械反色得到可信的另一套（[ADR-0013](../docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）。 |
 | **路线** | `build-out/` 的十六步做成一条线性轨道——刻意不做成 axis 卡片。 |
-| **楼面** | 一份[走读](../walkthrough/README.md)稿会在可交互的二维办公室上播放：拖动平移、滚轮缩放，或选 **楼面 / 房间 / 机柜** 让镜头对准一个有名字的对象。点一件东西，就能看它为什么在那里。它只渲染 Markdown 已经陈述的数字，自己不计算（[ADR-0011](../../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。 |
+| **楼面** | 一份[走读](../walkthrough/README.md)稿会在可交互的二维办公室上播放：拖动平移、滚轮缩放，或选 **楼面 / 房间 / 机柜** 让镜头对准一个有名字的对象。点一件东西，就能看它为什么在那里。它只渲染 Markdown 已经陈述的数字，自己不计算（[ADR-0011](../docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。 |
 
 ### 试一次楼面
 

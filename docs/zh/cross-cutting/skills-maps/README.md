@@ -76,7 +76,7 @@ summary: "每个平台目录都带一张技能图：一个平台，横切每一�
 
 ## 不是第七条轴
 
-[ADR-0001](../../../adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
+[ADR-0001](../../docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
 在 `build-out/` 提出这个问题时就把这个模式定下来了：这个仓库的轴是*材料的各个面*，而一个不教任何
 新页面的东西不是一个新的面。这些图不教任何新页面。每一个框都指进一条轴去取实质内容，和一个
 build-out 步骤完全一样 —— 这也是为什么它们住在 `cross-cutting/` 里面，而不是它旁边。

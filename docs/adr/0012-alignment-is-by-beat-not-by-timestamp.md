@@ -7,6 +7,8 @@ summary: "The floor has to move in step with the narration, and the obvious way 
 ---
 # Alignment is by beat, not by timestamp
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)
+
 The [floor](0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md) advances
 as the narration advances: the camera walks with the protagonist, the zoom changes
 register, a prop lights up as it is named. Something has to say *when*.

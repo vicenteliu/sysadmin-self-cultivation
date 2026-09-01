@@ -106,7 +106,7 @@ summary: "十五年办公网变迁，以及那一个解释了其中大部分的�
    应用行为。**
 
 **你在办公室里为什么遇见得更少**：因为那些应用离开了。一间百人办公室没有服务要做均衡 ——
-[ADR-0015](../../adr/0015-the-reference-office-consumes-services-and-operates-none.md)
+[ADR-0015](../docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md)
 对参考办公室明确这么说。你仍然会遇见一台的地方，是在一片留下了什么东西的估算面前面，或者往下一层
 在一朵云里面，按小时租来、叫另一个名字。
 

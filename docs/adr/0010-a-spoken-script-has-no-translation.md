@@ -7,6 +7,8 @@ summary: "English is this repo's source of truth and docs/zh/ is a mirror that m
 ---
 # A spoken script has no translation
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0010-a-spoken-script-has-no-translation.md)
+
 This repo has one rule about language and it has held for every document so far: **English
 is the source of truth, `docs/zh/` is a mirror, and where they disagree the English
 wins.** `docs/build-index.py` implements it — everything under `docs/zh/` is skipped on

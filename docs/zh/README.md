@@ -39,11 +39,11 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 </picture>
 
 这条路线不是第七批材料：它不教任何新页面，它决定的是**顺序**
-（[ADR-0001](../adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)）。
+（[ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)）。
 
 现在还有第二条同样的路线：[`walkthrough/`](walkthrough/README.md)
 带你走过参考办公室，并用一份写来**被念、被听**而不是被阅读的稿子，讲清每样东西为什么在那里
-（[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。目前共三篇走读，
+（[ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。目前共三篇走读，
 播放在同一张可平移、缩放、点击的二维楼面上：**[网络](../../walkthrough/01-the-network.zh.md)**，
 106 拍；**[第一个星期一](../../walkthrough/02-the-first-monday.zh.md)**，93 拍；以及
 **[它坏掉的那一天](../../walkthrough/03-the-day-it-breaks.zh.md)**，102 拍 —— 同一层楼看三遍：
@@ -71,7 +71,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](ai-workflow/) —— 方法及其护栏 |
-| **查一个词或一条旧决策** | [`CONTEXT.md`](CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](../adr/) —— 十五条决策及它们击败的选项 |
+| **查一个词或一条旧决策** | [`CONTEXT.md`](CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](docs/adr/) —— 十五条决策及它们击败的选项 |
 | **看它还答不上什么** | [`docs/questions.md`](../questions.md) —— 有人问过这个仓库、而它还答不上的问题：开放的、已答的、或明确划在边界外并说明原因的 |
 | **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |
@@ -83,7 +83,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 87 篇；`build-out/` 十六步、`the-stack/` 七章与 `cross-cutting/` 的 22 篇正文都已补齐；`cross-cutting/labs/` 的 13 篇 README 与 `platforms/` 的逐平台目录尚未镜像），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 102 篇；`build-out/` 十六步、`the-stack/` 七章、`cross-cutting/` 的 22 篇正文与 `docs/adr/` 的 15 篇决策记录都已补齐；各处 lab 的 README 与 `platforms/` 的逐平台目录尚未镜像），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
@@ -91,7 +91,7 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | ✅ | **技术栈 01→07** | [`the-stack/`](the-stack/README.md) —— 每层对比七个平台，另加两个可跑 lab。中文镜像已补齐：[01 物理](the-stack/01-physical.md) · [02 网络](the-stack/02-network.md) · [03 计算与镜像](the-stack/03-compute-and-images.md) · [04 存储](the-stack/04-storage.md) · [05 平台服务](the-stack/05-platform-services.md) · [06 可观测性](the-stack/06-observability.md) · [07 安全](the-stack/07-security.md) |
 | ✅ | **横切与端点** | [`cross-cutting/`](cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](endpoint/) |
 | ✅ | **技能图** —— 自查用 | [网络](cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |
-| ✅ | **面试图** —— 桌子的另一侧 | [网络](cross-cutting/interview/networking.md)（21 题）· [身份](cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)） |
+| ✅ | **面试图** —— 桌子的另一侧 | [网络](cross-cutting/interview/networking.md)（21 题）· [身份](cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)） |
 | ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
 | ✅ | **工具箱** —— 拿去就能跑 | [十个脚本 + 三个 Ansible roles](toolbox/) 配对成 audit→fix，加一个[打包生成器](toolbox/generate/)。安全默认，每个工具带自己的 `Tested on:` 行 |
 | ✅ | **Agent Skills** —— 方法，可调用 | [十个](../../.claude/skills/) —— 七个包装方法，三个驱动工具箱 |

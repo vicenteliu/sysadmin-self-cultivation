@@ -7,6 +7,8 @@ summary: "ADR-0002 ruled that interview material carries questions and what each
 ---
 # Interview answers are evidence for a marker, not a script to recite
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)
+
 [ADR-0002](0002-the-reference-office-is-parameters-not-a-bill-of-materials.md) made
 five decisions about `the-reference-office.md`. Four of them stand. The fifth said:
 

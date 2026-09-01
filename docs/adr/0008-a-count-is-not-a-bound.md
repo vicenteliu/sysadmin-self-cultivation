@@ -7,6 +7,8 @@ summary: "ADR-0007 bounded hero diagrams at four and said a fifth would need an 
 ---
 # A count is not a bound
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0008-a-count-is-not-a-bound.md)
+
 [ADR-0007](0007-a-figures-medium-is-decided-by-what-renders-it.md) decided that
 mermaid is the default and a branded hero diagram is the bounded exception. That
 decision stands. Two of its sentences do not:

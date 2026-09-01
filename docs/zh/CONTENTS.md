@@ -131,7 +131,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`skills-maps/identity.md`](cross-cutting/skills-maps/identity.md) | 10 节 / 58 格；5 格指向可跑的东西 | ✅ |
 
 **面试图** —— 同样的小节，从面试官那一侧看。每个问题都带着它在测什么，以及一个形状由
-该小节 marker 决定的答案（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)）。
+该小节 marker 决定的答案（[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)）。
 
 | 图 | 是什么 | 状态 |
 | --- | --- | --- |
@@ -162,7 +162,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 
 不是第七批材料。一个场景端到端走一遍 —— 一间百人办公室，从第一天到开门营业 —— 每一步
 承载**顺序与依赖**，实质内容指回上面那些轴。
-决定：[`docs/adr/0001`](../adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
+决定：[`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
 
 | 条目 | 说明 | 状态 |
 |---|---|---|
@@ -178,7 +178,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 同样不是一批材料。同一间参考办公室，慢慢走一遍、讲出来，稿子是写来**被 TTS 引擎念**的
 —— 没有表格、没有行内链接，只有会被念出口的那些字。它的顺序是它自己的：第一篇横跨两条
 轴上的三份文档外加根目录，所以它不是"`build-out/` 配个声音"。
-决定：[`docs/adr/0009`](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)
+决定：[`docs/adr/0009`](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)
 
 | 条目 | 说明 | 状态 |
 |---|---|---|
@@ -186,10 +186,10 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | **01 · 网络** | [中文](../../walkthrough/01-the-network.zh.md) · [English](../../walkthrough/01-the-network.en.md) —— 106 拍，念出来约二十分钟。取材于两条轴上的三份文档外加根目录 | ✅ |
 | **02 · 第一个星期一** | [中文](../../walkthrough/02-the-first-monday.zh.md) · [English](../../walkthrough/02-the-first-monday.en.md) —— 93 拍。一个入职者，以及那两样没有任何东西会触发的事。与 01 同一张 plate；不同的是那些面板 | ✅ |
 | **03 · 它坏掉的那一天** | [中文](../../walkthrough/03-the-day-it-breaks.zh.md) · [English](../../walkthrough/03-the-day-it-breaks.en.md) —— 102 拍。一次故障的头十分钟：哪些决定是你的、哪些检查什么都排除不掉，以及为什么修好它不是交付物 | ✅ |
-| 每篇走读两份稿 | 并排放着，而且**互不是译本** —— 语流经不起翻译（[ADR-0010](../adr/0010-a-spoken-script-has-no-translation.md)） | ✅ |
+| 每篇走读两份稿 | 并排放着，而且**互不是译本** —— 语流经不起翻译（[ADR-0010](docs/adr/0010-a-spoken-script-has-no-translation.md)） | ✅ |
 | 音频 | **永不进这棵树。** 你用自己的 TTS 生成，或者去听已发布的那一集 | — |
-| 拍 | 一段话、一次 TTS 调用、一个音频片段、一个楼面状态 —— 按稳定 id 对齐，绝不按时间戳（[ADR-0012](../adr/0012-alignment-is-by-beat-not-by-timestamp.md)） | ✅ |
-| 楼面 | viewer 里一间可交互的二维办公室 —— 平移、三档语义缩放、20 个可点物体。那群人**就是**无线负载。它渲染 Markdown 已陈述的内容，自己不计算（[ADR-0011](../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)） | ✅ |
+| 拍 | 一段话、一次 TTS 调用、一个音频片段、一个楼面状态 —— 按稳定 id 对齐，绝不按时间戳（[ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)） | ✅ |
+| 楼面 | viewer 里一间可交互的二维办公室 —— 平移、三档语义缩放、20 个可点物体。那群人**就是**无线负载。它渲染 Markdown 已陈述的内容，自己不计算（[ADR-0011](docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)） | ✅ |
 | 它的守卫 | [`build-walkthrough.py`](../../walkthrough/build-walkthrough.py) —— 拍、锚点、可念性、发布冻结 · [`tools/floor/`](../../tools/floor/README.md) —— 手绘的贴图集 | ✅ |
 
 ## Agent Skills —— 方法，可被调用
@@ -227,7 +227,7 @@ docker compose -f site/docker-compose.yml up    # http://127.0.0.1:8099
 
 它是一个**视图**，不是第七条轴：它显示的每一个字都是 GitHub 也能渲染的文件，删掉
 `site/` 这个仓库不会少一条事实
-（[ADR-0005](../adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
+（[ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
 
 ## 诚实层（处处适用）
 

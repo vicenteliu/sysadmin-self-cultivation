@@ -7,6 +7,8 @@ summary: "There is a 2.5 MB minified JavaScript bundle committed to this reposit
 ---
 # The viewer vendors its dependencies instead of adopting a site generator
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0006-the-viewer-vendors-its-dependencies.md)
+
 There is a 2.5 MB minified JavaScript bundle committed to this repository
 ([`site/vendor/mermaid.min.js`](../../site/vendor/)). It is larger than every Markdown
 file here put together, and it is the single most surprising thing in the tree, so it

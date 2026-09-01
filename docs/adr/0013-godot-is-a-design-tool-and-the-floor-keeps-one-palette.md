@@ -7,6 +7,8 @@ summary: "The floor is a game scene, and a game engine is the obvious way to bui
 ---
 # Godot is a design tool, and the floor keeps one palette
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)
+
 The [floor](0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md) is a 2D
 game scene, and the obvious way to build a game scene is a game engine. Godot has a tile
 editor, a scene tree and an HTML5 export; laying out a hundred-and-ten-port office by hand

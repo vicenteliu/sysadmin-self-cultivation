@@ -7,6 +7,8 @@ summary: "Every module in this repo marks what is hands-on depth and what is an 
 ---
 # The honesty markers are 🔨 and 🧭, not ✋ and 🧗
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0003-the-honesty-markers-are-a-hammer-and-a-compass.md)
+
 Every module in this repo marks what is **hands-on depth** and what is an
 **honest ramp**. `WHY.md` argues that the distinction is the whole point, and
 `README.md` puts it in the seventeenth line, before the table of contents. The

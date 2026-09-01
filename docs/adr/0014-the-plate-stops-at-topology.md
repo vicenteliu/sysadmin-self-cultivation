@@ -7,6 +7,8 @@ summary: "The floor the walkthrough plays over was structurally wrong: rooms flo
 ---
 # The plate stops at topology
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0014-the-plate-stops-at-topology.md)
+
 The floor the walkthrough plays over was wrong in a way that had nothing to do with
 pixels. Rooms floated in the middle of the plate, each drawing its own complete perimeter
 so that two neighbours produced two walls; nothing connected the lift lobby to anything;

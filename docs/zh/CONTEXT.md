@@ -17,7 +17,7 @@ summary: "这个仓库的词表 —— 在这里有特定含义的词，以及�
 
 这个仓库的词表 —— 在这里有特定含义的词，以及它们容易被混淆成的那些词。别的东西不属于
 这个文件：状态在 [`ROADMAP.md`](ROADMAP.md)，结构在 [`CONTENTS.md`](CONTENTS.md)，
-决策在 [`docs/adr/`](../adr/)。
+决策在 [`docs/adr/`](docs/adr/)。
 
 ## 语言
 
@@ -48,7 +48,7 @@ _避免_：技能领域、话题、类别
 **🔨（亲手做过的深度）**：
 一个断言：作者真的在生产环境里运维过这件事，带着后果。它经得起一次深挖的追问。
 _避免_：专家、精通、扎实、✋ 和 ⚒️（两个都已退役 —— 见
-[ADR-0003](../adr/0003-the-honesty-markers-are-a-hammer-and-a-compass.md)，包括第二个
+[ADR-0003](docs/adr/0003-the-honesty-markers-are-a-hammer-and-a-compass.md)，包括第二个
 为什么只活了一天）
 
 **🧭（经过验证的 ramp）**：
@@ -73,9 +73,9 @@ _避免_：测验题、闪卡、备考题
 跟在问题后面的东西，而**它的形状由该小节的 marker 决定** —— 🔨 的小节用一个
 [work example](#) 来答，🧭 的小节用诚实 ramp 的说法来答。它是 marker 的证据，绝不是
 一段用来背诵的稿子。注意这里有个反转：
-[ADR-0002](../adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)
+[ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)
 用*成品答案*指"不该写的那个东西"；
-[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md) 把它反了过来。
+[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md) 把它反了过来。
 _避免_：范文答案、样板答案、稿子、罐头回答
 
 **Work example（工作实例）**：
@@ -105,7 +105,7 @@ _避免_：搜索索引、全文索引、catalog
 `site/assets/diagrams/` 下四张开启一条轴的品牌图之一 —— 轴图、the stack、ramp、路线。
 以浅色 HTML 文件手写一次；深色 HTML 和两份 SVG 由 `site/build-diagrams.py`**派生**，
 绝不手改。区别于文档内的 **mermaid** 图，后者才是默认：
-[ADR-0007](../adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) 决定一张图属于
+[ADR-0007](docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) 决定一张图属于
 哪种媒介，而两者都受它们之上那条规则约束 —— 一张图必须承载散文没有承载的东西。
 _避免_：插图、图形、品牌图、figure（那指这两种中的任一种）
 
@@ -116,9 +116,9 @@ _避免_：插图、图形、品牌图、figure（那指这两种中的任一种
 那间一百人、单层、混合办公的办公室，它的 scenario choice 是设定的，其余一切都从一条写明
 的规则推导而来。当 [`build-out/`](build-out/) 的某一步说*一百个人*时，指的就是它；
 而它是**参数，绝不是采购清单**
-（[ADR-0002](../adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)）。
+（[ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)）。
 它**只消费服务、不运营服务** —— 没有产品、没有客户流量、没有它要负责的公开端点
-（[ADR-0015](../adr/0015-the-reference-office-consumes-services-and-operates-none.md)）。
+（[ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md)）。
 
 **"一间百人办公室"不是这个术语。** 那是个通用说法，好几个 lab 用它指自己的场景、带自己
 的数字 —— 97 台设备、七类工单、两套文档 estate —— 没有一个引用这个文件。这是允许的；不
@@ -136,7 +136,7 @@ _避免_：the office（不加限定、而实指 plate 时）、场景、示例�
 **被 TTS 引擎念出口、被听见** —— 绝不是读的。每篇走读一个文件，住在
 [`walkthrough/`](walkthrough/)，两种语言并排。它是一条**路线**，不是一条轴：它不
 教任何这个仓库尚未持有的页面，只决定**顺序和语域**
-（[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。它的次序
+（[ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。它的次序
 是它自己的 —— 它不是 `build-out/` 的十六步配个声音，编号也不对应。
 _避免_：episode（那指下面说的已发布音频）、script、旁白、tour、播客。在这个术语存在之前
 有四处用 *walkthrough* 指一段引导式 lab 序列，术语确立后都改了措辞；**这个词被保留了**
@@ -147,24 +147,24 @@ _避免_：episode（那指下面说的已发布音频）、script、旁白、to
 id** 的 HTML 注释界定 —— `<!-- beat: coverage-not-capacity -->` —— GitHub、viewer 和语音
 引擎都会忽略它，所以可见的文件里只剩会被念出口的那些字。id 绝不是序数，因为插入一段话不
 可以悄无声息地把它之后每一个场景提示都挪一位。对齐按拍，绝不按时间戳
-（[ADR-0012](../adr/0012-alignment-is-by-beat-not-by-timestamp.md)）。
+（[ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)）。
 _避免_：段落、segment、cue、章节、时间戳
 
 **Episode（集）**：
 **一份已发布的音频录音**，放在播客平台上，在这个仓库之外。走读是材料；episode 是渠道。
 这两个词被分开，是因为
-[ADR-0002](../adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)
+[ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)
 已经就这个耦合做过裁决 —— *为服务某份录音而存在的内容，应该跟那份录音待在一起* ——
 所以那个目录是按路线命名的，不是按 feed。
 _避免_：用 "episode" 指那个 Markdown 文件（那是一篇 walkthrough）
 
 _勘误_：有七条决策记录早于这个词条，用 *episode* 指文件 ——
-[0002](../adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md) 和
-[0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md) 到
-[0014](../adr/0014-the-plate-stops-at-topology.md)，出现在 `<episode>.floor.json`、
+[0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md) 和
+[0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md) 到
+[0014](docs/adr/0014-the-plate-stops-at-topology.md)，出现在 `<episode>.floor.json`、
 *the first episode*、*two scripts per episode* 和 *what an episode owns* 里。当那几条
 记录说 *the published episode* 时，那个词就是这里定义的意思。
-**记录不被编辑。** 这是 [ADR-0008](../adr/0008-a-count-is-not-a-bound.md) 立下的先例
+**记录不被编辑。** 这是 [ADR-0008](docs/adr/0008-a-count-is-not-a-bound.md) 立下的先例
 —— 它让 ADR-0007 的句子原样留着，把更正写在旁边 —— 也是一篇冻结的走读遵循的同一条规矩：
 错误变成勘误，因为静默的修正会让记录对自己说过的话撒谎。
 
@@ -173,7 +173,7 @@ _勘误_：有七条决策记录早于这个词条，用 *episode* 指文件 —
 它住在 [`walkthrough/reference-office.plate.json`](walkthrough/README.md)，被每一篇
 走读共享，而且它**止步于拓扑**：没有走廊宽度、没有疏散距离、没有卫生洁具数量、不声称这
 张图能通过任何审查
-（[ADR-0014](../adr/0014-the-plate-stops-at-topology.md)）。它的动线是写下来的，而不是从
+（[ADR-0014](docs/adr/0014-the-plate-stops-at-topology.md)）。它的动线是写下来的，而不是从
 "家具没占的地方"推断出来的，并且一个 headless Godot 工程证明了它整个都能从电梯厅走到，
 且不穿过任何一张桌子。刻意不叫 *the plan* —— 那是**地址规划**，下一条 —— 也不叫
 *the office*，那是[参考办公室](the-reference-office.md)，是它被建出来所依据的参数。
@@ -184,7 +184,7 @@ plate **被画出来时的样子** —— viewer 里那个走读在其上播放�
 缩放、可点物体和一群人。**plate 是楼面的主语；楼面是 plate 的渲染**，所以挪一堵墙是改
 plate，而给它换个颜色不是。它是一个**视图**：它渲染 Markdown 里已经存在的事实，自己不
 计算
-（[ADR-0011](../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。
+（[ADR-0011](docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。
 区别于**门面图**，后者是静态的、从一份 HTML 源派生的。刻意叫 *floor* 而不叫 *site*：那
 个词已经同时指 [`site/`](site/README.md) 那个 viewer 和
 [`site-network-design.md`](cross-cutting/site-network-design.md) 里的一个物理场地，
@@ -233,7 +233,7 @@ _避免_：用 "anchor" 表示已确立的专长
 套自建 estate），或者引述市场（`ROADMAP.md` 引了*"firewalls (Palo Alto/Fortinet)"*，因为
 岗位描述就是那么写的）。作为**推荐**，在一份注明日期的 `Reference build` 之外是被禁止的，
 依据
-[ADR-0002](../adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)。
+[ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)。
 判据：*说出这个名字是在帮人认出自己身在何处，还是在告诉他该买什么？* 前者可迁移，后者会
 过期。
 _避免_：型号名（那更窄 —— ADR-0002 专门禁止它出现在 Selection rules 里）、品牌、产品
@@ -328,9 +328,9 @@ _避免_：lab（那是自验证的那种）、教程、workshop
 **Axis（轴）**：
 这个仓库覆盖同一批材料的六个面之一 —— 按平台、按层、按主题，等等。一样不教任何新页面的
 东西**不是**一条轴，无论它多有用
-（[ADR-0001](../adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)）。
+（[ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)）。
 `build-out/` 是一条横穿这些轴的路线；`cross-cutting/skills-maps/` 是它们的一个转置视图；
 [`site/`](site/README.md) 是一个**视图** —— 它渲染材料而不添加任何材料，这是同一条判据被
 第二次施行
-（[ADR-0005](../adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
+（[ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
 _避免_：section、类别、track

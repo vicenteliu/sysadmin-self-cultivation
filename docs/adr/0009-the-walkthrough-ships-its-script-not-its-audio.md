@@ -7,6 +7,8 @@ summary: "The repo is adding a narrated walkthrough of the reference office — 
 ---
 # The walkthrough ships its script, not its audio
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)
+
 [`walkthrough/`](../../walkthrough/README.md) is a narrated pass through
 [the reference office](../../the-reference-office.md): a hundred-person floor, told in
 order, in a register the rest of this repo deliberately does not use. It is the first
