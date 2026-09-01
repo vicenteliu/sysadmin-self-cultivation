@@ -19,6 +19,18 @@ self-provisioning without a human touching each one. It's the same
 pointed at the endpoint instead of the server, and it's **🔨 hands-on depth**: a
 multi-OS deployment platform built from scratch and operated at ~100k-device scale.
 
+## The three companions
+
+This page is the overview. Where it names a design question and moves on, a companion
+answers it — which is the shape the axis needed, because the questions it names are the
+ones this repo's deepest hands-on claim sits on.
+
+| | What it answers |
+|---|---|
+| [`provisioning.md`](provisioning.md) | What a platform decides when it covers Windows, macOS **and** Linux — the two provisioning eras and which one your estate is actually in, what the three operating systems genuinely share, and why hardware diversity is the constraint rather than the leak |
+| [`management.md`](management.md) | What an MDM manages once the machine is in someone's hands — the rented management surface, why *enrolled* and *managed* and *compliant* are three different claims, what an Apple estate's shape tells you, and the scoping problem that has a time axis |
+| [`encryption-and-keys.md`](encryption-and-keys.md) | The thing this page has called *the actual work* without ever showing it — why escrow moves risk rather than removing it, the circular dependency at the centre, and the keys that outlive the machines they unlocked |
+
 ## Why endpoint is its own discipline (not "IT support")
 
 The clouds taught the industry to treat servers as cattle — imaged from code,

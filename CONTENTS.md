@@ -96,7 +96,7 @@ See [`cross-cutting/`](cross-cutting/).
 | [`ci-cd`](cross-cutting/ci-cd.md) | dedicated note (CI/CD pipelines, GitOps, rollback) | ✅ |
 | [`databases`](cross-cutting/databases.md) | dedicated note (backup/PITR, replication, self-run vs managed) — **🔨** | ✅ |
 | [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | dedicated note (ITSM, CMDB, asset reconciliation, access governance) — **🔨** | ✅ |
-| [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) | ✅ |
+| [`endpoint/`](endpoint/) | dedicated track (Jamf/Intune/PXE/patching) + three companions — [provisioning](endpoint/provisioning.md) · [management](endpoint/management.md) · [encryption and keys](endpoint/encryption-and-keys.md) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | dedicated note (Google Workspace / M365) | ✅ |
 | [`m365-support`](cross-cutting/m365-support.md) | dedicated note (M365 break-fix craft + the cross-lane transition) — **🔨** | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | dedicated note (deeper than the-stack/05) | ✅ |

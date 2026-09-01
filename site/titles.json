@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 221,
+  "count": 224,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -128,6 +128,9 @@
     "docs/zh/toolbox/vsphere-inventory/README.md": "vsphere-inventory",
     "docs/zh/walkthrough/README.md": "走读 —— 把参考办公室讲出来",
     "endpoint/README.md": "Endpoint & MDM",
+    "endpoint/encryption-and-keys.md": "Full-disk encryption at scale, and the keys",
+    "endpoint/management.md": "What an MDM manages, and what it cannot",
+    "endpoint/provisioning.md": "Provisioning across three operating systems",
     "foundations/README.md": "Foundations — Linux & scripting",
     "foundations/labs/idempotence-drill/README.md": "Lab — Idempotence & set -euo pipefail (fragile vs. safe, felt in bash)",
     "platforms/README.md": "platforms/",
