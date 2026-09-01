@@ -53,13 +53,13 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 **转置** —— 一个主题横切全部七个平台，做成可勾选的框，按这项技能能走多远来分层，而不是
 按它属于哪朵云。
 
-每条轴里的每个模块，一页看全：[`CONTENTS.md`](../../CONTENTS.md)。
+每条轴里的每个模块，一页看全：[`CONTENTS.md`](CONTENTS.md)。
 
 ## 怎么读
 
 | 我想…… | 从这里开始 |
 | --- | --- |
-| **看整体形状** | [`CONTENTS.md`](../../CONTENTS.md) —— 每个模块、六条轴，一页看全 |
+| **看整体形状** | [`CONTENTS.md`](CONTENTS.md) —— 每个模块、六条轴，一页看全 |
 | **懂背后的哲学** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
 | **深入一个平台** | [`platforms/`](../../platforms/) —— **AWS 是完整样板**，从头读到尾 |
 | **按层读技术栈** | [`the-stack/`](../../the-stack/) —— 物理层 → 安全，七平台逐层对比 |

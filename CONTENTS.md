@@ -7,6 +7,8 @@ summary: "The detailed index: every module, what it is, and where it lives."
 ---
 # Contents — the whole map
 
+> 🌐 **Languages:** English (default) · [中文](docs/zh/CONTENTS.md)
+
 > The detailed index: every module, what it is, and where it lives.
 > [`README.md`](README.md) is the front door and the shape; [`ROADMAP.md`](ROADMAP.md)
 > says what to build *next and why*; this page is the table of contents.
