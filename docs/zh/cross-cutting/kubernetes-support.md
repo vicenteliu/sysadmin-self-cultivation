@@ -6,7 +6,7 @@
 
 ---
 
-> [`kubernetes.md`](../../../cross-cutting/kubernetes.md) 讲**对象模型**和那一个核心思想——*声明期望态，让 controller 收敛*。本篇是另一半：**把 Kubernetes 支持当作一门修/救（break-fix）手艺**——真正反复出现的工单、精确的排查落点，以及**一个强 Linux / Docker / systemd sysadmin 接手一个集群时，哪些直觉会被烧到。** 诚实标记先说清：本篇是 **🧭 ramp**——我的 Kubernetes 亲手经验是**测试/实验级**（kind/minikube/k3s），由一套 🔨 **Linux + 容器 + 网络 + 排障**基本功承载。它的权威来自**研究**（kubernetes.io + practitioner 失效模式 + 一个可跑的 [lab](#lab--pods-是-cattle--可跑)），不是生产集群资历。全部意义就是*我正在跨的那道沟。*
+> [`kubernetes.md`](kubernetes.md) 讲**对象模型**和那一个核心思想——*声明期望态，让 controller 收敛*。本篇是另一半：**把 Kubernetes 支持当作一门修/救（break-fix）手艺**——真正反复出现的工单、精确的排查落点，以及**一个强 Linux / Docker / systemd sysadmin 接手一个集群时，哪些直觉会被烧到。** 诚实标记先说清：本篇是 **🧭 ramp**——我的 Kubernetes 亲手经验是**测试/实验级**（kind/minikube/k3s），由一套 🔨 **Linux + 容器 + 网络 + 排障**基本功承载。它的权威来自**研究**（kubernetes.io + practitioner 失效模式 + 一个可跑的 [lab](#lab--pods-是-cattle--可跑)），不是生产集群资历。全部意义就是*我正在跨的那道沟。*
 
 一个 Linux sysadmin 上手 Kubernetes 很快——是容器、底下是 Linux（namespace + cgroup）、YAML 在 git 里。然后它在一个"一堆服务器"没有的地方咬人：**你不管理进程，你声明期望态,而 controller 把 actual 收敛到 desired,永远。** 删掉一个 pod 它又回来。SSH 进去修一个 pod、你的修复跟它一起死。机器有 16 GB、但你的容器在 limit 处被 `OOMKilled`。pod 是 `Running`,但服务"挂了"。这些每一个都是配置管理脑的反射——*把跑着的东西当宠物*——对着一个建在 cattle 和 control loop 上的系统失灵。本篇把职责、反复出现的工单及其诊断面、以及那几个失灵的 sysadmin 直觉一一点名——全程对着 Linux/Docker/systemd 作对比,因为读者是从那儿来的。
 
@@ -78,7 +78,7 @@ Kubernetes 修/救就是 **describe → logs → events** 反射——你的 `sy
 ## 第一周 / 前 90 天
 
 **第一周。**
-1. **动手前先内化期望态 + 收敛**——"我声明,一个 controller 收敛,永远。" 读 [`kubernetes.md`](../../../cross-cutting/kubernetes.md) 的控制环思想并跑 [lab](#lab--pods-是-cattle--可跑)。
+1. **动手前先内化期望态 + 收敛**——"我声明,一个 controller 收敛,永远。" 读 [`kubernetes.md`](kubernetes.md) 的控制环思想并跑 [lab](#lab--pods-是-cattle--可跑)。
 2. **练熟分诊三件套**——`kubectl describe pod`(Events + "Controlled By")、`kubectl logs --previous`(崩掉那实例)、`kubectl get events --sort-by=.lastTimestamp`。
 3. **绝不用 exec"修 pod"**——把 `exec`/`debug` 当只读诊断;修 spec/Deployment。
 4. **"服务挂了"先查 ENDPOINTS**——`kubectl get endpoints <svc>`;空 ⇒ selector/label 不匹配、错 namespace、或 pod readiness 失败。
@@ -98,11 +98,11 @@ Kubernetes 修/救就是 **describe → logs → events** 反射——你的 `sy
 ## AI 辅助的 ramp（Kubernetes 口味）
 
 - **从你已知的翻译过来——并索要 deltas:** *"我懂 Linux、Docker、systemd —— 把 Pod/Deployment/Service 和收敛环映射到进程/unit/主机网络上,只标出真正的差异。"* K8s 奖励 translate-then-verify——但 **收敛、cattle-不是-pets、readiness-门控-endpoints、QoS/OOMKill 在单机上没有对应物**,所以那些要往死里验证(lab 就是干这个的)。像 **k8sgpt** 这类工具能用大白话解释一个失败资源——快速的第一遍,不是 describe→logs→events 反射的替代品。
-- **让它起草 manifest;你掌控收敛行为。** AI 写 YAML 很强——而它也会**漏掉 requests/limits**(BestEffort/OOMKill 惊吓)、**跳过 readiness 探针**(静默"服务挂了")、**让 selector 和 pod label 不匹配**(零 endpoints)、并**对活对象 `kubectl edit`** 而非改源。绝不 apply 一份你没读过的 AI 草稿 manifest,并先在 **kind/minikube** 一次性集群里跑。同一套往死里验证的纪律——见 [`ai-workflow/`](../ai-workflow/) 和 [`kubernetes.md`](../../../cross-cutting/kubernetes.md)。
+- **让它起草 manifest;你掌控收敛行为。** AI 写 YAML 很强——而它也会**漏掉 requests/limits**(BestEffort/OOMKill 惊吓)、**跳过 readiness 探针**(静默"服务挂了")、**让 selector 和 pod label 不匹配**(零 endpoints)、并**对活对象 `kubectl edit`** 而非改源。绝不 apply 一份你没读过的 AI 草稿 manifest,并先在 **kind/minikube** 一次性集群里跑。同一套往死里验证的纪律——见 [`ai-workflow/`](../ai-workflow/) 和 [`kubernetes.md`](kubernetes.md)。
 
 ## 诚实边界
 
-本篇是 **🧭 ramp,而且明说。** 我的 Kubernetes 亲手经验是**测试/实验级**——kind/minikube/k3s 和对象模型,不是多年跑生产集群及其控制面。承载它的是真的:**🔨 Linux + 容器 + 网络 + 排障深度**——namespace/cgroup、内核 OOM-killer、Docker/容器、DNS/路由,以及那套*就是* `systemctl`/`journalctl`/`dmesg` 改了名的 describe→logs→events 方法学(与 [`kubernetes.md`](../../../cross-cutting/kubernetes.md) 和 [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md) 画的是同一条线)。上面那些 Kubernetes 特有机制——controller/收敛模型、Service/EndpointSlices、requests/limits/QoS/OOMKill、探针、PVC/StorageClass 绑定、RBAC——是映射并文档核验过的,**不是资历。** 更深的生产 Kubernetes(etcd 运维、规模化 CNI/网络、多租平台工程、operator/CRD、负载下的集群升级)仍在前方;注释如实说明、绝不吹。这是一个强 sysadmin **正在跨过就业市场反复问的那道沟**的诚实产物——公开记录、🔨/🧭 标注。
+本篇是 **🧭 ramp,而且明说。** 我的 Kubernetes 亲手经验是**测试/实验级**——kind/minikube/k3s 和对象模型,不是多年跑生产集群及其控制面。承载它的是真的:**🔨 Linux + 容器 + 网络 + 排障深度**——namespace/cgroup、内核 OOM-killer、Docker/容器、DNS/路由,以及那套*就是* `systemctl`/`journalctl`/`dmesg` 改了名的 describe→logs→events 方法学(与 [`kubernetes.md`](kubernetes.md) 和 [`iac-and-config.md`](iac-and-config.md) 画的是同一条线)。上面那些 Kubernetes 特有机制——controller/收敛模型、Service/EndpointSlices、requests/limits/QoS/OOMKill、探针、PVC/StorageClass 绑定、RBAC——是映射并文档核验过的,**不是资历。** 更深的生产 Kubernetes(etcd 运维、规模化 CNI/网络、多租平台工程、operator/CRD、负载下的集群升级)仍在前方;注释如实说明、绝不吹。这是一个强 sysadmin **正在跨过就业市场反复问的那道沟**的诚实产物——公开记录、🔨/🧭 标注。
 
 ## Field kit —— 真实工具与参考
 

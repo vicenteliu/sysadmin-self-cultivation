@@ -23,17 +23,17 @@ summary: "跨每一朵云都能迁移的那几层。"
 | 笔记 | 覆盖什么 | 状态 |
 | --- | --- | --- |
 | [`identity-iam.md`](identity-iam.md) | 最小权限、role 与 policy 之别、短期凭据、生命周期（JML）、SSO/SAML/OIDC、SCIM —— 在 AD、Entra、AWS IAM、Azure RBAC、GCP IAM、Okta 上是同一门纪律。 | ✅ |
-| [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md) | 供给（Terraform）与配置管理（Ansible/Puppet）之别：state、module、plan/apply/destroy、幂等、漂移。 | ✅ |
+| [`iac-and-config.md`](iac-and-config.md) | 供给（Terraform）与配置管理（Ansible/Puppet）之别：state、module、plan/apply/destroy、幂等、漂移。 | ✅ |
 | [`terraform-support.md`](terraform-support.md) | 把 Terraform support 当作修/救手艺：state/漂移/强制替换/count vs for_each、反复出现的工单与你该去哪儿看，以及要卸掉的那些 Ansible sysadmin 直觉。**🧭** | ✅ |
-| [`ci-cd.md`](../../../cross-cutting/ci-cd.md) | 发布流水线：CI/CD、构建一次逐级晋升、用 OIDC 取代密钥、GitOps（拉 vs 推）、回滚。 | ✅ |
+| [`ci-cd.md`](ci-cd.md) | 发布流水线：CI/CD、构建一次逐级晋升、用 OIDC 取代密钥、GitOps（拉 vs 推）、回滚。 | ✅ |
 | [`databases.md`](../../../cross-cutting/databases.md) | 运维有状态的那个难点：可用性、可恢复性（备份/PITR）、性能、自建 vs 托管。**🔨** | ✅ |
 | [`itsm-and-assets.md`](itsm-and-assets.md) | ITSM（事件/请求/变更）、CMDB、资产对账、访问治理与审计。**🔨** | ✅ |
 | [`saas-admin.md`](saas-admin.md) | Google Workspace 与 M365 管理、身份主干、SCIM 生命周期 —— 把生产力套件当作一份受管估算面。 | ✅ |
 | [`m365-support.md`](m365-support.md) | 把 M365 support 当作修/救手艺：你负责什么、反复出现的工单与你该去哪儿看，以及一个强 sysadmin 要接手它必须卸掉的那些本地/云直觉。**🔨** | ✅ |
-| [`kubernetes.md`](../../../cross-cutting/kubernetes.md) | 对象模型与运维者视角，比 the-stack/05 深一层；托管 vs 自建，那份调试反射。 | ✅ |
+| [`kubernetes.md`](kubernetes.md) | 对象模型与运维者视角，比 the-stack/05 深一层；托管 vs 自建，那份调试反射。 | ✅ |
 | [`kubernetes-support.md`](kubernetes-support.md) | 把 Kubernetes support 当作修/救手艺：调谐环、CrashLoopBackOff / OOMKilled /"服务挂了但 Pod 是 Running"、反复出现的工单与你该去哪儿看，以及要卸掉的那些 Linux/systemd/Docker 直觉。**🧭** | ✅ |
 | [`multi-cloud-support.md`](multi-cloud-support.md) | 把多云 support 当作修/救手艺：云与云之间的那些接缝 —— CIDR/路由、跨云身份/联邦、出网/数据引力、一致的态势 —— 以及为什么单云的对等直觉会咬人。它综合了四篇平台 support 笔记。**🧭** | ✅ |
-| [`service-mesh.md`](../../../cross-cutting/service-mesh.md) | 服务发现 + service mesh：活的注册表、sidecar 的 mTLS/流量/可观测，以及"你到底需不需要一个？" | ✅ |
+| [`service-mesh.md`](service-mesh.md) | 服务发现 + service mesh：活的注册表、sidecar 的 mTLS/流量/可观测，以及"你到底需不需要一个？" | ✅ |
 | [`web-and-tls.md`](../../../cross-cutting/web-and-tls.md) | Web 服务器、反向代理与 TLS：终结、路由、证书生命周期 + ACME、那扇加固过的前门。**🔨** 基本功 | ✅ |
 | [`incident-response.md`](../../../cross-cutting/incident-response.md) | 事件响应与 on-call：生命周期（先缓解）、IC 角色、人道的 on-call、无指责复盘。 | ✅ |
 | [`working-with-security.md`](../../../cross-cutting/working-with-security.md) | 安全的运维者那一半：与 InfoSec/SOC 协作 + MITRE ATT&CK 意识（加固对的东西），诚实的 🔨 运维安全 vs 🧭 专家。 | ✅ |

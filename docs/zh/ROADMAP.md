@@ -70,14 +70,14 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | Foundations | [`foundations/`](foundations/) —— Linux 心智模型、调试反射、脚本、诚实的范围界定（Tier-3 第 10 项） | ✅ 已写 |
 | Endpoint | [`endpoint/`](endpoint/) —— MDM 模型、装机流水线、补丁/EDR、BYOD、Intune 作为 ramp（Tier-2 第 5 项），外加三篇承载底下设计的 companion：跨三个操作系统的 [provisioning](../../endpoint/provisioning.md)、[management](../../endpoint/management.md)、以及 [encryption and keys](../../endpoint/encryption-and-keys.md) —— 那件这个仓库点名过三次却从没展示的密钥托管的活 | ✅ |
 | SaaS 管理 | [`cross-cutting/saas-admin.md`](cross-cutting/saas-admin.md) —— Google Workspace / M365、身份主干、SCIM 生命周期（Tier-3 第 11 项） | ✅ 已写 |
-| IaC 与配置 | [`cross-cutting/iac-and-config.md`](../../cross-cutting/iac-and-config.md) —— 供给 vs 配置、Terraform state、Ansible、漂移（Tier-1 第 3 项） | ✅ 已写 |
+| IaC 与配置 | [`cross-cutting/iac-and-config.md`](cross-cutting/iac-and-config.md) —— 供给 vs 配置、Terraform state、Ansible、漂移（Tier-1 第 3 项） | ✅ 已写 |
 | 成本 | [`cross-cutting/cost.md`](cross-cutting/cost.md) —— 把成本当成运维信号、形状、意外、right-sizing、异常告警 | ✅ 已写 |
-| Kubernetes | [`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md) —— 对象模型、控制面、CNI/CSI 的渗漏、Pending vs CrashLoop（Tier-2 第 8 项） | ✅ 已写 |
+| Kubernetes | [`cross-cutting/kubernetes.md`](cross-cutting/kubernetes.md) —— 对象模型、控制面、CNI/CSI 的渗漏、Pending vs CrashLoop（Tier-2 第 8 项） | ✅ 已写 |
 | **横切** | **所有专门笔记均已写完**（identity · saas-admin · iac · cost · kubernetes）；网络/存储/虚拟化/可观测/安全在 the-stack 里覆盖 | ✅ |
-| 补缺 | [`cross-cutting/ci-cd.md`](../../cross-cutting/ci-cd.md) —— CI/CD 与 GitOps（相对 roadmap.sh/devops 最大的缺口）；🔨 自动化底子上的 🧭 ramp | ✅ 已写 |
+| 补缺 | [`cross-cutting/ci-cd.md`](cross-cutting/ci-cd.md) —— CI/CD 与 GitOps（相对 roadmap.sh/devops 最大的缺口）；🔨 自动化底子上的 🧭 ramp | ✅ 已写 |
 | 补缺 | [`cross-cutting/databases.md`](../../cross-cutting/databases.md) —— 运维数据库（备份/PITR、复制、自建 vs 托管）—— **🔨**（生产 PostgreSQL） | ✅ 已写 |
 | 补缺 | [`cross-cutting/itsm-and-assets.md`](cross-cutting/itsm-and-assets.md) —— ITSM、CMDB、资产对账、访问治理 —— **🔨**（ServiceNow 五年、审计自动化） | ✅ 已写 |
-| 补缺（第二批） | [`service-mesh`](../../cross-cutting/service-mesh.md)（发现 + mesh，🧭）· [`web-and-tls`](../../cross-cutting/web-and-tls.md)（反向代理 + 证书生命周期，🔨 基本功）· [`incident-response`](../../cross-cutting/incident-response.md)（生命周期、on-call、复盘） | ✅ 已写 |
+| 补缺（第二批） | [`service-mesh`](cross-cutting/service-mesh.md)（发现 + mesh，🧭）· [`web-and-tls`](../../cross-cutting/web-and-tls.md)（反向代理 + 证书生命周期，🔨 基本功）· [`incident-response`](../../cross-cutting/incident-response.md)（生命周期、on-call、复盘） | ✅ 已写 |
 | 原创 | [`working-with-security`](../../cross-cutting/working-with-security.md) —— 运维者视角的安全：与 InfoSec/SOC 协作 + MITRE ATT&CK 意识；🔨 运维安全 vs 🧭 专家。选择自己写而不是引入（这是与外部安全体系建立关系的诚实方式） | ✅ 已写 |
 | 平台 | [`platforms/gcp/`](platforms/gcp/) —— README + skills-map + ai-ramp（global-VPC 的异类；Tier-1 第 4 项）；lab 已出规格 | ✅ 已写 |
 | 平台深度 | [`platforms/aws/architecture.md`](../../platforms/aws/architecture.md) + [`operations.md`](../../platforms/aws/operations.md) + [`automation.md`](../../platforms/aws/automation.md) —— 账号模型、day-2 运维工作拆解、AI 在环、给 API 写脚本 | ✅ 已写 |

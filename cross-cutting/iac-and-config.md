@@ -8,6 +8,8 @@ summary: "The universal control plane. Move #3 of the operating model — drive 
 ---
 # Infrastructure-as-Code & Configuration Management
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/iac-and-config.md)
+
 > The universal control plane. Move #3 of the [operating model](../00-the-operating-model.md)
 > — *drive the platform through its API and codify it* — made into its own
 > discipline. Master this once and every platform becomes a thing you describe in a
