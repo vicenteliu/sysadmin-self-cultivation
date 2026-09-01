@@ -88,6 +88,12 @@ clickable props, and a cast of figures who **are the wireless load** rather than
 decoration. Zoom is semantic in three registers: occupancy and coverage far out, placement
 in the middle, and the path from access port to uplink close in.
 
+The buttons name their subject as well as their scale: **Floor** frames the whole plate,
+**Rack** frames the IDF, and **Room** keeps the enclosure already in view (or the enclosure
+holding the prop you just clicked). With no current enclosure, **Room** opens the large
+meeting room. Choosing a register or occupancy day keeps that browsing choice through a
+window resize; **Back**, **Next** and **Play** return control to the walkthrough beat.
+
 It is a **view**. It renders numbers the Markdown states and computes none of its own, and
 a prop's panel shows the judgement and the criteria — never a device configuration, which
 this repo does not hold. The line, and what it costs to hold it, is

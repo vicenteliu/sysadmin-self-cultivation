@@ -54,17 +54,38 @@ docker run --rm -p 8099:8080 sysadmin-docs
 | **Languages** | 🌐 swaps a document for its Chinese mirror and the interface with it. A document with no mirror says so instead of silently falling back. |
 | **Theme** | Follows the system setting; the toggle overrides it. Mermaid re-renders and hero diagrams swap variants with it — **except the floor**, which keeps one palette because raster pixel art cannot be inverted mechanically ([ADR-0013](../docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)). |
 | **The route** | `build-out/`'s sixteen steps as a linear track — deliberately not an axis card. |
-| **The floor** | A [walkthrough](../walkthrough/README.md) script opens over an interactive 2D office: drag to pan, scroll through three semantic zoom registers, click a thing to see why it is there. It renders numbers the Markdown states and computes none ([ADR-0011](../docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)), works in silence, and speaks a beat at a time where the browser can. |
+| **The floor** | A [walkthrough](../walkthrough/README.md) script opens over an interactive 2D office: drag to pan, scroll to zoom, or choose **Floor**, **Room** or **Rack** to frame a named subject. Click a thing to see why it is there. It renders numbers the Markdown states and computes none ([ADR-0011](../docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)), works in silence, and speaks a beat at a time where the browser can. |
+
+### Try the floor
+
+```bash
+python3 site/serve.py
+# open http://127.0.0.1:8000/#/walkthrough/01-the-network.en.md
+```
+
+The three register buttons are more than magnification:
+
+- **Floor** frames the whole office.
+- **Room** frames the room you are already viewing. If you first click an access point,
+  it frames the room containing that access point; with no current room, it opens the
+  large meeting room.
+- **Rack** frames the IDF, so the close view shows the access-port-to-uplink path rather
+  than six-times-larger office furniture.
+
+Choosing a register or an occupancy day puts the floor in browsing mode. Resizing the
+window then re-frames that choice. **Back**, **Next** or **Play** hands the camera back to
+the walkthrough, whose current beat chooses the register and subject again.
 
 ## What is generated
 
-Three files are derived and committed. Each has a `--check` mode that exits non-zero
-when it is behind its source, so staleness is caught rather than discovered.
+Generated files are derived and committed. Each builder has a check mode that exits
+non-zero when its output is behind its source, so staleness is caught rather than
+discovered.
 
 ```bash
 python3 docs/build-index.py --check     # docs/index.json  ← every file's front-matter
 python3 site/build-corpus.py --check    # titles.json + corpus.json ← the prose
-python3 site/build-diagrams.py --check  # 12 diagram artifacts ← 4 HTML sources,
+python3 site/build-diagrams.py --check  # 21 diagram artifacts ← 7 HTML sources,
                                         # and the token table ← the style profile
 python3 tools/floor/build-tiles.py --check   # the floor's sprite sheet ← tiles.tiles
 python3 tools/floor/prove-topology.py --check  # the plate, still proved walkable?
@@ -101,16 +122,29 @@ nginx has no index to consult at request time, and still enough to refuse everyt
 that matters. A repo that ships a hardening baseline should not ship a viewer that
 serves its own `.git` to localhost.
 
+That contract is **asserted, not just described**:
+
+```bash
+python3 site/serve-smoke.py     # seven requests: three answered, four refused
+```
+
+It binds no port. The handler is a function from bytes to bytes, so the requests go in
+through a buffer that offers `makefile()` and `sendall()` and come back out of another —
+through exactly the routing, allowlist and error paths a socket would reach. That is what
+lets it run where listening is denied: a locked-down runner, a sandbox, a container with
+no loopback.
+
 ## Layout
 
 ```
 site/
 ├── serve.py            the direct path — standard library, allowlisted, localhost
+├── serve-smoke.py      the URL contract above, asserted — and no port bound
 ├── build-corpus.py     titles.json + corpus.json
 ├── build-diagrams.py   the dark HTML and both SVGs, derived from each light source
 ├── index.html  style.css  strings.json
 ├── js/                 router · nav · search · render · i18n  (native ES modules)
-├── assets/diagrams/    4 hand-authored hero sources + 12 derived files
+├── assets/diagrams/    7 hand-authored hero sources + 21 derived files
 ├── js/floor.js         the walkthrough's interactive 2D office — Canvas2D, no framework
 ├── assets/floor/       tiles.png + tiles.json   generated — see tools/floor/
 ├── vendor/             marked + mermaid, committed on purpose

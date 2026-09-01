@@ -76,7 +76,7 @@ Every module in every axis, one page: [`CONTENTS.md`](CONTENTS.md).
 | **Use AI on an ordinary Tuesday** | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — triage → change → incident → write-up → sweep, and where you take it back |
 | **Support a platform I inherited** | the break-fix **support notes** (see [What's built](#whats-built)) — recurring tickets, the cross-lane experience gap, a runnable lab each |
 | **See how AI is kept honest** | [`ai-workflow/`](ai-workflow/) — the method and its guardrails |
-| **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — thirteen decisions and the options they beat |
+| **Check a word or a past decision** | [`CONTEXT.md`](CONTEXT.md) — what each term means here (and what it doesn't) · [`docs/adr/`](docs/adr/) — fourteen decisions and the options they beat |
 | **See what it cannot answer yet** | [`docs/questions.md`](docs/questions.md) — questions asked of this repo: open, answered, or out of scope with the reason |
 | **Take runnable tools with me** | [`toolbox/`](toolbox/) — ten find/audit scripts (incl. a VMware→Proxmox virtualization quartet), three Ansible remediation roles, and a [generator](toolbox/generate/) that packs a per-shop subset |
 | **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — ten Agent Skills: seven for the method (ramp · audit · author · lab · diagram · mirror · drill), three that drive the toolbox |
@@ -88,7 +88,7 @@ Every module in every axis, one page: [`CONTENTS.md`](CONTENTS.md).
 
 Everything the [roadmap](ROADMAP.md) planned is written. What remains is more runnable
 labs — the platform lab arcs are specced well ahead of what is built, and the table below
-says which — a fuller Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 26 pages so
+says which — a fuller Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 27 pages so
 far), and demand-first deepening.
 
 | | What | Where to start |
