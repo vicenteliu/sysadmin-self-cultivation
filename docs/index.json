@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 258,
+  "count": 262,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1167,6 +1167,56 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "build-out/12-meeting-rooms-av-and-uc.md",
+      "derived": true
+    },
+    "docs/zh/build-out/13-the-help-desk.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — service desk operations and ITSM practice Before: 04 devices · 10 remote access · 11 assets · 12 rooms.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/13-the-help-desk.md",
+      "derived": true
+    },
+    "docs/zh/build-out/14-compliance-evidence.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — access governance, asset reconciliation, and audit automation Before: 03 identity · 06 tenant · 07 files · 08 endpoint · 09 backup · 11 assets.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/14-compliance-evidence.md",
+      "derived": true
+    },
+    "docs/zh/build-out/15-joiner-mover-leaver.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — JML at scale, directory automation, SCIM provisioning Before: 03 identity · 06 tenant · 11 assets · 13 the help desk.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/15-joiner-mover-leaver.md",
+      "derived": true
+    },
+    "docs/zh/build-out/GAPS.md": {
+      "kind": "index",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "Derived, not planned. A step earns a line here when it should be able to point at a runnable lab or a toolbox/ tool and the repo has none.",
+      "marker": "🧭",
+      "language": "zh",
+      "mirrors": "build-out/GAPS.md",
       "derived": true
     },
     "docs/zh/build-out/README.md": {

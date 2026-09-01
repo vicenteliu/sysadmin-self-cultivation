@@ -8,6 +8,8 @@ summary: "Derived, not planned. A step earns a line here when it should be able 
 ---
 # Gaps the build-out found
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/GAPS.md)
+
 > Derived, not planned. A step earns a line here when it **should** be able to point
 > at a runnable lab or a `toolbox/` tool and the repo has none.
 >
