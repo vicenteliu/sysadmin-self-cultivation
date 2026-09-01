@@ -15,6 +15,14 @@ summary: "The clouds run your infrastructure; SaaS runs your company."
 
 Every layer below this one asked how machines run; this asks how *people* work —
 mail, docs, collaboration, and the account lifecycle that grants and revokes it all.
+
+**The estate has two sizes and only one of them is knowable.**
+[The reference office](../the-reference-office.md#parameters) can name about ten services,
+one per thing its build-out requires. How many it *uses* is not a number IT holds, because
+eight functions buy their own on a card. The consequence is not untidiness: the leaver
+flow reaches what IT administers, so on the tail there is no reclamation rate to
+improve — **no leaver event reaches those services at all**, and across one lease that is
+eighty-six departures nobody revokes.
 It's the operate-and-automate lane pointed at the productivity suite, and it leans
 directly on the identity discipline of [`identity-iam.md`](identity-iam.md): a
 user's SaaS access *is* their joiner/mover/leaver lifecycle, made concrete.
