@@ -30,8 +30,9 @@ The sections below age at very different speeds, so they are kept apart on purpo
 | Selection rules | Years. Criteria, deliberately without model names. |
 | Where things run | Years. What cannot leave the building changes slowly, and the refusals change more slowly still. Four rows and six refusals — the shortness is the finding. |
 | Reference build | Short. Dated, and meant to be replaced whole. |
-| Cost shape | Medium, and relative only. No currency figures. |
+| Cost shape | Medium, and relative only. No currency figures — six relationships, each derived from a number above. |
 | What this office does not yet say | Shortest. It is a ledger, and it empties. |
+| How interviews ask about this | Long. Questions age slowly; the answers were never here. |
 
 **If you only read one section, read *Why these numbers*.** The rest is an instance. That
 one is the method.
@@ -629,8 +630,46 @@ touching a word of prose elsewhere in this file.
 
 ## Cost shape
 
-⏳ **Not written yet.** Relative relationships only, never figures. Currency amounts date
-faster than anything else here and vary by region more than they vary by decade.
+**Relative relationships only, never figures.** Currency amounts date faster than
+anything else here and vary by region more than they vary by decade, so this section
+states what is bigger than what — every one of them derived from a number
+[above](#parameters) rather than from a price list.
+
+**1. The recurring beats the one-time, and it is not close.** Seats on
+[about ten services](#parameters), at roughly headcount, every year for the term of the
+lease. The fit-out is paid once. Any conversation that treats the network build as *the
+IT budget* is looking at the smaller half.
+
+**2. Inside the fit-out, the ceiling beats the desk.** [Power over ethernet, the radios
+and the ports facing them](#wired--ports-then-the-two-things-that-get-under-specified)
+are where the money and the constraint are — a switch's PoE budget varies by more than
+a factor of two between models at the same port count. **The desk port is the cheap
+tier and stays cheap**, and specifying it up is the most common way to spend this
+budget in the wrong ceiling.
+
+**3. Inside the recurring, the part that grows is the part nobody counts.** The named
+ten scale with headcount, which is predictable. [The tail scales with
+nobody watching](#parameters) — bought on a card, never in the leaver flow, never
+reclaimed. It is the only line here whose growth is not a function of anything.
+
+**4. Device spend is a cycle, not a growth line.** [Thirty-eight replacements a year
+against twenty-three joiners](#why-these-numbers) means **roughly three in five machines
+bought have nothing to do with headcount**. A budget modelled on hiring under-reads by
+that much, every year, and the gap looks like an overrun rather than a model error.
+
+**5. The service desk is a step function and the step is coverage.** Volume asks for
+one person; a [fifty-hour support window against a forty-hour
+week](#parameters) asks for two, and that second one is bought for *hours* rather than
+for *tickets*. Anything that reduces ticket volume does not move it.
+
+**6. The cheapest controls in this file cost a paragraph.** Reserving an address range
+so a remote session is distinguishable from a desk; writing the blast radius down at
+authoring time; giving a synchronised row a `fetched_at`. Each is one design decision,
+none has a line item, and each is worth more later than something with a price.
+
+**What this section will never hold:** a currency figure, a per-seat price, or a
+vendor's quote. Those belong in a dated `Reference build` whose entry condition is not
+met, and they would be wrong before the ink dried.
 
 ## Where this office already lives
 
@@ -807,9 +846,32 @@ never been in the room.
 
 ## How interviews ask about this
 
-⏳ **Not written yet.** When it exists it holds **questions and what each one is testing**,
-and no model answers.
+**Questions and what each one is testing. No model answers**, here or anywhere else in
+this repo.
 
 That boundary is not a style preference. Public material teaches you how to think; a
 finished answer does the work for you, and the two do not belong in the same file. A
 question plus what it probes is the first kind. A polished response is the second.
+
+**Every question below is answerable from this file**, which is the other reason they
+are here: an interviewer asking any of them is asking whether you size from a rule or
+from a habit, and this file is the rule.
+
+| Asked | What it is actually testing |
+|---|---|
+| *How many access points would you put in an office this size?* | Whether you [count twice and take the larger](#wireless--count-it-twice-and-take-the-larger) — and whether you know that below about a hundred and fifty people **the coverage floor usually wins**, which surprises people who were told density is what matters. A confident single method is the wrong answer whichever method it is |
+| *How many desks for a hundred people?* | Whether you ask about the working pattern before answering. **A hundred is a payroll number**; the building question is the peak day |
+| *How would you segment this network?* | Whether you say *trust levels* or *departments*. The follow-up that separates them: **what are you willing to block between two segments, and will you actually block it** — a segment with an any-any rule to staff is a VLAN wearing a control's name |
+| *What is in the comms room?* | Whether you know **the answer changed**. Servers, storage and tape became switches, an access controller, a print device and a little lab gear — and the room got *more* critical rather than less, being the last single point of failure that is physically yours |
+| *How many people do you need on the service desk?* | Whether you can name **the binding constraint**. At this size it is coverage, not volume — a fifty-hour window against a forty-hour week — and a ratio produces a number that happens to be right here and cannot say when it stops being |
+| *What is your backup strategy?* | Whether *strategy* means a schedule or a **recovery objective per category**. The strong version asks which categories exist first, and notices that one of them cannot have an objective at all because nobody has inventoried it |
+| *How do you onboard someone?* | Whether you start from **the trigger** or from the ticket. *What system decides whether a person is still an employee* is the question underneath, and an answer that begins with a form has already lost the automation |
+| *How many laptops does a hundred-person company buy?* | Whether you model **the refresh cycle** or the headcount. Three in five purchases have nothing to do with hiring, and an answer of *a hundred* is a snapshot offered where a rate was asked for |
+| *Would you self-host that?* | Whether you have a **test** or a preference. The three used here — does it act on the building, must it work when the uplink does not, is it the thing you break on purpose — and the willingness to answer *no, and here is why* |
+| *What would you improve about this design?* | Whether you can find the seam. The honest answers are in this file and are marked: the [🧭 wireless arithmetic](#selection-rules), the turnover band, and the mover with no rate |
+
+**The follow-up matters more than the question in every row above.** An interviewer
+learns most from what happens when the first answer is challenged — which is the whole
+premise of [`cross-cutting/interview/`](cross-cutting/interview/README.md), where the
+same discipline is applied to questions other people ask you rather than to this file's
+own numbers.

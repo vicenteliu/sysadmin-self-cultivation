@@ -3,7 +3,7 @@ kind: questions
 axis: meta
 themes: [networking]
 platforms: []
-summary: "Questions asked of this repo about networking — twelve answered, one open, with a named destination."
+summary: "Questions asked of this repo about networking — all thirteen answered, three of them by being narrowed first."
 ---
 # Questions · Networking
 
@@ -24,7 +24,7 @@ summary: "Questions asked of this repo about networking — twelve answered, one
 | 10 | What are the basic troubleshooting commands? | ✅ | [`debug-ladder.md`](../../cross-cutting/debug-ladder.md) — **per rung, not a reference**, as the narrowing required. Each command is judged by what a pass lets you stop considering, and the highest-information answer on the page is *refused* versus *timed out* |
 | 11 | How do IPv4 and IPv6 coexist now, and how is it configured? | ✅ | [`the-stack/02`](../../the-stack/02-network.md) |
 | 12 | What changed about speed? It cannot still be gigabit everywhere. | ✅ | current in [`site-network-design.md`](../../cross-cutting/site-network-design.md); history in [`network-evolution.md`](../../cross-cutting/network-evolution.md#speed-which-did-not-increase-where-people-expect) — the money moved **up and sideways**, into the uplink and the radios, and the desk is the one tier that never needed it |
-| 13 | How is the low-voltage network actually wired? Show a topology. | ⏳ | the **floor**'s near register — MDF/IDF, riser, path to the edge — in [`walkthrough/`](../../walkthrough/README.md); still **not the construction side**, see [Boundaries](../questions.md#boundaries) |
+| 13 | How is the low-voltage network actually wired? Show a topology. | ✅ | the **floor**'s near register draws it and [walkthrough 01](../../walkthrough/01-the-network.en.md) narrates it — the IDF with three access switches, the riser in the plate's core, and *the path nobody counts* from access port to uplink. Still **not the construction side**, which stays cut in [Boundaries](../questions.md#boundaries) |
 
 **Five answered, eight open.** The eight are not a wish-list: each has a named
 destination, which is what separates this from a list of things that would be nice.
