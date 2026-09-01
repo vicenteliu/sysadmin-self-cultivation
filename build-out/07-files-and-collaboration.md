@@ -72,6 +72,9 @@ person it hits is a colleague who was doing their job.
 
 - [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) — Workspace/M365
   administration and the identity spine underneath sharing
+- [the reference office](../the-reference-office.md#parameters) — ten services IT can
+  name, an unknown number it cannot, and why the leaver flow reaches only the first
+  group
 - [`the-stack/04-storage.md`](../the-stack/04-storage.md) — block, file and object,
   and why "it's in the cloud" is not a storage design
 - [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) — least

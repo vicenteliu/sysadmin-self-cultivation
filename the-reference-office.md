@@ -76,6 +76,10 @@ the file follows.
 | Devices needing an 802.1X credential | ~26 | The fixed population: room displays and systems, booths, printers, door controllers |
 | Management interfaces | ~11 | Three access switches, a core, six APs, a controller |
 | Registered guests | none | Guest is sized by the peak day, not by a register — that is what makes it guest |
+| Services IT owns and can name | ~10 | One per thing the sixteen steps require: directory, tenant, files, MDM, EDR, backup, remote access, ITSM, conferencing, monitoring |
+| Services the office actually uses | **Not derivable, and that is the parameter** | Eight functions buy their own; the number is unknown *to IT* by construction |
+| Seats on the core services | ≈ headcount | Bought per person, reclaimed by the leaver flow — for the ten it reaches |
+| Non-human identities | ~40 | 26 device credentials, ~12 service integrations, 2 break-glass. **None has a last day** |
 
 ## Why these numbers
 
@@ -221,6 +225,39 @@ of them has a last day, a manager, or anybody who notices. The count of those is
 this file yet because it depends on how many services the office buys, which is the next
 line of the ledger; what is already fixed is that **the non-human half of the directory is
 the half with no natural end.**
+
+**The count of services has two answers, and the gap between them is the domain.** The
+first is countable and this file gives it: the sixteen steps require a directory, a
+productivity tenant, file and collaboration storage, device management, endpoint security,
+backup, remote access, an ITSM tool, conferencing and something that watches all of it —
+**about ten services IT owns and can name.** The second answer is *how many the office
+actually uses*, and **this file will not give you a number, because no such number exists
+on the IT side.** Eight functions buy their own tools, on a card, without asking. The
+parameter is not a count; it is that **there is a count IT does not have.**
+
+**That is not a lament and it is measurable from the other end.** The
+[mail authentication drill](cross-cutting/labs/mail-authentication-alignment/) is exactly
+this arithmetic run backwards: the written inventory lists four senders, receivers
+actually saw six, and one of the four listed had stopped sending. **Wrong in both
+directions at once** — a billing platform finance bought and a CI runner nobody added,
+against a newsletter tool that was decommissioned and never struck off. The office does
+not have a list of its services; it has a list of the services somebody remembered.
+
+**Seats follow headcount for ten services and follow nothing for the rest.** The leaver
+flow in [step 15](build-out/15-joiner-mover-leaver.md) reaches what IT administers, so on
+the core ten a seat is reclaimed when somebody goes. For the tail there is no reclamation
+rate to quote, because **no leaver event reaches those services at all** — the drift is
+not a percentage, it is total. Across one lease that is eighty-six departures whose access
+to department-bought tools nobody revokes, because nobody with a revocation duty knows the
+tools are there.
+
+**The non-human half of the directory can now be counted, and it is about forty.** Twenty-
+six device credentials from [the segments](#why-these-numbers), roughly a dozen service
+integrations across the core ten, and two break-glass accounts. Two in five identities in
+this office are not a person — and where a human has a start date, a manager and a last
+day, **not one of the forty has any of the three.** The privileged accounts are the
+exception that proves it: there are about three, and they expire because the human behind
+each one eventually leaves.
 
 **The two device numbers in this file are not in conflict, and it is worth saying why.**
 The fleet is *~100 managed endpoints rising to ~130* — every employee, whether or not they
@@ -447,7 +484,6 @@ line here says *asked already, and answered somewhere it should not have been*.
 
 | Parameter | Who was forced to invent it | State |
 |---|---|---|
-| **SaaS estate** — how many, how many seats, who owns each, how many outside SSO | [permission sprawl](cross-cutting/labs/permission-sprawl/) again, and [mail authentication](cross-cutting/labs/mail-authentication-alignment/)'s sender inventory | ⏳ open |
 | **Support load** — arrival rate by category, the support window | [help desk queue](cross-cutting/labs/help-desk-queue/) invented seven categories, their arrival rates and a fifty-hour window | ⏳ open |
 | **Data and recovery** — what data exists, and the objective per category | [Step 09](build-out/09-backup-and-the-restore-drill.md) asks for *a recovery objective per category* and this file names no categories | ⏳ open |
 
@@ -500,6 +536,25 @@ problem one layer down, and it has a sharper form: a human identity has a leaver
 The count of non-human identities is deliberately *not* here. It depends on how many
 services the office buys, which is the next open line — an example of the entry condition
 working rather than a gap in this one.
+
+✅ **SaaS estate.** Ten services IT owns and can name, one per thing the sixteen steps
+require. The second number — how many the office *uses* — is deliberately absent, because
+**the honest parameter is that no such number exists on the IT side.** Eight functions buy
+their own, and the file says so rather than inventing a figure that would look sourced.
+
+It also settles the count domain 3 deferred: **about forty non-human identities**, being
+twenty-six device credentials, a dozen service integrations and two break-glass. Two in
+five identities in this office are not a person, and where a human has a start date, a
+manager and a last day, not one of the forty has any of the three.
+
+**No conflict with
+[mail authentication](cross-cutting/labs/mail-authentication-alignment/), which turns out
+to be this domain measured from the other end.** Its inventory lists four senders,
+receivers saw six, and one of the listed four had stopped sending — wrong in both
+directions at once, with a billing platform finance bought and a CI runner nobody added on
+one side and a decommissioned newsletter tool on the other. That is not a contrived
+scenario; it is what *there is a count IT does not have* looks like when a receiver
+reports it back. The lab needed nothing changed.
 
 **No conflict with [permission sprawl](cross-cutting/labs/permission-sprawl/).** Its
 estate is a hundred people with a finance function of eight and a nested core of three,
