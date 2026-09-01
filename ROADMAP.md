@@ -7,6 +7,8 @@ summary: "This project is built demand-first. The order below is set by how ofte
 ---
 # Roadmap
 
+> 🌐 **Languages:** English (default) · [中文](docs/zh/ROADMAP.md)
+
 > This project is built **demand-first**. The order below is set by how often each
 > skill shows up in real **infrastructure / platform / IT-engineering job
 > descriptions** — so the repo grows toward what the market actually asks for, not an

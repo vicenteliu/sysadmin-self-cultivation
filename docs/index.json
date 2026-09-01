@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 233,
+  "count": 235,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -930,6 +930,21 @@
       "mirrors": "00-the-operating-model.md",
       "derived": true
     },
+    "docs/zh/CONTENTS.md": {
+      "kind": "index",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "The detailed index: every module, what it is, and where it lives.",
+      "language": "zh",
+      "mirrors": "CONTENTS.md",
+      "derived": true
+    },
     "docs/zh/README.md": {
       "kind": "index",
       "axis": "start-here",
@@ -938,6 +953,21 @@
       "summary": "The front door: what this repo is, how to read it, and what is built.",
       "language": "zh",
       "mirrors": "README.md",
+      "derived": true
+    },
+    "docs/zh/ROADMAP.md": {
+      "kind": "roadmap",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [
+        "aws",
+        "azure",
+        "gcp",
+        "oci"
+      ],
+      "summary": "This project is built demand-first. The order below is set by how often each skill shows up in real infrastructure / platform / IT-engineering job descriptions — so the repo grows toward what the…",
+      "language": "zh",
+      "mirrors": "ROADMAP.md",
       "derived": true
     },
     "docs/zh/WHY.md": {

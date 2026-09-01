@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 233,
+  "count": 235,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -106,7 +106,9 @@
     "docs/questions/platforms.md": "Questions · Platforms and virtualisation",
     "docs/questions/storage.md": "Questions · Storage and data",
     "docs/zh/00-the-operating-model.md": "Operating Model（运维模型）",
+    "docs/zh/CONTENTS.md": "目录 —— 整张地图",
     "docs/zh/README.md": "系统管理员的自我修养",
+    "docs/zh/ROADMAP.md": "Roadmap",
     "docs/zh/WHY.md": "这个项目为什么存在",
     "docs/zh/cross-cutting/kubernetes-support.md": "Kubernetes 支持 —— Linux sysadmin 的转轨指南",
     "docs/zh/cross-cutting/m365-support.md": "Microsoft 365 支持 —— 运维者的转轨指南",
