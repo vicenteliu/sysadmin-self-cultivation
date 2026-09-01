@@ -170,7 +170,7 @@ Decision: [`docs/adr/0001`](docs/adr/0001-the-build-out-is-a-route-not-a-seventh
 | [`build-out/03-identity.md`](build-out/03-identity.md) | The step with an empty `Before` — identity has no physical prerequisite, and eight steps attach to it | ✅ 🔨 |
 | [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | Numbered eleventh, must start at device #1 — honest about dependency, a lie about time | ✅ 🔨 |
 | [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | How many IT people 100 people need — unanswerable until the estate is enumerated | ✅ 🔨 |
-| [`docs/questions.md`](docs/questions.md) | What the repo has been asked and cannot yet answer — **30 questions across seven domains**, 12 answered, 18 open with named destinations. The index, plus the out-of-scope reasoning; the domains are files under [`docs/questions/`](docs/questions/), 3 narrowed at a boundary with the reason kept | ✅ |
+| [`docs/questions.md`](docs/questions.md) | What the repo has been asked and cannot yet answer — **30 questions across seven domains**, all 30 answered, none open. The index, plus the out-of-scope reasoning; the domains are files under [`docs/questions/`](docs/questions/), 4 narrowed at a boundary with the reason kept. None open is a state, not a finish | ✅ |
 | [`build-out/GAPS.md`](build-out/GAPS.md) | Six real gaps the scenario surfaced, four of them the same shape — **all six now closed** by [`remote-access-four-causes`](cross-cutting/labs/remote-access-four-causes/), [`permission-sprawl`](cross-cutting/labs/permission-sprawl/), [`mail-authentication-alignment`](cross-cutting/labs/mail-authentication-alignment/) [`asset-reconciliation`](cross-cutting/labs/asset-reconciliation/) [`help-desk-queue`](cross-cutting/labs/help-desk-queue/) and [`transcript-retention`](cross-cutting/labs/transcript-retention/) | ✅ living |
 
 ## VIII. Walkthrough — a second route, heard rather than read
@@ -186,6 +186,7 @@ Decision: [`docs/adr/0009`](docs/adr/0009-the-walkthrough-ships-its-script-not-i
 |---|---|---|
 | [`walkthrough/`](walkthrough/README.md) | The route, its format and its five decisions | ✅ |
 | **01 · The network** | [中文](walkthrough/01-the-network.zh.md) · [English](walkthrough/01-the-network.en.md) — 106 beats, ~20 minutes spoken. Draws on three documents across two axes plus the root | ✅ |
+| **02 · The first Monday** | [中文](walkthrough/02-the-first-monday.zh.md) · [English](walkthrough/02-the-first-monday.en.md) — 93 beats. One joiner, and the two things nothing ever triggers. Same plate as 01; what differs is the panels | ✅ |
 | Scripts, two per walkthrough | Side by side and **neither a translation** — cadence does not survive one ([ADR-0010](docs/adr/0010-a-spoken-script-has-no-translation.md)) | ✅ |
 | Audio | **Never in this tree.** You generate it with your own TTS, or listen to the published episode | — |
 | Beats | One paragraph, one TTS call, one audio segment, one floor state — aligned by stable id, never by timestamp ([ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)) | ✅ |

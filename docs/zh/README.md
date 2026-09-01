@@ -43,9 +43,10 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 
 现在还有第二条同样的路线：[`walkthrough/`](walkthrough/README.md)
 带你走过参考办公室，并用一份写来**被念、被听**而不是被阅读的稿子，讲清每样东西为什么在那里
-（[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。走读 01 已经写好：
-**[网络](../../walkthrough/01-the-network.zh.md)**，106 拍，念出来约二十分钟，上面配一张可平移、
-缩放、点击的二维楼面。
+（[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。目前共两篇走读，
+播放在同一张可平移、缩放、点击的二维楼面上：**[网络](../../walkthrough/01-the-network.zh.md)**，
+106 拍；以及**[第一个星期一](../../walkthrough/02-the-first-monday.zh.md)**，93 拍 —— 念出来
+分别约二十分钟和约十八分钟。
 
 最有特色的一条轴是 **The Stack**：它**自底向上**读技术栈，在**每一层**都把七个平台放
 一起对比 —— 从机房往上写，不是从控制台往下写。横切（cross-cutting）多的是一个视图而
@@ -75,6 +76,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |
 | **改用听的** | [`walkthrough/`](walkthrough/README.md) —— 把参考办公室讲出来：口播稿、可交互二维楼面，仓库内不存音频 |
 | **在浏览器里读** | [`site/`](site/README.md) —— `python3 site/serve.py`，或 `docker compose -f site/docker-compose.yml up`。全文搜索、分面、🌐 切换、图形渲染。零安装 |
+| **检查它还立得住** | [`check.py`](../../check.py) —— 每一项检查的唯一入口：五个 builder、树里每一条内部链接与锚点、**这个仓库对自己陈述的每一个计数**、走读、viewer 的 URL 契约，以及每一个自验证 lab。`python3 check.py` |
 | **让 agent 检索它** | [`docs/index.json`](../index.json) —— 每个文件一条记录，由 [`docs/build-index.py`](../build-index.py) 从 front-matter 生成 |
 
 ## 已建成
@@ -92,11 +94,13 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
 | ✅ | **工具箱** —— 拿去就能跑 | [十个脚本 + 三个 Ansible roles](toolbox/) 配对成 audit→fix，加一个[打包生成器](toolbox/generate/)。安全默认，每个工具带自己的 `Tested on:` 行 |
 | ✅ | **Agent Skills** —— 方法，可调用 | [十个](../../.claude/skills/) —— 七个包装方法，三个驱动工具箱 |
-| ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 走读 01，[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍，配一张可平移、缩放、点击的二维楼面；稿子放在仓库里，音频不放 |
+| ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 目前共两篇走读，播放在同一张可平移、缩放、点击的二维楼面上：**01 · 网络**（[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍）与 **02 · 第一个星期一**（[中文](../../walkthrough/02-the-first-monday.zh.md) · [EN](../../walkthrough/02-the-first-monday.en.md)，93 拍）；稿子放在仓库里，音频不放 |
 | ✅ | **浏览器与检索** | [`site/`](site/README.md) —— 全文搜索，零安装：`python3 site/serve.py` 或 `docker compose -f site/docker-compose.yml up` · [`docs/index.json`](../index.json) —— 每个文件一条记录，给 agent 用 |
 
-**二十个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，多数还带一个
-`--break-it` 开关，换上*标准*做法，让你看着它失败。
+**十八个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，多数还带一个
+`--break-it` 开关，换上*标准*做法，让你看着它失败。`labs/` 下另有两个目录需要一个真实的云账号，
+所以按 [`CONTEXT.md`](CONTEXT.md) 的定义它们是可跑的练习而不是 lab；`check.py` 每次运行都点名
+它们，而不是把它们算进来。
 
 **平台** —— The Stack 里对比的七个平台各有一个"端到端运维它"的专门模块（是什么 · 技能图 ·
 AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：

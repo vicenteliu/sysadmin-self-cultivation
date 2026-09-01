@@ -4,7 +4,7 @@ check.py — every check this repo has, from one place.
 
     python3 check.py              # run everything, report, exit non-zero on failure
     python3 check.py --list       # what would run, and nothing else
-    python3 check.py --only links # run one group: builders, links, walkthrough, labs, viewer
+    python3 check.py --only links # run one group: builders, links, counts, walkthrough, labs, viewer
 
 Until this existed the checks were real and the *list* of them was not: five
 builders with `--check` modes, a walkthrough checker, a viewer smoke test and
@@ -12,7 +12,9 @@ eleven self-verifying labs, named across four READMEs and remembered by hand. A
 check nobody can enumerate is a check that silently stops being run, which is the
 same failure ADR-0008 records about a bound written as a count.
 
-One group here is new. **Nothing in this repo checked its own internal links.**
+Two groups here guard the prose. **Nothing in this repo checked its own internal links**,
+and nothing checked the numbers the prose states about itself — see the counts section
+below for what that cost.
 Every other check guards a generated artifact against its source; this one guards
 the prose against itself, which is where a repo of cross-references actually rots
 — a heading gets reworded, forty anchors go stale, and each one is invisible until
@@ -160,6 +162,179 @@ def check_links(verbose=False):
     return problems, checked
 
 
+# --- the counts check ---------------------------------------------------------
+#
+# ADR-0008 records that a count is not a bound, and ADR-0007's was crossed three
+# times before anybody noticed. This is the other half of that lesson: a count
+# written into prose is a claim, and prose is the one artifact in this repo that no
+# builder regenerates. Walkthrough 02 shipped and seven index documents went on
+# saying "walkthrough 01" as though it were the only one; `docs/questions.md` said
+# 30 answered while CONTENTS.md still said 12. Both were found by reading, which is
+# the method that fails silently.
+#
+# So: compute each number from disk, then find every place the prose states it.
+# A stated count that disagrees with disk fails. A count nobody states cannot go
+# stale — it can only go missing — which is why the fix that accompanies this check
+# makes each index document *state* how many walkthroughs there are.
+#
+# The stricter rule was tried and rejected: *a document that links one walkthrough
+# must link them all*. It catches the omission directly and needs no stated number,
+# but it fires on four documents that are right — ADR-0013 cites walkthrough 01
+# because that is the one it was written about and an ADR is never edited,
+# `docs/questions/networking.md` answers a network question with the network
+# walkthrough, and `site/README.md` uses one URL as a shell example. A check with
+# four standing exceptions is a check people learn to skip.
+
+# Numbers in this repo's voice are usually words. Anchoring every pattern to its
+# noun is what keeps `三十个` in a spoken script from being read as inventory.
+WORD_NUMBERS = {w: i for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten eleven twelve thirteen "
+    "fourteen fifteen sixteen seventeen eighteen nineteen twenty".split())}
+WORD_NUMBERS.update({w: i + 21 for i, w in enumerate(
+    "twenty-one twenty-two twenty-three twenty-four twenty-five twenty-six "
+    "twenty-seven twenty-eight twenty-nine thirty".split())})
+WORD_NUMBERS.update({w: i for i, w in enumerate(
+    "零 一 二 三 四 五 六 七 八 九 十 十一 十二 十三 十四 十五 十六 十七 十八 十九 二十".split())})
+WORD_NUMBERS.update({w: i + 21 for i, w in enumerate(
+    "二十一 二十二 二十三 二十四 二十五 二十六 二十七 二十八 二十九 三十".split())})
+WORD_NUMBERS["两"] = 2
+# Capitalised because prose starts sentences — and spelling them out here is cheaper
+# than re.I, which costs about 40% of this check's runtime on a fifty-way alternation.
+WORD_NUMBERS.update({w.capitalize(): n for w, n in list(WORD_NUMBERS.items())})
+
+NUM = "(" + "|".join([r"\d+"] + sorted(WORD_NUMBERS, key=len, reverse=True)) + ")"
+
+
+def as_int(token):
+    return int(token) if token.isdigit() else WORD_NUMBERS[token]
+
+
+def _glob(pattern):
+    import glob
+    return sorted(glob.glob(os.path.join(ROOT, pattern), recursive=True))
+
+
+def walkthrough_beats():
+    """Beats per walkthrough, read the way build-walkthrough.py reads them: a beat is
+    a `<!-- beat: id -->` marker in the English script."""
+    out = {}
+    for path in _glob("walkthrough/[0-9]*-*.en.md"):
+        text = open(path, encoding="utf-8").read()
+        out[os.path.basename(path)] = len(re.findall(r"<!--\s*beat:", text))
+    return out
+
+
+def question_rows():
+    """Every question in every domain file, as (domain, status). The domain files are
+    the record; docs/questions.md's table is a claim about them."""
+    rows = []
+    for path in _glob("docs/questions/*.md"):
+        domain = os.path.splitext(os.path.basename(path))[0]
+        for line in open(path, encoding="utf-8"):
+            # The status cell may carry more than the marker — `✅ 🧭`, or `✅ per
+            # platform · **closed**`. What decides the row is what it starts with.
+            m = re.match(r"\|\s*\d+\s*\|.*?\|\s*(✅|⏳)", line)
+            if m:
+                rows.append((domain, m.group(1)))
+    return rows
+
+
+def check_questions_ledger():
+    """docs/questions.md carries a per-domain table of asked/answered/open. Compare
+    every cell of it — and its total row — against the domain files themselves."""
+    problems = []
+    rows = question_rows()
+    if not rows:
+        return ["docs/questions/: no question rows found — has the table format changed?"]
+    truth = {}
+    for domain, status in rows:
+        a, ok, op = truth.get(domain, (0, 0, 0))
+        truth[domain] = (a + 1, ok + (status == "✅"), op + (status == "⏳"))
+
+    index = os.path.join(ROOT, "docs/questions.md")
+    text = open(index, encoding="utf-8").read()
+    seen = set()
+    for m in re.finditer(r"\|\s*\[[^\]]+\]\(questions/([a-z-]+)\.md\)\s*\|"
+                         r"\s*(\d+)\s*\|\s*(\d+)\s*\|\s*(\d+)\s*\|", text):
+        domain, said = m.group(1), tuple(int(g) for g in m.group(2, 3, 4))
+        seen.add(domain)
+        if domain not in truth:
+            problems.append(f"docs/questions.md: a row for `{domain}` but no "
+                            f"docs/questions/{domain}.md")
+        elif said != truth[domain]:
+            problems.append(f"docs/questions.md: {domain} says "
+                            f"{said[0]}/{said[1]}/{said[2]} (asked/answered/open), "
+                            f"the file holds {truth[domain][0]}/{truth[domain][1]}/"
+                            f"{truth[domain][2]}")
+    for domain in sorted(set(truth) - seen):
+        problems.append(f"docs/questions.md: docs/questions/{domain}.md exists and the "
+                        f"table has no row for it")
+
+    totals = tuple(sum(v[i] for v in truth.values()) for i in range(3))
+    m = re.search(r"\|\s*\|\s*\*\*(\d+)\*\*\s*\|\s*\*\*(\d+)\*\*\s*\|"
+                  r"\s*\*\*(\d+)\*\*\s*\|", text)
+    if not m:
+        problems.append("docs/questions.md: no total row — the table cannot be checked "
+                        "against itself")
+    else:
+        said = tuple(int(g) for g in m.group(1, 2, 3))
+        if said != totals:
+            problems.append(f"docs/questions.md: the total row says "
+                            f"{said[0]}/{said[1]}/{said[2]}, the domain files hold "
+                            f"{totals[0]}/{totals[1]}/{totals[2]}")
+    return problems
+
+
+def counted_things():
+    """(name, what disk says, [patterns that find the claim in prose]).
+
+    A pattern must anchor to the noun. `二十个` alone appears in a spoken script
+    about people; `二十个可跑` is a claim about this repo."""
+    beats = walkthrough_beats()
+    rows = question_rows()
+    return [
+        ("walkthroughs", {len(_glob("walkthrough/[0-9]*-*.en.md"))},
+         [NUM + r"\s+walkthroughs\b", r"(?:共|目前|已有)\s*" + NUM + r"\s*篇走读"]),
+        ("walkthrough beats", set(beats.values()) | {sum(beats.values())},
+         [NUM + r"\s+beats\b", NUM + r"\s*拍[，。 ,\n]"]),
+        ("runnable labs", {len(find_labs())},
+         [NUM + r"[ -]runnable, self-verifying", NUM + r"\s*个可跑、自验证"]),
+        ("agent skills", {len(_glob(".claude/skills/*/SKILL.md"))},
+         [NUM + r"\s+Agent Skills\b", r"自?带\s*" + NUM + r"\s*个\s*\[?`?\.claude/skills"]),
+        # `15 of 16 steps point at a lab` states coverage, not inventory — only the
+        # denominator is a claim about how many steps there are.
+        ("build-out steps", {len(_glob("build-out/[0-9]*.md"))},
+         [r"\bof\s+" + NUM + r"\s+steps\b", r"\*\*" + NUM + r"\s*步全部"]),
+        ("questions asked", {len(rows)},
+         [NUM + r"\s+questions across\b", r"域" + NUM + r"问"]),
+        ("Chinese mirrors", {len(_glob("docs/zh/**/*.md"))},
+         [r"docs/zh/`?\s*目前\s*" + NUM + r"\s*篇"]),
+    ]
+
+
+def check_counts():
+    problems = check_questions_ledger()
+    compiled = [(name, truth, [re.compile(p) for p in pats])
+                for name, truth, pats in counted_things()]
+    for rel in markdown_files():
+        text = open(os.path.join(ROOT, rel), encoding="utf-8").read()
+        # Blank the fences instead of removing them, or every line number after the
+        # first code block is a lie.
+        blanked = FENCE_RE.sub(lambda m: "\n" * m.group(0).count("\n"), text)
+        for name, truth, rxs in compiled:
+            for rx in rxs:
+                for m in rx.finditer(blanked):
+                    said = as_int(m.group(1))
+                    if said in truth:
+                        continue
+                    want = " or ".join(str(v) for v in sorted(truth))
+                    line = blanked[:m.start()].count("\n") + 1
+                    problems.append(
+                        f"{rel}:{line}: says {name} = {said}, disk says {want}"
+                        f"   — “{m.group(0).strip()}”")
+    return sorted(problems)
+
+
 # --- the runner ---------------------------------------------------------------
 
 def run(argv):
@@ -186,10 +361,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.strip().split("\n")[0] if __doc__ else "")
     ap.add_argument("--list", action="store_true", help="print what would run and stop")
     ap.add_argument("--only", metavar="GROUP",
-                    help="one of: builders, links, walkthrough, viewer, labs")
+                    help="one of: builders, links, counts, walkthrough, viewer, labs")
     args = ap.parse_args()
 
-    wanted = ["builders", "links", "walkthrough", "viewer", "labs"]
+    wanted = ["builders", "links", "counts", "walkthrough", "viewer", "labs"]
     if args.only:
         if args.only not in wanted:
             print(f"unknown group {args.only!r} — choose from {', '.join(wanted)}",
@@ -202,6 +377,12 @@ def main():
             print(f"{g}:")
             if g == "links":
                 print("  every relative link and Markdown anchor in the tree")
+                continue
+            if g == "counts":
+                print("  the questions ledger, against the domain files")
+                for name, truth, _ in counted_things():
+                    print(f"  {name:<28} disk says "
+                          f"{' or '.join(str(v) for v in sorted(truth))}")
                 continue
             for name, argv in GROUPS[g]():
                 print(f"  {name:<28} {' '.join(argv)}")
@@ -224,6 +405,23 @@ def main():
                     print(f"      … and {len(problems) - 20} more")
             else:
                 print(f"  ✓ links                        {n} resolve"
+                      f"   ({time.time() - t0:.1f}s)")
+            continue
+        if g == "counts":
+            t0 = time.time()
+            problems = check_counts()
+            ran += 1
+            if problems:
+                failed.append("counts")
+                print(f"  ✗ stated counts                {len(problems)} disagree with disk"
+                      f"   ({time.time() - t0:.1f}s)")
+                for p in problems[:20]:
+                    print(f"      {p}")
+                if len(problems) > 20:
+                    print(f"      … and {len(problems) - 20} more")
+            else:
+                n = len(counted_things())
+                print(f"  ✓ stated counts                {n} kinds agree with disk"
                       f"   ({time.time() - t0:.1f}s)")
             continue
         if g == "labs":
