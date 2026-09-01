@@ -7,6 +7,8 @@ summary: "The idea behind the project, and an honest read on where the craft is 
 ---
 # Why this exists
 
+> 🌐 **Languages:** English (default) · [中文](docs/zh/WHY.md)
+
 > The idea behind the project, and an honest read on where the craft is heading.
 
 ## Nobody knows every system — not even the veterans

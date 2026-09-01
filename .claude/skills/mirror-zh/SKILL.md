@@ -96,17 +96,24 @@ bidirectional switcher, so they're spelled out below.
 
 ## Verify (don't skip)
 
-- **Every relative link resolves** — run the checker; don't spot-check by hand:
+- **Every relative link resolves** — run the repo's checker; don't spot-check by hand:
 
   ```
-  python3 .claude/skills/mirror-zh/check_links.py
+  python3 check.py --only links
   ```
 
-  It resolves every relative link in the repo, prints how many it checked, lists each
-  dead one together with where that target actually sits on disk, and exits 1 if any
-  are dead. Read the count, not just the verdict: `0 dead` out of 4 links and `0 dead`
-  out of 1403 are different results. A hand check of the file you just edited also
-  can't see the links you broke in the file you edited an hour ago.
+  It resolves every relative link and every Markdown anchor in the tree, and exits 1
+  if any are dead. Read the count, not just the verdict: `0 dead` out of 4 links and
+  `0 dead` out of 2,000 are different results. A hand check of the file you just
+  edited also cannot see the links you broke in the file you edited an hour ago.
+
+  **This skill used to ship its own `check_links.py` and no longer does.** Two
+  checkers meant two sets of exclusions, and only one of them knew that
+  `sysadmin-brass.profile.md` is a copy of upstream material whose links point at
+  another tool's documentation — so the skill's checker reported six dead links that
+  were not this repo's to fix. [`check.py`](../../../check.py) is the single entry
+  point for every check here, and that file carries a comment saying it must never
+  grow a second list.
 - **Mermaid validates** (see step 4).
 - **The mirror is complete** — same sections as the English source, nothing dropped.
 

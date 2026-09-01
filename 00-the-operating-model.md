@@ -7,6 +7,8 @@ summary: "The transferable skeleton under every platform."
 ---
 # The Operating Model
 
+> 🌐 **Languages:** English (default) · [中文](docs/zh/00-the-operating-model.md)
+
 > The transferable skeleton under every platform. Learn this once; everything else
 > is syntax.
 
