@@ -187,6 +187,7 @@ Decision: [`docs/adr/0009`](docs/adr/0009-the-walkthrough-ships-its-script-not-i
 | [`walkthrough/`](walkthrough/README.md) | The route, its format and its five decisions | ✅ |
 | **01 · The network** | [中文](walkthrough/01-the-network.zh.md) · [English](walkthrough/01-the-network.en.md) — 106 beats, ~20 minutes spoken. Draws on three documents across two axes plus the root | ✅ |
 | **02 · The first Monday** | [中文](walkthrough/02-the-first-monday.zh.md) · [English](walkthrough/02-the-first-monday.en.md) — 93 beats. One joiner, and the two things nothing ever triggers. Same plate as 01; what differs is the panels | ✅ |
+| **03 · The day it breaks** | [中文](walkthrough/03-the-day-it-breaks.zh.md) · [English](walkthrough/03-the-day-it-breaks.en.md) — 102 beats. The first ten minutes of an incident: which decisions are yours, which checks eliminate nothing, and why the fix is not the deliverable | ✅ |
 | Scripts, two per walkthrough | Side by side and **neither a translation** — cadence does not survive one ([ADR-0010](docs/adr/0010-a-spoken-script-has-no-translation.md)) | ✅ |
 | Audio | **Never in this tree.** You generate it with your own TTS, or listen to the published episode | — |
 | Beats | One paragraph, one TTS call, one audio segment, one floor state — aligned by stable id, never by timestamp ([ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)) | ✅ |

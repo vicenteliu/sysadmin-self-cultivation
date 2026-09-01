@@ -118,6 +118,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 |---|---|---|---|---|---|
 | 01 | [网络](../../../walkthrough/01-the-network.en.md) —— 一层楼、四个网段、和天花板上的那几个天线 | ✅ | [✅](../../../walkthrough/01-the-network.zh.md) | ✅ 20 个物体 | ⏳ |
 | 02 | [第一个星期一](../../../walkthrough/02-the-first-monday.en.md) —— 一个新人，和两件永远没人触发的事 | ✅ | [✅](../../../walkthrough/02-the-first-monday.zh.md) | ✅ 10 个物体 | ⏳ |
+| 03 | [它坏掉的那一天](../../../walkthrough/03-the-day-it-breaks.en.md) —— 头十分钟，以及顺序为什么要紧 | ✅ | [✅](../../../walkthrough/03-the-day-it-breaks.zh.md) | ✅ 10 个物体 | ⏳ |
 
 **106 拍，念出来约二十分钟。** 它取材于
 [`the-reference-office.md`](../../../the-reference-office.md)、
@@ -133,6 +134,23 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 [`build-out/15-joiner-mover-leaver.md`](../../../build-out/15-joiner-mover-leaver.md)。
 它在**同一张 plate** 上播放——第二篇讲的是同一间办公室——不同的全在它的面板里：01 的面板
 讲网络，它的面板讲身份与生命周期。立足点切换一次，就在离职率那个带上，说出来。
+
+**走读 03 是 102 拍**，取材于
+[`the-reference-office.md`](../../../the-reference-office.md)、
+[`build-out/01-uplink.md`](../../../build-out/01-uplink.md)、
+[`debug-ladder.md`](../../../cross-cutting/debug-ladder.md)、
+[`incident-response.md`](../../../cross-cutting/incident-response.md)、
+[`the-stack/06-observability.md`](../../../the-stack/06-observability.md)，以及
+[four-causes](../../../cross-cutting/labs/remote-access-four-causes/) 和
+[mitigate-before-diagnose](../../../cross-cutting/labs/mitigate-before-diagnose/)
+两个 lab 的 README —— 七个来源，到目前为止最多的一篇，因为一次故障正是各条轴汇合的地方。
+还是同一张 plate。它十个物体里有三个是**「计划」而不是「地方」**：那个决定、那架梯子和那份
+记录，是这一篇真正在讲的东西，而它们在一层楼上都没有位置。立足点切换一次，说出口，就在
+🔨 的梯子让位给 🧭 的事故指挥流程那个地方。
+
+**一层楼，三种看法。** 01 读的是图纸，02 读的是站在图纸上的那片估算面，03 读的是一只钟。
+所以 03 花时间最长的那两件事，恰好是这间办公室花钱买不掉的两件：一个检查排除了什么，
+以及那份清册在哪里到头 —— 监控的那道限制和恢复的那道限制，原来是同一道限制从两侧走过来。
 
 后续的走读，在真的有什么值得说出口的时候才写，一次一篇，像
 [`toolbox/`](../../../toolbox/README.md) 那样生长。没有目标篇数。

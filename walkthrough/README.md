@@ -141,6 +141,7 @@ needs no timing data. Nothing in this repo depends on which engine you pick.
 |---|---|---|---|---|---|
 | 01 | [The network](01-the-network.en.md) — one floor, four segments, and the radios in the ceiling | ✅ | [✅](01-the-network.zh.md) | ✅ 20 props | ⏳ |
 | 02 | [The first Monday](02-the-first-monday.en.md) — one joiner, and the two things nothing ever triggers | ✅ | [✅](02-the-first-monday.zh.md) | ✅ 10 props | ⏳ |
+| 03 | [The day it breaks](03-the-day-it-breaks.en.md) — the first ten minutes, and why the order matters | ✅ | [✅](03-the-day-it-breaks.zh.md) | ✅ 10 props | ⏳ |
 
 **106 beats, about twenty minutes spoken.** It draws on
 [`the-reference-office.md`](../the-reference-office.md),
@@ -158,6 +159,26 @@ changes once, out loud, where the 🔨 segmentation and addressing material give
 over the **same plate** — episode two is the same office — and everything that differs is
 in its panels, which are about identity and lifecycle where 01's were about the network.
 Its footing changes once, out loud, at the turnover band.
+
+**Walkthrough 03 is 102 beats**, and it draws on
+[`the-reference-office.md`](../the-reference-office.md),
+[`build-out/01-uplink.md`](../build-out/01-uplink.md),
+[`debug-ladder.md`](../cross-cutting/debug-ladder.md),
+[`incident-response.md`](../cross-cutting/incident-response.md),
+[`the-stack/06-observability.md`](../the-stack/06-observability.md) and the READMEs of the
+[four-causes](../cross-cutting/labs/remote-access-four-causes/) and
+[mitigate-before-diagnose](../cross-cutting/labs/mitigate-before-diagnose/) labs — seven
+sources, the most of any so far, because an incident is where the axes meet. Same plate
+again. Three of its ten props are **plans rather than places**: the decision, the ladder
+and the record are what this walkthrough is about and none of them has a location on a
+floor. Its footing changes once, out loud, where the 🔨 ladder gives way to the 🧭
+incident-command process.
+
+**One floor, three ways to see it.** 01 reads the plate, 02 reads the estate standing on
+it, and 03 reads the clock. That is why the two things 03 spends longest on are the two
+this office cannot buy its way out of: what a check eliminates, and where the inventory
+ends — the monitoring limit and the recovery limit turn out to be the same limit
+approached from either side.
 
 Further walkthroughs are written when there is something worth saying out loud, one at a
 time, the way [`toolbox/`](../toolbox/README.md) grows. There is no target count.
