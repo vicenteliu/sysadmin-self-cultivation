@@ -117,6 +117,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 | # | 走读 | EN | 中文 | 楼面 | 已发布 |
 |---|---|---|---|---|---|
 | 01 | [网络](../../../walkthrough/01-the-network.en.md) —— 一层楼、四个网段、和天花板上的那几个天线 | ✅ | [✅](../../../walkthrough/01-the-network.zh.md) | ✅ 20 个物体 | ⏳ |
+| 02 | [第一个星期一](../../../walkthrough/02-the-first-monday.en.md) —— 一个新人，和两件永远没人触发的事 | ✅ | [✅](../../../walkthrough/02-the-first-monday.zh.md) | ✅ 10 个物体 | ⏳ |
 
 **106 拍，念出来约二十分钟。** 它取材于
 [`the-reference-office.md`](../../../the-reference-office.md)、
@@ -124,6 +125,14 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 [`build-out/05-network.md`](../../../build-out/05-network.md) —— 横跨两条轴加根目录的
 三份文档，这也是编号不跟着 `build-out/` 走的原因。立足点切换一次，说出口，就在 🔨 的
 分段与地址规划让位给 🧭 的无线算术那个地方。
+
+**走读 02 是 93 拍**，取材于
+[`the-reference-office.md`](../../../the-reference-office.md)、
+[`build-out/03-identity.md`](../../../build-out/03-identity.md)、
+[`build-out/04-devices-and-images.md`](../../../build-out/04-devices-and-images.md) 和
+[`build-out/15-joiner-mover-leaver.md`](../../../build-out/15-joiner-mover-leaver.md)。
+它在**同一张 plate** 上播放——第二篇讲的是同一间办公室——不同的全在它的面板里：01 的面板
+讲网络，它的面板讲身份与生命周期。立足点切换一次，就在离职率那个带上，说出来。
 
 后续的走读，在真的有什么值得说出口的时候才写，一次一篇，像
 [`toolbox/`](../../../toolbox/README.md) 那样生长。没有目标篇数。
