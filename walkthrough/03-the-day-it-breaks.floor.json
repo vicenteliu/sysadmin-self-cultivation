@@ -6,7 +6,7 @@
   "03-the-day-it-breaks.zh.md",
   "03-the-day-it-breaks.en.md"
  ],
- "note": "Beat entries are partial. A beat with no entry inherits the state of the beat before it, so only changes are written down. The first beat must always carry a full state. The plate is shared with walkthroughs one and two; what belongs to this one is the panels and the cues, and every panel here is about the response rather than about the network or the joiner. Three props are plans rather than places, because the decision, the ladder and the record are the things this walkthrough is actually about and none of them has a location on a floor.",
+ "note": "Beat entries are partial. A beat with no entry inherits the state of the beat before it, so only changes are written down. The first beat must always carry a full state. The plate is shared with walkthroughs one and two; what belongs to this one is the panels and the cues, and every panel here is about the response rather than about the network or the joiner. Three props are plans rather than places, because the decision, the ladder and the record are the things this walkthrough is actually about and none of them has a location on a floor. Like the plans in walkthroughs one and two they sit on open floor, which is the whole convention: a marker for an idea must not be drawn inside a room, or it reads as a claim about that room.",
  "props": [
   {
    "id": "service",
@@ -346,8 +346,8 @@
    "id": "the-record",
    "kind": "plan",
    "at": [
-    38,
-    20
+    34,
+    21
    ],
    "segment": "seg-staff",
    "label": {
