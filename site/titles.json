@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 225,
+  "count": 226,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -129,6 +129,7 @@
     "docs/zh/walkthrough/README.md": "走读 —— 把参考办公室讲出来",
     "endpoint/README.md": "Endpoint & MDM",
     "endpoint/encryption-and-keys.md": "Full-disk encryption at scale, and the keys",
+    "endpoint/labs/policy-blast-radius/README.md": "Lab — the console says 3, the policy reaches 22, and in three years it reaches 30",
     "endpoint/management.md": "What an MDM manages, and what it cannot",
     "endpoint/provisioning.md": "Provisioning across three operating systems",
     "foundations/README.md": "Foundations — Linux & scripting",

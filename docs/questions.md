@@ -43,13 +43,13 @@ not edited to follow a file that moved.
 | Domain | Asked | Answered | Open |
 |---|---|---|---|
 | [Networking](questions/networking.md) | 13 | 5 | 8 |
-| [Endpoint](questions/endpoint.md) | 4 | 3 | 1 |
+| [Endpoint](questions/endpoint.md) | 4 | 4 | 0 |
 | [Storage and data](questions/storage.md) | 4 | 4 | 0 |
 | [Platforms and virtualisation](questions/platforms.md) | 2 | 2 | 0 |
 | [Observability](questions/observability.md) | 3 | 3 | 0 |
 | [Identity](questions/identity.md) | 2 | 2 | 0 |
 | [Inventory and assets](questions/assets.md) | 2 | 2 | 0 |
-| | **30** | **21** | **9** |
+| | **30** | **22** | **8** |
 
 **The split happened when the rule below said it would.** This was one file with one
 domain until seven more arrived at once; *a third domain appearing* was the stated
@@ -57,13 +57,13 @@ threshold and it was crossed by four. Recording that here rather than quietly
 reorganising is the point — a threshold nobody notices being crossed is
 [ADR-0008](adr/0008-a-count-is-not-a-bound.md)'s entire subject.
 
-**Nine open, and the shape of them is worth a sentence.** All eight of the networking
+**Eight open, and the shape of them is worth a sentence.** All eight of the networking
 eight point at one unwritten document, the evolution note. The endpoint four sat on the
 repo's **deepest** hands-on claim and its least-written axis — which was not a
 coincidence about endpoint but what happens when the material somebody knows best is the
-material they never had to look up. Three of those four are now written; the fourth is a
-lab, and it is open because the spec it inherited cannot be built the way this repo
-builds labs.
+material they never had to look up. All four are now written, the fourth as a lab whose
+inherited spec had to be replaced — it asked for a trial MDM and a spare device, which
+is a *guided run*, and could not have taught its own lesson anyway.
 
 ## Boundaries
 
