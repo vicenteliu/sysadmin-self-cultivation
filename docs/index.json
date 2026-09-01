@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 227,
+  "count": 228,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -680,6 +680,19 @@
       ],
       "summary": "The break-fix half of Terraform, written for an Ansible sysadmin. It bites in the one place config management has no equivalent for: Terraform keeps a state file, and the state file is the source of truth.",
       "marker": "mixed"
+    },
+    "cross-cutting/vpn-and-remote-access.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "identity"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "What actually happens between clicking connect and reaching the thing — five decisions somebody owns, an address that shows up in every log afterwards, and the reason split tunnelling breaks on DNS rather than on routing.",
+      "marker": "🔨"
     },
     "cross-cutting/web-and-tls.md": {
       "kind": "note",
