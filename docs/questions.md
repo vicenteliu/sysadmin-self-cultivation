@@ -1,9 +1,9 @@
 ---
 kind: questions
 axis: meta
-themes: [networking]
+themes: []
 platforms: []
-summary: "Questions asked of this repo that it cannot yet answer — open, answered, or deliberately out of scope, with the reason recorded for the last kind."
+summary: "The index of questions asked of this repo across seven domains — open, answered, or deliberately out of scope, with the reason recorded for the last kind."
 ---
 # Open questions
 
@@ -31,33 +31,44 @@ There is no symbol for *out of scope*, deliberately — those live in
 [Boundaries](#boundaries) below, where a line has room for the reason. A symbol
 would compress the only part of them worth keeping.
 
-## Networking
+## The domains
 
-| # | Question | Status | Where |
+Seven files, one per domain, and this page is their index. **The directory has no
+`README.md` of its own** — an exception to how every other folder here is indexed, and
+a deliberate one: two decision records
+([0009](adr/0009-the-walkthrough-ships-its-script-not-its-audio.md) and
+[0014](adr/0014-the-plate-stops-at-topology.md)) point at *this* path, and records are
+not edited to follow a file that moved.
+
+| Domain | Asked | Answered | Open |
 |---|---|---|---|
-| 1 | What does a current office network look like, architecturally? | ✅ | [`site-network-design.md`](../cross-cutting/site-network-design.md) |
-| 2 | How has office network architecture changed over fifteen years? | ⏳ | the evolution note |
-| 3 | How have the network protocols changed over that span? | ⏳ | the evolution note |
-| 4 | Firewalls: Palo Alto now — what came before, and what changed? | ⏳ | the evolution note, **as a signature, not a recommendation** — see [Boundaries](#boundaries) |
-| 5 | What does an F5-class device actually do? | ⏳ | the evolution note; partly answered by the *LB signature* row in [`the-stack/02`](../the-stack/02-network.md) |
-| 6 | How are access points deployed, and by what rule? | ✅ | [`Selection rules`](../the-reference-office.md#selection-rules) — 🧭 |
-| 7 | How have wireless and its protocols changed? | ⏳ | the evolution note |
-| 8 | How does a large office's network differ from a small one's? | ✅ | [`site-network-design.md`](../cross-cutting/site-network-design.md#when-the-size-changes-the-design) |
-| 9 | How does a VPN actually land a user on the office network? | ⏳ | a VPN note of its own |
-| 10 | What are the basic troubleshooting commands? | ⏳ | a debug-ladder companion — **per rung, not a reference** — see [Boundaries](#boundaries) |
-| 11 | How do IPv4 and IPv6 coexist now, and how is it configured? | ✅ | [`the-stack/02`](../the-stack/02-network.md) |
-| 12 | What changed about speed? It cannot still be gigabit everywhere. | ✅ current · ⏳ history | [`site-network-design.md`](../cross-cutting/site-network-design.md) + [`Selection rules`](../the-reference-office.md#selection-rules); the fifteen-year arc belongs to the evolution note |
-| 13 | How is the low-voltage network actually wired? Show a topology. | ⏳ | the **floor**'s near register — MDF/IDF, riser, path to the edge — in [`walkthrough/`](../walkthrough/README.md); still **not the construction side**, see [Boundaries](#boundaries) |
+| [Networking](questions/networking.md) | 13 | 5 | 8 |
+| [Endpoint](questions/endpoint.md) | 4 | 0 | 4 |
+| [Storage and data](questions/storage.md) | 4 | 0 | 4 |
+| [Platforms and virtualisation](questions/platforms.md) | 2 | 1 | 1 |
+| [Observability](questions/observability.md) | 3 | 2 | 1 |
+| [Identity](questions/identity.md) | 2 | 2 | 0 |
+| [Inventory and assets](questions/assets.md) | 2 | 2 | 0 |
+| | **30** | **12** | **18** |
 
-**Five answered, eight open.** The eight are not a wish-list: each has a named
-destination, which is what separates this from a list of things that would be nice.
+**The split happened when the rule below said it would.** This was one file with one
+domain until seven more arrived at once; *a third domain appearing* was the stated
+threshold and it was crossed by four. Recording that here rather than quietly
+reorganising is the point — a threshold nobody notices being crossed is
+[ADR-0008](adr/0008-a-count-is-not-a-bound.md)'s entire subject.
+
+**Eighteen open, and the shape of them is worth a sentence.** Eight of the networking
+eight point at one unwritten document, the evolution note. Four of the endpoint four sit
+on the repo's **deepest** hands-on claim and its least-written axis. That is not a
+coincidence about endpoint; it is what happens when the material somebody knows best is
+the material they never had to look up.
 
 ## Boundaries
 
-Three of the questions above arrived wanting something this repo has already decided
-not to do. **None of them was refused.** Each was narrowed to the version that does
-not break a rule — and in all three cases that version is also the more useful one,
-which is worth noticing rather than treating as a consolation.
+Four of the questions arrived wanting something this repo has already decided not to
+do. **None of them was refused.** Each was narrowed to the version that does not break
+a rule — and in all four cases that version is also the more useful one, which is worth
+noticing rather than treating as a consolation.
 
 Recorded here so that the narrowing does not have to be rediscovered. *A question
 answered halfway, with no record of which half was cut, gets asked again in full.*
@@ -66,6 +77,7 @@ answered halfway, with no record of which half was cut, gets asked again in full
 |---|---|---|
 | **Which firewall should I buy?** (#4) | What you will *see* in a given environment, and what it replaced. | A buying recommendation. [ADR-0002](adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md) allows model names only in a dated `Reference build`, whose entry condition is that a build-out step needs one — and none does. *"Palo Alto replaced what?"* is history and transfers; *"buy Palo Alto"* is a two-year-old opinion. |
 | **A troubleshooting command reference** (#10) | The command that verifies each rung of the debug ladder. | A command reference. The chapter's stated altitude is *decisions somebody has to make and own* — it trains running a network, not reading the wire. A per-rung command serves the ladder; a reference replaces it with recall. |
+| **How do AWS, GCP and Oracle Cloud each design their network services?** ([platforms #1](questions/platforms.md)) | Each platform's own network design, where it already lives — and the layer-by-layer comparison across seven platforms, where it already lives. | A fourth document comparing three clouds' networking. [`the-stack/02`](../the-stack/02-network.md) **is** the place this repo compares one layer across platforms; a three-way note would restate it at `mixed` footing, and restating a ramp does not deepen it. The narrowing is that the question was already answered twice and needed a pointer, not a page. |
 | **A low-voltage topology, including the construction side** (#13) | MDF/IDF, riser, path to the edge — the logical topology a network person owns. | Containment, tray, pull schedules, construction sequencing. [`build-out/GAPS.md`](../build-out/GAPS.md) already judged this: commissioning a room from a shell is *physical work with contractors*, and it stays 🧭. Drawing a cable tray would be inventing depth. |
 
 ## Adding to this file
@@ -77,6 +89,13 @@ When a question is answered, change the status and link the answer; do not delet
 line. The list of what this repo did not know is more interesting than the list of
 what it covers, and it is the only place that history survives.
 
-**When to split.** This file becomes `docs/questions/` with one file per domain at
-whichever comes first: a **third domain** appearing, or a **single domain passing
-twenty-five questions**. Below that, a directory costs more structure than it saves.
+**The split has happened.** The stated threshold was a third domain appearing or a
+single domain passing twenty-five questions; seven domains arrived at once and the first
+condition was crossed by four. This page is now the index, and each domain is a file
+under [`questions/`](questions/).
+
+**The next threshold, since a rule that has fired needs replacing rather than
+deleting.** A domain file passing **twenty-five questions** splits by sub-domain the same
+way. And a domain whose questions are *all* answered does not get deleted — it stays,
+because the list of what this repo did not know is the part that does not survive
+anywhere else.

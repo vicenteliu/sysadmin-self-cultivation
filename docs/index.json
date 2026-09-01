@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 214,
+  "count": 221,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -808,11 +808,64 @@
     "docs/questions.md": {
       "kind": "questions",
       "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The index of questions asked of this repo across seven domains — open, answered, or deliberately out of scope, with the reason recorded for the last kind."
+    },
+    "docs/questions/assets.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about an internal inventory — largely answered, and the useful half is the distinction between what you discovered and what you wrote down."
+    },
+    "docs/questions/endpoint.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [
+        "endpoint"
+      ],
+      "platforms": [],
+      "summary": "Questions asked of this repo about the endpoint estate — provisioning across three operating systems, what MDM actually manages, and where a disk recovery key is kept."
+    },
+    "docs/questions/identity.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "Questions asked of this repo about directories and identity providers — largely answered, with the platform-by-platform table already written."
+    },
+    "docs/questions/networking.md": {
+      "kind": "questions",
+      "axis": "meta",
       "themes": [
         "networking"
       ],
       "platforms": [],
-      "summary": "Questions asked of this repo that it cannot yet answer — open, answered, or deliberately out of scope, with the reason recorded for the last kind."
+      "summary": "Questions asked of this repo about networking — five answered, eight open, each open one with a named destination."
+    },
+    "docs/questions/observability.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about monitoring — how it is designed, what the mainstream stacks are, and whether monitoring everything is possible at all."
+    },
+    "docs/questions/platforms.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about cloud network design and about self-hosted virtualisation — one closed as out of scope, one open with runnable tools already built."
+    },
+    "docs/questions/storage.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about where company data lives — an internal file service, and a database that is partly somebody else's."
     },
     "docs/zh/README.md": {
       "kind": "index",
