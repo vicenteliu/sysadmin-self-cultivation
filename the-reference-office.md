@@ -28,7 +28,7 @@ The sections below age at very different speeds, so they are kept apart on purpo
 | Parameters | Years. A hundred people need roughly this much room in most decades. |
 | Why these numbers | Longest. These are the derivations, and they outlive any product. |
 | Selection rules | Years. Criteria, deliberately without model names. |
-| Where things run | Years, once written. What cannot leave the building changes slowly. |
+| Where things run | Years. What cannot leave the building changes slowly, and the refusals change more slowly still. |
 | Reference build | Short. Dated, and meant to be replaced whole. |
 | Cost shape | Medium, and relative only. No currency figures. |
 | What this office does not yet say | Shortest. It is a ledger, and it empties. |
@@ -486,18 +486,76 @@ the boundary stated in full.
 
 ## Where things run
 
-⏳ **Not written yet, and it has two halves with two different entry conditions.**
+**Two halves with two different entry conditions.** The on-premises half fired when
+[`endpoint/`](endpoint/README.md)'s companions needed a staging ring; the cloud half has
+not fired and stays ⏳ below.
 
-**On premises.** [Step 02](build-out/02-the-building.md) shrank this room to *switches, an
-access controller, a print device, a little lab gear*, because workloads left the
-building; [step 04](build-out/04-devices-and-images.md) put the image with the OS vendor
-rather than on-site. So the question this half answers is not *what should we run here* —
-it is **what cannot leave**, and that list is currently unwritten because nothing has
-needed it. *Entry condition: a build-out step or a lab needs something on this floor that
-cannot be somebody else's service.*
+### On premises — what cannot leave
 
-**In a cloud.** Nothing in this repo has yet been forced to invent this office's cloud
-numbers. Four labs anchor to *a hundred-person office* — [help desk
+[Step 02](build-out/02-the-building.md) shrank this room to *switches, an access
+controller, a print device, a little lab gear* because workloads left the building, and
+[step 04](build-out/04-devices-and-images.md) put the image with the OS vendor rather
+than on-site. So the question is never *what should we run here*. It is **what cannot
+leave**, and a thing earns a place on this floor by satisfying at least one of three
+tests:
+
+1. **It acts on the building.** A door, a printer, a radio. There is no version of it
+   that is somebody else's service, because the thing it does is physical and it is here.
+2. **It has to work when the uplink does not** — and something on this floor genuinely
+   depends on that.
+3. **It is the thing you break on purpose.** A staging ring cannot be somebody else's
+   production.
+
+| What stays | Which test | Why, in one line |
+|---|---|---|
+| **Switching and the access layer** | 1 | The floor's own forwarding. Nothing about it is remote |
+| **Door and access control** | 1, 2 | The doors have to open on a day the internet does not. The decision is made at the door, which is why the controller is on this floor and in the [unpatchable segment](#why-these-numbers) |
+| **A print device** | 1 | The paper comes out here. The queue in front of it need not be here, and increasingly is not |
+| **The wireless controller** | — | **A real choice, not a default.** [Selection rules](#selection-rules) ask for *controller or cloud management that one person can operate*; both pass, and the deciding question is which one a single administrator can still operate at three in the morning |
+| **A staging ring — the *little lab gear*, made specific** | 3 | See below |
+
+**Test 2 is the one that surprises people, because almost nothing passes it.** Ask what
+must keep working in this office on a day the uplink is down, and the honest list is:
+getting into the building, getting out of it, and the fire panel. Everybody's work is in
+a tenant they cannot reach anyway. **A SaaS-first office does not need local continuity
+for its work; it needs it for its doors.** That is a much smaller requirement than most
+on-premises arguments assume, and it is worth saying because *what if the internet goes
+down* is the most common reason given for keeping a server room that nothing else
+justifies.
+
+**The staging ring is the one this office genuinely needs, and it is new.**
+[`endpoint/management.md`](endpoint/management.md) and
+[`endpoint/provisioning.md`](endpoint/provisioning.md) both land on the same
+non-negotiable: a policy or an image goes to your own machines first, then a friendly
+team, then everyone. **You cannot stage a device policy on somebody else's fleet** — the
+whole point is to break something, and it has to be enrolled in your real management
+platform to be a real test.
+
+So: a small hypervisor in the IDF for the Windows and Linux side, plus **physical Apple
+hardware**, because that side cannot be virtualised on anything you would put in this
+rack. Two or three machines' worth, drawn from the same shelf as the
+[five spares](#parameters) rather than bought separately. It is the smallest thing in
+this section and the only one that would otherwise have been an accident.
+
+**What was considered and does not stay.** Recorded because a room's contents are
+decided as much by refusals as by requirements, and an unrecorded refusal gets
+re-litigated every eighteen months.
+
+| Considered | Verdict | Where the reasoning lives |
+|---|---|---|
+| **A self-hosted database** | **No.** [ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md) says this office operates no service, so there is no application whose state would live in it. Every system that holds state here is bought | [questions · storage](docs/questions/storage.md) |
+| **A general VM estate** | **No** beyond the staging ring above. With imaging at the vendor, files in a tenant, identity in a cloud and monitoring bought, the honest question is *what would run on it* — and at this size the answer is nothing that is not already somebody's service | [questions · platforms](docs/questions/platforms.md) |
+| **A file server** | **No.** The suite holds the files, and the design question moves with them: it stops being *permissions on directories* and becomes *who can see this*, which is [`permission-sprawl`](cross-cutting/labs/permission-sprawl/)'s subject and a harder problem than the one it replaced | [questions · storage](docs/questions/storage.md) |
+
+**None of those three is a rule for every office.** Each is the answer *at a hundred
+people, consuming services and operating none*. The transferable part is the three tests
+at the top, which is why they are stated before the list rather than after it.
+
+
+### In a cloud
+
+⏳ **Not written yet.** Nothing in this repo has yet been forced to invent this office's
+cloud numbers. Four labs anchor to *a hundred-person office* — [help desk
 queue](cross-cutting/labs/help-desk-queue/), [asset
 reconciliation](cross-cutting/labs/asset-reconciliation/), [permission
 sprawl](cross-cutting/labs/permission-sprawl/) and [mail

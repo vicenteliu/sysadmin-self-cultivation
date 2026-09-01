@@ -44,12 +44,12 @@ not edited to follow a file that moved.
 |---|---|---|---|
 | [Networking](questions/networking.md) | 13 | 5 | 8 |
 | [Endpoint](questions/endpoint.md) | 4 | 3 | 1 |
-| [Storage and data](questions/storage.md) | 4 | 0 | 4 |
+| [Storage and data](questions/storage.md) | 4 | 2 | 2 |
 | [Platforms and virtualisation](questions/platforms.md) | 2 | 1 | 1 |
 | [Observability](questions/observability.md) | 3 | 2 | 1 |
 | [Identity](questions/identity.md) | 2 | 2 | 0 |
 | [Inventory and assets](questions/assets.md) | 2 | 2 | 0 |
-| | **30** | **15** | **15** |
+| | **30** | **17** | **13** |
 
 **The split happened when the rule below said it would.** This was one file with one
 domain until seven more arrived at once; *a third domain appearing* was the stated
@@ -57,7 +57,7 @@ threshold and it was crossed by four. Recording that here rather than quietly
 reorganising is the point — a threshold nobody notices being crossed is
 [ADR-0008](adr/0008-a-count-is-not-a-bound.md)'s entire subject.
 
-**Fifteen open, and the shape of them is worth a sentence.** All eight of the networking
+**Thirteen open, and the shape of them is worth a sentence.** All eight of the networking
 eight point at one unwritten document, the evolution note. The endpoint four sat on the
 repo's **deepest** hands-on claim and its least-written axis — which was not a
 coincidence about endpoint but what happens when the material somebody knows best is the
