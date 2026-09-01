@@ -188,18 +188,41 @@ library is linked from [`the-stack/07`](../the-stack/07-security.md#going-deeper
 operational-security foundation plus the framework literacy to be the security team's
 best partner — not a security analyst's badge.
 
-## Lab (🚧 planned — spec)
+## Lab (✅ built)
+
+[`labs/one-control-three-stages/`](labs/one-control-three-stages/) — **do the exercise
+below, then read the answer sheet for what it hides.** Six of six stages covered,
+eleven filled rows resting on seven distinct controls, and **EDR alone as the only
+preventive control at three of them** — a question the matrix format cannot ask,
+because it is indexed by stage and this is a question about a control.
+
+Two more the format cannot express. **The last stage is not prevented, it is
+survived**: tested backups are a *recovery* control, and writing them in the impact row
+says the attacker fails there, which they do not. And **designed is indistinguishable
+from deployed** in an audit answer — the two controls in this model that exist only on
+paper are the reason nobody noticed EDR was carrying three stages alone.
+
+`--break-it` scores per stage, which is the format of every control matrix and every
+security questionnaire, and reports 6 of 6.
+
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It is judgement about *your*
+estate, so nothing here can assert that you did it — and doing it is the point.
 
 **Map your own environment to the kill chain.** No tools, just judgment:
 
-1. Take one real service you run. For each kill-chain stage above (initial access →
-   impact), write the **one control you own** that counters it — and whether it's
+1. Take one real service you run. For each kill-chain stage above — initial access to
+   impact — write the **one control you own** that counters it, and whether it is
    actually in place.
-2. Find your **weakest stage** (usually: an unpatched surface, standing admin, or a
-   host with no EDR/logging) and write the concrete fix.
-3. **The drill:** write the two-sentence handoff you'd give a SOC analyst about this
-   service — in ATT&CK terms — so they know what you've covered and where the gaps are.
-   That handoff *is* working with security.
+2. Find your **weakest stage** — usually an unpatched surface, standing admin, or a
+   host with no EDR or logging — and write the concrete fix.
+3. **The drill:** write the two-sentence handoff you would give a SOC analyst about
+   this service, in ATT&CK terms, so they know what you have covered and where the gaps
+   are. That handoff *is* working with security.
+
+**Run the lab first.** It will tell you which three questions to ask of your own table
+once you have written it, and those are the ones that change what you do next.
 
 ## The chapter on one screen
 

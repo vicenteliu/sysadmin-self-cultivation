@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 230,
+  "count": 231,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -546,6 +546,14 @@
       ],
       "platforms": [],
       "summary": "The first concrete blocker the day a single-cloud admin connects two clouds: peering is refused when the address space overlaps, and every console nudges you toward the same 10.0.0.0/16."
+    },
+    "cross-cutting/labs/one-control-three-stages/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [],
+      "platforms": [],
+      "summary": "Six of six kill-chain stages covered, resting on seven controls, one of which carries three stages alone — and the last stage is not prevented at all, it is survived. A control matrix cannot say any of the three.",
+      "marker": "🔨"
     },
     "cross-cutting/labs/permission-sprawl/README.md": {
       "kind": "lab",
