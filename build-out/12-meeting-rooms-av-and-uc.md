@@ -8,6 +8,8 @@ summary: "🧭 verified ramp. Room AV integration is not this author's hands-on 
 ---
 # 12 · Meeting rooms, AV and UC — the orphan nobody owns
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/12-meeting-rooms-av-and-uc.md)
+
 > 🧭 **verified ramp.** Room AV integration is not this author's hands-on ground;
 > the network, identity and support surfaces underneath it are.
 > **Before:** 02 the building · 05 network. **After:** 13 the help desk

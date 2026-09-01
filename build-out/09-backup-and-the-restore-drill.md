@@ -8,6 +8,8 @@ summary: "🔨 hands-on — backup targets, RAID rebuild windows, snapshot hygie
 ---
 # 09 · Backup — and the restore drill
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/09-backup-and-the-restore-drill.md)
+
 > 🔨 hands-on — backup targets, RAID rebuild windows, snapshot hygiene, restore practice
 > **Before:** 06 tenant · 07 files. **After:** 14 compliance evidence
 
