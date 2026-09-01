@@ -85,6 +85,9 @@ along.
   lifecycle, on-call and post-mortem, for when a request becomes an incident
 - [`ai-workflow/how-i-use-ai-to-learn-and-operate.md`](../ai-workflow/how-i-use-ai-to-learn-and-operate.md)
   — the method, applied to daily operational work
+- [the reference office](../the-reference-office.md#parameters) — the support window, the
+  weekly volume before and after the automation, and why **access and permissions is the
+  largest category left** once steps 04, 08 and 15 are built
 
 ## Do it
 

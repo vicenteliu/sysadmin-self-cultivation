@@ -21,6 +21,16 @@ Seven ticket categories with their own arrival rates and handling times, two wor
 and the model agree at a hundred people. They agree by accident, and the model can
 say where the accident ends.
 
+**The office these rates describe is
+[the reference office](../../../the-reference-office.md#parameters)**, which now states
+the window and the volumes and points back here for the staffing question — because this
+model computes a *floor* and says where the floor expires, and a headcount in a parameter
+table would outlive that caveat. One cross-check falls out of the pairing: in the
+automated world this model puts enrolment and imaging at about fifty-three tickets a
+year, and the reference office's refresh cycle independently produces about **sixty-two
+device handovers** in the same year. Seven tickets per eight handovers, from two
+derivations that share no inputs.
+
 ## What this model is, and is not
 
 Erlang-C assumes Poisson arrivals, exponential handling times, no abandonment, and
