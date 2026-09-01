@@ -21,7 +21,7 @@ summary: "整个需求信号里最密的集群之一，而平台目录覆盖不�
 
 终端管理这门学科，是把成千上万台异构设备 —— macOS、Windows、iOS、Android —— 做到一致、
 安全、并且能自我发放，而不需要人去碰每一台。它和
-[`the-stack/03`](../../../the-stack/03-compute-and-images.md) 是同一条
+[`the-stack/03`](../the-stack/03-compute-and-images.md) 是同一条
 *注册 → 装机 → 个性化 → 维护* 流水线，只是指向终端而不是服务器，而且它是
 **🔨 亲手做过的深度**：一个从零建起、在约 10 万台设备规模上运行的多 OS 发放平台。
 
@@ -56,7 +56,7 @@ flowchart LR
 ```
 
 - **纳管** —— 设备获得一个受管身份和一段信任关系（对应
-  [身份](../../../cross-cutting/identity-iam.md)那边"注册一个受限范围的 principal"）。
+  [身份](../cross-cutting/identity-iam.md)那边"注册一个受限范围的 principal"）。
   用户自有（BYOD）和公司自有正是在这里分叉的。
 - **配置** —— 声明式的 **profile** 描述期望状态：设置、限制、证书、wifi/VPN 载荷。和
   [IaC](../../../cross-cutting/iac-and-config.md) 是同一个本能：描述终态，让平台把设备收敛
@@ -72,7 +72,7 @@ flowchart LR
 
 ## 装机与发放 —— 流水线的边缘版
 
-这是 [`the-stack/03`](../../../the-stack/03-compute-and-images.md) 的
+这是 [`the-stack/03`](../the-stack/03-compute-and-images.md) 的
 *启动 → 装机 → 个性化* 流水线，而且是它最难的那个版本，因为目标是各式各样偏消费级的硬件，
 而产出必须让一个非技术的人在第一天就能用：
 
@@ -91,26 +91,26 @@ flowchart LR
 不体面的那一半，而它是这份工作的大部分：
 
 - **应用打包** —— 把一个安装程序变成一个可由策略下发的包（对应
-  [`the-stack/03`](../../../the-stack/03-compute-and-images.md) 里 RPM/deb 那部分活的终端
+  [`the-stack/03`](../the-stack/03-compute-and-images.md) 里 RPM/deb 那部分活的终端
   表亲），主要是 `.deb` 和 `.pkg`/MSI 形态的载荷。
 - **定向分发** —— 把软件推给**对的**设备：按用户、按组、按地区、按国家或按合规状态，通过
   UEM —— 而不是一次广播。
-- **补丁合规** —— 那份关掉 [`the-stack/07`](../../../the-stack/07-security.md) 里"未打补丁
+- **补丁合规** —— 那份关掉 [`the-stack/07`](../the-stack/07-security.md) 里"未打补丁
   的已知 CVE"的日常纪律，是被测量和强制的，不是被指望的。补丁合规**就是**终端安全的地板。
 
 ## 终端安全
 
-安全那一章，落在边缘 —— [`the-stack/07`](../../../the-stack/07-security.md) 里住在设备上的
+安全那一章，落在边缘 —— [`the-stack/07`](../the-stack/07-security.md) 里住在设备上的
 那一片：
 
 - **EDR/XDR** —— 端点检测与响应，部署并运行过：Microsoft **Defender for Endpoint** 部署过
   并**迁移到了 SentinelOne**，两个管理控制台都亲手操作过（诚实地界定范围：这是**终端**侧的
   Defender，不是 Defender for Office 365）。
 - **合规作为闸门** —— 设备安全配置检查与安全入网检查，例行执行 —— 一台设备要先证明自己是
-  健康的，才被信任接入网络。这是 [zero-trust](../../../the-stack/07-security.md) 的设备态势
+  健康的，才被信任接入网络。这是 [zero-trust](../the-stack/07-security.md) 的设备态势
   那条腿，在实践中做出来。
 - **加密与恢复的故事** —— 登记了 FDE，配上让"有人忘了密码"这件事可以活过去的密钥托管与恢复
-  流程（丢了密钥就等于丢了这台笔记本 —— [`the-stack/04`](../../../the-stack/04-storage.md)
+  流程（丢了密钥就等于丢了这台笔记本 —— [`the-stack/04`](../the-stack/04-storage.md)
   的保管这一课，施加在 3,000 台设备上）。
 
 ## BYOD —— 最难的信任问题
@@ -120,7 +120,7 @@ flowchart LR
 - **纳管与隔离** —— iOS/Android 的纳管方式要管住一台设备上的**工作**，而不拥有这台**设备**，
   把个人数据和公司数据分开。
 - **那个身份问题** —— BYOD 正是云 SSO 选择被做出的地方；它是
-  [身份那一章](../../../cross-cutting/identity-iam.md)里"自建 vs Okta vs Google"这个决定背后
+  [身份那一章](../cross-cutting/identity-iam.md)里"自建 vs Okta vs Google"这个决定背后
   的具体压力。
 - **隧道那套管道** —— UAG / per-app VPN，好让一部个人手机安全地够到一个内部应用。
 - **诚实地界定范围** —— 纳管和平台生命周期是 🔨；深度的 iOS/Android **机队合规 profile 精通**

@@ -62,7 +62,7 @@ summary: "采购与运营商谈判是 🧭 经过验证的 ramp；这条电路�
 
 ## 往深里读
 
-- [`the-stack/02-network.md`](../../../the-stack/02-network.md) —— 跨七个平台的网络层；
+- [`the-stack/02-network.md`](../the-stack/02-network.md) —— 跨七个平台的网络层；
   这一步采购时所对着的那套词汇
 - [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/) ——
   "多样化"必须意味着什么才算数

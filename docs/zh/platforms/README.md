@@ -33,10 +33,10 @@ summary: "一个平台一个目录。每个模块都遵循同一份四段式模�
 同一套方法，可被调用。*
 
 这些是一个 admin **端到端运维**的平台。它们同时也是
-[`the-stack/`](../../../the-stack/) 里逐层对比的七个中的五个（另外两个是 OCI 和
+[`the-stack/`](../the-stack/) 里逐层对比的七个中的五个（另外两个是 OCI 和
 self-host）—— 平台目录是"运维这一个"的视图；the stack 是"逐层对比它们"的视图。
 
-这些就是在 [`the-stack/`](../../../the-stack/) 里被逐层对比的**七个平台** —— 现在每一个都
+这些就是在 [`the-stack/`](../the-stack/) 里被逐层对比的**七个平台** —— 现在每一个都
 有一个专门的"端到端运维它"的模块，而且**七个全部带着更深的 architecture · operations ·
 automation 三件套。**
 
@@ -44,10 +44,10 @@ automation 三件套。**
 
 | 平台 | 状态 |
 | --- | --- |
-| **[aws/](../../../platforms/aws/)** | ✅ 范例 + architecture + operations + automation 笔记 + 2 个可跑 lab（先读这个） |
-| **[azure/](../../../platforms/azure/)** | ✅ 范例级深度 —— + architecture + operations + automation 笔记；lab 已规划。Entra/身份是那个亲手做过的强项。 |
-| **[gcp/](../../../platforms/gcp/)** | ✅ 范例级深度 —— + architecture + operations + automation 笔记（含 GKE）；lab 已出规格。global-VPC 那个异类是要学的东西。 |
-| **[oci/](../../../platforms/oci/)** | ✅ 范例级深度 —— + architecture + operations + automation —— 🧭 ramp；最年轻的超大规模云（compartment、OCPU vs vCPU、裸金属优先、便宜出网）。 |
+| **[aws/](aws/)** | ✅ 范例 + architecture + operations + automation 笔记 + 2 个可跑 lab（先读这个） |
+| **[azure/](azure/)** | ✅ 范例级深度 —— + architecture + operations + automation 笔记；lab 已规划。Entra/身份是那个亲手做过的强项。 |
+| **[gcp/](gcp/)** | ✅ 范例级深度 —— + architecture + operations + automation 笔记（含 GKE）；lab 已出规格。global-VPC 那个异类是要学的东西。 |
+| **[oci/](oci/)** | ✅ 范例级深度 —— + architecture + operations + automation —— 🧭 ramp；最年轻的超大规模云（compartment、OCPU vs vCPU、裸金属优先、便宜出网）。 |
 
 **私有云 / 本地** —— 跑在**你自己**硬件上的平台：
 

@@ -63,14 +63,14 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | --- | --- |
 | **看整体形状** | [`CONTENTS.md`](CONTENTS.md) —— 每个模块、六条轴，一页看全 |
 | **懂背后的哲学** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
-| **深入一个平台** | [`platforms/`](../../platforms/) —— **AWS 是完整样板**，从头读到尾 |
+| **深入一个平台** | [`platforms/`](platforms/) —— **AWS 是完整样板**，从头读到尾 |
 | **按层读技术栈** | [`the-stack/`](the-stack/README.md) —— 物理层 → 安全，七平台逐层对比（01–07 全部已镜像） |
-| **学一项可迁移技能** | [`cross-cutting/`](../../cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
+| **学一项可迁移技能** | [`cross-cutting/`](cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
 | **核对我究竟会什么** | [`cross-cutting/skills-maps/`](../../cross-cutting/skills-maps/README.md) —— 一个主题横切全部七个平台，按技能能走多远分层 |
 | **准备面试** | [`cross-cutting/interview/`](../../cross-cutting/interview/README.md) —— 同样的章节从桌子另一侧看：他们问什么、在探什么、答案什么形状 |
 | **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
-| **看 AI 怎么被约束诚实** | [`ai-workflow/`](../../ai-workflow/) —— 方法及其护栏 |
+| **看 AI 怎么被约束诚实** | [`ai-workflow/`](ai-workflow/) —— 方法及其护栏 |
 | **查一个词或一条旧决策** | [`CONTEXT.md`](CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](../adr/) —— 十五条决策及它们击败的选项 |
 | **看它还答不上什么** | [`docs/questions.md`](../questions.md) —— 有人问过这个仓库、而它还答不上的问题：开放的、已答的、或明确划在边界外并说明原因的 |
 | **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
@@ -87,9 +87,9 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
-| ✅ | **基础与方法** | [WHY](WHY.md) · [操作模型](00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/) |
+| ✅ | **基础与方法** | [WHY](WHY.md) · [操作模型](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) |
 | ✅ | **技术栈 01→07** | [`the-stack/`](the-stack/README.md) —— 每层对比七个平台，另加两个可跑 lab。中文镜像已补齐：[01 物理](the-stack/01-physical.md) · [02 网络](the-stack/02-network.md) · [03 计算与镜像](the-stack/03-compute-and-images.md) · [04 存储](the-stack/04-storage.md) · [05 平台服务](the-stack/05-platform-services.md) · [06 可观测性](the-stack/06-observability.md) · [07 安全](the-stack/07-security.md) |
-| ✅ | **横切与端点** | [`cross-cutting/`](../../cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](../../endpoint/) |
+| ✅ | **横切与端点** | [`cross-cutting/`](cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](endpoint/) |
 | ✅ | **技能图** —— 自查用 | [网络](../../cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](../../cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |
 | ✅ | **面试图** —— 桌子的另一侧 | [网络](../../cross-cutting/interview/networking.md)（21 题）· [身份](../../cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](../adr/0004-interview-answers-are-evidence-for-a-marker.md)） |
 | ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
@@ -108,10 +108,10 @@ AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架
 
 | 平台 | 模块 | 架构·运营·自动化 | Lab arc（已规范） | 已建成的 lab | 诚实度 |
 | --- | --- | --- | --- | --- | --- |
-| **[AWS](../../platforms/aws/)**（完整样板） | ✅ · [support 中文镜像](platforms/aws/support.md) | ✅ | 3 节（boto3 / Terraform） | **01–02 已建**；03 是命令行走查 · 另加 [iam-deny](../../platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
-| **[Azure](../../platforms/azure/)** | ✅ · [support 中文镜像](platforms/azure/support.md) | ✅ | 3 节（`az`） | arc 一节未建 · [two-planes](../../platforms/azure/labs/global-admin-is-not-owner/) 是独立 drill | 🧭 + Entra/身份 🔨 |
-| **[GCP / GKE](../../platforms/gcp/)** | ✅ · [support 中文镜像](platforms/gcp/support.md) | ✅ | 3 节（`gcloud`） | arc 一节未建 · [gke-auth](../../platforms/gcp/labs/gke-iam-vs-rbac/) 是独立 drill | 🧭 ramp |
-| **[OCI](../../platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ | 3 节（`oci`） | arc 一节未建 · [compartment/verb](../../platforms/oci/labs/a-compartment-is-not-an-account/) 是独立 drill | 🧭 ramp |
+| **[AWS](platforms/aws/)**（完整样板） | ✅ · [support 中文镜像](platforms/aws/support.md) | ✅ | 3 节（boto3 / Terraform） | **01–02 已建**；03 是命令行走查 · 另加 [iam-deny](../../platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
+| **[Azure](platforms/azure/)** | ✅ · [support 中文镜像](platforms/azure/support.md) | ✅ | 3 节（`az`） | arc 一节未建 · [two-planes](../../platforms/azure/labs/global-admin-is-not-owner/) 是独立 drill | 🧭 + Entra/身份 🔨 |
+| **[GCP / GKE](platforms/gcp/)** | ✅ · [support 中文镜像](platforms/gcp/support.md) | ✅ | 3 节（`gcloud`） | arc 一节未建 · [gke-auth](../../platforms/gcp/labs/gke-iam-vs-rbac/) 是独立 drill | 🧭 ramp |
+| **[OCI](platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ | 3 节（`oci`） | arc 一节未建 · [compartment/verb](../../platforms/oci/labs/a-compartment-is-not-an-account/) 是独立 drill | 🧭 ramp |
 | **[vSphere / vCenter](../../platforms/vsphere/)** | ✅ | ✅ | 3 节（PowerCLI） | —— | **🔨 亲手做过**（VCP6-DCV/NV） |
 | **[OpenStack](../../platforms/openstack/)** | ✅ | ✅ | 3 节（`openstack` / DevStack） | —— | 🧭 ramp（KVM 相邻 🔨） |
 | **[self-host / 裸机](../../platforms/self-host/)** | ✅ | ✅ | 3 节（virsh / ipmitool / ansible） | —— | **🔨 亲手做过**（10万+ 机群） |

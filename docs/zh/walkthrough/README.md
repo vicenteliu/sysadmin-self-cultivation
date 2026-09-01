@@ -1,6 +1,6 @@
 # 走读 —— 把参考办公室讲出来
 
-> 一条**横穿其他轴的路线**，理由和 [`build-out/`](../../../build-out/README.md) 一样：
+> 一条**横穿其他轴的路线**，理由和 [`build-out/`](../build-out/README.md) 一样：
 > 它不教任何这个仓库尚未持有的页面。它加的是**顺序**和**语域** —— 一间一百人的办公室，
 > 慢慢走一遍，用这个仓库其余部分刻意不用的那种声音。
 > 决定：[`docs/adr/0009`](../../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)
@@ -32,13 +32,13 @@ flowchart TB
 | 受众 | 拿到的 | 缺的 |
 |---|---|---|
 | GitHub 上的读者 | 稿子 | 画面、声音 |
-| [`site/`](../../../site/README.md) 里的读者 | 稿子、楼面 | 声音，除非自己接了 TTS |
+| [`site/`](../site/README.md) 里的读者 | 稿子、楼面 | 声音，除非自己接了 TTS |
 | 播客听众 | 声音 | **任何屏幕** |
 
 最后一行就是为什么诚信标记必须**被说出来**。画在楼面上的 🔨 或 🧭 徽章，对听众而言并不
 存在，所以叙述者用故事自己的声音、在立足点切换的那一刻把界说出来。走读 01 里它切换一次
 —— 从作者真的做过的分段与地址规划，切到
-[`the-reference-office.md`](../../../the-reference-office.md) 已经标注为「来自厂商公开
+[`the-reference-office.md`](../the-reference-office.md) 已经标注为「来自厂商公开
 指南、而非跟一套部署一起生活过」的那段无线算术。
 
 ## 拍
@@ -121,26 +121,26 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 | 03 | [它坏掉的那一天](../../../walkthrough/03-the-day-it-breaks.en.md) —— 头十分钟，以及顺序为什么要紧 | ✅ | [✅](../../../walkthrough/03-the-day-it-breaks.zh.md) | ✅ 10 个物体 | ⏳ |
 
 **106 拍，念出来约二十分钟。** 它取材于
-[`the-reference-office.md`](../../../the-reference-office.md)、
+[`the-reference-office.md`](../the-reference-office.md)、
 [`site-network-design.md`](../../../cross-cutting/site-network-design.md) 和
-[`build-out/05-network.md`](../../../build-out/05-network.md) —— 横跨两条轴加根目录的
+[`build-out/05-network.md`](../build-out/05-network.md) —— 横跨两条轴加根目录的
 三份文档，这也是编号不跟着 `build-out/` 走的原因。立足点切换一次，说出口，就在 🔨 的
 分段与地址规划让位给 🧭 的无线算术那个地方。
 
 **走读 02 是 93 拍**，取材于
-[`the-reference-office.md`](../../../the-reference-office.md)、
-[`build-out/03-identity.md`](../../../build-out/03-identity.md)、
-[`build-out/04-devices-and-images.md`](../../../build-out/04-devices-and-images.md) 和
-[`build-out/15-joiner-mover-leaver.md`](../../../build-out/15-joiner-mover-leaver.md)。
+[`the-reference-office.md`](../the-reference-office.md)、
+[`build-out/03-identity.md`](../build-out/03-identity.md)、
+[`build-out/04-devices-and-images.md`](../build-out/04-devices-and-images.md) 和
+[`build-out/15-joiner-mover-leaver.md`](../build-out/15-joiner-mover-leaver.md)。
 它在**同一张 plate** 上播放——第二篇讲的是同一间办公室——不同的全在它的面板里：01 的面板
 讲网络，它的面板讲身份与生命周期。立足点切换一次，就在离职率那个带上，说出来。
 
 **走读 03 是 102 拍**，取材于
-[`the-reference-office.md`](../../../the-reference-office.md)、
-[`build-out/01-uplink.md`](../../../build-out/01-uplink.md)、
+[`the-reference-office.md`](../the-reference-office.md)、
+[`build-out/01-uplink.md`](../build-out/01-uplink.md)、
 [`debug-ladder.md`](../../../cross-cutting/debug-ladder.md)、
 [`incident-response.md`](../../../cross-cutting/incident-response.md)、
-[`the-stack/06-observability.md`](../../../the-stack/06-observability.md)，以及
+[`the-stack/06-observability.md`](../the-stack/06-observability.md)，以及
 [four-causes](../../../cross-cutting/labs/remote-access-four-causes/) 和
 [mitigate-before-diagnose](../../../cross-cutting/labs/mitigate-before-diagnose/)
 两个 lab 的 README —— 七个来源，到目前为止最多的一篇，因为一次故障正是各条轴汇合的地方。
@@ -153,7 +153,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 以及那份清册在哪里到头 —— 监控的那道限制和恢复的那道限制，原来是同一道限制从两侧走过来。
 
 后续的走读，在真的有什么值得说出口的时候才写，一次一篇，像
-[`toolbox/`](../../../toolbox/README.md) 那样生长。没有目标篇数。
+[`toolbox/`](../toolbox/README.md) 那样生长。没有目标篇数。
 
 ## 检查一篇
 

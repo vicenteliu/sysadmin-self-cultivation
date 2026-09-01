@@ -12,7 +12,7 @@ Azure 自己的[平台篇](../../../../platforms/azure/README.md)一句话说清
 
 ## 支持 Azure 与 Entra 让你要为什么负责
 
-映射到 [seven surfaces](../../../../00-the-operating-model.md)，按工单到达顺序：
+映射到 [seven surfaces](../../00-the-operating-model.md)，按工单到达顺序：
 
 | Surface | 你要为之负责的事 |
 | --- | --- |
@@ -99,13 +99,13 @@ Azure 的修/救本质是在门户、两个 CLI（`az`、`Az` PowerShell）、�
 ## AI 辅助的 ramp（Azure/Entra 口味）
 
 - **从你已知的翻译过来——并索要 deltas：** *"我懂 AWS IAM 和 on-prem AD —— 把 Azure 的两个身份面、RBAC scope、和 Entra 映射到它们上，只标出真正的差异。"* Azure 奖励 translate-then-verify 方法，因为它太多是改了名的——但**两个面的分裂和 Azure Policy 没有干净的 AWS 对应物**，所以那些要往死里验证。
-- **让它起草 `az`/PowerShell/Bicep，你亲手做最小权限。** AI 在这里很强——而它也会**把 Entra 角色与 Azure RBAC 混为一谈**（你要的是某 scope 的 Reader、它给你 Global Administrator）、**发明角色/权限名**、忘了 resource provider、并提一个 blast radius 是整个 management group 的 scope。对着文档核验、并在一次性 subscription 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../../../ai-workflow/) 和[运营环](../../../../platforms/azure/operations.md)。
+- **让它起草 `az`/PowerShell/Bicep，你亲手做最小权限。** AI 在这里很强——而它也会**把 Entra 角色与 Azure RBAC 混为一谈**（你要的是某 scope 的 Reader、它给你 Global Administrator）、**发明角色/权限名**、忘了 resource provider、并提一个 blast radius 是整个 management group 的 scope。对着文档核验、并在一次性 subscription 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](../../../../platforms/azure/operations.md)。
 
 ## 诚实边界
 
 本页守着一条**分割的**诚实线，而且是真实的。
 
-🔨 **Entra / 身份那一半是亲手做过的。** 真实租户实战——**Entra ID 初始搭建、租户级 MFA、一条 Conditional Access 策略、privileged 角色的 PIM**、以及身份生命周期——是深度，不是 ramp（与 [`saas-admin.md`](../../../../cross-cutting/saas-admin.md)、[`identity-iam.md`](../../../../cross-cutting/identity-iam.md) 画的是同一条线，也与 [M365 支持篇](../../../../cross-cutting/m365-support.md) 共享，因为 Entra 是两者之下的身份骨干）。Conditional Access、sign-in 日志分诊、break-glass 纪律都是 🔨。
+🔨 **Entra / 身份那一半是亲手做过的。** 真实租户实战——**Entra ID 初始搭建、租户级 MFA、一条 Conditional Access 策略、privileged 角色的 PIM**、以及身份生命周期——是深度，不是 ramp（与 [`saas-admin.md`](../../cross-cutting/saas-admin.md)、[`identity-iam.md`](../../cross-cutting/identity-iam.md) 画的是同一条线，也与 [M365 支持篇](../../cross-cutting/m365-support.md) 共享，因为 Entra 是两者之下的身份骨干）。Conditional Access、sign-in 日志分诊、break-glass 纪律都是 🔨。
 
 🧭 **更广的 Azure IaaS 是验证过的 ramp。** 资源面机制——RBAC scope 与继承、VNet/NSG、Bastion、Azure Policy、配额/provider 的边——是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/azure/labs/global-admin-is-not-owner/) 里练过的，由**🔨 可迁移基本功**（Linux、网络、DNS/TLS、身份思维）承载。更深的规模化生产 Azure（landing zone、AKS 平台工程、大型多 subscription 资产）仍在前方，注释如实说明、绝不吹。
 

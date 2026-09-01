@@ -93,7 +93,7 @@ Terraform 修/救就是像鹰一样读 **plan**，并知道 config、state、rea
 ## AI 辅助的 ramp（Terraform 口味）
 
 - **从你已知的翻译过来——并索要 deltas:** *"我懂 Ansible 和 Linux —— 把 Terraform 的 state 模型、plan/apply 生命周期、和 drift 映射到我用 playbook 已经在做的事上,只标出真正的差异。"* Terraform 奖励 translate-then-verify——但 **state、drift-回滚、强制替换、`count` 索引位移在配置管理里没有对应物**,所以那些要往死里验证(lab 就是干这个的)。
-- **让它起草 HCL;你掌控 plan 和 state。** AI 生成 Terraform 很强——而它也会**在该用 `for_each` 的地方写 `count`**、**忘了 lock 文件**、**建议本地 state**、**把 secret 放进普通 variable**、并产出一份在改不可变属性时悄悄**销毁数据库**的 plan。绝不 apply 一份你没读过 plan 的 AI 草稿 HCL,并先在一次性 workspace 里跑。同一套往死里验证的纪律——见 [`ai-workflow/`](../../../ai-workflow/) 和 [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md)。
+- **让它起草 HCL;你掌控 plan 和 state。** AI 生成 Terraform 很强——而它也会**在该用 `for_each` 的地方写 `count`**、**忘了 lock 文件**、**建议本地 state**、**把 secret 放进普通 variable**、并产出一份在改不可变属性时悄悄**销毁数据库**的 plan。绝不 apply 一份你没读过 plan 的 AI 草稿 HCL,并先在一次性 workspace 里跑。同一套往死里验证的纪律——见 [`ai-workflow/`](../ai-workflow/) 和 [`iac-and-config.md`](../../../cross-cutting/iac-and-config.md)。
 
 ## 诚实边界
 

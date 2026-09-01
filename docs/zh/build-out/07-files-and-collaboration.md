@@ -67,15 +67,15 @@ SaaS 化。但*"在一百个空间和几千条链接上，谁能看见什么"*�
 
 ## 往深里读
 
-- [`cross-cutting/saas-admin.md`](../../../cross-cutting/saas-admin.md) —— Workspace/M365
+- [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) —— Workspace/M365
   管理，以及分享底下那根身份主干
 - [参考办公室](../the-reference-office.md#parameters) —— IT 叫得出名字的十个服务、它叫不出
   的一个未知数量，以及为什么离职流程只够得着第一组
-- [`the-stack/04-storage.md`](../../../the-stack/04-storage.md) —— block、file 和 object，
+- [`the-stack/04-storage.md`](../the-stack/04-storage.md) —— block、file 和 object，
   以及为什么"它在云上"不是一份存储设计
-- [`cross-cutting/identity-iam.md`](../../../cross-cutting/identity-iam.md) —— 最小权限，
+- [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) —— 最小权限，
   也就是这一步的全部重述
-- [`cross-cutting/itsm-and-assets.md`](../../../cross-cutting/itsm-and-assets.md) ——
+- [`cross-cutting/itsm-and-assets.md`](../cross-cutting/itsm-and-assets.md) ——
   访问治理，以及证明最小权限
 
 ## 动手做

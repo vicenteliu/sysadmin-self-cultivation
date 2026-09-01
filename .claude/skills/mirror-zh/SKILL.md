@@ -56,6 +56,14 @@ bidirectional switcher, so they're spelled out below.
    has the same shape as English, so the link is **byte-identical to the English one**.
    Add nothing; there is nothing to climb.
 
+   > This branch is now checked. `check.py --only links` fails on a link inside
+   > `docs/zh/` that reaches the English tree when a mirror exists, because that link
+   > still resolves and still lands on a real document — in the wrong language, silently
+   > ending the reader's Chinese path. **Batching mirrors manufactures exactly this**:
+   > every batch points at the English canonical for what the next batch will mirror,
+   > and the next batch has no way to know which links to come back for. The 🌐 switcher
+   > is exempt, being the one link on the page whose job is to leave the mirror.
+
    **Target has no mirror**: link BACK to the English canonical — climb to repo root,
    then append the English path. One `../` per directory segment between the mirror and
    the root, and `docs/zh/` is already two of them:

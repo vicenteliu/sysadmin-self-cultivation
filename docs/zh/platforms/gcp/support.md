@@ -12,7 +12,7 @@
 
 ## 支持 GCP 与 GKE 让你要为什么负责
 
-映射到 [seven surfaces](../../../../00-the-operating-model.md)，按工单到达顺序：
+映射到 [seven surfaces](../../00-the-operating-model.md)，按工单到达顺序：
 
 | Surface | 你要为之负责的事 |
 | --- | --- |
@@ -105,11 +105,11 @@ GCP 的修/救本质是在一小组控制台、日志、和两个 CLI（`gcloud`
 ## AI 辅助的 ramp（GCP/GKE 口味）
 
 - **从你已知的翻译过来——并索要 deltas：** *"我懂 AWS IAM、VPC、和 Kubernetes RBAC —— 把 GCP IAM、全局 VPC、和 GKE 认证映射到它们上，只标出真正的差异。"* GCP 是本仓库 translate-then-verify 方法最纯的案例，因为它太多是改了名的。
-- **让它起草 `gcloud`/`kubectl`/Terraform，你亲手做最小权限。** AI 在这里很强——而它也会**发明 role 和权限**、在有 predefined 时伸手去拿 **basic role**、把 **IAM role 与 RBAC 混为一谈**、并提一个 blast radius 是整个 folder/org 的防火墙或 IAM 改动。对着文档核验、并在一次性 project 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../../../ai-workflow/) 和[运营环](../../../../platforms/gcp/operations.md)。
+- **让它起草 `gcloud`/`kubectl`/Terraform，你亲手做最小权限。** AI 在这里很强——而它也会**发明 role 和权限**、在有 predefined 时伸手去拿 **basic role**、把 **IAM role 与 RBAC 混为一谈**、并提一个 blast radius 是整个 folder/org 的防火墙或 IAM 改动。对着文档核验、并在一次性 project 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](../../../../platforms/gcp/operations.md)。
 
 ## 诚实边界
 
-**GCP 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 承重的是那些**🔨 可迁移、且真实**的基本功：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../../../the-stack/02-network.md)）、**身份与最小权限思维**（[`identity-iam.md`](../../../../cross-cutting/identity-iam.md)）、以及 **Kubernetes 对象模型**（[`cross-cutting/kubernetes.md`](../../../../cross-cutting/kubernetes.md)）—— GCP/GKE 支持里那些*本来就是*这些技能、只是换了 Google 名字的部分。GCP 特有的机制（additive-继承的 IAM、全局 VPC、GKE 两个面、计费与配额的边）是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/gcp/labs/gke-iam-vs-rbac/) 里练过的——**不是**声称成多年生产资历。更深、规模化的生产 GKE（大型多租户集群、mesh、平台工程）仍在前方，注释如实说明、绝不吹。
+**GCP 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 承重的是那些**🔨 可迁移、且真实**的基本功：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）、以及 **Kubernetes 对象模型**（[`cross-cutting/kubernetes.md`](../../../../cross-cutting/kubernetes.md)）—— GCP/GKE 支持里那些*本来就是*这些技能、只是换了 Google 名字的部分。GCP 特有的机制（additive-继承的 IAM、全局 VPC、GKE 两个面、计费与配额的边）是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/gcp/labs/gke-iam-vs-rbac/) 里练过的——**不是**声称成多年生产资历。更深、规模化的生产 GKE（大型多租户集群、mesh、平台工程）仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 

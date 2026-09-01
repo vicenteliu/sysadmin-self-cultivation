@@ -72,10 +72,10 @@ summary: "🔨 亲手做过 —— 交换、DNS/DHCP、启动路径，以及那�
   [一次落地实例](../../../cross-cutting/site-network-design.md#applying-it-to-the-reference-office)；
   还有[参考办公室的 Selection rules](../the-reference-office.md#selection-rules)，那里有这
   一步提出却没有回答的无线与端口算术
-- [`the-stack/02-network.md`](../../../the-stack/02-network.md) —— 跨七个平台的网络层
-- [`cross-cutting/identity-iam.md`](../../../cross-cutting/identity-iam.md) —— 因为网络认证
+- [`the-stack/02-network.md`](../the-stack/02-network.md) —— 跨七个平台的网络层
+- [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) —— 因为网络认证
   是一个戴着网络帽子的身份决策
-- [`the-stack/07-security.md`](../../../the-stack/07-security.md) —— 把分段当作纵深防御的
+- [`the-stack/07-security.md`](../the-stack/07-security.md) —— 把分段当作纵深防御的
   一层，而不是它的全部
 
 ## 动手做

@@ -89,7 +89,7 @@ Google Workspace 和 Microsoft 365 长得不一样，干的是同一批活。可
 
 - **Entra ID / Azure AD** 作为 M365 底下的目录，带着初始搭建的深度：租户级 **MFA**、一条
   **Conditional Access** 策略，以及给特权角色用的 **PIM**（连到
-  [`the-stack/07`](../../../the-stack/07-security.md) 和 [`identity-iam.md`](identity-iam.md)）。
+  [`the-stack/07`](../the-stack/07-security.md) 和 [`identity-iam.md`](identity-iam.md)）。
 - **SSO**，好让一次登录够得到整套套件以及它周围那些 SaaS。
 - **访问复审** —— 那门让授予不至于越积越多的再认证纪律，在一套真实的多人审批、最小权限模型里
   完成。

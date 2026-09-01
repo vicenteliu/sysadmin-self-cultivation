@@ -72,7 +72,7 @@ flowchart TB
 
 ## 访问治理与审计 —— 证明最小权限
 
-这就是 ITSM 与[安全](../../../the-stack/07-security.md)和[身份](identity-iam.md)相遇的地方：
+这就是 ITSM 与[安全](../the-stack/07-security.md)和[身份](identity-iam.md)相遇的地方：
 最小权限在你能证明它之前只是一句**声称**。
 
 - **走工作流的访问申请** —— 多人审批路由，这样一次授予就有一份记录，记着谁申请的、谁批准的、

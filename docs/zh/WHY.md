@@ -62,10 +62,10 @@ sysadmin，仍然有一堆平台是他从来没碰过的。
 这个项目就是对上面那件事的回应。它刻意**不**试图让你背下每一个服务 —— 那件事现在
 AI 做。它把仍然要紧的那部分外化出来：
 
-- **可迁移的 operating model**([`00-the-operating-model.md`](../../00-the-operating-model.md))
+- **可迁移的 operating model**([`00-the-operating-model.md`](00-the-operating-model.md))
   —— 每个平台底下的那副骨架；
 - **以 AI 为副驾、转轨到任何东西上的方法**，以及那套让 AI 保持诚实的纪律
-  ([`ai-workflow/`](../../ai-workflow/))；
+  ([`ai-workflow/`](ai-workflow/))；
 - 以及**判断力** —— 一个平台一个平台地测绘进 skill map 和可跑的 lab —— 那是没有任何
   模型能替代的东西。
 

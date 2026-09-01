@@ -12,7 +12,7 @@ OCI 自己的[平台篇](../../../../platforms/oci/README.md)一句话说清了�
 
 ## 支持 OCI 让你要为什么负责
 
-映射到 [seven surfaces](../../../../00-the-operating-model.md)，大致按工单到达顺序：
+映射到 [seven surfaces](../../00-the-operating-model.md)，大致按工单到达顺序：
 
 | Surface | 你要为之负责的事 |
 | --- | --- |
@@ -99,11 +99,11 @@ OCI 的修/救是在 Console（那个常驻的 **compartment 选择器**和 **re
 ## AI 辅助的 ramp（OCI 口味）
 
 - **从你已知的翻译过来——并索要 deltas：** *"我懂 AWS IAM 和 VPC —— 把 OCI 的 compartment、动词化策略语言、security-lists-vs-NSG、和 instance principal 映射到它们上，只标出真正的差异。"* OCI 奖励 translate-then-verify，因为它太多是改了名的对应物——但 **compartment 即安全边界、动词层级、404-两者皆是、单-AD region 没有干净的 AWS 映射**，所以那些要往死里验证。
-- **让它起草 `oci` CLI / Terraform，你亲手做最小权限。** AI 在这里很强——而它也会**写一份 OCI 上不存在的 JSON IAM 策略**、**发明动词或资源类型**、**忘了 home-region 约束**、**在该用 Service Gateway 的地方建议 NAT 网关**、并在你要一个 compartment 时提一个 scope 到整个 tenancy 的 policy。对着文档核验、并在一次性 compartment 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../../../ai-workflow/) 和[运营环](../../../../platforms/oci/operations.md)。
+- **让它起草 `oci` CLI / Terraform，你亲手做最小权限。** AI 在这里很强——而它也会**写一份 OCI 上不存在的 JSON IAM 策略**、**发明动词或资源类型**、**忘了 home-region 约束**、**在该用 Service Gateway 的地方建议 NAT 网关**、并在你要一个 compartment 时提一个 scope 到整个 tenancy 的 policy。对着文档核验、并在一次性 compartment 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](../../../../platforms/oci/operations.md)。
 
 ## 诚实边界
 
-本篇是 **🧭 ramp，而且明说** —— 从 AWS/Azure/GCP 模型映射、对着 Oracle 自家文档核对、并在可跑的 [lab](../../../../platforms/oci/labs/a-compartment-is-not-an-account/) 里练过，**不是**在生产里跑过。承载它的是真的：**🔨 可迁移基本功**——Linux 与 guest-OS 深度、网络、DNS/TLS、以及身份/最小权限*思维*（与 [`identity-iam.md`](../../../../cross-cutting/identity-iam.md) 和与 [self-host](../../../../platforms/self-host/) 相邻的 Linux 深度画的是同一条线）。上面那些 OCI 特有机制——compartment、动词策略语言、security-lists-vs-NSG、instance principal、fault domain、两层配额——是映射并文档核验过的，不是资历。更深的生产 OCI（大型多 compartment 资产、OKE 平台工程、FastConnect/DRG 拓扑、规模化 Autonomous DB 运营）仍在前方；注释如实说明、绝不吹。OCI 在本仓库里的诚实标记是单一、一致的 **🧭 ramp**——见[平台篇](../../../../platforms/oci/README.md)。
+本篇是 **🧭 ramp，而且明说** —— 从 AWS/Azure/GCP 模型映射、对着 Oracle 自家文档核对、并在可跑的 [lab](../../../../platforms/oci/labs/a-compartment-is-not-an-account/) 里练过，**不是**在生产里跑过。承载它的是真的：**🔨 可迁移基本功**——Linux 与 guest-OS 深度、网络、DNS/TLS、以及身份/最小权限*思维*（与 [`identity-iam.md`](../../cross-cutting/identity-iam.md) 和与 [self-host](../../../../platforms/self-host/) 相邻的 Linux 深度画的是同一条线）。上面那些 OCI 特有机制——compartment、动词策略语言、security-lists-vs-NSG、instance principal、fault domain、两层配额——是映射并文档核验过的，不是资历。更深的生产 OCI（大型多 compartment 资产、OKE 平台工程、FastConnect/DRG 拓扑、规模化 Autonomous DB 运营）仍在前方；注释如实说明、绝不吹。OCI 在本仓库里的诚实标记是单一、一致的 **🧭 ramp**——见[平台篇](../../../../platforms/oci/README.md)。
 
 ## Field kit —— 真实工具与参考
 

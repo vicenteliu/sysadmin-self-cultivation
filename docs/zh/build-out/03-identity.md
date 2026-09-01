@@ -74,13 +74,13 @@ AI 确实出现的地方是在建设**之后**，在复审的活里：访问复�
 
 ## 往深里读
 
-- [`cross-cutting/identity-iam.md`](../../../cross-cutting/identity-iam.md) —— 那两个问题、
+- [`cross-cutting/identity-iam.md`](../cross-cutting/identity-iam.md) —— 那两个问题、
   最小权限、principal、JML、SCIM、联邦
-- [`cross-cutting/saas-admin.md`](../../../cross-cutting/saas-admin.md) —— 横跨
+- [`cross-cutting/saas-admin.md`](../cross-cutting/saas-admin.md) —— 横跨
   Workspace / M365 的身份主干
 - [`cross-cutting/m365-support.md`](../cross-cutting/m365-support.md) —— 你即将创建的那个
   租户上的修/救手艺
-- [`the-stack/07-security.md`](../../../the-stack/07-security.md) —— 身份在纵深防御里坐在
+- [`the-stack/07-security.md`](../the-stack/07-security.md) —— 身份在纵深防御里坐在
   哪儿
 - [参考办公室](../the-reference-office.md#parameters) —— 这个目录必须吸收的入职、转岗和离职
   量，以及为什么这个人口的周转比一次年度访问复审更快
