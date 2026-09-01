@@ -26,7 +26,7 @@ flowchart LR
   drive -.->|"新平台 = 同样三步，换个名字"| id
 ```
 
-Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把模式学透一次**（见 [`00-the-operating-model.md`](../../00-the-operating-model.md)），之后每个新平台都变成一道"用 AI 就能秒答的映射题"。
+Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把模式学透一次**（见 [`00-the-operating-model.md`](00-the-operating-model.md)），之后每个新平台都变成一道"用 AI 就能秒答的映射题"。
 
 ## 整体形状
 
@@ -60,7 +60,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | 我想…… | 从这里开始 |
 | --- | --- |
 | **看整体形状** | [`CONTENTS.md`](../../CONTENTS.md) —— 每个模块、六条轴，一页看全 |
-| **懂背后的哲学** | [`WHY.md`](../../WHY.md) → [`00-the-operating-model.md`](../../00-the-operating-model.md) |
+| **懂背后的哲学** | [`WHY.md`](WHY.md) → [`00-the-operating-model.md`](00-the-operating-model.md) |
 | **深入一个平台** | [`platforms/`](../../platforms/) —— **AWS 是完整样板**，从头读到尾 |
 | **按层读技术栈** | [`the-stack/`](../../the-stack/) —— 物理层 → 安全，七平台逐层对比 |
 | **学一项可迁移技能** | [`cross-cutting/`](../../cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
@@ -84,7 +84,7 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
-| ✅ | **基础与方法** | [WHY](../../WHY.md) · [操作模型](../../00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/) |
+| ✅ | **基础与方法** | [WHY](WHY.md) · [操作模型](00-the-operating-model.md) · [ai-workflow](../../ai-workflow/) · [foundations](../../foundations/) |
 | ✅ | **技术栈 01→07** | [`the-stack/`](../../the-stack/) —— 每层对比七个平台，另加两个可跑 lab |
 | ✅ | **横切与端点** | [`cross-cutting/`](../../cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](../../endpoint/) |
 | ✅ | **技能图** —— 自查用 | [网络](../../cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](../../cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |

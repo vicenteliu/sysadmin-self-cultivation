@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 231,
+  "count": 233,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -920,6 +920,16 @@
       "platforms": [],
       "summary": "Questions asked of this repo about where company data lives — an internal file service, and a database that is partly somebody else's."
     },
+    "docs/zh/00-the-operating-model.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The transferable skeleton under every platform.",
+      "language": "zh",
+      "mirrors": "00-the-operating-model.md",
+      "derived": true
+    },
     "docs/zh/README.md": {
       "kind": "index",
       "axis": "start-here",
@@ -928,6 +938,16 @@
       "summary": "The front door: what this repo is, how to read it, and what is built.",
       "language": "zh",
       "mirrors": "README.md",
+      "derived": true
+    },
+    "docs/zh/WHY.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The idea behind the project, and an honest read on where the craft is heading.",
+      "language": "zh",
+      "mirrors": "WHY.md",
       "derived": true
     },
     "docs/zh/cross-cutting/kubernetes-support.md": {
