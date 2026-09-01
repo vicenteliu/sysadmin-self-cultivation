@@ -19,6 +19,17 @@ It is also the step that decides whether headcount growth costs ticket growth.
 That is the difference between **scaling people and scaling tickets**, and it is the
 single most-tested skill cluster in real infrastructure job descriptions.
 
+**How often this fires, in the reference office:** about twenty-three joiners and
+seventeen leavers a year — forty events, one about every six working days. Across one
+five-year lease that is a hundred and sixteen hires **to grow by thirty**, and about two
+hundred and sixteen people holding an account at some point for a floor that seats a
+hundred and thirty. **The estate this step administers is about one and seven tenths of
+the office.** Those numbers and the rule under them are in
+[the reference office](../the-reference-office.md#parameters); the turnover band they rest
+on is marked 🧭 there. The mover has no rate, deliberately: it is the only one of the three
+with **no natural trigger**, which is exactly why *Mover that only adds* below is the
+failure everybody ships.
+
 ## What this step produces
 
 - A **trigger** — the event that starts each of the three flows, coming from a system
@@ -79,6 +90,9 @@ nobody wired into SCIM. Detection, again, not action.
 - [`cross-cutting/itsm-and-assets.md`](../cross-cutting/itsm-and-assets.md) — access
   governance, and the device half of the leaver flow
 - [`foundations/`](../foundations/) — scripting and the idempotence habit this needs
+- [the reference office](../the-reference-office.md#parameters) — how many joiners,
+  movers and leavers a hundred-person office actually produces, and why the total across
+  a lease exceeds the headcount
 
 ## Do it
 
