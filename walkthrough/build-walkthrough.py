@@ -214,6 +214,26 @@ def check_floor(floor_path, scripts, problems):
         if focus and focus not in known:
             problems.append(f"{rel}: beat `{beat}` focuses `{focus}`, which is not on the stage")
 
+    # A `plan` prop marks an idea, not a place — addressing, authentication, a decision.
+    # Walkthroughs one and two both put theirs on open floor, and that is not decoration:
+    # a marker for an idea drawn inside a meeting room reads as a claim about that room.
+    # Walkthrough three landed one on top of `room-medium-2` and the pantry at once, and
+    # nothing here noticed, because ids and anchors were checked and placement was not.
+    boxes = [(o["id"], o["rect"]) for group in ("rooms", "spaces", "booths")
+             for o in stage.get(group, [])]
+    for prop in floor.get("props", []):
+        if prop.get("kind") != "plan":
+            continue
+        x, y = prop.get("at", (None, None))
+        if x is None:
+            continue
+        inside = [pid for pid, (rx, ry, rw, rh) in boxes
+                  if rx <= x < rx + rw and ry <= y < ry + rh]
+        if inside:
+            problems.append(f"{rel}: plan prop `{prop['id']}` sits inside "
+                            f"{', '.join(f'`{i}`' for i in inside)} — a plan marks an idea "
+                            f"and belongs on open floor, or it reads as a claim about the room")
+
     declared = stage.get("desks", {}).get("total")
     counted = sum(p.get("seats", 0) for p in stage.get("desks", {}).get("pods", []))
     if declared is None:
