@@ -8,6 +8,8 @@ summary: "The layers below asked how do I build it?"
 ---
 # 05 — Platform Services
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/05-platform-services.md)
+
 > The layers below asked *how do I build it?* This one asks a sharper question:
 > *should I build it at all?* Containers, serverless, and managed databases are
 > where you stop administering infrastructure and start renting outcomes — and

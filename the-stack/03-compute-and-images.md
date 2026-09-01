@@ -8,6 +8,8 @@ summary: "A VM is just a rented server. The durable asset — the thing worth en
 ---
 # 03 — Compute & Images
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/03-compute-and-images.md)
+
 > A VM is just a rented server. The durable asset — the thing worth engineering —
 > is the pipeline that turns a blank machine into a working one with no hands on
 > it. Own that pipeline and the seven platforms become seven boot targets.

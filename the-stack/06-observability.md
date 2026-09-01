@@ -8,6 +8,8 @@ summary: "The bottom-up climb ended at platform services you can't SSH into."
 ---
 # 06 — Observability
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/06-observability.md)
+
 > The bottom-up climb ended at platform services you can't SSH into. This chapter
 > is how you see *any* of it — the layer that turns "it's slow and I don't know
 > why" into a question with an answer. Chapters 01–05 built the stack;
