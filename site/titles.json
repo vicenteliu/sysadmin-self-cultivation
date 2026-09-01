@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 235,
+  "count": 236,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -107,6 +107,7 @@
     "docs/questions/storage.md": "Questions · Storage and data",
     "docs/zh/00-the-operating-model.md": "Operating Model（运维模型）",
     "docs/zh/CONTENTS.md": "目录 —— 整张地图",
+    "docs/zh/CONTEXT.md": "系统管理员的自我修养 —— 词表",
     "docs/zh/README.md": "系统管理员的自我修养",
     "docs/zh/ROADMAP.md": "Roadmap",
     "docs/zh/WHY.md": "这个项目为什么存在",
