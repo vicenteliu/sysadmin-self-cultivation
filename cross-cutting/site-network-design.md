@@ -56,6 +56,14 @@ rule set somebody has to explain in a year**, and the tidiness argument — one 
 department, one per floor — produces exactly the rules nobody can defend when they
 break something.
 
+**Two of the four never churn, and that is what they have in common.** In
+[the reference office](../the-reference-office.md#parameters) staff turns over about forty
+times a year — every event with an owner, a date and a ticket — while unpatchable holds
+about twenty-six things and management about eleven, and neither list changes from one
+year to the next. Since 802.1X puts a credential on each of them, **thirty-seven
+credentials exist that nothing in the calendar ever makes anyone look at.** A leaver
+forces a review of one person's access. Nothing forces a review of a door controller's.
+
 The test for a proposed segment is not *"are these things different?"* but **"what am
 I willing to block between them, and will I actually block it?"** A segment with an
 any-any rule to the staff network is a VLAN, not a security boundary, and calling it
