@@ -8,6 +8,8 @@ summary: "What actually happens between clicking connect and reaching the thing 
 ---
 # How a remote user lands on the office network
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/vpn-and-remote-access.md)
+
 > [`build-out/10`](../build-out/10-remote-access.md) decides **what still requires
 > network-level access**, and the answer for a SaaS-first office is a short list.
 > [`remote-access-four-causes`](labs/remote-access-four-causes/) drills **why the same

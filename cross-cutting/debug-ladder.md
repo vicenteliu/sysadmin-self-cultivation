@@ -8,6 +8,8 @@ summary: "One command per rung of the network debug ladder, chosen for what it e
 ---
 # The debug ladder, one rung at a time
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/debug-ladder.md)
+
 > [`the-stack/02`](../the-stack/02-network.md) draws the ladder: does the name resolve,
 > is there a route, do the filters allow it, do big packets hang, and only then may you
 > look. This note gives **each rung the command that verifies it** — and, more

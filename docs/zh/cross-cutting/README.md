@@ -34,12 +34,12 @@ summary: "跨每一朵云都能迁移的那几层。"
 | [`kubernetes-support.md`](kubernetes-support.md) | 把 Kubernetes support 当作修/救手艺：调谐环、CrashLoopBackOff / OOMKilled /"服务挂了但 Pod 是 Running"、反复出现的工单与你该去哪儿看，以及要卸掉的那些 Linux/systemd/Docker 直觉。**🧭** | ✅ |
 | [`multi-cloud-support.md`](multi-cloud-support.md) | 把多云 support 当作修/救手艺：云与云之间的那些接缝 —— CIDR/路由、跨云身份/联邦、出网/数据引力、一致的态势 —— 以及为什么单云的对等直觉会咬人。它综合了四篇平台 support 笔记。**🧭** | ✅ |
 | [`service-mesh.md`](service-mesh.md) | 服务发现 + service mesh：活的注册表、sidecar 的 mTLS/流量/可观测，以及"你到底需不需要一个？" | ✅ |
-| [`web-and-tls.md`](../../../cross-cutting/web-and-tls.md) | Web 服务器、反向代理与 TLS：终结、路由、证书生命周期 + ACME、那扇加固过的前门。**🔨** 基本功 | ✅ |
+| [`web-and-tls.md`](web-and-tls.md) | Web 服务器、反向代理与 TLS：终结、路由、证书生命周期 + ACME、那扇加固过的前门。**🔨** 基本功 | ✅ |
 | [`incident-response.md`](../../../cross-cutting/incident-response.md) | 事件响应与 on-call：生命周期（先缓解）、IC 角色、人道的 on-call、无指责复盘。 | ✅ |
 | [`working-with-security.md`](../../../cross-cutting/working-with-security.md) | 安全的运维者那一半：与 InfoSec/SOC 协作 + MITRE ATT&CK 意识（加固对的东西），诚实的 🔨 运维安全 vs 🧭 专家。 | ✅ |
-| [`debug-ladder.md`](../../../cross-cutting/debug-ladder.md) | 网络调试阶梯每一级一条命令，按它**排除了什么**而不是按它报告了什么来挑选 —— 以及为什么 *refused* 与 *timed out* 之别，比这一页其余部分承载的信息都多 —— **🔨** |
-| [`vpn-and-remote-access.md`](../../../cross-cutting/vpn-and-remote-access.md) | 从点下连接到够到那样东西之间到底发生了什么 —— 五个由某个人负责的决策、为什么你发给远程用户的那个地址此后会出现在每一条日志里，以及为什么分流隧道坏在 DNS 上而不是坏在路由上 —— **🔨** |
-| [`network-evolution.md`](../../../cross-cutting/network-evolution.md) | 办公网络十五年的变化，以及解释了其中大部分的那一次移动：网络不再是通往你工作的路径，而变成了通往互联网的路径。那件事对防火墙的轴、负载均衡器、工位端口和射频做了什么 —— 有线侧 **🔨**，无线侧 **🧭** |
+| [`debug-ladder.md`](debug-ladder.md) | 网络调试阶梯每一级一条命令，按它**排除了什么**而不是按它报告了什么来挑选 —— 以及为什么 *refused* 与 *timed out* 之别，比这一页其余部分承载的信息都多 —— **🔨** |
+| [`vpn-and-remote-access.md`](vpn-and-remote-access.md) | 从点下连接到够到那样东西之间到底发生了什么 —— 五个由某个人负责的决策、为什么你发给远程用户的那个地址此后会出现在每一条日志里，以及为什么分流隧道坏在 DNS 上而不是坏在路由上 —— **🔨** |
+| [`network-evolution.md`](network-evolution.md) | 办公网络十五年的变化，以及解释了其中大部分的那一次移动：网络不再是通往你工作的路径，而变成了通往互联网的路径。那件事对防火墙的轴、负载均衡器、工位端口和射频做了什么 —— 有线侧 **🔨**，无线侧 **🧭** |
 | [`site-network-design.md`](../../../cross-cutting/site-network-design.md) | 为一个物理场地设计网络：每个网段都有理由的分段、一份挺得过合并的地址规划、有线 vs 无线、DNS/DHCP 归属、802.1X、可证明的访客隔离。除无线为 **🧭** 外均为 **🔨**。 | ✅ |
 | [`cost.md`](cost.md) | 把成本当作一等的运维控制：预算、告警、right-sizing、"被遗忘的 GPU 实例"问题。 | ✅ |
 

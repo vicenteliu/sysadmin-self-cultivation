@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 279,
+  "count": 283,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1270,6 +1270,21 @@
       "mirrors": "cross-cutting/cost.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/debug-ladder.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "One command per rung of the network debug ladder, chosen for what it eliminates rather than what it reports — and the two answers that carry more information than everything else on this page.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "cross-cutting/debug-ladder.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/iac-and-config.md": {
       "kind": "note",
       "axis": "cross-cutting",
@@ -1370,6 +1385,21 @@
       "mirrors": "cross-cutting/multi-cloud-support.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/network-evolution.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Fifteen years of office network change, and the single move that explains most of it — the network stopped being the path to your work and became the path to the internet. What that did to the firewall, the load balancer, the desk port and the radios.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/network-evolution.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/saas-admin.md": {
       "kind": "note",
       "axis": "cross-cutting",
@@ -1409,6 +1439,35 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/terraform-support.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/vpn-and-remote-access.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "identity"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "What actually happens between clicking connect and reaching the thing — five decisions somebody owns, an address that shows up in every log afterwards, and the reason split tunnelling breaks on DNS rather than on routing.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "cross-cutting/vpn-and-remote-access.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/web-and-tls.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Almost every service a user touches sits behind a web server or a reverse proxy, and almost every connection to it is TLS.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/web-and-tls.md",
       "derived": true
     },
     "docs/zh/docs/README.md": {
