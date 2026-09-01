@@ -138,7 +138,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 **走读 03 是 102 拍**，取材于
 [`the-reference-office.md`](../the-reference-office.md)、
 [`build-out/01-uplink.md`](../build-out/01-uplink.md)、
-[`debug-ladder.md`](../../../cross-cutting/debug-ladder.md)、
+[`debug-ladder.md`](../cross-cutting/debug-ladder.md)、
 [`incident-response.md`](../../../cross-cutting/incident-response.md)、
 [`the-stack/06-observability.md`](../the-stack/06-observability.md)，以及
 [four-causes](../../../cross-cutting/labs/remote-access-four-causes/) 和

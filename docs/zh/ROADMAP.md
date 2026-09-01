@@ -77,7 +77,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 补缺 | [`cross-cutting/ci-cd.md`](cross-cutting/ci-cd.md) —— CI/CD 与 GitOps（相对 roadmap.sh/devops 最大的缺口）；🔨 自动化底子上的 🧭 ramp | ✅ 已写 |
 | 补缺 | [`cross-cutting/databases.md`](../../cross-cutting/databases.md) —— 运维数据库（备份/PITR、复制、自建 vs 托管）—— **🔨**（生产 PostgreSQL） | ✅ 已写 |
 | 补缺 | [`cross-cutting/itsm-and-assets.md`](cross-cutting/itsm-and-assets.md) —— ITSM、CMDB、资产对账、访问治理 —— **🔨**（ServiceNow 五年、审计自动化） | ✅ 已写 |
-| 补缺（第二批） | [`service-mesh`](cross-cutting/service-mesh.md)（发现 + mesh，🧭）· [`web-and-tls`](../../cross-cutting/web-and-tls.md)（反向代理 + 证书生命周期，🔨 基本功）· [`incident-response`](../../cross-cutting/incident-response.md)（生命周期、on-call、复盘） | ✅ 已写 |
+| 补缺（第二批） | [`service-mesh`](cross-cutting/service-mesh.md)（发现 + mesh，🧭）· [`web-and-tls`](cross-cutting/web-and-tls.md)（反向代理 + 证书生命周期，🔨 基本功）· [`incident-response`](../../cross-cutting/incident-response.md)（生命周期、on-call、复盘） | ✅ 已写 |
 | 原创 | [`working-with-security`](../../cross-cutting/working-with-security.md) —— 运维者视角的安全：与 InfoSec/SOC 协作 + MITRE ATT&CK 意识；🔨 运维安全 vs 🧭 专家。选择自己写而不是引入（这是与外部安全体系建立关系的诚实方式） | ✅ 已写 |
 | 平台 | [`platforms/gcp/`](platforms/gcp/) —— README + skills-map + ai-ramp（global-VPC 的异类；Tier-1 第 4 项）；lab 已出规格 | ✅ 已写 |
 | 平台深度 | [`platforms/aws/architecture.md`](../../platforms/aws/architecture.md) + [`operations.md`](../../platforms/aws/operations.md) + [`automation.md`](../../platforms/aws/automation.md) —— 账号模型、day-2 运维工作拆解、AI 在环、给 API 写脚本 | ✅ 已写 |

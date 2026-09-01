@@ -250,7 +250,7 @@ _避免_：protocol（不加限定、而实指机制时）、标准、RFC
 在这个仓库里有歧义，因此**绝不单独承重**。它已经出现在两个意思里：*配置管理之下的服务器
 或 VM*（[`iac-and-config.md`](cross-cutting/iac-and-config.md)、
 [`ci-cd.md`](cross-cutting/ci-cd.md)、
-[`web-and-tls.md`](../../cross-cutting/web-and-tls.md)、
+[`web-and-tls.md`](cross-cutting/web-and-tls.md)、
 [`kubernetes.md`](cross-cutting/kubernetes.md)）以及*受管的终端人口*
 （[`ROADMAP.md`](ROADMAP.md) 里的 "macOS/Windows fleet"、
 [`platforms/self-host/`](../../platforms/self-host/) 里的 "PXE and image pipelines at

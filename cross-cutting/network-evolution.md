@@ -8,6 +8,8 @@ summary: "Fifteen years of office network change, and the single move that expla
 ---
 # What changed in the office network, and what did not
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/network-evolution.md)
+
 > Six questions arrived asking this in different shapes — how the architecture
 > changed, how the protocols changed, what a firewall was before it was an
 > application firewall, what an F5-class box actually does, how wireless changed, and

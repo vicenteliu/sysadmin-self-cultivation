@@ -72,7 +72,7 @@ AI 挣得起位置的地方是最后那一行。VPN 和认证失败量大、方�
   以及为什么"在网络上"不再是一种授权
 - [`the-stack/07-security.md`](../the-stack/07-security.md) —— 远程访问在纵深防御里
   坐在哪儿
-- [`cross-cutting/web-and-tls.md`](../../../cross-cutting/web-and-tls.md) —— 证书生命周期，
+- [`cross-cutting/web-and-tls.md`](../cross-cutting/web-and-tls.md) —— 证书生命周期，
   它是上面很大一部分故障的成因
 - [`the-stack/02-network.md`](../the-stack/02-network.md) —— 路由，以及为什么隧道改变
   了哪一条路由更具体
