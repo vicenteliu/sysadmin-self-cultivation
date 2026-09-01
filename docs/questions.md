@@ -42,14 +42,14 @@ not edited to follow a file that moved.
 
 | Domain | Asked | Answered | Open |
 |---|---|---|---|
-| [Networking](questions/networking.md) | 13 | 12 | 1 |
+| [Networking](questions/networking.md) | 13 | 13 | 0 |
 | [Endpoint](questions/endpoint.md) | 4 | 4 | 0 |
 | [Storage and data](questions/storage.md) | 4 | 4 | 0 |
 | [Platforms and virtualisation](questions/platforms.md) | 2 | 2 | 0 |
 | [Observability](questions/observability.md) | 3 | 3 | 0 |
 | [Identity](questions/identity.md) | 2 | 2 | 0 |
 | [Inventory and assets](questions/assets.md) | 2 | 2 | 0 |
-| | **30** | **29** | **1** |
+| | **30** | **30** | **0** |
 
 **The split happened when the rule below said it would.** This was one file with one
 domain until seven more arrived at once; *a third domain appearing* was the stated
@@ -57,14 +57,17 @@ threshold and it was crossed by four. Recording that here rather than quietly
 reorganising is the point — a threshold nobody notices being crossed is
 [ADR-0008](adr/0008-a-count-is-not-a-bound.md)'s entire subject.
 
-**One open, and the shape of it is worth a sentence.** They are all networking, and
-the six that used to point at *the evolution note* are now answered by one — which was
-the argument for writing it before anything else on the list. The endpoint four sat on the
-repo's **deepest** hands-on claim and its least-written axis — which was not a
-coincidence about endpoint but what happens when the material somebody knows best is the
-material they never had to look up. All four are now written, the fourth as a lab whose
-inherited spec had to be replaced — it asked for a trial MDM and a spare device, which
-is a *guided run*, and could not have taught its own lesson anyway.
+**None open — and that is a state, not a finish.** Every question this repo has been
+asked has an answer or a recorded reason for not having one. The list stays because
+*what this repo did not know* is the part that survives nowhere else: six of these were
+answered by one note written after they had sat open long enough to show they were the
+same question, and four were answered only after being **narrowed** — a buying
+recommendation cut to a signature, a command reference cut to one command per rung, a
+construction drawing cut to the topology a network person owns, and a three-way cloud
+comparison cut to a pointer at the place that already does it.
+
+A question earns a line here the moment somebody wants to know and the repo cannot say.
+The table above will not stay empty.
 
 ## Boundaries
 
