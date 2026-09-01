@@ -7,6 +7,8 @@ summary: "One folder per platform. Every module follows the same four-part templ
 ---
 # platforms/
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/platforms/README.md)
+
 One folder per platform. Every module follows the **same four-part template** so you
 can move between them without re-learning how to read them:
 

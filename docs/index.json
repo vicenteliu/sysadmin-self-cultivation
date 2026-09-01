@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 237,
+  "count": 242,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -990,6 +990,29 @@
       "mirrors": "WHY.md",
       "derived": true
     },
+    "docs/zh/build-out/README.md": {
+      "kind": "index",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "A route through the other axes, not another axis.",
+      "language": "zh",
+      "mirrors": "build-out/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/README.md": {
+      "kind": "index",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity",
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "The layers that transfer across every cloud.",
+      "language": "zh",
+      "mirrors": "cross-cutting/README.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/kubernetes-support.md": {
       "kind": "support-note",
       "axis": "cross-cutting",
@@ -1047,6 +1070,26 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/terraform-support.md",
+      "derived": true
+    },
+    "docs/zh/docs/README.md": {
+      "kind": "index",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The project's default language is English; the canonical docs live at the repo root and under platforms/, cross-cutting/, and ai-workflow/.",
+      "language": "zh",
+      "mirrors": "docs/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [],
+      "platforms": [],
+      "summary": "One folder per platform. Every module follows the same four-part template so you can move between them without re-learning how to read…",
+      "language": "zh",
+      "mirrors": "platforms/README.md",
       "derived": true
     },
     "docs/zh/platforms/aws/support.md": {
@@ -1127,6 +1170,21 @@
       "summary": "Every step in the build-out says a hundred people.",
       "language": "zh",
       "mirrors": "the-reference-office.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/README.md": {
+      "kind": "index",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [
+        "aws",
+        "azure",
+        "vsphere",
+        "openstack"
+      ],
+      "summary": "The third axis of this repo. platforms/ reads the clouds one at a time; cross-cutting/ reads one theme across them.",
+      "language": "zh",
+      "mirrors": "the-stack/README.md",
       "derived": true
     },
     "docs/zh/toolbox/README.md": {

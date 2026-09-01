@@ -7,6 +7,8 @@ summary: "The third axis of this repo. platforms/ reads the clouds one at a time
 ---
 # The Stack — One Stack, Seven Ways
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/the-stack/README.md)
+
 > The third axis of this repo. `platforms/` reads the clouds one at a time;
 > `cross-cutting/` reads one theme across them. This series reads the **stack
 > itself, layer by layer** — and at every layer compares **seven ways of building
