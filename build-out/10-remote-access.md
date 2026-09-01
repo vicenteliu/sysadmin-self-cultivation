@@ -8,6 +8,8 @@ summary: "🔨 hands-on — VPN operations, certificate and TLS fundamentals, th
 ---
 # 10 · Remote access — VPN, or the thing that replaced it
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/10-remote-access.md)
+
 > 🔨 hands-on — VPN operations, certificate and TLS fundamentals, the auth failure paths
 > **Before:** 01 uplink · 03 identity · 05 network. **After:** 13 the help desk
 

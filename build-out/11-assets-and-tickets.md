@@ -8,6 +8,8 @@ summary: "🔨 hands-on (ServiceNow, ~5 years; asset reconciliation and audit au
 ---
 # 11 · Assets and tickets — the record that starts at device #1
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/11-assets-and-tickets.md)
+
 > 🔨 hands-on (ServiceNow, ~5 years; asset reconciliation and audit automation)
 > **Before:** 03 identity · 04 devices. **After:** 13 the help desk · 14 compliance evidence · 15 JML
 

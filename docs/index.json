@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 254,
+  "count": 258,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1116,6 +1116,57 @@
       "marker": "🔨",
       "language": "zh",
       "mirrors": "build-out/08-endpoint-security-and-patching.md",
+      "derived": true
+    },
+    "docs/zh/build-out/09-backup-and-the-restore-drill.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "storage-backup"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — backup targets, RAID rebuild windows, snapshot hygiene, restore practice Before: 06 tenant · 07 files.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/09-backup-and-the-restore-drill.md",
+      "derived": true
+    },
+    "docs/zh/build-out/10-remote-access.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "identity",
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — VPN operations, certificate and TLS fundamentals, the auth failure paths Before: 01 uplink · 03 identity · 05 network.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/10-remote-access.md",
+      "derived": true
+    },
+    "docs/zh/build-out/11-assets-and-tickets.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on (ServiceNow, ~5 years; asset reconciliation and audit automation) Before: 03 identity · 04 devices.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/11-assets-and-tickets.md",
+      "derived": true
+    },
+    "docs/zh/build-out/12-meeting-rooms-av-and-uc.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [],
+      "platforms": [],
+      "summary": "🧭 verified ramp. Room AV integration is not this author's hands-on ground; the network, identity and support surfaces underneath it are.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "build-out/12-meeting-rooms-av-and-uc.md",
       "derived": true
     },
     "docs/zh/build-out/README.md": {
