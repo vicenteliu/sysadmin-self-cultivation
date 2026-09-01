@@ -7,6 +7,8 @@ summary: "A glossary for this repo — the words that mean something specific he
 ---
 # The Sysadmin's Self-Cultivation
 
+> 🌐 **Languages:** English (default) · [中文](docs/zh/CONTEXT.md)
+
 A glossary for this repo — the words that mean something specific here, and the
 words they get confused with. Nothing else belongs in this file: status lives in
 [`ROADMAP.md`](ROADMAP.md), structure in [`CONTENTS.md`](CONTENTS.md), decisions

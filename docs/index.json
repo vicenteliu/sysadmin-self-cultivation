@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 235,
+  "count": 236,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -943,6 +943,16 @@
       "summary": "The detailed index: every module, what it is, and where it lives.",
       "language": "zh",
       "mirrors": "CONTENTS.md",
+      "derived": true
+    },
+    "docs/zh/CONTEXT.md": {
+      "kind": "glossary",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "A glossary for this repo — the words that mean something specific here, and the words they get confused with.",
+      "language": "zh",
+      "mirrors": "CONTEXT.md",
       "derived": true
     },
     "docs/zh/README.md": {
