@@ -145,7 +145,9 @@ conceptual and test-level grasp plus a fast, verified ramp onto operating a real
 cluster, which is exactly what [`WHY.md`](../WHY.md) says is the durable skill. This
 note is that ramp, written down.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **Run it, break it, read it.** Pure-local with `kind` or `minikube` (a full cluster
 on a laptop, zero cloud):

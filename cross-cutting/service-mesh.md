@@ -160,7 +160,9 @@ as production ops. The most valuable 🔨 thing this note carries is *judgment*:
 when a mesh is the answer and, more often, when it's expensive complexity a smaller
 architecture doesn't need.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **Discovery first, mesh only if you feel the need.** On local Kubernetes
 (`kind`/`minikube`, from the [kubernetes lab](kubernetes.md)):

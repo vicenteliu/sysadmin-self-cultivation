@@ -348,8 +348,24 @@ _Avoid_: todo, backlog item, missing piece
 **Lab**:
 A pure-local, zero-dependency, self-verifying drill where exit code `0` means the
 lessons held. Most carry a `--break-it` flag that swaps in the *standard*
-procedure and shows it failing.
+procedure and shows it failing. **The mechanical test is whether CI can run it**,
+which is why [`check.py`](check.py) discovers labs by their `*_drill.py` and runs
+every one of them on every push.
 _Avoid_: tutorial, exercise, demo
+
+**Guided run**:
+The other kind, and it needed its own word because the repo has both. A **step-by-step
+exercise against a real environment** — a cloud sandbox, a local cluster, a developer
+tenant — where the learning is in doing it and **nothing can assert that you did**.
+Coined in the Walkthrough entry above to keep *walkthrough* free; defined here because
+eleven of them were sitting in the tree labelled *planned lab*, which promised an
+artifact that was never going to arrive.
+
+**A guided run is not a lesser lab.** It reaches things a model cannot: real latency,
+real error messages, real bills, and the muscle memory of a console. What it cannot do
+is fail in CI, which is the whole of the distinction. Where a spec asks for a sandbox
+account, a `kind` cluster or a `pip install`, it is describing this.
+_Avoid_: lab (that is the self-verifying kind), tutorial, workshop
 
 **Axis**:
 One of the repo's six faces over one body of material — by platform, by layer, by

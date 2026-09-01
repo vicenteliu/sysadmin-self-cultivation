@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 229,
+  "count": 230,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -528,6 +528,14 @@
       ],
       "platforms": [],
       "summary": "A hundred-person office publishes all three records."
+    },
+    "cross-cutting/labs/mitigate-before-diagnose/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [],
+      "platforms": [],
+      "summary": "Mitigating first saves nine minutes of mean downtime and costs six in the tail — and the model says at what mitigation coverage the advice inverts, which is the part a slogan cannot carry.",
+      "marker": "🔨"
     },
     "cross-cutting/labs/multi-cloud-cidr-overlap/README.md": {
       "kind": "lab",

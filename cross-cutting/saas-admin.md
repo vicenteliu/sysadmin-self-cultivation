@@ -165,7 +165,9 @@ tenant engineering** at scale, **Proofpoint / Defender for Office 365**, and
 [`endpoint/`](../endpoint/): that track manages the *device*; this one manages the
 *productivity estate and its identities* — adjacent lanes, both hands-on.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **Automate a joiner/leaver, prove the leaver half.** Using a free Microsoft 365
 developer tenant (or a Google Workspace trial):

@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 229,
+  "count": 230,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -61,6 +61,7 @@
     "cross-cutting/labs/k8s-reconcile-loop/README.md": "Lab — pods are cattle, and a controller reconciles forever",
     "cross-cutting/labs/m365-conditional-access-lockout/README.md": "Lab — Conditional Access self-lockout (prove it in your own hands)",
     "cross-cutting/labs/mail-authentication-alignment/README.md": "Lab — \"The records are published\" is not the same claim as \"the domain is protected\"",
+    "cross-cutting/labs/mitigate-before-diagnose/README.md": "Lab — mitigate before you diagnose, and the two places that stops being true",
     "cross-cutting/labs/multi-cloud-cidr-overlap/README.md": "Lab — overlapping CIDRs break the interconnect (and there is no central router)",
     "cross-cutting/labs/permission-sprawl/README.md": "Lab — \"Who can see this?\" is not answered by reading the permissions",
     "cross-cutting/labs/remote-access-four-causes/README.md": "Lab — \"The VPN won't connect\" is four different problems",

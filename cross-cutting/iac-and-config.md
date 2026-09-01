@@ -146,7 +146,9 @@ conceptual** — understood as the pull-model contrast, not operated. The transf
 claim: a deep automation-and-idempotence foundation plus a fast, verified ramp onto
 any specific IaC tool — exactly the shape [`WHY.md`](../WHY.md) argues for.
 
-## Lab (🚧 planned — spec)
+## Guided run (spec)
+
+**This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
 
 **Provision then configure — the two halves, wired together.** Pure-local where
 possible (a container or local VM as the target):
