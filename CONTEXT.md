@@ -111,6 +111,33 @@ which medium a figure belongs in, and both are subject to the rule above them �
 figure must carry what the prose does not.
 _Avoid_: illustration, graphic, branded diagram, figure (that is either of the two)
 
+### The reference office
+
+**The reference office**:
+The **proper name** of one fiction: the hundred-person, one-floor, hybrid office written
+down in [`the-reference-office.md`](the-reference-office.md), whose scenario choices are
+set and whose everything else is derived from a stated rule. It is what
+[`build-out/`](build-out/) means when a step says *a hundred people*, and it is
+**parameters, never a bill of materials**
+([ADR-0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)).
+It **consumes services and operates none** — no product, no customer traffic, no public
+endpoint it is accountable for
+([ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md)).
+
+**"A hundred-person office" is not this term.** It is a generic phrase, and several labs
+use it for their own scenario with their own numbers — 97 devices, seven ticket
+categories, two document estates — none of which cites this file. That is allowed; what
+is not allowed is letting the two blur, because a repo with two unnamed hundred-person
+offices cannot tell you which one a number came from. **The proper name is the one with a
+file behind it.** Where a lab's number and this file's derivation are both live, the
+derivation wins and the lab is corrected, since a number that survives a rule is a
+parameter and a number that does not is a coincidence.
+
+Distinct from **the plate** (the topology it is drawn as) and **the floor** (the drawing),
+both below.
+_Avoid_: the office (unqualified, when the plate is meant), the scenario, the example
+office, our office
+
 ### The walkthrough
 
 **Walkthrough**:
@@ -248,6 +275,20 @@ port, how a lease is renewed. The test: *does naming it tell someone where they 
 does explaining it tell them what the wire is doing?* The first is a signature; the second
 is a different ability, and only the first one is here.
 _Avoid_: protocol (unqualified, when the mechanism is meant), standard, RFC
+
+**Fleet**:
+Ambiguous in this repo and therefore **never load-bearing on its own**. It appears in two
+senses already: *servers or VMs under configuration management*
+([`iac-and-config.md`](cross-cutting/iac-and-config.md),
+[`ci-cd.md`](cross-cutting/ci-cd.md), [`web-and-tls.md`](cross-cutting/web-and-tls.md),
+[`kubernetes.md`](cross-cutting/kubernetes.md)) and *the managed endpoint population*
+([`ROADMAP.md`](ROADMAP.md)'s "macOS/Windows fleet",
+[`platforms/self-host/`](platforms/self-host/)'s "PXE and image pipelines at fleet
+scale"). Both are established and neither is being renamed. **Qualify it or use the
+specific word** — *endpoints*, *the estate*, *hosts under Ansible* — and in particular the
+reference office's endpoint parameters are titled *Endpoints and spares*, not *the fleet*,
+so that a third sense is never coined.
+_Avoid_: fleet unqualified where the reader cannot tell laptops from servers
 
 **Altitude**:
 How high above the mechanism a piece of work sits. Two uses, related and distinct.
