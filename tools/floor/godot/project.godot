@@ -9,7 +9,3 @@ config_version=5
 config/name="reference-office-plate"
 config/features=PackedStringArray("4.4")
 run/main_scene=""
-
-[headless]
-
-enabled=true

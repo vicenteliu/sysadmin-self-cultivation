@@ -42,19 +42,38 @@ docker run --rm -p 8099:8080 sysadmin-docs
 | **搜索** | 对每一篇文档做全文搜索，中英文都行。`/` 聚焦搜索框。 |
 | **分面** | 侧栏可按 axis、platform、theme、kind 重新分组——用的就是 retrieval index 所依据的那份 front-matter。 |
 | **语言** | 🌐 把文档换成它的中文镜像，界面文案跟着一起换。没有镜像的文档会**明说**，而不是静默回落到英文。 |
-| **主题** | 跟随系统设置，切换按钮可覆盖。mermaid 会重新渲染，门面图会换成对应的明暗版本。 |
+| **主题** | 跟随系统设置，切换按钮可覆盖。mermaid 会重新渲染，门面图会换成对应的明暗版本；**但楼面只有一套色板**，因为像素画不能靠机械反色得到可信的另一套（[ADR-0013](../../adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）。 |
 | **路线** | `build-out/` 的十六步做成一条线性轨道——刻意不做成 axis 卡片。 |
+| **楼面** | 一份[走读](../../../walkthrough/README.md)稿会在可交互的二维办公室上播放：拖动平移、滚轮缩放，或选 **楼面 / 房间 / 机柜** 让镜头对准一个有名字的对象。点一件东西，就能看它为什么在那里。它只渲染 Markdown 已经陈述的数字，自己不计算（[ADR-0011](../../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。 |
+
+### 试一次楼面
+
+```bash
+python3 site/serve.py
+# 打开 http://127.0.0.1:8000/#/walkthrough/01-the-network.zh.md
+```
+
+三个档位按钮不只是放大倍数：
+
+- **楼面**框住整间办公室。
+- **房间**框住你正在看的房间。如果先点一台无线接入点，它会框住放着那台设备的房间；当前没有房间时，默认打开大会议室。
+- **机柜**框住 IDF，所以近景看到的是从接入端口到上联的路径，不是放大六倍的办公家具。
+
+选择档位或上班日会进入自由浏览。此后调整窗口大小，镜头会重新框住刚才的选择。按 **上一拍**、**下一拍** 或 **播放**，镜头就交还给走读，由当前那一拍重新选档位和对象。
 
 ## 哪些文件是生成的
 
-三份文件是派生并提交的。每一个都有 `--check` 模式，落后于源文件时以非零码退出，
-所以"过期"是被**发现**的，不是被撞见的。
+生成物都由源文件派生并提交。每个 builder 都有检查模式；输出落后时以非零码退出，
+所以「过期」是被**发现**的，不是被撞见的。
 
 ```bash
 python3 docs/build-index.py --check     # docs/index.json  ← 每个文件的 front-matter
 python3 site/build-corpus.py --check    # titles.json + corpus.json ← 正文
-python3 site/build-diagrams.py --check  # 12 个图形产物 ← 4 个 HTML 源，
+python3 site/build-diagrams.py --check  # 21 个图形产物 ← 7 个 HTML 源，
                                         # 以及色板表 ← style profile
+python3 tools/floor/build-tiles.py --check   # 楼面精灵图 ← tiles.tiles
+python3 tools/floor/prove-topology.py --check  # plate 仍然可通行吗？
+python3 walkthrough/build-walkthrough.py     # 拍 ↔ plate ↔ 来源，以及发布冻结
 ```
 
 图形检查比"是否过期"多管一件事。`diagram-design` 从 `~/.diagram-design/profiles/` 解析
@@ -84,16 +103,30 @@ Markdown 文件都不可达。`nginx.conf` 用文件扩展名加拒绝 dotfile �
 更松一些，因为 nginx 在请求时没有 index 可查——但仍然足以拒绝所有要紧的东西。一个自带
 安全基线加固的仓库，不该同时自带一个把自己的 `.git` 挂到 localhost 上的浏览器。
 
+这个契约是**被断言的，不只是被描述的**：
+
+```bash
+python3 site/serve-smoke.py     # 七个请求：三个必须答，四个必须拒
+```
+
+它不绑任何端口。handler 本质上是一个从字节到字节的函数，所以请求从一个提供
+`makefile()` 和 `sendall()` 的缓冲区进去，再从另一个出来——走的正是 socket 会走到的那套
+路由、白名单和错误路径。这样它就能在不允许监听的地方跑：受限的 CI runner、沙箱、
+没有 loopback 的容器。
+
 ## 目录结构
 
 ```
 site/
 ├── serve.py            直启路径——标准库、白名单、只绑 localhost
+├── serve-smoke.py      断言上面那份 URL 契约——且不绑端口
 ├── build-corpus.py     titles.json + corpus.json
 ├── build-diagrams.py   从每个浅色源派生深色 HTML 和两份 SVG
 ├── index.html  style.css  strings.json
 ├── js/                 router · nav · search · render · i18n（原生 ES module）
-├── assets/diagrams/    4 个手写门面图源 + 12 个派生文件
+├── assets/diagrams/    7 个手写门面图源 + 21 个派生文件
+├── js/floor.js         走读的可交互二维办公室——Canvas2D，无框架
+├── assets/floor/       tiles.png + tiles.json，生成物——见 tools/floor/
 ├── vendor/             marked + mermaid，刻意提交进仓库
 ├── nginx.conf  docker-compose.yml  Dockerfile
 └── titles.json  corpus.json        生成物——不要手改

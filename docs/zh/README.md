@@ -41,6 +41,12 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 这条路线不是第七批材料：它不教任何新页面，它决定的是**顺序**
 （[ADR-0001](../adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)）。
 
+现在还有第二条同样的路线：[`walkthrough/`](walkthrough/README.md)
+带你走过参考办公室，并用一份写来**被念、被听**而不是被阅读的稿子，讲清每样东西为什么在那里
+（[ADR-0009](../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)）。第一集已经写好：
+**[网络](../../walkthrough/01-the-network.zh.md)**，106 拍，念出来约二十分钟，上面配一张可平移、
+缩放、点击的二维楼面。
+
 最有特色的一条轴是 **The Stack**：它**自底向上**读技术栈，在**每一层**都把七个平台放
 一起对比 —— 从机房往上写，不是从控制台往下写。横切（cross-cutting）多的是一个视图而
 不是一条轴：[`skills-maps/`](../../cross-cutting/skills-maps/README.md) 把各平台的技能图
@@ -63,17 +69,18 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](../../ai-workflow/) —— 方法及其护栏 |
-| **查一个词或一条旧决策** | [`CONTEXT.md`](../../CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](../adr/) —— 八条决策及它们击败的选项 |
+| **查一个词或一条旧决策** | [`CONTEXT.md`](../../CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](../adr/) —— 十四条决策及它们击败的选项 |
 | **看它还答不上什么** | [`docs/questions.md`](../questions.md) —— 有人问过这个仓库、而它还答不上的问题：开放的、已答的、或明确划在边界外并说明原因的 |
 | **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |
+| **改用听的** | [`walkthrough/`](walkthrough/README.md) —— 把参考办公室讲出来：口播稿、可交互二维楼面，仓库内不存音频 |
 | **在浏览器里读** | [`site/`](site/README.md) —— `python3 site/serve.py`，或 `docker compose -f site/docker-compose.yml up`。全文搜索、分面、🌐 切换、图形渲染。零安装 |
 | **让 agent 检索它** | [`docs/index.json`](../index.json) —— 每个文件一条记录，由 [`docs/build-index.py`](../build-index.py) 从 front-matter 生成 |
 
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（本页目前覆盖 26 篇），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（本页目前覆盖 27 篇），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
@@ -85,6 +92,7 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
 | ✅ | **工具箱** —— 拿去就能跑 | [十个脚本 + 三个 Ansible roles](toolbox/) 配对成 audit→fix，加一个[打包生成器](toolbox/generate/)。安全默认，每个工具带自己的 `Tested on:` 行 |
 | ✅ | **Agent Skills** —— 方法，可调用 | [十个](../../.claude/skills/) —— 七个包装方法，三个驱动工具箱 |
+| ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 第 01 集，[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍，配一张可平移、缩放、点击的二维楼面；稿子放在仓库里，音频不放 |
 | ✅ | **浏览器与检索** | [`site/`](site/README.md) —— 全文搜索，零安装：`python3 site/serve.py` 或 `docker compose -f site/docker-compose.yml up` · [`docs/index.json`](../index.json) —— 每个文件一条记录，给 agent 用 |
 
 **二十个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，多数还带一个
