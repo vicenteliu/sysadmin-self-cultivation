@@ -317,7 +317,7 @@ ITSM 工具、会议，以及一个盯着上面所有这些的东西 —— **�
 录过像，这个场景也会想要这一节 —— 这就是判据。
 
 这些数量所喂入的设计决策住在
-[`cross-cutting/site-network-design.md`](../../cross-cutting/site-network-design.md)。这里
+[`cross-cutting/site-network-design.md`](cross-cutting/site-network-design.md)。这里
 是算术；那里是你拿它去做什么。
 
 ### 无线 —— 算两遍，取大的
@@ -367,7 +367,7 @@ ITSM 工具、会议，以及一个盯着上面所有这些的东西 —— **�
 | **加上增长到 ~130 人** | **~135 → 三台 48 口交换机** |
 
 **速率，逐层看。** 三层，三个答案 —— 它们**为什么**不同的推理在
-[`site-network-design.md`](../../cross-cutting/site-network-design.md)；这里是这间办公室
+[`site-network-design.md`](cross-cutting/site-network-design.md)；这里是这间办公室
 需要什么。
 
 | 层 | 这间办公室 | 为什么不更高 |
@@ -401,7 +401,7 @@ ITSM 工具、会议，以及一个盯着上面所有这些的东西 —— **�
 
 **这些无线数字从哪来。** 本节的射频算术是 🧭 —— 取自公开的厂商工程指南并检查过内部一致
 性，不是来自设计过一套办公室无线并在之后与它共同生活过。完整的边界陈述见
-[`site-network-design.md`](../../cross-cutting/site-network-design.md#honest-boundaries)。
+[`site-network-design.md`](cross-cutting/site-network-design.md#诚实边界)。
 
 ## Where things run
 

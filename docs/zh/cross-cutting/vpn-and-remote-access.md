@@ -38,7 +38,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 ## 决定 1 —— 什么证明你可以拥有一个地址
 
 在任何东西被路由之前，有某样东西判定这个人被允许。在一片当代的估算面里那就是目录，而这条隧道
-是它的一个客户端，和[一个端口上的 802.1X](../../../cross-cutting/site-network-design.md) 完全一样 —— 同一个问题，
+是它的一个客户端，和[一个端口上的 802.1X](site-network-design.md) 完全一样 —— 同一个问题，
 不同的门。
 
 **真正要紧的那个决定，是除了这个人之外还要求什么。** 一份凭据证明"是谁"；它不证明*他坐在什么
@@ -56,7 +56,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 
 这是大多数估算面会跳过的那个决定，而跳过它会悄悄把分段那份工作作废掉。
 
-办公楼层有[大约四个网段，每一个都有一个理由](../../../cross-cutting/site-network-design.md)。一个远程用户必须抵达其中
+办公楼层有[大约四个网段，每一个都有一个理由](site-network-design.md)。一个远程用户必须抵达其中
 之一。**几乎处处的默认做法是把他们放进 staff**，因为人都在那儿 —— 而结果是这条隧道变成了一条
 绕过分段的路，而不是一扇穿过分段的门。
 
@@ -99,7 +99,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 **所以那个决定是：这条隧道认领哪些名字，以及哪个 resolver 来服务它们。** 把它写成一份后缀清单，
 而不是写成一个 resolver 地址，因为那份清单是设计，而那个地址是一个会变的实现细节。
 
-这和[那架调试梯子](../../../cross-cutting/site-network-design.md)在这个仓库别处施行的是同一门纪律：
+这和[那架调试梯子](site-network-design.md)在这个仓库别处施行的是同一门纪律：
 **在你怪路径之前，先把名字解析出来。**
 
 ## 决定 5 —— 远端够得到什么，以及够多久
@@ -144,7 +144,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
   笔记假定已经做过的那个决定
 - [`labs/remote-access-four-causes/`](../../../cross-cutting/labs/remote-access-four-causes/)
   —— 一条错误消息、四个成因，以及排除法为什么胜过习惯
-- [`site-network-design.md`](../../../cross-cutting/site-network-design.md) —— 一个远程用户必须抵达其中之一的那些网段
+- [`site-network-design.md`](site-network-design.md) —— 一个远程用户必须抵达其中之一的那些网段
 - [`network-evolution.md`](network-evolution.md) —— 边界为什么从围着一个地方变成围着一次会话
 - [`labs/m365-conditional-access-lockout/`](../../../cross-cutting/labs/m365-conditional-access-lockout/)
   —— 决定 1 里那个循环依赖，被演练出来

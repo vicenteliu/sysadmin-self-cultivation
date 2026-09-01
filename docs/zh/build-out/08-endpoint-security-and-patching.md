@@ -74,9 +74,9 @@ sysadmin 的调查里，补丁管理是被期待自动化程度最高的工作�
 - [`endpoint/`](../endpoint/README.md) —— MDM 模型、装机、补丁与 EDR、BYOD
 - [`the-stack/07-security.md`](../the-stack/07-security.md) —— 纵深防御，以及终端在
   其中坐在哪儿
-- [`cross-cutting/working-with-security.md`](../../../cross-cutting/working-with-security.md)
+- [`cross-cutting/working-with-security.md`](../cross-cutting/working-with-security.md)
   —— 与一个安全职能协作的运维者视角
-- [`cross-cutting/incident-response.md`](../../../cross-cutting/incident-response.md) ——
+- [`cross-cutting/incident-response.md`](../cross-cutting/incident-response.md) ——
   为了上面那个"谁去读这条告警"的问题
 
 ## 动手做

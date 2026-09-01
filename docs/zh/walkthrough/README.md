@@ -122,7 +122,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 
 **106 拍，念出来约二十分钟。** 它取材于
 [`the-reference-office.md`](../the-reference-office.md)、
-[`site-network-design.md`](../../../cross-cutting/site-network-design.md) 和
+[`site-network-design.md`](../cross-cutting/site-network-design.md) 和
 [`build-out/05-network.md`](../build-out/05-network.md) —— 横跨两条轴加根目录的
 三份文档，这也是编号不跟着 `build-out/` 走的原因。立足点切换一次，说出口，就在 🔨 的
 分段与地址规划让位给 🧭 的无线算术那个地方。
@@ -139,7 +139,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 [`the-reference-office.md`](../the-reference-office.md)、
 [`build-out/01-uplink.md`](../build-out/01-uplink.md)、
 [`debug-ladder.md`](../cross-cutting/debug-ladder.md)、
-[`incident-response.md`](../../../cross-cutting/incident-response.md)、
+[`incident-response.md`](../cross-cutting/incident-response.md)、
 [`the-stack/06-observability.md`](../the-stack/06-observability.md)，以及
 [four-causes](../../../cross-cutting/labs/remote-access-four-causes/) 和
 [mitigate-before-diagnose](../../../cross-cutting/labs/mitigate-before-diagnose/)

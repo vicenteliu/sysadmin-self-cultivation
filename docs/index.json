@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 283,
+  "count": 287,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1270,6 +1270,19 @@
       "mirrors": "cross-cutting/cost.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/databases.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "databases"
+      ],
+      "platforms": [],
+      "summary": "the-stack/04 taught that state is the thing no pipeline recreates; the-stack/05 said the managed database is usually the highest-value rent.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/databases.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/debug-ladder.md": {
       "kind": "note",
       "axis": "cross-cutting",
@@ -1313,6 +1326,19 @@
       "summary": "The densest, most-transferable surface there is.",
       "language": "zh",
       "mirrors": "cross-cutting/identity-iam.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/incident-response.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "incident"
+      ],
+      "platforms": [],
+      "summary": "foundations/ built the technical half of debugging — the reflex that finds what's wrong.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/incident-response.md",
       "derived": true
     },
     "docs/zh/cross-cutting/itsm-and-assets.md": {
@@ -1426,6 +1452,22 @@
       "mirrors": "cross-cutting/service-mesh.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/site-network-design.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "identity"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Designing the network for one physical place: segmentation with a reason per segment, an address plan that survives a merge, and the wireless question a hundred-person floor actually asks.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/site-network-design.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/terraform-support.md": {
       "kind": "support-note",
       "axis": "cross-cutting",
@@ -1468,6 +1510,19 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "cross-cutting/web-and-tls.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/working-with-security.md": {
+      "kind": "note",
+      "axis": "cross-cutting",
+      "themes": [
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "You are not the security team. You are the surface they defend — and their biggest force multiplier.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "cross-cutting/working-with-security.md",
       "derived": true
     },
     "docs/zh/docs/README.md": {

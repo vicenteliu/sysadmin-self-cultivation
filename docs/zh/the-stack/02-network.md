@@ -250,7 +250,7 @@ EVPN-VXLAN 织构，都是用上面那套方法 ramp 出来的 —— 扎实的�
 实践和接入点选型，是被测绘和验证过的，不是在一层楼上设计出来并在之后与它共同生活过的。它在这里
 被点名，是因为上面那份 🔨 清单已经深到读者会合情合理地把无线也折进去，而那份沉默会做一件证据
 支撑不了的事。设计方法写在
-[`cross-cutting/site-network-design.md`](../../../cross-cutting/site-network-design.md)，在同一
+[`cross-cutting/site-network-design.md`](../cross-cutting/site-network-design.md)，在同一
 个地方标着 🧭。不过那把调试阶梯是与平台无关的、也是被伤疤检验过的：它是在硬件上学会的，而它在
 别人运行的 overlay 上一模一样地管用。
 

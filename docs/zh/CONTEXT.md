@@ -187,7 +187,7 @@ plate，而给它换个颜色不是。它是一个**视图**：它渲染 Markdow
 （[ADR-0011](../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)）。
 区别于**门面图**，后者是静态的、从一份 HTML 源派生的。刻意叫 *floor* 而不叫 *site*：那
 个词已经同时指 [`site/`](site/README.md) 那个 viewer 和
-[`site-network-design.md`](../../cross-cutting/site-network-design.md) 里的一个物理场地，
+[`site-network-design.md`](cross-cutting/site-network-design.md) 里的一个物理场地，
 再来第三个意思就多了一个。
 _避免_：地图、场景、模拟、site、the office（那是参考办公室）、plate（那是它画的东西）
 

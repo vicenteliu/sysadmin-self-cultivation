@@ -66,7 +66,7 @@ summary: "采购与运营商谈判是 🧭 经过验证的 ramp；这条电路�
   这一步采购时所对着的那套词汇
 - [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/) ——
   "多样化"必须意味着什么才算数
-- [`cross-cutting/incident-response.md`](../../../cross-cutting/incident-response.md) ——
+- [`cross-cutting/incident-response.md`](../cross-cutting/incident-response.md) ——
   因为上面那个凌晨两点的问题其实是一个 on-call 问题
 - [参考办公室的 Selection rules](../the-reference-office.md#selection-rules) ——
   那套定容量的算术，带着推理而不是一个整数

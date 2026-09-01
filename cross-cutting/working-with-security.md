@@ -8,6 +8,8 @@ summary: "You are not the security team. You are the surface they defend — and
 ---
 # Working with Security — ATT&CK awareness for operators
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/cross-cutting/working-with-security.md)
+
 > You are not the security team. You are the surface they defend — and their biggest
 > force multiplier. Most of what an attacker touches on the way in is *yours*:
 > identities, hosts, patches, ports, logs. This note is the operator's half of
