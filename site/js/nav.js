@@ -1,9 +1,9 @@
 /* The sidebar: the retrieval index, sliced four ways.
 
-   The nav lists canonical (English) documents only — the 58 Chinese mirrors are not
+   The nav lists canonical (English) documents only — the 60 Chinese mirrors are not
    separate entries, they are the same document in another language. In Chinese, an
    entry that HAS a mirror links to it and shows its Chinese title; one that does not
-   is tagged `EN`, because 58 of 204 canonical documents have a mirror — a fact a
+   is tagged `EN`, because 60 of 204 canonical documents have a mirror — a fact a
    reader should see rather than discover. */
 
 import { t, label, getLang } from "./i18n.js";
@@ -26,7 +26,7 @@ export function currentFacet() { return facet; }
     A walkthrough is two canonical scripts, one per language, and neither is a mirror of
     the other — so the nav shows the one written in the language you are reading in.
     Without this an English reader gets a Chinese title in the list and no way to tell
-    why. It is the same hiding the nav already does for the 58 mirrors, applied to a
+    why. It is the same hiding the nav already does for the 60 mirrors, applied to a
     sibling instead of a derivative. */
 export function canonicalDocs(state) {
   return Object.entries(state.index.files)

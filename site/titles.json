@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "site/build-corpus.py",
   "note": "Generated from the Markdown. Edit the file, not this.",
-  "count": 262,
+  "count": 264,
   "titles": {
     ".claude/skills/README.md": "Agent Skills",
     ".claude/skills/author-module/SKILL.md": "Skill: author-module",
@@ -145,6 +145,8 @@
     "docs/zh/platforms/oci/support.md": "OCI 支持 —— 运维者的转轨指南",
     "docs/zh/site/README.md": "site —— 文档浏览器",
     "docs/zh/the-reference-office.md": "参考办公室",
+    "docs/zh/the-stack/01-physical.md": "01 —— 物理层",
+    "docs/zh/the-stack/02-network.md": "02 —— 网络层",
     "docs/zh/the-stack/README.md": "The Stack —— 同一副栈，七种做法",
     "docs/zh/toolbox/README.md": "Toolbox 工具箱 — 带得走的部分",
     "docs/zh/toolbox/ansible/README.md": "Ansible 线 — 修复的另一半",
