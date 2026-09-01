@@ -2197,7 +2197,7 @@
       "platforms": [
         "self-host"
       ],
-      "summary": "Episode one: an empty floor plate, a hundred people, four segments, and how many radios end up in the ceiling — walked from the lift doors to the rack, deciding on the way.",
+      "summary": "Walkthrough one: an empty floor plate, a hundred people, four segments, and how many radios end up in the ceiling — walked from the lift doors to the rack, deciding on the way.",
       "marker": "mixed",
       "language": "en",
       "counterpart": "walkthrough/01-the-network.zh.md"
@@ -2212,7 +2212,7 @@
       "platforms": [
         "self-host"
       ],
-      "summary": "第一集：一层空楼面、一百个人、四个网段，还有天花板上到底要几个天线——从电梯口一路走到机柜前，边走边决定。",
+      "summary": "走读 01：一层空楼面、一百个人、四个网段，还有天花板上到底要几个天线——从电梯口一路走到机柜前，边走边决定。",
       "marker": "mixed",
       "language": "zh",
       "counterpart": "walkthrough/01-the-network.en.md"

@@ -181,7 +181,7 @@ Decision: [`docs/adr/0009`](docs/adr/0009-the-walkthrough-ships-its-script-not-i
 |---|---|---|
 | [`walkthrough/`](walkthrough/README.md) | The route, its format and its five decisions | ✅ |
 | **01 · The network** | [中文](walkthrough/01-the-network.zh.md) · [English](walkthrough/01-the-network.en.md) — 106 beats, ~20 minutes spoken. Draws on three documents across two axes plus the root | ✅ |
-| Scripts, two per episode | Side by side and **neither a translation** — cadence does not survive one ([ADR-0010](docs/adr/0010-a-spoken-script-has-no-translation.md)) | ✅ |
+| Scripts, two per walkthrough | Side by side and **neither a translation** — cadence does not survive one ([ADR-0010](docs/adr/0010-a-spoken-script-has-no-translation.md)) | ✅ |
 | Audio | **Never in this tree.** You generate it with your own TTS, or listen to the published episode | — |
 | Beats | One paragraph, one TTS call, one audio segment, one floor state — aligned by stable id, never by timestamp ([ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)) | ✅ |
 | The floor | An interactive 2D office in the viewer — pan, zoom in three semantic registers, 17 clickable props. The cast **is** the wireless load. It renders what the Markdown states and computes nothing ([ADR-0011](docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)) | ✅ |

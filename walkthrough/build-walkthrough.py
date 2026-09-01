@@ -151,12 +151,12 @@ def check_floor(floor_path, scripts, problems):
     rel = os.path.relpath(floor_path, ROOT).replace(os.sep, "/")
     floor = json.load(open(floor_path, encoding="utf-8"))
 
-    # Geometry lives in the plate, shared by every episode; the episode carries panels
+    # Geometry lives in the plate, shared by every walkthrough; the walkthrough carries
     # and cues. Reaching for a missing plate must fail loudly — the first version of
     # this split passed in silence because an absent `stage` read as an empty one.
     plate_name = floor.get("plate")
     if not plate_name:
-        problems.append(f"{rel}: names no plate — an episode draws a floor it does not own")
+        problems.append(f"{rel}: names no plate — a walkthrough draws a floor it does not own")
         return floor, []
     plate_path = os.path.join(HERE, plate_name)
     if not os.path.exists(plate_path):
@@ -251,7 +251,7 @@ def check_floor(floor_path, scripts, problems):
     return floor, all_beats
 
 
-def episodes():
+def walkthroughs():
     for name in sorted(os.listdir(HERE)):
         if name.endswith(".floor.json"):
             yield name[: -len(".floor.json")]
@@ -290,7 +290,7 @@ def main():
         return 0
 
     problems, counted = [], 0
-    for slug_name in episodes():
+    for slug_name in walkthroughs():
         scripts = {}
         for lang in ("zh", "en"):
             path = os.path.join(HERE, f"{slug_name}.{lang}.md")

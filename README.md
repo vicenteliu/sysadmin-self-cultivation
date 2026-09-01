@@ -49,7 +49,7 @@ The route is not a seventh body of material: it teaches no new page, it decides 
 A **second route** is now open on the same test: [`walkthrough/`](walkthrough/README.md)
 walks the reference office and tells you why, in a script written to be **spoken and
 heard** rather than read ([ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)).
-The first episode is written: **[the network](walkthrough/01-the-network.zh.md)**, 106
+The first walkthrough is written: **[the network](walkthrough/01-the-network.zh.md)**, 106
 beats, about twenty minutes spoken, over an interactive 2D floor of the reference office.
 The figure above does not show the second route, and will not until there are a few more.
 
@@ -101,7 +101,7 @@ far), and demand-first deepening.
 | ✅ | **Support notes** — break-fix craft | For surfaces you *inherit*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
 | ✅ | **Toolbox** — run it | [ten scripts + three Ansible roles](toolbox/) pairing audit→fix, and a [pack generator](toolbox/generate/). Safe by default; every tool carries its own `Tested on:` line |
 | ✅ | **Agent Skills** — the method, invokable | [ten of them](.claude/skills/) — seven package the method, three drive the toolbox |
-| ✅ | **Walkthrough** — heard, not read | [`walkthrough/`](walkthrough/README.md) — episode 01, [中文](walkthrough/01-the-network.zh.md) · [EN](walkthrough/01-the-network.en.md), 106 beats over an interactive **2D floor** you can pan, zoom and click. Scripts ship here; audio never does |
+| ✅ | **Walkthrough** — heard, not read | [`walkthrough/`](walkthrough/README.md) — walkthrough 01, [中文](walkthrough/01-the-network.zh.md) · [EN](walkthrough/01-the-network.en.md), 106 beats over an interactive **2D floor** you can pan, zoom and click. Scripts ship here; audio never does |
 | ✅ | **Browser & retrieval** | [`site/`](site/README.md) — full-text search over the lot, nothing to install · [`docs/index.json`](docs/index.json) — one record per file, for an agent |
 
 **Twenty runnable, self-verifying labs** sit under those axes — exit `0` means the lesson

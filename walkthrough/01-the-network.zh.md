@@ -5,12 +5,12 @@ themes: [networking, identity]
 platforms: [self-host]
 marker: "mixed"
 language: zh
-summary: "第一集：一层空楼面、一百个人、四个网段，还有天花板上到底要几个天线——从电梯口一路走到机柜前，边走边决定。"
+summary: "走读 01：一层空楼面、一百个人、四个网段，还有天花板上到底要几个天线——从电梯口一路走到机柜前，边走边决定。"
 counterpart: walkthrough/01-the-network.en.md
 sources: [the-reference-office.md, cross-cutting/site-network-design.md, build-out/05-network.md]
 published:
 ---
-# 第一集 · 网络——一层楼、四个网段，和天花板上的那几个天线
+# 走读 01 · 网络——一层楼、四个网段，和天花板上的那几个天线
 
 <!-- beat: arrive-empty-floor -->
 电梯门开的时候，这层楼是空的。没有隔断，没有地毯，天花板还吊在半空，露出上面一格一格的桥架。地上有几处白色的粉笔线，是上一拨看房的人留下的。窗户很大，光很好。就这样。

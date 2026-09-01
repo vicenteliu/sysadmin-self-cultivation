@@ -5,12 +5,12 @@ themes: [networking, identity]
 platforms: [self-host]
 marker: "mixed"
 language: en
-summary: "Episode one: an empty floor plate, a hundred people, four segments, and how many radios end up in the ceiling — walked from the lift doors to the rack, deciding on the way."
+summary: "Walkthrough one: an empty floor plate, a hundred people, four segments, and how many radios end up in the ceiling — walked from the lift doors to the rack, deciding on the way."
 counterpart: walkthrough/01-the-network.zh.md
 sources: [the-reference-office.md, cross-cutting/site-network-design.md, build-out/05-network.md]
 published:
 ---
-# Episode 01 · The network — one floor, four segments, and the radios in the ceiling
+# Walkthrough 01 · The network — one floor, four segments, and the radios in the ceiling
 
 <!-- beat: arrive-empty-floor -->
 The lift doors open onto an empty floor. No partitions, no carpet, the ceiling still hanging half-finished with the cable tray showing above it. There are some chalk marks on the slab from whoever looked at it last. The windows are big. The light is good. That is all there is.
