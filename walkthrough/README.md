@@ -140,6 +140,7 @@ needs no timing data. Nothing in this repo depends on which engine you pick.
 | # | Walkthrough | EN | 中文 | Floor | Published |
 |---|---|---|---|---|---|
 | 01 | [The network](01-the-network.en.md) — one floor, four segments, and the radios in the ceiling | ✅ | [✅](01-the-network.zh.md) | ✅ 20 props | ⏳ |
+| 02 | [The first Monday](02-the-first-monday.en.md) — one joiner, and the two things nothing ever triggers | ✅ | [✅](02-the-first-monday.zh.md) | ✅ 10 props | ⏳ |
 
 **106 beats, about twenty minutes spoken.** It draws on
 [`the-reference-office.md`](../the-reference-office.md),
@@ -148,6 +149,15 @@ needs no timing data. Nothing in this repo depends on which engine you pick.
 plus the root, which is why the numbering does not follow `build-out/`. The footing
 changes once, out loud, where the 🔨 segmentation and addressing material gives way to the
 🧭 wireless arithmetic.
+
+**Walkthrough 02 is 93 beats**, and it draws on
+[`the-reference-office.md`](../the-reference-office.md),
+[`build-out/03-identity.md`](../build-out/03-identity.md),
+[`build-out/04-devices-and-images.md`](../build-out/04-devices-and-images.md) and
+[`build-out/15-joiner-mover-leaver.md`](../build-out/15-joiner-mover-leaver.md). It plays
+over the **same plate** — episode two is the same office — and everything that differs is
+in its panels, which are about identity and lifecycle where 01's were about the network.
+Its footing changes once, out loud, at the turnover band.
 
 Further walkthroughs are written when there is something worth saying out loud, one at a
 time, the way [`toolbox/`](../toolbox/README.md) grows. There is no target count.
