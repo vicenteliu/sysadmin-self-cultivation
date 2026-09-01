@@ -68,6 +68,9 @@ because enrolment failures are opaque and their error strings are unhelpful.
 - [`endpoint/`](../endpoint/) — the MDM model, imaging pipeline, patch and EDR, BYOD
 - [`platforms/self-host/operations.md`](../platforms/self-host/operations.md) — the 🔨
   fleet material this step's habits come from
+- [the reference office](../the-reference-office.md#parameters) — the fleet size, the
+  refresh cycle, and why **fewer than four in ten device handovers happen because
+  somebody joined**
 
 ## Do it
 

@@ -48,6 +48,7 @@ the file follows.
 | Floors | One |
 | Growth assumed over the lease | To about 130 without moving |
 | Lease term | 5 years |
+| Endpoint refresh | Every 3 years |
 
 **Derived** — every one of these comes from a rule in the next section.
 
@@ -65,6 +66,11 @@ the file follows.
 | Leavers | ~17 a year | 🧭 A mid-teens annual turnover rate on the average headcount of 115 |
 | Joiners | ~23 a year | Leavers plus net growth — you hire the replacement *and* the addition |
 | Joiners over the lease | ~116 | To grow by 30. And 216 people hold an account at some point, for 130 desks |
+| Endpoints in service | ~100, rising to ~130 | One primary device per person; sharing is the exception at this size |
+| Spares held | ~5 | A month of joiners plus what breaks in that month, without a purchase order in the path |
+| Replacements | ~38 a year | Average fleet of 115 on a 3-year refresh |
+| Devices purchased | ~44 a year | Replacements plus net growth |
+| Devices over the lease | ~220 | To hold about 115. The register's population is twice the fleet's |
 
 ## Why these numbers
 
@@ -110,7 +116,9 @@ no answer without it.
   stop describing where anybody is.
 - **A store, with a door that locks.** [Step 11](build-out/11-assets-and-tickets.md) asks
   the estate to be enumerated from device one; [step 04](build-out/04-devices-and-images.md)
-  has laptops arriving in boxes. Stock, spares, returns and deliveries need somewhere that
+  has laptops arriving in boxes — about forty-four a year, plus the thirty-eight going the
+  other way. It needs a shelf rather than a room: five spares, the returns not yet wiped,
+  and whatever is in transit. Stock, spares, returns and deliveries need somewhere that
   is not a desk, and an asset register whose physical counterpart is "the corner behind
   Dave" is a register that will disagree with reality inside a quarter.
 - **A service-desk position.** [Step 13](build-out/13-the-help-desk.md) asks how many IT
@@ -152,6 +160,44 @@ identity, and it is why the estate-drift labs land the way they do. A hundred-pe
 office does not accumulate stale accounts and orphaned permissions because somebody was
 careless. It accumulates them because **the population turns over faster than any review
 cycle that runs annually**, which is most of them.
+
+**One device per person, and the interesting number is not that one.** At this size and
+this kind of work a primary device per employee is the assumption to argue *against*, not
+for; shared machines, second devices and desk-side hardware are exceptions that need a
+reason. So the fleet is the headcount: about a hundred now, about a hundred and thirty by
+the end of the term. That is the boring half.
+
+**The refresh cycle is what actually drives the work, and it is bigger than hiring.** A
+three-year replacement cycle across an average fleet of a hundred and fifteen retires and
+replaces about thirty-eight machines a year. Against twenty-three joiners, that means
+**fewer than four in ten device handovers happen because somebody joined.** The majority
+are handovers to people who already work here, already have an account, and already had a
+machine. An imaging and enrolment process designed around the first day misses most of its
+own traffic — which is the argument [step 04](build-out/04-devices-and-images.md) is
+making when it says the technician-per-machine model does not survive.
+
+**Purchases are replacements plus growth**, so about forty-four a year, and about two
+hundred and twenty across the lease **to hold about a hundred and fifteen at a time.** The
+fleet is a hundred and fifteen; the *register* has to account for two hundred and twenty,
+the way the directory has to account for two hundred and sixteen people rather than a
+hundred and thirty. Both estates are roughly twice the office, and for the same reason:
+**an office is a snapshot and a register is a history.**
+
+**The spares number is small, and it is a lead-time calculation rather than a stock
+policy.** Hold enough that a joiner starting on Monday and a machine that died on Friday
+are both covered without a purchase order in the path — a month of joiners is about two,
+and the failures and accidents in that month are a fraction of one on a fleet this size.
+Five covers both with room for a loaner, which is why the store needs a shelf and not a
+room. **The part of this that varies most by fleet is breakage**, and a place that issues
+laptops to a field team should not take five from here.
+
+**Put the two estates together and you get the reconciliation problem, not a description
+of it.** Forty joiner-or-leaver events a year, forty-four purchases, thirty-eight
+retirements: **about a hundred and twenty-three changes a year to the asset register, one
+roughly every two working days.** Reconciling that annually means comparing two systems
+that have each moved a hundred-odd times since anyone last looked. The residue is not a
+sign that somebody was sloppy; it is what a two-day mutation rate does to a twelve-month
+check.
 
 **The mover is the one this file will not give you a number for.** Internal moves — team
 changes, promotions, secondments — are the least measured of the three and the most
@@ -363,7 +409,6 @@ line here says *asked already, and answered somewhere it should not have been*.
 
 | Parameter | Who was forced to invent it | State |
 |---|---|---|
-| **Endpoints and spares** | [asset reconciliation](cross-cutting/labs/asset-reconciliation/) invented 97 devices; the store below is sized for *stock, spares and returns* and states no quantity | ⏳ open |
 | **Identity shape** — teams, admin and service accounts, guests | [permission sprawl](cross-cutting/labs/permission-sprawl/) built two estates for *the same hundred people*; the plate carries four segments with no population behind them | ⏳ open |
 | **SaaS estate** — how many, how many seats, who owns each, how many outside SSO | [permission sprawl](cross-cutting/labs/permission-sprawl/) again, and [mail authentication](cross-cutting/labs/mail-authentication-alignment/)'s sender inventory | ⏳ open |
 | **Support load** — arrival rate by category, the support window | [help desk queue](cross-cutting/labs/help-desk-queue/) invented seven categories, their arrival rates and a fifty-hour window | ⏳ open |
@@ -395,6 +440,28 @@ author's payroll. And the **mover gets no number at all** — there is no rate h
 trusting and none derivable from anything above, so the file says that plainly instead of
 inventing one, and says the useful thing in its place: the mover is the only leg of JML
 with no natural trigger.
+
+✅ **Endpoints and spares.** One device per person makes the fleet the headcount, which
+is the dull half. The refresh cycle is the other one: thirty-eight replacements a year
+against twenty-three joiners, so **fewer than four in ten device handovers are because
+somebody joined**. About two hundred and twenty machines are bought across the lease to
+hold a hundred and fifteen — the same roughly-twice-the-office shape the directory has,
+because an office is a snapshot and a register is a history.
+
+**No conflict with [asset reconciliation](cross-cutting/labs/asset-reconciliation/)
+either, and the check was worth running.** Its ninety-seven is a snapshot of *a*
+hundred-person office in the generic sense, not a claim about this one, and it sits inside
+what this file derives — a hundred in service, less the joiners not yet issued and the
+returns not yet re-imaged. Nothing needed correcting under
+[Q7's rule](#what-this-office-does-not-yet-say).
+
+What the numbers *do* to that lab is better than a correction. Its five anomalies are not
+contrived cases; they are this office's event stream, at the rates above. *She left in
+June and he has had the laptop since* is a leaver. The re-image wave is refresh. The
+warranty swap is breakage. The disposal that was never filed is a retirement, and there
+are thirty-eight of those a year. **A hundred and twenty-three register changes a year,
+one every two working days, reconciled annually** — the lab's three wrong records are what
+that arithmetic produces, not what carelessness produces.
 
 **No conflict with [transcript retention](cross-cutting/labs/transcript-retention/).** The
 ledger listed it as the source of demand, and on inspection the lab models *group*
