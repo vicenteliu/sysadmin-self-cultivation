@@ -76,7 +76,7 @@ And the room the first walkthrough took you into is fine too. Three access switc
 Nothing on this floor is broken. That is not a relief. That is the shape of the problem.
 
 <!-- beat: the-old-answer -->
-Ten years ago a dead circuit meant no email and no internet, and the file server and the domain controller kept working in the next room. People were annoyed. People were not stopped.
+A decade ago a dead circuit meant no email and no internet, and the file server and the domain controller kept working in the next room. People were annoyed. People were not stopped.
 
 <!-- beat: today -->
 Today a dead circuit means nobody can log in. For an office whose work lives entirely off site, the uplink is the business.
@@ -280,7 +280,7 @@ At some point this morning, it comes back. Somebody renews something, or a provi
 The fix is not the deliverable.
 
 <!-- beat: the-gap -->
-Every incident's real deliverable is the gap it exposed, closed. The log line nobody was writing. The service nobody had instrumented. The alert that would have fired eleven minutes before the first person walked up to that desk.
+Every incident's real deliverable is the gap it exposed, closed. The log line nobody was writing. The service nobody had instrumented. The alert that would have fired before anybody walked up to that desk.
 
 <!-- beat: blameless -->
 And the review is blameless, which is not a kindness and not a culture slogan. Blame makes people leave things out. Things left out make the next one worse. It is an operational requirement wearing a nice word.
@@ -295,7 +295,7 @@ Company information in this office lives in five places. The tenant. The endpoin
 Four of those five can be given a recovery objective. The fifth cannot, and the reason is not budget or effort. You cannot set a recovery objective for a system you have not inventoried.
 
 <!-- beat: same-limit -->
-Which is the monitoring limit again, in different clothes. Both of them stop at the edge of the list, and neither of them tells you where the edge is.
+Which is the monitoring limit again, in different clothes. Both of them stop at the edge of the same list, and neither of them tells you where the edge is. Two of the most expensive guarantees this function makes, and they fail at the same place.
 
 <!-- beat: once-a-year -->
 This office performs one restore drill a year, and records that it did.
