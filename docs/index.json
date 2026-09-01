@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 242,
+  "count": 245,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -990,6 +990,18 @@
       "mirrors": "WHY.md",
       "derived": true
     },
+    "docs/zh/ai-workflow/how-i-use-ai-to-learn-and-operate.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [
+        "observability"
+      ],
+      "platforms": [],
+      "summary": "The meta-layer. Every platform module has its own AI-ramp; this is the shared philosophy behind them — and the part that keeps AI from quietly wrecking things.",
+      "language": "zh",
+      "mirrors": "ai-workflow/how-i-use-ai-to-learn-and-operate.md",
+      "derived": true
+    },
     "docs/zh/build-out/README.md": {
       "kind": "index",
       "axis": "build-out",
@@ -1080,6 +1092,30 @@
       "summary": "The project's default language is English; the canonical docs live at the repo root and under platforms/, cross-cutting/, and ai-workflow/.",
       "language": "zh",
       "mirrors": "docs/README.md",
+      "derived": true
+    },
+    "docs/zh/endpoint/README.md": {
+      "kind": "index",
+      "axis": "foundations",
+      "themes": [
+        "endpoint-mdm"
+      ],
+      "platforms": [],
+      "summary": "One of the densest demand clusters in the whole signal, and the platform folders don't cover it: managing the fleet of laptops and phones that people actually work on.",
+      "language": "zh",
+      "mirrors": "endpoint/README.md",
+      "derived": true
+    },
+    "docs/zh/foundations/README.md": {
+      "kind": "index",
+      "axis": "foundations",
+      "themes": [
+        "linux-scripting"
+      ],
+      "platforms": [],
+      "summary": "The floor under every role in this repo. Every job posting that inspired this project assumes this and never lists it — which is exactly why it's worth making explicit.",
+      "language": "zh",
+      "mirrors": "foundations/README.md",
       "derived": true
     },
     "docs/zh/platforms/README.md": {

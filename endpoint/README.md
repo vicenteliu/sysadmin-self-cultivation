@@ -7,6 +7,8 @@ summary: "One of the densest demand clusters in the whole signal, and the platfo
 ---
 # Endpoint & MDM
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/endpoint/README.md)
+
 > One of the densest demand clusters in the whole signal, and the platform folders
 > don't cover it: managing the fleet of laptops and phones that people actually
 > work on. This is a first-class track because it's a first-class job — and it's

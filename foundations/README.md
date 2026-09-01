@@ -7,6 +7,8 @@ summary: "The floor under every role in this repo. Every job posting that inspir
 ---
 # Foundations — Linux & scripting
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/foundations/README.md)
+
 > The floor under every role in this repo. Every job posting that inspired this
 > project *assumes* this and never lists it — which is exactly why it's worth
 > making explicit. You don't get to the clouds without standing on this.
