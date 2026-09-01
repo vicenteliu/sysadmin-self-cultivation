@@ -115,7 +115,7 @@ _Avoid_: illustration, graphic, branded diagram, figure (that is either of the t
 
 **Walkthrough**:
 A narrated pass through [`the-reference-office.md`](the-reference-office.md), written to
-be **spoken by a text-to-speech engine and heard** — never read. One file per episode
+be **spoken by a text-to-speech engine and heard** — never read. One file per walkthrough
 lives in [`walkthrough/`](walkthrough/), in two languages side by side. It is a **route**,
 not an axis: it teaches no page this repo does not already hold, and decides only the
 **order and the register**
@@ -145,11 +145,23 @@ already ruled on the coupling — *content that exists to serve a recording belo
 recording* — which is why the directory is named for the route and not for the feed.
 _Avoid_: using "episode" for the Markdown file (that is a walkthrough)
 
+_Erratum_: seven decision records predate this entry and use *episode* for the file —
+[0002](docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md) and
+[0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md) through
+[0014](docs/adr/0014-the-plate-stops-at-topology.md), in `<episode>.floor.json`, *the
+first episode*, *two scripts per episode* and *what an episode owns*. Where those same
+records say *the published episode*, the word is the one defined here.
+**The records are not edited.** That is the precedent
+[ADR-0008](docs/adr/0008-a-count-is-not-a-bound.md) set when it left ADR-0007's
+sentences standing and wrote the correction beside them, and it is the same rule a
+frozen walkthrough follows: an error becomes an erratum, because a silent fix leaves
+the record lying about what it said.
+
 **The plate**:
 What this floor *is* — the spaces, what each one is, what it is next to, and how you walk
 from any of them to any other. It lives in
 [`walkthrough/reference-office.plate.json`](walkthrough/README.md), it is shared by every
-episode, and it **stops at topology**: no corridor widths, no egress distances, no
+walkthrough, and it **stops at topology**: no corridor widths, no egress distances, no
 sanitary counts, no claim that the plan would pass anything
 ([ADR-0014](docs/adr/0014-the-plate-stops-at-topology.md)). Its circulation is written
 down rather than inferred from where the furniture is not, and a headless Godot project

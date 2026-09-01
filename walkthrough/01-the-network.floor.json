@@ -1,7 +1,6 @@
 {
-  "$schema": "./floor.schema.md",
   "version": 2,
-  "episode": "01-the-network",
+  "walkthrough": "01-the-network",
   "plate": "reference-office.plate.json",
   "scripts": [
     "01-the-network.zh.md",

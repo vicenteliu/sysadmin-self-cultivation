@@ -1,6 +1,6 @@
 /* The floor — an interactive 2D office the walkthrough plays over.
 
-   It is a VIEW. Every number it draws is read out of `<episode>.floor.json`, which
+   It is a VIEW. Every number it draws is read out of `<walkthrough>.floor.json`, which
    sits beside the script in `walkthrough/`, and every one of those numbers is in a
    Markdown document that GitHub also renders. The floor computes nothing: it will not
    take a headcount and hand you an access-point count, because that would make the
@@ -867,9 +867,9 @@ export async function mountFloor(host, path, markdown) {
   try {
     const response = await fetch(`/doc/${scenePath}`);
     if (!response.ok) throw new Error(`${response.status} for ${scenePath}`);
-    const episode = await response.json();
-    // Geometry is shared by every episode; panels and cues belong to this one.
-    const platePath = `walkthrough/${episode.plate}`;
+    const walkthrough = await response.json();
+    // Geometry is shared by every walkthrough; panels and cues belong to this one.
+    const platePath = `walkthrough/${walkthrough.plate}`;
     const plateResponse = await fetch(`/doc/${platePath}`);
     if (!plateResponse.ok) throw new Error(`${plateResponse.status} for ${platePath}`);
     const plate = await plateResponse.json();
@@ -878,7 +878,7 @@ export async function mountFloor(host, path, markdown) {
                booths: plate.booths, desks: plate.desks, segments: plate.segments,
                occupancy: plate.occupancy },
       circulation: plate.circulation, core: plate.core, entry: plate.entry,
-      topology: plate.topology, props: episode.props, beats: episode.beats,
+      topology: plate.topology, props: walkthrough.props, beats: walkthrough.beats,
     };
   } catch (err) {
     // A walkthrough always has a floor. Rendering nothing here is how a reader

@@ -69,7 +69,7 @@ anything: see [`docs/adr/0012`](../docs/adr/0012-alignment-is-by-beat-not-by-tim
 
 ## Two languages, and neither is a translation
 
-`<episode>.en.md` and `<episode>.zh.md` sit side by side here, **not** under
+`<walkthrough>.en.md` and `<walkthrough>.zh.md` sit side by side here, **not** under
 [`docs/zh/`](../docs/zh/README.md). That directory means *mirror*, and these are not
 mirrors: translation preserves facts and destroys cadence, which is the one thing a spoken
 script is made of.
@@ -104,8 +104,8 @@ holds alone is a fact lost the moment the viewer is deleted. It comes in two hal
 
 | | |
 | --- | --- |
-| **The plate** — `reference-office.plate.json` | What this floor **is**: the spaces, what each is next to, and how you walk between them. Shared by every episode, because episode two is the same office. |
-| **The episode** — `<episode>.floor.json` | What this episode **says about it**: the prop panels and the beat cues. In episode one those panels are five times the size of the geometry, and every word of them is about networking. |
+| **The plate** — `reference-office.plate.json` | What this floor **is**: the spaces, what each is next to, and how you walk between them. Shared by every walkthrough, because walkthrough two is the same office. |
+| **The walkthrough** — `<walkthrough>.floor.json` | What this walkthrough **says about it**: the prop panels and the beat cues. In walkthrough one those panels are five times the size of the geometry, and every word of them is about networking. |
 
 **The plate stops at topology** — no corridor widths, no egress distances, no sanitary
 provision, no claim it would pass anything
@@ -166,6 +166,6 @@ the same order, that the floor cues only beats that exist, that every prop ancho
 heading in a real file, and that the spoken text holds nothing a speech engine would read
 as noise or drop in silence.
 
-`--freeze <episode>` stamps `published:` and a fingerprint of each source. After that a
+`--freeze <walkthrough>` stamps `published:` and a fingerprint of each source. After that a
 changed source is reported as *the recording now describes a document that moved*, which
 is the signal to re-record — and the script itself is no longer edited.

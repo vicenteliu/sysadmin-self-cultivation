@@ -212,8 +212,8 @@
     "toolbox/vm-migration-assess/README.md": "vm-migration-assess",
     "toolbox/vsphere-inventory/README.md": "vsphere-inventory",
     "tools/floor/README.md": "tools/floor — the floor's design-time side",
-    "walkthrough/01-the-network.en.md": "Episode 01 · The network — one floor, four segments, and the radios in the ceiling",
-    "walkthrough/01-the-network.zh.md": "第一集 · 网络——一层楼、四个网段，和天花板上的那几个天线",
+    "walkthrough/01-the-network.en.md": "Walkthrough 01 · The network — one floor, four segments, and the radios in the ceiling",
+    "walkthrough/01-the-network.zh.md": "走读 01 · 网络——一层楼、四个网段，和天花板上的那几个天线",
     "walkthrough/README.md": "The Walkthrough — the reference office, told out loud"
   }
 }
