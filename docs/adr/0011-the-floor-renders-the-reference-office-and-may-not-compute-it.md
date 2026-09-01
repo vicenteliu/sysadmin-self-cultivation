@@ -7,6 +7,8 @@ summary: "The viewer is gaining an interactive 2D office — pan, zoom, clickabl
 ---
 # The floor renders the reference office and may not compute it
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)
+
 The viewer is gaining a **floor**: an interactive 2D scene of
 [the reference office](../../the-reference-office.md), with pan and zoom, clickable props,
 and a cast of figures at desks. A [walkthrough](0009-the-walkthrough-ships-its-script-not-its-audio.md)

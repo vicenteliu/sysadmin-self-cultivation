@@ -7,6 +7,8 @@ summary: "The reference office was asked to grow parameters for a cloud footprin
 ---
 # The reference office consumes services and operates none
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md)
+
 [`the-reference-office.md`](../../the-reference-office.md) was asked to grow three new
 parameter domains: a self-hosted VM host, a cloud footprint, and an online service. Two of
 those turn on a question the file has never answered and never noticed it was not

@@ -303,7 +303,7 @@ ITSM 工具、会议，以及一个盯着上面所有这些的东西 —— **�
 空间都能从电梯厅沿动线走到、且不穿过任何一张桌子。它**不承载走廊宽度、疏散距离、卫生洁具
 配置，也不声称这张图能通过任何审查**，因为那是建筑学，而
 [`build-out/GAPS.md`](build-out/GAPS.md) 已经判定建筑那一侧是一个会一直是 🧭 的东西。
-理由在 [ADR-0014](../adr/0014-the-plate-stops-at-topology.md)。
+理由在 [ADR-0014](docs/adr/0014-the-plate-stops-at-topology.md)。
 
 **房间面积跟着座位数走。** 一个可用的估算是每间房五十平方英尺加每个坐着的人二十五平方英
 尺，正是这个把*七间房*变成一个可以拿去跟房东报价对的数字。
@@ -453,7 +453,7 @@ controller、一台打印设备、一点 lab 器材*，因为工作负载离开�
 
 | 被考虑 | 判决 | 理由住在哪 |
 |---|---|---|
-| **自建一个数据库** | **不。** [ADR-0015](../adr/0015-the-reference-office-consumes-services-and-operates-none.md) 说这间办公室不运营任何服务，所以不存在任何应用的状态会住在里面。这里持有状态的每一个系统都是买来的 | [questions · storage](../questions/storage.md) |
+| **自建一个数据库** | **不。** [ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md) 说这间办公室不运营任何服务，所以不存在任何应用的状态会住在里面。这里持有状态的每一个系统都是买来的 | [questions · storage](../questions/storage.md) |
 | **一套通用 VM 估算面** | 在上面那个 staging ring 之外**不要**。镜像在厂商那儿、文件在租户里、身份在云上、监控是买的，诚实的问题是*上面能跑什么* —— 而在这个规模上，答案是没有任何不是别人服务的东西 | [questions · platforms](../questions/platforms.md) |
 | **一台文件服务器** | **不。** 套件持有文件，而设计问题跟着一起搬走了：它不再是*目录上的权限*，而变成*谁能看见这个* —— 那是 [`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/) 的主题，也是一个比它所替代的那个更难的问题 | [questions · storage](../questions/storage.md) |
 
@@ -494,7 +494,7 @@ controller、一台打印设备、一点 lab 器材*，因为工作负载离开�
 | 被考虑 | 判决 |
 |---|---|
 | **一台跳板机或堡垒机** | **不。** 没有可跳的地方。[本地那一半](#本地--什么不能离开)不持有任何服务器，而 staging ring 是从它所在的那层楼直接够到的 |
-| **任何为这栋楼之外的人托管服务的东西** | **不**，依据 [ADR-0015](../adr/0015-the-reference-office-consumes-services-and-operates-none.md)。这不是一个容量判断 —— 这是一句关于这间办公室**是什么**的陈述 |
+| **任何为这栋楼之外的人托管服务的东西** | **不**，依据 [ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md)。这不是一个容量判断 —— 这是一句关于这间办公室**是什么**的陈述 |
 | **那些买来的服务本身** —— 租户、目录、设备管理、以及托管在其中的密钥 | **不在这儿。** 那些是 [SaaS 清册](#parameters)，它数的是办公室**买**了什么。这一半只装 IT 自己**运营**的东西，这也是为什么它只有两行，而 SaaS 清册是十个加上一条没人数得清的尾巴 |
 
 **两行就是那个发现。** 一间只消费服务、不运营服务的办公室，自己在任何地方运行的东西几乎
@@ -506,7 +506,7 @@ controller、一台打印设备、一点 lab 器材*，因为工作负载离开�
 [`platforms/`](platforms/) 的活，在 `mixed` 的 footing 上，不是这个文件的活。
 
 **两半都不可以装的东西**由
-[ADR-0015](../adr/0015-the-reference-office-consumes-services-and-operates-none.md) 设定：
+[ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md) 设定：
 这间办公室只消费服务、不运营服务。没有流量、没有发布节奏、没有 error budget、没有客户。
 
 ## Reference build

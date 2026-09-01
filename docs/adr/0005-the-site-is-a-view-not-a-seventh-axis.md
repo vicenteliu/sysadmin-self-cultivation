@@ -7,6 +7,8 @@ summary: "The repo now ships a browser at site/ — navigation, full-text search
 ---
 # The site is a view over the material, not a seventh axis
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)
+
 The repo now ships a browser at [`site/`](../../site/README.md) — navigation,
 full-text search, a language switcher, rendered diagrams. It is the first thing here
 that is neither a document nor a tool, and the question it raises is what it is allowed

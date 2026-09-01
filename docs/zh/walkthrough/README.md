@@ -3,7 +3,7 @@
 > 一条**横穿其他轴的路线**，理由和 [`build-out/`](../build-out/README.md) 一样：
 > 它不教任何这个仓库尚未持有的页面。它加的是**顺序**和**语域** —— 一间一百人的办公室，
 > 慢慢走一遍，用这个仓库其余部分刻意不用的那种声音。
-> 决定：[`docs/adr/0009`](../../adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)
+> 决定：[`docs/adr/0009`](../docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)
 
 > 🌐 **语言：** [English（默认）](../../../walkthrough/README.md) · 中文
 
@@ -53,7 +53,7 @@ flowchart TB
 **id 是名字，绝不是序号。** 往一份一百多拍的稿子里插一段话，后面每一个序号都会平移 ——
 而且是静默平移，因为一个指向错误拍的楼面，看起来和指向正确拍的楼面一模一样。对齐单位
 是拍，永远不是时间戳，所以任何引擎、任何音色、任何语言都不用配置就能用：见
-[`docs/adr/0012`](../../adr/0012-alignment-is-by-beat-not-by-timestamp.md)。
+[`docs/adr/0012`](../docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)。
 
 ## 两种语言，而且谁也不是译本
 
@@ -64,7 +64,7 @@ flowchart TB
 每一份稿子在自己的语感上都是正本。两份声明同一组 `sources:`，两者不一致时，靠读那份
 它们共同负责的源来裁决 —— 绝不是靠偏袒其中一份。「英文是事实来源」这条全仓库规则在别处
 一字未改；在这里它被收窄回它本来在做的那件事，也就是裁决**事实**。理由在
-[`docs/adr/0010`](../../adr/0010-a-spoken-script-has-no-translation.md)。
+[`docs/adr/0010`](../docs/adr/0010-a-spoken-script-has-no-translation.md)。
 
 ## 楼面
 
@@ -80,7 +80,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 它是一个**视图**。它渲染 Markdown 已经陈述的数字，自己不计算任何东西；一个物体的面板
 显示的是判断和要指定什么 —— 绝不是设备配置，这个仓库不持有配置。这条线，以及守住它的
 代价，在
-[`docs/adr/0011`](../../adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)。
+[`docs/adr/0011`](../docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)。
 
 场景数据放在稿子旁边，不在 `site/` 下，因为一个只有 viewer 持有的事实，在 viewer 被删掉
 的那一刻就丢了。它分成两半：
@@ -91,7 +91,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 | **走读** —— `<walkthrough>.floor.json` | 这一篇**对它说了什么**：物体面板和拍级镜头。走读 01 里那些面板是几何的五倍大，而且每一个字都在讲网络。 |
 
 **plate 停在拓扑为止** —— 没有走廊宽度、没有疏散距离、没有卫生间数量、不声称它能通过
-任何审查（[ADR-0014](../../adr/0014-the-plate-stops-at-topology.md)）。它确实声称的
+任何审查（[ADR-0014](../docs/adr/0014-the-plate-stops-at-topology.md)）。它确实声称的
 那部分是被检查过的：一个 headless 的 Godot 工程从电梯厅出发沿动线走这层楼，报告任何
 它到不了的地方。**它第一次跑就抓到两扇开向虚空的门。**
 

@@ -7,6 +7,8 @@ summary: "The repo had 67 mermaid diagrams and one way of making them. Adding br
 ---
 # A figure's medium is decided by what renders it
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md)
+
 The repo had 67 mermaid diagrams and one way of making them. Adding branded hero
 figures introduced a second way, and two ways of doing one thing is how a convention
 rots — so the boundary between them is written down here rather than left to taste.

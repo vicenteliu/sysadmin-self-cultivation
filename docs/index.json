@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 293,
+  "count": 308,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1615,6 +1615,160 @@
       "summary": "The project's default language is English; the canonical docs live at the repo root and under platforms/, cross-cutting/, and ai-workflow/.",
       "language": "zh",
       "mirrors": "docs/README.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "This repo has six axes over one body of material, and the README says what they are for: \"enter from whichever matches your question.\" That works when you already know what to ask.",
+      "language": "zh",
+      "mirrors": "docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Every build-out step says a hundred people without ever saying how big the place is, so a decision-teaching repo had nothing concrete to decide against.",
+      "language": "zh",
+      "mirrors": "docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0003-the-honesty-markers-are-a-hammer-and-a-compass.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Every module in this repo marks what is hands-on depth and what is an honest ramp.",
+      "language": "zh",
+      "mirrors": "docs/adr/0003-the-honesty-markers-are-a-hammer-and-a-compass.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0004-interview-answers-are-evidence-for-a-marker.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "ADR-0002 ruled that interview material carries questions and what each probes, never finished answers. This reverses that half: an answer is evidence for the section's marker, not a script to recite, and its shape is decided by whether the section is hands-on or a ramp.",
+      "language": "zh",
+      "mirrors": "docs/adr/0004-interview-answers-are-evidence-for-a-marker.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The repo now ships a browser at site/ — navigation, full-text search, a language switcher, rendered diagrams. It is the first thing here that is neither a document nor a tool, and the question it raises is what it is allowed to become.",
+      "language": "zh",
+      "mirrors": "docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0006-the-viewer-vendors-its-dependencies.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "There is a 2.5 MB minified JavaScript bundle committed to this repository. It is larger than every Markdown file here put together, and it is the single most surprising thing in the tree, so it needs a reason on the record.",
+      "language": "zh",
+      "mirrors": "docs/adr/0006-the-viewer-vendors-its-dependencies.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The repo had 67 mermaid diagrams and one way of making them. Adding branded hero figures introduced a second way, and two ways of doing one thing is how a convention rots — so the boundary between them is written down here rather than left to taste.",
+      "language": "zh",
+      "mirrors": "docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0008-a-count-is-not-a-bound.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "ADR-0007 bounded hero diagrams at four and said a fifth would need an argument. Three more were added without that argument ever being made, and nobody noticed — because a bound written as a count cannot tell you it has been crossed.",
+      "language": "zh",
+      "mirrors": "docs/adr/0008-a-count-is-not-a-bound.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The repo is adding a narrated walkthrough of the reference office — the first material here meant to be heard rather than read, and the first with a distribution channel outside the repository. The audio for it will not be in the tree, which needs a reason on the record.",
+      "language": "zh",
+      "mirrors": "docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0010-a-spoken-script-has-no-translation.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "English is this repo's source of truth and docs/zh/ is a mirror that may lag. A walkthrough script breaks that model, because the thing a translation destroys is the thing a spoken script is made of.",
+      "language": "zh",
+      "mirrors": "docs/adr/0010-a-spoken-script-has-no-translation.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "The viewer is gaining an interactive 2D office — pan, zoom, clickable props, a cast of people who are the wireless load. It is the most capable thing this repo has ever rendered, which makes it the most likely to start deciding things, so the line it may not cross is drawn here.",
+      "language": "zh",
+      "mirrors": "docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The floor has to move in step with the narration, and the obvious way to do that is timestamps. Timestamps cannot work here, because there is no single recording to time against.",
+      "language": "zh",
+      "mirrors": "docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The floor is a game scene, and a game engine is the obvious way to build one. Shipping that engine would undo the decision that the viewer installs nothing — so Godot stops at the export step, and the pixel art that comes out of it does not follow the reader's theme.",
+      "language": "zh",
+      "mirrors": "docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0014-the-plate-stops-at-topology.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "The floor the walkthrough plays over was structurally wrong: rooms floating in the middle of the plate with no circulation, no core and doors opening into the desks. Fixing it means drawing a floor plan, and a floor plan is architecture — which this repo has already judged is not its depth.",
+      "language": "zh",
+      "mirrors": "docs/adr/0014-the-plate-stops-at-topology.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The reference office was asked to grow parameters for a cloud footprint and an online service, and nobody had ever said whether this office operates anything. It does not: it is a hundred-person company's IT department, and the material that would back a product side is the material this repo teaches generally rather than lives in.",
+      "language": "zh",
+      "mirrors": "docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md",
       "derived": true
     },
     "docs/zh/endpoint/README.md": {

@@ -7,6 +7,8 @@ summary: "Every build-out step says a hundred people without ever saying how big
 ---
 # The reference office is parameters, and the model names are quarantined
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0002-the-reference-office-is-parameters-not-a-bill-of-materials.md)
+
 Every build-out step says *a hundred people* without ever saying how big the place is, so
 a decision-teaching repo had nothing concrete to decide against. `the-reference-office.md`
 fixes that at the root level, next to `00-the-operating-model.md`, because it is a premise

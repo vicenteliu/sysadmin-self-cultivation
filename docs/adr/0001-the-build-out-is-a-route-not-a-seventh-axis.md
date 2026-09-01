@@ -7,6 +7,8 @@ summary: "This repo has six axes over one body of material, and the README says 
 ---
 # The build-out is a route through the axes, not a seventh axis
 
+> 🌐 **Languages:** English (default) · [中文](../zh/docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
+
 This repo has six axes over one body of material, and the README says what they
 are for: *"enter from whichever matches your question."* That works when you
 already know what to ask. It fails the reader who does not — who has to stand up

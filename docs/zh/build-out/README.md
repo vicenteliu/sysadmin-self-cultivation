@@ -18,7 +18,7 @@ summary: "一条横穿其他各轴的路线，不是又一条轴。"
 > 一条**横穿**其他各轴的路线，不是又一条轴。每一步说明它产出什么、什么必须先成立、什么
 > 依赖它 —— 然后把实质内容指向 `platforms/`、`the-stack/`、`cross-cutting/`、
 > `foundations/`、`endpoint/` 和 `toolbox/`。**没有任何一步教一个新页面。**
-> 决定：[`docs/adr/0001`](../../adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
+> 决定：[`docs/adr/0001`](../docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../../../site/assets/diagrams/build-out-route.dark.svg">
