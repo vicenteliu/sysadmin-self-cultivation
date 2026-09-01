@@ -8,6 +8,8 @@ summary: "🔨 hands-on — access governance, asset reconciliation, and audit a
 ---
 # 14 · Compliance evidence — what an audit actually asks for
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/14-compliance-evidence.md)
+
 > 🔨 hands-on — access governance, asset reconciliation, and audit automation
 > **Before:** 03 identity · 06 tenant · 07 files · 08 endpoint · 09 backup · 11 assets. **After:** —
 

@@ -8,6 +8,8 @@ summary: "🔨 hands-on — JML at scale, directory automation, SCIM provisionin
 ---
 # 15 · Joiner / mover / leaver, automated
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/15-joiner-mover-leaver.md)
+
 > 🔨 hands-on — JML at scale, directory automation, SCIM provisioning
 > **Before:** 03 identity · 06 tenant · 11 assets · 13 the help desk. **After:** —
 

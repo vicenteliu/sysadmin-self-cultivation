@@ -8,6 +8,8 @@ summary: "🔨 hands-on — service desk operations and ITSM practice Before: 04
 ---
 # 13 · The help desk itself — and how many people this needs
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/13-the-help-desk.md)
+
 > 🔨 hands-on — service desk operations and ITSM practice
 > **Before:** 04 devices · 10 remote access · 11 assets · 12 rooms. **After:** 15 joiner/mover/leaver
 
