@@ -26,7 +26,11 @@ re-doing work you have already paid for.
 - A **group model** with one rule enforced: a group means *a job function* or *an
   access bundle*, never both. (See "Getting it backwards".)
 - A naming convention that survives a legal name change, a contractor converting to
-  staff, and a rehire.
+  staff, and a rehire. **All three are routine at this size**: across one lease the
+  reference office issues accounts to
+  [about two hundred and sixteen different people](../the-reference-office.md#parameters)
+  for a floor that seats a hundred and thirty, so a convention that only works for a
+  first-time hire breaks inside the first year.
 - **Two break-glass accounts**, excluded from conditional access, credentials
   physically retrievable by someone who is not you.
 - A named answer to: *what system decides whether a person is still an employee?*
@@ -78,6 +82,9 @@ account; do not let it *disable* one.
   break-fix craft on the tenant you are about to create
 - [`the-stack/07-security.md`](../the-stack/07-security.md) — where identity sits
   in defence-in-depth
+- [the reference office](../the-reference-office.md#parameters) — the joiner, mover and
+  leaver volumes this directory has to absorb, and why the population turns over faster
+  than an annual access review
 
 ## Do it
 

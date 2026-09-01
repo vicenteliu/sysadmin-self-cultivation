@@ -47,6 +47,7 @@ the file follows.
 | Working pattern | Hybrid, three days a week expected in office |
 | Floors | One |
 | Growth assumed over the lease | To about 130 without moving |
+| Lease term | 5 years |
 
 **Derived** — every one of these comes from a rule in the next section.
 
@@ -60,6 +61,10 @@ the file follows.
 | Tea point | 1, seating ~16 | One per floor; seats sized on peak-day attendance, not headcount |
 | Store | 1 | Stock, spares and deliveries have to land somewhere with a door |
 | Service desk | 1 walk-up position | A staffed point people can walk to, sited on the circulation route |
+| Net growth | ~6 people a year | 100 to 130 across a 5-year term |
+| Leavers | ~17 a year | 🧭 A mid-teens annual turnover rate on the average headcount of 115 |
+| Joiners | ~23 a year | Leavers plus net growth — you hire the replacement *and* the addition |
+| Joiners over the lease | ~116 | To grow by 30. And 216 people hold an account at some point, for 130 desks |
 
 ## Why these numbers
 
@@ -114,6 +119,47 @@ no answer without it.
   circulation route, visible from the floor, near the store it draws stock from and near
   the IDF it is the first responder for. Put it in a back office and the walk-ups become
   tickets, which is a change in workload disguised as a change in furniture.
+
+**A hundred people is a headcount, not a roster — and the roster is the thing IT
+administers.** The file already sets growth *to about 130 without moving*; putting a term
+under it turns a shape into a rate. Across five years that is about six net additions a
+year, and net is the smaller half of the arithmetic. You do not hire six people. You hire
+the six, **and** you hire a replacement for everyone who left.
+
+**The turnover figure is the 🧭 part and it is the one to argue with.** A mid-teens annual
+rate is the band professional-services and technology employers usually sit in, and this
+file takes the middle of it rather than defending a decimal. On an average headcount of
+about 115 across the term that is roughly seventeen leavers a year, so twenty-three
+joiners: forty joiner-or-leaver events a year, **one about every six working days, for
+five years running.** Move the turnover rate and every number in this paragraph moves with
+it; the *structure* — joiners equals leavers plus growth — does not.
+
+**The consequence is the number worth carrying away.** Over one lease this office
+hires about a hundred and sixteen people **in order to grow by thirty**, and lets about
+eighty-six go. Add the hundred who were already here and **roughly two hundred and sixteen
+different people hold an account at some point — for a floor that never holds more than a
+hundred and thirty of them at once.** The estate IT administers is not the office. It is
+about one and seven tenths of the office, and the ratio grows with every year of the
+lease.
+
+Every one of those arrivals is an account, a device, a set of group memberships and a row
+in an asset register; every departure is all of the same, in reverse, done by somebody who
+no longer has a reason to care whether it finished.
+
+That is why joiner-mover-leaver is
+[a step of its own](build-out/15-joiner-mover-leaver.md) rather than a paragraph inside
+identity, and it is why the estate-drift labs land the way they do. A hundred-person
+office does not accumulate stale accounts and orphaned permissions because somebody was
+careless. It accumulates them because **the population turns over faster than any review
+cycle that runs annually**, which is most of them.
+
+**The mover is the one this file will not give you a number for.** Internal moves — team
+changes, promotions, secondments — are the least measured of the three and the most
+consequential, because a mover keeps everything they had and gains what they need, and no
+event fires that says *take the old thing away*. There is no published rate this file
+trusts and no derivation available from anything above, so it states none. What it states
+instead is that the mover is the leg with **no natural trigger**: a joiner has a start
+date and a leaver has a last day, and the mover has a conversation.
 
 **Where these three sit is a network decision as much as a facilities one.** The store and
 the service desk sit beside the IDF because that is the path a broken laptop takes; the
@@ -317,7 +363,6 @@ line here says *asked already, and answered somewhere it should not have been*.
 
 | Parameter | Who was forced to invent it | State |
 |---|---|---|
-| **People flow** — joiner, mover and leaver rates | [transcript retention](cross-cutting/labs/transcript-retention/) needs somebody joining on day 700; and *growth to about 130* sits in [Parameters](#parameters) as a scenario choice with no rule under it | ⏳ open |
 | **Endpoints and spares** | [asset reconciliation](cross-cutting/labs/asset-reconciliation/) invented 97 devices; the store below is sized for *stock, spares and returns* and states no quantity | ⏳ open |
 | **Identity shape** — teams, admin and service accounts, guests | [permission sprawl](cross-cutting/labs/permission-sprawl/) built two estates for *the same hundred people*; the plate carries four segments with no population behind them | ⏳ open |
 | **SaaS estate** — how many, how many seats, who owns each, how many outside SSO | [permission sprawl](cross-cutting/labs/permission-sprawl/) again, and [mail authentication](cross-cutting/labs/mail-authentication-alignment/)'s sender inventory | ⏳ open |
@@ -333,6 +378,32 @@ hundred-person office* elsewhere is a generic phrase — a distinction now writt
 **The table empties as they are written**, and a closed line moves below with what it
 settled. An empty table is a state, not a finish: a parameter returns here the moment
 something is forced to invent it again.
+
+### Closed
+
+✅ **People flow.** [Parameters](#parameters) gains a lease term as a scenario choice and
+four derived rows; *Why these numbers* gains the rule. Joiners equal leavers plus growth,
+which makes this office about twenty-three arrivals and seventeen departures a year — one
+joiner-or-leaver event about every six working days. Across one lease that is a hundred
+and sixteen hires **to grow by thirty**, and about two hundred and sixteen people holding
+an account at some point for a floor that seats a hundred and thirty.
+
+Two things came out of writing it that the ledger line did not predict. The **turnover
+rate is 🧭** and is marked so in the parameter table: the structure of the derivation is
+sound, the band it is fed is drawn from published employer figures rather than from this
+author's payroll. And the **mover gets no number at all** — there is no rate here worth
+trusting and none derivable from anything above, so the file says that plainly instead of
+inventing one, and says the useful thing in its place: the mover is the only leg of JML
+with no natural trigger.
+
+**No conflict with [transcript retention](cross-cutting/labs/transcript-retention/).** The
+ledger listed it as the source of demand, and on inspection the lab models *group*
+membership — fifteen people joining one project group across three years — which is not
+the company joiner rate and never was. The two are consistent rather than equal, and the
+lab needed no change. What the office's numbers do is explain the lab: a population
+turning over at this rate is why a group accumulates twenty-one readers while showing
+eighteen members, and why the person the meeting was about can join on day 700 having
+never been in the room.
 
 ## How interviews ask about this
 
