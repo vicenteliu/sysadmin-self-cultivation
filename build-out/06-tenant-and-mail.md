@@ -8,6 +8,8 @@ summary: "🔨 hands-on — M365 tenant work and the break-fix craft around it B
 ---
 # 06 · Tenant and mail — domains, routing, SPF/DKIM/DMARC
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/06-tenant-and-mail.md)
+
 > 🔨 hands-on — M365 tenant work and the break-fix craft around it
 > **Before:** 03 identity. **After:** 07 files · 09 backup · 14 compliance evidence · 15 JML
 

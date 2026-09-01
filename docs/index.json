@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 249,
+  "count": 254,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1050,6 +1050,72 @@
       "marker": "🔨",
       "language": "zh",
       "mirrors": "build-out/03-identity.md",
+      "derived": true
+    },
+    "docs/zh/build-out/04-devices-and-images.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "endpoint-mdm"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — PXE and image pipelines at fleet scale, BMC/IPMI, hardware lifecycle Before: 02 the building · 03 identity.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/04-devices-and-images.md",
+      "derived": true
+    },
+    "docs/zh/build-out/05-network.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — switching, DNS/DHCP, the boot path, and the fault-isolation habits Before: 01 uplink · 02 the building · 03 identity · 04 devices.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/05-network.md",
+      "derived": true
+    },
+    "docs/zh/build-out/06-tenant-and-mail.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — M365 tenant work and the break-fix craft around it Before: 03 identity.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/06-tenant-and-mail.md",
+      "derived": true
+    },
+    "docs/zh/build-out/07-files-and-collaboration.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — SaaS administration and the sharing/permission surface Before: 03 identity · 05 network · 06 tenant.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/07-files-and-collaboration.md",
+      "derived": true
+    },
+    "docs/zh/build-out/08-endpoint-security-and-patching.md": {
+      "kind": "route-step",
+      "axis": "build-out",
+      "themes": [
+        "endpoint-mdm",
+        "security-compliance"
+      ],
+      "platforms": [],
+      "summary": "🔨 hands-on — patch operations, baselines, and working alongside a security function Before: 03 identity · 04 devices.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "build-out/08-endpoint-security-and-patching.md",
       "derived": true
     },
     "docs/zh/build-out/README.md": {

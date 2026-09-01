@@ -8,6 +8,8 @@ summary: "🔨 hands-on — patch operations, baselines, and working alongside a
 ---
 # 08 · Endpoint security and patching
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/build-out/08-endpoint-security-and-patching.md)
+
 > 🔨 hands-on — patch operations, baselines, and working alongside a security function
 > **Before:** 03 identity · 04 devices. **After:** 14 compliance evidence
 
