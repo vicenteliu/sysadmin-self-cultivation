@@ -352,6 +352,36 @@ def check_questions_ledger():
     return problems
 
 
+def diagram_counts():
+    """In-document mermaid diagrams, counted the way the prose claims them: the
+    English tree (`.claude/skills/` included — a skill's diagram is in a document),
+    and that plus the Chinese mirrors."""
+    en = zh = 0
+    for rel in markdown_files():
+        n = len(re.findall(r"^```mermaid", open(os.path.join(ROOT, rel),
+                                                encoding="utf-8").read(), re.M))
+        if rel.startswith("docs/zh/"):
+            zh += n
+        else:
+            en += n
+    return en, en + zh
+
+
+def indexed_files():
+    """What docs/build-index.py indexes: files carrying front matter, and the record
+    count the index actually holds. They differ — mirrors are derived — so a claim
+    about one is not a claim about the other."""
+    with_fm = sum(1 for rel in markdown_files()
+                  if open(os.path.join(ROOT, rel), encoding="utf-8").read().startswith("---\n"))
+    try:
+        import json
+        recs = json.load(open(os.path.join(ROOT, "docs/index.json"), encoding="utf-8"))
+        n = len(recs if isinstance(recs, list) else recs.get("records", recs.get("files", [])))
+    except Exception:
+        n = with_fm
+    return with_fm, n
+
+
 def counted_things():
     """(name, what disk says, [patterns that find the claim in prose]).
 
@@ -376,6 +406,18 @@ def counted_things():
          [NUM_EN + r"\s+questions across\b", r"域" + NUM + r"问"]),
         ("Chinese mirrors", {len(_glob("docs/zh/**/*.md"))},
          [r"docs/zh/`?\s*目前\s*" + NUM + r"\s*篇"]),
+        # ADR-0007's figure count was crossed three times before anyone noticed, so
+        # the two numbers that move every time a document lands are checked here.
+        ("in-document diagrams", set(diagram_counts()),
+         [NUM_EN + r"\s+in-document mermaid diagrams",
+          r"\(" + NUM_EN + r"\s+counting the Chinese mirrors\)",
+          r"文档内的\s*" + NUM + r"\s*张\s*mermaid",
+          r"算上中文镜像是\s*" + NUM + r"\s*张"]),
+        ("indexed files", set(indexed_files()),
+         [r"front-matter on\s+" + NUM_EN + r"\s+files",
+          r"\(" + NUM_EN + r"\s+records, mirrors derived\)",
+          NUM + r"\s*个文件上的\s*front-matter",
+          r"（" + NUM + r"\s*条记录，镜像标 derived）"]),
     ]
 
 

@@ -65,7 +65,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | Agent Skills | 7 个 [`.claude/skills/`](../../.claude/skills/) 把仓库的方法打包：platform-ramp · honesty-audit · author-module · runnable-lab · diagram-module · mirror-zh · interview-drill —— 加上下面三个驱动工具箱的，共十个 | ✅ |
 | 路线 | [`build-out/`](build-out/) —— 一间百人办公室端到端，**16 步全部完成**；它承载顺序与依赖，实质内容指回各条轴。依赖图已验证无环且对称；94% 的步骤挂着一个可跑 lab 或工具；[`GAPS.md`](build-out/GAPS.md) 记录这个场景发现缺了什么（[ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)） | ✅ |
 | 浏览器 | [`site/`](site/README.md) —— 同一批材料，带导航、二十万词的全文搜索、🌐 切换和渲染好的图。两种启动方式，两种都不用装东西。它是一个**视图**，不是第七条轴（[ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）；依赖是提交进来的而不是生成的（[ADR-0006](docs/adr/0006-the-viewer-vendors-its-dependencies.md)） | ✅ |
-| 图 | 4 张品牌门面图（轴图 · the stack · ramp · 路线），手写一次，由 [`site/build-diagrams.py`](../../site/build-diagrams.py) 派生成 12 个产物，外加文档内的 109 张 mermaid（算上中文镜像是 119 张）。媒介由 [ADR-0007](docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) 决定 | ✅ |
+| 图 | 4 张品牌门面图（轴图 · the stack · ramp · 路线），手写一次，由 [`site/build-diagrams.py`](../../site/build-diagrams.py) 派生成 12 个产物，外加文档内的 109 张 mermaid（算上中文镜像是 217 张）。媒介由 [ADR-0007](docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) 决定 | ✅ |
 | 框架 | [`CONTENTS.md`](CONTENTS.md) + 每个规划模块的开篇（foundations/endpoint/iac/saas/k8s/cost/gcp） | ✅ |
 | Foundations | [`foundations/`](foundations/) —— Linux 心智模型、调试反射、脚本、诚实的范围界定（Tier-3 第 10 项） | ✅ 已写 |
 | Endpoint | [`endpoint/`](endpoint/) —— MDM 模型、装机流水线、补丁/EDR、BYOD、Intune 作为 ramp（Tier-2 第 5 项），外加三篇承载底下设计的 companion：跨三个操作系统的 [provisioning](endpoint/provisioning.md)、[management](endpoint/management.md)、以及 [encryption and keys](endpoint/encryption-and-keys.md) —— 那件这个仓库点名过三次却从没展示的密钥托管的活 | ✅ |
@@ -90,10 +90,10 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 技能图 | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/) —— 平台技能图的**转置**：一个主题横跨全部七个平台，按可迁移性而非按云分层。[networking](cross-cutting/skills-maps/networking.md)（63 格）+ [identity](cross-cutting/skills-maps/identity.md)（58 格）；两个最密的需求集群优先 | ✅ |
 | 面试 | [`cross-cutting/interview/`](cross-cutting/interview/) —— 技能图的再一次转置，这回从面试官那一侧：[networking](cross-cutting/interview/networking.md)（21 问）+ [identity](cross-cutting/interview/identity.md)（19 问）。答案的形状由小节的 marker 决定（[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)）；六个 🔨 答案仍带 ⏳ | ✅ |
 | AI 方法 | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) —— 稳态而非 ramp：分诊 → 变更 → 事件 → 复盘 → 扫尾，每一段都点名交出去什么、在哪里收回来 | ✅ |
-| 检索 | 156 个文件上的 front-matter 作为唯一来源 + [`docs/build-index.py`](../build-index.py) → [`docs/index.json`](../index.json)（191 条记录，镜像标 derived）。面向 agent；幂等，`--check` 报告过期 | ✅ |
+| 检索 | 367 个文件上的 front-matter 作为唯一来源 + [`docs/build-index.py`](../build-index.py) → [`docs/index.json`](../index.json)（395 条记录，镜像标 derived）。面向 agent；幂等，`--check` 报告过期 | ✅ |
 | 站点设计 | [`cross-cutting/site-network-design.md`](cross-cutting/site-network-design.md) —— 从参考办公室的参数到一份设计之间的那一步，海拔与分层章节相同。与 [`the-reference-office.md`](the-reference-office.md) 配对，后者现在在空间参数之外承载**六个参数域** —— 人员流动、终端与备机、身份形状、SaaS 清册、支持负载、数据与恢复 —— 每一个都是因为某个 lab 或某一步已经被迫编造过它才写的，且都记在那个文件自己的需求账本里。`Reference build` 保持 ⏳，因为没有哪一步需要型号；`Where things run` **两半都已写完** —— 四样东西留在这层楼或某朵云上，六样被考虑过并被拒绝，而后者是更短也更有用的那份清单 | ✅ |
 | 走读 | [`walkthrough/`](walkthrough/README.md) —— 第二条路线，是念的不是读的：格式、五条决策（[ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)–[0013](docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）以及 viewer 的注册都已写完，而且**目前共三篇走读已建成** —— 01 · 网络（106 拍）、02 · 第一个星期一（93 拍）与 03 · 它坏掉的那一天（102 拍），各两种语言，播放在同一张可交互的二维楼面上。稿子进仓库，音频永远不进。像 `toolbox/` 那样一次长一篇，没有目标篇数 | ✅ |
-| **Roadmap** | **所有分层条目均已落地** —— 每个规划模块都有已写的内容；剩下的工作是 lab + `docs/zh/` 镜像 + 深化 | ✅ |
+| **Roadmap** | **所有分层条目均已落地** —— 每个规划模块都有已写的内容，而且 **`docs/zh/` 已镜像英文树里的每一篇文档**；剩下的工作是 lab + 深化 | ✅ |
 
 ## 构建顺序（需求驱动）
 
