@@ -251,6 +251,74 @@ def find_labs():
     return scan_labs()[0]
 
 
+# --- the drill reporter -------------------------------------------------------
+#
+# ADR-0017: a drill imports nothing from this repo, so its reporter — log, step,
+# check, verdict — is pasted into every drill, and this is the copy the others are
+# held to. Change it here, then in every drill; a copy that differs fails below.
+
+DRILL_BLOCK = r'''# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
+def log(msg=""):
+    print(msg, flush=True)
+
+
+def step(n, title):
+    log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
+'''
+
+# Drills written in shell carry the same contract in shell. Named here so the listing
+# says so, rather than leaving one lab looking unchecked.
+SHELL_DRILLS = {
+    "foundations/labs/idempotence-drill/idempotence_drill.sh":
+        "carries the reporter contract in shell; the Python block does not apply",
+}
+
+
+def check_drill_block():
+    """Every drill check.py runs carries DRILL_BLOCK byte for byte."""
+    problems = []
+    for _, argv in find_labs():
+        if DRILL_BLOCK not in read(argv[0]):
+            problems.append(f"{argv[0]}: does not carry the reporter block byte for byte — "
+                            f"copy it from check.py (`python3 check.py --list --only labs` "
+                            f"prints it)")
+    return problems
+
+
 # --- the link and anchor check ------------------------------------------------
 
 def check_links(verbose=False):
@@ -533,7 +601,9 @@ def truths():
         "walkthrough beats": set(beats.values()) | {sum(beats.values())},
         "runnable labs": {len(labs)},
         "the-stack labs": {sum(1 for _, argv in labs if argv[0].startswith("the-stack/labs/"))},
-        "drills with a break path": {sum(1 for _, argv in labs if "--break-it" in read(argv[0]))},
+        # The flag, not the string: every drill's reporter block mentions --break-it.
+        "drills with a break path": {sum(1 for _, argv in labs
+                                         if 'add_argument("--break-it"' in read(argv[0]))},
         "cross-cutting notes": {sum(1 for p in _glob("cross-cutting/*.md")
                                     if not p.endswith("/README.md"))},
         "decision records": {len(_glob("docs/adr/[0-9]*.md"))},
@@ -713,6 +783,14 @@ def main():
                 continue
             for name, argv in GROUPS[g]():
                 print(f"  {name:<28} {' '.join(argv)}")
+            if g == "labs":
+                print(f"  {'reporter block':<28} every drill above carries it byte for byte")
+                for rel, why in SHELL_DRILLS.items():
+                    print(f"  – {os.path.basename(rel):<26} {why}")
+                if args.only == "labs":
+                    print("\n  the block, as check.py holds it:\n")
+                    for line in DRILL_BLOCK.rstrip("\n").split("\n"):
+                        print(f"    {line}" if line else "")
         return 0
 
     failed, ran = [], 0
@@ -764,6 +842,13 @@ def main():
             print(f"  – {INVENTORY_NOT_RUN[0]:<28} {INVENTORY_NOT_RUN[1]}")
             continue
         if g == "labs":
+            t0 = time.time()
+            problems = check_drill_block()
+            ran += 1
+            report("reporter block", problems,
+                   f"{len(find_labs())} drills carry it byte for byte", t0, failed)
+            for rel, why in SHELL_DRILLS.items():
+                print(f"  – {os.path.basename(rel):<28} {why}")
             _, not_run = scan_labs()
             for nm, path, why in not_run:
                 print(f"  – {nm:<28} not run — {why}")

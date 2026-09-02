@@ -30,8 +30,14 @@ import argparse
 import sys
 from dataclasses import dataclass
 
-FAILURES = []
 RECONCILE_KEY = "asset_tag"   # --break-it flips this to "hostname"
+
+
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
 
 
 def log(msg=""):
@@ -49,6 +55,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- ground truth ------------------------------------------------------------
@@ -340,30 +365,23 @@ def main():
           "overstated here")
 
     # --- verdict -------------------------------------------------------------
-    log("\n" + "=" * 72)
-    if FAILURES:
-        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
-        for f in FAILURES:
-            log(f"  ✗ {f}")
-        return 1
-
-    log("PASSED — the lessons held.\n")
-    log("  1. Equal totals are not agreement. Two live systems can report the same")
-    log("     count, be automatically maintained, and still be wrong about which")
-    log("     laptops those are.")
-    log("  2. The reconciliation key decides how much of your fleet is fiction.")
-    log("     Hostname is the intuitive choice and it changes on re-image; the key")
-    log("     that survives costs one column on one form at device #1.")
-    log("  3. Most of what a bad key reports is phantoms. A check earns its place")
-    log("     by what it eliminates, not by what it reports.")
-    log("  4. 'Which source wins' is a per-field decision, not a per-source one.")
-    log("     Procurement owns ownership, the endpoint tool owns state, and a")
-    log("     global rule silently overwrites one with the other.")
-    log("  5. What a perfect key leaves is the actual job: rows whose cause is not")
-    log("     in either system. Let a model propose the why; let a person decide.")
-    log("\n  Collecting was the 2015 job. Reconciling is this one, and the diff —")
-    log("  not the inventory — is what you are paid for.")
-    return 0
+    return verdict([
+        "  1. Equal totals are not agreement. Two live systems can report the same",
+        "     count, be automatically maintained, and still be wrong about which",
+        "     laptops those are.",
+        "  2. The reconciliation key decides how much of your fleet is fiction.",
+        "     Hostname is the intuitive choice and it changes on re-image; the key",
+        "     that survives costs one column on one form at device #1.",
+        "  3. Most of what a bad key reports is phantoms. A check earns its place",
+        "     by what it eliminates, not by what it reports.",
+        "  4. 'Which source wins' is a per-field decision, not a per-source one.",
+        "     Procurement owns ownership, the endpoint tool owns state, and a",
+        "     global rule silently overwrites one with the other.",
+        "  5. What a perfect key leaves is the actual job: rows whose cause is not",
+        "     in either system. Let a model propose the why; let a person decide.",
+        "\n  Collecting was the 2015 job. Reconciling is this one, and the diff —",
+        "  not the inventory — is what you are paid for.",
+    ], broken=a.break_it)
 
 
 if __name__ == "__main__":

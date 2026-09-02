@@ -23,12 +23,47 @@ import sys
 from dataclasses import dataclass, field
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 def matches(rule, verb, resource):
@@ -113,15 +148,6 @@ def kubectl(p: Principal, verb, resource):
 
 
 def run() -> int:
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"  ✓ {ok_msg}")
-        else:
-            log(f"  ✗ {fail_msg}")
-            failures.append(fail_msg)
-
     nobody = Principal("nobody")                                    # no IAM at all
     viewer = Principal("viewer", ["roles/container.clusterViewer"])  # authn only
     infra_admin = Principal("infra-admin", ["roles/container.clusterAdmin"])  # infra, no inside
@@ -185,23 +211,17 @@ def run() -> int:
           "the 'IAM admin ⇒ full kubectl' instinct is WRONG — RBAC governs inside",
           "instinct and reality agreed — the drill proved nothing")
 
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. Cloud IAM authenticates (container.clusters.get); no IAM → Unauthorized.")
-    log("  2. Authenticating grants nothing inside — RBAC/IAM must authorize the action.")
-    log("  3. The IAM 'Cluster Admin' role is not the RBAC cluster-admin (infra, not inside).")
-    log("  4. You fix in-cluster access with a scoped RBAC binding, not more IAM.")
-    log("  5. Unauthorized (authn) and Forbidden (authz) are different failures + fixes.")
-    log("")
-    log("The instinct this drill retired:")
-    log("  'I have admin, so kubectl works' — on GKE, IAM gets you to the door;")
-    log("  RBAC decides what you can touch once you're inside.")
-    return 0
+    return verdict([
+        "  1. Cloud IAM authenticates (container.clusters.get); no IAM → Unauthorized.",
+        "  2. Authenticating grants nothing inside — RBAC/IAM must authorize the action.",
+        "  3. The IAM 'Cluster Admin' role is not the RBAC cluster-admin (infra, not inside).",
+        "  4. You fix in-cluster access with a scoped RBAC binding, not more IAM.",
+        "  5. Unauthorized (authn) and Forbidden (authz) are different failures + fixes.",
+        "",
+        "The instinct this drill retired:",
+        "  'I have admin, so kubectl works' — on GKE, IAM gets you to the door;",
+        "  RBAC decides what you can touch once you're inside.",
+    ])
 
 
 def main():

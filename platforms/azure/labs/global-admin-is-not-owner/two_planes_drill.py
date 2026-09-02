@@ -25,12 +25,47 @@ import sys
 from dataclasses import dataclass, field
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- Plane 1: Microsoft Entra ID directory roles (govern the tenant) ---------------
@@ -88,15 +123,6 @@ def elevate(p: Principal):
 
 
 def run() -> int:
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"  ✓ {ok_msg}")
-        else:
-            log(f"  ✗ {fail_msg}")
-            failures.append(fail_msg)
-
     ga = Principal("global-admin", entra_roles=["Global Administrator"])   # tenant, no RBAC
     owner = Principal("res-owner", rbac=[("Owner", SUB)])                   # resources, no Entra
     analyst = Principal("analyst")                                         # nothing yet
@@ -158,24 +184,18 @@ def run() -> int:
           "RBAC inherits down its scope and stops there — a grant on S1 is nothing in S2 (LESSON 6)",
           "scope inheritance/isolation did not hold")
 
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. A Global Administrator (Entra) has no access to Azure resources.")
-    log("  2. An Azure Owner (RBAC) cannot manage the directory — the planes don't span.")
-    log("  3. 'Global Admin runs Azure' is false — two separate authorization systems.")
-    log("  4. The elevation toggle = User Access Administrator at '/': assign, not use.")
-    log("  5. You fix resource access with a scoped RBAC assignment, not a directory role.")
-    log("  6. RBAC inherits down a scope and stops — scope is the blast radius.")
-    log("")
-    log("The instinct this drill retired:")
-    log("  'I'm Global Admin, so I run Azure' — Entra says who you are; RBAC says what")
-    log("  you can touch. They are two doors, and one key never opens the other.")
-    return 0
+    return verdict([
+        "  1. A Global Administrator (Entra) has no access to Azure resources.",
+        "  2. An Azure Owner (RBAC) cannot manage the directory — the planes don't span.",
+        "  3. 'Global Admin runs Azure' is false — two separate authorization systems.",
+        "  4. The elevation toggle = User Access Administrator at '/': assign, not use.",
+        "  5. You fix resource access with a scoped RBAC assignment, not a directory role.",
+        "  6. RBAC inherits down a scope and stops — scope is the blast radius.",
+        "",
+        "The instinct this drill retired:",
+        "  'I'm Global Admin, so I run Azure' — Entra says who you are; RBAC says what",
+        "  you can touch. They are two doors, and one key never opens the other.",
+    ])
 
 
 def main():

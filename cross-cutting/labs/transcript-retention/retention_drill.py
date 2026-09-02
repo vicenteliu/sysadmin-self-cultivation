@@ -35,12 +35,18 @@ import argparse
 import sys
 from dataclasses import dataclass, field
 
-FAILURES = []
 GOVERNANCE = "lifetime"      # --break-it flips this to "point_in_time"
 
 HORIZON = 1095               # three years, the day we look back from
 RECORDING_RETENTION = 30     # platform default
 TRANSCRIPT_RETENTION = None  # nobody set one
+
+
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
 
 
 def log(msg=""):
@@ -58,6 +64,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- the meeting -------------------------------------------------------------
@@ -336,28 +361,21 @@ def main():
           "expired, and cannot see who is reading; it is not wrong, it is silent")
 
     # --- verdict -------------------------------------------------------------
-    log("\n" + "=" * 72)
-    if FAILURES:
-        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
-        for f in FAILURES:
-            log(f"  ✗ {f}")
-        return 1
-
-    log("PASSED — the lessons held.\n")
-    log("  1. Doing it the way lab 07 recommends is what makes this happen. Group")
-    log("     sharing is correct, and a correct group grows.")
-    log("  2. A control evaluated at an instant cannot make a claim about an")
-    log("     interval. Every access review here passes, and every one is honest.")
-    log("  3. Retention defaults are set per artefact, so the source expires and")
-    log("     the summary derived from it does not. The checkable thing goes first.")
-    log("  4. Consent was given by six people in a room. It is now doing work it")
-    log("     was never asked to do, for readers nobody could have named.")
-    log("  5. The missing control is an expiry, not a permission. If the only")
-    log("     question you ask about a transcript is who can see it, you will keep")
-    log("     getting a correct answer while the exposure grows.")
-    log("\n  A recording is a decision about the next three years, taken by whoever")
-    log("  clicked the button, usually without knowing that is what it was.")
-    return 0
+    return verdict([
+        "  1. Doing it the way lab 07 recommends is what makes this happen. Group",
+        "     sharing is correct, and a correct group grows.",
+        "  2. A control evaluated at an instant cannot make a claim about an",
+        "     interval. Every access review here passes, and every one is honest.",
+        "  3. Retention defaults are set per artefact, so the source expires and",
+        "     the summary derived from it does not. The checkable thing goes first.",
+        "  4. Consent was given by six people in a room. It is now doing work it",
+        "     was never asked to do, for readers nobody could have named.",
+        "  5. The missing control is an expiry, not a permission. If the only",
+        "     question you ask about a transcript is who can see it, you will keep",
+        "     getting a correct answer while the exposure grows.",
+        "\n  A recording is a decision about the next three years, taken by whoever",
+        "  clicked the button, usually without knowing that is what it was.",
+    ], broken=a.break_it)
 
 
 if __name__ == "__main__":

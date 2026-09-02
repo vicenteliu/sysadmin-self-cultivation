@@ -38,7 +38,6 @@ import argparse
 import sys
 from dataclasses import dataclass, field
 
-FAILURES = []
 REACH = "resolved"        # --break-it flips this to "console"
 
 HORIZON = 1095            # three years, the day we look back from
@@ -58,6 +57,13 @@ FUNCTIONS = ["finance", "sales", "engineering", "design",
              "support", "people", "legal", "operations"]
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
@@ -73,6 +79,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- ground truth -------------------------------------------------------------
@@ -313,16 +338,10 @@ def main():
           "the method can be re-run on a cadence and the delta is the alert",
           "this method produces one number and cannot tell you it has expired")
 
-    log("\n" + "=" * 68)
-    if FAILURES:
-        log(f"{len(FAILURES)} assertion(s) about the lesson did not hold:")
-        for f in FAILURES:
-            log(f"  - {f}")
-        log("\nThat is the point of --break-it. Re-run without it.")
-        return 1
-    log("All assertions held. The blast radius is a function of time, and the")
-    log("number you signed off on was a snapshot of it.")
-    return 0
+    return verdict([
+        "The blast radius is a function of time, and the",
+        "number you signed off on was a snapshot of it.",
+    ], broken=args.break_it)
 
 
 if __name__ == "__main__":

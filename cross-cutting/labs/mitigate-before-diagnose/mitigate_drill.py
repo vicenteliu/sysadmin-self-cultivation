@@ -33,12 +33,18 @@ import argparse
 import sys
 from dataclasses import dataclass
 
-FAILURES = []
 STRATEGY = "mitigate-first"    # --break-it flips this to "diagnose-first"
 
 # The generic mitigation: failover, roll back, restart. Available at minute zero.
 MITIGATION_MINUTES = 6          # how long it takes to apply
 MITIGATION_MAKES_IT_WORSE = 0.0  # probability it costs you; raised in step 4
+
+
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
 
 
 def log(msg=""):
@@ -56,6 +62,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 @dataclass
@@ -187,10 +212,10 @@ def main():
     flip = None
     for penalty in (0, 5, 10, 15, 20, 25, 30):
         em_p = expected(downtime_mitigate_first) + penalty
-        verdict = "still better" if em_p < ed else "WORSE"
+        call = "still better" if em_p < ed else "WORSE"
         if flip is None and em_p >= ed:
             flip = penalty
-        log(f"   {penalty:>5} min   {em_p:>14.1f}   {verdict}")
+        log(f"   {penalty:>5} min   {em_p:>14.1f}   {call}")
     log("")
     log(f"  a mitigation that costs more than about {flip} minutes when it goes wrong")
     log("  is not a mitigation. That is the sentence the slogan omits, and it is why")
@@ -222,16 +247,10 @@ def main():
           f"more hands stop helping at about {best_n} responders, which is what the IC role fixes",
           "responders scale linearly here, which no incident has ever done")
 
-    log("\n" + "=" * 68)
-    if FAILURES:
-        log(f"{len(FAILURES)} assertion(s) about the lesson did not hold:")
-        for f in FAILURES:
-            log(f"  - {f}")
-        log("\nThat is the point of --break-it. Re-run without it.")
-        return 1
-    log("All assertions held. Mitigate before you diagnose — and now you can say")
-    log("under what conditions that stops being true, which is the part worth having.")
-    return 0
+    return verdict([
+        "Mitigate before you diagnose — and now you can say",
+        "under what conditions that stops being true, which is the part worth having.",
+    ], broken=args.break_it)
 
 
 if __name__ == "__main__":

@@ -34,12 +34,47 @@ GOOD_IMAGES = {"app:v1", "app:v2"}          # images that actually run; anything
 _next_id = [0]
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
-    print(msg)
+    print(msg, flush=True)
 
 
 def step(n, title):
-    log(f"\n[{n}] {title}")
+    log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 def healthy(pod):
@@ -89,15 +124,6 @@ def main():
     readiness_on = args.sabotage != "ready-ignores-probe"
     if args.sabotage:
         log(f"  !! SABOTAGE ENABLED: {args.sabotage} !!")
-
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"    OK  {ok_msg}")
-        else:
-            log(f"    XX  {fail_msg}")
-            failures.append(fail_msg)
 
     dep = Deployment(replicas=3, template={"image": "app:v1"})
     pods = [new_pod(dep.template) for _ in range(3)]   # steady state already exists
@@ -173,22 +199,12 @@ def main():
           "a Running-but-not-Ready pod must be removed from the Service endpoints")
 
     # verdict
-    log("\n" + "=" * 72)
-    if failures:
-        log(f"XX FAIL — {len(failures)} lesson(s) broke:")
-        for f in failures:
-            log(f"    - {f}")
-        if args.sabotage:
-            log("\n(expected: --sabotage breaks the model, so the guarantees fall.)")
-        log("=" * 72)
-        return 1
-    log("OK PASS — all six Kubernetes lessons held:")
-    log("    you declare desired state; a controller reconciles actual -> desired, forever.")
-    log("    Delete a pod, it comes back; hand-fix a pod, the fix dies with it;")
-    log("    a bad image loops (restart != fix); change the template, controllers roll;")
-    log("    readiness gates the Service endpoints. Pods are cattle — manage the spec.")
-    log("=" * 72)
-    return 0
+    return verdict([
+        "    you declare desired state; a controller reconciles actual -> desired, forever.",
+        "    Delete a pod, it comes back; hand-fix a pod, the fix dies with it;",
+        "    a bad image loops (restart != fix); change the template, controllers roll;",
+        "    readiness gates the Service endpoints. Pods are cattle — manage the spec.",
+    ], broken=bool(args.sabotage))
 
 
 if __name__ == "__main__":

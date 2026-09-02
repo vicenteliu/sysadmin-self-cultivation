@@ -32,12 +32,47 @@ SABOTAGE = None
 HORIZON = 30 * 24 * 60          # thirty days, in minutes
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --------------------------------------------------------------------------
@@ -100,15 +135,6 @@ def hours(m):
 
 
 def run():
-    failures = []
-
-    def check(cond, ok, bad):
-        if cond:
-            log(f"  ✓ {ok}")
-        else:
-            log(f"  ✗ {bad}")
-            failures.append(bad)
-
     log(__doc__.strip().split("\n\n")[0])
 
     # ---------------------------------------------------------------- 1
@@ -188,24 +214,18 @@ def run():
           "the reportable state collapsed back into a count of findings")
 
     # ---------------------------------------------------------------- verdict
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. Detection is a window; a faster scanner narrows it and cannot close it.")
-    log("  2. Prevention is zero exposure for exactly the classes a policy names.")
-    log("  3. A leaked credential's exposure does not end when the finding is fixed.")
-    log("  4. 'All remediated' is a count; exposure-minutes is the unit.")
-    log("")
-    log("The guided run in chapter 07 asks you to break a secure default, catch it")
-    log("with the posture scanner, then make it impossible with policy-as-code. Do it.")
-    log("This drill is the arithmetic underneath it: what catching it was worth, what")
-    log("making it impossible was worth, and the one finding where neither number is")
-    log("the one to report.")
-    return 0
+    return verdict([
+        "  1. Detection is a window; a faster scanner narrows it and cannot close it.",
+        "  2. Prevention is zero exposure for exactly the classes a policy names.",
+        "  3. A leaked credential's exposure does not end when the finding is fixed.",
+        "  4. 'All remediated' is a count; exposure-minutes is the unit.",
+        "",
+        "The guided run in chapter 07 asks you to break a secure default, catch it",
+        "with the posture scanner, then make it impossible with policy-as-code. Do it.",
+        "This drill is the arithmetic underneath it: what catching it was worth, what",
+        "making it impossible was worth, and the one finding where neither number is",
+        "the one to report.",
+    ], broken=bool(SABOTAGE))
 
 
 def main():

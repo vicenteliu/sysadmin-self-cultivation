@@ -28,6 +28,12 @@ import argparse
 import sys
 from dataclasses import dataclass
 
+
+
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
 FAILURES = []
 
 
@@ -46,6 +52,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- the model ---------------------------------------------------------------
@@ -276,26 +301,19 @@ def main():
           "elimination exceeded its bound")
 
     # --- verdict -------------------------------------------------------------
-    log("\n" + "=" * 72)
-    if FAILURES:
-        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
-        for f in FAILURES:
-            log(f"  ✗ {f}")
-        return 1
-
-    log("PASSED — the lessons held.\n")
-    log('  1. "The VPN won\'t connect" is a symptom shared by four unrelated causes.')
-    log("     Diagnosing from the symptom is guessing with extra steps.")
-    log("  2. A check is worth running because of what it ELIMINATES. 'Restart it'")
-    log("     and 'is it up?' produce a result and remove nothing.")
-    log("  3. Two causes can masquerade: a captive portal and a real identity")
-    log("     outage give the same answer to 'can I reach the IdP?'. Ask whether")
-    log("     DNS is answering honestly — that is the one that separates them.")
-    log("  4. One cause fails AFTER the tunnel says connected, so the reflex check")
-    log("     actively points away from it.")
-    log("\n  Same discipline as toolbox/linux-triage: order the checks by what each")
-    log("  one rules out, and the worst case stops being unbounded.")
-    return 0
+    return verdict([
+        '  1. "The VPN won\'t connect" is a symptom shared by four unrelated causes.',
+        "     Diagnosing from the symptom is guessing with extra steps.",
+        "  2. A check is worth running because of what it ELIMINATES. 'Restart it'",
+        "     and 'is it up?' produce a result and remove nothing.",
+        "  3. Two causes can masquerade: a captive portal and a real identity",
+        "     outage give the same answer to 'can I reach the IdP?'. Ask whether",
+        "     DNS is answering honestly — that is the one that separates them.",
+        "  4. One cause fails AFTER the tunnel says connected, so the reflex check",
+        "     actively points away from it.",
+        "\n  Same discipline as toolbox/linux-triage: order the checks by what each",
+        "  one rules out, and the worst case stops being unbounded.",
+    ], broken=a.break_it)
 
 
 if __name__ == "__main__":

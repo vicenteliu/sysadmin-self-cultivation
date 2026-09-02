@@ -27,8 +27,14 @@ import argparse
 import sys
 from dataclasses import dataclass, field
 
-FAILURES = []
 AUDIT_FOLLOWS_LINKS = True   # --break-it flips this: audit the way most people do
+
+
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
 
 
 def log(msg=""):
@@ -46,6 +52,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- the model ---------------------------------------------------------------
@@ -269,28 +294,21 @@ def main():
           "the sprawled estate revoked correctly; the residual path is not modelled")
 
     # --- verdict -------------------------------------------------------------
-    log("\n" + "=" * 72)
-    if FAILURES:
-        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
-        for f in FAILURES:
-            log(f"  ✗ {f}")
-        return 1
-
-    log("PASSED — the lessons held.\n")
-    log("  1. Two estates can present the same ACL and grant access to very")
-    log("     different sets of people. Reading permissions is not an answer.")
-    log("  2. A sharing link is a SECOND grant path. Perfect group hygiene is")
-    log("     blind to it, and 'anyone with the link' means everyone.")
-    log("  3. A review that walks group membership returns clean while examining")
-    log("     none of the individual grants and none of the link readers. It is")
-    log("     not a wrong answer — it is a correct answer to another question.")
-    log("  4. Group grants carry their reason (a role). Individual grants lose it")
-    log("     the moment the person who clicked leaves, and it cannot be rebuilt.")
-    log("  5. Revocation is the test. One removal should revoke everywhere; if it")
-    log("     does not, you do not have a permission model, you have a history.")
-    log("\n  The auditor's question is not 'is it locked down'. It is 'who can see")
-    log("  this, and how do you know'. The second half is the one that fails.")
-    return 0
+    return verdict([
+        "  1. Two estates can present the same ACL and grant access to very",
+        "     different sets of people. Reading permissions is not an answer.",
+        "  2. A sharing link is a SECOND grant path. Perfect group hygiene is",
+        "     blind to it, and 'anyone with the link' means everyone.",
+        "  3. A review that walks group membership returns clean while examining",
+        "     none of the individual grants and none of the link readers. It is",
+        "     not a wrong answer — it is a correct answer to another question.",
+        "  4. Group grants carry their reason (a role). Individual grants lose it",
+        "     the moment the person who clicked leaves, and it cannot be rebuilt.",
+        "  5. Revocation is the test. One removal should revoke everywhere; if it",
+        "     does not, you do not have a permission model, you have a history.",
+        "\n  The auditor's question is not 'is it locked down'. It is 'who can see",
+        "  this, and how do you know'. The second half is the one that fails.",
+    ], broken=a.break_it)
 
 
 if __name__ == "__main__":

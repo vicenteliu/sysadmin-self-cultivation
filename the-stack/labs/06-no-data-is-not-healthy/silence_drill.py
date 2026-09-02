@@ -33,12 +33,47 @@ OUTAGE_AT = 12          # the rack loses power at minute 12
 SLO_BURN_AT = 14        # user-visible errors are unmistakable two minutes later
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --------------------------------------------------------------------------
@@ -110,15 +145,6 @@ def first_page(predicate):
 
 
 def run():
-    failures = []
-
-    def check(cond, ok, bad):
-        if cond:
-            log(f"  ✓ {ok}")
-        else:
-            log(f"  ✗ {bad}")
-            failures.append(bad)
-
     log(__doc__.strip().split("\n\n")[0])
 
     cpu, in_rack, off_rack = MONITORS
@@ -198,25 +224,19 @@ def run():
           "alert")
 
     # ---------------------------------------------------------------- verdict
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. A monitor inside the failure domain dies with its target.")
-    log("  2. A threshold alert cannot fire on data that never arrived.")
-    log("  3. A symptom alert from outside the domain pages on what users see.")
-    log("  4. No tuning of a cause alert fixes a missing sample.")
-    log("  5. A staleness alert is the only predicate whose input is absence.")
-    log("  6. Green and silent are the same colour on every dashboard ever built.")
-    log("")
-    log("Two things to carry out. Put the monitor in a different failure domain from")
-    log("the thing it watches — chapter 01's placement rule, applied to the thing that")
-    log("tells you about chapter 01. And alert on the absence of data, because the")
-    log("worst hour you will have is the one that produces no data at all.")
-    return 0
+    return verdict([
+        "  1. A monitor inside the failure domain dies with its target.",
+        "  2. A threshold alert cannot fire on data that never arrived.",
+        "  3. A symptom alert from outside the domain pages on what users see.",
+        "  4. No tuning of a cause alert fixes a missing sample.",
+        "  5. A staleness alert is the only predicate whose input is absence.",
+        "  6. Green and silent are the same colour on every dashboard ever built.",
+        "",
+        "Two things to carry out. Put the monitor in a different failure domain from",
+        "the thing it watches — chapter 01's placement rule, applied to the thing that",
+        "tells you about chapter 01. And alert on the absence of data, because the",
+        "worst hour you will have is the one that produces no data at all.",
+    ], broken=bool(SABOTAGE))
 
 
 def main():

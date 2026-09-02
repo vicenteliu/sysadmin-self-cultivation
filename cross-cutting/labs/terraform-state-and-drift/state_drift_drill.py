@@ -39,12 +39,47 @@ import sys
 IMMUTABLE = {"ami", "availability_zone", "subnet_id"}
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
-    print(msg)
+    print(msg, flush=True)
 
 
 def step(n, title):
-    log(f"\n[{n}] {title}")
+    log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 def refresh(state, real, enabled=True):
@@ -106,15 +141,6 @@ def main():
     immutable_on = args.sabotage != "mutable-all"
     if args.sabotage:
         log(f"  !! SABOTAGE ENABLED: {args.sabotage} !!")
-
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"    OK  {ok_msg}")
-        else:
-            log(f"    XX  {fail_msg}")
-            failures.append(fail_msg)
 
     WEB = "aws_instance.web"
 
@@ -195,23 +221,13 @@ def main():
           "count should churn shifted resources while for_each touches only the removed key")
 
     # verdict
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"XX FAIL — {len(failures)} lesson(s) broke:")
-        for f in failures:
-            log(f"    - {f}")
-        if args.sabotage:
-            log("\n(expected: --sabotage breaks the model, so the guarantees fall.)")
-        log("=" * 70)
-        return 1
-    log("OK PASS — all six Terraform lessons held:")
-    log("    Terraform plans against STATE, not the real world;")
-    log("    a hand-edit becomes drift and gets reverted; immutable attrs REPLACE;")
-    log("    lost state wants to re-create what exists (import reconciles);")
-    log("    count shifts indices, for_each stays stable.")
-    log("    State is the source of truth — respect it, lock it, never edit around it.")
-    log("=" * 70)
-    return 0
+    return verdict([
+        "    Terraform plans against STATE, not the real world;",
+        "    a hand-edit becomes drift and gets reverted; immutable attrs REPLACE;",
+        "    lost state wants to re-create what exists (import reconciles);",
+        "    count shifts indices, for_each stays stable.",
+        "    State is the source of truth — respect it, lock it, never edit around it.",
+    ], broken=bool(args.sabotage))
 
 
 if __name__ == "__main__":

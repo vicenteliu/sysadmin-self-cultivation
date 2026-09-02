@@ -30,12 +30,47 @@ import sys
 SABOTAGE = None
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --------------------------------------------------------------------------
@@ -97,15 +132,6 @@ def cost_to_change(field, machine, fleet_size):
 
 
 def run():
-    failures = []
-
-    def check(cond, ok, bad):
-        if cond:
-            log(f"  ✓ {ok}")
-        else:
-            log(f"  ✗ {bad}")
-            failures.append(bad)
-
     log(__doc__.strip().split("\n\n")[0])
 
     # ---------------------------------------------------------------- 1
@@ -179,24 +205,18 @@ def run():
     log("  you need to change it, and then it is a project.")
 
     # ---------------------------------------------------------------- verdict
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. 'latest' is a query answered at build time, not a name.")
-    log("  2. Identical user-data makes the fried half identical; the baked half drifts.")
-    log("  3. The resulting bug has no change record and destroys its own evidence.")
-    log("  4. A pinned reference is what makes a fleet reproducible.")
-    log("  5. Baked-vs-fried decides whether an edit costs one reboot or a fleet.")
-    log("")
-    log("The inventory was never wrong. It has no column for the question, which is")
-    log("the same shape as every other finding in this repo: the control that is")
-    log("missing is not a better console, it is recording what the reference resolved")
-    log("to at the moment it was resolved.")
-    return 0
+    return verdict([
+        "  1. 'latest' is a query answered at build time, not a name.",
+        "  2. Identical user-data makes the fried half identical; the baked half drifts.",
+        "  3. The resulting bug has no change record and destroys its own evidence.",
+        "  4. A pinned reference is what makes a fleet reproducible.",
+        "  5. Baked-vs-fried decides whether an edit costs one reboot or a fleet.",
+        "",
+        "The inventory was never wrong. It has no column for the question, which is",
+        "the same shape as every other finding in this repo: the control that is",
+        "missing is not a better console, it is recording what the reference resolved",
+        "to at the moment it was resolved.",
+    ], broken=bool(SABOTAGE))
 
 
 def main():

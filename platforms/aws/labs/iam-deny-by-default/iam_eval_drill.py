@@ -25,12 +25,47 @@ from dataclasses import dataclass, field
 ALLOW, DENY = "Allow", "Deny"
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- the model: statements, policies, and AWS's evaluation logic --------------
@@ -117,15 +152,6 @@ ADMIN = [Statement(ALLOW, ["*"], ["*"])]  # the "just give them Allow *" reflex
 
 
 def run() -> int:
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"  ✓ {ok_msg}")
-        else:
-            log(f"  ✗ {fail_msg}")
-            failures.append(fail_msg)
-
     step(1, "Deny-by-default — a principal with no policy is denied")
     dec, why = evaluate("s3:GetObject", "arn:aws:s3:::reports/q3.csv", identity=[])
     log(f"  request s3:GetObject with an empty identity policy → {dec} ({why})")
@@ -187,23 +213,17 @@ def run() -> int:
           "the on-prem 'admin can do anything' instinct is WRONG in every capped case",
           "the instinct and reality agreed somewhere they shouldn't have")
 
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. Deny-by-default: no matching Allow means denied.")
-    log("  2. An explicit Deny overrides any Allow — including Allow *.")
-    log("  3. An SCP intersects: it caps even an admin, from a policy the account can't see.")
-    log("  4. A permissions boundary is a ceiling — it only reduces.")
-    log("")
-    log("The instinct this drill retired:")
-    log("  'give them admin and it'll work' — on AWS, Allow * is the START of the")
-    log("  evaluation, not the end of it. Debugging 'why is this denied' is reading")
-    log("  which of these five layers said no.")
-    return 0
+    return verdict([
+        "  1. Deny-by-default: no matching Allow means denied.",
+        "  2. An explicit Deny overrides any Allow — including Allow *.",
+        "  3. An SCP intersects: it caps even an admin, from a policy the account can't see.",
+        "  4. A permissions boundary is a ceiling — it only reduces.",
+        "",
+        "The instinct this drill retired:",
+        "  'give them admin and it'll work' — on AWS, Allow * is the START of the",
+        "  evaluation, not the end of it. Debugging 'why is this denied' is reading",
+        "  which of these five layers said no.",
+    ])
 
 
 def main():

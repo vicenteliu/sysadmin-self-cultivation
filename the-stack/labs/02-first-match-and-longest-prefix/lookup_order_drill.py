@@ -32,12 +32,47 @@ import sys
 SABOTAGE = None
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --------------------------------------------------------------------------
@@ -144,15 +179,6 @@ def verdicts_rules(rs):
 
 
 def run():
-    failures = []
-
-    def check(cond, ok, bad):
-        if cond:
-            log(f"  ✓ {ok}")
-        else:
-            log(f"  ✗ {bad}")
-            failures.append(bad)
-
     log(__doc__.strip().split("\n\n")[0])
 
     # ---------------------------------------------------------------- 1
@@ -241,23 +267,17 @@ def run():
           "specificity behaved the same way in both files")
 
     # ---------------------------------------------------------------- verdict
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. A routing table is order-independent: longest prefix decides.")
-    log("  2. A ruleset is order-dependent: first match decides.")
-    log("  3. Promoting a route line is a no-op that reads as a ruled-out theory.")
-    log("  4. A broad allow at the top makes the rules below it inert, silently.")
-    log("  5. Specificity beats position in one file and loses to it in the other.")
-    log("")
-    log("Before you read either file, ask which discipline it uses. It is the one")
-    log("question neither file answers, and both failures above are what happens")
-    log("when the answer is carried over from the other one.")
-    return 0
+    return verdict([
+        "  1. A routing table is order-independent: longest prefix decides.",
+        "  2. A ruleset is order-dependent: first match decides.",
+        "  3. Promoting a route line is a no-op that reads as a ruled-out theory.",
+        "  4. A broad allow at the top makes the rules below it inert, silently.",
+        "  5. Specificity beats position in one file and loses to it in the other.",
+        "",
+        "Before you read either file, ask which discipline it uses. It is the one",
+        "question neither file answers, and both failures above are what happens",
+        "when the answer is carried over from the other one.",
+    ], broken=bool(SABOTAGE))
 
 
 def main():

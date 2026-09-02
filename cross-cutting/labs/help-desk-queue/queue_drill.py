@@ -34,13 +34,19 @@ import math
 import sys
 from dataclasses import dataclass
 
-FAILURES = []
 METHOD = "queue"          # --break-it flips this to "ratio"
 
 SUPPORT_HOURS_PER_WEEK = 50.0    # 08:00-18:00, Mon-Fri, stated rather than assumed
 ONE_PERSON_HOURS = 40.0
 P95_TARGET_HOURS = 4.0           # "answered the same working day"
 RATIO_USERS_PER_AGENT = 50       # the rule this lab is arguing with
+
+
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
 
 
 def log(msg=""):
@@ -58,6 +64,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- the estate --------------------------------------------------------------
@@ -312,28 +337,21 @@ def main():
           "method that cannot tell them apart is not reading the estate")
 
     # --- verdict -------------------------------------------------------------
-    log("\n" + "=" * 72)
-    if FAILURES:
-        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
-        for f in FAILURES:
-            log(f"  ✗ {f}")
-        return 1
-
-    log("PASSED — the lessons held.\n")
-    log("  1. Ticket count is the metric that most overstates what automation saved.")
-    log("     The short categories go first, so the queue shrinks and the mean")
-    log("     handling time rises at the same time.")
-    log("  2. Wait time bends. Two agents are not twice one, and that is exactly")
-    log("     what a per-head ratio has no way of saying.")
-    log("  3. The earlier steps can be priced in people: they move the population")
-    log("     one desk can carry. That is the sentence step 04 was waiting for.")
-    log("  4. At a hundred people the binding constraint is coverage, not volume.")
-    log("     The ratio agrees by arithmetic accident, and it cannot tell you when")
-    log("     it stopped agreeing, because the estate is not one of its inputs.")
-    log("\n  A staffing number is not a number. It is a number, the estate it came")
-    log("  from, and the automation it assumed — and only the last two survive")
-    log("  contact with the next question.")
-    return 0
+    return verdict([
+        "  1. Ticket count is the metric that most overstates what automation saved.",
+        "     The short categories go first, so the queue shrinks and the mean",
+        "     handling time rises at the same time.",
+        "  2. Wait time bends. Two agents are not twice one, and that is exactly",
+        "     what a per-head ratio has no way of saying.",
+        "  3. The earlier steps can be priced in people: they move the population",
+        "     one desk can carry. That is the sentence step 04 was waiting for.",
+        "  4. At a hundred people the binding constraint is coverage, not volume.",
+        "     The ratio agrees by arithmetic accident, and it cannot tell you when",
+        "     it stopped agreeing, because the estate is not one of its inputs.",
+        "\n  A staffing number is not a number. It is a number, the estate it came",
+        "  from, and the automation it assumed — and only the last two survive",
+        "  contact with the next question.",
+    ], broken=a.break_it)
 
 
 if __name__ == "__main__":

@@ -44,12 +44,47 @@ DEV_APP = "tenancy:Dev:App"   # child of Dev
 PROD = "tenancy:Prod"          # sibling of Dev
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
-    print(msg)
+    print(msg, flush=True)
 
 
 def step(n, title):
-    log(f"\n[{n}] {title}")
+    log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 def compartment_covers(policy_scope, resource_compartment, sabotage=False):
@@ -144,15 +179,6 @@ def main():
     if args.sabotage:
         log(f"\n  !! SABOTAGE ENABLED: {args.sabotage} !!")
 
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"    ✓ {ok_msg}")
-        else:
-            log(f"    ✗ {fail_msg}")
-            failures.append(fail_msg)
-
     # 1. No policy -> NotAuthorizedOrNotFound: invisible, not "denied".
     step(1, "carol (no policy) lists the instance")
     allowed, err = t.authorize(carol, "list", INST, DEV_APP)
@@ -205,22 +231,12 @@ def main():
           "bob's Dev-scoped manage should NOT reach the sibling compartment Prod")
 
     # verdict
-    log("\n" + "=" * 68)
-    if failures:
-        log(f"✗ FAIL — {len(failures)} lesson(s) broke:")
-        for f in failures:
-            log(f"    - {f}")
-        if args.sabotage:
-            log("\n(expected: --sabotage flattens the model, so the guarantees fall.)")
-        log("=" * 68)
-        return 1
-    log("✓ PASS — all six OCI IAM lessons held:")
-    log("    no policy => NotAuthorizedOrNotFound (invisible, 404 not 403);")
-    log("    verbs nest inspect ⊂ read ⊂ use ⊂ manage;")
-    log("    policies inherit DOWN the compartment tree and stop at siblings.")
-    log("    A compartment is not an account, and a verb is not a role.")
-    log("=" * 68)
-    return 0
+    return verdict([
+        "    no policy => NotAuthorizedOrNotFound (invisible, 404 not 403);",
+        "    verbs nest inspect ⊂ read ⊂ use ⊂ manage;",
+        "    policies inherit DOWN the compartment tree and stop at siblings.",
+        "    A compartment is not an account, and a verb is not a role.",
+    ], broken=bool(args.sabotage))
 
 
 if __name__ == "__main__":

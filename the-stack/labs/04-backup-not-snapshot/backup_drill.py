@@ -29,12 +29,47 @@ from pathlib import Path
 CANARY = ("canary", "if this row survives, the restore worked")
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 def connect(path):
@@ -120,15 +155,6 @@ def run(workspace: Path, seed_rows: int, post_backup_rows: int) -> int:
     for p in (primary, replica, recovered):
         p.parent.mkdir(parents=True, exist_ok=True)
     vault.mkdir(parents=True, exist_ok=True)
-
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"  ✓ {ok_msg}")
-        else:
-            log(f"  ✗ {fail_msg}")
-            failures.append(fail_msg)
 
     step(1, "Provision the primary database and seed known data")
     seed(primary, seed_rows)
@@ -216,20 +242,14 @@ def run(workspace: Path, seed_rows: int, post_backup_rows: int) -> int:
           f"RPO cost exactly the {post_backup_rows} post-backup rows — RPO is real (LESSON 3)",
           "RPO accounting does not add up")
 
-    log("\n" + "=" * 68)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the three lessons held:")
-    log("  1. Replication faithfully copied the destruction (replica died too).")
-    log("  2. Only the independent, point-in-time backup recovered the data.")
-    log(f"  3. RPO was real: {rows_lost} rows written after the backup were gone.")
-    log("")
-    log("The one number that matters and this drill made concrete:")
-    log("  a backup you have not restored is a hope. You just restored one.")
-    return 0
+    return verdict([
+        "  1. Replication faithfully copied the destruction (replica died too).",
+        "  2. Only the independent, point-in-time backup recovered the data.",
+        f"  3. RPO was real: {rows_lost} rows written after the backup were gone.",
+        "",
+        "The one number that matters and this drill made concrete:",
+        "  a backup you have not restored is a hope. You just restored one.",
+    ])
 
 
 def main():

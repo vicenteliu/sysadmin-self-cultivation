@@ -34,10 +34,17 @@ that asserts its own correctness. Modeled on this repo's runnable drills:
 2. **Do it two ways** where the lesson is a contrast (naive vs. anti-affinity;
    fragile vs. `set -euo pipefail`; replica vs. independent backup).
 3. **Trigger the disaster** (kill a rack, `DROP TABLE`, re-run the fragile script).
-4. **Assert the lessons** with a `check(cond, ok_msg, fail_msg)` helper that ✓/✗s
-   and accumulates failures.
-5. **Verdict** — print "PASSED — the lessons held" + the one-line takeaways, or
-   "FAILED" + which assertions broke; `sys.exit(0/1)`.
+4. **Assert the lessons** with `check(cond, ok_msg, fail_msg)`, which ✓/✗s and
+   accumulates failures.
+5. **Verdict** — `return verdict([...the one-line takeaways...], broken=args.break_it)`:
+   0 when every lesson held, 1 with each failure listed.
+
+The reporter that does 4 and 5 — `FAILURES`, `log`, `step`, `check`, `verdict` — is a
+**vendored block**, not a library: copy it verbatim from `DRILL_BLOCK` in `check.py`
+(`python3 check.py --list --only labs` prints it) into the new drill, under the imports.
+A drill imports nothing from this repo, and `check.py` fails any drill whose copy
+differs by a byte (ADR-0017). Do not restyle it; if it needs changing, change it in
+`check.py` and then in every drill.
 
 ## The workflow
 
@@ -45,7 +52,8 @@ that asserts its own correctness. Modeled on this repo's runnable drills:
    backup", "co-located replicas share a fate").
 2. **Design the smallest model** that makes it visible, and the *contrast* that proves
    it (right vs. wrong).
-3. **Write it** stdlib-only, with the narrated-steps + `check()` + verdict structure.
+3. **Write it** stdlib-only: paste the reporter block from `check.py`, then the narrated
+   steps, `check()` calls and `verdict()` on top of it.
 4. **Run it and confirm exit 0.** Then deliberately break the model to confirm it
    exits non-zero — a self-verifier that can't fail is worthless.
 5. **Write a README** (goal / why pure-local / run command / what you'll see / the

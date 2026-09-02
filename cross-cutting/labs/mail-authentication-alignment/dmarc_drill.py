@@ -34,8 +34,14 @@ import argparse
 import sys
 from dataclasses import dataclass
 
-FAILURES = []
 CHECK_ALIGNMENT = True   # --break-it flips this: evaluate the way checkers do
+
+
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
 
 
 def log(msg=""):
@@ -53,6 +59,25 @@ def check(cond, ok_msg, fail_msg):
         log(f"  ✗ {fail_msg}")
         FAILURES.append(fail_msg)
     return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- the model ---------------------------------------------------------------
@@ -300,28 +325,21 @@ def main():
           "enforcement stopped nothing after the fix")
 
     # --- verdict -------------------------------------------------------------
-    log("\n" + "=" * 72)
-    if FAILURES:
-        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
-        for f in FAILURES:
-            log(f"  ✗ {f}")
-        return 1
-
-    log("PASSED — the lessons held.\n")
-    log("  1. A green checker verifies that the records EXIST. It does not read")
-    log("     the policy, and p=none protects nothing.")
-    log("  2. SPF authenticates the envelope domain, DKIM the signing domain.")
-    log("     DMARC asks whether either matches the From: line a human reads.")
-    log("     'SPF passed' can be true of a message forging your domain.")
-    log("  3. The inventory and the aggregate report disagree in both directions.")
-    log("     The report is the more honest source, and it is still not a list of")
-    log("     authorised senders — a person has to decide which ones are yours.")
-    log("  4. Enforcement's risk is measurable before you take it. It is exactly")
-    log("     the senders your inventory got wrong, which is a reconciliation you")
-    log("     can do this week instead of a danger you defer indefinitely.")
-    log("\n  Publishing the record is not the job. Enumerating who sends as you,")
-    log("  and moving off p=none on a date you wrote down, is the job.")
-    return 0
+    return verdict([
+        "  1. A green checker verifies that the records EXIST. It does not read",
+        "     the policy, and p=none protects nothing.",
+        "  2. SPF authenticates the envelope domain, DKIM the signing domain.",
+        "     DMARC asks whether either matches the From: line a human reads.",
+        "     'SPF passed' can be true of a message forging your domain.",
+        "  3. The inventory and the aggregate report disagree in both directions.",
+        "     The report is the more honest source, and it is still not a list of",
+        "     authorised senders — a person has to decide which ones are yours.",
+        "  4. Enforcement's risk is measurable before you take it. It is exactly",
+        "     the senders your inventory got wrong, which is a reconciliation you",
+        "     can do this week instead of a danger you defer indefinitely.",
+        "\n  Publishing the record is not the job. Enumerating who sends as you,",
+        "  and moving off p=none on a date you wrote down, is the job.",
+    ], broken=a.break_it)
 
 
 if __name__ == "__main__":

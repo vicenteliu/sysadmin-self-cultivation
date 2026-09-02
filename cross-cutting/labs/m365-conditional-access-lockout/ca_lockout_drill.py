@@ -24,12 +24,47 @@ import sys
 from dataclasses import dataclass, field
 
 
+# --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
+# check.py holds the canonical copy and fails a drill whose copy differs. Change it
+# there and then everywhere; a drill imports nothing from this repo.
+
+FAILURES = []
+
+
 def log(msg=""):
     print(msg, flush=True)
 
 
 def step(n, title):
     log(f"\n=== {n}. {title} ===")
+
+
+def check(cond, ok_msg, fail_msg):
+    if cond:
+        log(f"  ✓ {ok_msg}")
+    else:
+        log(f"  ✗ {fail_msg}")
+        FAILURES.append(fail_msg)
+    return cond
+
+
+def verdict(held, broken=False):
+    """What main() returns: 1 with every failure listed, or 0 with the lessons that
+    held — one line each, in the drill's own words."""
+    log("\n" + "=" * 70)
+    if FAILURES:
+        log(f"FAILED — {len(FAILURES)} assertion(s) did not hold:")
+        for f in FAILURES:
+            log(f"  ✗ {f}")
+        if broken:
+            log("\nThat is the point of --break-it. Re-run without it.")
+        return 1
+    log("PASSED — the lessons held:")
+    for line in held:
+        log(line)
+    return 0
+
+# --- end of the reporter ------------------------------------------------------------
 
 
 # --- the model: users, a CA policy, and the sign-in evaluation ----------------
@@ -94,15 +129,6 @@ def report(users, policy):
 
 
 def run() -> int:
-    failures = []
-
-    def check(cond, ok_msg, fail_msg):
-        if cond:
-            log(f"  ✓ {ok_msg}")
-        else:
-            log(f"  ✗ {fail_msg}")
-            failures.append(fail_msg)
-
     # the tenant: an admin on a personal (non-compliant) laptop, two staff, and a
     # cloud-only break-glass account (FIDO2, no Intune device — compliant=False).
     admin = User("admin", compliant_device=False)
@@ -159,22 +185,16 @@ def run() -> int:
           "the 'I'm the admin, it won't lock me out' instinct is WRONG",
           "instinct and reality agreed — the drill proved nothing")
 
-    log("\n" + "=" * 70)
-    if failures:
-        log(f"DRILL FAILED — {len(failures)} assertion(s) did not hold:")
-        for f in failures:
-            log(f"  - {f}")
-        return 1
-    log("DRILL PASSED — the lessons held:")
-    log("  1. An enabled all-users policy is tenant-live and blocks the admin too.")
-    log("  2. Break-glass is blocked unless it is explicitly EXCLUDED.")
-    log("  3. Excluding break-glass restores a way back in — the fire exit.")
-    log("  4. report-only enforces nothing — it shows impact before you enable.")
-    log("")
-    log("The habit this drill builds:")
-    log("  never enable a tenant-wide CA policy without (a) excluding two break-glass")
-    log("  accounts and (b) running it report-only first. One save, no outage.")
-    return 0
+    return verdict([
+        "  1. An enabled all-users policy is tenant-live and blocks the admin too.",
+        "  2. Break-glass is blocked unless it is explicitly EXCLUDED.",
+        "  3. Excluding break-glass restores a way back in — the fire exit.",
+        "  4. report-only enforces nothing — it shows impact before you enable.",
+        "",
+        "The habit this drill builds:",
+        "  never enable a tenant-wide CA policy without (a) excluding two break-glass",
+        "  accounts and (b) running it report-only first. One save, no outage.",
+    ])
 
 
 def main():
