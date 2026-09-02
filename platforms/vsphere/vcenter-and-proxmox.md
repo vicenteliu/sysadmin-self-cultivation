@@ -8,6 +8,8 @@ summary: "The difference between vCenter and Proxmox is almost never asked in th
 ---
 # vCenter and Proxmox — what actually differs
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/vsphere/vcenter-and-proxmox.md)
+
 > [`architecture.md`](architecture.md) maps vSphere onto the seven surfaces. This note
 > answers a narrower question that gets asked constantly and almost never in the
 > abstract: **what is the real difference, and what breaks if I move?** It is written

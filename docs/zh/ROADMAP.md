@@ -82,7 +82,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 平台 | [`platforms/gcp/`](platforms/gcp/) —— README + skills-map + ai-ramp（global-VPC 的异类；Tier-1 第 4 项）；lab 已出规格 | ✅ 已写 |
 | 平台深度 | [`platforms/aws/architecture.md`](platforms/aws/architecture.md) + [`operations.md`](platforms/aws/operations.md) + [`automation.md`](platforms/aws/automation.md) —— 账号模型、day-2 运维工作拆解、AI 在环、给 API 写脚本 | ✅ 已写 |
 | 平台深度 | Azure + GCP 的 architecture/operations/automation 三件套（对齐 AWS） | ✅ 已写 |
-| 私有云 | [`platforms/vsphere/`](../../platforms/vsphere/) —— 🔨 亲手做过（VCP6-DCV/NV、区域 vCenter 管理员）+ [`platforms/openstack/`](../../platforms/openstack/) —— 🧭 ramp，与 KVM 邻接 | ✅ 已写 |
+| 私有云 | [`platforms/vsphere/`](platforms/vsphere) —— 🔨 亲手做过（VCP6-DCV/NV、区域 vCenter 管理员）+ [`platforms/openstack/`](../../platforms/openstack/) —— 🧭 ramp，与 KVM 邻接 | ✅ 已写 |
 | 平台补齐 | [`platforms/oci/`](platforms/oci/) —— 🧭 第四朵云 + [`platforms/self-host/`](../../platforms/self-host/) —— 🔨 最深的根。**the-stack 的七个平台现在都有模块** | ✅ 已写 |
 | Labs | **每个平台一条三段式 CLI arc**（7×3 = 21 个 lab）—— 受限身份盘点 → 从代码起网络与计算 → 安全默认/signature drill，每个都带真实命令行示例（CLI 优先于 GUI） | ✅ 已写；AWS 01/02 可跑 |
 | 平台深度 | **vSphere + self-host** 的 architecture/operations/automation 三件套 —— 这两个 🔨 平台的深度现在与 AWS/Azure/GCP 齐平（从生产环境写出来的） | ✅ 已写 |

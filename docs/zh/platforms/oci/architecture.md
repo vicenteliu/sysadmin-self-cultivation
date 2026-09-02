@@ -60,7 +60,7 @@ OCI 那个[故障域](../../the-stack/01-physical.md)模型，比多数家又细
   **两倍**算力 —— 漏掉这一点，你的尺寸估算和跨云成本对比就差了 2 倍。
 - **弹性 shape** 让你把 OCPU 加内存拨到准确数值；**裸金属 shape** 是一等产品（一朵公有云最接近
   "把那台服务器交给你"的形态）—— 天然契合按核授权，以及 [self-host](../../../../platforms/self-host/README.md)/
-  [vSphere](../../../../platforms/vsphere/README.md) 那种思路。离机的网络虚拟化让 hypervisor 税保持很低。
+  [vSphere](../vsphere/README.md) 那种思路。离机的网络虚拟化让 hypervisor 税保持很低。
 
 ## 4. 网络与那个安全过滤的选择
 
@@ -108,7 +108,7 @@ flowchart TB
 🧭 **ramp，诚实地说。** 这把那个可迁移的架构模型 —— 经由 compartment 的爆炸半径、故障域、
 共担责任 —— 映射到 OCI 上并对着当前文档验证，而且**不声称任何生产 OCI 运维**
 （[README](README.md) 也是这么说的）。底下那些**直觉**（compartment 的爆炸半径思维、从真实的
-[vSphere](../../../../platforms/vsphere/README.md) 和 [self-host](../../../../platforms/self-host/README.md) 工作里来的裸金属与 fault
+[vSphere](../vsphere/README.md) 和 [self-host](../../../../platforms/self-host/README.md) 工作里来的裸金属与 fault
 domain 判断、最小权限）是 🔨；OCI 服务的那些细节是那条 ramp。那四个刻意的差别（compartment、
 OCPU 对 vCPU、security list 对 NSG、那门策略语言）被标出来，恰恰因为它们正是"OCI 不就是 AWS"这个
 反射失效的地方。这里的声称是一套扎实的模型加上一条快速、可验证的 ramp —— 不是多年 OCI。

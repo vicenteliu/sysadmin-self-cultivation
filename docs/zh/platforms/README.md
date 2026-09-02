@@ -53,7 +53,7 @@ automation 三件套。**
 
 | 平台 | 状态 |
 | --- | --- |
-| **[vsphere/](../../../platforms/vsphere/)** | ✅ 范例级深度 —— + architecture + operations + automation —— **🔨 亲手做过的深度**：区域 vCenter 管理员，VCP6-DCV/NV。这是强项，不是 ramp。 |
+| **[vsphere/](vsphere)** | ✅ 范例级深度 —— + architecture + operations + automation —— **🔨 亲手做过的深度**：区域 vCenter 管理员，VCP6-DCV/NV。这是强项，不是 ramp。 |
 | **[openstack/](../../../platforms/openstack/)** | ✅ 范例级深度 —— + architecture + operations + automation —— 🧭 ramp，与真实的 KVM/Proxmox 🔨 邻接；"云是你自己搭的"，控制面即产品。 |
 | **[self-host/](../../../platforms/self-host/)** | ✅ 范例级深度 —— + architecture + operations + automation —— **🔨 亲手做过的深度**，最深的那条根：10 万+ 规模的 PXE/镜像/cloud-init 机队、BMC/IPMI、DNS/BIND、RAID。每一朵云都抽象在它之上的那一层。 |
 

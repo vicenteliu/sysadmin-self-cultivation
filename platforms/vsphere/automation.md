@@ -8,6 +8,8 @@ summary: "architecture is how vSphere is structured; operations is what running 
 ---
 # vSphere — Scripting the API (PowerCLI & the vSphere API)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/vsphere/automation.md)
+
 > [`architecture`](architecture.md) is how vSphere is structured; [`operations`](operations.md)
 > is what running it looks like. This note is the *how*: **driving vSphere from code**
 > — because at fleet scale you don't click through 200 VMs, you script them. This is
