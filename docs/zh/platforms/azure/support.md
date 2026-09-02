@@ -6,9 +6,9 @@
 
 ---
 
-> [`operations.md`](../../../../platforms/azure/operations.md) 讲的是运营你自己那套 Azure 的**节奏**。本篇讲另一半：**把 Azure 和 Microsoft Entra ID 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个来自别的方向（AWS、GCP、或 on-prem AD）的强 sysadmin 接手它时，哪些直觉会坑他。** 注意本页守着的诚实分级：**Entra / 身份**那一半是 🔨 亲手做过（真实租户实战——MFA、Conditional Access、PIM、Entra 初始搭建）；更广的 **Azure IaaS** 是 🧭 ramp。两者都如实标注。
+> [`operations.md`](operations.md) 讲的是运营你自己那套 Azure 的**节奏**。本篇讲另一半：**把 Azure 和 Microsoft Entra ID 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个来自别的方向（AWS、GCP、或 on-prem AD）的强 sysadmin 接手它时，哪些直觉会坑他。** 注意本页守着的诚实分级：**Entra / 身份**那一半是 🔨 亲手做过（真实租户实战——MFA、Conditional Access、PIM、Entra 初始搭建）；更广的 **Azure IaaS** 是 🧭 ramp。两者都如实标注。
 
-Azure 自己的[平台篇](../../../../platforms/azure/README.md)一句话说清了那个经典错误：*Entra = 你是谁，RBAC = 你能碰什么——把两者混淆是经典错误。* 这句话就是本页存在的全部理由。一个"已经懂云"的运维接手 Azure 支持很快，然后在微软做了不同选择的那几处栽跟头：**两个独立的身份面**（Global Administrator **不是** Owner）、**不是** on-prem AD 的 Entra、你必须注册的 **resource provider**、以及一个连 Owner 都能拦下的治理面（**Azure Policy**）。本篇把职责、反复出现的工单及其诊断面、以及一个自信的云（或 AD）运维反射恰好失灵的那几处一一点名——并显式标出 AWS / on-prem-AD 对比，因为大多数读者是从那儿来的。
+Azure 自己的[平台篇](README.md)一句话说清了那个经典错误：*Entra = 你是谁，RBAC = 你能碰什么——把两者混淆是经典错误。* 这句话就是本页存在的全部理由。一个"已经懂云"的运维接手 Azure 支持很快，然后在微软做了不同选择的那几处栽跟头：**两个独立的身份面**（Global Administrator **不是** Owner）、**不是** on-prem AD 的 Entra、你必须注册的 **resource provider**、以及一个连 Owner 都能拦下的治理面（**Azure Policy**）。本篇把职责、反复出现的工单及其诊断面、以及一个自信的云（或 AD）运维反射恰好失灵的那几处一一点名——并显式标出 AWS / on-prem-AD 对比，因为大多数读者是从那儿来的。
 
 ## 支持 Azure 与 Entra 让你要为什么负责
 
@@ -99,7 +99,7 @@ Azure 的修/救本质是在门户、两个 CLI（`az`、`Az` PowerShell）、�
 ## AI 辅助的 ramp（Azure/Entra 口味）
 
 - **从你已知的翻译过来——并索要 deltas：** *"我懂 AWS IAM 和 on-prem AD —— 把 Azure 的两个身份面、RBAC scope、和 Entra 映射到它们上，只标出真正的差异。"* Azure 奖励 translate-then-verify 方法，因为它太多是改了名的——但**两个面的分裂和 Azure Policy 没有干净的 AWS 对应物**，所以那些要往死里验证。
-- **让它起草 `az`/PowerShell/Bicep，你亲手做最小权限。** AI 在这里很强——而它也会**把 Entra 角色与 Azure RBAC 混为一谈**（你要的是某 scope 的 Reader、它给你 Global Administrator）、**发明角色/权限名**、忘了 resource provider、并提一个 blast radius 是整个 management group 的 scope。对着文档核验、并在一次性 subscription 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](../../../../platforms/azure/operations.md)。
+- **让它起草 `az`/PowerShell/Bicep，你亲手做最小权限。** AI 在这里很强——而它也会**把 Entra 角色与 Azure RBAC 混为一谈**（你要的是某 scope 的 Reader、它给你 Global Administrator）、**发明角色/权限名**、忘了 resource provider、并提一个 blast radius 是整个 management group 的 scope。对着文档核验、并在一次性 subscription 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](operations.md)。
 
 ## 诚实边界
 

@@ -8,6 +8,8 @@ summary: "The README mapped Azure onto the seven surfaces — what the services 
 ---
 # Azure — Understanding the Architecture
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/azure/architecture.md)
+
 > The [README](README.md) mapped Azure onto the seven surfaces — *what the services
 > are.* This note is the layer up: *how Azure is structured*, so you design **with**
 > its architecture instead of fighting it. Get the management hierarchy, the

@@ -7,6 +7,8 @@ summary: "Getting to competent on Azure fast. Same discipline as everywhere else
 ---
 # Azure — The AI-Assisted Ramp
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/azure/ai-ramp.md)
+
 > Getting to *competent* on Azure fast. Same discipline as everywhere else
 > (**AI for speed, judgment for truth** — see [`ai-workflow/`](../../ai-workflow/) and
 > the [AWS ai-ramp](../aws/ai-ramp.md)); this note is the Azure-specific delta.

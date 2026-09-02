@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 327,
+  "count": 333,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2045,6 +2045,93 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/aws/support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes mirroring the AWS worked example: architecture (how it's structured),…",
+      "language": "zh",
+      "mirrors": "platforms/azure/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Getting to competent on Azure fast. Same discipline as everywhere else (AI for speed, judgment for truth — see ai-workflow/ and the AWS ai-ramp); this note is the Azure-specific delta.",
+      "language": "zh",
+      "mirrors": "platforms/azure/ai-ramp.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "The README mapped Azure onto the seven surfaces — what the services are.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/azure/architecture.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "architecture is how Azure is structured; operations is what running it looks like.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/azure/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "The README is what Azure is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/azure/operations.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Same tiers as AWS: Core (can't admin without it), Working (solid mid/senior), Depth (the differentiator).",
+      "language": "zh",
+      "mirrors": "platforms/azure/skills-map.md",
       "derived": true
     },
     "docs/zh/platforms/azure/support.md": {
