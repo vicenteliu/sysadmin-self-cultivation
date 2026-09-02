@@ -8,6 +8,8 @@ summary: "Three places in this repo call recovery-key escrow the actual work and
 ---
 # Full-disk encryption at scale, and the keys
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/endpoint/encryption-and-keys.md)
+
 > Turning encryption on is a setting. **Everything difficult about it happens
 > afterwards**, and this repo has said so three times without ever showing the work:
 > [`build-out/08`](../build-out/08-endpoint-security-and-patching.md) calls the recovery

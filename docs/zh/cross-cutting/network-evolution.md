@@ -19,7 +19,7 @@ summary: "十五年办公网变迁，以及那一个解释了其中大部分的�
 > 有六个问题以不同的形状问到了这件事 —— 架构怎么变的、协议怎么变的、一台防火墙在成为应用防火墙
 > 之前是什么、一台 F5 级别的盒子到底干什么、无线怎么变的，以及为什么不是简单地处处千兆。它们
 > 底下是同一个答案，所以它们得到同一篇笔记。
-> 记录在 [`docs/questions/networking.md`](../../questions/networking.md)。
+> 记录在 [`docs/questions/networking.md`](../docs/questions/networking.md)。
 
 **这里每一个产品名都是一个签名，绝不是一个推荐。** 这个仓库施加的那个测试
 （[`CONTEXT.md`](../CONTEXT.md)）：*说出它的名字，是帮你认出你在哪儿，还是在告诉你该买什么？*
@@ -176,5 +176,5 @@ VLAN、横跨办公室与数据中心的防火墙与 VPN —— CCNP 级别的�
   的地方
 - [`build-out/02`](../build-out/02-the-building.md) —— *工作负载离开了这栋楼*，这整篇笔记都是
   它的一个后果
-- [`docs/questions/networking.md`](../../questions/networking.md) —— 这篇所回答的那六个问题，
+- [`docs/questions/networking.md`](../docs/questions/networking.md) —— 这篇所回答的那六个问题，
   以及它没回答的那两个

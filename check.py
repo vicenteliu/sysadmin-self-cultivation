@@ -244,6 +244,10 @@ WORD_NUMBERS["两"] = 2
 WORD_NUMBERS.update({w.capitalize(): n for w, n in list(WORD_NUMBERS.items())})
 
 NUM = "(" + "|".join([r"\d+"] + sorted(WORD_NUMBERS, key=len, reverse=True)) + ")"
+# `one` matches inside `none`, and `none open` is how a domain file says zero.
+# English patterns need a left boundary; the Chinese ones must not have one, because
+# the CJK character before a Chinese numeral is itself a word character.
+NUM_EN = r"(?<![A-Za-z-])" + NUM
 
 
 def as_int(token):
@@ -311,6 +315,28 @@ def check_questions_ledger():
         problems.append(f"docs/questions.md: docs/questions/{domain}.md exists and the "
                         f"table has no row for it")
 
+    # A domain file may also state its own tally in prose, and prose is not a table
+    # row — docs/questions/networking.md read "Five answered, eight open" for two
+    # batches after all thirteen were answered, and the per-domain table above agreed
+    # with the files the whole time. The ledger was right and the sentence beside it
+    # was not, which is the narrowest possible version of ADR-0008's subject.
+    for path in _glob("docs/questions/*.md"):
+        domain = os.path.splitext(os.path.basename(path))[0]
+        if domain not in truth:
+            continue
+        asked, answered, still_open = truth[domain]
+        prose = open(path, encoding="utf-8").read()
+        for m in re.finditer(NUM_EN + r"\s+answered", prose):
+            said = as_int(m.group(1))
+            if said != answered:
+                problems.append(f"docs/questions/{domain}.md: prose says {said} "
+                                f"answered, the table holds {answered}")
+        for m in re.finditer(NUM_EN + r"\s+open\b", prose):
+            said = as_int(m.group(1))
+            if said != still_open:
+                problems.append(f"docs/questions/{domain}.md: prose says {said} "
+                                f"open, the table holds {still_open}")
+
     totals = tuple(sum(v[i] for v in truth.values()) for i in range(3))
     m = re.search(r"\|\s*\|\s*\*\*(\d+)\*\*\s*\|\s*\*\*(\d+)\*\*\s*\|"
                   r"\s*\*\*(\d+)\*\*\s*\|", text)
@@ -335,19 +361,19 @@ def counted_things():
     rows = question_rows()
     return [
         ("walkthroughs", {len(_glob("walkthrough/[0-9]*-*.en.md"))},
-         [NUM + r"\s+walkthroughs\b", r"(?:共|目前|已有)\s*" + NUM + r"\s*篇走读"]),
+         [NUM_EN + r"\s+walkthroughs\b", r"(?:共|目前|已有)\s*" + NUM + r"\s*篇走读"]),
         ("walkthrough beats", set(beats.values()) | {sum(beats.values())},
-         [NUM + r"\s+beats\b", NUM + r"\s*拍[，。 ,\n]"]),
+         [NUM_EN + r"\s+beats\b", NUM + r"\s*拍[，。 ,\n]"]),
         ("runnable labs", {len(find_labs())},
-         [NUM + r"[ -]runnable, self-verifying", NUM + r"\s*个可跑、自验证"]),
+         [NUM_EN + r"[ -]runnable, self-verifying", NUM + r"\s*个可跑、自验证"]),
         ("agent skills", {len(_glob(".claude/skills/*/SKILL.md"))},
-         [NUM + r"\s+Agent Skills\b", r"自?带\s*" + NUM + r"\s*个\s*\[?`?\.claude/skills"]),
+         [NUM_EN + r"\s+Agent Skills\b", r"自?带\s*" + NUM + r"\s*个\s*\[?`?\.claude/skills"]),
         # `15 of 16 steps point at a lab` states coverage, not inventory — only the
         # denominator is a claim about how many steps there are.
         ("build-out steps", {len(_glob("build-out/[0-9]*.md"))},
-         [r"\bof\s+" + NUM + r"\s+steps\b", r"\*\*" + NUM + r"\s*步全部"]),
+         [r"\bof\s+" + NUM_EN + r"\s+steps\b", r"\*\*" + NUM + r"\s*步全部"]),
         ("questions asked", {len(rows)},
-         [NUM + r"\s+questions across\b", r"域" + NUM + r"问"]),
+         [NUM_EN + r"\s+questions across\b", r"域" + NUM + r"问"]),
         ("Chinese mirrors", {len(_glob("docs/zh/**/*.md"))},
          [r"docs/zh/`?\s*目前\s*" + NUM + r"\s*篇"]),
     ]

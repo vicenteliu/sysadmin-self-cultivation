@@ -7,6 +7,8 @@ summary: "Questions asked of this repo about monitoring — how it is designed, 
 ---
 # Questions · Observability
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/docs/questions/observability.md)
+
 > The index, the status legend and the out-of-scope reasoning live one level up in
 > [`docs/questions.md`](../questions.md).
 

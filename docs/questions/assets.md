@@ -7,6 +7,8 @@ summary: "Questions asked of this repo about an internal inventory — largely a
 ---
 # Questions · Inventory and assets
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/docs/questions/assets.md)
+
 > The index, the status legend and the out-of-scope reasoning live one level up in
 > [`docs/questions.md`](../questions.md).
 

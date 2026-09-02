@@ -8,6 +8,8 @@ summary: "What an MDM actually manages once the machine is in someone's hands �
 ---
 # What an MDM manages, and what it cannot
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/endpoint/management.md)
+
 > [`provisioning.md`](provisioning.md) got the machine into somebody's hands. This note
 > is the other half: **how it stays in a state you can describe, eighteen months later,
 > after the person has had it.** The [README](README.md) draws the enrol-configure-

@@ -8,6 +8,8 @@ summary: "The README names the imaging pipeline in four bullets; this note is th
 ---
 # Provisioning across three operating systems
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/endpoint/provisioning.md)
+
 > The [README](README.md) says *what the endpoint discipline is*. This note is the
 > design question it names and does not answer: **what does a provisioning platform
 > decide, when it has to cover Windows, macOS and Linux at the same time?**

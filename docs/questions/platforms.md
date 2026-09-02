@@ -3,9 +3,11 @@ kind: questions
 axis: meta
 themes: []
 platforms: []
-summary: "Questions asked of this repo about cloud network design and about self-hosted virtualisation — one closed as out of scope, one open with runnable tools already built."
+summary: "Questions asked of this repo about cloud network design and about self-hosted virtualisation — both answered — one of them closed as a three-way note rather than written."
 ---
 # Questions · Platforms and virtualisation
+
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/docs/questions/platforms.md)
 
 > The index, the status legend and the out-of-scope reasoning live one level up in
 > [`docs/questions.md`](../questions.md).

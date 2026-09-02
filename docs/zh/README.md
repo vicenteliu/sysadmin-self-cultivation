@@ -72,7 +72,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](ai-workflow/) —— 方法及其护栏 |
 | **查一个词或一条旧决策** | [`CONTEXT.md`](CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](docs/adr/) —— 十五条决策及它们击败的选项 |
-| **看它还答不上什么** | [`docs/questions.md`](../questions.md) —— 有人问过这个仓库、而它还答不上的问题：开放的、已答的、或明确划在边界外并说明原因的 |
+| **看它还答不上什么** | [`docs/questions.md`](docs/questions.md) —— 有人问过这个仓库、而它还答不上的问题：开放的、已答的、或明确划在边界外并说明原因的 |
 | **带上能直接跑的工具** | [`toolbox/`](toolbox/) —— 十个发现/审计脚本（含 VMware→Proxmox 虚拟化四件套）、三个 Ansible 修复 roles、加一个按环境打包子集的[生成器](toolbox/generate/) |
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |
 | **改用听的** | [`walkthrough/`](walkthrough/README.md) —— 把参考办公室讲出来：口播稿、可交互二维楼面，仓库内不存音频 |
@@ -83,7 +83,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 102 篇；`build-out/` 十六步、`the-stack/` 七章、`cross-cutting/` 的 22 篇正文与 `docs/adr/` 的 15 篇决策记录都已补齐；各处 lab 的 README 与 `platforms/` 的逐平台目录尚未镜像），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 113 篇；`build-out/` 十六步、`the-stack/` 七章、`cross-cutting/` 的 22 篇正文、`docs/adr/` 的 15 篇决策记录、`docs/questions/` 与 `endpoint/` 都已补齐；各处 lab 的 README 与 `platforms/` 的逐平台目录尚未镜像），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
