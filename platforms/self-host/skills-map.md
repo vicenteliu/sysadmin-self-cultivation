@@ -7,6 +7,8 @@ summary: "Check a box when you can do it and explain the failure modes."
 ---
 # Self-Hosted / Bare Metal — Admin Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/self-host/skills-map.md)
+
 A checkable competency list. Tiers:
 
 - **Core** — you cannot run bare metal without this.

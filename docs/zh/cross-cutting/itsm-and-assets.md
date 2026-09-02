@@ -64,7 +64,7 @@ flowchart TB
   而把这道缝合上就是这份工作。这恰好是[脚本能力](../foundations/README.md)的那份胜利：用代码
   把审计数据对起来，而不是在 Excel 里手动做。
 - **生命周期** —— 采购 → 部署 → 换代 → 报废，绑在那些创建和退役这些资产的
-  [endpoint](../endpoint/README.md) 与 [self-host](../../../platforms/self-host/) 发放流水线上。
+  [endpoint](../endpoint/README.md) 与 [self-host](../platforms/self-host) 发放流水线上。
 - **软件/许可合规** —— 知道装了什么、授权了什么，既是一项成本控制（[成本](cost.md)）也是一项
   审计要求；就是那个"被遗忘的资源"问题，在资产这一侧。
 - **成本那个角度** —— 把**部署了什么**对上**付了什么钱**就是成本卫生（[成本](cost.md)）；那次

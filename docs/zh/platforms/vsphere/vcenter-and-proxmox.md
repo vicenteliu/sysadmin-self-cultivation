@@ -139,7 +139,7 @@ hypervisor* 才难 —— 那些 Hard 发现是没有对应物的存储抽象，
   只读，对着一份真实的盘点
 - [`toolbox/snapshot-audit/`](../../toolbox/snapshot-audit/) —— 一次审计，两个 hypervisor，也是
   上面那些 Moderate 行说的那件事
-- [`platforms/self-host/operations.md`](../../../../platforms/self-host/operations.md) ——
+- [`platforms/self-host/operations.md`](../self-host/operations.md) ——
   跑它们两个下面那些硬件到底长什么样
 - [`the-stack/01`](../../the-stack/01-physical.md) —— 故障域，也就是这篇笔记那个控制平面论证所坐
   的那一层

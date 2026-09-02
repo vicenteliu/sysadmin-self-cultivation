@@ -62,6 +62,6 @@ summary: "怎么在几天里在 OCI 上走到胜任 —— 用 AI 当副驾，�
 AI 能在几秒钟里生成一个 VCN 和一条 compartment policy。它没法告诉你，那台实例上不了网是因为那张
 路由表没有网关，或者你那台"2 OCPU"的机器悄悄是你拿来对比的那个成本基准的两倍。它拥有不了那次故障。
 那份判断 —— 最小权限的直觉、"这个为什么够不到那个"、读懂那次失败，以及从真实的
-[self-host](../../../../platforms/self-host/README.md) 和 [vSphere](../vsphere/README.md) 工作里来的那份裸金属与故障域
+[self-host](../self-host/README.md) 和 [vSphere](../vsphere/README.md) 工作里来的那份裸金属与故障域
 的感觉 —— 才是那门手艺，而它映射到 OCI 上和映射到任何一朵云上一样好。AI 只是把"拥有那份判断"和
 "把它施加到 Oracle 那些名字上"之间那些死记硬背移走了。

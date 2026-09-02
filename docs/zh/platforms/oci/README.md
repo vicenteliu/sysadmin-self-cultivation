@@ -26,7 +26,7 @@ summary: "和 AWS 同样的四段式模板：它是什么 → 管理技能图 �
 Oracle Cloud Infrastructure 是 Oracle 对 AWS 的回答 —— 一朵完整的公有云，建得比那三大家晚，
 并用那份后见之明做了一些不同的工程选择。其中两个从第一天起就对一个操作者要紧：**离机的网络虚拟化**
 （网络 I/O 在宿主机之外处理，所以 hypervisor 税很低、性能可预测），以及**把裸金属实例做成一等产品**
-（一朵公有云最接近"把真正那台服务器交给你"的形态 —— 天然契合 [self-host](../../../../platforms/self-host/README.md) 和
+（一朵公有云最接近"把真正那台服务器交给你"的形态 —— 天然契合 [self-host](../self-host/README.md) 和
 [vSphere](../vsphere/README.md) 那种思路）。它另一个刻意的打法是**极其便宜的出网**，这让它成为那些
 在别处被[出网计费表](../../the-stack/02-network.md)惩罚的备份、归档和数据密集型工作负载所偏爱的
 目标。
@@ -117,7 +117,7 @@ NSG、那门策略语言）"* —— 然后对着当前文档核实，并在一�
 （AWS/Azure/GCP 的那些面加上本地的深度）映射到 OCI 的名字上，并对着当前文档验证 —— 就是
 [`WHY.md`](../../WHY.md) 所论证的那套 ramp 方法。底下那些**直觉**（经由 compartment 的爆炸半径
 思维、最小权限，以及从真实的 [vSphere](../vsphere/README.md) 和
-[self-host](../../../../platforms/self-host/README.md) 经验里来的裸金属与故障域判断）是 🔨；OCI 服务的那些细节是那条
+[self-host](../self-host/README.md) 经验里来的裸金属与故障域判断）是 🔨；OCI 服务的那些细节是那条
 ramp。值得一提：OCI 那份裸金属优先、出网便宜的设计，异乎寻常地契合那些货真价实的亲手强项 ——
 这缩短了那条 ramp —— 但那句声称仍然诚实：一套可迁移的模型，加上一条快速、可验证的 ramp，
 不是多年 OCI。

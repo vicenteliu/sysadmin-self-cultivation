@@ -7,6 +7,8 @@ summary: "Like the vSphere note, this one is inverted: self-hosting is a strengt
 ---
 # Self-Hosted / Bare Metal — The AI-Assisted Ramp
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/self-host/ai-ramp.md)
+
 > Like the [vSphere note](../vsphere/ai-ramp.md), this one is inverted: self-hosting
 > is a **strength, not a gap**, so AI's job isn't to teach the platform — it's to
 > accelerate the software glue, and to stay entirely out of the physical layer it

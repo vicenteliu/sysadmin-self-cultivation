@@ -253,7 +253,7 @@ _避免_：protocol（不加限定、而实指机制时）、标准、RFC
 [`web-and-tls.md`](cross-cutting/web-and-tls.md)、
 [`kubernetes.md`](cross-cutting/kubernetes.md)）以及*受管的终端人口*
 （[`ROADMAP.md`](ROADMAP.md) 里的 "macOS/Windows fleet"、
-[`platforms/self-host/`](../../platforms/self-host/) 里的 "PXE and image pipelines at
+[`platforms/self-host/`](platforms/self-host) 里的 "PXE and image pipelines at
 fleet scale"）。两者都已确立，也都不会被改名。**要么加限定，要么用更具体的词** ——
 *endpoints*、*the estate*、*hosts under Ansible* —— 特别地，参考办公室的终端参数标题是
 *Endpoints and spares*，不是 *the fleet*，好让第三个意思永远不被造出来。

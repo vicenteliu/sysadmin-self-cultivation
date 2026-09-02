@@ -17,7 +17,7 @@ summary: "把一个新站点建起来是 🧭；之后机柜里发生的事是 �
 ---
 
 > **把一个新站点建起来**是 🧭；**之后机柜里发生的事**是 🔨（PXE/装机机队、BMC/IPMI、规模化
-> 的 DNS 与 RAID —— 见 [`platforms/self-host/`](../../../platforms/self-host/)）。这个区分
+> 的 DNS 与 RAID —— 见 [`platforms/self-host/`](../platforms/self-host)）。这个区分
 > 是刻意的：运维过机房，和把一个毛坯建成机房，不是一回事。
 > **Before：** 00 租约问题 · 01 上联。**After：** 04 设备 · 05 网络 · 12 会议室
 
@@ -66,8 +66,8 @@ summary: "把一个新站点建起来是 🧭；之后机柜里发生的事是 �
 
 - [`the-stack/01-physical.md`](../the-stack/01-physical.md) —— 跨七个平台对比的物理层；
   一个可用区实际上是什么
-- [`platforms/self-host/architecture.md`](../../../platforms/self-host/architecture.md) 和
-  [`operations.md`](../../../platforms/self-host/operations.md) —— 那些 🔨 材料，来自运行
+- [`platforms/self-host/architecture.md`](../platforms/self-host/architecture.md) 和
+  [`operations.md`](../platforms/self-host/operations.md) —— 那些 🔨 材料，来自运行
   机队而不是来自建楼
 - [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/)
 - [参考办公室的 Selection rules](../the-reference-office.md#selection-rules) ——

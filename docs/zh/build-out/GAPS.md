@@ -41,7 +41,7 @@ summary: "是被发现的，不是被计划的。一个步骤在它「本应」�
 | 步骤 | 为什么这里不该有可跑的东西 |
 |---|---|
 | [00 · 签租约之前](00-before-the-lease.md) | 它是一场与房东的对话。由诚实标记替它承重，而编造一个练习会歪曲这一步。 |
-| [02 · 这栋楼](02-the-building.md) | 把一个毛坯建成机房是与承包商一起完成的物理工作。机柜那一侧的习惯在 [`platforms/self-host/`](../../../platforms/self-host/) 里覆盖了；建筑那一侧是 🧭，而且会一直是。 |
+| [02 · 这栋楼](02-the-building.md) | 把一个毛坯建成机房是与承包商一起完成的物理工作。机柜那一侧的习惯在 [`platforms/self-host/`](../platforms/self-host) 里覆盖了；建筑那一侧是 🧭，而且会一直是。 |
 | [12 · 会议室](12-meeting-rooms-av-and-uc.md) —— AV 那一半 | 同样的理由。数据治理那一半才是真缺口，现在建在 [`labs/transcript-retention/`](../../../cross-cutting/labs/transcript-retention/)；AV 那一半留在这里。 |
 
 ## 这份清单在告诉你什么

@@ -7,6 +7,8 @@ summary: "Check a box when you can do it and explain the failure modes."
 ---
 # OpenStack — Admin Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/openstack/skills-map.md)
+
 A checkable competency list. Tiers:
 
 - **Core** — you cannot administer OpenStack without this.

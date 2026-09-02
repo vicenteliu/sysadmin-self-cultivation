@@ -92,7 +92,7 @@ vSphere 里的身份，就是[最小权限](../../cross-cutting/identity-iam.md)
 和一朵云不同（[`the-stack/07`](../../the-stack/07-security.md)），这里没有厂商。那些物理主机、
 那些存储、那个网络、那个 hypervisor，**以及**那些 VM，全都是你的 —— 硬件故障是你的传呼，
 而那个房间的安全是你的活。vSphere 改变的是你怎么**调度**硬件；它从不改变谁去**换那条内存**。
-那就是 [self-host](../../../../platforms/self-host/README.md) 那条真相，往上一层抽象。
+那就是 [self-host](../self-host/README.md) 那条真相，往上一层抽象。
 
 ## 一份参考架构 —— 那些面怎么组合起来
 

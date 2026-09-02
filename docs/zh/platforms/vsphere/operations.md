@@ -43,7 +43,7 @@ summary: "README 是 vSphere 是什么；architecture 是它怎么组织；这�
   ＝ 超配）、**内存 ballooning / 交换**（主机内存压力）、**datastore 延迟**（存储争用）。
   "慢"不是一个诊断；那个计数器才是。
 - **一台死掉的主机** —— 硬件故障在这里是你的传呼，不是某个厂商的；备件和一条重建路径是那门
-  [self-host](../../../../platforms/self-host/README.md) 纪律，往上一层。
+  [self-host](../self-host/README.md) 纪律，往上一层。
 - **那个被遗忘的快照** —— 快照不是备份，而且它们会长；一台被留在快照上好几周的 VM，是一次正在等着
   发生的性能与 datastore 空间故障。
 

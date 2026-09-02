@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 352,
+  "count": 364,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2351,6 +2351,181 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/oci/support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/openstack/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio.",
+      "language": "zh",
+      "mirrors": "platforms/openstack/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/openstack/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "How to get to competent-to-reason on OpenStack fast — and an honest line about where AI stops.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/openstack/ai-ramp.md",
+      "derived": true
+    },
+    "docs/zh/platforms/openstack/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "The README mapped OpenStack onto the seven surfaces — what the components are.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/openstack/architecture.md",
+      "derived": true
+    },
+    "docs/zh/platforms/openstack/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "architecture is how OpenStack is structured; operations is what running it looks like.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/openstack/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/openstack/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "The README is what OpenStack is; architecture is how it's structured; this note is what running it looks like — and here the day-2 story has a twist no managed cloud has: you operate the control…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/openstack/operations.md",
+      "derived": true
+    },
+    "docs/zh/platforms/openstack/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "Check a box when you can do it and explain the failure modes.",
+      "language": "zh",
+      "mirrors": "platforms/openstack/skills-map.md",
+      "derived": true
+    },
+    "docs/zh/platforms/self-host/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio.",
+      "language": "zh",
+      "mirrors": "platforms/self-host/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/self-host/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Like the vSphere note, this one is inverted: self-hosting is a strength, not a gap, so AI's job isn't to teach the platform — it's to accelerate the software glue, and to stay entirely out of the…",
+      "language": "zh",
+      "mirrors": "platforms/self-host/ai-ramp.md",
+      "derived": true
+    },
+    "docs/zh/platforms/self-host/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "The README mapped self-hosting onto the seven surfaces — what you run.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/self-host/architecture.md",
+      "derived": true
+    },
+    "docs/zh/platforms/self-host/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "architecture is how a bare-metal estate is structured; operations is what running it looks like.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/self-host/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/self-host/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "The README is what self-hosting is; architecture is how it's structured; this note is what running it actually looks like — the brief, what pages you (hardware, at fleet scale, constantly), the ops…",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "platforms/self-host/operations.md",
+      "derived": true
+    },
+    "docs/zh/platforms/self-host/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Check a box when you can do it and explain the failure modes.",
+      "language": "zh",
+      "mirrors": "platforms/self-host/skills-map.md",
       "derived": true
     },
     "docs/zh/platforms/vsphere/README.md": {

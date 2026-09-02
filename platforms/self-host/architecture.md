@@ -8,6 +8,8 @@ summary: "The README mapped self-hosting onto the seven surfaces — what you ru
 ---
 # Self-Hosted / Bare Metal — Understanding the Architecture
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/self-host/architecture.md)
+
 > The [README](README.md) mapped self-hosting onto the seven surfaces — *what you
 > run.* This note is the layer up: *how a bare-metal estate is structured*, because
 > here **you design the architecture the clouds hand everyone else** — the failure
