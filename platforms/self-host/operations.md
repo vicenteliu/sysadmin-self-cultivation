@@ -97,6 +97,23 @@ flowchart LR
   Read every one as if you're running it as root, because you are
   ([`foundations/`](../../foundations/)).
 
+## Lab — RAID buys you time, and the rebuild is when you spend it ✅ runnable
+
+**Put arithmetic under the first bullet above.** A pure-local, stdlib-only drill that
+computes every clause of it from the vendors' own numbers: a mirror replicates an `rm`,
+a 20 TB disk is a 37-hour rebuild, ten thousand arrays at 2% AFR lose 1.5 of them a
+year to a second failure inside that window when the disks are on order and 0.5 when
+the shelf is stocked, a RAID 5 rebuild on 20 TB disks expects a read error on a
+survivor, and RAID 6 bounds the whole thing by a thousand — *spares as consumables*,
+priced.
+
+```bash
+python3 platforms/self-host/labs/raid-buys-time/raid_drill.py
+```
+
+Exit `0` means the five lessons held (it doubles as a CI check). See
+[`labs/raid-buys-time/`](labs/raid-buys-time/).
+
 ## Honest boundaries
 
 🔨 **hands-on depth — the deepest root, and this note is the fleet work written down.**

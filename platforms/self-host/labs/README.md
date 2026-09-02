@@ -111,6 +111,26 @@ draws, felt in your hands. Pair this with the runnable
 
 ---
 
+## Beyond the arc — a pure-local drill
+
+The three-run arc above needs a laptop with nested virtualization. One more lab needs
+**nothing** — a pure-local, stdlib-only, self-verifying drill tied to the
+[operations note](../operations.md):
+
+### `raid-buys-time/` — RAID buys you time ✅ built (pure-local)
+
+The arithmetic under the third run: a mirror replicates an `rm`, the rebuild window
+scales with the disk, at fleet scale the second failure inside that window is an annual
+event whose larger half is the swap lead time, a RAID 5 rebuild on today's disk sizes
+expects a read error on a survivor, and RAID 6 bounds it by a thousand. See
+**[`raid-buys-time/`](raid-buys-time/)**.
+
+```bash
+python3 raid-buys-time/raid_drill.py   # exit 0 = the lessons held; runs in CI
+```
+
+---
+
 Honest note: this is the 🔨 platform — the deepest root. These labs are the fleet work
 written down, and they're the most reproducible in the repo because they need nothing
 but a laptop.

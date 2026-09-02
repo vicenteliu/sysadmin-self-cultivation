@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 411,
+  "count": 413,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2910,6 +2910,21 @@
       "mirrors": "platforms/self-host/labs/README.md",
       "derived": true
     },
+    "docs/zh/platforms/self-host/labs/raid-buys-time/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "RAID buys you the time to swap, and the rebuild is when you spend it: a mirror replicates an rm, a 20 TB disk is a 37-hour bet, at fleet scale the second failure inside that window is an annual event, on today's sizes RAID 5's second failure is a read error, and RAID 6 bounds it by a thousand.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "platforms/self-host/labs/raid-buys-time/README.md",
+      "derived": true
+    },
     "docs/zh/platforms/self-host/operations.md": {
       "kind": "companion",
       "axis": "platforms",
@@ -4196,6 +4211,18 @@
         "self-host"
       ],
       "summary": "Three guided runs on a laptop with nested virtualization — where the clouds need an account, this platform needs that laptop; the honest way to practice bare-metal discipline without a data centre.",
+      "marker": "🔨"
+    },
+    "platforms/self-host/labs/raid-buys-time/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "RAID buys you the time to swap, and the rebuild is when you spend it: a mirror replicates an rm, a 20 TB disk is a 37-hour bet, at fleet scale the second failure inside that window is an annual event, on today's sizes RAID 5's second failure is a read error, and RAID 6 bounds it by a thousand.",
       "marker": "🔨"
     },
     "platforms/self-host/operations.md": {

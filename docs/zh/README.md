@@ -83,7 +83,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 197 篇；**英文树的每一篇文档现在都有中文镜像** —— 根目录、`build-out/`、`the-stack/`、`cross-cutting/`、`docs/adr/`、`docs/questions/`、`endpoint/`、`foundations/`、`toolbox/`、`platforms/` 全部七个平台目录，以及各处的 lab README），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 198 篇；**英文树的每一篇文档现在都有中文镜像** —— 根目录、`build-out/`、`the-stack/`、`cross-cutting/`、`docs/adr/`、`docs/questions/`、`endpoint/`、`foundations/`、`toolbox/`、`platforms/` 全部七个平台目录，以及各处的 lab README），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
@@ -98,7 +98,7 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 目前共三篇走读，播放在同一张可平移、缩放、点击的二维楼面上：**01 · 网络**（[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍）、**02 · 第一个星期一**（[中文](../../walkthrough/02-the-first-monday.zh.md) · [EN](../../walkthrough/02-the-first-monday.en.md)，93 拍）与 **03 · 它坏掉的那一天**（[中文](../../walkthrough/03-the-day-it-breaks.zh.md) · [EN](../../walkthrough/03-the-day-it-breaks.en.md)，102 拍）；稿子放在仓库里，音频不放 |
 | ✅ | **浏览器与检索** | [`site/`](site/README.md) —— 全文搜索，零安装：`python3 site/serve.py` 或 `docker compose -f site/docker-compose.yml up` · [`docs/index.json`](../index.json) —— 每个文件一条记录，给 agent 用 |
 
-**二十七个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，其中二十三个还带一个
+**二十八个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，其中二十四个还带一个
 `--break-it` 开关，换上*标准*做法，让你看着它失败。`labs/` 下另有两个目录需要一个真实的云账号，
 所以按 [`CONTEXT.md`](CONTEXT.md) 的定义它们是可跑的练习而不是 lab：`check.py` 每次运行都把两个都
 点名，而不是把它们算进来 —— 一个声明了依赖，另一个没有可以跑的脚本。
@@ -114,11 +114,11 @@ AI-ramp · 一条**三节的 CLI arc**，都是 guided run），而且**七个�
 | **[OCI](platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ | 3 节（`oci`） | [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account) | 🧭 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ · 另有 [vCenter 与 Proxmox 中文镜像](platforms/vsphere/vcenter-and-proxmox.md) | ✅ | 3 节（PowerCLI） | [n-plus-one](platforms/vsphere/labs/n-plus-one-decays) | **🔨 亲手做过**（VCP6-DCV/NV） |
 | **[OpenStack](platforms/openstack/)** | ✅ | ✅ | 3 节（`openstack` / DevStack） | [control-plane](platforms/openstack/labs/the-cloud-is-down-the-vms-are-up) | 🧭 ramp（KVM 相邻 🔨） |
-| **[self-host / 裸机](platforms/self-host/)** | ✅ | ✅ | 3 节（virsh / ipmitool / ansible） | —— | **🔨 亲手做过**（10万+ 机群） |
+| **[self-host / 裸机](platforms/self-host/)** | ✅ | ✅ | 3 节（virsh / ipmitool / ansible） | [raid-buys-time](platforms/self-host/labs/raid-buys-time) | **🔨 亲手做过**（10万+ 机群） |
 
 七个里两个标 **🔨 亲手做过**（vSphere 和 self-host —— 生产实战，不是 ramp）；其余是诚实的 🧭 ramp。这些 run 刻意**命令行优先**：命令行更快、更精确、可复现、可审查 —— 而且是你自动化用的同一个界面。
 
-**七条 arc 全部作为 guided run 写完** —— AWS 01–02 带代码，其余是规格 —— 而 guided run 不是 lab：没有任何东西能断言你做过，所以一个都不算作 lab。lab，也就是自验证的那种，单独占一列：四个公有云各一个，vSphere 和 OpenStack 各一个，self-host 还没有。写好的 run 只是一个计划，而本页第二段立的那条规矩，首先适用于仓库对自己的声明。
+**七条 arc 全部作为 guided run 写完** —— AWS 01–02 带代码，其余是规格 —— 而 guided run 不是 lab：没有任何东西能断言你做过，所以一个都不算作 lab。lab，也就是自验证的那种，单独占一列：七个平台各一个，每一个都挂在教它那条教训的那篇笔记上。写好的 run 只是一个计划，而本页第二段立的那条规矩，首先适用于仓库对自己的声明。
 
 **Agent Skills** —— 仓库自带十个 [`.claude/skills/`](../../.claude/skills/)。七个把方法论变成可调用的 AI 工作流：**platform-ramp**（诚实地上手任何平台）、**honesty-audit**（把声明分类 🔨/🧭/过度声明）、**author-module**（用仓库的声音写新章，含 **support note**、有据可查）、**runnable-lab**（把概念做成自验证 drill）、**diagram-module**（判断一篇文档该不该配图、配什么图，并让派生产物保持同步）、**mirror-zh**（把文档镜像成 `docs/zh/` 中文）、**interview-drill**（按面试官的方式把它问回来）。另外三个是**使用者侧**的 —— **linux-triage**、**harden-baseline**、**toolbox-picker** 把[工具箱](toolbox/)包装成 AI agent 能替你驱动的形态：新机器上装一个，一句话跑完一次分诊、或整个 audit→remediate 闭环。
 
