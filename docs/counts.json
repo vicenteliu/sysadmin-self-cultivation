@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "note": "Every count this repo's prose states about itself, and the phrasings that carry it. check.py computes each kind from disk (the truth for each name lives in its TRUTHS table) and fails any stated number that disagrees. A number on a front page is a claim, and a claim no kind here anchors is a claim nothing checks — so a front page states only the kinds in this file, and a new kind is added here first. {NUM} matches a digit string or a number word in either language; {NUM_EN} is the same with a left word boundary, for English. A pattern must anchor to its noun, so that a number in a spoken script is never read as inventory, and every kind carries examples that check.py proves its patterns match — a table that cannot check itself is ADR-0008's failure with extra steps. Kept as data because it changes every time a document lands, and check.py --list prints it.",
+  "kinds": [
+    {
+      "name": "walkthroughs",
+      "patterns": ["{NUM_EN}\\s+walkthroughs\\b", "(?:共|目前|已有)\\s*{NUM}\\s*篇走读"],
+      "examples": ["three walkthroughs", "目前共三篇走读"]
+    },
+    {
+      "name": "walkthrough beats",
+      "patterns": ["{NUM_EN}\\s+beats\\b", "{NUM}\\s*拍[，。 ,\\n]"],
+      "examples": ["106 beats", "106 拍，"]
+    },
+    {
+      "name": "runnable labs",
+      "patterns": ["{NUM_EN}[ -]runnable, self-verifying", "{NUM}\\s*个可跑、自验证"],
+      "examples": ["Twenty-three runnable, self-verifying labs", "二十三个可跑、自验证的 lab"]
+    },
+    {
+      "name": "the-stack labs",
+      "patterns": ["a lab under {NUM_EN} of the seven chapters", "{NUM}\\s*章带一个可跑 lab"],
+      "examples": ["a lab under six of the seven chapters", "七章里六章带一个可跑 lab"]
+    },
+    {
+      "name": "drills with a break path",
+      "patterns": ["{NUM_EN}\\s+carry a `--break-it`", "{NUM}\\s*个还带一个\\s*`--break-it`"],
+      "examples": ["nine carry a `--break-it` flag", "其中九个还带一个 `--break-it` 开关"]
+    },
+    {
+      "name": "cross-cutting notes",
+      "patterns": ["{NUM_EN}\\s+notes:\\s", "cross-cutting/\\)\\s*——\\s*{NUM}\\s*篇："],
+      "examples": ["20 notes: identity", "[`cross-cutting/`](cross-cutting/) —— 20 篇：身份"]
+    },
+    {
+      "name": "decision records",
+      "patterns": ["{NUM_EN}\\s+decisions and the options they beat", "{NUM}\\s*条决策及它们击败的选项"],
+      "examples": ["seventeen decisions and the options they beat", "十七条决策及它们击败的选项"]
+    },
+    {
+      "name": "agent skills",
+      "patterns": ["{NUM_EN}\\s+Agent Skills\\b", "自?带\\s*{NUM}\\s*个\\s*\\[?`?\\.claude/skills"],
+      "examples": ["ten Agent Skills", "仓库自带十个 [`.claude/skills/`](.claude/skills/)"]
+    },
+    {
+      "name": "build-out steps",
+      "patterns": ["\\bof\\s+{NUM_EN}\\s+steps\\b", "\\*\\*{NUM}\\s*步全部"],
+      "examples": ["16 of 16 steps written", "**16 步全部写完。**"],
+      "note": "`15 of 16 steps point at a lab` states coverage, not inventory — only the denominator is a claim about how many steps there are."
+    },
+    {
+      "name": "questions asked",
+      "patterns": ["{NUM_EN}\\s+questions across\\b", "域{NUM}问"],
+      "examples": ["30 questions across seven domains", "七域三十问"]
+    },
+    {
+      "name": "Chinese mirrors",
+      "patterns": ["docs/zh/`?\\s*目前\\s*{NUM}\\s*篇", "covers\\s+{NUM_EN}\\s+pages\\b", "{NUM_EN}\\s+Chinese mirrors\\b"],
+      "examples": ["`docs/zh/` 目前 195 篇", "covers 195 pages so far", "195 Chinese mirrors"]
+    },
+    {
+      "name": "in-document diagrams",
+      "patterns": ["{NUM_EN}\\s+in-document mermaid diagrams", "\\({NUM_EN}\\s+counting the Chinese mirrors\\)", "文档内的\\s*{NUM}\\s*张\\s*mermaid", "算上中文镜像是\\s*{NUM}\\s*张"],
+      "examples": ["109 in-document mermaid diagrams", "(217 counting the Chinese mirrors)", "文档内的 109 张 mermaid 图", "算上中文镜像是 217 张"],
+      "note": "ADR-0007's figure count was crossed three times before anyone noticed; this and the next kind are the two numbers that move every time a document lands."
+    },
+    {
+      "name": "indexed files",
+      "patterns": ["front-matter on\\s+{NUM_EN}\\s+files", "\\({NUM_EN}\\s+records, mirrors derived\\)", "{NUM}\\s*个文件上的\\s*front-matter", "（{NUM}\\s*条记录，镜像标 derived）"],
+      "examples": ["front-matter on 379 files", "(407 records, mirrors derived)", "379 个文件上的 front-matter", "（407 条记录，镜像标 derived）"]
+    }
+  ]
+}

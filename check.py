@@ -14,7 +14,10 @@ same failure ADR-0008 records about a bound written as a count.
 
 Two groups here guard the prose. **Nothing in this repo checked its own internal links**,
 and nothing checked the numbers the prose states about itself — see the counts section
-below for what that cost.
+below for what that cost. The kinds of number it checks, and the phrasings that carry
+them, are data: `docs/counts.json`. A front page states only those kinds, and a new
+kind is added there first — a number no kind anchors is a number nothing checks, which
+is how four went stale on the front door while this check stayed green.
 Every other check guards a generated artifact against its source; this one guards
 the prose against itself, which is where a repo of cross-references actually rots
 — a heading gets reworded, forty anchors go stale, and each one is invisible until
@@ -347,6 +350,11 @@ def check_mirror_links():
 # stale — it can only go missing — which is why the fix that accompanies this check
 # makes each index document *state* how many walkthroughs there are.
 #
+# The patterns lived here as code until the front door was found stating four numbers
+# in phrasings none of them anchored — "covers 27 pages", "17 notes", "two runnable
+# labs", "most carry --break-it" — and the check stayed green for weeks. They are now
+# `docs/counts.json`, where `--list` prints them and a new kind is added first.
+#
 # The stricter rule was tried and rejected: *a document that links one walkthrough
 # must link them all*. It catches the omission directly and needs no stated number,
 # but it fires on four documents that are right — ADR-0013 cites walkthrough 01
@@ -508,64 +516,124 @@ def indexed_files():
     return with_fm, n
 
 
-def counted_things():
-    """(name, what disk says, [patterns that find the claim in prose]).
+COUNTS = "docs/counts.json"
+# chars before a number token in which a pattern's prefix may sit. Every pattern is a
+# few words around {NUM}; the bound is asserted when the table loads.
+WINDOW = 80
+TOKEN_RE = re.compile(NUM)
 
-    A pattern must anchor to the noun. `二十个` alone appears in a spoken script
-    about people; `二十个可跑` is a claim about this repo."""
+
+def truths():
+    """What disk says for each kind in docs/counts.json — a set, because some claims
+    are legitimately either of two numbers (with and without the mirrors)."""
     beats = walkthrough_beats()
-    rows = question_rows()
-    return [
-        ("walkthroughs", {len(_glob("walkthrough/[0-9]*-*.en.md"))},
-         [NUM_EN + r"\s+walkthroughs\b", r"(?:共|目前|已有)\s*" + NUM + r"\s*篇走读"]),
-        ("walkthrough beats", set(beats.values()) | {sum(beats.values())},
-         [NUM_EN + r"\s+beats\b", NUM + r"\s*拍[，。 ,\n]"]),
-        ("runnable labs", {len(find_labs())},
-         [NUM_EN + r"[ -]runnable, self-verifying", NUM + r"\s*个可跑、自验证"]),
-        ("agent skills", {len(_glob(".claude/skills/*/SKILL.md"))},
-         [NUM_EN + r"\s+Agent Skills\b", r"自?带\s*" + NUM + r"\s*个\s*\[?`?\.claude/skills"]),
-        # `15 of 16 steps point at a lab` states coverage, not inventory — only the
-        # denominator is a claim about how many steps there are.
-        ("build-out steps", {len(_glob("build-out/[0-9]*.md"))},
-         [r"\bof\s+" + NUM_EN + r"\s+steps\b", r"\*\*" + NUM + r"\s*步全部"]),
-        ("questions asked", {len(rows)},
-         [NUM_EN + r"\s+questions across\b", r"域" + NUM + r"问"]),
-        ("Chinese mirrors", {len(_glob("docs/zh/**/*.md"))},
-         [r"docs/zh/`?\s*目前\s*" + NUM + r"\s*篇"]),
-        # ADR-0007's figure count was crossed three times before anyone noticed, so
-        # the two numbers that move every time a document lands are checked here.
-        ("in-document diagrams", set(diagram_counts()),
-         [NUM_EN + r"\s+in-document mermaid diagrams",
-          r"\(" + NUM_EN + r"\s+counting the Chinese mirrors\)",
-          r"文档内的\s*" + NUM + r"\s*张\s*mermaid",
-          r"算上中文镜像是\s*" + NUM + r"\s*张"]),
-        ("indexed files", set(indexed_files()),
-         [r"front-matter on\s+" + NUM_EN + r"\s+files",
-          r"\(" + NUM_EN + r"\s+records, mirrors derived\)",
-          NUM + r"\s*个文件上的\s*front-matter",
-          r"（" + NUM + r"\s*条记录，镜像标 derived）"]),
-    ]
+    labs = find_labs()
+    return {
+        "walkthroughs": {len(_glob("walkthrough/[0-9]*-*.en.md"))},
+        "walkthrough beats": set(beats.values()) | {sum(beats.values())},
+        "runnable labs": {len(labs)},
+        "the-stack labs": {sum(1 for _, argv in labs if argv[0].startswith("the-stack/labs/"))},
+        "drills with a break path": {sum(1 for _, argv in labs if "--break-it" in read(argv[0]))},
+        "cross-cutting notes": {sum(1 for p in _glob("cross-cutting/*.md")
+                                    if not p.endswith("/README.md"))},
+        "decision records": {len(_glob("docs/adr/[0-9]*.md"))},
+        "agent skills": {len(_glob(".claude/skills/*/SKILL.md"))},
+        "build-out steps": {len(_glob("build-out/[0-9]*.md"))},
+        "questions asked": {len(question_rows())},
+        "Chinese mirrors": {len(_glob("docs/zh/**/*.md"))},
+        "in-document diagrams": set(diagram_counts()),
+        "indexed files": set(indexed_files()),
+    }
+
+
+class Claim:
+    """One phrasing that states a count: the pattern as written, and the same pattern
+    split at its {NUM} into the prefix that must end where a number token starts and
+    the suffix that must begin where it ends. The split is what makes the scan cheap —
+    see check_counts."""
+
+    def __init__(self, src):
+        self.src = src
+        self.full = re.compile(src.replace("{NUM_EN}", NUM_EN).replace("{NUM}", NUM))
+        marker = "{NUM_EN}" if "{NUM_EN}" in src else "{NUM}"
+        pre, post = src.split(marker, 1)
+        if marker == "{NUM_EN}":
+            pre += r"(?<![A-Za-z-])"
+        self.prefix = re.compile("(?:" + pre + r")\Z")
+        self.suffix = re.compile(post)
+
+
+def count_kinds():
+    """[(name, truth, [Claim], [examples])] from docs/counts.json, or raises with the
+    reason the table cannot be trusted. The table and the truths must name the same
+    kinds, every pattern must carry exactly one {NUM}, and every example must match."""
+    with open(os.path.join(ROOT, COUNTS), encoding="utf-8") as fh:
+        table = json.load(fh)["kinds"]
+    disk = truths()
+    names = [k["name"] for k in table]
+    if set(names) != set(disk) or len(names) != len(set(names)):
+        raise ValueError(f"{COUNTS} names {sorted(names)} but check.py can measure "
+                         f"{sorted(disk)} — the two lists must agree")
+    out = []
+    for kind in table:
+        claims = []
+        for src in kind["patterns"]:
+            if src.count("{NUM") != 1:
+                raise ValueError(f"{COUNTS}: {kind['name']!r} pattern {src!r} must carry "
+                                 f"exactly one {{NUM}} or {{NUM_EN}}")
+            if len(src.replace("{NUM_EN}", "").replace("{NUM}", "")) > WINDOW // 2:
+                raise ValueError(f"{COUNTS}: {kind['name']!r} pattern {src!r} is longer than "
+                                 f"the search window allows")
+            claims.append(Claim(src))
+        for example in kind.get("examples", []):
+            m = next((m for c in claims for m in [c.full.search(example)] if m), None)
+            if m is None:
+                raise ValueError(f"{COUNTS}: {kind['name']!r} example {example!r} matches "
+                                 f"none of its patterns")
+            as_int(m.group(1))
+        out.append((kind["name"], disk[kind["name"]], claims, kind.get("examples", [])))
+    return out
 
 
 def check_counts():
     problems = check_questions_ledger()
-    compiled = [(name, truth, [re.compile(p) for p in pats])
-                for name, truth, pats in counted_things()]
+    try:
+        kinds = count_kinds()
+    except ValueError as e:
+        return problems + [str(e)]
+    # Every pattern is prefix + number + suffix, so a match can only sit on a number
+    # token. Find the tokens once per file, test every suffix at each token's end with
+    # one combined regex (most tokens are dates and table cells and fail it at once),
+    # and only then test the prefix and confirm with the whole pattern. Thirty patterns
+    # opening with a fifty-way alternation were each scanning the whole corpus before,
+    # and that was the entire runtime of this check.
+    claims = [(name, truth, c) for name, truth, cs, _ in kinds for c in cs]
+    any_suffix = re.compile("|".join(f"(?:{c.suffix.pattern})" for _, _, c in claims))
     for rel in markdown_files():
         # Blank the fences instead of removing them, or every line number after the
         # first code block is a lie.
         blanked = FENCED_BLOCK_RE.sub(lambda m: "\n" * m.group(0).count("\n"), read(rel))
-        for name, truth, rxs in compiled:
-            for rx in rxs:
-                for m in rx.finditer(blanked):
-                    said = as_int(m.group(1))
-                    if said in truth:
-                        continue
-                    want = " or ".join(str(v) for v in sorted(truth))
-                    line = blanked[:m.start()].count("\n") + 1
-                    problems.append(
-                        f"{rel}:{line}: says {name} = {said}, disk says {want}"
-                        f"   — “{m.group(0).strip()}”")
+        for tok in TOKEN_RE.finditer(blanked):
+            s, e = tok.span()
+            if not any_suffix.match(blanked, e):
+                continue
+            for name, truth, c in claims:
+                if not c.suffix.match(blanked, e):
+                    continue
+                pre = c.prefix.search(blanked, max(0, s - WINDOW), s)
+                if pre is None:
+                    continue
+                m = c.full.match(blanked, pre.start())
+                if m is None:
+                    continue
+                said = as_int(m.group(1))
+                if said in truth:
+                    continue
+                want = " or ".join(str(v) for v in sorted(truth))
+                line = blanked[:m.start()].count("\n") + 1
+                problems.append(
+                    f"{rel}:{line}: says {name} = {said}, disk says {want}"
+                    f"   — “{m.group(0).strip()}”")
     return sorted(problems)
 
 
@@ -628,9 +696,11 @@ def main():
                 continue
             if g == "counts":
                 print("  the questions ledger, against the domain files")
-                for name, truth, _ in counted_things():
+                print(f"  the kinds in {COUNTS}, each with the phrasings that state it:")
+                for name, truth, _, examples in count_kinds():
                     print(f"  {name:<28} disk says "
-                          f"{' or '.join(str(v) for v in sorted(truth))}")
+                          f"{' or '.join(str(v) for v in sorted(truth))}"
+                          f"   — {' · '.join(f'“{e}”' for e in examples)}")
                 continue
             if g == "toolbox":
                 py, sh = script_files()
@@ -677,7 +747,7 @@ def main():
                 if len(problems) > 20:
                     print(f"      … and {len(problems) - 20} more")
             else:
-                n = len(counted_things())
+                n = len(count_kinds())
                 print(f"  ✓ stated counts                {n} kinds agree with disk"
                       f"   ({time.time() - t0:.1f}s)")
             continue

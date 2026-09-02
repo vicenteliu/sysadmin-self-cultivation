@@ -20,6 +20,12 @@ front-matter by [`build-index.py`](build-index.py) so an agent can search the re
 without walking it. The index is generated, never edited: change the file, then run
 the script. `--check` exits non-zero when it has gone stale.
 
+Beside it sits [`counts.json`](counts.json) — every count the prose states about
+itself, and the phrasings that carry each one. [`check.py`](../check.py) computes each
+kind from disk and fails a stated number that disagrees. A front page states only the
+kinds listed there, and a new kind is added there first: a number no kind anchors is a
+number nothing checks.
+
 The same generated-not-edited contract covers the two files the browser at
 [`site/`](../site/README.md) reads — its titles map and its **search corpus** — and the
 twelve artifacts derived from the four hero-diagram sources. Each builder takes

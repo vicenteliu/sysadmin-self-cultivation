@@ -90,16 +90,16 @@ Every module in every axis, one page: [`CONTENTS.md`](CONTENTS.md).
 
 ## What's built
 
-Everything the [roadmap](ROADMAP.md) planned is written. What remains is more runnable
-labs — the platform lab arcs are specced well ahead of what is built, and the table below
-says which — a fuller Chinese mirror ([`docs/zh/`](docs/zh/README.md) covers 27 pages so
-far), and demand-first deepening.
+Everything the [roadmap](ROADMAP.md) planned is written, and [`docs/zh/`](docs/zh/README.md)
+mirrors every document in the English tree. What remains is more runnable labs — the
+platform lab arcs are specced well ahead of what is built, and the table below says
+which — and demand-first deepening.
 
 | | What | Where to start |
 | --- | --- | --- |
 | ✅ | **Foundations & method** | [WHY](WHY.md) · [operating model](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) |
-| ✅ | **The stack, 01→07** | [`the-stack/`](the-stack/) — seven platforms compared at every layer, + two runnable labs |
-| ✅ | **Cross-cutting & endpoint** | [`cross-cutting/`](cross-cutting/) — 17 notes: identity · IaC · CI/CD · databases · ITSM · web/TLS · mesh · incident response · security · SaaS · K8s · cost · [endpoint](endpoint/) |
+| ✅ | **The stack, 01→07** | [`the-stack/`](the-stack/) — seven platforms compared at every layer, a lab under six of the seven chapters |
+| ✅ | **Cross-cutting & endpoint** | [`cross-cutting/`](cross-cutting/) — 20 notes: identity · IaC · CI/CD · databases · ITSM · web/TLS · mesh · incident response · security · SaaS · K8s · cost · [endpoint](endpoint/) |
 | ✅ | **Skill maps** — check yourself | [networking](cross-cutting/skills-maps/networking.md) (11 sections / 63 boxes) · [identity](cross-cutting/skills-maps/identity.md) (10 / 58). An unticked **Core** box is a gap everywhere, not on one cloud |
 | ✅ | **Interview maps** — the other side | [networking](cross-cutting/interview/networking.md) (21 questions) · [identity](cross-cutting/interview/identity.md) (19), paired section-for-section with the skill maps ([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)) |
 | ✅ | **Support notes** — break-fix craft | For surfaces you *inherit*, not just stand up: [M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
@@ -109,7 +109,7 @@ far), and demand-first deepening.
 | ✅ | **Browser & retrieval** | [`site/`](site/README.md) — full-text search over the lot, nothing to install · [`docs/index.json`](docs/index.json) — one record per file, for an agent |
 
 **Twenty-three runnable, self-verifying labs** sit under those axes — exit `0` means the
-lesson held, and most carry a `--break-it` flag that swaps in the *standard* procedure and
+lesson held, and nine carry a `--break-it` flag that swaps in the *standard* procedure and
 shows it failing. Two directories under `labs/` need a real cloud account instead, so they
 are runnable exercises rather than labs as [`CONTEXT.md`](CONTEXT.md) defines one:
 `check.py` names the one it can see every run rather than counting it in, and the other is

@@ -88,8 +88,8 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
 | ✅ | **基础与方法** | [WHY](WHY.md) · [操作模型](00-the-operating-model.md) · [ai-workflow](ai-workflow/) · [foundations](foundations/) |
-| ✅ | **技术栈 01→07** | [`the-stack/`](the-stack/README.md) —— 每层对比七个平台，另加两个可跑 lab。中文镜像已补齐：[01 物理](the-stack/01-physical.md) · [02 网络](the-stack/02-network.md) · [03 计算与镜像](the-stack/03-compute-and-images.md) · [04 存储](the-stack/04-storage.md) · [05 平台服务](the-stack/05-platform-services.md) · [06 可观测性](the-stack/06-observability.md) · [07 安全](the-stack/07-security.md) |
-| ✅ | **横切与端点** | [`cross-cutting/`](cross-cutting/) —— 17 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](endpoint/) |
+| ✅ | **技术栈 01→07** | [`the-stack/`](the-stack/README.md) —— 每层对比七个平台，七章里六章带一个可跑 lab。中文镜像已补齐：[01 物理](the-stack/01-physical.md) · [02 网络](the-stack/02-network.md) · [03 计算与镜像](the-stack/03-compute-and-images.md) · [04 存储](the-stack/04-storage.md) · [05 平台服务](the-stack/05-platform-services.md) · [06 可观测性](the-stack/06-observability.md) · [07 安全](the-stack/07-security.md) |
+| ✅ | **横切与端点** | [`cross-cutting/`](cross-cutting/) —— 20 篇：身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 服务网格 · 事件响应 · 与安全协作 · SaaS · K8s · 成本 · [endpoint](endpoint/) |
 | ✅ | **技能图** —— 自查用 | [网络](cross-cutting/skills-maps/networking.md)（11 节 / 63 个框）· [身份](cross-cutting/skills-maps/identity.md)（10 / 58）。一个没勾上的 **Core** 框是处处都缺，不是只缺在某一朵云 |
 | ✅ | **面试图** —— 桌子的另一侧 | [网络](cross-cutting/interview/networking.md)（21 题）· [身份](cross-cutting/interview/identity.md)（19 题），与技能图逐节对应（[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)） |
 | ✅ | **Support 笔记** —— break-fix 手艺 | 面向你*接手*而非只是搭起来的平台：[M365](cross-cutting/m365-support.md) · [AWS](platforms/aws/support.md) · [Azure](platforms/azure/support.md) · [GCP](platforms/gcp/support.md) · [OCI](platforms/oci/support.md) · [Terraform](cross-cutting/terraform-support.md) · [Kubernetes](cross-cutting/kubernetes-support.md) · [multi-cloud](cross-cutting/multi-cloud-support.md) |
@@ -98,7 +98,7 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 目前共三篇走读，播放在同一张可平移、缩放、点击的二维楼面上：**01 · 网络**（[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍）、**02 · 第一个星期一**（[中文](../../walkthrough/02-the-first-monday.zh.md) · [EN](../../walkthrough/02-the-first-monday.en.md)，93 拍）与 **03 · 它坏掉的那一天**（[中文](../../walkthrough/03-the-day-it-breaks.zh.md) · [EN](../../walkthrough/03-the-day-it-breaks.en.md)，102 拍）；稿子放在仓库里，音频不放 |
 | ✅ | **浏览器与检索** | [`site/`](site/README.md) —— 全文搜索，零安装：`python3 site/serve.py` 或 `docker compose -f site/docker-compose.yml up` · [`docs/index.json`](../index.json) —— 每个文件一条记录，给 agent 用 |
 
-**二十三个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，多数还带一个
+**二十三个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，其中九个还带一个
 `--break-it` 开关，换上*标准*做法，让你看着它失败。`labs/` 下另有两个目录需要一个真实的云账号，
 所以按 [`CONTEXT.md`](CONTEXT.md) 的定义它们是可跑的练习而不是 lab：`check.py` 每次运行都点名它
 看得见的那一个，而不是把它算进来；另一个是 Terraform，它没有脚本可以让 `check.py` 注意到。
