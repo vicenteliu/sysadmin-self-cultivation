@@ -59,6 +59,20 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 
 ## 怎么读
 
+**如果你只想要一条路，第一个小时是这样的。** 五步，每一步都带着它为什么排在这里的理由：
+
+1. [`WHY.md`](WHY.md) —— 三分钟；其余一切所立足的那句主张：工具知识现在便宜了，判断力没有。
+2. [`00-the-operating-model.md`](00-the-operating-model.md) —— 五分钟；每个平台都能约化成的三个
+   动作和七个面。
+3. [`platforms/aws/README.md`](platforms/aws/README.md) —— 十分钟；那副骨架在完整样板上填过一遍。
+4. 跑一个 lab，再把它弄坏 —— 十分钟：
+   `python3 cross-cutting/labs/permission-sprawl/sprawl_drill.py`，然后同一条命令加上
+   `--break-it`。先 exit `0`，再 exit `1`：这里每一个 lab 都是这样证明自己会失败的。
+5. [`cross-cutting/skills-maps/identity.md`](cross-cutting/skills-maps/identity.md) —— 二十分钟；
+   勾出你*能做、并且能讲清失败模式*的那些。没勾上的 Core 格子，就是接下来该读什么的地图。
+
+之后，下面这张表就是你带着任何问题来时的入口。
+
 | 我想…… | 从这里开始 |
 | --- | --- |
 | **看整体形状** | [`CONTENTS.md`](CONTENTS.md) —— 每个模块、六条轴，一页看全 |

@@ -269,6 +269,12 @@ EVPN-VXLAN 织构，都是用上面那套方法 ramp 出来的 —— 扎实的�
 3. **那次演练：** 把每一个都用四种方式弄坏（干掉一条路由、挡住一条回程路径、投毒 DNS、掐死
    MTU），然后只用那把调试阶梯去修 —— 不许猜。
 
+## 每个平台把这一层放在哪里
+
+这一章负责对比；平台目录负责运维。七个中的任何一个，结构在它的 `architecture.md` 里，day-2 的活
+在它的 `operations.md` 里：[AWS](../platforms/aws/architecture.md) · [Azure](../platforms/azure/architecture.md) · [GCP](../platforms/gcp/architecture.md) · [OCI](../platforms/oci/architecture.md) · [vSphere](../platforms/vsphere/architecture.md) · [OpenStack](../platforms/openstack/architecture.md) · [self-host](../platforms/self-host/architecture.md) —— 同样七个在 [`platforms/`](../platforms/) 下面还有
+operations 和 automation 两篇配套。
+
 ## 这一章一屏看完
 
 ```mermaid

@@ -257,6 +257,12 @@ tracing，尤其是 **SLI/SLO/错误预算工程** —— 用上面那套方法�
 3. 定义一个 **SLO** 和一条挂在它上面的**基于症状的告警**；然后故意把错误预算烧穿，看着那条
    告警触发 —— 并证明你的监控是从它所盯的那个东西*外面*报出来的。
 
+## 每个平台把这一层放在哪里
+
+这一章负责对比；平台目录负责运维。七个中的任何一个，结构在它的 `architecture.md` 里，day-2 的活
+在它的 `operations.md` 里：[AWS](../platforms/aws/architecture.md) · [Azure](../platforms/azure/architecture.md) · [GCP](../platforms/gcp/architecture.md) · [OCI](../platforms/oci/architecture.md) · [vSphere](../platforms/vsphere/architecture.md) · [OpenStack](../platforms/openstack/architecture.md) · [self-host](../platforms/self-host/architecture.md) —— 同样七个在 [`platforms/`](../platforms/) 下面还有
+operations 和 automation 两篇配套。
+
 ## 这一章一屏看完
 
 ```mermaid

@@ -2159,7 +2159,7 @@
       "axis": "platforms",
       "themes": [],
       "platforms": [],
-      "summary": "One folder per platform. Every module follows the same four-part template so you can move between them without re-learning how to read…",
+      "summary": "One folder per platform. Every module carries the same file set — README, skills map, AI-ramp, the architecture · operations · automation trio, a support note for the public clouds, and labs/ — so you can move between them without re-learning how to read them.",
       "language": "zh",
       "mirrors": "platforms/README.md",
       "derived": true
@@ -3618,7 +3618,7 @@
       "axis": "platforms",
       "themes": [],
       "platforms": [],
-      "summary": "One folder per platform. Every module follows the same four-part template so you can move between them without re-learning how to read…"
+      "summary": "One folder per platform. Every module carries the same file set — README, skills map, AI-ramp, the architecture · operations · automation trio, a support note for the public clouds, and labs/ — so you can move between them without re-learning how to read them."
     },
     "platforms/aws/README.md": {
       "kind": "index",

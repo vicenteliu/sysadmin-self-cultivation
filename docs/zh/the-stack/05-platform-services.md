@@ -210,6 +210,12 @@ Autonomous DB**：你认识的那个引擎（Postgres、MySQL），而备份、�
 3. **那次演练：** 给两套部署在 10 倍和 100 倍流量下的成本建模，找出那个交叉点，并写下那一段
    你愿意对着一位架构师去辩护的自建-与-租建议 —— 那才是这一层真正的交付物。
 
+## 每个平台把这一层放在哪里
+
+这一章负责对比；平台目录负责运维。七个中的任何一个，结构在它的 `architecture.md` 里，day-2 的活
+在它的 `operations.md` 里：[AWS](../platforms/aws/architecture.md) · [Azure](../platforms/azure/architecture.md) · [GCP](../platforms/gcp/architecture.md) · [OCI](../platforms/oci/architecture.md) · [vSphere](../platforms/vsphere/architecture.md) · [OpenStack](../platforms/openstack/architecture.md) · [self-host](../platforms/self-host/architecture.md) —— 同样七个在 [`platforms/`](../platforms/) 下面还有
+operations 和 automation 两篇配套。
+
 ## 这一章一屏看完
 
 ```mermaid

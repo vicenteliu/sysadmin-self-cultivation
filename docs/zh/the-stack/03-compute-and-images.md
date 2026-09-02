@@ -200,6 +200,12 @@ Packer 作为一个具体工具（它所编码的那门**纪律**是 🔨；工�
 3. **那次演练：** 破坏那个镜像（一条坏的 fstab 条目），看着它启动失败，然后只用串口控制台和
    救援模式恢复它 —— 那份 BMC 的肌肉，云上版。
 
+## 每个平台把这一层放在哪里
+
+这一章负责对比；平台目录负责运维。七个中的任何一个，结构在它的 `architecture.md` 里，day-2 的活
+在它的 `operations.md` 里：[AWS](../platforms/aws/architecture.md) · [Azure](../platforms/azure/architecture.md) · [GCP](../platforms/gcp/architecture.md) · [OCI](../platforms/oci/architecture.md) · [vSphere](../platforms/vsphere/architecture.md) · [OpenStack](../platforms/openstack/architecture.md) · [self-host](../platforms/self-host/architecture.md) —— 同样七个在 [`platforms/`](../platforms/) 下面还有
+operations 和 automation 两篇配套。
+
 ## 这一章一屏看完
 
 ```mermaid

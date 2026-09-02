@@ -272,6 +272,13 @@ understood architecturally, not run in production — the control-plane-as-produ
 warning comes from the platform-operations experience that *is* 🔨, applied to
 OpenStack's design.
 
+## Where each platform keeps this layer
+
+This chapter compares; the platform folders operate. For any one of the seven, the
+structure is in its `architecture.md` and the day-2 work in its `operations.md`:
+[AWS](../platforms/aws/architecture.md) · [Azure](../platforms/azure/architecture.md) · [GCP](../platforms/gcp/architecture.md) · [OCI](../platforms/oci/architecture.md) · [vSphere](../platforms/vsphere/architecture.md) · [OpenStack](../platforms/openstack/architecture.md) · [self-host](../platforms/self-host/architecture.md) — and the same seven under [`platforms/`](../platforms/) for the operations
+and automation companions.
+
 ## The chapter on one screen
 
 ```mermaid

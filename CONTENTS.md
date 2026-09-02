@@ -21,7 +21,7 @@ remains is more runnable labs and deepening.
 The map of these six is on the [front door](README.md#the-shape); this page is the
 detail underneath it.
 
-| # | Axis | Read it when you want to… |
+| # | Axis — and the two routes and one fixture that are not axes | Read it when you want to… |
 | --- | --- | --- |
 | **I** | **Start here** | understand the philosophy and the method |
 | **II** | **Foundations** | shore up the Linux + scripting base |
@@ -29,6 +29,9 @@ detail underneath it.
 | **IV** | **Platforms** | operate one platform end to end |
 | **V** | **Cross-cutting** | learn a transferable skill |
 | **VI** | **Toolbox** | take runnable, agent-callable tools with you |
+| — | **Route: [`build-out/`](build-out/)** | walk one hundred-person office from uplink to open-for-business, in order |
+| — | **Route: [`walkthrough/`](walkthrough/README.md)** | hear the same office told out loud, over its floor |
+| — | **Fixture: [`the-reference-office.md`](the-reference-office.md)** | look up the parameters both routes and four labs reason against — not an axis, not a route ([ADR-0016](docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md)) |
 
 ---
 
@@ -57,7 +60,7 @@ project's most distinctive axis. See [`the-stack/`](the-stack/).
 | [`02-network`](the-stack/02-network.md) | underlay/overlay, VPC models, the egress meter, the debug ladder · **+ [lab](the-stack/labs/02-first-match-and-longest-prefix/)** | ✅ |
 | [`03-compute-and-images`](the-stack/03-compute-and-images.md) | compute shapes, the image pipeline, bake vs. fry, cloud-init · **+ [lab](the-stack/labs/03-one-image-is-not-one-image/)** | ✅ |
 | [`04-storage`](the-stack/04-storage.md) | block/file/object, the backup fear · **+ [lab](the-stack/labs/04-backup-not-snapshot/)** | ✅ |
-| [`05-platform-services`](the-stack/05-platform-services.md) | containers, serverless, managed DBs, build-vs-rent | ✅ |
+| [`05-platform-services`](the-stack/05-platform-services.md) | containers, serverless, managed DBs, build-vs-rent · **no lab, by design** — build-vs-rent is a decision about your own estate, and a model of it would be a model of the assumptions you fed it | ✅ |
 | [`06-observability`](the-stack/06-observability.md) | metrics/logs/traces, SLI/SLO, OpenTelemetry · **+ [lab](the-stack/labs/06-no-data-is-not-healthy/)** | ✅ |
 | [`07-security`](the-stack/07-security.md) | shared responsibility, defense in depth, CSPM/EDR/SIEM · **+ [lab](the-stack/labs/07-detection-is-a-window/)** | ✅ |
 

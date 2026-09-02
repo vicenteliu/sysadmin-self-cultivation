@@ -67,6 +67,23 @@ Every module in every axis, one page: [`CONTENTS.md`](CONTENTS.md).
 
 ## How to read this
 
+**The first hour, if you want one path.** Five steps, each with the reason it is next:
+
+1. [`WHY.md`](WHY.md) — three minutes; the claim the rest stands on: tool knowledge is
+   cheap now, judgement is not.
+2. [`00-the-operating-model.md`](00-the-operating-model.md) — five minutes; the three
+   moves and seven surfaces every platform reduces to.
+3. [`platforms/aws/README.md`](platforms/aws/README.md) — ten minutes; the skeleton
+   filled in once, on the worked example.
+4. Run one lab, then break it — ten minutes:
+   `python3 cross-cutting/labs/permission-sprawl/sprawl_drill.py`, then the same with
+   `--break-it`. Exit `0`, then exit `1`: that is how every lab here proves it can fail.
+5. [`cross-cutting/skills-maps/identity.md`](cross-cutting/skills-maps/identity.md) —
+   twenty minutes; tick what you can *do and explain the failure modes of*. The
+   unticked Core boxes are the map of what to read next.
+
+After that, the table below is the way in for whatever question you arrive with.
+
 | I want to… | Start at |
 | --- | --- |
 | **See the whole shape** | [`CONTENTS.md`](CONTENTS.md) — every module, all six axes plus the route, one page |

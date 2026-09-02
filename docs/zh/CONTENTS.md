@@ -24,7 +24,7 @@ summary: "详细索引：每个模块是什么、住在哪。"
 
 这六条的地图在[正门](README.md)上；这一页是它底下的细节。
 
-| # | 轴 | 什么时候读它 |
+| # | 轴 —— 以及不是轴的两条路线和一个 fixture | 什么时候读它 |
 | --- | --- | --- |
 | **I** | **Start here** | 想搞懂哲学和方法 |
 | **II** | **Foundations** | 想把 Linux + 脚本的底子补牢 |
@@ -32,6 +32,9 @@ summary: "详细索引：每个模块是什么、住在哪。"
 | **IV** | **Platforms** | 想端到端地运维某一个平台 |
 | **V** | **Cross-cutting** | 想学一项可迁移的技能 |
 | **VI** | **Toolbox** | 想带走能跑、能被 agent 调用的工具 |
+| — | **路线：[`build-out/`](build-out/)** | 想按顺序把一间百人办公室从上联走到开门营业 |
+| — | **路线：[`walkthrough/`](walkthrough/README.md)** | 想听同一间办公室在它的楼面上被说出来 |
+| — | **Fixture：[`the-reference-office.md`](the-reference-office.md)** | 想查两条路线和四个 lab 都拿来推理的那些参数 —— 不是轴，不是路线（[ADR-0016](docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md)） |
 
 ---
 
@@ -60,7 +63,7 @@ summary: "详细索引：每个模块是什么、住在哪。"
 | [`02-network`](the-stack/02-network.md) | underlay/overlay、VPC 模型、出网计费表、调试阶梯 · **+ [lab](the-stack/labs/02-first-match-and-longest-prefix)** | ✅ |
 | [`03-compute-and-images`](the-stack/03-compute-and-images.md) | 计算形态、镜像流水线、bake vs fry、cloud-init · **+ [lab](the-stack/labs/03-one-image-is-not-one-image)** | ✅ |
 | [`04-storage`](the-stack/04-storage.md) | block/file/object、备份的恐惧 · **+ [lab](the-stack/labs/04-backup-not-snapshot)** | ✅ |
-| [`05-platform-services`](the-stack/05-platform-services.md) | 容器、serverless、托管数据库、自建 vs 租用 | ✅ |
+| [`05-platform-services`](the-stack/05-platform-services.md) | 容器、serverless、托管数据库、自建 vs 租用 · **没有 lab，设计如此** —— 自建 vs 租用是一个关于你自己 estate 的决定，而它的模型只会是你喂给它的那些假设的模型 | ✅ |
 | [`06-observability`](the-stack/06-observability.md) | metric/log/trace、SLI/SLO、OpenTelemetry · **+ [lab](the-stack/labs/06-no-data-is-not-healthy)** | ✅ |
 | [`07-security`](the-stack/07-security.md) | 责任共担、纵深防御、CSPM/EDR/SIEM · **+ [lab](the-stack/labs/07-detection-is-a-window)** | ✅ |
 

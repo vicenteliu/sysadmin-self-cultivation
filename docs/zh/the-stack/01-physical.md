@@ -226,6 +226,12 @@ flowchart LR
 🧭：在架构上被评估和理解过，没有在生产里跑过 —— 那句"控制面即产品"的警告，来自那份**确实是
 🔨** 的平台运维经验，被施加到 OpenStack 的设计上。
 
+## 每个平台把这一层放在哪里
+
+这一章负责对比；平台目录负责运维。七个中的任何一个，结构在它的 `architecture.md` 里，day-2 的活
+在它的 `operations.md` 里：[AWS](../platforms/aws/architecture.md) · [Azure](../platforms/azure/architecture.md) · [GCP](../platforms/gcp/architecture.md) · [OCI](../platforms/oci/architecture.md) · [vSphere](../platforms/vsphere/architecture.md) · [OpenStack](../platforms/openstack/architecture.md) · [self-host](../platforms/self-host/architecture.md) —— 同样七个在 [`platforms/`](../platforms/) 下面还有
+operations 和 automation 两篇配套。
+
 ## 这一章一屏看完
 
 ```mermaid
