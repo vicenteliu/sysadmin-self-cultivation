@@ -28,6 +28,7 @@ run it, and which conventions travel with it.
 
 ```bash
 ./generate.py --list                                    # concerns, profiles, catalog
+./generate.py --list --json                             # the catalog as JSON, for an agent
 ./generate.py --profile security-baseline --out ~/kit   # named scenario
 ./generate.py --pick triage,backup --out ./pack         # à-la-carte concerns
 ./generate.py --pick network --platform macos --out p   # platform filter

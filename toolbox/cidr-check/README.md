@@ -25,6 +25,7 @@ independently picking `10.0.0.0/16`.
 ```bash
 ./cidr-check.py 10.0.0.0/16 10.0.1.0/24 192.168.0.0/24
 ./cidr-check.py --file plan.txt      # lines: CIDR [label] · # comments ok
+./cidr-check.py --json --file plan.txt   # the same result as JSON, for an agent
 ```
 
 ```

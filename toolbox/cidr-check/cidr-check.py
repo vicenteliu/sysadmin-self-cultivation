@@ -7,11 +7,13 @@ Usage:
     cidr-check.py 10.0.0.0/16 10.0.1.0/24 192.168.0.0/24
     cidr-check.py --file plan.txt        # one entry per line: CIDR [label...]
                                           # blank lines and #-comments ignored
+    cidr-check.py --json --file plan.txt # the same, as JSON on stdout for an agent
 
 Exit codes: 0 = no overlaps · 1 = overlaps found · 2 = usage or parse error
 """
 import argparse
 import ipaddress
+import json
 import sys
 from itertools import combinations
 
@@ -50,6 +52,7 @@ def main():
     ap = argparse.ArgumentParser(description="Detect overlapping CIDR ranges.")
     ap.add_argument("cidrs", nargs="*", help="CIDR ranges (e.g. 10.0.0.0/16)")
     ap.add_argument("--file", "-f", help="file with one 'CIDR [label]' per line")
+    ap.add_argument("--json", action="store_true", help="machine-readable output")
     args = ap.parse_args()
 
     pairs = [(c, "") for c in args.cidrs]
@@ -66,6 +69,16 @@ def main():
         if a.version == b.version and a.overlaps(b):
             overlaps.append((a, la, b, lb))
 
+    if args.json:
+        print(json.dumps({
+            "ranges": len(entries),
+            "overlaps": [{
+                "a": str(a), "a_label": la, "b": str(b), "b_label": lb,
+                "contains": ("first" if a.supernet_of(b) else
+                             "second" if b.supernet_of(a) else None),
+            } for a, la, b, lb in overlaps],
+        }, indent=2))
+        return 1 if overlaps else 0
     if not overlaps:
         print(f"OK: {len(entries)} ranges, no overlaps")
         return 0

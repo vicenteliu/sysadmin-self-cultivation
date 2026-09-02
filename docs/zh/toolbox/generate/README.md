@@ -22,6 +22,7 @@
 
 ```bash
 ./generate.py --list                                    # 关注点、profile、目录清单
+./generate.py --list --json                             # 目录清单的 JSON，给 agent
 ./generate.py --profile security-baseline --out ~/kit   # 具名场景
 ./generate.py --pick triage,backup --out ./pack         # 按关注点点菜
 ./generate.py --pick network --platform macos --out p   # 平台过滤

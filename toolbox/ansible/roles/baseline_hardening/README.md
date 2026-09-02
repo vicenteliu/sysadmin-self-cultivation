@@ -9,6 +9,13 @@ summary: "Remediates the items baseline-check audits — SSH posture, default um
 
 > 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/toolbox/ansible/roles/baseline_hardening/README.md)
 
+> **Inputs:** the `harden_*` variables in [`defaults/main.yml`](defaults/main.yml) ·
+> **Outputs:** `sshd_config` posture, the `/etc/login.defs` umask,
+> `/etc/sysctl.d/99-baseline-hardening.conf`, a persistent `/var/log/journal`, and ufw
+> enabled with SSH allowed first — each behind a switch · **Risk:** changes system state;
+> the SSH items can lock you out, so run `--check --diff` first and keep a second session
+> open · **Root:** required (`become`)
+
 Remediates the items [`baseline-check`](../../../baseline-check/) audits — SSH
 posture, default umask, a sysctl baseline, and persistent journald. Every item
 is a switch; anything that can lock you out defaults to **off**.

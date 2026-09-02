@@ -9,6 +9,12 @@ summary: "Declarative users: define the desired state, the role converges to it.
 
 > 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/toolbox/ansible/roles/user_lifecycle/README.md)
 
+> **Inputs:** the `users` list — name, state (`present` / `disabled` / `absent`), groups,
+> keys · **Outputs:** accounts created or updated, disabled accounts locked and expired
+> but never deleted, removal only on an explicit `absent` · **Risk:** changes system
+> state; `disabled` is reversible and `absent` is not — run `--check` first · **Root:**
+> required (`become`)
+
 Declarative users: define the desired state, the role converges to it. The
 Ansible counterpart of the [`user-lifecycle`](../../../user-lifecycle/) script,
 same law — **disabled ≠ deleted**.

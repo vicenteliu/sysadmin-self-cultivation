@@ -9,6 +9,12 @@ summary: "Applies pending updates on apt or dnf systems, then reports — or, if
 
 > 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/toolbox/ansible/roles/patch/README.md)
 
+> **Inputs:** the `patch_*` variables in [`defaults/main.yml`](defaults/main.yml) ·
+> **Outputs:** packages upgraded (apt or dnf), a *reboot required* report, and a reboot
+> only if `patch_reboot_if_required` is true · **Risk:** changes system state and can
+> reboot the host — the reboot defaults to off; run `--check` first · **Root:** required
+> (`become`)
+
 Applies pending updates on apt or dnf systems, then reports — or, if you ask —
 acts on a required reboot. The execution half of
 [`patch-report`](../../../patch-report/).

@@ -21,6 +21,7 @@
 ```bash
 ./cidr-check.py 10.0.0.0/16 10.0.1.0/24 192.168.0.0/24
 ./cidr-check.py --file plan.txt      # 行格式：CIDR [label] · 支持 # 注释
+./cidr-check.py --json --file plan.txt   # 同样的结果，给 agent 的 JSON
 ```
 
 ```

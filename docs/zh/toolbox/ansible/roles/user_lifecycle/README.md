@@ -6,6 +6,10 @@
 
 ---
 
+> **输入：** `users` 列表 —— 名字、状态（`present` / `disabled` / `absent`）、组、密钥 ·
+> **输出：** 创建或更新的账号、被锁定并过期但绝不删除的停用账号、只在显式 `absent` 时才发生的移除 ·
+> **风险：** 改系统状态；`disabled` 可逆而 `absent` 不可逆 —— 先跑 `--check` · **root：** 需要（`become`）
+
 声明式用户：定义期望状态，role 收敛到它。[`user-lifecycle`](../../../user-lifecycle/)
 脚本的 Ansible 对应物，同样的法则——**停用 ≠ 删除**。
 

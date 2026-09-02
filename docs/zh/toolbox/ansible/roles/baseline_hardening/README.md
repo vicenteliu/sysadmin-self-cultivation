@@ -6,6 +6,11 @@
 
 ---
 
+> **输入：** [`defaults/main.yml`](../../../../../../toolbox/ansible/roles/baseline_hardening/defaults/main.yml) 里的 `harden_*` 变量 ·
+> **输出：** `sshd_config` 姿态、`/etc/login.defs` 的 umask、`/etc/sysctl.d/99-baseline-hardening.conf`、
+> 持久化的 `/var/log/journal`，以及先放行 SSH 再启用的 ufw —— 每一项都在开关后面 · **风险：** 改系统
+> 状态；SSH 那几项可能把你锁在外面，所以先跑 `--check --diff`，并且留一个第二会话 · **root：** 需要（`become`）
+
 修复 [`baseline-check`](../../../baseline-check/) 审计的项——SSH 姿态、
 默认 umask、sysctl 基线、持久化 journald。每项都是开关；任何可能把你锁在外面的项默认**关闭**。
 

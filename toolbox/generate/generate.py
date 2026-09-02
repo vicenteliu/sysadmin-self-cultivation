@@ -134,7 +134,11 @@ def write_manifest(out, argv_line, concerns, tools, roles, skills, skipped):
     (out / "README.md").write_text("\n".join(lines))
 
 
-def cmd_list(catalog):
+def cmd_list(catalog, as_json=False):
+    if as_json:
+        print(json.dumps({k: catalog[k] for k in ("concerns", "profiles", "tools",
+                                                  "roles", "skills")}, indent=2))
+        return
     print("concerns:")
     for name, desc in catalog["concerns"].items():
         print(f"  {name:<12} {desc}")
@@ -158,6 +162,8 @@ def main():
         description="Assemble a per-shop subset of the toolbox.")
     ap.add_argument("--list", action="store_true",
                     help="show concerns, profiles, and catalog, then exit")
+    ap.add_argument("--json", action="store_true",
+                    help="with --list: the catalog as JSON, for an agent")
     ap.add_argument("--pick", metavar="CONCERNS",
                     help="comma-separated concerns (see --list)")
     ap.add_argument("--profile", metavar="NAME", help="a named selection (see --list)")
@@ -170,7 +176,7 @@ def main():
 
     catalog = load_catalog()
     if args.list:
-        cmd_list(catalog)
+        cmd_list(catalog, as_json=args.json)
         return
 
     if bool(args.pick) == bool(args.profile):

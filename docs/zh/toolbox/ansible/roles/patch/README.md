@@ -6,6 +6,11 @@
 
 ---
 
+> **输入：** [`defaults/main.yml`](../../../../../../toolbox/ansible/roles/patch/defaults/main.yml) 里的 `patch_*` 变量 ·
+> **输出：** 升级过的包（apt 或 dnf）、一份*需要重启*的报告，以及只在 `patch_reboot_if_required` 为 true
+> 时才发生的重启 · **风险：** 改系统状态并且可能重启主机 —— 重启默认关闭；先跑 `--check` ·
+> **root：** 需要（`become`）
+
 在 apt 或 dnf 系统上应用待更新，然后报告——或者按你要求，处理需要的重启。
 [`patch-report`](../../../patch-report/) 的执行侧。
 
