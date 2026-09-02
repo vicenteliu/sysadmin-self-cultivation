@@ -8,6 +8,8 @@ summary: "Every other platform's AI-ramp note is about getting to competent fast
 ---
 # vSphere — The AI-Assisted Ramp (inverted)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/vsphere/ai-ramp.md)
+
 > Every other platform's AI-ramp note is about getting *to* competent fast. This one
 > is different, and honest about it: **vSphere is a strength, not a gap.** So AI's job
 > here isn't to teach the platform — it's to accelerate the narrow slices where even

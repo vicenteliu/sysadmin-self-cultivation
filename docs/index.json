@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 345,
+  "count": 352,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2351,6 +2351,110 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/oci/support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio.",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Every other platform's AI-ramp note is about getting to competent fast.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/ai-ramp.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "The README mapped vSphere onto the seven surfaces — what the pieces are.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/architecture.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "architecture is how vSphere is structured; operations is what running it looks like.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "The README is what vSphere is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you, the real ops work by cadence, and AI in the operating loop.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/operations.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Check a box when you can do it and explain the failure modes — not when you've read about it.",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/skills-map.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/vcenter-and-proxmox.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere",
+        "self-host"
+      ],
+      "summary": "The difference between vCenter and Proxmox is almost never asked in the abstract — it is asked while standing in a migration. Answered that way: where each control plane lives and what you lose when it fails, what actually fights the move, and why the VMs are the easy part.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/vcenter-and-proxmox.md",
       "derived": true
     },
     "docs/zh/site/README.md": {

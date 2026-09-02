@@ -8,6 +8,8 @@ summary: "The README mapped vSphere onto the seven surfaces — what the pieces 
 ---
 # vSphere — Understanding the Architecture
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/vsphere/architecture.md)
+
 > The [README](README.md) mapped vSphere onto the seven surfaces — *what the pieces
 > are.* This note is the layer up: *how vSphere is structured*, so you design a
 > cluster that survives failure and schedules itself. And unlike the cloud modules,

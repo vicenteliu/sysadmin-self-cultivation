@@ -83,7 +83,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 139 篇；根目录、`build-out/`、`the-stack/`、`cross-cutting/`、`docs/adr/`、`docs/questions/`、`endpoint/`、`toolbox/`，以及 **四朵公有云 `aws` / `azure` / `gcp` / `oci`** 都已补齐；本地那三个平台目录（`vsphere` / `openstack` / `self-host`）和各处 lab 的 README 尚未镜像），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 146 篇；根目录、`build-out/`、`the-stack/`、`cross-cutting/`、`docs/adr/`、`docs/questions/`、`endpoint/`、`toolbox/`，以及 **四朵公有云 `aws` / `azure` / `gcp` / `oci`** 加上 **`vsphere`** 都已补齐；余下的本地两个平台目录（`openstack` / `self-host`）和各处 lab 的 README 尚未镜像），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |
@@ -112,7 +112,7 @@ AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架
 | **[Azure](platforms/azure/)** | ✅ · [support 中文镜像](platforms/azure/support.md) | ✅ | 3 节（`az`） | arc 一节未建 · [two-planes](../../platforms/azure/labs/global-admin-is-not-owner/) 是独立 drill | 🧭 + Entra/身份 🔨 |
 | **[GCP / GKE](platforms/gcp/)** | ✅ · [support 中文镜像](platforms/gcp/support.md) | ✅ | 3 节（`gcloud`） | arc 一节未建 · [gke-auth](../../platforms/gcp/labs/gke-iam-vs-rbac/) 是独立 drill | 🧭 ramp |
 | **[OCI](platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ | 3 节（`oci`） | arc 一节未建 · [compartment/verb](../../platforms/oci/labs/a-compartment-is-not-an-account/) 是独立 drill | 🧭 ramp |
-| **[vSphere / vCenter](../../platforms/vsphere/)** | ✅ | ✅ | 3 节（PowerCLI） | —— | **🔨 亲手做过**（VCP6-DCV/NV） |
+| **[vSphere / vCenter](platforms/vsphere/)** | ✅ · 另有 [vCenter 与 Proxmox 中文镜像](platforms/vsphere/vcenter-and-proxmox.md) | ✅ | 3 节（PowerCLI） | —— | **🔨 亲手做过**（VCP6-DCV/NV） |
 | **[OpenStack](../../platforms/openstack/)** | ✅ | ✅ | 3 节（`openstack` / DevStack） | —— | 🧭 ramp（KVM 相邻 🔨） |
 | **[self-host / 裸机](../../platforms/self-host/)** | ✅ | ✅ | 3 节（virsh / ipmitool / ansible） | —— | **🔨 亲手做过**（10万+ 机群） |
 

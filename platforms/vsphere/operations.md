@@ -8,6 +8,8 @@ summary: "The README is what vSphere is; architecture is how it's structured; th
 ---
 # vSphere — Operating It (the day-2 reality)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/vsphere/operations.md)
+
 > The [README](README.md) is *what vSphere is*; [architecture](architecture.md) is
 > *how it's structured*; this note is **what running it actually looks like** — the
 > operations brief, what pages you, the real ops work by cadence, and AI in the

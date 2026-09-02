@@ -20,4 +20,4 @@ summary: "被问到这个仓库头上、关于云网络设计和自建虚拟化�
 | # | 问题 | 状态 | 在哪儿 |
 |---|---|---|---|
 | 1 | AWS、GCP 和 Oracle Cloud 各自怎么设计他们的网络服务？ | ✅ 逐平台 · 作为一份三方笔记**已关闭** | [`platforms/aws`](../../platforms/aws/architecture.md) · [`azure`](../../platforms/azure/architecture.md) · [`gcp`](../../platforms/gcp/architecture.md) · [`oci`](../../platforms/oci/architecture.md)，而 [`the-stack/02`](../../the-stack/02-network.md) 已经是这个仓库横跨七个平台对比某一层的那个地方。一份单独的三方笔记会在混合的立足点上把它重复一遍 —— 见[边界](../questions.md#边界) |
-| 2 | 自建一片 VM 估算面：vCenter 和 Proxmox 之间实际差在哪，以及有哪些方案？ | ✅ | [`vcenter-and-proxmox.md`](../../../../platforms/vsphere/vcenter-and-proxmox.md) —— 每个控制面住在哪、它死掉时你失去什么，以及那条发现：一次 hypervisor 迁移是一个穿着 hypervisor 戏服的存储与客户机支持项目 |
+| 2 | 自建一片 VM 估算面：vCenter 和 Proxmox 之间实际差在哪，以及有哪些方案？ | ✅ | [`vcenter-and-proxmox.md`](../../platforms/vsphere/vcenter-and-proxmox.md) —— 每个控制面住在哪、它死掉时你失去什么，以及那条发现：一次 hypervisor 迁移是一个穿着 hypervisor 戏服的存储与客户机支持项目 |

@@ -7,6 +7,8 @@ summary: "Check a box when you can do it and explain the failure modes — not w
 ---
 # vSphere — Admin Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/vsphere/skills-map.md)
+
 A checkable competency list. Tiers:
 
 - **Core** — you cannot administer vSphere without this.

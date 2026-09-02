@@ -7,6 +7,8 @@ summary: "Same four-part template as AWS: what it is → the admin skill map →
 ---
 # VMware vSphere / vCenter — the private-cloud workhorse
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/vsphere/README.md)
+
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. But the honesty
