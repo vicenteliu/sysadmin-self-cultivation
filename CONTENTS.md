@@ -15,7 +15,8 @@ summary: "The detailed index: every module, what it is, and where it lives."
 
 The project crosses the same material along **six axes** — you enter from whichever
 matches your question, not front to back. Everything the roadmap planned is now
-**written** (✅); what remains is more runnable labs, Chinese mirrors, and deepening.
+**written** (✅), and `docs/zh/` mirrors every document in the English tree; what
+remains is more runnable labs and deepening.
 
 The map of these six is on the [front door](README.md#the-shape); this page is the
 detail underneath it.
@@ -52,13 +53,13 @@ project's most distinctive axis. See [`the-stack/`](the-stack/).
 
 | Chapter | Covers | Status |
 | --- | --- | --- |
-| [`01-physical`](the-stack/01-physical.md) | data centers, hardware, hypervisors, failure domains | ✅ |
-| [`02-network`](the-stack/02-network.md) | underlay/overlay, VPC models, the egress meter, the debug ladder | ✅ |
-| [`03-compute-and-images`](the-stack/03-compute-and-images.md) | compute shapes, the image pipeline, bake vs. fry, cloud-init | ✅ |
-| [`04-storage`](the-stack/04-storage.md) | block/file/object, the backup fear · **+ runnable [lab](the-stack/labs/04-backup-not-snapshot/)** | ✅ |
+| [`01-physical`](the-stack/01-physical.md) | data centers, hardware, hypervisors, failure domains · **+ [lab](the-stack/labs/01-failure-domains/)** | ✅ |
+| [`02-network`](the-stack/02-network.md) | underlay/overlay, VPC models, the egress meter, the debug ladder · **+ [lab](the-stack/labs/02-first-match-and-longest-prefix/)** | ✅ |
+| [`03-compute-and-images`](the-stack/03-compute-and-images.md) | compute shapes, the image pipeline, bake vs. fry, cloud-init · **+ [lab](the-stack/labs/03-one-image-is-not-one-image/)** | ✅ |
+| [`04-storage`](the-stack/04-storage.md) | block/file/object, the backup fear · **+ [lab](the-stack/labs/04-backup-not-snapshot/)** | ✅ |
 | [`05-platform-services`](the-stack/05-platform-services.md) | containers, serverless, managed DBs, build-vs-rent | ✅ |
-| [`06-observability`](the-stack/06-observability.md) | metrics/logs/traces, SLI/SLO, OpenTelemetry | ✅ |
-| [`07-security`](the-stack/07-security.md) | shared responsibility, defense in depth, CSPM/EDR/SIEM | ✅ |
+| [`06-observability`](the-stack/06-observability.md) | metrics/logs/traces, SLI/SLO, OpenTelemetry · **+ [lab](the-stack/labs/06-no-data-is-not-healthy/)** | ✅ |
+| [`07-security`](the-stack/07-security.md) | shared responsibility, defense in depth, CSPM/EDR/SIEM · **+ [lab](the-stack/labs/07-detection-is-a-window/)** | ✅ |
 
 ## IV. Platforms — read by platform (all seven)
 

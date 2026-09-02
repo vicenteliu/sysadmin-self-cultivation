@@ -20,7 +20,7 @@ summary: "详细索引：每个模块是什么、住在哪。"
 > 为什么**；这一页是目录。
 
 这个项目沿**六条轴**横穿同一批材料 —— 你从哪条进来，取决于你的问题是什么，而不是从头
-读到尾。roadmap 规划的都已经**写完**（✅）；剩下的是更多可跑 lab、中文镜像，以及深化。
+读到尾。roadmap 规划的都已经**写完**（✅），而且 `docs/zh/` 已镜像英文树里的每一篇文档；剩下的是更多可跑 lab，以及深化。
 
 这六条的地图在[正门](README.md)上；这一页是它底下的细节。
 
@@ -56,13 +56,13 @@ summary: "详细索引：每个模块是什么、住在哪。"
 
 | 章 | 覆盖 | 状态 |
 | --- | --- | --- |
-| [`01-physical`](the-stack/01-physical.md) | 数据中心、硬件、hypervisor、故障域 | ✅ |
-| [`02-network`](the-stack/02-network.md) | underlay/overlay、VPC 模型、出网计费表、调试阶梯 | ✅ |
-| [`03-compute-and-images`](the-stack/03-compute-and-images.md) | 计算形态、镜像流水线、bake vs fry、cloud-init | ✅ |
-| [`04-storage`](the-stack/04-storage.md) | block/file/object、备份的恐惧 · **+ 可跑 [lab](the-stack/labs/04-backup-not-snapshot)** | ✅ |
+| [`01-physical`](the-stack/01-physical.md) | 数据中心、硬件、hypervisor、故障域 · **+ [lab](the-stack/labs/01-failure-domains)** | ✅ |
+| [`02-network`](the-stack/02-network.md) | underlay/overlay、VPC 模型、出网计费表、调试阶梯 · **+ [lab](the-stack/labs/02-first-match-and-longest-prefix)** | ✅ |
+| [`03-compute-and-images`](the-stack/03-compute-and-images.md) | 计算形态、镜像流水线、bake vs fry、cloud-init · **+ [lab](the-stack/labs/03-one-image-is-not-one-image)** | ✅ |
+| [`04-storage`](the-stack/04-storage.md) | block/file/object、备份的恐惧 · **+ [lab](the-stack/labs/04-backup-not-snapshot)** | ✅ |
 | [`05-platform-services`](the-stack/05-platform-services.md) | 容器、serverless、托管数据库、自建 vs 租用 | ✅ |
-| [`06-observability`](the-stack/06-observability.md) | metric/log/trace、SLI/SLO、OpenTelemetry | ✅ |
-| [`07-security`](the-stack/07-security.md) | 责任共担、纵深防御、CSPM/EDR/SIEM | ✅ |
+| [`06-observability`](the-stack/06-observability.md) | metric/log/trace、SLI/SLO、OpenTelemetry · **+ [lab](the-stack/labs/06-no-data-is-not-healthy)** | ✅ |
+| [`07-security`](the-stack/07-security.md) | 责任共担、纵深防御、CSPM/EDR/SIEM · **+ [lab](the-stack/labs/07-detection-is-a-window)** | ✅ |
 
 ## IV. Platforms —— 按平台读（全部七个）
 
