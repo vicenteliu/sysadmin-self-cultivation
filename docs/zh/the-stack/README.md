@@ -142,9 +142,19 @@ mindmap
 
 ## Labs
 
-每一章都以一份 lab 规格结尾；[`labs/`](labs) 是它们变成可跑证据的地方。
-第一个已建成：[`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot)
-—— 一个纯 Python、零成本的 drill，通过 `DROP` 一张表并看着副本跟着一起死、而一份独立备份把
-它救回来，来证明*复制不是备份*。哪里有 Python 就能跑；退出码 `0` 同时可以当作一次 CI 检查。
+每一章都以两种方式结尾。一次**[引导式走查](../CONTEXT.md)**需要一个真实环境 ——
+在两朵云上跑 Terraform、把一个 Packer 镜像在两处启动起来、Prometheus 加一条 trace、把一个真实的
+bucket 弄坏然后被一个真实的扫描器逮住 —— 而这里没有任何东西能断言你做过其中一次，这正是它不是一个
+lab、而这个目录也永远不会装它的原因。一个 **lab** 是那次引导式走查底下的那个推理失败，被挖出来、
+并被做成会自我断言的东西。
+
+[`labs/`](labs) 里有**五个**，除第 05 章之外每一章一个，全都是纯 Python、零成本的：
+[故障域](labs/01-failure-domains) · [首次匹配对最长前缀](labs/02-first-match-and-longest-prefix) ·
+[一个镜像不是一个镜像](labs/03-one-image-is-not-one-image) ·
+[备份不是快照](labs/04-backup-not-snapshot) ·
+[没有数据不等于健康](labs/06-no-data-is-not-healthy) ·
+[检测是一个窗口](labs/07-detection-is-a-window)。每一个都叙述它的步骤、检查它自己的教训，并且只有
+在教训成立时才 `0` 退出 —— 所以它们每一个都同时可以当作一次 CI 检查。多数还带一个把那个*错误*模型
+实现出来的破坏开关，因为一个不会失败的自我验证器毫无价值。
 
 中文镜像在每一章稳定之后落到 [`docs/zh/`](../) 里。

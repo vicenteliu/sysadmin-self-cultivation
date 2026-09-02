@@ -145,10 +145,21 @@ built, made defensible, with detection laid on top.
 
 ## Labs
 
-Each chapter ends with a lab spec; [`labs/`](labs/) is where they become runnable
-evidence. First one built: [`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot/)
-— a pure-Python, zero-cost drill that proves *replication is not backup* by
-`DROP`ing a table and watching the replica die with it while an independent backup
-recovers. Runs anywhere Python does; exit `0` doubles as a CI check.
+Every chapter ends two ways. A **[guided run](../CONTEXT.md)** needs a real
+environment — Terraform on two clouds, a Packer image booted on two, Prometheus and a
+trace, a bucket broken and caught by a real scanner — and nothing here can assert you
+did one, which is why it is not a lab and this folder will never hold it. A **lab** is
+the reasoning failure underneath that guided run, extracted and made to assert itself.
+
+[`labs/`](labs/) holds **five**, one for every chapter but 05, all pure-Python and
+zero-cost: [failure domains](labs/01-failure-domains/) · [first match vs. longest
+prefix](labs/02-first-match-and-longest-prefix/) · [one image is not one
+image](labs/03-one-image-is-not-one-image/) · [backup is not
+snapshot](labs/04-backup-not-snapshot/) · [no data is not
+healthy](labs/06-no-data-is-not-healthy/) · [detection is a
+window](labs/07-detection-is-a-window/). Each narrates its steps, checks its own
+lessons, and exits `0` only if they held — so every one of them doubles as a CI check.
+Most ship a sabotage flag that implements the *mistaken* model, because a
+self-verifier that cannot fail is worthless.
 
 Chinese mirrors land in [`docs/zh/`](../docs/zh/) after each chapter stabilizes.

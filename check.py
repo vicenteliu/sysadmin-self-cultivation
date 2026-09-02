@@ -71,10 +71,16 @@ def scan_labs():
     """Walk every directory under a labs/ and split it two ways.
 
     CONTEXT.md defines a **lab** as pure-local, zero-dependency and self-verifying,
-    where exit code 0 means the lesson held — and those carry a `*_drill.py`. A
-    directory under labs/ holding something else is a runnable exercise against a
-    real account, which this checker must not try to run and must not hide either.
-    Returns (self_verifying, needs_an_account)."""
+    where exit code 0 means the lesson held. A directory under labs/ holding something
+    else is a runnable exercise, which this checker must not try to run and must not
+    hide either. Returns (self_verifying, not_run) where each not_run entry carries
+    the reason it is not run.
+
+    Classified by dependency, not by filename. `*_drill.py` is the naming convention
+    and most labs follow it, but the-stack/labs/01-failure-domains/ does not, and for
+    a while this function reported that pure-stdlib drill as needing a real account —
+    a false sentence printed on every run, about the one file in the repo whose whole
+    subject is that a check should be believed."""
     drills, others = [], []
     for base, dirs, files in os.walk(ROOT):
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
@@ -84,12 +90,20 @@ def scan_labs():
         if not py:
             continue
         rel_dir = os.path.relpath(base, ROOT)
+        name = os.path.basename(base)
         drill = next((f for f in py if f.endswith("_drill.py")), None)
-        if drill:
-            drills.append((f"lab · {os.path.basename(base)}",
-                           [os.path.join(rel_dir, drill)]))
+        if "requirements.txt" in files:
+            # It declares a dependency, so it is not zero-dependency, so it is not a
+            # lab as CONTEXT.md defines one — whatever the script is called.
+            others.append((name, os.path.join(rel_dir, drill or py[0]),
+                           "declares dependencies (requirements.txt), so it is an "
+                           "exercise rather than a lab as CONTEXT.md defines one"))
+        elif drill or len(py) == 1:
+            drills.append((f"lab · {name}", [os.path.join(rel_dir, drill or py[0])]))
         else:
-            others.append((os.path.basename(base), os.path.join(rel_dir, py[0])))
+            others.append((name, os.path.join(rel_dir, py[0]),
+                           "several scripts and no *_drill.py, so there is no entry "
+                           "point to run — name one `*_drill.py`"))
     return sorted(drills), sorted(others)
 
 
@@ -534,10 +548,10 @@ def main():
                       f"   ({time.time() - t0:.1f}s)")
             continue
         if g == "labs":
-            _, needs_account = scan_labs()
-            for nm, path in needs_account:
-                print(f"  – {nm:<28} not run — needs a real account, so it is an")
-                print(f"      exercise rather than a lab as CONTEXT.md defines one: {path}")
+            _, not_run = scan_labs()
+            for nm, path, why in not_run:
+                print(f"  – {nm:<28} not run — {why}")
+                print(f"      {path}")
         for name, argv in GROUPS[g]():
             ok, dt, tail = run(argv)
             ran += 1
