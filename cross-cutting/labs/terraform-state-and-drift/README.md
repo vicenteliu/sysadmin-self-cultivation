@@ -63,8 +63,8 @@ Exit `0` = every lesson held; it doubles as a CI check. Now **break the model on
 purpose** — two independent sabotage vectors:
 
 ```bash
-python3 state_drift_drill.py --sabotage no-refresh    # plan stops refreshing from real -> drift undetected -> step 3 FAILS, exit 1
-python3 state_drift_drill.py --sabotage mutable-all   # nothing is ForceNew -> a replace looks in-place -> step 4 FAILS, exit 1
+python3 state_drift_drill.py --break-it no-refresh    # plan stops refreshing from real -> drift undetected -> step 3 FAILS, exit 1
+python3 state_drift_drill.py --break-it mutable-all   # nothing is ForceNew -> a replace looks in-place -> step 4 FAILS, exit 1
 ```
 
 If plans that ignore the real world still "passed," refresh wasn't doing anything; if a

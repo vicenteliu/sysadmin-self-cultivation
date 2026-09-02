@@ -264,8 +264,8 @@ resources while **`for_each` keys stay stable**.
 python3 cross-cutting/labs/terraform-state-and-drift/state_drift_drill.py
 ```
 
-Exit `0` means every lesson held (it doubles as a CI check); `--sabotage no-refresh` or
-`--sabotage mutable-all` breaks the model and the assertions fail. See
+Exit `0` means every lesson held (it doubles as a CI check); `--break-it no-refresh` or
+`--break-it mutable-all` breaks the model and the assertions fail. See
 [`labs/terraform-state-and-drift/`](labs/terraform-state-and-drift/).
 
 ## The chapter on one screen

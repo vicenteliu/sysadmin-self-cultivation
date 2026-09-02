@@ -132,7 +132,7 @@
 python3 cross-cutting/labs/multi-cloud-cidr-overlap/cidr_overlap_drill.py
 ```
 
-exit `0` 表示每条教训都成立(兼作 CI 检查);`--sabotage ignore-overlap` 或 `--sabotage central-router` 破坏模型、断言就失败。见 [`labs/multi-cloud-cidr-overlap/`](labs/multi-cloud-cidr-overlap)。
+exit `0` 表示每条教训都成立(兼作 CI 检查);`--break-it ignore-overlap` 或 `--break-it central-router` 破坏模型、断言就失败。见 [`labs/multi-cloud-cidr-overlap/`](labs/multi-cloud-cidr-overlap)。
 
 ## 一页看全本章
 

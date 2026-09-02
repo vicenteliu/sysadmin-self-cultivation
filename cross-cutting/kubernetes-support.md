@@ -272,8 +272,8 @@ Running").
 python3 cross-cutting/labs/k8s-reconcile-loop/reconcile_drill.py
 ```
 
-Exit `0` means every lesson held (it doubles as a CI check); `--sabotage no-reconcile` or
-`--sabotage ready-ignores-probe` breaks the model and the assertions fail. See
+Exit `0` means every lesson held (it doubles as a CI check); `--break-it no-reconcile` or
+`--break-it ready-ignores-probe` breaks the model and the assertions fail. See
 [`labs/k8s-reconcile-loop/`](labs/k8s-reconcile-loop/).
 
 ## The chapter on one screen

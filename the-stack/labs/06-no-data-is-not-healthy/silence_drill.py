@@ -20,8 +20,8 @@ by what. No cloud, no credentials, no dependencies. Pure Python stdlib. Exit cod
 means every assertion about the lesson held. Run it in CI.
 
     python3 silence_drill.py
-    python3 silence_drill.py --sabotage no-data-is-green
-    python3 silence_drill.py --sabotage cause-alerts-suffice
+    python3 silence_drill.py --break-it no-data-is-green
+    python3 silence_drill.py --break-it cause-alerts-suffice
 """
 
 import argparse
@@ -242,12 +242,12 @@ def run():
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage",
+    ap.add_argument("--break-it",
                     choices=["no-data-is-green", "cause-alerts-suffice"],
                     help="break the model on purpose; the drill must then fail")
     args = ap.parse_args()
     global SABOTAGE
-    SABOTAGE = args.sabotage
+    SABOTAGE = args.break_it
     if SABOTAGE:
         log(f"*** SABOTAGE: {SABOTAGE} — assertions are expected to fail ***")
     sys.exit(run())

@@ -64,8 +64,8 @@ exit `0` = 每一条教训都成立；它兼作一个 CI 检查。现在**故意
 破坏路径：
 
 ```bash
-python3 reconcile_drill.py --sabotage no-reconcile        # controller 停止调和 -> 被删掉的 pod 就死了 -> 步骤 1 失败，exit 1
-python3 reconcile_drill.py --sabotage ready-ignores-probe # endpoints 无视 readiness -> 一个坏掉的 pod 照样收流量 -> 步骤 6 失败，exit 1
+python3 reconcile_drill.py --break-it no-reconcile        # controller 停止调和 -> 被删掉的 pod 就死了 -> 步骤 1 失败，exit 1
+python3 reconcile_drill.py --break-it ready-ignores-probe # endpoints 无视 readiness -> 一个坏掉的 pod 照样收流量 -> 步骤 6 失败，exit 1
 ```
 
 如果那个 controller 睡着了 pod 还能自愈，那这个调和循环本来就什么都没做；如果一个没 Ready 的 pod

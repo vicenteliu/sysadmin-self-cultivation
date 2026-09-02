@@ -73,8 +73,8 @@ exit code `0` 表示关于这个教训的每一条断言都成立。
 ## 验证（别光信这个脚本说的）
 
 ```bash
-python3 silence_drill.py --sabotage no-data-is-green      # exit 1
-python3 silence_drill.py --sabotage cause-alerts-suffice  # exit 1
+python3 silence_drill.py --break-it no-data-is-green      # exit 1
+python3 silence_drill.py --break-it cause-alerts-suffice  # exit 1
 ```
 
 `no-data-is-green` 把沉默当成健康 —— 也就是一个 UI 做的事 —— 而挂掉的是那条 staleness 断言，因为

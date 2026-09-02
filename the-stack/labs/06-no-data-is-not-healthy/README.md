@@ -73,8 +73,8 @@ Exit code `0` means every assertion about the lesson held.
 ## Verify (don't take the script's word for it)
 
 ```bash
-python3 silence_drill.py --sabotage no-data-is-green      # exit 1
-python3 silence_drill.py --sabotage cause-alerts-suffice  # exit 1
+python3 silence_drill.py --break-it no-data-is-green      # exit 1
+python3 silence_drill.py --break-it cause-alerts-suffice  # exit 1
 ```
 
 `no-data-is-green` treats silence as health — which is what a UI does — and the

@@ -18,7 +18,7 @@ gets wrong about OCI authorization:
      NotAuthorizedOrNotFound (an HTTP 404): the resource is invisible, not "denied".
 
 Run clean and every lesson holds -> exit 0 (doubles as a CI check).
-Run with --sabotage to flatten either the verb hierarchy or the compartment
+Run with --break-it to flatten either the verb hierarchy or the compartment
 scope and watch the assertions fail -> exit 1. That's the point: the model is
 only meaningful because breaking it breaks the guarantees.
 """
@@ -150,7 +150,7 @@ class Tenancy:
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage", choices=["scope", "verbs"],
+    ap.add_argument("--break-it", choices=["scope", "verbs"],
                     help="break the model: 'scope' = policies go tenancy-wide; "
                          "'verbs' = every verb grants everything")
     args = ap.parse_args()
@@ -162,8 +162,8 @@ def main():
             Policy("DevAdmins", "manage", "instance-family", DEV),
             # note: NO policy for group "Contractors"
         ],
-        sabotage_scope=(args.sabotage == "scope"),
-        sabotage_verbs=(args.sabotage == "verbs"),
+        sabotage_scope=(args.break_it == "scope"),
+        sabotage_verbs=(args.break_it == "verbs"),
     )
 
     alice = User("alice", "DevReaders")
@@ -176,8 +176,8 @@ def main():
     log("Tenancy 'tenancy'  compartments: Dev > App, and sibling Prod")
     log("Policies:  DevReaders=read  DevOperators=use  DevAdmins=manage  (all on 'Dev')")
     log("Target:    an 'instance' in compartment Dev:App (a child of Dev)")
-    if args.sabotage:
-        log(f"\n  !! SABOTAGE ENABLED: {args.sabotage} !!")
+    if args.break_it:
+        log(f"\n  !! SABOTAGE ENABLED: {args.break_it} !!")
 
     # 1. No policy -> NotAuthorizedOrNotFound: invisible, not "denied".
     step(1, "carol (no policy) lists the instance")
@@ -236,7 +236,7 @@ def main():
         "    verbs nest inspect ⊂ read ⊂ use ⊂ manage;",
         "    policies inherit DOWN the compartment tree and stop at siblings.",
         "    A compartment is not an account, and a verb is not a role.",
-    ], broken=bool(args.sabotage))
+    ], broken=bool(args.break_it))
 
 
 if __name__ == "__main__":

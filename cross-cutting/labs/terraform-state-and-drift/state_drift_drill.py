@@ -24,9 +24,9 @@ From that one model, six lessons fall out:
                           `for_each` keys are stable
 
 Run clean and every lesson holds -> exit 0 (doubles as a CI check).
-Run with --sabotage to break the model and watch the guarantees fall -> exit 1:
-  --sabotage no-refresh  : plan stops refreshing from real -> drift goes undetected (step 3 fails)
-  --sabotage mutable-all : nothing is immutable -> a ForceNew change looks in-place (step 4 fails)
+Run with --break-it to break the model and watch the guarantees fall -> exit 1:
+  --break-it no-refresh  : plan stops refreshing from real -> drift goes undetected (step 3 fails)
+  --break-it mutable-all : nothing is immutable -> a ForceNew change looks in-place (step 4 fails)
 """
 
 import argparse
@@ -85,7 +85,7 @@ def verdict(held, broken=False):
 def refresh(state, real, enabled=True):
     """Before diffing, `plan` refreshes state from the real world so it can SEE drift.
     Returns an effective-state view. A resource in state but gone from real is a 'ghost'
-    (None) that will be recreated. --sabotage no-refresh skips this and plans blind."""
+    (None) that will be recreated. --break-it no-refresh skips this and plans blind."""
     if not enabled:
         return dict(state)  # blind to reality — the sabotage
     effective = {}
@@ -133,14 +133,14 @@ def acts_of(actions):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage", choices=["no-refresh", "mutable-all"],
+    ap.add_argument("--break-it", choices=["no-refresh", "mutable-all"],
                     help="break the model: 'no-refresh' = plan stops refreshing from real "
                          "(drift undetected); 'mutable-all' = nothing forces replacement")
     args = ap.parse_args()
-    refresh_on = args.sabotage != "no-refresh"
-    immutable_on = args.sabotage != "mutable-all"
-    if args.sabotage:
-        log(f"  !! SABOTAGE ENABLED: {args.sabotage} !!")
+    refresh_on = args.break_it != "no-refresh"
+    immutable_on = args.break_it != "mutable-all"
+    if args.break_it:
+        log(f"  !! SABOTAGE ENABLED: {args.break_it} !!")
 
     WEB = "aws_instance.web"
 
@@ -227,7 +227,7 @@ def main():
         "    lost state wants to re-create what exists (import reconciles);",
         "    count shifts indices, for_each stays stable.",
         "    State is the source of truth — respect it, lock it, never edit around it.",
-    ], broken=bool(args.sabotage))
+    ], broken=bool(args.break_it))
 
 
 if __name__ == "__main__":

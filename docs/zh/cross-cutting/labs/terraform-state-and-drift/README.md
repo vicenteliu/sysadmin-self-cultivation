@@ -66,8 +66,8 @@ exit `0` = 每一条教训都成立；它兼作一个 CI 检查。现在**故意
 破坏路径：
 
 ```bash
-python3 state_drift_drill.py --sabotage no-refresh    # plan 不再从 real 刷新 -> 漂移检测不到 -> 步骤 3 失败，exit 1
-python3 state_drift_drill.py --sabotage mutable-all   # 什么都不是 ForceNew -> 一次替换看起来像原地编辑 -> 步骤 4 失败，exit 1
+python3 state_drift_drill.py --break-it no-refresh    # plan 不再从 real 刷新 -> 漂移检测不到 -> 步骤 3 失败，exit 1
+python3 state_drift_drill.py --break-it mutable-all   # 什么都不是 ForceNew -> 一次替换看起来像原地编辑 -> 步骤 4 失败，exit 1
 ```
 
 如果无视真实世界的 plan 还能"通过"，那这次刷新本来就什么都没做；如果一次 ForceNew 变更看起来仍然

@@ -145,7 +145,7 @@ Terraform 修/救就是像鹰一样读 **plan**，并知道 config、state、rea
 python3 cross-cutting/labs/terraform-state-and-drift/state_drift_drill.py
 ```
 
-exit `0` 表示每条教训都成立(兼作 CI 检查);`--sabotage no-refresh` 或 `--sabotage mutable-all` 破坏模型、断言就失败。见 [`labs/terraform-state-and-drift/`](labs/terraform-state-and-drift)。
+exit `0` 表示每条教训都成立(兼作 CI 检查);`--break-it no-refresh` 或 `--break-it mutable-all` 破坏模型、断言就失败。见 [`labs/terraform-state-and-drift/`](labs/terraform-state-and-drift)。
 
 ## 一页看全本章
 

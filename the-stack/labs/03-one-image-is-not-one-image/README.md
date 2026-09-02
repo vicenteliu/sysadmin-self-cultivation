@@ -69,8 +69,8 @@ Exit code `0` means every assertion about the lesson held.
 ## Verify (don't take the script's word for it)
 
 ```bash
-python3 image_pinning_drill.py --sabotage latest-is-stable  # exit 1
-python3 image_pinning_drill.py --sabotage baked-is-free     # exit 1
+python3 image_pinning_drill.py --break-it latest-is-stable  # exit 1
+python3 image_pinning_drill.py --break-it baked-is-free     # exit 1
 ```
 
 `latest-is-stable` implements the model in the operator's head — a moving reference

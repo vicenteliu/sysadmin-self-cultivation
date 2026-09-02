@@ -54,8 +54,8 @@ exit `0` = 每一条教训都成立；它兼作一个 CI 检查。现在**故意
 有两条彼此独立的破坏路径：
 
 ```bash
-python3 verb_and_compartment_drill.py --sabotage verbs   # 每个动词都授予一切 -> 步骤 3 和 4 失败，exit 1
-python3 verb_and_compartment_drill.py --sabotage scope   # 策略变成整个 tenancy 范围 -> 步骤 6 失败，exit 1
+python3 verb_and_compartment_drill.py --break-it verbs   # 每个动词都授予一切 -> 步骤 3 和 4 失败，exit 1
+python3 verb_and_compartment_drill.py --break-it scope   # 策略变成整个 tenancy 范围 -> 步骤 6 失败，exit 1
 ```
 
 如果把那个动词层级压平之后它还"通过"，那这个层级本来就什么都没做；如果范围变成整个 tenancy 之后

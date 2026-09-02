@@ -78,8 +78,8 @@ vectors, and each one implements the *mistaken model* so you can watch what it w
 have predicted:
 
 ```bash
-python3 lookup_order_drill.py --sabotage routes-first-match    # exit 1
-python3 lookup_order_drill.py --sabotage rules-longest-prefix  # exit 1
+python3 lookup_order_drill.py --break-it routes-first-match    # exit 1
+python3 lookup_order_drill.py --break-it rules-longest-prefix  # exit 1
 ```
 
 If a first-match routing table still passed, longest-prefix was not deciding anything;

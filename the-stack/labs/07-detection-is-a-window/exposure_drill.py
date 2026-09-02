@@ -21,8 +21,8 @@ No cloud, no credentials, no dependencies. Pure Python stdlib. Exit code 0 means
 every assertion about the lesson held. Run it in CI.
 
     python3 exposure_drill.py
-    python3 exposure_drill.py --sabotage fixing-ends-exposure
-    python3 exposure_drill.py --sabotage policy-covers-everything
+    python3 exposure_drill.py --break-it fixing-ends-exposure
+    python3 exposure_drill.py --break-it policy-covers-everything
 """
 
 import argparse
@@ -231,12 +231,12 @@ def run():
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage",
+    ap.add_argument("--break-it",
                     choices=["fixing-ends-exposure", "policy-covers-everything"],
                     help="break the model on purpose; the drill must then fail")
     args = ap.parse_args()
     global SABOTAGE
-    SABOTAGE = args.sabotage
+    SABOTAGE = args.break_it
     if SABOTAGE:
         log(f"*** SABOTAGE: {SABOTAGE} — assertions are expected to fail ***")
     sys.exit(run())

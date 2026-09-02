@@ -63,8 +63,8 @@ Exit `0` = every lesson held; it doubles as a CI check. Now **break the model on
 purpose** — two independent sabotage vectors:
 
 ```bash
-python3 reconcile_drill.py --sabotage no-reconcile        # controller stops reconciling -> a deleted pod stays dead -> step 1 FAILS, exit 1
-python3 reconcile_drill.py --sabotage ready-ignores-probe # endpoints ignore readiness -> a broken pod still gets traffic -> step 6 FAILS, exit 1
+python3 reconcile_drill.py --break-it no-reconcile        # controller stops reconciling -> a deleted pod stays dead -> step 1 FAILS, exit 1
+python3 reconcile_drill.py --break-it ready-ignores-probe # endpoints ignore readiness -> a broken pod still gets traffic -> step 6 FAILS, exit 1
 ```
 
 If the controller can be asleep and pods still self-heal, the reconcile loop wasn't doing

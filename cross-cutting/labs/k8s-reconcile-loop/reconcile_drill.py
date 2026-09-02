@@ -22,9 +22,9 @@ Six lessons fall out of that one model:
                            ("the service is down but the pod is Running")
 
 Run clean and every lesson holds -> exit 0 (doubles as a CI check).
-Run with --sabotage to break the model and watch the guarantees fall -> exit 1:
-  --sabotage no-reconcile      : the controller stops reconciling -> a deleted pod stays dead (step 1)
-  --sabotage ready-ignores-probe : endpoints ignore readiness -> a broken pod still gets traffic (step 6)
+Run with --break-it to break the model and watch the guarantees fall -> exit 1:
+  --break-it no-reconcile      : the controller stops reconciling -> a deleted pod stays dead (step 1)
+  --break-it ready-ignores-probe : endpoints ignore readiness -> a broken pod still gets traffic (step 6)
 """
 
 import argparse
@@ -89,7 +89,7 @@ def new_pod(template, ready=True):
 
 def endpoints(pods, honor_readiness=True):
     """A Service's endpoints = the Pods it can send traffic to. A Pod must be BOTH
-    healthy AND ready. --sabotage ready-ignores-probe drops the readiness gate."""
+    healthy AND ready. --break-it ready-ignores-probe drops the readiness gate."""
     if honor_readiness:
         return [p for p in pods if healthy(p) and p["ready"]]
     return [p for p in pods if healthy(p)]   # the sabotage: traffic to not-ready pods
@@ -116,14 +116,14 @@ class Deployment:
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage", choices=["no-reconcile", "ready-ignores-probe"],
+    ap.add_argument("--break-it", choices=["no-reconcile", "ready-ignores-probe"],
                     help="break the model: 'no-reconcile' = controller stops reconciling; "
                          "'ready-ignores-probe' = endpoints ignore readiness")
     args = ap.parse_args()
-    reconcile_on = args.sabotage != "no-reconcile"
-    readiness_on = args.sabotage != "ready-ignores-probe"
-    if args.sabotage:
-        log(f"  !! SABOTAGE ENABLED: {args.sabotage} !!")
+    reconcile_on = args.break_it != "no-reconcile"
+    readiness_on = args.break_it != "ready-ignores-probe"
+    if args.break_it:
+        log(f"  !! SABOTAGE ENABLED: {args.break_it} !!")
 
     dep = Deployment(replicas=3, template={"image": "app:v1"})
     pods = [new_pod(dep.template) for _ in range(3)]   # steady state already exists
@@ -204,7 +204,7 @@ def main():
         "    Delete a pod, it comes back; hand-fix a pod, the fix dies with it;",
         "    a bad image loops (restart != fix); change the template, controllers roll;",
         "    readiness gates the Service endpoints. Pods are cattle — manage the spec.",
-    ], broken=bool(args.sabotage))
+    ], broken=bool(args.break_it))
 
 
 if __name__ == "__main__":

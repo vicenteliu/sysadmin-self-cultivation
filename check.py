@@ -207,6 +207,58 @@ def check_inventory_schema():
     return problems
 
 
+# Labs whose runnable is not a Python drill, named so nothing under labs/ is skipped in
+# silence: the shell drill carries the reporter contract in bash, and the CI/CD lab's
+# runnable is the unittest suite its pipeline runs. Neither carries the Python block
+# and neither has a break path, and the listing says so.
+OTHER_DRILLS = {
+    "foundations/labs/idempotence-drill": (
+        ["bash", "foundations/labs/idempotence-drill/idempotence_drill.sh"],
+        "a shell drill — the reporter contract in bash; no Python block, no break path"),
+    "cross-cutting/labs/ci-cd-pipeline": (
+        ["-m", "unittest", "discover", "-s", "cross-cutting/labs/ci-cd-pipeline/app"],
+        "a unittest suite, which is what its CI job runs; no reporter block, no break path"),
+}
+
+# Python drills with no --break-it, each with the reason. A drill that has none and is
+# not named here fails the labs group, and so does a drill named here that has grown
+# one: the table has to say what disk says.
+NO_BREAK_PATH = {
+    "the-stack/labs/04-backup-not-snapshot/backup_drill.py":
+        "the wrong procedure — restore from the replica — is half of its own narrative",
+    "the-stack/labs/01-failure-domains/failure_domains.py":
+        "naive placement is shown beside anti-affinity; a switch to run it alone is not written",
+    "cross-cutting/labs/m365-conditional-access-lockout/ca_lockout_drill.py":
+        "no break mode written yet",
+    "platforms/aws/labs/iam-deny-by-default/iam_eval_drill.py":
+        "no break mode written yet",
+    "platforms/azure/labs/global-admin-is-not-owner/two_planes_drill.py":
+        "no break mode written yet",
+    "platforms/gcp/labs/gke-iam-vs-rbac/gke_authz_drill.py":
+        "no break mode written yet",
+}
+
+BREAK_FLAG_RE = re.compile(
+    r'add_argument\("--break-it",\s*(?:action="store_true"|(?:nargs="\?",\s*)?choices=\[([^\]]*)\])',
+    re.S)
+
+
+def break_runs(rel):
+    """The extra argv for each break run a drill offers: [] when it offers none,
+    [["--break-it"]] for a switch, one entry per mode for a choices flag."""
+    m = BREAK_FLAG_RE.search(read(rel))
+    if m is None:
+        return []
+    if m.group(1) is None:
+        return [["--break-it"]]
+    return [["--break-it", c.strip().strip('"')] for c in m.group(1).split(",") if c.strip()]
+
+
+def drill_of(argv):
+    """The drill file an argv runs, or None when the runnable is not a Python drill."""
+    return argv[0] if argv[0].endswith(".py") else None
+
+
 def scan_labs():
     """Walk every directory under a labs/ and split it two ways.
 
@@ -226,11 +278,20 @@ def scan_labs():
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
         if os.path.basename(os.path.dirname(base)) != "labs":
             continue
+        rel_dir = os.path.relpath(base, ROOT).replace(os.sep, "/")
+        if rel_dir.startswith("docs/zh/"):
+            continue                        # a mirror of a lab's README is not a lab
+        name = os.path.basename(base)
+        if rel_dir in OTHER_DRILLS:
+            drills.append((f"lab · {name}", OTHER_DRILLS[rel_dir][0]))
+            continue
         py = sorted(f for f in files if f.endswith(".py") and not f.startswith("_"))
         if not py:
+            if "README.md" in files:
+                others.append((name, rel_dir + "/",
+                               "has no script to run, so it is a guided run as CONTEXT.md "
+                               "defines one — until a drill is written"))
             continue
-        rel_dir = os.path.relpath(base, ROOT)
-        name = os.path.basename(base)
         drill = next((f for f in py if f.endswith("_drill.py")), None)
         if "requirements.txt" in files:
             # It declares a dependency, so it is not zero-dependency, so it is not a
@@ -300,18 +361,12 @@ def verdict(held, broken=False):
 # --- end of the reporter ------------------------------------------------------------
 '''
 
-# Drills written in shell carry the same contract in shell. Named here so the listing
-# says so, rather than leaving one lab looking unchecked.
-SHELL_DRILLS = {
-    "foundations/labs/idempotence-drill/idempotence_drill.sh":
-        "carries the reporter contract in shell; the Python block does not apply",
-}
-
-
 def check_drill_block():
     """Every drill check.py runs carries DRILL_BLOCK byte for byte."""
     problems = []
     for _, argv in find_labs():
+        if drill_of(argv) is None:
+            continue
         if DRILL_BLOCK not in read(argv[0]):
             problems.append(f"{argv[0]}: does not carry the reporter block byte for byte — "
                             f"copy it from check.py (`python3 check.py --list --only labs` "
@@ -600,10 +655,10 @@ def truths():
         "walkthroughs": {len(_glob("walkthrough/[0-9]*-*.en.md"))},
         "walkthrough beats": set(beats.values()) | {sum(beats.values())},
         "runnable labs": {len(labs)},
-        "the-stack labs": {sum(1 for _, argv in labs if argv[0].startswith("the-stack/labs/"))},
-        # The flag, not the string: every drill's reporter block mentions --break-it.
+        "the-stack labs": {sum(1 for _, argv in labs
+                               if (drill_of(argv) or "").startswith("the-stack/labs/"))},
         "drills with a break path": {sum(1 for _, argv in labs
-                                         if 'add_argument("--break-it"' in read(argv[0]))},
+                                         if drill_of(argv) and break_runs(drill_of(argv)))},
         "cross-cutting notes": {sum(1 for p in _glob("cross-cutting/*.md")
                                     if not p.endswith("/README.md"))},
         "decision records": {len(_glob("docs/adr/[0-9]*.md"))},
@@ -709,16 +764,21 @@ def check_counts():
 
 # --- the runner ---------------------------------------------------------------
 
-def run(argv):
-    """Run one checker. Returns (ok, seconds, tail-of-output-if-failed)."""
+def run(argv, expect=0, must_print=None):
+    """Run one checker. Returns (ok, seconds, tail-of-output-if-failed). ok means the
+    exit status was `expect` and, when given, `must_print` appeared on stdout — an
+    uncaught exception also exits 1, which is how a broken break path once read as a
+    working one."""
     t0 = time.time()
-    proc = subprocess.run([sys.executable] + argv, cwd=ROOT,
-                          capture_output=True, text=True)
+    cmd = argv if argv[0] == "bash" else [sys.executable] + argv
+    proc = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
     dt = time.time() - t0
-    if proc.returncode == 0:
+    if proc.returncode == expect and (must_print is None or must_print in proc.stdout):
         return True, dt, ""
     tail = (proc.stdout + proc.stderr).strip().splitlines()
-    return False, dt, "\n".join("      " + ln for ln in tail[-12:])
+    why = (f"exit {proc.returncode}, expected {expect}" if proc.returncode != expect
+           else f"exit {expect} but stdout never said “{must_print}”")
+    return False, dt, "      " + why + "\n" + "\n".join("      " + ln for ln in tail[-12:])
 
 
 def report(name, problems, ok_text, t0, failed):
@@ -784,9 +844,19 @@ def main():
             for name, argv in GROUPS[g]():
                 print(f"  {name:<28} {' '.join(argv)}")
             if g == "labs":
-                print(f"  {'reporter block':<28} every drill above carries it byte for byte")
-                for rel, why in SHELL_DRILLS.items():
-                    print(f"  – {os.path.basename(rel):<26} {why}")
+                print(f"  {'reporter block':<28} every Python drill above carries it byte for byte")
+                print(f"  {'break paths':<28} each drill's --break-it run must exit 1 and say FAILED:")
+                for name, argv in GROUPS[g]():
+                    rel = drill_of(argv)
+                    if rel is None:
+                        why = next(w for a, w in OTHER_DRILLS.values() if a == argv)
+                        print(f"    – {name[6:]:<26} {why}")
+                    elif break_runs(rel):
+                        modes = " | ".join(" ".join(r[1:]) or "(switch)" for r in break_runs(rel))
+                        print(f"    ✓ {name[6:]:<26} {modes}")
+                    else:
+                        print(f"    – {name[6:]:<26} no break path — "
+                              f"{NO_BREAK_PATH.get(rel, '!! not named in NO_BREAK_PATH')}")
                 if args.only == "labs":
                     print("\n  the block, as check.py holds it:\n")
                     for line in DRILL_BLOCK.rstrip("\n").split("\n"):
@@ -845,14 +915,38 @@ def main():
             t0 = time.time()
             problems = check_drill_block()
             ran += 1
-            report("reporter block", problems,
-                   f"{len(find_labs())} drills carry it byte for byte", t0, failed)
-            for rel, why in SHELL_DRILLS.items():
-                print(f"  – {os.path.basename(rel):<28} {why}")
+            n_py = sum(1 for _, a in find_labs() if drill_of(a))
+            report("reporter block", problems, f"{n_py} drills carry it byte for byte", t0, failed)
             _, not_run = scan_labs()
             for nm, path, why in not_run:
                 print(f"  – {nm:<28} not run — {why}")
                 print(f"      {path}")
+            for name, argv in find_labs():
+                rel = drill_of(argv)
+                t0 = time.time()
+                runs = [([], 0, "PASSED — the lessons held:" if rel else None)]
+                runs += [(extra, 1, "FAILED — ") for extra in (break_runs(rel) if rel else [])]
+                bad = []
+                for extra, expect, must in runs:
+                    ok, _, tail = run(argv + extra, expect, must)
+                    if not ok:
+                        bad.append((" ".join(extra) or "clean run", tail))
+                if rel and not break_runs(rel) and rel not in NO_BREAK_PATH:
+                    bad.append(("no break path", f"      {rel} has no --break-it and is not "
+                                                 f"named in NO_BREAK_PATH — say why, or write one"))
+                if rel and break_runs(rel) and rel in NO_BREAK_PATH:
+                    bad.append(("stale table", f"      {rel} has a --break-it now; drop it "
+                                               f"from NO_BREAK_PATH"))
+                ran += 1
+                dt = time.time() - t0
+                what = "ok" + (f" · --break-it ×{len(runs) - 1}" if len(runs) > 1 else "")
+                print(f"  {'✗' if bad else '✓'} {name:<28} {'FAILED' if bad else what}   ({dt:.1f}s)")
+                if bad:
+                    failed.append(name)
+                    for which, tail in bad:
+                        print(f"      [{which}]")
+                        print(tail)
+            continue
         for name, argv in GROUPS[g]():
             ok, dt, tail = run(argv)
             ran += 1

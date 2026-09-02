@@ -91,8 +91,8 @@ Exit code `0` means every assertion about the lesson held.
 ## Verify (don't take the script's word for it)
 
 ```bash
-python3 exposure_drill.py --sabotage fixing-ends-exposure     # exit 1
-python3 exposure_drill.py --sabotage policy-covers-everything # exit 1
+python3 exposure_drill.py --break-it fixing-ends-exposure     # exit 1
+python3 exposure_drill.py --break-it policy-covers-everything # exit 1
 ```
 
 `fixing-ends-exposure` treats the credential like the bucket — the assumption behind

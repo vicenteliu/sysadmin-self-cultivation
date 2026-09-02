@@ -109,7 +109,7 @@ stdlib Python — runnable anywhere, and in CI:
   policy → `NotAuthorizedOrNotFound` (a 404, not a 403)**, how the verbs nest
   **`inspect ⊂ read ⊂ use ⊂ manage`**, and how a policy **inherits down the compartment
   tree but stops at a sibling**. `python3 verb_and_compartment_drill.py` → exit `0` if
-  the lessons held; `--sabotage verbs` or `--sabotage scope` breaks the model on purpose
+  the lessons held; `--break-it verbs` or `--break-it scope` breaks the model on purpose
   and the assertions fail. Pairs with the [OCI support note](../support.md).
 
 ---

@@ -98,10 +98,10 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 | ✅ | **走读** —— 用听的，不是用读的 | [`walkthrough/`](walkthrough/README.md) —— 目前共三篇走读，播放在同一张可平移、缩放、点击的二维楼面上：**01 · 网络**（[中文](../../walkthrough/01-the-network.zh.md) · [EN](../../walkthrough/01-the-network.en.md)，106 拍）、**02 · 第一个星期一**（[中文](../../walkthrough/02-the-first-monday.zh.md) · [EN](../../walkthrough/02-the-first-monday.en.md)，93 拍）与 **03 · 它坏掉的那一天**（[中文](../../walkthrough/03-the-day-it-breaks.zh.md) · [EN](../../walkthrough/03-the-day-it-breaks.en.md)，102 拍）；稿子放在仓库里，音频不放 |
 | ✅ | **浏览器与检索** | [`site/`](site/README.md) —— 全文搜索，零安装：`python3 site/serve.py` 或 `docker compose -f site/docker-compose.yml up` · [`docs/index.json`](../index.json) —— 每个文件一条记录，给 agent 用 |
 
-**二十三个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，其中九个还带一个
+**二十五个可跑、自验证的 lab** 分布在这些轴下面 —— 退出码 `0` 表示教训成立，其中十七个还带一个
 `--break-it` 开关，换上*标准*做法，让你看着它失败。`labs/` 下另有两个目录需要一个真实的云账号，
-所以按 [`CONTEXT.md`](CONTEXT.md) 的定义它们是可跑的练习而不是 lab：`check.py` 每次运行都点名它
-看得见的那一个，而不是把它算进来；另一个是 Terraform，它没有脚本可以让 `check.py` 注意到。
+所以按 [`CONTEXT.md`](CONTEXT.md) 的定义它们是可跑的练习而不是 lab：`check.py` 每次运行都把两个都
+点名，而不是把它们算进来 —— 一个声明了依赖，另一个没有可以跑的脚本。
 
 **平台** —— The Stack 里对比的七个平台各有一个"端到端运维它"的专门模块（是什么 · 技能图 ·
 AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：

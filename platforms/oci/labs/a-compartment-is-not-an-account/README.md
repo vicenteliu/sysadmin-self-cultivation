@@ -52,8 +52,8 @@ Exit `0` = every lesson held; it doubles as a CI check. Now **break the model on
 watch the guarantees fall — there are two independent sabotage vectors:
 
 ```bash
-python3 verb_and_compartment_drill.py --sabotage verbs   # every verb grants everything -> steps 3 & 4 FAIL, exit 1
-python3 verb_and_compartment_drill.py --sabotage scope   # policies go tenancy-wide     -> step 6 FAILS, exit 1
+python3 verb_and_compartment_drill.py --break-it verbs   # every verb grants everything -> steps 3 & 4 FAIL, exit 1
+python3 verb_and_compartment_drill.py --break-it scope   # policies go tenancy-wide     -> step 6 FAILS, exit 1
 ```
 
 If flattening the verb hierarchy still "passed," the hierarchy wasn't doing anything; if

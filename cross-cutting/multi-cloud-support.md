@@ -258,8 +258,8 @@ and an **on-prem `10.0.0.0/8`** swallows the clouds (the hybrid overlap trap).
 python3 cross-cutting/labs/multi-cloud-cidr-overlap/cidr_overlap_drill.py
 ```
 
-Exit `0` means every lesson held (it doubles as a CI check); `--sabotage ignore-overlap` or
-`--sabotage central-router` breaks the model and the assertions fail. See
+Exit `0` means every lesson held (it doubles as a CI check); `--break-it ignore-overlap` or
+`--break-it central-router` breaks the model and the assertions fail. See
 [`labs/multi-cloud-cidr-overlap/`](labs/multi-cloud-cidr-overlap/).
 
 ## The chapter on one screen

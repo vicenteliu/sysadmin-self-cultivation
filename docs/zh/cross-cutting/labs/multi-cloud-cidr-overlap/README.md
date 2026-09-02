@@ -60,8 +60,8 @@ exit `0` = 每一条教训都成立；它兼作一个 CI 检查。现在**故意
 破坏路径：
 
 ```bash
-python3 cidr_overlap_drill.py --sabotage ignore-overlap   # 假装重叠没关系 -> 步骤 2 和 5 路由错，exit 1
-python3 cidr_overlap_drill.py --sabotage central-router   # 假设有一个什么路由都有的魔法路由器 -> 步骤 3 和 4 看不见那个缺口，exit 1
+python3 cidr_overlap_drill.py --break-it ignore-overlap   # 假装重叠没关系 -> 步骤 2 和 5 路由错，exit 1
+python3 cidr_overlap_drill.py --break-it central-router   # 假设有一个什么路由都有的魔法路由器 -> 步骤 3 和 4 看不见那个缺口，exit 1
 ```
 
 如果重叠的地址还能被"路由"，那那份歧义本来就不是真的；如果一个魔法中央路由器总是有路由，那逐云的

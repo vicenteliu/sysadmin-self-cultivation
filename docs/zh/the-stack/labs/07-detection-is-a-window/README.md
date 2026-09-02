@@ -85,8 +85,8 @@ exit code `0` 表示关于这个教训的每一条断言都成立。
 ## 验证（别光信这个脚本说的）
 
 ```bash
-python3 exposure_drill.py --sabotage fixing-ends-exposure     # exit 1
-python3 exposure_drill.py --sabotage policy-covers-everything # exit 1
+python3 exposure_drill.py --break-it fixing-ends-exposure     # exit 1
+python3 exposure_drill.py --break-it policy-covers-everything # exit 1
 ```
 
 `fixing-ends-exposure` 把那把凭据当成那个 bucket 来对待 —— 也就是每一个发现面板里每一个*已修复*

@@ -20,9 +20,9 @@ Five lessons fall out of that one model:
   5. on-prem 10.0.0.0/8 swallows the clouds -> the hybrid overlap trap (plan IPAM across ALL of it)
 
 Run clean and every lesson holds -> exit 0 (doubles as a CI check).
-Run with --sabotage to break the model and watch the guarantees fall -> exit 1:
-  --sabotage ignore-overlap  : pretend overlap is fine (pick one arbitrarily) -> steps 2 & 5 misroute
-  --sabotage central-router  : assume a magic router with every route -> steps 3 & 4 miss the gap
+Run with --break-it to break the model and watch the guarantees fall -> exit 1:
+  --break-it ignore-overlap  : pretend overlap is fine (pick one arbitrarily) -> steps 2 & 5 misroute
+  --break-it central-router  : assume a magic router with every route -> steps 3 & 4 miss the gap
 """
 
 import argparse
@@ -117,14 +117,14 @@ def round_trip(a, b, nets, **kw):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage", choices=["ignore-overlap", "central-router"],
+    ap.add_argument("--break-it", choices=["ignore-overlap", "central-router"],
                     help="break the model: 'ignore-overlap' = don't detect ambiguous CIDRs; "
                          "'central-router' = assume a magic router that has every route")
     args = ap.parse_args()
-    kw = dict(detect_overlap=(args.sabotage != "ignore-overlap"),
-              central_router=(args.sabotage == "central-router"))
-    if args.sabotage:
-        log(f"  !! SABOTAGE ENABLED: {args.sabotage} !!")
+    kw = dict(detect_overlap=(args.break_it != "ignore-overlap"),
+              central_router=(args.break_it == "central-router"))
+    if args.break_it:
+        log(f"  !! SABOTAGE ENABLED: {args.break_it} !!")
 
     # 1. Non-overlapping address space + a route on each side -> traffic flows both ways.
     step(1, "AWS 10.0/16 <-> Azure 10.1/16, non-overlapping, routes both ways")
@@ -192,7 +192,7 @@ def main():
         "    there is no central router (each cloud needs its own routes, both ways);",
         "    and an on-prem supernet can swallow the clouds.",
         "    Plan non-overlapping address space across every cloud AND on-prem — first.",
-    ], broken=bool(args.sabotage))
+    ], broken=bool(args.break_it))
 
 
 if __name__ == "__main__":

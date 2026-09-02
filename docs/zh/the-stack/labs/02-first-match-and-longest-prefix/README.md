@@ -72,8 +72,8 @@ exit code `0` 表示关于这个教训的每一条断言都成立。
 出来，好让你看清它本来会预测什么：
 
 ```bash
-python3 lookup_order_drill.py --sabotage routes-first-match    # exit 1
-python3 lookup_order_drill.py --sabotage rules-longest-prefix  # exit 1
+python3 lookup_order_drill.py --break-it routes-first-match    # exit 1
+python3 lookup_order_drill.py --break-it rules-longest-prefix  # exit 1
 ```
 
 如果一张按 first-match 解析的路由表还能通过，那 longest-prefix 本来就什么都没决定；如果一套按

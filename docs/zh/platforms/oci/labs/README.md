@@ -111,7 +111,7 @@ oci budget budget create --compartment-id "$OCI_TENANCY" \
   `NotAuthorizedOrNotFound`（一个 404，不是一个 403）**、那些动词怎么嵌套成
   **`inspect ⊂ read ⊂ use ⊂ manage`**，以及一条策略怎么**沿 compartment 树往下继承、却停在一个
   兄弟节点前面**。`python3 verb_and_compartment_drill.py` → 教训成立则 exit `0`；
-  `--sabotage verbs` 或者 `--sabotage scope` 会故意把那个模型弄坏，然后那些断言失败。与
+  `--break-it verbs` 或者 `--break-it scope` 会故意把那个模型弄坏，然后那些断言失败。与
   [OCI support 笔记](../support.md)配对。
 
 ---

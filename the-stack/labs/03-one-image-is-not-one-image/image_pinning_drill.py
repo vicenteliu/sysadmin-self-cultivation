@@ -20,8 +20,8 @@ No cloud, no credentials, no dependencies. Pure Python stdlib. Exit code 0 means
 every assertion about the lesson held. Run it in CI.
 
     python3 image_pinning_drill.py
-    python3 image_pinning_drill.py --sabotage latest-is-stable
-    python3 image_pinning_drill.py --sabotage baked-is-free
+    python3 image_pinning_drill.py --break-it latest-is-stable
+    python3 image_pinning_drill.py --break-it baked-is-free
 """
 
 import argparse
@@ -222,11 +222,11 @@ def run():
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage", choices=["latest-is-stable", "baked-is-free"],
+    ap.add_argument("--break-it", choices=["latest-is-stable", "baked-is-free"],
                     help="break the model on purpose; the drill must then fail")
     args = ap.parse_args()
     global SABOTAGE
-    SABOTAGE = args.sabotage
+    SABOTAGE = args.break_it
     if SABOTAGE:
         log(f"*** SABOTAGE: {SABOTAGE} — assertions are expected to fail ***")
     sys.exit(run())

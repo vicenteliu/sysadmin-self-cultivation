@@ -58,8 +58,8 @@ Exit `0` = every lesson held; it doubles as a CI check. Now **break the model on
 independent sabotage vectors:
 
 ```bash
-python3 cidr_overlap_drill.py --sabotage ignore-overlap   # pretend overlap is fine -> steps 2 & 5 misroute, exit 1
-python3 cidr_overlap_drill.py --sabotage central-router   # assume a magic router with every route -> steps 3 & 4 miss the gap, exit 1
+python3 cidr_overlap_drill.py --break-it ignore-overlap   # pretend overlap is fine -> steps 2 & 5 misroute, exit 1
+python3 cidr_overlap_drill.py --break-it central-router   # assume a magic router with every route -> steps 3 & 4 miss the gap, exit 1
 ```
 
 If overlapping addresses can still be "routed," the ambiguity wasn't real; if a magic central

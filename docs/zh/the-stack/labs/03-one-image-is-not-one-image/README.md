@@ -65,8 +65,8 @@ exit code `0` 表示关于这个教训的每一条断言都成立。
 ## 验证（别光信这个脚本说的）
 
 ```bash
-python3 image_pinning_drill.py --sabotage latest-is-stable  # exit 1
-python3 image_pinning_drill.py --sabotage baked-is-free     # exit 1
+python3 image_pinning_drill.py --break-it latest-is-stable  # exit 1
+python3 image_pinning_drill.py --break-it baked-is-free     # exit 1
 ```
 
 `latest-is-stable` 把运维者脑子里那个模型实现出来 —— 把一个会移动的引用当成一个名字 —— 而三条断言

@@ -20,8 +20,8 @@ No cloud, no credentials, no dependencies. Pure Python stdlib. Exit code 0 means
 every assertion about the lesson held. Run it in CI.
 
     python3 lookup_order_drill.py
-    python3 lookup_order_drill.py --sabotage routes-first-match
-    python3 lookup_order_drill.py --sabotage rules-longest-prefix
+    python3 lookup_order_drill.py --break-it routes-first-match
+    python3 lookup_order_drill.py --break-it rules-longest-prefix
 """
 
 import argparse
@@ -283,11 +283,11 @@ def run():
 def main():
     ap = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--sabotage", choices=["routes-first-match", "rules-longest-prefix"],
+    ap.add_argument("--break-it", choices=["routes-first-match", "rules-longest-prefix"],
                     help="break the model on purpose; the drill must then fail")
     args = ap.parse_args()
     global SABOTAGE
-    SABOTAGE = args.sabotage
+    SABOTAGE = args.break_it
     if SABOTAGE:
         log(f"*** SABOTAGE: {SABOTAGE} — assertions are expected to fail ***")
     sys.exit(run())
