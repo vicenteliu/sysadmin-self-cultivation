@@ -108,7 +108,7 @@ far), and demand-first deepening.
 | ✅ | **Walkthrough** — heard, not read | [`walkthrough/`](walkthrough/README.md) — three walkthroughs over the same interactive **2D floor** you can pan, zoom and click: **01 · the network** ([中文](walkthrough/01-the-network.zh.md) · [EN](walkthrough/01-the-network.en.md), 106 beats), **02 · the first Monday** ([中文](walkthrough/02-the-first-monday.zh.md) · [EN](walkthrough/02-the-first-monday.en.md), 93 beats) and **03 · the day it breaks** ([中文](walkthrough/03-the-day-it-breaks.zh.md) · [EN](walkthrough/03-the-day-it-breaks.en.md), 102 beats). Scripts ship here; audio never does |
 | ✅ | **Browser & retrieval** | [`site/`](site/README.md) — full-text search over the lot, nothing to install · [`docs/index.json`](docs/index.json) — one record per file, for an agent |
 
-**Eighteen runnable, self-verifying labs** sit under those axes — exit `0` means the
+**Twenty-two runnable, self-verifying labs** sit under those axes — exit `0` means the
 lesson held, and most carry a `--break-it` flag that swaps in the *standard* procedure and
 shows it failing. Two more directories under `labs/` need a real cloud account, so they are
 runnable exercises rather than labs as [`CONTEXT.md`](CONTEXT.md) defines one; `check.py`

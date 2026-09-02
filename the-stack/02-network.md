@@ -301,6 +301,25 @@ marked 🧭 in the same place. The debug ladder, though, is platform-independent
 scar-tissue-tested: it was learned on hardware, and it works identically on
 overlays someone else runs.
 
+## Lab (✅ runnable — [`labs/02-first-match-and-longest-prefix/`](labs/02-first-match-and-longest-prefix/))
+
+**Two files, two lookup disciplines, and nothing on the page says which** — zero
+network, zero credentials, Python stdlib only, so CI can run it:
+
+```bash
+python3 the-stack/labs/02-first-match-and-longest-prefix/lookup_order_drill.py
+```
+
+A routing table resolves by **longest prefix** and does not care about order; a
+firewall ruleset resolves by **first match** and cares about nothing else. Both are an
+ordered list of prefixes on a screen. The drill shuffles each one twenty times — every
+routing verdict is identical, eleven of twenty ruleset shuffles change one — then walks
+the two mirror errors that follow: promoting a route line to "prioritise" it changes
+nothing and reads as a ruled-out theory, and one broad allow at the top silently makes
+three rules below it inert, including a deliberate quarantine deny that still shows in
+every screenshot and review. Two sabotage flags implement each mistaken model so you
+can watch what it would have predicted.
+
 ## Guided run (spec)
 
 **This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.
