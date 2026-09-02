@@ -99,15 +99,15 @@ claim 不匹配。每一个都查起来便宜，而且每一个都排除掉一�
 **Answer：** 从那个具体资源上的那个具体动作开始，只在有东西坏掉时才放宽，并让那次失败告诉你要加
 什么。方向要紧，因为另一个方向永远走不完 —— 一份"我们以后会收紧"的宽松初稿，三年后还在生产里。
 在 AI 起草它的地方，它起草的是宽松的；剪裁是人的那一半。
-**Prove it：** [`aws/iam-deny-by-default`](../../../../platforms/aws/labs/iam-deny-by-default/)
+**Prove it：** [`aws/iam-deny-by-default`](../../platforms/aws/labs/iam-deny-by-default)
 
 ### "一个请求被拒绝了，而用户说他有那个角色。现在怎么办？"
 **Probes：** 你能不能读懂一次评估，而不是去猜它。
 **Answer：** 点名是哪条规则拒绝的、在哪个范围上、按什么顺序 —— 显式拒绝胜过允许，而一条组织级边界
 会覆盖一条孤立看起来正确的本地授予。另一个高频成因是两个平面：一个目录角色和一个资源角色，或者云
 IAM 和集群 RBAC，在那儿一个平面上的授予对另一个什么都没说。
-**Prove it：** [`azure/global-admin-is-not-owner`](../../../../platforms/azure/labs/global-admin-is-not-owner/) ·
-[`gcp/gke-iam-vs-rbac`](../../../../platforms/gcp/labs/gke-iam-vs-rbac/)
+**Prove it：** [`azure/global-admin-is-not-owner`](../../platforms/azure/labs/global-admin-is-not-owner) ·
+[`gcp/gke-iam-vs-rbac`](../../platforms/gcp/labs/gke-iam-vs-rbac)
 
 ## 条件访问与设备信任 🔨
 
@@ -117,7 +117,7 @@ IAM 和集群 RBAC，在那儿一个平面上的授予对另一个什么都没�
 比预期更大、也更奇怪的集合。每一次，在保存之前把一个 break-glass 账号排除掉，无一例外。然后窄窄地
 强制执行，再放宽。那个失败不是写了一条糟糕的策略；而是写了一条正确的策略，而它也适用于那个本来要
 去撤销它的人。
-**Prove it：** [`labs/m365-conditional-access-lockout`](../../../../cross-cutting/labs/m365-conditional-access-lockout/)
+**Prove it：** [`labs/m365-conditional-access-lockout`](../labs/m365-conditional-access-lockout)
 
 ### "什么能绕过一条条件访问策略？"
 **Probes：** 你有没有去找过那些比它更早存在的路径。
@@ -146,14 +146,14 @@ IAM 和集群 RBAC，在那儿一个平面上的授予对另一个什么都没�
 **Answer：** 列举每一条授权路径，不是那份 ACL：直接、组、嵌套组、分享链接、继承，以及 API token。
 那条链接是把复审搞垮的那一个，因为它是一条没有任何访问复审会走的第二授权路径 —— ACL 可能只差四个
 名字，而真实的受众差九十个。
-**Prove it：** [`labs/permission-sprawl`](../../../../cross-cutting/labs/permission-sprawl/)
+**Prove it：** [`labs/permission-sprawl`](../labs/permission-sprawl)
 
 ### "一次季度访问复审每次都通过了，而你还是出了问题。怎么会？"
 **Probes：** 你看不看得出一项控制在回答一个比被问的更小的问题。
 **Answer：** 因为一次时点复审问的是*现在谁有访问权*，并且每一次都如实回答了它，而出错的那样东西
 是**时长**。分享给一个组的内容，对每一个后来加入这个组的人都保持可读 —— 没有任何一次授予被做出，
 所以没有任何一次复审有东西可标。缺失的那项控制从来就不是访问控制；它是一个过期期限。
-**Prove it：** [`labs/transcript-retention`](../../../../cross-cutting/labs/transcript-retention/)
+**Prove it：** [`labs/transcript-retention`](../labs/transcript-retention)
 
 ## 工作负载身份 🧭
 
@@ -163,7 +163,7 @@ IAM 和集群 RBAC，在那儿一个平面上的授予对另一个什么都没�
 任何密钥：目标信任源那边的 issuer，而那些信任条件把 subject 钉住，好让这份信任是窄的。它一坏，
 几乎总是四样东西之一 —— issuer 配错了、subject claim 和那个条件不匹配、token 过期，或者 JWKS
 够不到 —— 而调试的办法是读两边对同一个 token 的看法，而不是只读其中一边。
-**Prove it：** [`aws/01-scoped-identity-inventory`](../../../../platforms/aws/labs/01-scoped-identity-inventory/)
+**Prove it：** [`aws/01-scoped-identity-inventory`](../../platforms/aws/labs/01-scoped-identity-inventory)
 
 ### "为什么一把轮换过的密钥仍然是一把密钥？"
 **Probes：** "我们会轮换它们"在你听来是一个解法，还是一个缓解。

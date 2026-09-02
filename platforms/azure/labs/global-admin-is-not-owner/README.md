@@ -7,6 +7,8 @@ summary: "No tenant, no subscription, no credentials, no external packages — j
 ---
 # Lab — Global Admin is not Owner (prove it in your own hands)
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/platforms/azure/labs/global-admin-is-not-owner/README.md)
+
 **Goal:** make Azure's signature access lesson from the [Azure support note](../../support.md)
 tangible — **Azure has two separate identity planes: Microsoft Entra ID directory roles
 govern the tenant, Azure RBAC governs resources, and they do NOT span each other. A

@@ -42,7 +42,7 @@ summary: "是被发现的，不是被计划的。一个步骤在它「本应」�
 |---|---|
 | [00 · 签租约之前](00-before-the-lease.md) | 它是一场与房东的对话。由诚实标记替它承重，而编造一个练习会歪曲这一步。 |
 | [02 · 这栋楼](02-the-building.md) | 把一个毛坯建成机房是与承包商一起完成的物理工作。机柜那一侧的习惯在 [`platforms/self-host/`](../platforms/self-host) 里覆盖了；建筑那一侧是 🧭，而且会一直是。 |
-| [12 · 会议室](12-meeting-rooms-av-and-uc.md) —— AV 那一半 | 同样的理由。数据治理那一半才是真缺口，现在建在 [`labs/transcript-retention/`](../../../cross-cutting/labs/transcript-retention/)；AV 那一半留在这里。 |
+| [12 · 会议室](12-meeting-rooms-av-and-uc.md) —— AV 那一半 | 同样的理由。数据治理那一半才是真缺口，现在建在 [`labs/transcript-retention/`](../cross-cutting/labs/transcript-retention)；AV 那一半留在这里。 |
 
 ## 这份清单在告诉你什么
 
@@ -55,7 +55,7 @@ summary: "是被发现的，不是被计划的。一个步骤在它「本应」�
 ## Closed
 
 ✅ **步骤 10 —— 2026-08-22。** 这里被点名为最强候选的那个已经建成：
-[`cross-cutting/labs/remote-access-four-causes/`](../../../cross-cutting/labs/remote-access-four-causes/)
+[`cross-cutting/labs/remote-access-four-causes/`](../cross-cutting/labs/remote-access-four-causes)
 —— 四个成因、一个字节级相同的症状、排除法解决 4/4 而习惯解决 2/4，以及一个证明自检真的会失败
 的 `--break-it` 开关。
 
@@ -63,20 +63,20 @@ summary: "是被发现的，不是被计划的。一个步骤在它「本应」�
 什么** —— 所以剩下那三个有了一个可以照抄的范例，而不是一份要去解读的规格。
 
 ✅ **步骤 07 —— 2026-08-22。**
-[`cross-cutting/labs/permission-sprawl/`](../../../cross-cutting/labs/permission-sprawl/)
+[`cross-cutting/labs/permission-sprawl/`](../cross-cutting/labs/permission-sprawl)
 —— 两套 estate、同样的文档和人；ACL 的差别是四个名字，而真实的差别是 93 个人，因为一条分享
 链接是一条访问复审不会走的第二授权路径。它的 `--break-it` 是这个系列里最锋利的：它让审计忽略
 链接，**而那正是访问复审实际被执行的方式**。
 
 ✅ **步骤 06 —— 2026-08-22。**
-[`cross-cutting/labs/mail-authentication-alignment/`](../../../cross-cutting/labs/mail-authentication-alignment/)
+[`cross-cutting/labs/mail-authentication-alignment/`](../cross-cutting/labs/mail-authentication-alignment)
 —— 发件源清册对上聚合报告，两个方向都不一致；一个通过 SPF、通过 DKIM、却在 DMARC 上失败的
 工单系统；以及一个在自己域名上通过 SPF 的冒用者。它的 `--break-it` 读取认证结果而不把它们与
 `From:` 行比对，而那正是每一个邮件健康检查器所报告的 —— 在它之下，`p=reject` 仍然投递了那封
 伪造邮件。可选的最严格策略，按标准方式去读，什么都拦不住。
 
 ✅ **步骤 11 —— 2026-08-22。**
-[`cross-cutting/labs/asset-reconciliation/`](../../../cross-cutting/labs/asset-reconciliation/)
+[`cross-cutting/labs/asset-reconciliation/`](../cross-cutting/labs/asset-reconciliation)
 —— 采购和终端工具都报 97 台设备，97 台确实存在，而三条记录是错的。那个连接键决定了这个机队有
 多少是虚构的：主机名报 104，序列号报 99，资产标签报 98。它的 `--break-it` 按主机名对账，而值得
 坐下来想想的是第三条断言 —— 到达顾问层的 15 行里有 12 行是那个键发明出来的幻影，而它为每一个
@@ -85,7 +85,7 @@ summary: "是被发现的，不是被计划的。一个步骤在它「本应」�
 **四个同形状的缺口现在全部建成** —— 远程访问（10）、权限蔓延（07）、邮件认证（06）、对账（11）。
 
 ✅ **步骤 12（数据那一半）—— 2026-08-22。**
-[`cross-cutting/labs/transcript-retention/`](../../../cross-cutting/labs/transcript-retention/)
+[`cross-cutting/labs/transcript-retention/`](../cross-cutting/labs/transcript-retention)
 —— 最后一个，也是唯一一个里面不含任何错误的。一份会议转录稿分享给了一个组、而没有分享给别的
 任何东西，完全照 lab 07 所建议的那样：六个人在那个房间里，21 个人能够读过它，零次授权被做出，
 而三年里四次访问复审全部如实通过。那段本可以核对摘要里那一句错误归属的录音在第 30 天过期了；
@@ -99,7 +99,7 @@ summary: "是被发现的，不是被计划的。一个步骤在它「本应」�
 东西。它有一条 07 没有的轴，而那条轴是时间。
 
 ✅ **步骤 13 —— 2026-08-22。**
-[`cross-cutting/labs/help-desk-queue/`](../../../cross-cutting/labs/help-desk-queue/)
+[`cross-cutting/labs/help-desk-queue/`](../cross-cutting/labs/help-desk-queue)
 —— 第一个**不是**同一形状的已关闭缺口。这里没有任何东西和任何东西不一致；失败在于一个比例是
 不可证伪的。七个分类、两个世界、Erlang-C：自动化拿掉 39% 的工单和 31% 的工作量，同时**抬高**了
 平均处理时长；多一个坐席是 21 倍好而不是两倍好；而步骤 04、08 和 15 在一个服务台上被定价为

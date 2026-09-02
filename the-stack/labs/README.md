@@ -7,6 +7,8 @@ summary: "Runnable evidence for the layer series. Each chapter's \"Lab\" section
 ---
 # The Stack — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/the-stack/labs/README.md)
+
 Runnable evidence for the layer series. Each chapter's "Lab" section is a spec;
 this folder is where those specs become code you can actually run and verify.
 

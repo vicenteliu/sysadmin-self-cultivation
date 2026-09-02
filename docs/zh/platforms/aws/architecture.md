@@ -74,7 +74,7 @@ flowchart TD
 | **全局** | IAM、Route 53、CloudFront、WAF（部分）、Organizations | 横跨所有 region 的一个命名空间；一个 IAM role 到处都存在。 |
 | **区域** | EC2、VPC、S3（桶命名空间是全局的，数据是区域的）、RDS、Lambda，以及绝大多数其他 | 只存在于你创建它的那个 region；你必须遍历 region 才能盘点。 |
 
-这恰好就是那个[盘点 lab](../../../../platforms/aws/labs/01-scoped-identity-inventory/)所教的陷阱 ——
+这恰好就是那个[盘点 lab](labs/01-scoped-identity-inventory)所教的陷阱 ——
 它让你为 EC2/VPC 去遍历 region，而 IAM/列 S3 是一次搞定。当 AI 给你写了一个忘了循环 region 的
 盘点脚本（[`ai-ramp.md`](ai-ramp.md)），正是这份知识抓住它。
 

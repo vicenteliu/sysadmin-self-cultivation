@@ -8,6 +8,8 @@ summary: "Runnable, tear-down-able exercises — same shape as the AWS labs, so 
 ---
 # GCP — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/gcp/labs/README.md)
+
 Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/), so
 the concepts *translate*.
 

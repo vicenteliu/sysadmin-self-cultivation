@@ -7,6 +7,8 @@ summary: "Seven ticket categories with their own arrival rates and handling time
 ---
 # Lab — "one per fifty users" is right here, for a reason it cannot state
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/help-desk-queue/README.md)
+
 **Goal:** turn the staffing question into arithmetic you can argue with. Step 13
 asks how many people a hundred-person service desk needs. The usual answer is a
 ratio, and a ratio is a linear sentence about a system that is not linear.

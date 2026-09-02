@@ -37,7 +37,7 @@ flowchart LR
 
 把这三样弄对 —— 一个**受限身份**、一个**知道 region 的 client**，以及一次**被正确调用的 API** ——
 你就能自动化 AWS 所暴露的任何东西。那个
-[盘点 lab](../../../../platforms/aws/labs/01-scoped-identity-inventory/) 恰好就是这个模型的只读版：
+[盘点 lab](labs/01-scoped-identity-inventory) 恰好就是这个模型的只读版：
 值得和这篇笔记并排读一遍 `inventory.py`，因为它用能跑的代码演示了下面每一条规则。
 
 ## 那架工具阶梯 —— 挑对高度
@@ -100,7 +100,7 @@ flowchart LR
 多数 AWS 运维脚本是两种形状之一：
 
 - **只读/审计脚本** —— 盘点、合规检查、成本/标签报表、"找出每一个违反 Y 的 X"。只读、安全、常跑。
-  那个[盘点 lab](../../../../platforms/aws/labs/01-scoped-identity-inventory/)是那个典范例子；
+  那个[盘点 lab](labs/01-scoped-identity-inventory)是那个典范例子；
   一个合规变体（"找出每一个公开的桶"、"每一个对 0.0.0.0/0 开放的 SG"、"每一个未加密的卷"）是同一副
   骨架换一个过滤器。
 - **修复/编排脚本** —— 它**动手**：给没打标签的资源打标签、按日程停掉闲置实例、轮换一把密钥、
@@ -142,13 +142,13 @@ flowchart LR
 工具、分页/幂等/处理错误的自动化，以及那份建在真实机队脚本工作之上的"先只读、再动手"的直觉
 （[`foundations/`](../../foundations/README.md)）。AWS API 的那些**细节**（准确的 boto3 调用、
 服务的怪癖）是那条 🧭 ramp，而那个
-[盘点 lab](../../../../platforms/aws/labs/01-scoped-identity-inventory/)就是那条 ramp 被证明在
+[盘点 lab](labs/01-scoped-identity-inventory)就是那条 ramp 被证明在
 能跑的代码里 —— 只读、最小权限、分页、知道 region。这里的声称是一份很强的自动化地基，加上一条通向
 AWS API 面的、可验证的 ramp —— 不是多年的生产 AWS 平台工程。
 
 ## Lab（✅ 已建成 —— 去读那份代码）
 
-那个[受限身份盘点 lab](../../../../platforms/aws/labs/01-scoped-identity-inventory/)**就是**这篇
+那个[受限身份盘点 lab](labs/01-scoped-identity-inventory)**就是**这篇
 笔记的可运行形态：一个最小权限 role，加一个 `boto3` 脚本 —— 它通过凭据链认证、给每一次列表调用
 分页、为区域资源遍历 region、逐 region 处理 `ClientError`，并写出 CSV —— 全程只读。开着这篇笔记去读
 [`inventory.py`](../../../../platforms/aws/labs/01-scoped-identity-inventory/inventory.py)，上面

@@ -7,6 +7,8 @@ summary: "A hundred-person office publishes all three records."
 ---
 # Lab — "The records are published" is not the same claim as "the domain is protected"
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/mail-authentication-alignment/README.md)
+
 **Goal:** make the gap between those two sentences measurable. SPF, DKIM and
 DMARC are published, every checker returns green, and the domain is still fully
 spoofable — not through an exotic failure, but through the ordinary one that

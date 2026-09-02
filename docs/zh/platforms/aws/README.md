@@ -75,7 +75,7 @@ Amazon Web Services 是一座你用 API 驾驶的租来的数据中心。你不�
 
 ## 4. Lab
 
-读一个 subnet 和配一个 subnet 是两种不同的技能。那些可跑、可拆的练习住在 **[`labs/`](../../../../platforms/aws/labs/)**
+读一个 subnet 和配一个 subnet 是两种不同的技能。那些可跑、可拆的练习住在 **[`labs/`](labs)**
 里 —— 从一个最小权限 IAM role 加一个盘点你账号的 `boto3` 脚本开始（那个经典"列出一切"管理脚本的
 云上版本），然后是一个用 Terraform 写的最小 VPC 加 EC2。
 
@@ -94,7 +94,7 @@ Amazon Web Services 是一座你用 API 驾驶的租来的数据中心。你不�
   `身份 → client → API 调用` 的模型、CLI 对 boto3 对 Terraform 那架高度阶梯、那条凭据链
   （脚本里绝不放密钥）、把一个能用的脚本和一把自伤枪分开的那些规则（分页、遍历 region、处理错误、
   保持幂等），以及只读审计与修复这两种形状 —— 全都扎在那个可跑的
-  [盘点 lab](../../../../platforms/aws/labs/01-scoped-identity-inventory/) 上。
+  [盘点 lab](labs/01-scoped-identity-inventory) 上。
 - **[`support.md`](support.md)** —— **那门修/救手艺**：支持 AWS 让你为什么负责、那些反复出现的
   工单以及*你去哪儿看*（`AccessDenied` 的语法、超时对拒绝、S3 403 的那几层、ALB 5xx、那些成本
   意外），以及一个强系统管理员要接手它必须**忘掉**的那些承重的本地/云直觉 —— 那条 ramp 被落到

@@ -7,6 +7,8 @@ summary: "inventory-policy.json grants only the read-only calls this script make
 ---
 # Lab 01 — Scoped identity + account inventory
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/platforms/aws/labs/01-scoped-identity-inventory/README.md)
+
 **Goal:** create a *least-privilege, read-only* identity, then use it to inventory
 the account from a script — the cloud version of the classic "list everything" admin
 script. This is move #1 and #2 of the [operating model](../../../../00-the-operating-model.md)

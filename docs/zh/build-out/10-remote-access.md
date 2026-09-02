@@ -79,7 +79,7 @@ AI 挣得起位置的地方是最后那一行。VPN 和认证失败量大、方�
 
 ## 动手做
 
-- ✅ [`cross-cutting/labs/remote-access-four-causes/`](../../../cross-cutting/labs/remote-access-four-causes/)
+- ✅ [`cross-cutting/labs/remote-access-four-causes/`](../cross-cutting/labs/remote-access-four-causes)
   —— **可跑，纯本地。** 上面那四条故障路径，产出一份一模一样的用户报告。看着那些反射式检查
   什么都排除不掉，看着一个强制门户伪装成一次身份故障，再看着一个排除顺序以有界的最坏情形解决
   4/4，而习惯只解决 2/4。
@@ -88,7 +88,7 @@ AI 挣得起位置的地方是最后那一行。VPN 和认证失败量大、方�
   python3 cross-cutting/labs/remote-access-four-causes/four_causes_drill.py
   ```
 
-- [`cross-cutting/labs/m365-conditional-access-lockout/`](../../../cross-cutting/labs/m365-conditional-access-lockout/)
+- [`cross-cutting/labs/m365-conditional-access-lockout/`](../cross-cutting/labs/m365-conditional-access-lockout)
   —— 那条把远程用户锁在外面的策略，就是那条把你自己锁在外面的策略
 
 ## 把它做反了会怎样

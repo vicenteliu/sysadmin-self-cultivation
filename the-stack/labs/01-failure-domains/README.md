@@ -7,6 +7,8 @@ summary: "No cloud, no credentials, no cost, no external packages — just Pytho
 ---
 # Lab 01 — Failure domains (place replicas so a rack loss survives)
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/the-stack/labs/01-failure-domains/README.md)
+
 **Goal:** make the central lesson of [chapter 01](../../01-physical.md) tangible — **a
 failure domain is the blast radius of a shared dependency, and "highly available" means
 placing replicas so no single domain failure takes them all.** You'll run a drill that

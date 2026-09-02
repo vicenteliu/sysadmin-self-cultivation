@@ -149,7 +149,7 @@ Kubernetes 修/救就是 **describe → logs → events** 反射——你的 `sy
 python3 cross-cutting/labs/k8s-reconcile-loop/reconcile_drill.py
 ```
 
-exit `0` 表示每条教训都成立(兼作 CI 检查);`--sabotage no-reconcile` 或 `--sabotage ready-ignores-probe` 破坏模型、断言就失败。见 [`labs/k8s-reconcile-loop/`](../../../cross-cutting/labs/k8s-reconcile-loop/)。
+exit `0` 表示每条教训都成立(兼作 CI 检查);`--sabotage no-reconcile` 或 `--sabotage ready-ignores-probe` 破坏模型、断言就失败。见 [`labs/k8s-reconcile-loop/`](labs/k8s-reconcile-loop)。
 
 ## 一页看全本章
 

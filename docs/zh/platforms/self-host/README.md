@@ -84,12 +84,12 @@ PXE/kickstart 配置、那条 udev 规则 —— 然后对着真实那台机器�
 ## 4. Lab
 
 一条**三节的命令行弧**（盘点机队 → 不用手地发放一个节点 → 故障域 + RAID 演练）在
-**[`labs/`](../../../../platforms/self-host/labs/)** 里，用的是真实的
+**[`labs/`](labs)** 里，用的是真实的
 `virsh`/`ipmitool`/`ansible` 命令，而它和整个栈里最有质感的那次演练重叠：在一台开了嵌套虚拟化的
 机器上（Proxmox 或者 Workstation/Fusion），用一台 PXE 服务器搭出一个小小的虚拟"机队"，不用手地
 网络启动并装机一个节点，定义两个"机柜"然后干掉一个，看着故障域真的起作用 ——
 那份 [`the-stack/01` 的 lab 规格](../../the-stack/01-physical.md)，也就是*这个*平台的 lab。那个可
-跑的[备份演练](../../../../the-stack/labs/04-backup-not-snapshot/)是自托管纪律里另一块纯本地的拼图。
+跑的[备份演练](../../the-stack/labs/04-backup-not-snapshot)是自托管纪律里另一块纯本地的拼图。
 
 ## 5. 往深里走 —— 架构、运营与自动化
 

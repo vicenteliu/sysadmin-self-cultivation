@@ -75,7 +75,7 @@ AI 确实挣得起位置的地方在无聊的那一端：读一条失败的纳�
 
 - [`toolbox/baseline-check/`](../toolbox/baseline-check/) —— 断言一台建好的机器确实处在你
   声称的那个状态。对着产线上的第一台跑，不是第一百台。
-- [`foundations/labs/idempotence-drill/`](../../../foundations/labs/idempotence-drill/) ——
+- [`foundations/labs/idempotence-drill/`](../foundations/labs/idempotence-drill) ——
   一套构建流程必须具备的那个性质；跑两遍必须是安全的。
 
 ## 把它做反了会怎样

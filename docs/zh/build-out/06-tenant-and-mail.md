@@ -79,10 +79,10 @@ summary: "🔨 亲手做过 —— M365 租户工作以及围绕它的修/救手
 
 ## 动手做
 
-- [`cross-cutting/labs/m365-conditional-access-lockout/`](../../../cross-cutting/labs/m365-conditional-access-lockout/)
+- [`cross-cutting/labs/m365-conditional-access-lockout/`](../cross-cutting/labs/m365-conditional-access-lockout)
   —— 租户层面最容易犯、也最贵撤销的那个错误。
 
-- [`cross-cutting/labs/mail-authentication-alignment/`](../../../cross-cutting/labs/mail-authentication-alignment/)
+- [`cross-cutting/labs/mail-authentication-alignment/`](../cross-cutting/labs/mail-authentication-alignment)
   —— 三条全绿的记录和一个完全可被冒用的域名，而那是同一张截图。为什么 `p=none` 是监控而不是
   保护，以及如果你今天就切到强制执行，会打断什么。
 

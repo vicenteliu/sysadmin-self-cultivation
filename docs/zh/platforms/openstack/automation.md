@@ -74,7 +74,7 @@ API 调用** —— 你就能从一个终端运维整朵云。
 
 - **只读/审计脚本** —— 跨 project 的盘点、一次合规检查（公开的 security-group 规则、未加密的卷）、
   一份配额/容量报表。只读、安全、常跑 ——
-  那个[盘点 lab](../../../../platforms/openstack/labs/)恰好就是这个（`openstack ... list`）。
+  那个[盘点 lab](labs)恰好就是这个（`openstack ... list`）。
 - **修复/编排脚本** —— 它**动手**：回收孤儿资源、重新平衡配额、立起一个租户网络 + 实例。它会变更
   状态，所以它承担那全套纪律 —— application credential、先 dry run、幂等、有记录。
 

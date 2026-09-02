@@ -82,7 +82,7 @@ summary: "🧭 经过验证的 ramp。房间 AV 集成不是这位作者亲手�
 
 ## 动手做
 
-- [`cross-cutting/labs/transcript-retention/`](../../../cross-cutting/labs/transcript-retention/)
+- [`cross-cutting/labs/transcript-retention/`](../cross-cutting/labs/transcript-retention)
   —— 治理那一半，也是唯一可能做成可跑的那一半：录音和转录稿落在哪、三年后谁还能读它们，以及
   为什么在那个数字翻了三倍的同时每一次访问复审都通过。
 

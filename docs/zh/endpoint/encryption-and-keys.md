@@ -93,7 +93,7 @@ summary: "这个仓库里有三处把恢复密钥托管叫作「真正的那份�
 就积累起来：五年之后，它持有一百来台已经不存在的机器的密钥，和一百来台还存在的并排放着，而记录里
 没有任何东西能把它们区分开。
 
-那是 [`asset-reconciliation`](../../../cross-cutting/labs/asset-reconciliation/) 的那个问题被套到
+那是 [`asset-reconciliation`](../cross-cutting/labs/asset-reconciliation) 的那个问题被套到
 了秘密上 —— 两套本该一致的系统在漂移，而没有任何事件强制一次比对。而它和
 [参考办公室那些非人身份](../the-reference-office.md#why-these-numbers)是同一个形状：
 **一份没有最后一天的凭据。** 在你把恢复密钥算进去之前，那样的东西大约有四十个。把它们算上，
@@ -111,7 +111,7 @@ summary: "这个仓库里有三处把恢复密钥托管叫作「真正的那份�
 多数时候那是两次不同的认证，而这个圈闭不上。但那些你最需要一把恢复密钥的故障模式，不成比例地
 恰恰是身份本身就是问题的那些：一次目录故障、一条把所有人锁在外面的条件访问策略、一个被误停用的
 账号、一次租户级的故障。那不是假设 —— 它是
-[`m365-conditional-access-lockout`](../../../cross-cutting/labs/m365-conditional-access-lockout/)，
+[`m365-conditional-access-lockout`](../cross-cutting/labs/m365-conditional-access-lockout)，
 往下一层。
 
 **那个设计答案和身份的一样：** [`build-out/03`](../build-out/03-identity.md) 所要求的那两个
@@ -150,7 +150,7 @@ break-glass 账号，被排除在条件访问之外，**而它们的凭据能被
   取用测试的步骤
 - [`build-out/03`](../build-out/03-identity.md) —— break-glass，也就是上面那个循环依赖所依赖的东西
 - [`endpoint/management.md`](management.md) —— 那个多半正握着这些密钥的 MDM
-- [`cross-cutting/labs/m365-conditional-access-lockout/`](../../../cross-cutting/labs/m365-conditional-access-lockout/)
+- [`cross-cutting/labs/m365-conditional-access-lockout/`](../cross-cutting/labs/m365-conditional-access-lockout)
   —— 这份设计必须熬过的那次身份故障
 - [`参考办公室`](../the-reference-office.md#parameters) —— 一个租期里的 220 台机器，以及那些没有
   最后一天的凭据

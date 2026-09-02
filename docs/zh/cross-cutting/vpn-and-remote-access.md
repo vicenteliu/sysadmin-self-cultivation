@@ -18,7 +18,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 
 > [`build-out/10`](../build-out/10-remote-access.md) 决定**还有什么仍然需要网络级的访问**，而对
 > 一间 SaaS 优先的办公室来说，答案是一份很短的清单。
-> [`remote-access-four-causes`](../../../cross-cutting/labs/remote-access-four-causes/) 演练
+> [`remote-access-four-causes`](labs/remote-access-four-causes) 演练
 > **为什么同一条错误消息有四个成因**。两者都没说中间发生了什么，而那正是被问到的东西。
 > 记录在 [`docs/questions/networking.md`](../docs/questions/networking.md)。
 
@@ -49,7 +49,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 一条进来的路 —— 它是第二样挂掉的东西。[`build-out/10`](../build-out/10-remote-access.md) 要求
 一条**不依赖于正在被修的那个东西**的 break-glass 路径，而那一句就是这篇笔记把它标出来的全部
 理由：它和[一把存放在它本要绕过的那个身份背后的恢复密钥](../endpoint/encryption-and-keys.md)
-以及[那次 conditional-access 锁死演练](../../../cross-cutting/labs/m365-conditional-access-lockout/)
+以及[那次 conditional-access 锁死演练](labs/m365-conditional-access-lockout)
 是同一个形状。三个不同的系统，一个失败。
 
 ## 决定 2 —— 那个地址从哪个网段来
@@ -124,7 +124,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 东西。
 
 **而那些故障模式没有挪动。**
-[四成因演练](../../../cross-cutting/labs/remote-access-four-causes/)对着两者中的任何一个都
+[四成因演练](labs/remote-access-four-causes)对着两者中的任何一个都
 一模一样地成立：一条消息、四个成因，排除法解开四个而习惯解开两个。
 
 ## 诚实边界
@@ -142,9 +142,9 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 
 - [`build-out/10`](../build-out/10-remote-access.md) —— 还有什么仍然需要网络级访问，也就是这篇
   笔记假定已经做过的那个决定
-- [`labs/remote-access-four-causes/`](../../../cross-cutting/labs/remote-access-four-causes/)
+- [`labs/remote-access-four-causes/`](labs/remote-access-four-causes)
   —— 一条错误消息、四个成因，以及排除法为什么胜过习惯
 - [`site-network-design.md`](site-network-design.md) —— 一个远程用户必须抵达其中之一的那些网段
 - [`network-evolution.md`](network-evolution.md) —— 边界为什么从围着一个地方变成围着一次会话
-- [`labs/m365-conditional-access-lockout/`](../../../cross-cutting/labs/m365-conditional-access-lockout/)
+- [`labs/m365-conditional-access-lockout/`](labs/m365-conditional-access-lockout)
   —— 决定 1 里那个循环依赖，被演练出来

@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 364,
+  "count": 395,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -1432,6 +1432,165 @@
       "mirrors": "cross-cutting/kubernetes.md",
       "derived": true
     },
+    "docs/zh/cross-cutting/labs/asset-reconciliation/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "A hundred-person office runs procurement (authoritative for who paid for it and who it belongs to) and an endpoint management tool (authoritative for what state it is in).",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/asset-reconciliation/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/ci-cd-pipeline/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "ci-cd"
+      ],
+      "platforms": [],
+      "summary": "The workflow lives under .github-workflows-example/ on purpose — GitHub only runs workflows in .github/workflows/, so it will not execute against this teaching repo.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/ci-cd-pipeline/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/help-desk-queue/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "Seven ticket categories with their own arrival rates and handling times, two worlds (that automation built, or not), Erlang-C over a stated support window.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/help-desk-queue/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/k8s-reconcile-loop/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "containers"
+      ],
+      "platforms": [],
+      "summary": "The runtime twin of the Terraform state lesson: you do not manage processes, you declare desired state, and a controller drives actual toward desired forever. Delete a pod and it comes back.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/k8s-reconcile-loop/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/m365-conditional-access-lockout/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity",
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "No tenant, no credentials, no cost, no external packages — just Python 3.8+.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/m365-conditional-access-lockout/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/mail-authentication-alignment/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "A hundred-person office publishes all three records.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/mail-authentication-alignment/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/mitigate-before-diagnose/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [],
+      "platforms": [],
+      "summary": "Mitigating first saves nine minutes of mean downtime and costs six in the tail — and the model says at what mitigation coverage the advice inverts, which is the part a slogan cannot carry.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/mitigate-before-diagnose/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/multi-cloud-cidr-overlap/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "networking",
+        "cloud"
+      ],
+      "platforms": [],
+      "summary": "The first concrete blocker the day a single-cloud admin connects two clouds: peering is refused when the address space overlaps, and every console nudges you toward the same 10.0.0.0/16.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/multi-cloud-cidr-overlap/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/one-control-three-stages/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [],
+      "platforms": [],
+      "summary": "Six of six kill-chain stages covered, resting on seven controls, one of which carries three stages alone — and the last stage is not prevented at all, it is survived. A control matrix cannot say any of the three.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/one-control-three-stages/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/permission-sprawl/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "Two estates, built the same week, same documents, same hundred people.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/permission-sprawl/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/remote-access-four-causes/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "identity",
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Four unrelated causes produce a byte-identical 'the VPN will not connect', so diagnosing from the symptom is guessing with extra steps. An ordered set of checks, each chosen for what it rules out, gets there every time with a bounded worst case.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/remote-access-four-causes/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/terraform-state-and-drift/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "iac-config"
+      ],
+      "platforms": [],
+      "summary": "Terraform does not converge against the real world every run. It plans against a state file, and the gap between config, state and reality is where every Terraform surprise lives.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/terraform-state-and-drift/README.md",
+      "derived": true
+    },
+    "docs/zh/cross-cutting/labs/transcript-retention/README.md": {
+      "kind": "lab",
+      "axis": "cross-cutting",
+      "themes": [
+        "storage-backup",
+        "itsm-saas"
+      ],
+      "platforms": [],
+      "summary": "permission-sprawl asks who can see this. That is a question about an instant, and it answers it well.",
+      "language": "zh",
+      "mirrors": "cross-cutting/labs/transcript-retention/README.md",
+      "derived": true
+    },
     "docs/zh/cross-cutting/m365-support.md": {
       "kind": "support-note",
       "axis": "cross-cutting",
@@ -1896,6 +2055,20 @@
       "mirrors": "endpoint/encryption-and-keys.md",
       "derived": true
     },
+    "docs/zh/endpoint/labs/policy-blast-radius/README.md": {
+      "kind": "lab",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint",
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "The console says the policy reaches 3. It reaches 22. Three years later it reaches 30 and nobody edited it — because the group it is scoped to is populated by joiner-mover-leaver, and a blast radius is a function of time.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "endpoint/labs/policy-blast-radius/README.md",
+      "derived": true
+    },
     "docs/zh/endpoint/management.md": {
       "kind": "companion",
       "axis": "endpoint",
@@ -1933,6 +2106,18 @@
       "summary": "The floor under every role in this repo. Every job posting that inspired this project assumes this and never lists it — which is exactly why it's worth making explicit.",
       "language": "zh",
       "mirrors": "foundations/README.md",
+      "derived": true
+    },
+    "docs/zh/foundations/labs/idempotence-drill/README.md": {
+      "kind": "lab",
+      "axis": "foundations",
+      "themes": [
+        "linux-scripting"
+      ],
+      "platforms": [],
+      "summary": "An idempotent script is infrastructure and a fragile one is a liability; strict mode is the line between a tool and a footgun. Built, run twice, and felt in bash.",
+      "language": "zh",
+      "mirrors": "foundations/labs/idempotence-drill/README.md",
       "derived": true
     },
     "docs/zh/platforms/README.md": {
@@ -2001,6 +2186,65 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/aws/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/labs/01-scoped-identity-inventory/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "identity",
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "inventory-policy.json grants only the read-only calls this script makes — nothing…",
+      "language": "zh",
+      "mirrors": "platforms/aws/labs/01-scoped-identity-inventory/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/labs/02-minimal-vpc-ec2-terraform/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "iac-config",
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "A VPC, a public and a private subnet, and one EC2 instance reachable without opening a single inbound port — stood up entirely from Terraform and torn down cleanly. Move #3 of the operating model, at the build-from-code-not-clicks bar.",
+      "language": "zh",
+      "mirrors": "platforms/aws/labs/02-minimal-vpc-ec2-terraform/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Runnable, tear-down-able exercises. Reading about a subnet and configuring one are different skills; these make you do the second.",
+      "language": "zh",
+      "mirrors": "platforms/aws/labs/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/labs/iam-deny-by-default/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "identity",
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+.",
+      "language": "zh",
+      "mirrors": "platforms/aws/labs/iam-deny-by-default/README.md",
       "derived": true
     },
     "docs/zh/platforms/aws/operations.md": {
@@ -2105,6 +2349,34 @@
       "mirrors": "platforms/azure/automation.md",
       "derived": true
     },
+    "docs/zh/platforms/azure/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so you feel the concepts translate rather than re-learning from scratch.",
+      "language": "zh",
+      "mirrors": "platforms/azure/labs/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/azure/labs/global-admin-is-not-owner/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "azure"
+      ],
+      "summary": "No tenant, no subscription, no credentials, no external packages — just Python 3.8+.",
+      "language": "zh",
+      "mirrors": "platforms/azure/labs/global-admin-is-not-owner/README.md",
+      "derived": true
+    },
     "docs/zh/platforms/azure/operations.md": {
       "kind": "companion",
       "axis": "platforms",
@@ -2207,6 +2479,37 @@
       "mirrors": "platforms/gcp/automation.md",
       "derived": true
     },
+    "docs/zh/platforms/gcp/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so the concepts translate.",
+      "marker": "🧭",
+      "language": "zh",
+      "mirrors": "platforms/gcp/labs/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/gcp/labs/gke-iam-vs-rbac/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "identity",
+        "cloud",
+        "containers"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "No cluster, no credentials, no cost, no external packages — just Python 3.8+.",
+      "language": "zh",
+      "mirrors": "platforms/gcp/labs/gke-iam-vs-rbac/README.md",
+      "derived": true
+    },
     "docs/zh/platforms/gcp/operations.md": {
       "kind": "companion",
       "axis": "platforms",
@@ -2307,6 +2610,35 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/oci/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs.",
+      "marker": "🧭",
+      "language": "zh",
+      "mirrors": "platforms/oci/labs/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/labs/a-compartment-is-not-an-account/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "OCI's two signature access lessons, by hand and with no cloud account: NotAuthorizedOrNotFound is a 404 rather than a 403, so a resource is invisible instead of visibly forbidden, and inspect/read/use/manage is a hierarchy rather than a set of roles.",
+      "language": "zh",
+      "mirrors": "platforms/oci/labs/a-compartment-is-not-an-account/README.md",
       "derived": true
     },
     "docs/zh/platforms/oci/operations.md": {
@@ -2412,6 +2744,21 @@
       "mirrors": "platforms/openstack/automation.md",
       "derived": true
     },
+    "docs/zh/platforms/openstack/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "Tear-down-able exercises against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre.",
+      "marker": "🧭",
+      "language": "zh",
+      "mirrors": "platforms/openstack/labs/README.md",
+      "derived": true
+    },
     "docs/zh/platforms/openstack/operations.md": {
       "kind": "companion",
       "axis": "platforms",
@@ -2497,6 +2844,21 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/self-host/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/self-host/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "self-host"
+      ],
+      "summary": "Pure-local, tear-down-able exercises. Where the clouds need an account, this platform needs a laptop with nested virtualization — the honest way to practice bare-metal discipline without a data centre.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "platforms/self-host/labs/README.md",
       "derived": true
     },
     "docs/zh/platforms/self-host/operations.md": {
@@ -2585,6 +2947,21 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/vsphere/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/vsphere/labs/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "Tear-down-able exercises against a lab vCenter (or nested ESXi).",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/labs/README.md",
       "derived": true
     },
     "docs/zh/platforms/vsphere/operations.md": {
@@ -2786,6 +3163,41 @@
       "summary": "The third axis of this repo. platforms/ reads the clouds one at a time; cross-cutting/ reads one theme across them.",
       "language": "zh",
       "mirrors": "the-stack/README.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/labs/01-failure-domains/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [],
+      "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+.",
+      "language": "zh",
+      "mirrors": "the-stack/labs/01-failure-domains/README.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/labs/04-backup-not-snapshot/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization",
+        "storage-backup"
+      ],
+      "platforms": [],
+      "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+ and its built-in sqlite3.",
+      "language": "zh",
+      "mirrors": "the-stack/labs/04-backup-not-snapshot/README.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/labs/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Runnable evidence for the layer series. Each chapter's \"Lab\" section is a spec; this folder is where those specs become code you can actually run and verify.",
+      "language": "zh",
+      "mirrors": "the-stack/labs/README.md",
       "derived": true
     },
     "docs/zh/toolbox/README.md": {

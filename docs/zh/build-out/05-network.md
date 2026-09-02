@@ -82,7 +82,7 @@ summary: "🔨 亲手做过 —— 交换、DNS/DHCP、启动路径，以及那�
 
 - [`toolbox/cidr-check/`](../toolbox/cidr-check/) —— 在地址规划被部署**之前**检查重叠。
   相对于它所防住的东西，这是这个仓库里最便宜的工具。
-- [`cross-cutting/labs/multi-cloud-cidr-overlap/`](../../../cross-cutting/labs/multi-cloud-cidr-overlap/)
+- [`cross-cutting/labs/multi-cloud-cidr-overlap/`](../cross-cutting/labs/multi-cloud-cidr-overlap)
   —— 同一个错误在更大尺度上，被做得可触摸。
 
 ## 把它做反了会怎样

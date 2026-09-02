@@ -42,7 +42,7 @@ toolbox/
 | `user-lifecycle` | CSV 驱动的 Linux 批量用户创建/停用 | 新写；身份是 JD 里最密集的集群 |
 | `patch-report` | 待更新清单（apt/dnf），带是否需重启标记 | 新写 |
 | `baseline-check` | 只读审计一小组加固基线 | 新写；Ansible 修复在 Ansible 波次 |
-| `backup-restore-drill` | 用恢复来证明备份——没恢复过的备份不算备份 | 从 [the-stack lab 04](../../../the-stack/labs/04-backup-not-snapshot/) 生长而来 |
+| `backup-restore-drill` | 用恢复来证明备份——没恢复过的备份不算备份 | 从 [the-stack lab 04](../the-stack/labs/04-backup-not-snapshot) 生长而来 |
 | `cidr-check` | 检测网络规划中的 CIDR 网段重叠 | 从 multi-cloud lab 生长而来 |
 
 ## Ansible 线（✅ 已交付——修复的那一半）

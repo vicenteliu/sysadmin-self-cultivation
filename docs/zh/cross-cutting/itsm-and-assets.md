@@ -134,17 +134,17 @@ ramp。那句可迁移的声称是：真实的 ITSM、资产对账和访问治�
 **把事实对起来，把访问证明出来。** 纯本地，不需要特殊工具。下面这份规格原本是写成一个三段式
 lab 的；它最后成了两个，因为对账那一半和访问那一半结果是不同的 drill。
 
-1. **对账** —— ✅ [`labs/asset-reconciliation/`](../../../cross-cutting/labs/asset-reconciliation/)。
+1. **对账** —— ✅ [`labs/asset-reconciliation/`](labs/asset-reconciliation)。
    建得比这份规格要求的更大：规格想要的是*在一份清单里而不在另一份里的东西*，那是浅的那一半。
    这个 drill 还度量了那个**连接键**让你付出什么（主机名报出 104 台设备，而实际存在 97 台），
    并且落在一个好的键也解不开的残差上 —— 因为那份裁定，而不是那次集合差，才是这份工作。
 2. **生命周期** —— ✅ 在实质上，落在
-   [`labs/permission-sprawl/`](../../../cross-cutting/labs/permission-sprawl/) 里：把某人从组里
+   [`labs/permission-sprawl/`](labs/permission-sprawl) 里：把某人从组里
    移除，在干净的那片 estate 上处处都被回收，而在蔓延的那一片上**什么都没被回收** —— 那正是
    "离职者仍然有访问权"这条发现，从访问那一侧到达。
    [`toolbox/user-lifecycle/`](../toolbox/user-lifecycle/) **执行**入转离；注意，执行一次离职和
    检测出一次静默失败的离职，是两件不同的活，而只有第二件是一条审计发现。
-3. **可答性** —— ✅ [`labs/permission-sprawl/`](../../../cross-cutting/labs/permission-sprawl/)
+3. **可答性** —— ✅ [`labs/permission-sprawl/`](labs/permission-sprawl)
    第四拍：每一条组授予都用一个比授予它的那个人活得更久的角色，回答了*这个人为什么有访问权*，
    而那些个人授予根本重建不出来。那就是"治理只有在答得上来的时候才是真的"这句声称，被做成可以
    随叫随失败。

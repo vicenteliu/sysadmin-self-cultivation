@@ -59,7 +59,7 @@ summary: "详细索引：每个模块是什么、住在哪。"
 | [`01-physical`](the-stack/01-physical.md) | 数据中心、硬件、hypervisor、故障域 | ✅ |
 | [`02-network`](the-stack/02-network.md) | underlay/overlay、VPC 模型、出网计费表、调试阶梯 | ✅ |
 | [`03-compute-and-images`](the-stack/03-compute-and-images.md) | 计算形态、镜像流水线、bake vs fry、cloud-init | ✅ |
-| [`04-storage`](the-stack/04-storage.md) | block/file/object、备份的恐惧 · **+ 可跑 [lab](../../the-stack/labs/04-backup-not-snapshot/)** | ✅ |
+| [`04-storage`](the-stack/04-storage.md) | block/file/object、备份的恐惧 · **+ 可跑 [lab](the-stack/labs/04-backup-not-snapshot)** | ✅ |
 | [`05-platform-services`](the-stack/05-platform-services.md) | 容器、serverless、托管数据库、自建 vs 租用 | ✅ |
 | [`06-observability`](the-stack/06-observability.md) | metric/log/trace、SLI/SLO、OpenTelemetry | ✅ |
 | [`07-security`](the-stack/07-security.md) | 责任共担、纵深防御、CSPM/EDR/SIEM | ✅ |
@@ -78,7 +78,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`aws/`](platforms/aws/) | ✅ 范例 + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs（**2 个可跑** + 三段式 CLI arc）。先读它。· 🧭 |
 | [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md)/[support](platforms/azure/support.md) + 三段式 CLI arc。· 🧭，**Entra/身份 🔨** |
 | [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 三段式 CLI arc。global-VPC 是那个异类。· 🧭 |
-| [`oci/`](platforms/oci/) | ✅ + [architecture](platforms/oci/architecture.md)/[operations](platforms/oci/operations.md)/[automation](platforms/oci/automation.md)/[support](platforms/oci/support.md) + 三段式 CLI arc + [compartment/verb lab](../../platforms/oci/labs/a-compartment-is-not-an-account/)。最年轻的超大规模云 —— compartment、OCPU、裸金属优先、便宜出网。· 🧭 |
+| [`oci/`](platforms/oci/) | ✅ + [architecture](platforms/oci/architecture.md)/[operations](platforms/oci/operations.md)/[automation](platforms/oci/automation.md)/[support](platforms/oci/support.md) + 三段式 CLI arc + [compartment/verb lab](platforms/oci/labs/a-compartment-is-not-an-account)。最年轻的超大规模云 —— compartment、OCPU、裸金属优先、便宜出网。· 🧭 |
 
 **私有云 / 本地** —— 跑在**你自己**硬件上的平台：
 
@@ -171,7 +171,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | 编号第十一，却必须从第 1 台设备就开始 —— 对依赖诚实，对时间撒谎 | ✅ 🔨 |
 | [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | 一百个人需要几个 IT —— 在估算面被枚举清楚之前无法回答 | ✅ 🔨 |
 | [`docs/questions.md`](docs/questions.md) | 有人问过这个仓库、而它还答不上的问题 —— **七个域三十问**，全部已答。索引，加上划在边界外的理由；各域是 [`docs/questions/`](docs/questions/) 下的文件，其中 4 个是先被收窄才答的，理由都留着 | ✅ |
-| [`build-out/GAPS.md`](build-out/GAPS.md) | 场景浮出来的六个真缺口，其中四个是同一个形状 —— **六个现在全部关闭**，靠 [`remote-access-four-causes`](../../cross-cutting/labs/remote-access-four-causes/)、[`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/)、[`mail-authentication-alignment`](../../cross-cutting/labs/mail-authentication-alignment/)、[`asset-reconciliation`](../../cross-cutting/labs/asset-reconciliation/)、[`help-desk-queue`](../../cross-cutting/labs/help-desk-queue/) 和 [`transcript-retention`](../../cross-cutting/labs/transcript-retention/) | ✅ 活的 |
+| [`build-out/GAPS.md`](build-out/GAPS.md) | 场景浮出来的六个真缺口，其中四个是同一个形状 —— **六个现在全部关闭**，靠 [`remote-access-four-causes`](cross-cutting/labs/remote-access-four-causes)、[`permission-sprawl`](cross-cutting/labs/permission-sprawl)、[`mail-authentication-alignment`](cross-cutting/labs/mail-authentication-alignment)、[`asset-reconciliation`](cross-cutting/labs/asset-reconciliation)、[`help-desk-queue`](cross-cutting/labs/help-desk-queue) 和 [`transcript-retention`](cross-cutting/labs/transcript-retention) | ✅ 活的 |
 
 ## VIII. 走读 —— 第二条路线，是听的不是读的
 

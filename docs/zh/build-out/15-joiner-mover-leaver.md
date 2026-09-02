@@ -91,7 +91,7 @@ SCIM 的 SaaS 产品里的孤儿。同样是检测，不是行动。
   **默认 dry-run**，而那正是这里最要紧的那个性质
 - [`toolbox/ansible/roles/user_lifecycle/`](../toolbox/ansible/roles/user_lifecycle/)
   —— 同一件活，做成配置而不是做成脚本
-- [`foundations/labs/idempotence-drill/`](../../../foundations/labs/idempotence-drill/) ——
+- [`foundations/labs/idempotence-drill/`](../foundations/labs/idempotence-drill) ——
   跑两遍必须是安全的；对这一步来说那不是一件锦上添花的事
 
 ## 把它做反了会怎样

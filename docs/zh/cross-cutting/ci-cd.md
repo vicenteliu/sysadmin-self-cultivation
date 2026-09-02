@@ -125,7 +125,7 @@ Bash/Python/Ansible 的机队自动化、把 Git 当作日常版本控制、幂�
 一个交付平台。那句可迁移的声称是：一份很深的自动化地基，加上一条通向你面前那个具体 CI/CD 工具的、
 快速而诚实的 ramp —— 正是 [`WHY.md`](../WHY.md) 所论证的那个形状。
 
-## Lab（✅ 可跑 —— [`labs/ci-cd-pipeline/`](../../../cross-cutting/labs/ci-cd-pipeline/)）
+## Lab（✅ 可跑 —— [`labs/ci-cd-pipeline/`](labs/ci-cd-pipeline)）
 
 **给一个小服务的一条真实流水线** —— 一个压在一个有测试的应用之上的、有效的 GitHub Actions
 workflow。现在就能在本地跑那个测试作业（纯标准库，不用装东西）：
@@ -134,7 +134,7 @@ workflow。现在就能在本地跑那个测试作业（纯标准库，不用装
 cd cross-cutting/labs/ci-cd-pipeline/app && python3 -m unittest -v
 ```
 
-这个 [lab](../../../cross-cutting/labs/ci-cd-pipeline/) 带上了 `hostcheck` 应用加测试，以及一个
+这个 [lab](labs/ci-cd-pipeline) 带上了 `hostcheck` 应用加测试，以及一个
 真实的 `ci.yml`，把这一章的规则编码了进去：**每次推送都测试**、**产物只构建一次**（以测试变绿
 为闸），以及**一次用 OIDC、以人工审批为闸的部署**（仓库里没有长寿命密钥）。这个 workflow 住在
 `.github-workflows-example/` 下面，好让它不对着这个教学仓库跑 —— 把它拷进 `.github/workflows/`

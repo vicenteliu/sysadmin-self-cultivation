@@ -85,7 +85,7 @@ summary: "🔨 亲手做过 —— 服务台运维与 ITSM 实践。Before：04 
 - [`toolbox/linux-triage/`](../toolbox/linux-triage/) —— 一份 runbook 该有的形状：有序的检查，
   每一个都排除掉某样东西
 
-- [`cross-cutting/labs/help-desk-queue/`](../../../cross-cutting/labs/help-desk-queue/)
+- [`cross-cutting/labs/help-desk-queue/`](../cross-cutting/labs/help-desk-queue)
   —— 队列本身：七个分类、两个世界，以及在一个明确的支持窗口上跑 Erlang-C。把一个分类自动化
   掉会对其余分类做什么，以及为什么那个比例在这里恰好是对的，而它说不出那个理由。
 

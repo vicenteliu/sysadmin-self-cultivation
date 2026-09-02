@@ -23,7 +23,7 @@ summary: "网络调试梯子每一级配一条命令，挑选的依据是它排�
 
 **为什么这刻意不是一份命令参考。** 一份参考按工具组织，回答*这条命令干什么*。这一篇按**问题**
 组织，而且每一条都得像这个仓库里每一个检查那样挣得它的位置 ——
-[一个检查凭它排除了什么赢得位置，不是凭它报告了什么](../../../cross-cutting/labs/remote-access-four-causes/)。
+[一个检查凭它排除了什么赢得位置，不是凭它报告了什么](labs/remote-access-four-causes)。
 一条什么都排除不掉的命令不是一级，不管它多有名。
 
 梯子是那个不变量。**命令是一种方言**，它们随操作系统、随平台而变；这也是下面每一级的表都很短、
@@ -155,7 +155,7 @@ summary: "网络调试梯子每一级配一条命令，挑选的依据是它排�
 ## 往深里读
 
 - [`the-stack/02`](../the-stack/02-network.md) —— 那架梯子本身，以及它所属的那门管理纪律
-- [`labs/remote-access-four-causes/`](../../../cross-cutting/labs/remote-access-four-causes/)
+- [`labs/remote-access-four-causes/`](labs/remote-access-four-causes)
   —— 那架梯子被演练过：一条消息、四个成因，排除法解开四个而习惯解开两个
 - [`vpn-and-remote-access.md`](vpn-and-remote-access.md) —— 第 1 级那个假顶，从隧道那一侧看
 - [`foundations/`](../foundations/README.md) —— 这架梯子只是其中一个实例的那份调试反射

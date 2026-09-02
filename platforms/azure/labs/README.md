@@ -7,6 +7,8 @@ summary: "Runnable, tear-down-able exercises — same shape as the AWS labs, so 
 ---
 # Azure — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/azure/labs/README.md)
+
 Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/), so
 you feel the concepts *translate* rather than re-learning from scratch.
 

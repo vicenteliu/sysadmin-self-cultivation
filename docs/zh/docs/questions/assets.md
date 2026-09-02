@@ -19,5 +19,5 @@ summary: "被问到这个仓库头上、关于一套内部盘点系统的问题 
 
 | # | 问题 | 状态 | 在哪儿 |
 |---|---|---|---|
-| 1 | 一套内部盘点系统是怎么建的？ | ✅ | [`itsm-and-assets.md`](../../cross-cutting/itsm-and-assets.md#资产管理--那份让你保持诚实的清册)。**这个词先要拆开**：一份*清册*是你发现了什么，一份*资产台账*是你写下了什么，而它们之间那道缝就是 [`asset-reconciliation`](../../../../cross-cutting/labs/asset-reconciliation/) 的全部 |
+| 1 | 一套内部盘点系统是怎么建的？ | ✅ | [`itsm-and-assets.md`](../../cross-cutting/itsm-and-assets.md#资产管理--那份让你保持诚实的清册)。**这个词先要拆开**：一份*清册*是你发现了什么，一份*资产台账*是你写下了什么，而它们之间那道缝就是 [`asset-reconciliation`](../../cross-cutting/labs/asset-reconciliation) 的全部 |
 | 2 | 它变化多少，以及应该多久对一次账？ | ✅ | [参考办公室](../../the-reference-office.md#why-these-numbers) —— 一年大约 123 次台账变更，每两个工作日一次，而对账通常一年跑一次 |

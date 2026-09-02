@@ -8,6 +8,8 @@ summary: "Six of six kill-chain stages covered, resting on seven controls, one o
 ---
 # Lab — six of six covered, and EDR is doing three of them alone
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/one-control-three-stages/README.md)
+
 > **Inputs:** none · **Outputs:** the matrix, then the four things it cannot express ·
 > **Risk:** none — no tools, no scanners, no credentials · **Root:** not needed
 

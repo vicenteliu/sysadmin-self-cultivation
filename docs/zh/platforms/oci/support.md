@@ -6,7 +6,7 @@
 
 ---
 
-> [`operations.md`](operations.md) 讲的是运营你自己那套 Oracle Cloud Infrastructure 的**节奏**。本篇讲另一半：**把 OCI 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个来自别的方向（AWS、Azure、GCP、或 on-prem）的强 sysadmin 接手它时，被这家最年轻的 hyperscaler 刻意做的那些不同选择坑在哪。** 诚实分级先说清：本篇整体是 **🧭 ramp** —— 从 AWS/Azure/GCP 模型映射、对着 Oracle 自家文档核对、并在可跑的 [lab](../../../../platforms/oci/labs/a-compartment-is-not-an-account/) 里练过 —— 由 🔨 可迁移基本功（Linux、网络、DNS/TLS、身份思维）承载，而非 OCI 上的生产资历。
+> [`operations.md`](operations.md) 讲的是运营你自己那套 Oracle Cloud Infrastructure 的**节奏**。本篇讲另一半：**把 OCI 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及**一个来自别的方向（AWS、Azure、GCP、或 on-prem）的强 sysadmin 接手它时，被这家最年轻的 hyperscaler 刻意做的那些不同选择坑在哪。** 诚实分级先说清：本篇整体是 **🧭 ramp** —— 从 AWS/Azure/GCP 模型映射、对着 Oracle 自家文档核对、并在可跑的 [lab](labs/a-compartment-is-not-an-account) 里练过 —— 由 🔨 可迁移基本功（Linux、网络、DNS/TLS、身份思维）承载，而非 OCI 上的生产资历。
 
 OCI 自己的[平台篇](README.md)一句话说清了标题：*compartment 是 OCI 的爆炸半径单位……而它的 IAM 策略语言读起来像句子。* 这就是本页存在的全部理由。一个"已经懂云"的运维接手 OCI 很快，然后正好在 Oracle（造得更晚、带着后见之明）做了不同选择的那几处栽跟头：**用 compartment 而非每个隔离一个 account/subscription/project**、一门**由动词而非 JSON 组成的 IAM 策略语言**、一个**意思是"或者你没权限看它"的 404**、一个**等于两个 vCPU 的 OCPU**、**可能只有一个 availability domain 的 region**、以及**两个同时生效的防火墙（security list *和* NSG）**。本篇把职责、反复出现的工单及其诊断面、以及一个自信的跨方向反射恰好失灵的那几处一一点名——并显式标出 AWS/Azure/GCP 对比，因为大多数读者是从那儿来的。
 
@@ -50,7 +50,7 @@ OCI 的修/救是在 Console（那个常驻的 **compartment 选择器**和 **re
 
 做过 OCI 支持的人和没做过的人之间的差距不在 Console——而在一组承重假设（从 AWS、Azure、GCP、或 on-prem 搬来），它们在这里是**错的**，每条都挂着失效模式。
 
-- **compartment 是隔离单位——不是 account/subscription/project。** "开个新 account（AWS）/ subscription（Azure）/ project（GCP）来隔离一个负载"的反射是错的：OCI 用**同一个 tenancy 内的 compartment** 做隔离。它们组成一棵**树**（可深 6 层）、是**全局的**（一个 compartment 横跨所有已订阅 region）、资源可在其间**移动**、而且——承重的那点——compartment 是**主要的 policy scope 和安全边界**。[lab](../../../../platforms/oci/labs/a-compartment-is-not-an-account/) 证明这点。
+- **compartment 是隔离单位——不是 account/subscription/project。** "开个新 account（AWS）/ subscription（Azure）/ project（GCP）来隔离一个负载"的反射是错的：OCI 用**同一个 tenancy 内的 compartment** 做隔离。它们组成一棵**树**（可深 6 层）、是**全局的**（一个 compartment 横跨所有已订阅 region）、资源可在其间**移动**、而且——承重的那点——compartment 是**主要的 policy scope 和安全边界**。[lab](labs/a-compartment-is-not-an-account) 证明这点。
 - **IAM policy 是动词句子，不是 JSON / RBAC / binding。** **没有 JSON 策略文档**（AWS）、**没有某 scope 上的角色分配**（Azure）、**没有 role binding**（GCP）。你写 `Allow group G to <verb> <resource-type> in compartment C`，四个动词是**累积的聚合 `inspect ⊂ read ⊂ use ⊂ manage`**（`use` 能操作已有资源但一般**不能 create/delete**；`manage` 是全部）。policy 挂在 compartment/tenancy 上并**沿树向下继承**。你的 JSON-策略 / 角色分配肌肉记忆迁移不过来——但*最小权限思维*迁移得过来。
 - **404 不代表"没了"。** OCI 对缺失资源和缺权限**都返回 `NotAuthorizedOrNotFound`（404）**——故意的。AWS/Azure 那套 `403`=拒绝 / `404`=缺失的分裂没了；这里 "not found" *最常是 policy/compartment/region 问题*。去追一个其实只是"你看不见"的"被删"资源，是经典时间黑洞。
 - **IAM 全局，但只在 home region 写。** user、group、dynamic group、**policy**、compartment 都**在 tenancy 的 home region 里主控**、只读复制到别处；你**只能在那儿创建/更新**它们，而且改动要**几分钟**才传播。"IAM 是全局的，我在哪个 region 都能编辑" 会坑多 region 的运维。
@@ -103,7 +103,7 @@ OCI 的修/救是在 Console（那个常驻的 **compartment 选择器**和 **re
 
 ## 诚实边界
 
-本篇是 **🧭 ramp，而且明说** —— 从 AWS/Azure/GCP 模型映射、对着 Oracle 自家文档核对、并在可跑的 [lab](../../../../platforms/oci/labs/a-compartment-is-not-an-account/) 里练过，**不是**在生产里跑过。承载它的是真的：**🔨 可迁移基本功**——Linux 与 guest-OS 深度、网络、DNS/TLS、以及身份/最小权限*思维*（与 [`identity-iam.md`](../../cross-cutting/identity-iam.md) 和与 [self-host](../self-host) 相邻的 Linux 深度画的是同一条线）。上面那些 OCI 特有机制——compartment、动词策略语言、security-lists-vs-NSG、instance principal、fault domain、两层配额——是映射并文档核验过的，不是资历。更深的生产 OCI（大型多 compartment 资产、OKE 平台工程、FastConnect/DRG 拓扑、规模化 Autonomous DB 运营）仍在前方；注释如实说明、绝不吹。OCI 在本仓库里的诚实标记是单一、一致的 **🧭 ramp**——见[平台篇](README.md)。
+本篇是 **🧭 ramp，而且明说** —— 从 AWS/Azure/GCP 模型映射、对着 Oracle 自家文档核对、并在可跑的 [lab](labs/a-compartment-is-not-an-account) 里练过，**不是**在生产里跑过。承载它的是真的：**🔨 可迁移基本功**——Linux 与 guest-OS 深度、网络、DNS/TLS、以及身份/最小权限*思维*（与 [`identity-iam.md`](../../cross-cutting/identity-iam.md) 和与 [self-host](../self-host) 相邻的 Linux 深度画的是同一条线）。上面那些 OCI 特有机制——compartment、动词策略语言、security-lists-vs-NSG、instance principal、fault domain、两层配额——是映射并文档核验过的，不是资历。更深的生产 OCI（大型多 compartment 资产、OKE 平台工程、FastConnect/DRG 拓扑、规模化 Autonomous DB 运营）仍在前方；注释如实说明、绝不吹。OCI 在本仓库里的诚实标记是单一、一致的 **🧭 ramp**——见[平台篇](README.md)。
 
 ## Field kit —— 真实工具与参考
 
@@ -145,7 +145,7 @@ OCI 的修/救是在 Console（那个常驻的 **compartment 选择器**和 **re
 python3 platforms/oci/labs/a-compartment-is-not-an-account/verb_and_compartment_drill.py
 ```
 
-exit `0` 表示每条教训都成立（兼作 CI 检查）。见 [`labs/a-compartment-is-not-an-account/`](../../../../platforms/oci/labs/a-compartment-is-not-an-account/)。
+exit `0` 表示每条教训都成立（兼作 CI 检查）。见 [`labs/a-compartment-is-not-an-account/`](labs/a-compartment-is-not-an-account)。
 
 ## 一页看全本章
 

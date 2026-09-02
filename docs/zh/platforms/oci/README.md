@@ -87,7 +87,7 @@ NSG、那门策略语言）"* —— 然后对着当前文档核实，并在一�
 ## 4. Lab
 
 一条**三段式 CLI lab arc**（受限身份加盘点 → VCN 加实例 → 对象存储加预算）在
-**[`labs/`](../../../../platforms/oci/labs/)** 里，配真实的 `oci` 命令，对应
+**[`labs/`](labs)** 里，配真实的 `oci` 命令，对应
 [AWS 那些 lab](../aws/README.md) 的形状：一个受限身份（一条最小权限 IAM policy 加一个 compartment）
 的盘点脚本，然后一个经 Resource Manager 用 Terraform 写的最小 VCN 加实例。OCI 那个 **Always Free
 层**让这件事真的能零成本跑起来 —— 正是这个平台的 ramp 所需要的那个预算安全的一次性 tenancy。
@@ -108,7 +108,7 @@ NSG、那门策略语言）"* —— 然后对着当前文档核实，并在一�
   （把 `NotAuthorizedOrNotFound` 当成一个 policy 问题、security list **与** NSG 的并集、
   instance principal 的两个半边）、那道跨车道的**经验落差**（是 compartment 不是账号、是动词句子
   不是 JSON、两种情况都返回 404、`OCPU`=2`vCPU`、单 AD region），以及一个可跑的
-  [`labs/a-compartment-is-not-an-account/`](../../../../platforms/oci/labs/a-compartment-is-not-an-account/)
+  [`labs/a-compartment-is-not-an-account/`](labs/a-compartment-is-not-an-account)
   演练。
 
 ## 诚实边界

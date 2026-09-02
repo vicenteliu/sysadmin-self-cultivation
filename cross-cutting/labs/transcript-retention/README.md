@@ -7,6 +7,8 @@ summary: "permission-sprawl asks who can see this. That is a question about an i
 ---
 # Lab — the estate that passed the permission lab is the one that fails this one
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/transcript-retention/README.md)
+
 **Goal:** show a governance failure that contains no mistake. Nothing is
 misconfigured, no policy is broken, no review would flag anything, and three years
 later a private conversation is readable by three times as many people — including

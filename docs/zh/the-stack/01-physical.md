@@ -257,7 +257,7 @@ mindmap
       放置永远是你的活
 ```
 
-## Lab（✅ 可跑 —— [`labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/)）
+## Lab（✅ 可跑 —— [`labs/01-failure-domains/`](labs/01-failure-domains)）
 
 **故障域，做得可触摸** —— 而这一个能跑，纯 Python，零云：
 
@@ -269,5 +269,5 @@ python3 the-stack/labs/01-failure-domains/failure_domains.py
 然后检查三条教训：(1) **同处一地的副本共享命运** —— 两个都在一个机柜里意味着服务随它一起死；
 (2) **跨故障域的反亲和**才是"高可用"实际的意思；(3) **N 个副本跨 N 个域**能容忍丢掉一个域。
 退出码 `0` 意味着教训成立。完整的嵌套虚拟化版本（PXE 引导一个"机队"、免手工装好一个节点、然后
-杀掉一个机柜）是那个 [self-host lab](../../../platforms/self-host/labs/)；这一个是它的放置那
+杀掉一个机柜）是那个 [self-host lab](../platforms/self-host/labs)；这一个是它的放置那
 一课，做成纯本地的。

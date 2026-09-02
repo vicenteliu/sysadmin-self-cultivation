@@ -164,7 +164,7 @@ VMDK 生命周期，外加在它上面跑关系数据库（一套 PostgreSQL 撑
 EBS/EFS/FSx 及各云上的同侪、Ceph 运维 —— 用上面那套方法测绘，而那些**纪律**（3-2-1、恢复
 测试、形状选择、性能契约化）是原封不动迁移到任何平台产品名之上的那部分 🔨。
 
-## Lab（✅ 已建成 —— [`labs/04-backup-not-snapshot/`](../../../the-stack/labs/04-backup-not-snapshot/)）
+## Lab（✅ 已建成 —— [`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot)）
 
 **证明那份备份，弄坏那块盘** —— 而这一个是真的跑得起来的，零云、零依赖（只要 Python 3.8+，
 所以 CI 也跑得了）：
@@ -181,7 +181,7 @@ python3 the-stack/labs/04-backup-not-snapshot/backup_drill.py
 3. **RPO 是一个数字：** 备份之后写下的那些行没了，并被精确计数；那次恢复被掐了表（你的 RTO）。
    退出码 `0` 意味着每一条教训都成立。
 
-三条命令的手动验证见 [lab README](../../../the-stack/labs/04-backup-not-snapshot/README.md)
+三条命令的手动验证见 [lab README](labs/04-backup-not-snapshot/README.md)
 （看着主库**和**副本都回答"没有这张表"，而保险库回答出一个行数）。
 
 ## 这一章一屏看完

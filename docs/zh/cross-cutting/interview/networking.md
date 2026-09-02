@@ -32,7 +32,7 @@ summary: "与 skills-maps/networking.md 逐节配对。"
 而两边都是 `10.0.0.0/16`。到那一步，选项是重新编号、给重叠做 NAT，或者做代理，而这三个都是有名字
 的项目。
 **Prove it：** [`toolbox/cidr-check`](../../toolbox/cidr-check/) ·
-[`labs/multi-cloud-cidr-overlap`](../../../../cross-cutting/labs/multi-cloud-cidr-overlap/)
+[`labs/multi-cloud-cidr-overlap`](../labs/multi-cloud-cidr-overlap)
 
 ### "两家公司合并，两边都用 10.0.0.0/16。现在怎么办？"
 **Probes：** 你知不知道没有便宜的答案，以及你能不能给三个糟糕的方案各自定价，而不是伸手去够第
@@ -50,7 +50,7 @@ summary: "与 skills-maps/networking.md 逐节配对。"
 不是凭它报告了什么 —— 如果默认路由不在，那么"DNS 解析得出来"什么都不告诉你，所以那个顺序就是
 答案。常见的解法是一张没有默认路由的路由表，或者一台存在于图上、而不存在于那个子网路由表里的
 NAT 设备。
-**Prove it：** [`labs/remote-access-four-causes`](../../../../cross-cutting/labs/remote-access-four-causes/)
+**Prove it：** [`labs/remote-access-four-causes`](../labs/remote-access-four-causes)
 
 ### "流量到得了那边，可回复永远回不来。你的第一个猜测是什么？"
 **Probes：** 非对称路由，以及你知不知道它为什么在日志里是隐形的。
@@ -87,7 +87,7 @@ NAT 设备。
 **Answer：** 在变更**之前**把它降下来，不是在随之而来的故障当中 —— 一个在切换时才发现的 24 小时
 TTL，就是一个 24 小时的回滚。提前一天把它降下来，做变更，观察，然后再把它升回去。那个错误是把
 TTL 当成一个性能设置，而不是当成你回滚窗口的宽度。
-**Prove it：** [`labs/mail-authentication-alignment`](../../../../cross-cutting/labs/mail-authentication-alignment/)
+**Prove it：** [`labs/mail-authentication-alignment`](../labs/mail-authentication-alignment)
 
 ## DHCP 与主机上线 🔨
 
@@ -149,7 +149,7 @@ TTL 当成一个性能设置，而不是当成你回滚窗口的宽度。
 **Answer：** 把它当成四个候选产出一个症状 —— 客户端配置、隧道本身、身份提供方够不到，以及路径上
 的一条过滤 —— 并按每一个*排除了*什么、而不是它报告了什么去挑检查。那个陷阱是："我够得到 IdP 吗？"
 在 IdP 挂了和"要把你带到它那儿的那条隧道挂了"这两种情况下返回同一个答案。
-**Prove it：** [`labs/remote-access-four-causes`](../../../../cross-cutting/labs/remote-access-four-causes/)
+**Prove it：** [`labs/remote-access-four-causes`](../labs/remote-access-four-causes)
 
 ### "当目录够不到的时候，远程访问会怎么样？"
 **Probes：** 你有没有在那个循环依赖发作之前就去找过它。
@@ -182,7 +182,7 @@ SYN，和一条健康的连接长得一模一样。
 生产多云互联。起点是地址，因为重叠会让其余的一切变得不可能，而没有哪朵云会替你解决它。然后是星型
 而不是全互联，因为全互联在 O(n²) 上大约到第五个网络就到头了。跨边界的 DNS 是两份各自独立失败的
 配置，不是一份。我会推让的地方是线路采购和现实世界的 SLA 谈判，而那不是靠读能给你的东西。
-**Prove it：** [`labs/multi-cloud-cidr-overlap`](../../../../cross-cutting/labs/multi-cloud-cidr-overlap/)
+**Prove it：** [`labs/multi-cloud-cidr-overlap`](../labs/multi-cloud-cidr-overlap)
 
 ### "什么驱动了在一条 VPN 隧道和一条专线之间的选择？"
 **Probes：** 你能不能点出那个真正的驱动因素，而不是背出三个属性。

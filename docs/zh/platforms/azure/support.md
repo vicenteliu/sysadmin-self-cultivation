@@ -53,7 +53,7 @@ Azure 的修/救本质是在门户、两个 CLI（`az`、`Az` PowerShell）、�
 
 做过 Azure/Entra 支持的人和没做过的人之间的差距不在门户——而在一组承重假设（从 AWS、GCP、或 on-prem AD 搬来），它们在这里是**错的**，每条都挂着失效模式。
 
-- **两个身份面——"Global Administrator 不是 Owner。"** 微软明说：*默认 Global Administrator 对 Azure 资源没有访问权。* **Entra 目录角色**（Global Admin、User Admin——管用户/app/租户）和 **Azure RBAC**（Owner/Contributor/Reader——在某 scope 管资源）是**两套互不跨越的授权系统**。在一个里无所不能，在另一个里*一无所有*；角色**名字甚至会撞**、含义却不同（"Security Administrator" 在两边是不同角色）。唯一的桥是 **elevation toggle** → root `/` 上的 User Access Administrator（分配，不是使用）——一个 break-glass 工具，不是日常。[lab](../../../../platforms/azure/labs/global-admin-is-not-owner/) 证明这点。
+- **两个身份面——"Global Administrator 不是 Owner。"** 微软明说：*默认 Global Administrator 对 Azure 资源没有访问权。* **Entra 目录角色**（Global Admin、User Admin——管用户/app/租户）和 **Azure RBAC**（Owner/Contributor/Reader——在某 scope 管资源）是**两套互不跨越的授权系统**。在一个里无所不能，在另一个里*一无所有*；角色**名字甚至会撞**、含义却不同（"Security Administrator" 在两边是不同角色）。唯一的桥是 **elevation toggle** → root `/` 上的 User Access Administrator（分配，不是使用）——一个 break-glass 工具，不是日常。[lab](labs/global-admin-is-not-owner) 证明这点。
 - **Entra ID 不是 on-prem AD。** 没有 **OU**、没有 **GPO**、没有 forest/domain/trust、没有 LDAP 树。它是跑在**扁平目录**上、由 **Microsoft Graph** 查询的 OAuth2/OIDC/SAML；管理按 **administrative unit + RBAC** 划分（不是 OU 委派），设备策略是 **Intune** 而非 Group Policy。你那套 ADUC/GPMC/`gpresult` 的肌肉记忆**不会**迁移。
 - **层级向下继承、additive——而且没有日常的用户"deny"。** RBAC 授权挂在 **mgmt-group → subscription → RG → resource** 上、流向所有子级、是**并集**；**没有用户自写的子级 explicit deny**（系统管理的 **deny assignment** 存在，但你很少自己写）。**scope 就是一切**——同一个角色在 `/` vs 一个 RG 是不同的爆炸半径。（GCP 的人：继承直接迁移；AWS 的人：这里没有 `Deny` 语句可用。）
 - **subscription 是单位——而 resource provider 起步未注册。** **subscription** 是账单/配额/隔离边界（≈ 一个 AWS account / GCP project）；**management group** 把 subscription 分组给 RBAC + Policy。而每个 **resource provider** 都要**先按 subscription 注册**（GCP 的 API 启用平行物；**AWS 没有对应物**，所以 AWS 迁来的人最容易被打个措手不及）。
@@ -107,7 +107,7 @@ Azure 的修/救本质是在门户、两个 CLI（`az`、`Az` PowerShell）、�
 
 🔨 **Entra / 身份那一半是亲手做过的。** 真实租户实战——**Entra ID 初始搭建、租户级 MFA、一条 Conditional Access 策略、privileged 角色的 PIM**、以及身份生命周期——是深度，不是 ramp（与 [`saas-admin.md`](../../cross-cutting/saas-admin.md)、[`identity-iam.md`](../../cross-cutting/identity-iam.md) 画的是同一条线，也与 [M365 支持篇](../../cross-cutting/m365-support.md) 共享，因为 Entra 是两者之下的身份骨干）。Conditional Access、sign-in 日志分诊、break-glass 纪律都是 🔨。
 
-🧭 **更广的 Azure IaaS 是验证过的 ramp。** 资源面机制——RBAC scope 与继承、VNet/NSG、Bastion、Azure Policy、配额/provider 的边——是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/azure/labs/global-admin-is-not-owner/) 里练过的，由**🔨 可迁移基本功**（Linux、网络、DNS/TLS、身份思维）承载。更深的规模化生产 Azure（landing zone、AKS 平台工程、大型多 subscription 资产）仍在前方，注释如实说明、绝不吹。
+🧭 **更广的 Azure IaaS 是验证过的 ramp。** 资源面机制——RBAC scope 与继承、VNet/NSG、Bastion、Azure Policy、配额/provider 的边——是被映射、对着文档核验、并在可跑的 [lab](labs/global-admin-is-not-owner) 里练过的，由**🔨 可迁移基本功**（Linux、网络、DNS/TLS、身份思维）承载。更深的规模化生产 Azure（landing zone、AKS 平台工程、大型多 subscription 资产）仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 
@@ -145,7 +145,7 @@ Azure 的修/救本质是在门户、两个 CLI（`az`、`Az` PowerShell）、�
 python3 platforms/azure/labs/global-admin-is-not-owner/two_planes_drill.py
 ```
 
-exit `0` 表示教训都成立（兼作 CI 检查）。见 [`labs/global-admin-is-not-owner/`](../../../../platforms/azure/labs/global-admin-is-not-owner/)。
+exit `0` 表示教训都成立（兼作 CI 检查）。见 [`labs/global-admin-is-not-owner/`](labs/global-admin-is-not-owner)。
 
 ## 一页看全本章
 

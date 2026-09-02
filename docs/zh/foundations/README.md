@@ -167,7 +167,7 @@ Foundations 是 AI **最**立竿见影有用、也**最**危险去信任的那�
 界定了范围（Windows Server 维护、M365/Entra 管理）并被这样标注，没有被吹成一门主力语言。
 这个模块里没有 🧭，因为这里没有任何东西是一条 ramp —— 这是那些 ramp 起飞所依据的地面。
 
-## Lab（✅ 可跑 —— [`labs/idempotence-drill/`](../../../foundations/labs/idempotence-drill/)）
+## Lab（✅ 可跑 —— [`labs/idempotence-drill/`](labs/idempotence-drill)）
 
 **在 bash 里亲身感受幂等这一课** —— 这一个能跑，不需要云，不需要 root：
 
@@ -179,8 +179,8 @@ bash foundations/labs/idempotence-drill/idempotence_drill.sh
 （`set -euo pipefail`、一个必填参数守卫、`mkdir -p`、先检查再追加），把每一个反复运行，然后
 检查差别：脆弱的那个**把自己的活翻倍**、并且**用退出码 0 掩盖自己的失败**；安全的那个
 **收敛**，并在参数缺失时**快速失败**。退出码 `0` 意味着教训成立。它是可跑的
-[备份 drill](../../../the-stack/labs/04-backup-not-snapshot/) 和
-[failure-domains lab](../../../the-stack/labs/01-failure-domains/) 的天然同伴 —— 全都是纯
+[备份 drill](../the-stack/labs/04-backup-not-snapshot) 和
+[failure-domains lab](../the-stack/labs/01-failure-domains) 的天然同伴 —— 全都是纯
 本地的，全都在证明一门纪律而不是一个事实。
 
 **反射那一半**（已规划）：一个 setup 脚本弄坏**一样**东西（一个跑在满盘上的服务、一个被翻转

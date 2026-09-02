@@ -7,6 +7,8 @@ summary: "An idempotent script is infrastructure and a fragile one is a liabilit
 ---
 # Lab — Idempotence & `set -euo pipefail` (fragile vs. safe, felt in bash)
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/foundations/labs/idempotence-drill/README.md)
+
 **Goal:** make the central [foundations](../../README.md) lesson tangible — **an
 idempotent script (safe to run twice) is infrastructure; a fragile one is a
 liability, and `set -euo pipefail` is the line between a tool and a footgun.** You'll

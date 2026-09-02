@@ -86,7 +86,7 @@ build-out 步骤完全一样 —— 这也是为什么它们住在 `cross-cuttin
 
 ## Prove it
 
-当仓库里有一样可跑的东西对应它时 —— 一个 [lab](../../../../cross-cutting/labs/) 或一个
+当仓库里有一样可跑的东西对应它时 —— 一个 [lab](../labs) 或一个
 [`toolbox/`](../../toolbox/) 工具 —— 一个小节会以一行 `**Prove it:**` 结尾。没有的小节就没有；
 那是信息，不是疏漏。
 

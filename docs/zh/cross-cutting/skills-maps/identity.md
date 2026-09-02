@@ -95,10 +95,10 @@ summary: "一个主题，横切每一个平台。实质内容住在 cross-cuttin
   RBAC —— 在这里一个平面上的授予，对另一个平面什么都没说。
 - [ ] **Depth** —— 从使用证据、而不是从一个猜测，把一个已经过宽的角色调回合适的尺寸。
 
-**Prove it：** [`aws/iam-deny-by-default`](../../../../platforms/aws/labs/iam-deny-by-default/) ·
-[`azure/global-admin-is-not-owner`](../../../../platforms/azure/labs/global-admin-is-not-owner/) ·
-[`gcp/gke-iam-vs-rbac`](../../../../platforms/gcp/labs/gke-iam-vs-rbac/) ·
-[`oci/a-compartment-is-not-an-account`](../../../../platforms/oci/labs/a-compartment-is-not-an-account/)
+**Prove it：** [`aws/iam-deny-by-default`](../../platforms/aws/labs/iam-deny-by-default) ·
+[`azure/global-admin-is-not-owner`](../../platforms/azure/labs/global-admin-is-not-owner) ·
+[`gcp/gke-iam-vs-rbac`](../../platforms/gcp/labs/gke-iam-vs-rbac) ·
+[`oci/a-compartment-is-not-an-account`](../../platforms/oci/labs/a-compartment-is-not-an-account)
 
 ## 条件访问与设备信任 🔨
 
@@ -111,7 +111,7 @@ summary: "一个主题，横切每一个平台。实质内容住在 cross-cuttin
 - [ ] **Working** —— 把 report-only 模式当成强制执行之前的默认 —— 并且真的去读那份报告。
 - [ ] **Depth** —— 那些完全绕过策略的旧式认证路径，以及在攻击者之前把它们找出来。
 
-**Prove it：** [`labs/m365-conditional-access-lockout`](../../../../cross-cutting/labs/m365-conditional-access-lockout/)
+**Prove it：** [`labs/m365-conditional-access-lockout`](../labs/m365-conditional-access-lockout)
 
 ## 特权访问与 break-glass 🔨
 
@@ -136,8 +136,8 @@ summary: "一个主题，横切每一个平台。实质内容住在 cross-cuttin
   有多少是虚构的。
 - [ ] **Depth** —— 让复审证据可审计：可复现、有日期，并且可归属到一个决策者。
 
-**Prove it：** [`labs/permission-sprawl`](../../../../cross-cutting/labs/permission-sprawl/) ·
-[`labs/transcript-retention`](../../../../cross-cutting/labs/transcript-retention/)
+**Prove it：** [`labs/permission-sprawl`](../labs/permission-sprawl) ·
+[`labs/transcript-retention`](../labs/transcript-retention)
 
 ## 工作负载身份 🧭
 
@@ -148,7 +148,7 @@ summary: "一个主题，横切每一个平台。实质内容住在 cross-cuttin
   subject claim 上调试它。
 - [ ] **Depth** —— 盘点每一个非人主体和它的爆炸半径。这份清单通常比那份人的更长，而且被复审得更少。
 
-**Prove it：** [`aws/01-scoped-identity-inventory`](../../../../platforms/aws/labs/01-scoped-identity-inventory/)
+**Prove it：** [`aws/01-scoped-identity-inventory`](../../platforms/aws/labs/01-scoped-identity-inventory)
 
 ## 那个"你到底能不能运维它"的测试
 

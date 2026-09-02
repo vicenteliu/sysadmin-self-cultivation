@@ -158,7 +158,7 @@ UEM** 亲手运行（在 Jamf 那一侧负责北美的测试与维护）；应�
 
 ## Lab（✅ 已建成）
 
-[`labs/policy-blast-radius/`](../../../endpoint/labs/policy-blast-radius/) ——
+[`labs/policy-blast-radius/`](labs/policy-blast-radius) ——
 **控制台说这条策略触达 3 台，它触达 22 台，而三年后它触达 30 台，期间没有任何人编辑过它。**
 被作用的那个组由入转离填充，所以爆炸半径是一个时间的函数，而它被当作一个常量来复审。
 `--break-it` 按控制台的方式计数，在两端都返回一个稳定、自信的 **3**。

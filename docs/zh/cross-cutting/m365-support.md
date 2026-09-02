@@ -151,7 +151,7 @@ M365 的修/救本质是在一小组界面上做模式识别。你要练成的�
 python3 cross-cutting/labs/m365-conditional-access-lockout/ca_lockout_drill.py
 ```
 
-exit `0` 表示四条教训都成立（兼作 CI 检查）。见 [`labs/m365-conditional-access-lockout/`](../../../cross-cutting/labs/m365-conditional-access-lockout/)。
+exit `0` 表示四条教训都成立（兼作 CI 检查）。见 [`labs/m365-conditional-access-lockout/`](labs/m365-conditional-access-lockout)。
 
 ## 一页看全本章
 

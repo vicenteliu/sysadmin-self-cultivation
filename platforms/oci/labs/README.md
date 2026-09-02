@@ -8,6 +8,8 @@ summary: "Runnable, tear-down-able exercises — same shape as the AWS labs."
 ---
 # OCI — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/oci/labs/README.md)
+
 Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/).
 OCI's **Always Free tier** makes these genuinely no-cost.
 
