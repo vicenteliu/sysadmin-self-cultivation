@@ -38,7 +38,7 @@ summary: "一个主题，横切每一个平台。实质内容住在 the-stack/02
   NAT、做代理 —— 并给每一个定价。没有便宜的那个。
 
 **Prove it：** [`toolbox/cidr-check`](../../toolbox/cidr-check/) ·
-[`labs/multi-cloud-cidr-overlap`](../../../../cross-cutting/labs/multi-cloud-cidr-overlap/)
+[`labs/multi-cloud-cidr-overlap`](../labs/multi-cloud-cidr-overlap)
 
 ## 路由与一个包所走的路径 🔨
 
@@ -78,7 +78,7 @@ summary: "一个主题，横切每一个平台。实质内容住在 the-stack/02
 - [ ] **Depth** —— 承载邮件认证的那一族 TXT 记录，以及为什么把三个都发布出来，本身仍然什么都
   证明不了。
 
-**Prove it：** [`labs/mail-authentication-alignment`](../../../../cross-cutting/labs/mail-authentication-alignment/)
+**Prove it：** [`labs/mail-authentication-alignment`](../labs/mail-authentication-alignment)
 
 ## DHCP 与主机上线 🔨
 
@@ -132,7 +132,7 @@ summary: "一个主题，横切每一个平台。实质内容住在 the-stack/02
 - [ ] **Depth** —— 一条不依赖目录的 break-glass 路径 —— 以及多数设计为什么是在那次故障当中才发现
   自己没有一条。
 
-**Prove it：** [`labs/remote-access-four-causes`](../../../../cross-cutting/labs/remote-access-four-causes/)
+**Prove it：** [`labs/remote-access-four-causes`](../labs/remote-access-four-causes)
 
 ## 网络监控与流分析 🧭
 
@@ -154,7 +154,7 @@ summary: "一个主题，横切每一个平台。实质内容住在 the-stack/02
 - [ ] **Working** —— 跨边界的 DNS 是**两份**配置，不是一份 —— 两个方向的解析，各自独立地失败。
 - [ ] **Depth** —— 跨边界的出网记账：在发票之前，先说出那些 GB 是在哪儿跨过一条计费线的。
 
-**Prove it：** [`labs/multi-cloud-cidr-overlap`](../../../../cross-cutting/labs/multi-cloud-cidr-overlap/)
+**Prove it：** [`labs/multi-cloud-cidr-overlap`](../labs/multi-cloud-cidr-overlap)
 
 ## 那个"你到底能不能运维它"的测试
 

@@ -60,8 +60,8 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 分层系列 | [`the-stack/06-observability.md`](the-stack/06-observability.md) —— 可观测（三支柱、SLI/SLO、OTel；覆盖 Tier-3 第 9 项） | ✅ |
 | 分层系列 | [`the-stack/07-security.md`](the-stack/07-security.md) —— 安全（责任共担、纵深防御、CSPM/EDR/SIEM；覆盖 Tier-2 第 6 项） | ✅ |
 | 分层系列 | **the-stack 01→07 完成** —— 五层自底向上 + 可观测 + 安全（两顶横切的帽子） | ✅ |
-| 分层 lab | [`the-stack/labs/04-backup-not-snapshot/`](../../the-stack/labs/04-backup-not-snapshot/) —— 可跑的纯 Python "复制不是备份" drill | ✅ |
-| 可跑 lab | 另外 3 个纯本地、自验证的 lab（退出 0 = 教训成立）：[failure-domains](../../the-stack/labs/01-failure-domains/)（Python）、[idempotence-drill](../../foundations/labs/idempotence-drill/)（bash）、[ci-cd-pipeline](../../cross-cutting/labs/ci-cd-pipeline/)（带测试的应用 + 真实 GitHub Actions workflow） | ✅ |
+| 分层 lab | [`the-stack/labs/04-backup-not-snapshot/`](the-stack/labs/04-backup-not-snapshot) —— 可跑的纯 Python "复制不是备份" drill | ✅ |
+| 可跑 lab | 另外 3 个纯本地、自验证的 lab（退出 0 = 教训成立）：[failure-domains](the-stack/labs/01-failure-domains)（Python）、[idempotence-drill](foundations/labs/idempotence-drill)（bash）、[ci-cd-pipeline](cross-cutting/labs/ci-cd-pipeline)（带测试的应用 + 真实 GitHub Actions workflow） | ✅ |
 | Agent Skills | 7 个 [`.claude/skills/`](../../.claude/skills/) 把仓库的方法打包：platform-ramp · honesty-audit · author-module · runnable-lab · diagram-module · mirror-zh · interview-drill —— 加上下面三个驱动工具箱的，共十个 | ✅ |
 | 路线 | [`build-out/`](build-out/) —— 一间百人办公室端到端，**16 步全部完成**；它承载顺序与依赖，实质内容指回各条轴。依赖图已验证无环且对称；94% 的步骤挂着一个可跑 lab 或工具；[`GAPS.md`](build-out/GAPS.md) 记录这个场景发现缺了什么（[ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)） | ✅ |
 | 浏览器 | [`site/`](site/README.md) —— 同一批材料，带导航、二十万词的全文搜索、🌐 切换和渲染好的图。两种启动方式，两种都不用装东西。它是一个**视图**，不是第七条轴（[ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）；依赖是提交进来的而不是生成的（[ADR-0006](docs/adr/0006-the-viewer-vendors-its-dependencies.md)） | ✅ |

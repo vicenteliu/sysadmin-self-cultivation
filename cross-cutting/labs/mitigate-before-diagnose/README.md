@@ -8,6 +8,8 @@ summary: "Mitigating first saves nine minutes of mean downtime and costs six in 
 ---
 # Lab — mitigate before you diagnose, and the two places that stops being true
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/mitigate-before-diagnose/README.md)
+
 > **Inputs:** none · **Outputs:** expected and worst-case downtime under both
 > strategies, the crossover, and the risk penalty that inverts it · **Risk:** none —
 > no systems, no services, no credentials · **Root:** not needed

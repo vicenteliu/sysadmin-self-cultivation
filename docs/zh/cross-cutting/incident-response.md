@@ -130,7 +130,7 @@ On-call 是"总会有人注意到"变成一份保证的方式 —— 而它是�
 
 ## Lab（✅ 已建成）
 
-[`labs/mitigate-before-diagnose/`](../../../cross-cutting/labs/mitigate-before-diagnose/)
+[`labs/mitigate-before-diagnose/`](labs/mitigate-before-diagnose)
 —— **这一章的核心声称，被量出来而不是被重复。** 先缓解平均省下九分钟停摆时间，并在尾部付出六
 分钟，而那份尾部代价**恰好就是那个缓解窗口**，花在一个通用缓解本来就覆盖不到的成因上。
 
@@ -154,7 +154,7 @@ On-call 是"总会有人注意到"变成一份保证的方式 —— 而它是�
    那条生命周期：谁是 IC、诊断**之前**的缓解是什么、谁来沟通、那条时间线长什么样。不需要任何
    系统；要练的肌肉是那套流程。
 2. **Game-day（实时）：** 故意弄坏点什么 —— 杀掉一个服务、让一张证书过期、在
-   [备份演练](../../../the-stack/labs/04-backup-not-snapshot/)里 drop 一张表 —— 然后跑一次真实的
+   [备份演练](../the-stack/labs/04-backup-not-snapshot)里 drop 一张表 —— 然后跑一次真实的
    响应，先缓解后解决，掐着表。
 3. **那个交付物：** 那份**不追责的复盘** —— 时间线、成因，以及至少一个会变成**护栏**的行动项，
    好让这一次故障不可能再复发。

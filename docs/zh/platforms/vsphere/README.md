@@ -93,7 +93,7 @@ vSphere 地基变成一条通向各朵云的快速 ramp —— 那个运营模�
 
 读 vMotion 和做 vMotion 是两种不同的技能 —— 但诚实的提示是：这个平台的 lab **已经跑过了**，
 在生产里，跑了很多年。一条**三段式 CLI lab arc**（连接加盘点 → 从模板发放 → 看着 HA 把一台 VM
-重启）在 **[`labs/`](../../../../platforms/vsphere/labs/)** 里，配真实的 **PowerCLI** ——
+重启）在 **[`labs/`](labs)** 里，配真实的 **PowerCLI** ——
 一次嵌套 ESXi 或者实验室集群的走查，强制制造一次主机故障来看 HA 把它重启起来，也就是
 [`the-stack/01`](../../the-stack/01-physical.md)那条故障域教训，在它出身的那个平台上被摸得着。
 

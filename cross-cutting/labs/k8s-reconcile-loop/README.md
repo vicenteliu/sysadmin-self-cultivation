@@ -7,6 +7,8 @@ summary: "The runtime twin of the Terraform state lesson: you do not manage proc
 ---
 # Lab — pods are cattle, and a controller reconciles forever
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/k8s-reconcile-loop/README.md)
+
 **Goal:** feel the one thing a **Linux/systemd/Docker sysadmin gets wrong about
 Kubernetes** — that you don't manage processes, you declare desired state, and a
 **controller** runs a reconciliation loop that continuously drives *actual → desired*.

@@ -7,6 +7,8 @@ summary: "Terraform does not converge against the real world every run. It plans
 ---
 # Lab — state is the source of truth (and drift is the enemy)
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/terraform-state-and-drift/README.md)
+
 **Goal:** feel the one thing an **Ansible/config-management sysadmin gets wrong about
 Terraform** — that it does *not* converge against the real world every run. It plans
 against a **state file**, and the gap between three worlds is where every Terraform

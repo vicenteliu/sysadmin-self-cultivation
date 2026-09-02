@@ -7,6 +7,8 @@ summary: "The first concrete blocker the day a single-cloud admin connects two c
 ---
 # Lab — overlapping CIDRs break the interconnect (and there is no central router)
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/multi-cloud-cidr-overlap/README.md)
+
 **Goal:** feel the #1 concrete blocker a single-cloud admin hits the day they connect two
 clouds — you **cannot peer or VPN networks whose address space overlaps**. This is a hard
 mechanical fact, verified in AWS, Azure (Cloud Adoption Framework), and GCP docs: peering is

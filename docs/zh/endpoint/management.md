@@ -59,7 +59,7 @@ summary: "当机器已经到了某个人手上之后，一个 MDM 到底管什�
 
 **危险的是第三个。** 一条只报告、不动手的合规策略是一块仪表盘。这个仓库对此有一句话，是在另一个
 lab 里挣来的：*一个检查凭它排除了什么赢得位置，不是凭它报告了什么*
-（[`remote-access-four-causes`](../../../cross-cutting/labs/remote-access-four-causes/)）。它在
+（[`remote-access-four-causes`](../cross-cutting/labs/remote-access-four-causes)）。它在
 终端上的版本是：**一台不合规、而没有挂上任何动作的设备，是一台你记录了而不是修好了的设备**，
 而那份记录让它看起来像是被处理了。
 
@@ -78,7 +78,7 @@ lab 里挣来的：*一个检查凭它排除了什么赢得位置，不是凭它
 那个爆炸半径。那个爆炸半径是一个移动的量，而没有人再复审它。
 
 那是那个转岗问题（[`build-out/15`](../build-out/15-joiner-mover-leaver.md)）的终端形态，而它和
-[`permission-sprawl`](../../../cross-cutting/labs/permission-sprawl/) 里那条发现是同一个形状：
+[`permission-sprawl`](../cross-cutting/labs/permission-sprawl) 里那条发现是同一个形状：
 一条在被做出那天完全正确的授予，对着一群在它底下周转掉的人。
 
 **该拿它怎么办，按成本从低到高：**
@@ -154,5 +154,5 @@ lab 里挣来的：*一个检查凭它排除了什么赢得位置，不是凭它
   目标的目录
 - [`build-out/08`](../build-out/08-endpoint-security-and-patching.md) —— 挂上了动作的合规，以及那次
   才是真正难点的重启
-- [`cross-cutting/labs/permission-sprawl/`](../../../cross-cutting/labs/permission-sprawl/) ——
+- [`cross-cutting/labs/permission-sprawl/`](../cross-cutting/labs/permission-sprawl) ——
   上面一层的同一个失败：一条对着一群移动掉的人的、正确的授予

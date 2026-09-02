@@ -7,6 +7,8 @@ summary: "No cloud, no credentials, no cost, no external packages — just Pytho
 ---
 # Lab 04 — Backup is not snapshot (prove it in your own hands)
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/the-stack/labs/04-backup-not-snapshot/README.md)
+
 **Goal:** make the central lesson of [chapter 04](../../04-storage.md) tangible —
 **replication and snapshots faithfully copy destruction; only an independent,
 point-in-time backup recovers you, and only up to its RPO.** You'll run a drill

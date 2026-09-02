@@ -7,6 +7,8 @@ summary: "No tenant, no credentials, no cost, no external packages — just Pyth
 ---
 # Lab — Conditional Access self-lockout (prove it in your own hands)
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/m365-conditional-access-lockout/README.md)
+
 **Goal:** make the most dangerous lesson of the [M365 support note](../../m365-support.md)
 tangible — **a Conditional Access policy scoped to "All users" is tenant-live the
 instant you enable it; it blocks everyone who doesn't satisfy the grant, including the

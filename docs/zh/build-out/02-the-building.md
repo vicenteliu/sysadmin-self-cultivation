@@ -69,14 +69,14 @@ summary: "把一个新站点建起来是 🧭；之后机柜里发生的事是 �
 - [`platforms/self-host/architecture.md`](../platforms/self-host/architecture.md) 和
   [`operations.md`](../platforms/self-host/operations.md) —— 那些 🔨 材料，来自运行
   机队而不是来自建楼
-- [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/)
+- [`the-stack/labs/01-failure-domains/`](../the-stack/labs/01-failure-domains)
 - [参考办公室的 Selection rules](../the-reference-office.md#selection-rules) ——
   上面那层楼实际意味着几个接入点和几个交换机端口，因为这里的线缆和竖井决策是在有人去数它们
   之前就做出的
 
 ## 动手做
 
-- [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/) ——
+- [`the-stack/labs/01-failure-domains/`](../the-stack/labs/01-failure-domains) ——
   那套推理对一间弱电间的适用性，和对一个 region 一样直接。
 
 🔴 **缺口：** 这里没有任何东西覆盖施工本身 —— 没有一张把毛坯建成机房的检查清单。那是一条

@@ -174,7 +174,7 @@ flowchart LR
 
 ## Lab（✅ 已建成）
 
-[`labs/one-control-three-stages/`](../../../cross-cutting/labs/one-control-three-stages/)
+[`labs/one-control-three-stages/`](labs/one-control-three-stages)
 —— **先做下面那个练习，然后去读答案页看看它藏了什么。** 六个阶段六个都被覆盖、十一行填好的格子
 压在七项不同的控制上，而 **EDR 独自作为其中三个阶段上唯一的预防性控制** —— 这是那种矩阵格式问
 不出来的问题，因为它是按阶段索引的，而这是一个关于一项控制的问题。

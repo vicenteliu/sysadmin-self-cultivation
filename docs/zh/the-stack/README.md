@@ -142,8 +142,8 @@ mindmap
 
 ## Labs
 
-每一章都以一份 lab 规格结尾；[`labs/`](../../../the-stack/labs/) 是它们变成可跑证据的地方。
-第一个已建成：[`labs/04-backup-not-snapshot/`](../../../the-stack/labs/04-backup-not-snapshot/)
+每一章都以一份 lab 规格结尾；[`labs/`](labs) 是它们变成可跑证据的地方。
+第一个已建成：[`labs/04-backup-not-snapshot/`](labs/04-backup-not-snapshot)
 —— 一个纯 Python、零成本的 drill，通过 `DROP` 一张表并看着副本跟着一起死、而一份独立备份把
 它救回来，来证明*复制不是备份*。哪里有 Python 就能跑；退出码 `0` 同时可以当作一次 CI 检查。
 

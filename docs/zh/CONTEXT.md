@@ -275,7 +275,7 @@ _避免_：用 deployment 指设备；两边都别用 rollout，因为它藏起�
 SaaS 化。**file server** 是这间办公室自己运行的存储：一台机器、一个文件系统、目录上的
 权限，以及一份现在归你负责的备份。**suite storage** 是生产力租户里的那个云盘，决定谁能读
 什么的是分享模型而不是文件系统 —— 这也是为什么
-[`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/) 是一个关于链接而不是
+[`permission-sprawl`](cross-cutting/labs/permission-sprawl) 是一个关于链接而不是
 关于 ACL 的 lab。这个区分是承重的，因为两者的失败方式不同：文件服务器丢数据，套件存储
 丢的是"谁能看见"这件事的账。
 _避免_：网络驱动器、共享盘、云盘、网盘 —— 每一个都只命名了两者之一，却听起来像同时命名了
@@ -286,7 +286,7 @@ _避免_：网络驱动器、共享盘、云盘、网盘 —— 每一个都只�
 东西 —— 一次扫描、一个 agent、一个管理控制台。后者是一条带主人、成本中心和生命周期状态
 的记录。它们从来不相等，而**两者之间的差额不是一个要被消灭的错误**：它是这套估算面的实际
 状况，而测量它就是
-[`asset-reconciliation`](../../cross-cutting/labs/asset-reconciliation/) 的全部内容 ——
+[`asset-reconciliation`](cross-cutting/labs/asset-reconciliation) 的全部内容 ——
 那里两个系统都报九十七台设备，而仍有三条记录是错的。一个把差额对平到零的工具，是把发现
 藏起来了，不是把它修好了。
 _避免_：CMDB（那是登记册的一种实现）、资产清单、实指登记册时说 inventory system

@@ -7,6 +7,8 @@ summary: "OCI's two signature access lessons, by hand and with no cloud account:
 ---
 # Lab — a compartment is not an account (and a verb is not a role)
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/platforms/oci/labs/a-compartment-is-not-an-account/README.md)
+
 **Goal:** feel OCI's two signature access lessons the way you'll actually hit them in a
 ticket — *by hand, with no cloud account* — so `NotAuthorizedOrNotFound` and the
 `inspect/read/use/manage` verb hierarchy stop being trivia and become reflexes.

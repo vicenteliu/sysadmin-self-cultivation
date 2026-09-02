@@ -105,7 +105,7 @@ AWS 的修/救本质是在一小组控制台和日志上做模式识别。你要
 
 ## 诚实边界
 
-**AWS 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 让这个 ramp 快的，是那些**🔨 可迁移、且真实**的基本功在承重：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、以及**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）—— AWS support 里那些*本来就是*这些技能、只是换了 AWS 名字的部分。AWS 特有的机制（deny-by-default 的策略评估、VPC 的分层、服务目录、计费的边）是被映射、对着文档核验、并在可跑的 [labs](../../../../platforms/aws/labs/) 里练过的 —— **不是**声称成多年生产资历。这里的声明就是[平台 README](README.md) 做的那一个：*一套可迁移的操作模型，加一条 AI 加速、在本仓库里可验证、能快速到达"胜任"的 ramp* —— 而上面那些 support 反射就是这条 ramp 落到实处。某个具体服务上更深、规模化的生产 AWS 仍在前方，注释如实说明、绝不吹。
+**AWS 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 让这个 ramp 快的，是那些**🔨 可迁移、且真实**的基本功在承重：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、以及**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）—— AWS support 里那些*本来就是*这些技能、只是换了 AWS 名字的部分。AWS 特有的机制（deny-by-default 的策略评估、VPC 的分层、服务目录、计费的边）是被映射、对着文档核验、并在可跑的 [labs](labs) 里练过的 —— **不是**声称成多年生产资历。这里的声明就是[平台 README](README.md) 做的那一个：*一套可迁移的操作模型，加一条 AI 加速、在本仓库里可验证、能快速到达"胜任"的 ramp* —— 而上面那些 support 反射就是这条 ramp 落到实处。某个具体服务上更深、规模化的生产 AWS 仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 
@@ -154,7 +154,7 @@ AWS 的修/救本质是在一小组控制台和日志上做模式识别。你要
 python3 platforms/aws/labs/iam-deny-by-default/iam_eval_drill.py
 ```
 
-exit `0` 表示教训都成立（兼作 CI 检查）。与可跑的 [`labs/`](../../../../platforms/aws/labs/) 并列（scoped-identity inventory · minimal VPC+EC2）—— 见 [`labs/iam-deny-by-default/`](../../../../platforms/aws/labs/iam-deny-by-default/)。
+exit `0` 表示教训都成立（兼作 CI 检查）。与可跑的 [`labs/`](labs) 并列（scoped-identity inventory · minimal VPC+EC2）—— 见 [`labs/iam-deny-by-default/`](labs/iam-deny-by-default)。
 
 ## 一页看全本章
 

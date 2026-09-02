@@ -70,7 +70,7 @@ state 管理。
 - **Module** —— 可复用、可参数化的积木，好让"一个标准 VPC"写一次、到处调用。这就是 IaC 不再是
   脚本、开始成为一个库的地方。
 - 这件事可跑的证明已经在仓库里：
-  [`platforms/aws/labs/02-minimal-vpc-ec2-terraform/`](../../../platforms/aws/labs/02-minimal-vpc-ec2-terraform/)
+  [`platforms/aws/labs/02-minimal-vpc-ec2-terraform/`](../platforms/aws/labs/02-minimal-vpc-ec2-terraform)
   —— 一个 VPC 加一台实例，从代码立起来、又拆掉。
 
 ## Ansible —— 配置管理，推模型
@@ -125,7 +125,7 @@ agent"移走了一整份运维负担。
 混合，而且标得精确。**Ansible 和那门自动化纪律是 🔨** —— Python/Bash/Ansible 真的用来做过机队
 自动化，而支撑整个 IaC 的那份幂等直觉是亲手做过的（见 [`foundations/`](../foundations/README.md)）。
 **Terraform 是一条 🧭 ramp** —— 那些概念（state、plan/apply/destroy、module）是扎实的、测绘过的，
-并在 [AWS lab](../../../platforms/aws/labs/02-minimal-vpc-ec2-terraform/) 里被证明过，但没有被
+并在 [AWS lab](../platforms/aws/labs/02-minimal-vpc-ec2-terraform) 里被证明过，但没有被
 声称成多年在规模上写生产 module。**Puppet 是概念级的** —— 作为拉模型的对照被理解，没有被运维过。
 那句可迁移的声称是：一份很深的自动化与幂等地基，加上一条通向任何具体 IaC 工具的、快速且经过验证
 的 ramp —— 正是 [`WHY.md`](../WHY.md) 所论证的那个形状。
@@ -138,7 +138,7 @@ agent"移走了一整份运维负担。
 
 **先发放再配置 —— 把那两半接起来。** 尽可能纯本地（拿一个容器或本地 VM 当目标）：
 
-1. 用 Terraform **发放**（[AWS lab](../../../platforms/aws/labs/02-minimal-vpc-ec2-terraform/)
+1. 用 Terraform **发放**（[AWS lab](../platforms/aws/labs/02-minimal-vpc-ec2-terraform)
    是云上版本；本地就用一台 VM/容器），并确认 `plan` → `apply` → `destroy` 能干净地跑一圈。
 2. 用一个 **Ansible playbook** **配置**得到的那台主机（一个包、一个模板化的配置文件、一个在跑的
    服务）—— 然后跑**两遍**，并证明第二遍报告零变更：幂等，被演示出来。

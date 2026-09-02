@@ -80,7 +80,7 @@ SaaS 化。但*"在一百个空间和几千条链接上，谁能看见什么"*�
 
 ## 动手做
 
-- ✅ [`cross-cutting/labs/permission-sprawl/`](../../../cross-cutting/labs/permission-sprawl/)
+- ✅ [`cross-cutting/labs/permission-sprawl/`](../cross-cutting/labs/permission-sprawl)
   —— **可跑，纯本地。** 两套 estate、同样的文档、同样的一百个人；一套通过组授权，另一套是
   四次"就这一次"的点击加一条开放链接。可见的差别是四个名字。实际的差别是 93 个人，而访问
   复审在两套上都返回干净。

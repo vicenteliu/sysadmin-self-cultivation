@@ -8,6 +8,8 @@ summary: "Pure-local, tear-down-able exercises. Where the clouds need an account
 ---
 # Self-Hosted / Bare Metal — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/self-host/labs/README.md)
+
 Pure-local, tear-down-able exercises. Where the clouds need an account, this platform
 needs a laptop with nested virtualization — the honest way to practice bare-metal
 discipline without a data centre.

@@ -81,7 +81,7 @@ summary: "🔨 亲手做过（ServiceNow 约五年；资产对账与审计自动
   [`toolbox/patch-report/`](../toolbox/patch-report/) —— 这一步必须拿去与归属对账的两个状态
   来源
 
-- [`cross-cutting/labs/asset-reconciliation/`](../../../cross-cutting/labs/asset-reconciliation/)
+- [`cross-cutting/labs/asset-reconciliation/`](../cross-cutting/labs/asset-reconciliation)
   —— 两个系统都报 97 台设备，97 台设备确实存在，而三条记录是错的。那个连接键让你付出什么，
   以及为什么它留下的残差才是工作产物。
 

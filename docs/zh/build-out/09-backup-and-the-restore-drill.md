@@ -78,7 +78,7 @@ AI 用法，会是"AI 那一栏已经变成装饰"最清楚的迹象。
 
 ## 动手做
 
-- [`the-stack/labs/04-backup-not-snapshot/`](../../../the-stack/labs/04-backup-not-snapshot/)
+- [`the-stack/labs/04-backup-not-snapshot/`](../the-stack/labs/04-backup-not-snapshot)
   —— 可跑，也是这一步里最有用的那一样东西：复制不是备份，被演示出来而不是被断言
 - [`toolbox/backup-restore-drill/`](../toolbox/backup-restore-drill/) —— 那次演练，做成可
   重复的，而那正是它如何在与日历接触后活下来

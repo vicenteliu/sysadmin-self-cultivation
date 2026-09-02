@@ -7,6 +7,8 @@ summary: "Runnable, tear-down-able exercises. Reading about a subnet and configu
 ---
 # AWS — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/aws/labs/README.md)
+
 Runnable, tear-down-able exercises. Reading about a subnet and configuring one are
 different skills; these make you do the second.
 

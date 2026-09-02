@@ -8,6 +8,8 @@ summary: "Tear-down-able exercises against DevStack — a single-node, all-in-on
 ---
 # OpenStack — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/openstack/labs/README.md)
+
 Tear-down-able exercises against **DevStack** — a single-node, all-in-one OpenStack in
 a VM, the honest way to meet the platform's plumbing without a data centre.
 

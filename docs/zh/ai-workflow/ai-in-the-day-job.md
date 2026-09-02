@@ -121,7 +121,7 @@ flowchart LR
 
 **收回来：那个连接键，以及那份残差。** 对账是错误答案最自信的地方：拿错误的键去连接两份清册，
 会产出一份干净的、装满了并不存在的记录的报表，而那个顾问层会为其中每一条产出说得通的成因。
-[asset-reconciliation lab](../../../cross-cutting/labs/asset-reconciliation/) 存在的意义就是把那个
+[asset-reconciliation lab](../cross-cutting/labs/asset-reconciliation) 存在的意义就是把那个
 失败变得可见 —— 你挑的那个键决定了这片机队有多少是虚构的。
 
 而**在一次称职的检查之后仍然存活的，是那份成因不在任何一个系统里的残差。** 那就是这整个仓库反复

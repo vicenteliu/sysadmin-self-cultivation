@@ -141,7 +141,7 @@ README 把这个叫作*云永远不会给你看的那个漏水点*，而在规�
 很好，而把多数情况用手处理。那条换代路径 —— 一个已经有一台能用的机器、已经有一个账号，而需要他的
 新机器与旧的无从分辨的人 —— 才是实际量所在的地方，而它有一项入职没有的要求：
 **那台旧机器必须回来、被抹掉，并且诚实地离开那份台账**，而那正是
-[`asset-reconciliation`](../../../cross-cutting/labs/asset-reconciliation/) 的全部主题。
+[`asset-reconciliation`](../cross-cutting/labs/asset-reconciliation) 的全部主题。
 
 ## 诚实边界
 

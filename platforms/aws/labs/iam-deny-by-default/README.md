@@ -7,6 +7,8 @@ summary: "No cloud, no credentials, no cost, no external packages — just Pytho
 ---
 # Lab — IAM is deny-by-default (prove it in your own hands)
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/platforms/aws/labs/iam-deny-by-default/README.md)
+
 **Goal:** make the central lesson of the [AWS support note](../../support.md) tangible
 — **IAM is deny-by-default, an explicit `Deny` always wins, and an SCP or a
 permissions boundary caps even an "admin" — so "just give them `Allow *`" is not the

@@ -7,6 +7,8 @@ summary: "A VPC, a public and a private subnet, and one EC2 instance reachable w
 ---
 # Lab 02 — Minimal VPC + EC2, from Terraform
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/platforms/aws/labs/02-minimal-vpc-ec2-terraform/README.md)
+
 **Goal:** stand up a small, *secure-by-default* stack entirely from code — a VPC, a
 public and a private subnet, and one EC2 instance you can reach **without opening a
 single inbound port** — then tear it down cleanly. This is move #3 of the

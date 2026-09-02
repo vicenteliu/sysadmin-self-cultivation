@@ -7,6 +7,8 @@ summary: "No cluster, no credentials, no cost, no external packages — just Pyt
 ---
 # Lab — GKE has two auth planes (prove it in your own hands)
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/platforms/gcp/labs/gke-iam-vs-rbac/README.md)
+
 **Goal:** make the #1 GKE lesson of the [GCP support note](../../support.md) tangible —
 **GKE authenticates you with Cloud IAM and authorizes you with Kubernetes RBAC; they
 are separate planes, so `Unauthorized` (authn) and `Forbidden` (authz) are different

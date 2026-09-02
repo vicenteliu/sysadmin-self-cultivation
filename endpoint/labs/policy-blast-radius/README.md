@@ -8,6 +8,8 @@ summary: "The console says the policy reaches 3. It reaches 22. Three years late
 ---
 # Lab — the console says 3, the policy reaches 22, and in three years it reaches 30
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/endpoint/labs/policy-blast-radius/README.md)
+
 > **Inputs:** none · **Outputs:** a per-step report of what the policy actually
 > reaches, then and now · **Risk:** none — no MDM, no tenant, no device, no
 > credentials · **Root:** not needed

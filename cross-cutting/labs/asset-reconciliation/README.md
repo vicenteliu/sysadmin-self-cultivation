@@ -7,6 +7,8 @@ summary: "A hundred-person office runs procurement (authoritative for who paid f
 ---
 # Lab — both systems report 97 devices, 97 devices exist, and three records are wrong
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/asset-reconciliation/README.md)
+
 **Goal:** kill the idea that a matching total is reassurance. Two live, automatic,
 well-maintained systems can agree on the count and still disagree about which
 laptops those are — and the only way to see it is to reconcile row by row.

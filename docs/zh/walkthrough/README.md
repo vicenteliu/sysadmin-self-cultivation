@@ -141,8 +141,8 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 [`debug-ladder.md`](../cross-cutting/debug-ladder.md)、
 [`incident-response.md`](../cross-cutting/incident-response.md)、
 [`the-stack/06-observability.md`](../the-stack/06-observability.md)，以及
-[four-causes](../../../cross-cutting/labs/remote-access-four-causes/) 和
-[mitigate-before-diagnose](../../../cross-cutting/labs/mitigate-before-diagnose/)
+[four-causes](../cross-cutting/labs/remote-access-four-causes) 和
+[mitigate-before-diagnose](../cross-cutting/labs/mitigate-before-diagnose)
 两个 lab 的 README —— 七个来源，到目前为止最多的一篇，因为一次故障正是各条轴汇合的地方。
 还是同一张 plate。它十个物体里有三个是**「计划」而不是「地方」**：那个决定、那架梯子和那份
 记录，是这一篇真正在讲的东西，而它们在一层楼上都没有位置。立足点切换一次，说出口，就在

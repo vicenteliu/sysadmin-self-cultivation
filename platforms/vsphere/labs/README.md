@@ -8,6 +8,8 @@ summary: "Tear-down-able exercises against a lab vCenter (or nested ESXi)."
 ---
 # vSphere — Labs
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/vsphere/labs/README.md)
+
 Tear-down-able exercises against a lab vCenter (or nested ESXi). Reading about vMotion
 and doing it are different skills — and on this platform, the honest note is the labs
 *already ran*, in production, for years.

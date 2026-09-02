@@ -89,7 +89,7 @@ OpenStack 既是 ramp 方法的一个有力案例，*也是*它局限的一个�
 ## 4. Lab
 
 一条**三节的命令行弧**（Keystone 身份 + 盘点 → Neutron 网络 + Nova 实例 → 控制平面故障演练）在
-**[`labs/`](../../../../platforms/openstack/labs/)** 里，用的是真实的 `openstack` 命令。它建在
+**[`labs/`](labs)** 里，用的是真实的 `openstack` 命令。它建在
 **DevStack**（一个单节点的一体化 OpenStack）上，跑在一台 VM 里，创建一个 project + flavor +
 租户网络，用 cloud-init 拉起一个实例，然后 —— 真正的那个教训 —— 刻意把一个控制平面服务弄卡住，
 看着那些在跑的实例活下来、而 API 挂掉。DevStack 是不需要一个数据中心就能认识 OpenStack 那套管路的

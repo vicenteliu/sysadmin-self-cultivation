@@ -41,7 +41,7 @@ GCP 的修/救本质是在一小组控制台、日志、和两个 CLI（`gcloud`
 
 **GKE —— 你被叮嘱要在意的那部分。**
 - *kubectl 无法认证* → 自 Kubernetes **v1.26** 起你必须装 **`gke-gcloud-auth-plugin`**（内置的 `gcp` provider 被移除）。`gcloud container clusters get-credentials <cluster>` 写 kubeconfig。
-- *头号 GKE 工单——"控制台里我有权限，但 `kubectl` 说 Forbidden。"* GKE 有**两个授权面**：**Cloud IAM 认证**你到集群（你光是要够到 API server 就需要 IAM 权限 `container.clusters.get`）、并管集群*基础设施*操作；**Kubernetes RBAC 授权**你在*里面*能干什么（get pods、读 secret、按 namespace）。GKE **先查 RBAC，再回退到 IAM** —— 有*任一*即可。两个词、两种失败：**`Unauthorized`** = 认证（凭据坏/过期、缺 plugin、没 `container.clusters.get`）；**`Forbidden`** = 认证过了、但 RBAC 和 in-cluster IAM 都没授予这个动作。恶心的陷阱：IAM 角色 **"Kubernetes Engine Cluster Admin" 不是 RBAC 的 `cluster-admin`** —— 它让你改集群基础设施、却对*里面*一无所授。你用 **RBAC binding** 修 in-cluster 访问，而不是升级 IAM。（[lab](../../../../platforms/gcp/labs/gke-iam-vs-rbac/) 证明这点；对象模型见 [`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md)。）
+- *头号 GKE 工单——"控制台里我有权限，但 `kubectl` 说 Forbidden。"* GKE 有**两个授权面**：**Cloud IAM 认证**你到集群（你光是要够到 API server 就需要 IAM 权限 `container.clusters.get`）、并管集群*基础设施*操作；**Kubernetes RBAC 授权**你在*里面*能干什么（get pods、读 secret、按 namespace）。GKE **先查 RBAC，再回退到 IAM** —— 有*任一*即可。两个词、两种失败：**`Unauthorized`** = 认证（凭据坏/过期、缺 plugin、没 `container.clusters.get`）；**`Forbidden`** = 认证过了、但 RBAC 和 in-cluster IAM 都没授予这个动作。恶心的陷阱：IAM 角色 **"Kubernetes Engine Cluster Admin" 不是 RBAC 的 `cluster-admin`** —— 它让你改集群基础设施、却对*里面*一无所授。你用 **RBAC binding** 修 in-cluster 访问，而不是升级 IAM。（[lab](labs/gke-iam-vs-rbac) 证明这点；对象模型见 [`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md)。）
 - *Workload Identity*（Pod → GCP API）失败常因 KSA↔GSA 注解写错、IAM Credentials API 没开、节点池没启用 WI、或 metadata server 被挡——而且它会**悄悄回退到节点的默认 SA**，把配错掩盖掉。
 - *Pod 状态*定位故障：**ImagePullBackOff**（名字/tag、registry 不可达、节点 SA 没有 Artifact Registry 拉取权限）、**CrashLoopBackOff**（应用/配置/探针）、**Pending/unschedulable**（`Insufficient cpu`/内存、taint、或 IP 耗尽）、**OOMKilled**（超内存 limit）。用 `kubectl describe pod` / `logs` / `get events` 诊断。
 - *`IP_SPACE_EXHAUSTED`* —— 标志性的 GKE 陷阱。VPC-native 集群给 pod **真实的 VPC IP**（来自 alias range），每个节点抓走一整个 **/24**（默认 110 pods/node）—— 于是你的节点上限是 **pod range** 里 `/24` 切片的数量，而非子网原始大小。在创建时把它设小了，新节点就会**静默失败**、pod 卡在 **Pending**、自动扩容悄悄停摆。用 **Network Analyzer** 提前看到；用 discontiguous multi-pod-CIDR、更低的 `--max-pods-per-node`、或重建来修。
@@ -109,7 +109,7 @@ GCP 的修/救本质是在一小组控制台、日志、和两个 CLI（`gcloud`
 
 ## 诚实边界
 
-**GCP 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 承重的是那些**🔨 可迁移、且真实**的基本功：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）、以及 **Kubernetes 对象模型**（[`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md)）—— GCP/GKE 支持里那些*本来就是*这些技能、只是换了 Google 名字的部分。GCP 特有的机制（additive-继承的 IAM、全局 VPC、GKE 两个面、计费与配额的边）是被映射、对着文档核验、并在可跑的 [lab](../../../../platforms/gcp/labs/gke-iam-vs-rbac/) 里练过的——**不是**声称成多年生产资历。更深、规模化的生产 GKE（大型多租户集群、mesh、平台工程）仍在前方，注释如实说明、绝不吹。
+**GCP 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 承重的是那些**🔨 可迁移、且真实**的基本功：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）、以及 **Kubernetes 对象模型**（[`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md)）—— GCP/GKE 支持里那些*本来就是*这些技能、只是换了 Google 名字的部分。GCP 特有的机制（additive-继承的 IAM、全局 VPC、GKE 两个面、计费与配额的边）是被映射、对着文档核验、并在可跑的 [lab](labs/gke-iam-vs-rbac) 里练过的——**不是**声称成多年生产资历。更深、规模化的生产 GKE（大型多租户集群、mesh、平台工程）仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 
@@ -148,7 +148,7 @@ GCP 的修/救本质是在一小组控制台、日志、和两个 CLI（`gcloud`
 python3 platforms/gcp/labs/gke-iam-vs-rbac/gke_authz_drill.py
 ```
 
-exit `0` 表示教训都成立（兼作 CI 检查）。见 [`labs/gke-iam-vs-rbac/`](../../../../platforms/gcp/labs/gke-iam-vs-rbac/)；Kubernetes 对象模型见 [`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md)。
+exit `0` 表示教训都成立（兼作 CI 检查）。见 [`labs/gke-iam-vs-rbac/`](labs/gke-iam-vs-rbac)；Kubernetes 对象模型见 [`cross-cutting/kubernetes.md`](../../cross-cutting/kubernetes.md)。
 
 ## 一页看全本章
 

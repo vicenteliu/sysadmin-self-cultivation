@@ -64,7 +64,7 @@ summary: "采购与运营商谈判是 🧭 经过验证的 ramp；这条电路�
 
 - [`the-stack/02-network.md`](../the-stack/02-network.md) —— 跨七个平台的网络层；
   这一步采购时所对着的那套词汇
-- [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/) ——
+- [`the-stack/labs/01-failure-domains/`](../the-stack/labs/01-failure-domains) ——
   "多样化"必须意味着什么才算数
 - [`cross-cutting/incident-response.md`](../cross-cutting/incident-response.md) ——
   因为上面那个凌晨两点的问题其实是一个 on-call 问题
@@ -73,7 +73,7 @@ summary: "采购与运营商谈判是 🧭 经过验证的 ramp；这条电路�
 
 ## 动手做
 
-- [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/) ——
+- [`the-stack/labs/01-failure-domains/`](../the-stack/labs/01-failure-domains) ——
   可跑，也是在你还没付钱之前看清"两条电路一根管道"这个答案为什么是错的最便宜的方式。
 
 ## 把它做反了会怎样

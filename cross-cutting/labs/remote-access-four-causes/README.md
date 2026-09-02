@@ -7,6 +7,8 @@ summary: "Four unrelated causes produce a byte-identical 'the VPN will not conne
 ---
 # Lab — "The VPN won't connect" is four different problems
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/remote-access-four-causes/README.md)
+
 **Goal:** make the most expensive habit in remote-access support tangible —
 **four unrelated causes produce a byte-identical user report**, so diagnosing from
 the symptom is guessing with extra steps. You will watch the reflex checks

@@ -158,7 +158,7 @@ Azure 平台工程。
 
 ## Lab（已写规格 —— 构建顺序在 labs README 里）
 
-[Azure 那些 lab](../../../../platforms/azure/labs/)对应 AWS 那一组：一次**受限身份的 subscription
+[Azure 那些 lab](labs)对应 AWS 那一组：一次**受限身份的 subscription
 盘点**（一个最小权限 Reader 加一个把结果写成 CSV 的 Resource-Graph / `az` 脚本 —— AWS lab 01 的
 Azure 孪生），然后一个用 Terraform 写的、经 Bastion 够得到、不开任何端口的**最小 VNet 加 VM**，
 然后 **Key Vault 加 managed identity**，然后一个 **Budget 加 Azure Policy** 护栏。它们会随着这个

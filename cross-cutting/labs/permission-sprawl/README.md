@@ -7,6 +7,8 @@ summary: "Two estates, built the same week, same documents, same hundred people.
 ---
 # Lab — "Who can see this?" is not answered by reading the permissions
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/permission-sprawl/README.md)
+
 **Goal:** make the auditor's real question tangible. Not *is it locked down* —
 **who can see this, and how do you know?** The second half is the one that fails,
 and it fails quietly, in an estate that looks fine from the sharing dialog.

@@ -87,7 +87,7 @@ AI 确实出现的地方是在建设**之后**，在复审的活里：访问复�
 
 ## 动手做
 
-- [`cross-cutting/labs/m365-conditional-access-lockout/`](../../../cross-cutting/labs/m365-conditional-access-lockout/)
+- [`cross-cutting/labs/m365-conditional-access-lockout/`](../cross-cutting/labs/m365-conditional-access-lockout)
   —— 上线一条天真的策略，把自己锁在外面，然后加上那个消防出口。在租户里**还没有用户之前**
   做这件事，不是之后。
 - [`toolbox/user-lifecycle/`](../toolbox/user-lifecycle/) —— 把入转离做成一份 CSV，而不是

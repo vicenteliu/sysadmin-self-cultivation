@@ -77,7 +77,7 @@ summary: "🧭 经过验证的 ramp，不是亲手做过。这一步写成一张
 
 - [`the-stack/01-physical.md`](../the-stack/01-physical.md) —— 物理层，以及每个平台
   在这一层上对你藏了什么
-- [`the-stack/labs/01-failure-domains/`](../../../the-stack/labs/01-failure-domains/) ——
+- [`the-stack/labs/01-failure-domains/`](../the-stack/labs/01-failure-domains) ——
   为什么"两条电路、一根管道"是一个故障域，做成可跑的
 
 ## 动手做

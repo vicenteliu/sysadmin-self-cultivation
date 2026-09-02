@@ -7,6 +7,8 @@ summary: "The workflow lives under .github-workflows-example/ on purpose — Git
 ---
 # Lab — A real CI/CD pipeline (test → build once → gated deploy)
 
+> 🌐 **Languages:** English (default) · [中文](../../../docs/zh/cross-cutting/labs/ci-cd-pipeline/README.md)
+
 **Goal:** make [the CI/CD chapter](../../ci-cd.md) concrete with a **real, valid
 pipeline** over a tiny app — demonstrating the rules that matter: CI on every push
 (fast feedback), **build the artifact once and promote it**, a **manual gate** before
