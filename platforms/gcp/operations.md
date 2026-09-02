@@ -8,6 +8,8 @@ summary: "The README is what GCP is; architecture is how it's structured; this n
 ---
 # GCP — Operating It (the day-2 reality)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/gcp/operations.md)
+
 > The [README](README.md) is *what GCP is*; [architecture](architecture.md) is *how
 > it's structured*; this note is **what running it actually looks like** — the
 > operations brief, what pages you at 3 a.m., the real ops work broken down by

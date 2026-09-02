@@ -7,6 +7,8 @@ summary: "The template every platform module follows: what it is → the admin s
 ---
 # Google Cloud Platform (GCP) — the third cloud
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/gcp/README.md)
+
 > The template every platform module follows: **what it is → the admin skill map →
 > the AI-assisted ramp → labs** — plus four deeper companion notes mirroring the AWS
 > worked example: **[architecture](architecture.md)** (how it's structured),

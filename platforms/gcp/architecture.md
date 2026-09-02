@@ -8,6 +8,8 @@ summary: "The README mapped GCP onto the seven surfaces — what the services ar
 ---
 # GCP — Understanding the Architecture
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/gcp/architecture.md)
+
 > The [README](README.md) mapped GCP onto the seven surfaces — *what the services
 > are.* This note is the layer up: *how GCP is structured*, so you design **with**
 > its architecture instead of fighting it. Get the resource hierarchy, the

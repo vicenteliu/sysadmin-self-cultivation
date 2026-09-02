@@ -8,6 +8,8 @@ summary: "The README is what OCI is; architecture is how it's structured; this n
 ---
 # OCI — Operating It (the day-2 reality)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/oci/operations.md)
+
 > The [README](README.md) is *what OCI is*; [architecture](architecture.md) is *how
 > it's structured*; this note is **what running it looks like** — the brief, what
 > pages you, the ops work by cadence, and AI in the operating loop. OCI is a 🧭 ramp,

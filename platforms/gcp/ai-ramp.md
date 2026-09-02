@@ -7,6 +7,8 @@ summary: "How to get to competent on GCP in days — using AI as a co-pilot and 
 ---
 # GCP — The AI-Assisted Ramp
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/gcp/ai-ramp.md)
+
 > How to get to *competent* on GCP in days — using AI as a co-pilot and keeping it
 > honest. GCP is the cleanest place to prove the method, because so much of it is a
 > renaming of surfaces already mapped on AWS and Azure. The ramp is mostly finding

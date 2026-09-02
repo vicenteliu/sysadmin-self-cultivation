@@ -7,6 +7,8 @@ summary: "How to get to competent on OCI in days — using AI as a co-pilot and 
 ---
 # OCI — The AI-Assisted Ramp
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/oci/ai-ramp.md)
+
 > How to get to *competent* on OCI in days — using AI as a co-pilot and keeping it
 > honest. OCI is a clean case for the ramp method: an admin who knows another cloud
 > has already mapped the seven surfaces, so the job is translating names and catching

@@ -8,6 +8,8 @@ summary: "architecture is how OCI is structured; operations is what running it l
 ---
 # OCI — Scripting the API (managing & operating from code)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/oci/automation.md)
+
 > [`architecture`](architecture.md) is how OCI is structured; [`operations`](operations.md)
 > is what running it looks like. This note is the *how*: **driving OCI from code** —
 > the [operating-model](../../00-the-operating-model.md) move #3, and a clean case for

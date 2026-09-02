@@ -6,9 +6,9 @@
 
 ---
 
-> [`operations.md`](../../../../platforms/gcp/operations.md) 讲的是运营你自己那套 GCP 的**节奏**。本篇讲另一半：**把 GCP 和 GKE 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及最有用的那点：**一个来自别的方向（尤其 AWS）的强 sysadmin 接手它时，哪些直觉会坑他。** GCP 本身在这里仍是 🧭 ramp；撑起它的可迁移基本功（Linux、网络、身份、Kubernetes 概念、排障）才是那个 🔨 亲手做过——而这正是本页的意义。
+> [`operations.md`](operations.md) 讲的是运营你自己那套 GCP 的**节奏**。本篇讲另一半：**把 GCP 和 GKE 支持当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及最有用的那点：**一个来自别的方向（尤其 AWS）的强 sysadmin 接手它时，哪些直觉会坑他。** GCP 本身在这里仍是 🧭 ramp；撑起它的可迁移基本功（Linux、网络、身份、Kubernetes 概念、排障）才是那个 🔨 亲手做过——而这正是本页的意义。
 
-正如[平台篇](../../../../platforms/gcp/README.md)所说，GCP 大体上是*改了名的 AWS/Azure* —— 而这恰恰是陷阱。一个"已经懂云"的运维接手 GCP 支持很快，然后在 Google 做了真正不同设计选择的那几处栽跟头：**additive 且沿层级继承**、而非 deny-by-default 的 IAM；一个**全局 VPC**；作为一切单位的 **project**；以及——连同时懂 AWS *和* Kubernetes 的人都会吃惊的那点——**GKE 的两个独立授权面**。本篇把职责、反复出现的工单及其诊断面、以及一个自信的云运维反射恰好失灵的那几处一一点名——并显式标出 AWS 对比，因为大多数读者是从那儿来的。
+正如[平台篇](README.md)所说，GCP 大体上是*改了名的 AWS/Azure* —— 而这恰恰是陷阱。一个"已经懂云"的运维接手 GCP 支持很快，然后在 Google 做了真正不同设计选择的那几处栽跟头：**additive 且沿层级继承**、而非 deny-by-default 的 IAM；一个**全局 VPC**；作为一切单位的 **project**；以及——连同时懂 AWS *和* Kubernetes 的人都会吃惊的那点——**GKE 的两个独立授权面**。本篇把职责、反复出现的工单及其诊断面、以及一个自信的云运维反射恰好失灵的那几处一一点名——并显式标出 AWS 对比，因为大多数读者是从那儿来的。
 
 ## 支持 GCP 与 GKE 让你要为什么负责
 
@@ -105,7 +105,7 @@ GCP 的修/救本质是在一小组控制台、日志、和两个 CLI（`gcloud`
 ## AI 辅助的 ramp（GCP/GKE 口味）
 
 - **从你已知的翻译过来——并索要 deltas：** *"我懂 AWS IAM、VPC、和 Kubernetes RBAC —— 把 GCP IAM、全局 VPC、和 GKE 认证映射到它们上，只标出真正的差异。"* GCP 是本仓库 translate-then-verify 方法最纯的案例，因为它太多是改了名的。
-- **让它起草 `gcloud`/`kubectl`/Terraform，你亲手做最小权限。** AI 在这里很强——而它也会**发明 role 和权限**、在有 predefined 时伸手去拿 **basic role**、把 **IAM role 与 RBAC 混为一谈**、并提一个 blast radius 是整个 folder/org 的防火墙或 IAM 改动。对着文档核验、并在一次性 project 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](../../../../platforms/gcp/operations.md)。
+- **让它起草 `gcloud`/`kubectl`/Terraform，你亲手做最小权限。** AI 在这里很强——而它也会**发明 role 和权限**、在有 predefined 时伸手去拿 **basic role**、把 **IAM role 与 RBAC 混为一谈**、并提一个 blast radius 是整个 folder/org 的防火墙或 IAM 改动。对着文档核验、并在一次性 project 里跑。同一套"往死里验证"的纪律——见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](operations.md)。
 
 ## 诚实边界
 

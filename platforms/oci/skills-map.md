@@ -7,6 +7,8 @@ summary: "Check a box when you can do it from code and explain the failure modes
 ---
 # OCI — Admin Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/oci/skills-map.md)
+
 A checkable competency list. Tiers:
 
 - **Core** — you cannot administer OCI without this.

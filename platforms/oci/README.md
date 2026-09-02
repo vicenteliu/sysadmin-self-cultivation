@@ -7,6 +7,8 @@ summary: "Same four-part template as AWS: what it is → the admin skill map →
 ---
 # Oracle Cloud Infrastructure (OCI) — the youngest hyperscaler
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/oci/README.md)
+
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. The honesty marker
