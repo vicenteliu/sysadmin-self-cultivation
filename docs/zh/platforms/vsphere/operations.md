@@ -90,6 +90,19 @@ flowchart LR
   授权**；而且它会自信地把一个争用症状解释错。那道护栏就是这个仓库那条规则 ——
   **AI 碰信号和初稿；你碰生产** —— 而在这里，"你"是一个以前真的跑过这个的人。
 
+## Lab —— N+1 是一个会衰减的数字 ✅ 可跑
+
+**亲手证明 HA 的算术。** 一个纯本地、只用 stdlib 的 drill，把[架构篇](architecture.md)的集群往
+时间前方推：六台主机、五百台 VM 在一次主机损失后跑在 78%，然后是一年的增长、那句*就是*保证的拒绝、
+把它关掉的那次点击，以及下一次主机损失让十台 VM 没有地方可去 —— 上面那条*在集群失去 N+1 之前把死掉
+的主机换掉*的规矩，落到实处。
+
+```bash
+python3 platforms/vsphere/labs/n-plus-one-decays/n_plus_one_drill.py
+```
+
+exit `0` 表示五条教训都成立（兼作 CI 检查）。见 [`labs/n-plus-one-decays/`](labs/n-plus-one-decays)。
+
 ## 诚实边界
 
 🔨 **亲手做过的深度。** 那些分诊直觉、那份争用指标素养（CPU ready、ballooning、datastore 延迟）、

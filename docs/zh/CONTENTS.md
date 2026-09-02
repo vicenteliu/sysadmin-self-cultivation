@@ -84,7 +84,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 
 | 平台 | 有什么 · 诚实标注 |
 | --- | --- |
-| [`vsphere/`](platforms/vsphere) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + 三段式 CLI arc（PowerCLI）。区域 vCenter 管理员，VCP6-DCV/NV。· **🔨 亲手做过的深度 —— 这是强项，不是 ramp** |
+| [`vsphere/`](platforms/vsphere) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + 三段式 CLI arc（PowerCLI）+ [N+1 lab](platforms/vsphere/labs/n-plus-one-decays)。区域 vCenter 管理员，VCP6-DCV/NV。· **🔨 亲手做过的深度 —— 这是强项，不是 ramp** |
 | [`openstack/`](platforms/openstack) | ✅ + [architecture](platforms/openstack/architecture.md)/[operations](platforms/openstack/operations.md)/[automation](platforms/openstack/automation.md) + 三段式 CLI arc（DevStack）。"云是你自己搭的"；控制面即产品。· 🧭（与 KVM 邻接的 🔨） |
 | [`self-host/`](platforms/self-host) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + 三段式 CLI arc。PXE/镜像机队 10 万+、BMC/IPMI、DNS/RAID。· **🔨 亲手做过的深度 —— 最深的那条根** |
 

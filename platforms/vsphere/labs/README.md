@@ -96,6 +96,23 @@ Get-VM lab-vm01 | Select Name, PowerState, VMHost   # VMHost changes as HA resta
 **Verify:** VMs evacuate on maintenance mode with no downtime; on a simulated host
 failure, HA restarts them on a surviving host — the failure domain, in your hands.
 
+## Beyond the arc — a pure-local drill
+
+The three-run arc above needs a lab vCenter. One more lab needs **nothing** — a
+pure-local, stdlib-only, self-verifying drill tied to the [operations note](../operations.md):
+
+### `n-plus-one-decays/` — N+1 is a number that decays ✅ built (pure-local)
+
+Runs the architecture note's six-host cluster forward in time and proves that admission
+control's refusal *is* the guarantee: growth is refused at exactly the point N+1 stops
+being true, the click that disables it leaves ten VMs down at the next host loss, and a
+second loss inside the swap window is an outage even with the guarantee on. See
+**[`n-plus-one-decays/`](n-plus-one-decays/)**.
+
+```bash
+python3 n-plus-one-decays/n_plus_one_drill.py   # exit 0 = the lessons held; runs in CI
+```
+
 ---
 
 Honest note: this is the 🔨 platform — these labs are the production work written down,

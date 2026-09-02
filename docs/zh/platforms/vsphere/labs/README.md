@@ -97,6 +97,21 @@ Get-VM lab-vm01 | Select Name, PowerState, VMHost   # HA 重启它时 VMHost 会
 **验证：** 维护模式下那些 VM 零停机地疏散走了；在一次模拟的主机故障里，HA 把它们在一台活着的主机
 上重启了 —— 那个故障域，握在你自己手里。
 
+## 弧之外 —— 一个纯本地的演练
+
+上面那条三节弧需要一个 lab vCenter。还有一个 lab **什么都不需要** —— 一个纯本地、只用标准库、能自我
+验证的演练，接着那篇[运维篇](../operations.md)：
+
+### `n-plus-one-decays/` —— N+1 是一个会衰减的数字 ✅ 已建（纯本地）
+
+把架构篇的六主机集群往时间前方推，证明 admission control 的拒绝*就是*保证：增长正好在 N+1 不再成立
+的那一点被拒绝，把它关掉的那次点击让下一次主机损失留下十台 VM 停机，而换机窗口内的第二次损失即使
+保证还开着也是一场事故。见 **[`n-plus-one-decays/`](n-plus-one-decays/)**。
+
+```bash
+python3 n-plus-one-decays/n_plus_one_drill.py   # exit 0 = 那些教训成立；在 CI 里跑
+```
+
 ---
 
 一句诚实的说明：这是那个 🔨 平台 —— 这些 lab 是那份生产工作被写下来，不是一条 ramp。GUI 对命令行

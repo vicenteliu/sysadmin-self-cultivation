@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 407,
+  "count": 409,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2998,6 +2998,21 @@
       "mirrors": "platforms/vsphere/labs/README.md",
       "derived": true
     },
+    "docs/zh/platforms/vsphere/labs/n-plus-one-decays/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "A cluster is sized right on the day it is built; then it grows one power-on at a time, and admission control is the only thing that notices N+1 stop being true. Six hosts, five hundred VMs, and the refusal that is the guarantee.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "platforms/vsphere/labs/n-plus-one-decays/README.md",
+      "derived": true
+    },
     "docs/zh/platforms/vsphere/operations.md": {
       "kind": "companion",
       "axis": "platforms",
@@ -4236,6 +4251,18 @@
         "vsphere"
       ],
       "summary": "Three guided runs against a lab vCenter (or nested ESXi) — on this platform, the honest note is that they already ran, in production, for years.",
+      "marker": "🔨"
+    },
+    "platforms/vsphere/labs/n-plus-one-decays/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "vsphere"
+      ],
+      "summary": "A cluster is sized right on the day it is built; then it grows one power-on at a time, and admission control is the only thing that notices N+1 stop being true. Six hosts, five hundred VMs, and the refusal that is the guarantee.",
       "marker": "🔨"
     },
     "platforms/vsphere/operations.md": {

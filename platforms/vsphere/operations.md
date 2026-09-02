@@ -95,6 +95,22 @@ flowchart LR
   signals and drafts; you touch production** — and here "you" is someone who has run
   this before.
 
+## Lab — N+1 is a number that decays ✅ runnable
+
+**Prove the HA arithmetic in your own hands.** A pure-local, stdlib-only drill that runs
+the [architecture note](architecture.md)'s cluster forward in time: six hosts and five
+hundred VMs at 78% after a host loss, then a year of growth, the refusal that *is* the
+guarantee, the click that disables it, and the next host loss that leaves ten VMs with
+nowhere to go — the *replace the dead host before the cluster loses its N+1* rule above,
+felt.
+
+```bash
+python3 platforms/vsphere/labs/n-plus-one-decays/n_plus_one_drill.py
+```
+
+Exit `0` means the five lessons held (it doubles as a CI check). See
+[`labs/n-plus-one-decays/`](labs/n-plus-one-decays/).
+
 ## Honest boundaries
 
 🔨 **hands-on depth.** The triage instincts, the contention-metric literacy (CPU

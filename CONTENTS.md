@@ -81,7 +81,7 @@ Stack have a module. See [`platforms/`](platforms/).
 
 | Platform | What's there · honesty |
 | --- | --- |
-| [`vsphere/`](platforms/vsphere/) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + three-run CLI arc (PowerCLI). regional vCenter admin, VCP6-DCV/NV. · **🔨 hands-on depth — a strength, not a ramp** |
+| [`vsphere/`](platforms/vsphere/) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + three-run CLI arc (PowerCLI) + [N+1 lab](platforms/vsphere/labs/n-plus-one-decays/). regional vCenter admin, VCP6-DCV/NV. · **🔨 hands-on depth — a strength, not a ramp** |
 | [`openstack/`](platforms/openstack/) | ✅ + [architecture](platforms/openstack/architecture.md)/[operations](platforms/openstack/operations.md)/[automation](platforms/openstack/automation.md) + three-run CLI arc (DevStack). "You build the cloud"; control-plane-as-product. · 🧭 (KVM-adjacent 🔨) |
 | [`self-host/`](platforms/self-host/) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + three-run CLI arc. PXE/image fleet 100k+, BMC/IPMI, DNS/RAID. · **🔨 hands-on depth — the deepest root** |
 
