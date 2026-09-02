@@ -18,11 +18,21 @@ scope inheritance, elevation = User Access Administrator at "/", the fix is a sc
 RBAC assignment) is real.
 
 Exit code 0 means every assertion about the lesson held. Run it in CI.
+
+    python3 two_planes_drill.py
+    python3 two_planes_drill.py --break-it one-plane        # exit 1
+    python3 two_planes_drill.py --break-it scope-is-global  # exit 1
+
+--break-it makes the model behave the way the instinct assumes — a Global Administrator
+is Owner of everything, or an RBAC assignment applies wherever you are regardless of
+its scope — and the drill must then fail.
 """
 
 import argparse
 import sys
 from dataclasses import dataclass, field
+
+BREAK = None   # --break-it sets one of the modes above; the two planes consult it
 
 
 # --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
@@ -92,6 +102,9 @@ OTHER_SUB_VM = "/subscriptions/S2/resourceGroups/RG9/providers/Microsoft.Compute
 
 def scope_covers(assignment_scope, target_scope) -> bool:
     """An RBAC assignment applies to its scope AND everything beneath it (inheritance)."""
+    # The break: "I'm Owner" with no scope attached — an assignment applies everywhere.
+    if BREAK == "scope-is-global":
+        return True
     if assignment_scope == ROOT:
         return True
     return target_scope == assignment_scope or target_scope.startswith(assignment_scope + "/")
@@ -109,6 +122,9 @@ class Principal:
 
     def can_resource(self, action, scope) -> bool:
         """Plane 2 — does an Azure RBAC assignment grant this action at (or above) scope?"""
+        # The break: one plane — the directory's top role is the resources' top role.
+        if BREAK == "one-plane" and "Global Administrator" in self.entra_roles:
+            return True
         return any(action in AZURE_ROLES[role] and scope_covers(assign_scope, scope)
                    for role, assign_scope in self.rbac)
 
@@ -195,13 +211,17 @@ def run() -> int:
         "The instinct this drill retired:",
         "  'I'm Global Admin, so I run Azure' — Entra says who you are; RBAC says what",
         "  you can touch. They are two doors, and one key never opens the other.",
-    ])
+    ], broken=bool(BREAK))
 
 
 def main():
-    argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--break-it", choices=["one-plane", "scope-is-global"],
+                    help="make the model behave the way the instinct assumes; the drill must then fail")
+    args = ap.parse_args()
+    global BREAK
+    BREAK = args.break_it
     sys.exit(run())
 
 

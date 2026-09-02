@@ -73,8 +73,16 @@ infra.rbac_roles = ["view"]                # 加一条 RBAC 绑定
 print(kubectl(infra, "get", "pods"))       # ('OK', 'authorized via RBAC')
 ```
 
-然后刻意把它弄坏 —— 让 `authorize()` 跳过那条"先 RBAC"的规则 —— 再跑一次：这个演练必须**非零**
-退出。一个不会失败的自我验证器毫无价值。
+然后刻意把它弄坏 —— 不是去改 `authorize()`，而是像直觉那样把两个平面压成一个：
+
+```bash
+python3 gke_authz_drill.py --break-it iam-is-rbac      # exit 1
+python3 gke_authz_drill.py --break-it authn-is-authz   # exit 1
+```
+
+`iam-is-rbac` 把 IAM 角色名里的 *admin* 读成 RBAC 的 cluster-admin；`authn-is-authz` 把能连上
+API server 当成有权操作。每一种都必须**非零**退出 —— 一个不会失败的自我验证器毫无价值。`check.py`
+每次 push 都把两种都跑一遍。
 
 ## 重点
 

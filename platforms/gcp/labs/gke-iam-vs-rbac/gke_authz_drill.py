@@ -16,11 +16,21 @@ faithful (simplified) model — the permission strings are illustrative; the beh
 is real.
 
 Exit code 0 means every assertion about the lesson held. Run it in CI.
+
+    python3 gke_authz_drill.py
+    python3 gke_authz_drill.py --break-it iam-is-rbac      # exit 1
+    python3 gke_authz_drill.py --break-it authn-is-authz   # exit 1
+
+--break-it collapses the two planes the way the instinct does — an IAM role with
+"admin" in its name is admin inside the cluster, or reaching the API server is the
+same as being allowed to act — and the drill must then fail.
 """
 
 import argparse
 import sys
 from dataclasses import dataclass, field
+
+BREAK = None   # --break-it sets one of the modes above; authorize() consults it
 
 
 # --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
@@ -130,6 +140,12 @@ def authenticate(p: Principal) -> bool:
 
 def authorize(p: Principal, verb, resource):
     """Plane 2 — GKE checks RBAC first, then falls back to IAM. Returns (ok, how)."""
+    # The break, two ways: the door is the room (authenticated ⇒ authorized), or the
+    # word "admin" in an IAM role name is read as the RBAC cluster-admin.
+    if BREAK == "authn-is-authz":
+        return True, "BREAK: authenticated, therefore authorized"
+    if BREAK == "iam-is-rbac" and any("admin" in r.lower() for r in p.iam_roles):
+        return True, "BREAK: an IAM role says admin, so everything inside"
     if any(matches(rule, verb, resource) for rule in p.rbac_rules()):
         return True, "RBAC"
     if any(matches(rule, verb, resource) for rule in p.iam_incluster()):
@@ -221,13 +237,17 @@ def run() -> int:
         "The instinct this drill retired:",
         "  'I have admin, so kubectl works' — on GKE, IAM gets you to the door;",
         "  RBAC decides what you can touch once you're inside.",
-    ])
+    ], broken=bool(BREAK))
 
 
 def main():
-    argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--break-it", choices=["iam-is-rbac", "authn-is-authz"],
+                    help="collapse the two planes the way the instinct does; the drill must then fail")
+    args = ap.parse_args()
+    global BREAK
+    BREAK = args.break_it
     sys.exit(run())
 
 

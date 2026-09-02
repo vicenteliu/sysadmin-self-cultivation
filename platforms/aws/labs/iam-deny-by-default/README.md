@@ -74,9 +74,18 @@ print(evaluate("ec2:RunInstances", "*", identity=ADMIN, scps=[scp]))
 # → ('Deny', 'denied by SCP #1 (org guardrail does not allow the action)')
 ```
 
-Then break it deliberately — delete the SCP check in `evaluate()` and re-run
-`python3 iam_eval_drill.py`: it must exit **non-zero** with failed assertions. A
-self-verifier that can't fail is worthless.
+Then break it deliberately — not by editing `evaluate()`, but by running it the way the
+on-prem instinct reads a policy:
+
+```bash
+python3 iam_eval_drill.py --break-it allow-wins      # exit 1
+python3 iam_eval_drill.py --break-it no-guardrails   # exit 1
+```
+
+`allow-wins` reads an Allow as the answer and never consults a Deny; `no-guardrails`
+stops evaluating at the identity policy, as if SCPs and boundaries were somebody
+else's problem. Each must exit **non-zero** with failed assertions — a self-verifier
+that can't fail is worthless. `check.py` runs both on every push.
 
 ## The point
 

@@ -109,7 +109,7 @@ which — and demand-first deepening.
 | ✅ | **Browser & retrieval** | [`site/`](site/README.md) — full-text search over the lot, nothing to install · [`docs/index.json`](docs/index.json) — one record per file, for an agent |
 
 **Twenty-five runnable, self-verifying labs** sit under those axes — exit `0` means the
-lesson held, and seventeen carry a `--break-it` flag that swaps in the *standard* procedure and
+lesson held, and twenty-one carry a `--break-it` flag that swaps in the *standard* procedure and
 shows it failing. Two directories under `labs/` need a real cloud account instead, so they
 are runnable exercises rather than labs as [`CONTEXT.md`](CONTEXT.md) defines one:
 `check.py` names both every run rather than counting them in — one declares a dependency,

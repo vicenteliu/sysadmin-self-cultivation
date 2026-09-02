@@ -72,8 +72,18 @@ infra.rbac_roles = ["view"]                # add an RBAC binding
 print(kubectl(infra, "get", "pods"))       # ('OK', 'authorized via RBAC')
 ```
 
-Then break it deliberately — make `authorize()` skip the RBAC-first rule — and re-run:
-the drill must exit **non-zero**. A self-verifier that can't fail is worthless.
+Then break it deliberately — not by editing `authorize()`, but by collapsing the two
+planes the way the instinct does:
+
+```bash
+python3 gke_authz_drill.py --break-it iam-is-rbac      # exit 1
+python3 gke_authz_drill.py --break-it authn-is-authz   # exit 1
+```
+
+`iam-is-rbac` reads the word *admin* in an IAM role name as the RBAC cluster-admin;
+`authn-is-authz` treats reaching the API server as permission to act. Each must exit
+**non-zero** — a self-verifier that can't fail is worthless. `check.py` runs both on
+every push.
 
 ## The point
 

@@ -17,11 +17,21 @@ We model M365 sign-in evaluation under one Conditional Access policy, then:
      the safe way to have shipped it.
 
 Exit code 0 means every assertion about the lesson held. Run it in CI.
+
+    python3 ca_lockout_drill.py
+    python3 ca_lockout_drill.py --break-it admin-exempt        # exit 1
+    python3 ca_lockout_drill.py --break-it break-glass-exempt  # exit 1
+
+--break-it runs the model the way the instinct assumes — the admin who wrote the
+policy is exempt from it, or emergency accounts are exempt by nature — and the drill
+must then fail, because neither is how the service evaluates a sign-in.
 """
 
 import argparse
 import sys
 from dataclasses import dataclass, field
+
+BREAK = None   # --break-it sets one of the modes above; the model consults it
 
 
 # --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
@@ -99,6 +109,12 @@ def evaluate_sign_in(user: User, policy: CAPolicy):
     if policy.state == "report-only":
         # evaluated and logged, but NOT enforced — the whole point of the mode
         return True, "report-only: logged, NOT enforced"
+    # The break: the two exemptions people assume exist. The service has neither —
+    # an exclusion is something you write, and "admin" is just a user in scope.
+    if BREAK == "admin-exempt" and user.name == "admin":
+        return True, "BREAK: the admin who wrote the policy is exempt (the instinct)"
+    if BREAK == "break-glass-exempt" and user.break_glass:
+        return True, "BREAK: emergency accounts are exempt by nature (they are not)"
     if not policy.in_scope(user):
         return True, "out of policy scope"
     if user.name in policy.excluded:
@@ -194,13 +210,17 @@ def run() -> int:
         "The habit this drill builds:",
         "  never enable a tenant-wide CA policy without (a) excluding two break-glass",
         "  accounts and (b) running it report-only first. One save, no outage.",
-    ])
+    ], broken=bool(BREAK))
 
 
 def main():
-    argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--break-it", choices=["admin-exempt", "break-glass-exempt"],
+                    help="run the model the way the instinct assumes; the drill must then fail")
+    args = ap.parse_args()
+    global BREAK
+    BREAK = args.break_it
     sys.exit(run())
 
 

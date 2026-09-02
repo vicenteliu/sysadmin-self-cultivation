@@ -71,8 +71,16 @@ print(ga.can_resource("manage-access", VM))  # True —— 现在可以「分配
 print(ga.can_resource("write", VM))          # False —— 仍然「用」不了这个资源
 ```
 
-然后刻意把它弄坏 —— 让那两个平面互相跨越（一个 Entra 角色授予资源访问）—— 再跑一次：这个演练必须
-**非零**退出。一个不会失败的自我验证器毫无价值。
+然后刻意把它弄坏 —— 不是去改模型，而是让模型按直觉假设的方式去跑：
+
+```bash
+python3 two_planes_drill.py --break-it one-plane        # exit 1
+python3 two_planes_drill.py --break-it scope-is-global  # exit 1
+```
+
+`one-plane` 让 Global Administrator 在每一个资源上都放行，好像目录的最高角色就是资源的最高角色；
+`scope-is-global` 让一条 RBAC 赋权处处生效，不看 scope。每一种都必须**非零**退出 —— 一个不会失败
+的自我验证器毫无价值。`check.py` 每次 push 都把两种都跑一遍。
 
 ## 重点
 

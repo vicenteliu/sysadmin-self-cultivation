@@ -228,14 +228,6 @@ NO_BREAK_PATH = {
         "the wrong procedure — restore from the replica — is half of its own narrative",
     "the-stack/labs/01-failure-domains/failure_domains.py":
         "naive placement is shown beside anti-affinity; a switch to run it alone is not written",
-    "cross-cutting/labs/m365-conditional-access-lockout/ca_lockout_drill.py":
-        "no break mode written yet",
-    "platforms/aws/labs/iam-deny-by-default/iam_eval_drill.py":
-        "no break mode written yet",
-    "platforms/azure/labs/global-admin-is-not-owner/two_planes_drill.py":
-        "no break mode written yet",
-    "platforms/gcp/labs/gke-iam-vs-rbac/gke_authz_drill.py":
-        "no break mode written yet",
 }
 
 BREAK_FLAG_RE = re.compile(

@@ -15,6 +15,14 @@ on-prem admin's instinct. Alongside it we run the naive on-prem model
 disagree — that gap is the lesson.
 
 Exit code 0 means every assertion about the lesson held. Run it in CI.
+
+    python3 iam_eval_drill.py
+    python3 iam_eval_drill.py --break-it allow-wins      # exit 1
+    python3 iam_eval_drill.py --break-it no-guardrails   # exit 1
+
+--break-it evaluates the way the on-prem instinct reads a policy — an Allow is an
+allow and a Deny elsewhere does not override it, or an admin's Allow * is the end of
+the evaluation and SCPs and boundaries do not apply — and the drill must then fail.
 """
 
 import argparse
@@ -23,6 +31,7 @@ from dataclasses import dataclass, field
 
 
 ALLOW, DENY = "Allow", "Deny"
+BREAK = None   # --break-it sets one of the modes above; evaluate() consults it
 
 
 # --- the reporter — vendored, byte for byte, in every drill (ADR-0017) ------------
@@ -118,13 +127,21 @@ def evaluate(action, resource, *, identity, scps=None, boundary=None, session=No
     named = [("identity policy", identity), ("permissions boundary", boundary),
              ("session policy", session)]
     named += [(f"SCP #{i+1}", scp) for i, scp in enumerate(scps)]
-    for name, pol in named:
-        if pol is not None and has_explicit_deny(pol, action, resource):
-            return DENY, f"explicit deny in {name}"
+    # The break, first reading: "an Allow is an allow" — a Deny elsewhere is not
+    # consulted. That is how an on-prem ACL is often read, and it is not how IAM works.
+    if BREAK != "allow-wins":
+        for name, pol in named:
+            if pol is not None and has_explicit_deny(pol, action, resource):
+                return DENY, f"explicit deny in {name}"
 
     # 2. must be allowed by the identity policy — else implicit deny
     if not has_allow(identity, action, resource):
         return DENY, "implicit deny (no identity-based policy allows the action)"
+
+    # The break, second reading: "admin is admin" — the identity policy is the end of
+    # the evaluation, and the org's guardrails are somebody else's problem.
+    if BREAK == "no-guardrails":
+        return ALLOW, "allowed (BREAK: SCPs and boundaries not consulted)"
 
     # 3. SCPs are boundaries: the action must be allowed by ALL of them
     for i, scp in enumerate(scps):
@@ -223,13 +240,17 @@ def run() -> int:
         "  'give them admin and it'll work' — on AWS, Allow * is the START of the",
         "  evaluation, not the end of it. Debugging 'why is this denied' is reading",
         "  which of these five layers said no.",
-    ])
+    ], broken=bool(BREAK))
 
 
 def main():
-    argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter).parse_args()
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--break-it", choices=["allow-wins", "no-guardrails"],
+                    help="evaluate the way the on-prem instinct reads a policy; the drill must then fail")
+    args = ap.parse_args()
+    global BREAK
+    BREAK = args.break_it
     sys.exit(run())
 
 

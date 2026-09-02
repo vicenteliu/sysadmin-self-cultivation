@@ -68,8 +68,16 @@ enabled.excluded = {"admin"}
 print(evaluate_sign_in(admin, enabled))   # (True, 'excluded from the policy (the fire exit)')
 ```
 
-然后刻意把它弄坏 —— 让 report-only 像 enabled 一样去强制执行 —— 再跑一次：这个演练必须**非零**
-退出。一个不会失败的自我验证器毫无价值。
+然后刻意把它弄坏 —— 不是去改模型，而是让模型按直觉假设的方式去跑：
+
+```bash
+python3 ca_lockout_drill.py --break-it admin-exempt        # exit 1
+python3 ca_lockout_drill.py --break-it break-glass-exempt  # exit 1
+```
+
+第一个让写策略的管理员豁免于自己的策略；第二个让应急账号天然豁免。服务里这两种豁免都不存在，
+所以两种模式下这个演练都必须**非零**退出 —— 一个不会失败的自我验证器毫无价值。`check.py`
+每次 push 都把两种都跑一遍。
 
 ## 重点
 

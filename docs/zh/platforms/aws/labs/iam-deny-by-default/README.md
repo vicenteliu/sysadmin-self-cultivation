@@ -75,8 +75,16 @@ print(evaluate("ec2:RunInstances", "*", identity=ADMIN, scps=[scp]))
 # → ('Deny', 'denied by SCP #1 (org guardrail does not allow the action)')
 ```
 
-然后刻意把它弄坏 —— 把 `evaluate()` 里那段 SCP 检查删掉，再跑一次
-`python3 iam_eval_drill.py`：它必须带着失败的断言**非零**退出。一个不会失败的自我验证器毫无价值。
+然后刻意把它弄坏 —— 不是去改 `evaluate()`，而是让它按 on-prem 直觉读策略的方式去评估：
+
+```bash
+python3 iam_eval_drill.py --break-it allow-wins      # exit 1
+python3 iam_eval_drill.py --break-it no-guardrails   # exit 1
+```
+
+`allow-wins` 把一条 Allow 当成答案，从不去看 Deny；`no-guardrails` 在 identity policy 就停止评估，
+好像 SCP 和 boundary 是别人的问题。每一种都必须带着失败的断言**非零**退出 —— 一个不会失败的自我
+验证器毫无价值。`check.py` 每次 push 都把两种都跑一遍。
 
 ## 重点
 

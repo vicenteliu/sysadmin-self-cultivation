@@ -67,8 +67,18 @@ enabled.excluded = {"admin"}
 print(evaluate_sign_in(admin, enabled))   # (True, 'excluded from the policy (the fire exit)')
 ```
 
-Then break it deliberately — make report-only enforce like enabled — and re-run: the
-drill must exit **non-zero**. A self-verifier that can't fail is worthless.
+Then break it deliberately — not by editing the model, but by running it the way the
+instinct assumes:
+
+```bash
+python3 ca_lockout_drill.py --break-it admin-exempt        # exit 1
+python3 ca_lockout_drill.py --break-it break-glass-exempt  # exit 1
+```
+
+The first exempts the admin from the policy they wrote; the second exempts emergency
+accounts by nature. Neither exemption exists in the service, and the drill must exit
+**non-zero** under each — a self-verifier that can't fail is worthless. `check.py`
+runs both on every push.
 
 ## The point
 

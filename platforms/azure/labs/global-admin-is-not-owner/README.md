@@ -70,9 +70,18 @@ print(ga.can_resource("manage-access", VM))  # True — can now ASSIGN roles
 print(ga.can_resource("write", VM))          # False — still can't USE the resource
 ```
 
-Then break it deliberately — make the two planes span (an Entra role grants resource
-access) — and re-run: the drill must exit **non-zero**. A self-verifier that can't fail
-is worthless.
+Then break it deliberately — not by editing the model, but by running it the way the
+instinct assumes:
+
+```bash
+python3 two_planes_drill.py --break-it one-plane        # exit 1
+python3 two_planes_drill.py --break-it scope-is-global  # exit 1
+```
+
+`one-plane` lets a Global Administrator through on every resource, as if the
+directory's top role were the resources' top role; `scope-is-global` applies an RBAC
+assignment everywhere, scope ignored. Each must exit **non-zero** — a self-verifier
+that can't fail is worthless. `check.py` runs both on every push.
 
 ## The point
 
