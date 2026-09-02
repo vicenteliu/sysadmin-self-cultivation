@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 308,
+  "count": 319,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -911,7 +911,7 @@
       "axis": "meta",
       "themes": [],
       "platforms": [],
-      "summary": "Questions asked of this repo about cloud network design and about self-hosted virtualisation — one closed as out of scope, one open with runnable tools already built."
+      "summary": "Questions asked of this repo about cloud network design and about self-hosted virtualisation — both answered — one of them closed as a three-way note rather than written."
     },
     "docs/questions/storage.md": {
       "kind": "questions",
@@ -1771,6 +1771,92 @@
       "mirrors": "docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md",
       "derived": true
     },
+    "docs/zh/docs/questions.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "The index of questions asked of this repo across seven domains — open, answered, or deliberately out of scope, with the reason recorded for the last kind.",
+      "language": "zh",
+      "mirrors": "docs/questions.md",
+      "derived": true
+    },
+    "docs/zh/docs/questions/assets.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about an internal inventory — largely answered, and the useful half is the distinction between what you discovered and what you wrote down.",
+      "language": "zh",
+      "mirrors": "docs/questions/assets.md",
+      "derived": true
+    },
+    "docs/zh/docs/questions/endpoint.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [
+        "endpoint"
+      ],
+      "platforms": [],
+      "summary": "Questions asked of this repo about the endpoint estate — provisioning across three operating systems, what MDM actually manages, and where a disk recovery key is kept.",
+      "language": "zh",
+      "mirrors": "docs/questions/endpoint.md",
+      "derived": true
+    },
+    "docs/zh/docs/questions/identity.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "Questions asked of this repo about directories and identity providers — largely answered, with the platform-by-platform table already written.",
+      "language": "zh",
+      "mirrors": "docs/questions/identity.md",
+      "derived": true
+    },
+    "docs/zh/docs/questions/networking.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "Questions asked of this repo about networking — all thirteen answered, three of them by being narrowed first.",
+      "language": "zh",
+      "mirrors": "docs/questions/networking.md",
+      "derived": true
+    },
+    "docs/zh/docs/questions/observability.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about monitoring — how it is designed, what the mainstream stacks are, and whether monitoring everything is possible at all.",
+      "language": "zh",
+      "mirrors": "docs/questions/observability.md",
+      "derived": true
+    },
+    "docs/zh/docs/questions/platforms.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about cloud network design and about self-hosted virtualisation — both answered — one of them closed as a three-way note rather than written.",
+      "language": "zh",
+      "mirrors": "docs/questions/platforms.md",
+      "derived": true
+    },
+    "docs/zh/docs/questions/storage.md": {
+      "kind": "questions",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Questions asked of this repo about where company data lives — an internal file service, and a database that is partly somebody else's.",
+      "language": "zh",
+      "mirrors": "docs/questions/storage.md",
+      "derived": true
+    },
     "docs/zh/endpoint/README.md": {
       "kind": "index",
       "axis": "foundations",
@@ -1781,6 +1867,47 @@
       "summary": "One of the densest demand clusters in the whole signal, and the platform folders don't cover it: managing the fleet of laptops and phones that people actually work on.",
       "language": "zh",
       "mirrors": "endpoint/README.md",
+      "derived": true
+    },
+    "docs/zh/endpoint/encryption-and-keys.md": {
+      "kind": "companion",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint",
+        "security"
+      ],
+      "platforms": [],
+      "summary": "Three places in this repo call recovery-key escrow the actual work and none of them shows it. This is it — why escrow moves the risk rather than removing it, the circular dependency at the centre of every design, and the keys that outlive the machines they unlocked.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "endpoint/encryption-and-keys.md",
+      "derived": true
+    },
+    "docs/zh/endpoint/management.md": {
+      "kind": "companion",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint",
+        "identity"
+      ],
+      "platforms": [],
+      "summary": "What an MDM actually manages once the machine is in someone's hands — the rented management surface, why enrolled and managed are different claims, what you find in an Apple estate and what it tells you, and the scoping problem that has a time axis.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "endpoint/management.md",
+      "derived": true
+    },
+    "docs/zh/endpoint/provisioning.md": {
+      "kind": "companion",
+      "axis": "endpoint",
+      "themes": [
+        "endpoint"
+      ],
+      "platforms": [],
+      "summary": "The README names the imaging pipeline in four bullets; this note is the design underneath — what one platform across Windows, macOS and Linux genuinely shares, which of the two provisioning eras you are actually in, and why hardware diversity is the thing that breaks it.",
+      "marker": "🔨",
+      "language": "zh",
+      "mirrors": "endpoint/provisioning.md",
       "derived": true
     },
     "docs/zh/foundations/README.md": {

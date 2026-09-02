@@ -7,6 +7,8 @@ summary: "Questions asked of this repo about directories and identity providers 
 ---
 # Questions · Identity
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/docs/questions/identity.md)
+
 > The index, the status legend and the out-of-scope reasoning live one level up in
 > [`docs/questions.md`](../questions.md).
 

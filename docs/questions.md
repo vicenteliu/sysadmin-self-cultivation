@@ -7,6 +7,8 @@ summary: "The index of questions asked of this repo across seven domains — ope
 ---
 # Open questions
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/docs/questions.md)
+
 > Everything else here records what the repo **knows**. This records what it has
 > been **asked** — including the questions it decided not to answer, and why.
 

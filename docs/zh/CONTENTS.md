@@ -101,7 +101,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`ci-cd`](cross-cutting/ci-cd.md) | 专门笔记（CI/CD 流水线、GitOps、回滚） | ✅ |
 | [`databases`](cross-cutting/databases.md) | 专门笔记（备份/PITR、复制、自建 vs 托管）—— **🔨** | ✅ |
 | [`itsm-and-assets`](cross-cutting/itsm-and-assets.md) | 专门笔记（ITSM、CMDB、资产对账、访问治理）—— **🔨** | ✅ |
-| [`endpoint/`](endpoint/) | 专门轨道（Jamf/Intune/PXE/打补丁）+ 三篇 companion —— [provisioning](../../endpoint/provisioning.md) · [management](../../endpoint/management.md) · [encryption and keys](../../endpoint/encryption-and-keys.md) | ✅ |
+| [`endpoint/`](endpoint/) | 专门轨道（Jamf/Intune/PXE/打补丁）+ 三篇 companion —— [provisioning](endpoint/provisioning.md) · [management](endpoint/management.md) · [encryption and keys](endpoint/encryption-and-keys.md) | ✅ |
 | [`saas-admin`](cross-cutting/saas-admin.md) | 专门笔记（Google Workspace / M365） | ✅ |
 | [`m365-support`](cross-cutting/m365-support.md) | 专门笔记（M365 修/救手艺 + 跨方向转轨）—— **🔨** | ✅ |
 | [`kubernetes`](cross-cutting/kubernetes.md) | 专门笔记（比 the-stack/05 更深） | ✅ |
@@ -170,7 +170,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | [`build-out/03-identity.md`](build-out/03-identity.md) | `Before` 为空的那一步 —— 身份没有物理前置条件，而有八步挂在它上面 | ✅ 🔨 |
 | [`build-out/11-assets-and-tickets.md`](build-out/11-assets-and-tickets.md) | 编号第十一，却必须从第 1 台设备就开始 —— 对依赖诚实，对时间撒谎 | ✅ 🔨 |
 | [`build-out/13-the-help-desk.md`](build-out/13-the-help-desk.md) | 一百个人需要几个 IT —— 在估算面被枚举清楚之前无法回答 | ✅ 🔨 |
-| [`docs/questions.md`](../questions.md) | 有人问过这个仓库、而它还答不上的问题 —— **七个域三十问**，全部已答。索引，加上划在边界外的理由；各域是 [`docs/questions/`](../questions/) 下的文件，其中 4 个是先被收窄才答的，理由都留着 | ✅ |
+| [`docs/questions.md`](docs/questions.md) | 有人问过这个仓库、而它还答不上的问题 —— **七个域三十问**，全部已答。索引，加上划在边界外的理由；各域是 [`docs/questions/`](docs/questions/) 下的文件，其中 4 个是先被收窄才答的，理由都留着 | ✅ |
 | [`build-out/GAPS.md`](build-out/GAPS.md) | 场景浮出来的六个真缺口，其中四个是同一个形状 —— **六个现在全部关闭**，靠 [`remote-access-four-causes`](../../cross-cutting/labs/remote-access-four-causes/)、[`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/)、[`mail-authentication-alignment`](../../cross-cutting/labs/mail-authentication-alignment/)、[`asset-reconciliation`](../../cross-cutting/labs/asset-reconciliation/)、[`help-desk-queue`](../../cross-cutting/labs/help-desk-queue/) 和 [`transcript-retention`](../../cross-cutting/labs/transcript-retention/) | ✅ 活的 |
 
 ## VIII. 走读 —— 第二条路线，是听的不是读的

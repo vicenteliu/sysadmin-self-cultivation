@@ -68,7 +68,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 图 | 4 张品牌门面图（轴图 · the stack · ramp · 路线），手写一次，由 [`site/build-diagrams.py`](../../site/build-diagrams.py) 派生成 12 个产物，外加文档内的 109 张 mermaid（算上中文镜像是 119 张）。媒介由 [ADR-0007](docs/adr/0007-a-figures-medium-is-decided-by-what-renders-it.md) 决定 | ✅ |
 | 框架 | [`CONTENTS.md`](CONTENTS.md) + 每个规划模块的开篇（foundations/endpoint/iac/saas/k8s/cost/gcp） | ✅ |
 | Foundations | [`foundations/`](foundations/) —— Linux 心智模型、调试反射、脚本、诚实的范围界定（Tier-3 第 10 项） | ✅ 已写 |
-| Endpoint | [`endpoint/`](endpoint/) —— MDM 模型、装机流水线、补丁/EDR、BYOD、Intune 作为 ramp（Tier-2 第 5 项），外加三篇承载底下设计的 companion：跨三个操作系统的 [provisioning](../../endpoint/provisioning.md)、[management](../../endpoint/management.md)、以及 [encryption and keys](../../endpoint/encryption-and-keys.md) —— 那件这个仓库点名过三次却从没展示的密钥托管的活 | ✅ |
+| Endpoint | [`endpoint/`](endpoint/) —— MDM 模型、装机流水线、补丁/EDR、BYOD、Intune 作为 ramp（Tier-2 第 5 项），外加三篇承载底下设计的 companion：跨三个操作系统的 [provisioning](endpoint/provisioning.md)、[management](endpoint/management.md)、以及 [encryption and keys](endpoint/encryption-and-keys.md) —— 那件这个仓库点名过三次却从没展示的密钥托管的活 | ✅ |
 | SaaS 管理 | [`cross-cutting/saas-admin.md`](cross-cutting/saas-admin.md) —— Google Workspace / M365、身份主干、SCIM 生命周期（Tier-3 第 11 项） | ✅ 已写 |
 | IaC 与配置 | [`cross-cutting/iac-and-config.md`](cross-cutting/iac-and-config.md) —— 供给 vs 配置、Terraform state、Ansible、漂移（Tier-1 第 3 项） | ✅ 已写 |
 | 成本 | [`cross-cutting/cost.md`](cross-cutting/cost.md) —— 把成本当成运维信号、形状、意外、right-sizing、异常告警 | ✅ 已写 |

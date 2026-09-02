@@ -7,6 +7,8 @@ summary: "Questions asked of this repo about networking — all thirteen answere
 ---
 # Questions · Networking
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/docs/questions/networking.md)
+
 > The index, the status legend and the out-of-scope reasoning live one level up in
 > [`docs/questions.md`](../questions.md).
 
@@ -26,5 +28,7 @@ summary: "Questions asked of this repo about networking — all thirteen answere
 | 12 | What changed about speed? It cannot still be gigabit everywhere. | ✅ | current in [`site-network-design.md`](../../cross-cutting/site-network-design.md); history in [`network-evolution.md`](../../cross-cutting/network-evolution.md#speed-which-did-not-increase-where-people-expect) — the money moved **up and sideways**, into the uplink and the radios, and the desk is the one tier that never needed it |
 | 13 | How is the low-voltage network actually wired? Show a topology. | ✅ | the **floor**'s near register draws it and [walkthrough 01](../../walkthrough/01-the-network.en.md) narrates it — the IDF with three access switches, the riser in the plate's core, and *the path nobody counts* from access port to uplink. Still **not the construction side**, which stays cut in [Boundaries](../questions.md#boundaries) |
 
-**Five answered, eight open.** The eight are not a wish-list: each has a named
-destination, which is what separates this from a list of things that would be nice.
+**Thirteen asked, thirteen answered, none open.** That is a state and not a finish —
+and the shape worth keeping is that three of them were answered only after being
+narrowed, with the cut recorded in [Boundaries](../questions.md#boundaries) rather
+than left to be rediscovered.

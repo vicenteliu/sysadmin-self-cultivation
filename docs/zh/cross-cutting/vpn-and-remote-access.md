@@ -20,7 +20,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 > 一间 SaaS 优先的办公室来说，答案是一份很短的清单。
 > [`remote-access-four-causes`](../../../cross-cutting/labs/remote-access-four-causes/) 演练
 > **为什么同一条错误消息有四个成因**。两者都没说中间发生了什么，而那正是被问到的东西。
-> 记录在 [`docs/questions/networking.md`](../../questions/networking.md)。
+> 记录在 [`docs/questions/networking.md`](../docs/questions/networking.md)。
 
 **这里的高度是刻意的、也是窄的。** 这篇笔记不描述一条隧道是怎么协商的、一次密钥交换是怎么完成
 的，或者一个包头长什么样。那是机制，而机制在[这个仓库里处处都是超出高度的](../CONTEXT.md)。
@@ -48,7 +48,7 @@ summary: "从点下「连接」到够到那样东西之间实际发生了什么 
 **而这就是那个循环依赖住的地方。** 隧道需要目录。如果你正在恢复的那个故障就是目录，那隧道不是
 一条进来的路 —— 它是第二样挂掉的东西。[`build-out/10`](../build-out/10-remote-access.md) 要求
 一条**不依赖于正在被修的那个东西**的 break-glass 路径，而那一句就是这篇笔记把它标出来的全部
-理由：它和[一把存放在它本要绕过的那个身份背后的恢复密钥](../../../endpoint/encryption-and-keys.md)
+理由：它和[一把存放在它本要绕过的那个身份背后的恢复密钥](../endpoint/encryption-and-keys.md)
 以及[那次 conditional-access 锁死演练](../../../cross-cutting/labs/m365-conditional-access-lockout/)
 是同一个形状。三个不同的系统，一个失败。
 

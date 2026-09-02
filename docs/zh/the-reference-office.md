@@ -437,8 +437,8 @@ controller、一台打印设备、一点 lab 器材*，因为工作负载离开�
 出来，因为*万一断网怎么办*正是"保留一个没有别的理由撑着的机房"最常被给出的那个理由。
 
 **staging ring 是这间办公室真正需要的那个，而且它是新的。**
-[`endpoint/management.md`](../../endpoint/management.md) 和
-[`endpoint/provisioning.md`](../../endpoint/provisioning.md) 都落到同一条不可协商的原则
+[`endpoint/management.md`](endpoint/management.md) 和
+[`endpoint/provisioning.md`](endpoint/provisioning.md) 都落到同一条不可协商的原则
 上：一条策略或一个镜像先发到你自己的机器上，然后是一个友好的团队，然后才是所有人。
 **你没法在别人的机队上做设备策略的灰度** —— 全部要点就是要弄坏点什么，而它必须被纳管进
 你真实的管理平台，才算一次真实的测试。
@@ -453,9 +453,9 @@ controller、一台打印设备、一点 lab 器材*，因为工作负载离开�
 
 | 被考虑 | 判决 | 理由住在哪 |
 |---|---|---|
-| **自建一个数据库** | **不。** [ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md) 说这间办公室不运营任何服务，所以不存在任何应用的状态会住在里面。这里持有状态的每一个系统都是买来的 | [questions · storage](../questions/storage.md) |
-| **一套通用 VM 估算面** | 在上面那个 staging ring 之外**不要**。镜像在厂商那儿、文件在租户里、身份在云上、监控是买的，诚实的问题是*上面能跑什么* —— 而在这个规模上，答案是没有任何不是别人服务的东西 | [questions · platforms](../questions/platforms.md) |
-| **一台文件服务器** | **不。** 套件持有文件，而设计问题跟着一起搬走了：它不再是*目录上的权限*，而变成*谁能看见这个* —— 那是 [`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/) 的主题，也是一个比它所替代的那个更难的问题 | [questions · storage](../questions/storage.md) |
+| **自建一个数据库** | **不。** [ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md) 说这间办公室不运营任何服务，所以不存在任何应用的状态会住在里面。这里持有状态的每一个系统都是买来的 | [questions · storage](docs/questions/storage.md) |
+| **一套通用 VM 估算面** | 在上面那个 staging ring 之外**不要**。镜像在厂商那儿、文件在租户里、身份在云上、监控是买的，诚实的问题是*上面能跑什么* —— 而在这个规模上，答案是没有任何不是别人服务的东西 | [questions · platforms](docs/questions/platforms.md) |
+| **一台文件服务器** | **不。** 套件持有文件，而设计问题跟着一起搬走了：它不再是*目录上的权限*，而变成*谁能看见这个* —— 那是 [`permission-sprawl`](../../cross-cutting/labs/permission-sprawl/) 的主题，也是一个比它所替代的那个更难的问题 | [questions · storage](docs/questions/storage.md) |
 
 **那三条没有一条是适用于每间办公室的规则。** 每一条都是*在一百人、只消费服务不运营服务*
 这个前提下的答案。可迁移的部分是最上面那三条测试，所以它们被写在清单之前而不是之后。
@@ -469,9 +469,9 @@ controller、一台打印设备、一点 lab 器材*，因为工作负载离开�
 - [邮件认证](../../cross-cutting/labs/mail-authentication-alignment/) 编造了一台
   **CI runner**，以这个域名一年发一百四十五封信，在它自己的模型里被描述为*一台没人登记
   进记录的主机*。一个 lab 被迫发明了一台机器。
-- [`endpoint/encryption-and-keys.md`](../../endpoint/encryption-and-keys.md) 把托管与登记
+- [`endpoint/encryption-and-keys.md`](endpoint/encryption-and-keys.md) 把托管与登记
   册的对比称作**一次季度查询，而不是一个项目**。
-- [`endpoint/management.md`](../../endpoint/management.md) 要求一条策略的作用范围被
+- [`endpoint/management.md`](endpoint/management.md) 要求一条策略的作用范围被
   **按周期重新推导**，并对增量告警。
 
 这三样每一样都需要一个会按时醒来、并且跟 API 对话的东西。这间办公室有一个，它从来没被写
