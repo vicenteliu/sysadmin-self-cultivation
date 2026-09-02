@@ -108,6 +108,22 @@ openstack server list                          # works again
 product reality you *feel* here, not read. **Teardown:** re-stack or delete the lab
 resources.
 
+## Beyond the arc — a pure-local drill
+
+The three-run arc above needs DevStack in a VM. One more lab needs **nothing** — a
+pure-local, stdlib-only, self-verifying drill tied to the [operations note](../operations.md):
+
+### `the-cloud-is-down-the-vms-are-up/` — the control plane, wedged ✅ built (pure-local)
+
+Runs the third step above as a model: a full queue stops every API call while nine
+instances keep answering, the tenant-only dashboard stays green, and a compute host that
+dies during the wedge cannot be evacuated until the queue drains — the moment a
+control-plane outage becomes the tenants'. See **[`the-cloud-is-down-the-vms-are-up/`](the-cloud-is-down-the-vms-are-up/)**.
+
+```bash
+python3 the-cloud-is-down-the-vms-are-up/control_plane_drill.py   # exit 0 = the lessons held; runs in CI
+```
+
 ---
 
 Honest note: OpenStack is a 🧭 ramp — DevStack makes it a runnable one, and lab 03 is

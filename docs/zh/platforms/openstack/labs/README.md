@@ -109,6 +109,21 @@ openstack server list                          # 又能用了
 **验证：** 那台在跑的 VM 毫发无损地熬过了那次 API 故障 —— 控制平面即产品的那个现实，你在这里是
 *感觉*到的，不是读到的。**拆除：** 重新 stack，或者把这些 lab 资源删掉。
 
+## 弧之外 —— 一个纯本地的演练
+
+上面那条三节弧需要一台 VM 里的 DevStack。还有一个 lab **什么都不需要** —— 一个纯本地、只用标准库、
+能自我验证的演练，接着那篇[运维篇](../operations.md)：
+
+### `the-cloud-is-down-the-vms-are-up/` —— 卡住的控制面 ✅ 已建（纯本地）
+
+把上面的第三步做成模型：一条塞满的队列让每一次 API 调用停掉，而九台实例照样应答；只看租户的面板一直
+是绿的；卡住期间死掉的一台 compute 主机在队列排空之前无法疏散 —— 控制面故障变成租户故障的那一刻。见
+**[`the-cloud-is-down-the-vms-are-up/`](the-cloud-is-down-the-vms-are-up/)**。
+
+```bash
+python3 the-cloud-is-down-the-vms-are-up/control_plane_drill.py   # exit 0 = 那些教训成立；在 CI 里跑
+```
+
 ---
 
 一句诚实的说明：OpenStack 是一条 🧭 ramp —— DevStack 让它成为一条跑得起来的 ramp，而 lab 03 正是

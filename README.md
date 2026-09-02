@@ -108,8 +108,8 @@ which — and demand-first deepening.
 | ✅ | **Walkthrough** — heard, not read | [`walkthrough/`](walkthrough/README.md) — three walkthroughs over the same interactive **2D floor** you can pan, zoom and click: **01 · the network** ([中文](walkthrough/01-the-network.zh.md) · [EN](walkthrough/01-the-network.en.md), 106 beats), **02 · the first Monday** ([中文](walkthrough/02-the-first-monday.zh.md) · [EN](walkthrough/02-the-first-monday.en.md), 93 beats) and **03 · the day it breaks** ([中文](walkthrough/03-the-day-it-breaks.zh.md) · [EN](walkthrough/03-the-day-it-breaks.en.md), 102 beats). Scripts ship here; audio never does |
 | ✅ | **Browser & retrieval** | [`site/`](site/README.md) — full-text search over the lot, nothing to install · [`docs/index.json`](docs/index.json) — one record per file, for an agent |
 
-**Twenty-six runnable, self-verifying labs** sit under those axes — exit `0` means the
-lesson held, and twenty-two carry a `--break-it` flag that swaps in the *standard* procedure and
+**Twenty-seven runnable, self-verifying labs** sit under those axes — exit `0` means the
+lesson held, and twenty-three carry a `--break-it` flag that swaps in the *standard* procedure and
 shows it failing. Two directories under `labs/` need a real cloud account instead, so they
 are runnable exercises rather than labs as [`CONTEXT.md`](CONTEXT.md) defines one:
 `check.py` names both every run rather than counting them in — one declares a dependency,
@@ -126,7 +126,7 @@ carry the deeper architecture · operations · automation trio**:
 | **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ | 3 (`gcloud`) | [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac/) | 🧭 ramp |
 | **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ | 3 (`oci`) | [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account/) | 🧭 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ | 3 (PowerCLI) | [n-plus-one](platforms/vsphere/labs/n-plus-one-decays/) | **🔨 hands-on depth** (VCP6-DCV/NV) |
-| **[OpenStack](platforms/openstack/)** | ✅ | ✅ | 3 (`openstack` / DevStack) | — | 🧭 ramp (KVM-adjacent 🔨) |
+| **[OpenStack](platforms/openstack/)** | ✅ | ✅ | 3 (`openstack` / DevStack) | [control-plane](platforms/openstack/labs/the-cloud-is-down-the-vms-are-up/) | 🧭 ramp (KVM-adjacent 🔨) |
 | **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ | 3 (virsh / ipmitool / ansible) | — | **🔨 hands-on depth** (100k+ fleet) |
 
 Two of the seven are labeled **🔨 hands-on depth** (vSphere and self-host — production
@@ -136,8 +136,8 @@ your automation uses.
 
 **All seven arcs are written as guided runs** — AWS 01–02 carry code, the rest are specs —
 and a guided run is not a lab: nothing can assert that you did it, so none is counted as
-one. The labs, the self-verifying kind, get their own column: one per public cloud, one on
-vSphere, none yet on OpenStack or self-host. A specced run is a plan, and the rule in the second
+one. The labs, the self-verifying kind, get their own column: one per public cloud, one each
+on vSphere and OpenStack, none yet on self-host. A specced run is a plan, and the rule in the second
 paragraph of this file applies to the repo's own claims first.
 
 ## Who wrote this

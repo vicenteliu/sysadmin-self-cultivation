@@ -87,6 +87,19 @@ flowchart LR
   难的部分。它还会很自信地**把各个 OpenStack release 混起来**。那条护栏：
   **AI 碰信号和草稿；你碰生产。**
 
+## Lab —— 云挂了，VM 还活着 ✅ 可跑
+
+**在那个标志性事故教训你之前先经历它。** 一个纯本地、只用 stdlib 的 drill，在一个五个服务、三台
+compute 主机、九台实例的模型里把消息队列卡住：每一次 API 调用都失败，每一台实例照样应答，只看租户
+的面板一直是绿的，而一台在队列还塞着时死掉的 compute 主机，就是控制面故障变成租户故障的那一刻 ——
+上面那条*监控控制面本身*的规矩，落到实处。
+
+```bash
+python3 platforms/openstack/labs/the-cloud-is-down-the-vms-are-up/control_plane_drill.py
+```
+
+exit `0` 表示四条教训都成立（兼作 CI 检查）。见 [`labs/the-cloud-is-down-the-vms-are-up/`](labs/the-cloud-is-down-the-vms-are-up)。
+
 ## 诚实边界
 
 🧭 **ramp，而那个 hypervisor 是 🔨 地面。** 那门运维*纪律* —— 分诊、事故方法、容量思维、控制平面

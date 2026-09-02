@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 409,
+  "count": 411,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2793,6 +2793,21 @@
       "mirrors": "platforms/openstack/labs/README.md",
       "derived": true
     },
+    "docs/zh/platforms/openstack/labs/the-cloud-is-down-the-vms-are-up/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "The signature OpenStack incident, as a model you can wedge: a full message queue stops the API while nine instances keep answering, the tenant-only dashboard stays green, and the outage becomes the tenants' at the first change they need.",
+      "marker": "🧭",
+      "language": "zh",
+      "mirrors": "platforms/openstack/labs/the-cloud-is-down-the-vms-are-up/README.md",
+      "derived": true
+    },
     "docs/zh/platforms/openstack/operations.md": {
       "kind": "companion",
       "axis": "platforms",
@@ -4088,6 +4103,18 @@
         "openstack"
       ],
       "summary": "Three guided runs against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre.",
+      "marker": "🧭"
+    },
+    "platforms/openstack/labs/the-cloud-is-down-the-vms-are-up/README.md": {
+      "kind": "lab",
+      "axis": "platforms",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [
+        "openstack"
+      ],
+      "summary": "The signature OpenStack incident, as a model you can wedge: a full message queue stops the API while nine instances keep answering, the tenant-only dashboard stays green, and the outage becomes the tenants' at the first change they need.",
       "marker": "🧭"
     },
     "platforms/openstack/operations.md": {

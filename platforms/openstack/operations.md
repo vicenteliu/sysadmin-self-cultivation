@@ -87,6 +87,22 @@ flowchart LR
   which is the actual hard part. It also **mixes OpenStack releases** confidently. The
   guardrail: **AI touches signals and drafts; you touch production.**
 
+## Lab — the cloud is down and the VMs are up ✅ runnable
+
+**Live the signature incident before it teaches you.** A pure-local, stdlib-only drill
+that wedges the message queue in a model of five services, three compute hosts and nine
+instances: every API call fails, every instance keeps answering, the tenant-only
+dashboard stays green, and a compute host that dies while the queue is still full is the
+moment the control-plane outage becomes the tenants' — the *monitor the control plane
+itself* rule above, felt.
+
+```bash
+python3 platforms/openstack/labs/the-cloud-is-down-the-vms-are-up/control_plane_drill.py
+```
+
+Exit `0` means the four lessons held (it doubles as a CI check). See
+[`labs/the-cloud-is-down-the-vms-are-up/`](labs/the-cloud-is-down-the-vms-are-up/).
+
 ## Honest boundaries
 
 🧭 **ramp, with the hypervisor as 🔨 ground.** The ops *discipline* — triage, incident
