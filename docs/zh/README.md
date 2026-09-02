@@ -77,7 +77,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **把方法当工具用** | [`.claude/skills/`](../../.claude/skills/) —— 十个 Agent Skill：七个包装方法（ramp · audit · author · lab · diagram · mirror · drill），三个驱动工具箱 |
 | **改用听的** | [`walkthrough/`](walkthrough/README.md) —— 把参考办公室讲出来：口播稿、可交互二维楼面，仓库内不存音频 |
 | **在浏览器里读** | [`site/`](site/README.md) —— `python3 site/serve.py`，或 `docker compose -f site/docker-compose.yml up`。全文搜索、分面、🌐 切换、图形渲染。零安装 |
-| **检查它还立得住** | [`check.py`](../../check.py) —— 每一项检查的唯一入口：五个 builder、树里每一条内部链接与锚点、**这个仓库对自己陈述的每一个计数**、走读、viewer 的 URL 契约，以及每一个自验证 lab。`python3 check.py` |
+| **检查它还立得住** | [`check.py`](../../check.py) —— 每一项检查的唯一入口：五个 builder、树里每一条内部链接与锚点、**这个仓库对自己陈述的每一个计数**、走读、viewer 的 URL 契约、toolbox（每个脚本都能解析，以及它的 hypervisor 工具承诺的那一份 inventory 文档），以及每一个自验证 lab。`python3 check.py` |
 | **让 agent 检索它** | [`docs/index.json`](../index.json) —— 每个文件一条记录，由 [`docs/build-index.py`](../build-index.py) 从 front-matter 生成 |
 
 ## 已建成

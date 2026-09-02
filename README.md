@@ -85,7 +85,7 @@ Every module in every axis, one page: [`CONTENTS.md`](CONTENTS.md).
 | **Use the method as a tool** | [`.claude/skills/`](.claude/skills/) — ten Agent Skills: seven for the method (ramp · audit · author · lab · diagram · mirror · drill), three that drive the toolbox |
 | **Listen to it instead** | [`walkthrough/`](walkthrough/README.md) — the reference office told out loud: a spoken script, an interactive 2D floor, and no audio in the tree |
 | **Read it in a browser** | [`site/`](site/README.md) — `python3 site/serve.py`, or `docker compose -f site/docker-compose.yml up`. Full-text search, facets, a 🌐 switcher, rendered diagrams. Nothing to install |
-| **Check it still holds together** | [`check.py`](check.py) — one entry point for every check: five builders, every internal link and anchor, **every count this repo states about itself**, the walkthroughs, the viewer's URL contract, and every self-verifying lab. `python3 check.py` |
+| **Check it still holds together** | [`check.py`](check.py) — one entry point for every check: five builders, every internal link and anchor, **every count this repo states about itself**, the walkthroughs, the viewer's URL contract, the toolbox (every script parses, and the one inventory document its hypervisor tools promise), and every self-verifying lab. `python3 check.py` |
 | **Let an agent search it** | [`docs/index.json`](docs/index.json) — one record per file, generated from front-matter by [`docs/build-index.py`](docs/build-index.py) |
 
 ## What's built

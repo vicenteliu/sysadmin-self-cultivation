@@ -75,6 +75,8 @@ AI agent 可以替你运行的形态：**linux-triage**（分诊一台主机，�
 | [`pve-inventory`](pve-inventory/) | **同一 schema** 的 Proxmox 清点，节点现场或读捕获 | 目的端的镜像 |
 | [`snapshot-audit`](snapshot-audit/) | 标出过期/过深/过多的快照——两个 hypervisor，一次审计 | 读任一清单 |
 
+那个**同一 schema** 是一个文件：[`inventory.schema.json`](../../../toolbox/inventory.schema.json)——两个清单工具都输出、两个审计工具都读的那一份文档，只定义一次，这样一个漂了的生产方和一个伸手去够它没承诺的键的消费方，都会在 [`check.py`](../../../check.py) 里失败，而不是在用户手里失败。每次 push，`check.py` 用 `pve-inventory` 自带的 capture 跑一遍，把结果对着 schema 校验，再交给两个审计工具。`vsphere-inventory` 没有 capture 模式，所以没有以同样的方式被校验——清单里会明说，而不是让四个工具里的一个悄悄没人查。
+
 ## 生成器（✅ 已交付——可定制工具箱）
 
 [`generate`](generate/) 一条命令组装出某个环境真正需要的子集：匹配的脚本、

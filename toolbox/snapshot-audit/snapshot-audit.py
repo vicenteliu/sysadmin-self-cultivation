@@ -2,7 +2,7 @@
 """Snapshot hygiene across hypervisors — a snapshot you forgot is a time bomb.
 
 Reads one or more inventory documents (vsphere-inventory and/or pve-inventory —
-same schema, so one audit covers both sides of a migration) and flags every
+same schema, toolbox/inventory.schema.json, so one audit covers both sides of a migration) and flags every
 snapshot that violates the hygiene thresholds: too old, chained too deep, or
 too many per VM. Assessment only; deleting/consolidating stays a human call.
 See README.md for the thresholds and their rationale.

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Read-only Proxmox VE inventory — the destination side of a migration.
 
-Emits the same JSON schema as vsphere-inventory so the two sides of a
-VMware→Proxmox move can be compared field by field. Two modes:
+Emits the same JSON document as vsphere-inventory — the schema is
+toolbox/inventory.schema.json — so the two sides of a VMware→Proxmox move can
+be compared field by field. Two modes:
 
   live      run ON a PVE node — shells out to read-only `pvesh get` calls
   --from D  run anywhere — read the same pvesh output captured to files

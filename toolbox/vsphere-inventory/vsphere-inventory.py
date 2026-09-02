@@ -5,7 +5,7 @@ Talks vim25 directly (XML over HTTPS via urllib) so the only requirement is
 Python 3.9+. Collects VMs (with disks, NICs, firmware, snapshots), hosts,
 datastores, and networks into one JSON document — the shared schema
 pve-inventory emits, so the two sides of a migration can be compared.
-See README.md for the schema and the honest scope.
+The schema is toolbox/inventory.schema.json; see README.md for the honest scope.
 """
 
 import argparse

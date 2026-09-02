@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/vicenteliu/sysadmin-self-cultivation/toolbox/inventory.schema.json",
+  "title": "Hypervisor inventory",
+  "description": "The one document vsphere-inventory and pve-inventory both emit, and vm-migration-assess and snapshot-audit both read. Defined once, here, so that a producer that drifts and a consumer that reaches for a key this file does not promise both fail check.py rather than a user. Every record key is required and null is spelled out where a source may not know the value; additionalProperties is false on records so the two producers cannot quietly disagree about the key set.",
+  "type": "object",
+  "required": ["source", "vms", "hosts", "datastores", "networks"],
+  "additionalProperties": false,
+  "properties": {
+    "source": {
+      "type": "object",
+      "required": ["kind", "endpoint", "product", "collected_at"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["vsphere", "pve"] },
+        "endpoint": { "type": ["string", "null"] },
+        "product": { "type": "string" },
+        "collected_at": { "type": "string", "description": "UTC, YYYY-MM-DDTHH:MM:SSZ" }
+      }
+    },
+    "vms": { "type": "array", "items": { "$ref": "#/$defs/vm" } },
+    "hosts": { "type": "array", "items": { "$ref": "#/$defs/host" } },
+    "datastores": { "type": "array", "items": { "$ref": "#/$defs/datastore" } },
+    "networks": { "type": "array", "items": { "$ref": "#/$defs/network" } }
+  },
+  "$defs": {
+    "vm": {
+      "type": "object",
+      "required": ["name", "power", "vcpus", "memory_mb", "guest_os", "firmware", "hw_version",
+                   "disks", "nics", "snapshots", "snapshot_detail"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "power": { "enum": ["on", "off", "suspended", null] },
+        "vcpus": { "type": ["integer", "null"] },
+        "memory_mb": { "type": ["integer", "null"] },
+        "guest_os": { "type": ["string", "null"], "description": "as the platform reports it — vSphere's guestFullName, PVE's ostype expanded" },
+        "firmware": { "type": ["string", "null"], "description": "'efi' or 'bios' from both sources" },
+        "hw_version": { "type": ["string", "null"], "description": "vSphere 'vmx-NN'; PVE the qemu machine type, e.g. 'q35'. Same key, different vocabularies — consumers compare within a source, never across" },
+        "disks": { "type": "array", "items": { "$ref": "#/$defs/disk" } },
+        "nics": { "type": "array", "items": { "$ref": "#/$defs/nic" } },
+        "snapshots": { "type": "integer", "description": "len(snapshot_detail)" },
+        "snapshot_detail": { "type": "array", "items": { "$ref": "#/$defs/snapshot" } }
+      }
+    },
+    "disk": {
+      "type": "object",
+      "required": ["label", "capacity_gb", "thin", "backing"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string" },
+        "capacity_gb": { "type": ["number", "null"] },
+        "thin": { "type": ["boolean", "null"], "description": "null when the source cannot say — PVE keeps thin-ness in the storage layer" },
+        "backing": { "enum": ["vmdk", "rdm", "raw", "qcow2", "passthrough"] }
+      }
+    },
+    "nic": {
+      "type": "object",
+      "required": ["model", "network", "mac"],
+      "additionalProperties": false,
+      "properties": {
+        "model": { "type": ["string", "null"] },
+        "network": { "type": ["string", "null"] },
+        "mac": { "type": ["string", "null"] }
+      }
+    },
+    "snapshot": {
+      "type": "object",
+      "required": ["name", "created", "depth"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": ["string", "null"] },
+        "created": { "type": ["string", "null"], "description": "UTC timestamp string, or null when the source did not record one" },
+        "depth": { "type": "integer", "description": "1 for a root snapshot; each child adds one" }
+      }
+    },
+    "host": {
+      "type": "object",
+      "required": ["name", "cpu_cores", "memory_mb", "product"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "cpu_cores": { "type": ["integer", "null"] },
+        "memory_mb": { "type": ["integer", "null"] },
+        "product": { "type": ["string", "null"] }
+      }
+    },
+    "datastore": {
+      "type": "object",
+      "required": ["name", "capacity_gb", "free_gb", "type"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "capacity_gb": { "type": ["number", "null"] },
+        "free_gb": { "type": ["number", "null"] },
+        "type": { "type": ["string", "null"] }
+      }
+    },
+    "network": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": { "name": { "type": "string" } }
+    }
+  }
+}

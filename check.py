@@ -4,7 +4,7 @@ check.py — every check this repo has, from one place.
 
     python3 check.py              # run everything, report, exit non-zero on failure
     python3 check.py --list       # what would run, and nothing else
-    python3 check.py --only links # run one group: builders, links, counts, walkthrough, labs, viewer
+    python3 check.py --only links # run one group: builders, links, counts, walkthrough, viewer, toolbox, labs
 
 Until this existed the checks were real and the *list* of them was not: five
 builders with `--check` modes, a walkthrough checker, a viewer smoke test and
@@ -20,14 +20,23 @@ the prose against itself, which is where a repo of cross-references actually rot
 — a heading gets reworded, forty anchors go stale, and each one is invisible until
 somebody clicks it.
 
+A third group guards the toolbox, which nothing guarded at all until a tracked file
+that did not parse sat in it for weeks — twelve lines of an abandoned rewrite, copied
+into every generated pack. Two checks close that: every script in the tree at least
+parses, and the one document the four hypervisor tools share is defined once, in
+`toolbox/inventory.schema.json`, and validated from the captures that ship with
+`pve-inventory`.
+
 Standard library only. No network. Safe to run anywhere, including CI.
 """
 
 import argparse
+import json
 import os
 import re
 import subprocess
 import sys
+import tempfile
 import time
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -65,6 +74,148 @@ BUILDERS = [
 WALKTHROUGH = [("walkthroughs", ["walkthrough/build-walkthrough.py"])]
 
 VIEWER = [("viewer URL contract", ["site/serve-smoke.py"])]
+
+
+# --- the toolbox check --------------------------------------------------------
+
+INVENTORY_SCHEMA = "toolbox/inventory.schema.json"
+
+# The one inventory producer that needs no host: pve-inventory reads pvesh output
+# captured to files, and ships a capture. Its document is validated against the
+# schema, then handed to both consumers, which must read it and answer in JSON.
+# `{inventory}` is replaced with the path of the produced document.
+INVENTORY_PRODUCER = ("pve-inventory from fixtures",
+                      ["toolbox/pve-inventory/pve-inventory.py",
+                       "--from", "toolbox/pve-inventory/fixtures"])
+INVENTORY_CONSUMERS = [
+    ("vm-migration-assess", ["toolbox/vm-migration-assess/vm-migration-assess.py",
+                             "--in", "{inventory}", "--json"]),
+    ("snapshot-audit", ["toolbox/snapshot-audit/snapshot-audit.py", "{inventory}", "--json"]),
+]
+# Named here so the listing says it rather than the reader wondering why one of the
+# four tools is missing: vsphere-inventory talks SOAP to a live vCenter and has no
+# capture mode, so nothing can run it on a push.
+INVENTORY_NOT_RUN = ("vsphere-inventory",
+                     "not validated — no capture mode, so nothing can run it without a vCenter")
+
+
+def script_files():
+    """Every .py and every .sh in the tree, outside SKIP_DIRS."""
+    py, sh = [], []
+    for base, dirs, files in os.walk(ROOT):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for f in files:
+            rel = os.path.relpath(os.path.join(base, f), ROOT)
+            if f.endswith(".py"):
+                py.append(rel)
+            elif f.endswith(".sh"):
+                sh.append(rel)
+    return sorted(py), sorted(sh)
+
+
+def check_scripts_parse():
+    """Every .py compiles and every .sh passes `bash -n`. Returns (problems, n).
+
+    Compiling is not running: this catches the file that cannot be a program at all,
+    which is the only kind of breakage that survives with no test and no caller."""
+    py, sh = script_files()
+    problems = []
+    for rel in py:
+        try:
+            compile(open(os.path.join(ROOT, rel), encoding="utf-8").read(), rel, "exec")
+        except SyntaxError as e:
+            problems.append(f"{rel}:{e.lineno}: {e.msg}")
+    for rel in sh:
+        proc = subprocess.run(["bash", "-n", rel], cwd=ROOT, capture_output=True, text=True)
+        if proc.returncode != 0:
+            why = proc.stderr.strip().splitlines()
+            problems.append(f"{rel}: {why[-1] if why else 'bash -n failed'}")
+    return problems, len(py) + len(sh)
+
+
+def _is_type(value, name):
+    return {
+        "null": value is None,
+        "boolean": isinstance(value, bool),
+        "integer": isinstance(value, int) and not isinstance(value, bool),
+        "number": isinstance(value, (int, float)) and not isinstance(value, bool),
+        "string": isinstance(value, str),
+        "array": isinstance(value, list),
+        "object": isinstance(value, dict),
+    }[name]
+
+
+def validate(instance, schema, root, path="$"):
+    """The subset of JSON Schema the inventory schema uses — type, enum, required,
+    properties, additionalProperties, items, and $ref into $defs. Returns problems,
+    each naming the path that broke. Not a general validator and not meant to be."""
+    if "$ref" in schema:
+        node = root
+        for part in schema["$ref"].lstrip("#/").split("/"):
+            node = node[part]
+        return validate(instance, node, root, path)
+    problems = []
+    types = schema.get("type")
+    if types is not None:
+        types = [types] if isinstance(types, str) else types
+        if not any(_is_type(instance, t) for t in types):
+            return [f"{path}: expected {' or '.join(types)}, got {type(instance).__name__}"]
+    if "enum" in schema and instance not in schema["enum"]:
+        problems.append(f"{path}: {instance!r} is not one of {schema['enum']}")
+    if isinstance(instance, dict):
+        for key in schema.get("required", []):
+            if key not in instance:
+                problems.append(f"{path}: missing required key {key!r}")
+        props = schema.get("properties", {})
+        for key, val in instance.items():
+            if key in props:
+                problems.extend(validate(val, props[key], root, f"{path}.{key}"))
+            elif schema.get("additionalProperties") is False:
+                problems.append(f"{path}: unexpected key {key!r}")
+    if isinstance(instance, list) and "items" in schema:
+        for i, val in enumerate(instance):
+            problems.extend(validate(val, schema["items"], root, f"{path}[{i}]"))
+    return problems
+
+
+def check_inventory_schema():
+    """Produce the fixture inventory, validate it, hand it to both consumers.
+
+    A consumer may exit 0 (clean) or 1 (findings) — those are answers. Exit 2 is the
+    toolbox's own word for *could not run*, and anything but JSON on stdout under
+    `--json` is a broken promise to the agent that asked for it."""
+    with open(os.path.join(ROOT, INVENTORY_SCHEMA), encoding="utf-8") as f:
+        schema = json.load(f)
+    label, argv = INVENTORY_PRODUCER
+    proc = subprocess.run([sys.executable] + argv, cwd=ROOT, capture_output=True, text=True)
+    if proc.returncode != 0:
+        why = (proc.stderr or proc.stdout).strip().splitlines()
+        return [f"{label}: exit {proc.returncode} — {why[-1] if why else 'no output'}"]
+    try:
+        doc = json.loads(proc.stdout)
+    except ValueError as e:
+        return [f"{label}: stdout is not JSON ({e})"]
+    problems = [f"{label}: {p}" for p in validate(doc, schema, schema)]
+    if problems:
+        return problems
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, "inventory.json")
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(proc.stdout)
+        for name, argv in INVENTORY_CONSUMERS:
+            argv = [a.replace("{inventory}", path) for a in argv]
+            cp = subprocess.run([sys.executable] + argv, cwd=ROOT,
+                                capture_output=True, text=True)
+            if cp.returncode not in (0, 1):
+                why = (cp.stderr or cp.stdout).strip().splitlines()
+                problems.append(f"{name}: exit {cp.returncode} on the fixture inventory — "
+                                f"{why[-1] if why else 'no output'}")
+                continue
+            try:
+                json.loads(cp.stdout)
+            except ValueError as e:
+                problems.append(f"{name}: --json output is not JSON ({e})")
+    return problems
 
 
 def scan_labs():
@@ -472,6 +623,20 @@ def run(argv):
     return False, dt, "\n".join("      " + ln for ln in tail[-12:])
 
 
+def report(name, problems, ok_text, t0, failed):
+    """One line per in-process check, the same shape the subprocess ones print."""
+    dt = time.time() - t0
+    if problems:
+        failed.append(name)
+        print(f"  ✗ {name:<28} {len(problems)} problem(s)   ({dt:.1f}s)")
+        for p in problems[:20]:
+            print(f"      {p}")
+        if len(problems) > 20:
+            print(f"      … and {len(problems) - 20} more")
+    else:
+        print(f"  ✓ {name:<28} {ok_text}   ({dt:.1f}s)")
+
+
 GROUPS = {
     "builders": lambda: BUILDERS,
     "walkthrough": lambda: WALKTHROUGH,
@@ -484,10 +649,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__.strip().split("\n")[0] if __doc__ else "")
     ap.add_argument("--list", action="store_true", help="print what would run and stop")
     ap.add_argument("--only", metavar="GROUP",
-                    help="one of: builders, links, counts, walkthrough, viewer, labs")
+                    help="one of: builders, links, counts, walkthrough, viewer, toolbox, labs")
     args = ap.parse_args()
 
-    wanted = ["builders", "links", "counts", "walkthrough", "viewer", "labs"]
+    wanted = ["builders", "links", "counts", "walkthrough", "viewer", "toolbox", "labs"]
     if args.only:
         if args.only not in wanted:
             print(f"unknown group {args.only!r} — choose from {', '.join(wanted)}",
@@ -506,6 +671,15 @@ def main():
                 for name, truth, _ in counted_things():
                     print(f"  {name:<28} disk says "
                           f"{' or '.join(str(v) for v in sorted(truth))}")
+                continue
+            if g == "toolbox":
+                py, sh = script_files()
+                print(f"  {'scripts parse':<28} every .py compiles, every .sh passes bash -n "
+                      f"({len(py)} + {len(sh)} files)")
+                label, argv = INVENTORY_PRODUCER
+                print(f"  {'inventory schema':<28} {' '.join(argv)} → {INVENTORY_SCHEMA} → "
+                      + ", ".join(n for n, _ in INVENTORY_CONSUMERS))
+                print(f"  – {INVENTORY_NOT_RUN[0]:<28} {INVENTORY_NOT_RUN[1]}")
                 continue
             for name, argv in GROUPS[g]():
                 print(f"  {name:<28} {' '.join(argv)}")
@@ -546,6 +720,18 @@ def main():
                 n = len(counted_things())
                 print(f"  ✓ stated counts                {n} kinds agree with disk"
                       f"   ({time.time() - t0:.1f}s)")
+            continue
+        if g == "toolbox":
+            t0 = time.time()
+            problems, n = check_scripts_parse()
+            ran += 1
+            report("scripts parse", problems, f"{n} files parse", t0, failed)
+            t0 = time.time()
+            problems = check_inventory_schema()
+            ran += 1
+            report("inventory schema", problems,
+                   "fixture document validates, both consumers read it", t0, failed)
+            print(f"  – {INVENTORY_NOT_RUN[0]:<28} {INVENTORY_NOT_RUN[1]}")
             continue
         if g == "labs":
             _, not_run = scan_labs()

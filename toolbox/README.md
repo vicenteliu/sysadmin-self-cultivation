@@ -91,6 +91,15 @@ move to Proxmox?":
 | [`pve-inventory`](pve-inventory/) | Proxmox inventory in the **same schema**, live on a node or from captures | the destination-side mirror |
 | [`snapshot-audit`](snapshot-audit/) | flag stale/deep/crowded snapshots — both hypervisors, one audit | reads either inventory |
 
+The **same schema** is a file, [`inventory.schema.json`](inventory.schema.json): the one
+document both inventories emit and both auditors read, defined once so a producer that
+drifts and a consumer that reaches for a key it does not promise both fail
+[`check.py`](../check.py) rather than a user. On every push `check.py` runs
+`pve-inventory` from the captures it ships with, validates the result against the schema
+and hands it to both auditors. `vsphere-inventory` has no capture mode, so it is not
+validated the same way — and the listing says so rather than leaving one of the four
+tools quietly unchecked.
+
 ## Generator (✅ shipped — the customizable toolbox)
 
 [`generate`](generate/) assembles the subset a given shop actually needs — one
