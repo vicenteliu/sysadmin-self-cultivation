@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 333,
+  "count": 345,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -2149,6 +2149,93 @@
       "mirrors": "platforms/azure/support.md",
       "derived": true
     },
+    "docs/zh/platforms/gcp/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "The template every platform module follows: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes mirroring the AWS worked example: architecture (how it's…",
+      "language": "zh",
+      "mirrors": "platforms/gcp/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/gcp/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "How to get to competent on GCP in days — using AI as a co-pilot and keeping it honest.",
+      "language": "zh",
+      "mirrors": "platforms/gcp/ai-ramp.md",
+      "derived": true
+    },
+    "docs/zh/platforms/gcp/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "The README mapped GCP onto the seven surfaces — what the services are.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/gcp/architecture.md",
+      "derived": true
+    },
+    "docs/zh/platforms/gcp/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "architecture is how GCP is structured; operations is what running it looks like.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/gcp/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/gcp/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "The README is what GCP is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/gcp/operations.md",
+      "derived": true
+    },
+    "docs/zh/platforms/gcp/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "gcp"
+      ],
+      "summary": "Check a box when you can do it from code and explain the failure modes — not when you've read about it.",
+      "language": "zh",
+      "mirrors": "platforms/gcp/skills-map.md",
+      "derived": true
+    },
     "docs/zh/platforms/gcp/support.md": {
       "kind": "support-note",
       "axis": "platforms",
@@ -2162,6 +2249,93 @@
       "marker": "mixed",
       "language": "zh",
       "mirrors": "platforms/gcp/support.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "Same four-part template as AWS: what it is → the admin skill map → the AI-assisted ramp → labs — plus the deeper architecture · operations · automation trio.",
+      "language": "zh",
+      "mirrors": "platforms/oci/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "How to get to competent on OCI in days — using AI as a co-pilot and keeping it honest.",
+      "language": "zh",
+      "mirrors": "platforms/oci/ai-ramp.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "The README mapped OCI onto the seven surfaces — what the services are.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/oci/architecture.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "architecture is how OCI is structured; operations is what running it looks like.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/oci/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "The README is what OCI is; architecture is how it's structured; this note is what running it looks like — the brief, what pages you, the ops work by cadence, and AI in the operating loop.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/oci/operations.md",
+      "derived": true
+    },
+    "docs/zh/platforms/oci/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "oci"
+      ],
+      "summary": "Check a box when you can do it from code and explain the failure modes.",
+      "language": "zh",
+      "mirrors": "platforms/oci/skills-map.md",
       "derived": true
     },
     "docs/zh/platforms/oci/support.md": {

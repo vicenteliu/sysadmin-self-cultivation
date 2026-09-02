@@ -8,6 +8,8 @@ summary: "The README mapped OCI onto the seven surfaces — what the services ar
 ---
 # OCI — Understanding the Architecture
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/oci/architecture.md)
+
 > The [README](README.md) mapped OCI onto the seven surfaces — *what the services
 > are.* This note is the layer up: *how OCI is structured*, so you design with its
 > architecture instead of fighting it. Because OCI borrows the big three's shape, the

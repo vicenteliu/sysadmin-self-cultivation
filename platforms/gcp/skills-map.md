@@ -7,6 +7,8 @@ summary: "Check a box when you can do it from code and explain the failure modes
 ---
 # GCP — Admin Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/gcp/skills-map.md)
+
 A checkable competency list. Tiers:
 
 - **Core** — you cannot administer GCP without this.

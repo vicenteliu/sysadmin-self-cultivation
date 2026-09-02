@@ -8,6 +8,8 @@ summary: "architecture is how GCP is structured; operations is what running it l
 ---
 # GCP — Scripting the API (managing & operating from code)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/gcp/automation.md)
+
 > [`architecture`](architecture.md) is how GCP is structured; [`operations`](operations.md)
 > is what running it looks like. This note is the *how*: **driving GCP through its
 > API from code** — the concrete craft behind move #3 of the
