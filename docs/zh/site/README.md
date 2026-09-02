@@ -73,7 +73,7 @@ python3 site/build-diagrams.py --check  # 21 个图形产物 ← 7 个 HTML 源�
                                         # 以及色板表 ← style profile
 python3 tools/floor/build-tiles.py --check   # 楼面精灵图 ← tiles.tiles
 python3 tools/floor/prove-topology.py --check  # plate 仍然可通行吗？
-python3 walkthrough/build-walkthrough.py     # 拍 ↔ plate ↔ 来源，以及发布冻结
+python3 walkthrough/guard-walkthrough.py     # 拍 ↔ plate ↔ 来源，以及发布冻结
 ```
 
 图形检查比"是否过期"多管一件事。`diagram-design` 从 `~/.diagram-design/profiles/` 解析

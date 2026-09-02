@@ -193,7 +193,7 @@ Decision: [`docs/adr/0009`](docs/adr/0009-the-walkthrough-ships-its-script-not-i
 | Audio | **Never in this tree.** You generate it with your own TTS, or listen to the published episode | — |
 | Beats | One paragraph, one TTS call, one audio segment, one floor state — aligned by stable id, never by timestamp ([ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)) | ✅ |
 | The floor | An interactive 2D office in the viewer — pan, zoom in three semantic registers, 20 clickable props. The cast **is** the wireless load. It renders what the Markdown states and computes nothing ([ADR-0011](docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)) | ✅ |
-| Its guards | [`build-walkthrough.py`](walkthrough/build-walkthrough.py) — beats, anchors, speakability, publish freeze · [`tools/floor/`](tools/floor/README.md) — the hand-drawn tile sheet | ✅ |
+| Its guards | [`guard-walkthrough.py`](walkthrough/guard-walkthrough.py) — beats, anchors, speakability, publish freeze · [`tools/floor/`](tools/floor/README.md) — the hand-drawn tile sheet | ✅ |
 
 ## Agent Skills — the method, made invokable
 

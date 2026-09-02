@@ -27,6 +27,10 @@ parses, and the one document the four hypervisor tools share is defined once, in
 `toolbox/inventory.schema.json`, and validated from the captures that ship with
 `pve-inventory`.
 
+The facts about the tree that every builder and guard needs — which directories to
+skip, how a heading slugs, how front-matter is shaped — live in `repolib.py`, which is
+where four scripts' private copies of them were merged.
+
 Standard library only. No network. Safe to run anywhere, including CI.
 """
 
@@ -39,26 +43,8 @@ import sys
 import tempfile
 import time
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-
-SKIP_DIRS = {".git", "node_modules", "vendor", "__pycache__", ".venv", "site-packages"}
-
-# Files whose links point outside this repo because the file is a COPY of something
-# upstream. Excluded by path, listed here rather than silently skipped, because an
-# exclusion nobody can see is how a check goes quiet.
-NOT_OUR_PROSE = {
-    # A diagram-design style profile, committed so a clone can build diagrams without
-    # ~/.diagram-design/profiles/. Its links point at that tool's own documentation.
-    "site/assets/diagrams/sysadmin-brass.profile.md",
-}
-
-HEADING_RE = re.compile(r"^(#{1,6})\s+(.*?)\s*$", re.M)
-FENCE_RE = re.compile(r"```.*?```", re.S)
-# A link inside backticks is a specimen of a link, not one — `[title](rel/path)` in
-# prose describing what to write. Stripped for the same reason fences are.
-CODE_RE = re.compile(r"`[^`\n]*`")
-# [text](target) — target may carry an #anchor; skip images and absolute URLs
-LINK_RE = re.compile(r"(?<!\!)\[[^\]]*\]\(\s*(?!https?:|mailto:|#!)([^)\s]*?)(#[^)\s]*)?\s*\)")
+from repolib import (ROOT, SKIP_DIRS, HEADING_RE, FENCED_BLOCK_RE, CODE_SPAN_RE, LINK_RE,
+                     BEAT_RE, slug, front_matter, markdown_files, read)
 
 
 # --- the groups ---------------------------------------------------------------
@@ -71,7 +57,7 @@ BUILDERS = [
     ("plate topology", ["tools/floor/prove-topology.py", "--check"]),
 ]
 
-WALKTHROUGH = [("walkthroughs", ["walkthrough/build-walkthrough.py"])]
+WALKTHROUGH = [("walkthroughs", ["walkthrough/guard-walkthrough.py"])]
 
 VIEWER = [("viewer URL contract", ["site/serve-smoke.py"])]
 
@@ -264,25 +250,6 @@ def find_labs():
 
 # --- the link and anchor check ------------------------------------------------
 
-def slug(text):
-    """GitHub's heading slug, byte for byte with walkthrough/build-walkthrough.py:
-    drop anything that is not alphanumeric, space, hyphen or underscore; lowercase;
-    spaces to hyphens. Emoji and dashes vanish and leave their spaces behind, which
-    is why real anchors carry doubled hyphens."""
-    return "".join(c.lower() for c in text if c.isalnum() or c in "-_ ").replace(" ", "-")
-
-
-def markdown_files():
-    for base, dirs, files in os.walk(ROOT):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
-        for f in sorted(files):
-            if not f.endswith(".md"):
-                continue
-            rel = os.path.relpath(os.path.join(base, f), ROOT)
-            if rel not in NOT_OUR_PROSE:
-                yield rel
-
-
 def check_links(verbose=False):
     """Resolve every relative link in every Markdown file, and every anchor into a
     Markdown file. Returns a list of problems."""
@@ -292,9 +259,8 @@ def check_links(verbose=False):
 
     def anchors_of(rel):
         if rel not in headings:
-            path = os.path.join(ROOT, rel)
             try:
-                text = open(path, encoding="utf-8").read()
+                text = read(rel)
             except (OSError, UnicodeDecodeError):
                 headings[rel] = set()
                 return headings[rel]
@@ -302,9 +268,8 @@ def check_links(verbose=False):
         return headings[rel]
 
     for rel in markdown_files():
-        text = open(os.path.join(ROOT, rel), encoding="utf-8").read()
-        text = FENCE_RE.sub("", text)          # a link inside a fence is an example
-        text = CODE_RE.sub("", text)           # and so is one inside backticks
+        text = FENCED_BLOCK_RE.sub("", read(rel))   # a link inside a fence is an example
+        text = CODE_SPAN_RE.sub("", text)           # and so is one inside backticks
         here = os.path.dirname(rel)
         for m in LINK_RE.finditer(text):
             target, frag = m.group(1), (m.group(2) or "")[1:]
@@ -345,9 +310,8 @@ def check_mirror_links():
         if not rel.startswith("docs/zh/"):
             continue
         here = os.path.dirname(rel)
-        text = open(os.path.join(ROOT, rel), encoding="utf-8").read()
-        text = FENCE_RE.sub("", text)
-        text = CODE_RE.sub("", text)
+        text = FENCED_BLOCK_RE.sub("", read(rel))
+        text = CODE_SPAN_RE.sub("", text)
         for line in text.splitlines():
             # The 🌐 switcher points at the English canonical on purpose — that is the
             # one link on the page whose whole job is to leave the mirror.
@@ -425,12 +389,12 @@ def _glob(pattern):
 
 
 def walkthrough_beats():
-    """Beats per walkthrough, read the way build-walkthrough.py reads them: a beat is
+    """Beats per walkthrough, read the way guard-walkthrough.py reads them: a beat is
     a `<!-- beat: id -->` marker in the English script."""
     out = {}
     for path in _glob("walkthrough/[0-9]*-*.en.md"):
-        text = open(path, encoding="utf-8").read()
-        out[os.path.basename(path)] = len(re.findall(r"<!--\s*beat:", text))
+        rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+        out[os.path.basename(path)] = len(BEAT_RE.findall(read(rel)))
     return out
 
 
@@ -523,8 +487,7 @@ def diagram_counts():
     and that plus the Chinese mirrors."""
     en = zh = 0
     for rel in markdown_files():
-        n = len(re.findall(r"^```mermaid", open(os.path.join(ROOT, rel),
-                                                encoding="utf-8").read(), re.M))
+        n = len(re.findall(r"^```mermaid", read(rel), re.M))
         if rel.startswith("docs/zh/"):
             zh += n
         else:
@@ -536,10 +499,8 @@ def indexed_files():
     """What docs/build-index.py indexes: files carrying front matter, and the record
     count the index actually holds. They differ — mirrors are derived — so a claim
     about one is not a claim about the other."""
-    with_fm = sum(1 for rel in markdown_files()
-                  if open(os.path.join(ROOT, rel), encoding="utf-8").read().startswith("---\n"))
+    with_fm = sum(1 for rel in markdown_files() if front_matter(read(rel))[0] is not None)
     try:
-        import json
         recs = json.load(open(os.path.join(ROOT, "docs/index.json"), encoding="utf-8"))
         n = len(recs if isinstance(recs, list) else recs.get("records", recs.get("files", [])))
     except Exception:
@@ -591,10 +552,9 @@ def check_counts():
     compiled = [(name, truth, [re.compile(p) for p in pats])
                 for name, truth, pats in counted_things()]
     for rel in markdown_files():
-        text = open(os.path.join(ROOT, rel), encoding="utf-8").read()
         # Blank the fences instead of removing them, or every line number after the
         # first code block is a lie.
-        blanked = FENCE_RE.sub(lambda m: "\n" * m.group(0).count("\n"), text)
+        blanked = FENCED_BLOCK_RE.sub(lambda m: "\n" * m.group(0).count("\n"), read(rel))
         for name, truth, rxs in compiled:
             for rx in rxs:
                 for m in rx.finditer(blanked):

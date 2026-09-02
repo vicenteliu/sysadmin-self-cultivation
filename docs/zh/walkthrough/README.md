@@ -158,7 +158,7 @@ viewer 渲染一间可交互的二维办公室，走读在它上面播放 ——
 ## 检查一篇
 
 ```bash
-python3 walkthrough/build-walkthrough.py            # 拍、锚点、格式、冻结
+python3 walkthrough/guard-walkthrough.py            # 拍、锚点、格式、冻结
 python3 tools/floor/build-tiles.py --check          # 楼面的精灵图集
 python3 tools/floor/prove-topology.py --check       # plate 还是被证明过的吗？
 ```

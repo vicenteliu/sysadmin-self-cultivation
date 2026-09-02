@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Check a walkthrough against its floor, its sources, and its own format.
 
-    python3 walkthrough/build-walkthrough.py            # report, exit 0 unless broken
-    python3 walkthrough/build-walkthrough.py --check    # same, for CI
-    python3 walkthrough/build-walkthrough.py --freeze 01-the-network
+    python3 walkthrough/guard-walkthrough.py            # report, exit 0 unless broken
+    python3 walkthrough/guard-walkthrough.py --check    # same, for CI
+    python3 walkthrough/guard-walkthrough.py --freeze 01-the-network
                                                         # stamp published: + source fingerprints
 
 Nothing here is generated. A walkthrough has no derived artifact — the script IS the
@@ -19,17 +19,16 @@ TTS input (ADR-0009) — so this script only ever reports. What it guards:
              a mismatch means the recording is now describing a document that moved,
              which is the only reliable signal that an episode needs re-recording
 
-Standard library only, like everything else that runs in this repo.
+A guard, not a builder — it derives nothing — and named so since the glossary told the
+two apart. Standard library only, like everything else that runs in this repo.
 """
 
 import hashlib, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-
-BEAT_RE = re.compile(r"^<!--\s*beat:\s*([a-z0-9][a-z0-9-]*)\s*-->\s*$", re.M)
-HEADING_RE = re.compile(r"^(#{1,6})\s+(.*?)\s*$", re.M)
-FENCE_RE = re.compile(r"^```", re.M)
+sys.path.insert(0, ROOT)
+from repolib import BEAT_RE, HEADING_RE, FENCE_LINE_RE, slug, front_matter  # noqa: E402
 
 # The spoken text is read by a machine and heard by a person. Each of these is either
 # read out as noise or dropped silently, and both failures are invisible on the page.
@@ -44,41 +43,6 @@ UNSPEAKABLE = [
 ]
 
 
-def slug(text):
-    """GitHub's heading slug: drop anything that is not a word character, a space or a
-    hyphen, lowercase, then spaces to hyphens. Emoji and dashes vanish and leave their
-    surrounding spaces behind, which is why real anchors carry doubled and trailing
-    hyphens — reproducing that is the whole point of deriving it instead of guessing."""
-    out = []
-    for ch in text:
-        if ch.isalnum() or ch in "-_ ":
-            out.append(ch.lower())
-    return "".join(out).replace(" ", "-")
-
-
-def front_matter(text):
-    """The same minimal YAML docs/build-index.py accepts: scalars, quoted strings and
-    inline lists. Nested structures are deliberately not supported anywhere in this repo."""
-    if not text.startswith("---\n"):
-        return None, text
-    end = text.find("\n---\n", 4)
-    if end == -1:
-        return None, text
-    fm = {}
-    for line in text[4:end].split("\n"):
-        if not line.strip() or ":" not in line:
-            continue
-        key, _, raw = line.partition(":")
-        raw = raw.strip()
-        if raw.startswith("[") and raw.endswith("]"):
-            fm[key.strip()] = [v.strip() for v in raw[1:-1].split(",") if v.strip()]
-        elif len(raw) >= 2 and raw[0] == raw[-1] == '"':
-            fm[key.strip()] = raw[1:-1]
-        else:
-            fm[key.strip()] = raw
-    return fm, text[end + 5:]
-
-
 def fingerprint(path):
     with open(os.path.join(ROOT, path), "rb") as fh:
         return hashlib.sha256(fh.read()).hexdigest()[:16]
@@ -89,7 +53,7 @@ def spoken_lines(body):
     not a fenced block."""
     out, fenced = [], False
     for n, line in enumerate(body.split("\n"), 1):
-        if FENCE_RE.match(line):
+        if FENCE_LINE_RE.match(line):
             fenced = not fenced
             continue
         if fenced or not line.strip():

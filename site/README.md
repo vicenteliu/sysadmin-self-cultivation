@@ -89,7 +89,7 @@ python3 site/build-diagrams.py --check  # 21 diagram artifacts ← 7 HTML source
                                         # and the token table ← the style profile
 python3 tools/floor/build-tiles.py --check   # the floor's sprite sheet ← tiles.tiles
 python3 tools/floor/prove-topology.py --check  # the plate, still proved walkable?
-python3 walkthrough/build-walkthrough.py     # beats ↔ plate ↔ sources, and the freeze
+python3 walkthrough/guard-walkthrough.py     # beats ↔ plate ↔ sources, and the freeze
 ```
 
 The diagram check covers one more thing than staleness. `diagram-design` resolves style

@@ -186,7 +186,7 @@ time, the way [`toolbox/`](../toolbox/README.md) grows. There is no target count
 ## Checking one
 
 ```bash
-python3 walkthrough/build-walkthrough.py            # beats, anchors, format, freeze
+python3 walkthrough/guard-walkthrough.py            # beats, anchors, format, freeze
 python3 tools/floor/build-tiles.py --check          # the floor's sprite sheet
 python3 tools/floor/prove-topology.py --check       # is the plate still proved?
 ```

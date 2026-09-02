@@ -17,7 +17,8 @@ hand-maintained second copy drifts (ADR-0001).
     stand; nothing is added to that schema.
 
 One further exception, kept as a named set rather than a rule: a Markdown file that is
-another tool's data is skipped outright — see `NOT_A_DOCUMENT`.
+another tool's data is skipped outright — `NOT_A_DOCUMENT` in `repolib.py`, which is
+also where the tree walk and the front-matter parser live, shared with `check.py`.
 
 Exit codes: 0 ok · 1 a content file is missing front-matter, or carries a summary that is
 visibly a fragment of something else · 2 --check found the index stale. Idempotent — two runs produce byte-identical output.
@@ -25,20 +26,14 @@ visibly a fragment of something else · 2 --check found the index stale. Idempot
 import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+from repolib import front_matter, markdown_files  # noqa: E402
+
 OUT = os.path.join(ROOT, "docs", "index.json")
-SKIP_DIRS = (".git", ".serena", "__pycache__", "node_modules")
 # The one path allowed to have no front-matter: GitHub renders it above the prose
 # and this file is the front door. Its record is stated here instead.
 ROOT_README = {"kind": "index", "axis": "start-here", "themes": [], "platforms": [],
                "summary": "The front door: what this repo is, how to read it, and what is built."}
-
-# Markdown that is another tool's data rather than a document. The diagram-design style
-# profile has to stay byte-identical to the copy `site/build-diagrams.py --install-profile`
-# writes into `~/.diagram-design/profiles/`, so front-matter cannot be added to it, and it
-# is no more a document than `toolbox/generate/catalog.json` is.
-NOT_A_DOCUMENT = {"site/assets/diagrams/sysadmin-brass.profile.md"}
-
-LIST_RE = re.compile(r"^\[(.*)\]$")
 
 # A summary that is visibly a fragment of something else. These are shapes, not meanings:
 # they catch a list or a leftover marker that ended up in the field, and they cannot catch
@@ -56,39 +51,6 @@ CAPTURED = [
 ]
 
 
-def parse_front_matter(text):
-    """Minimal YAML for the shape this repo writes: scalars, quoted strings, flat lists."""
-    if not text.startswith("---\n"):
-        return None
-    end = text.find("\n---\n", 4)
-    if end == -1:
-        return None
-    out = {}
-    for line in text[4:end].split("\n"):
-        if not line.strip() or line.lstrip().startswith("#"):
-            continue
-        if ":" not in line:
-            continue
-        key, _, raw = line.partition(":")
-        raw = raw.strip()
-        m = LIST_RE.match(raw)
-        if m:
-            out[key.strip()] = [v.strip() for v in m.group(1).split(",") if v.strip()]
-        elif len(raw) >= 2 and raw[0] == raw[-1] == '"':
-            out[key.strip()] = raw[1:-1].replace('\\"', '"').replace("\\\\", "\\")
-        else:
-            out[key.strip()] = raw
-    return out
-
-
-def walk_markdown():
-    for dirpath, dirnames, filenames in os.walk(ROOT):
-        dirnames[:] = sorted(d for d in dirnames if d not in SKIP_DIRS)
-        for name in sorted(filenames):
-            if name.endswith(".md"):
-                yield os.path.relpath(os.path.join(dirpath, name), ROOT).replace(os.sep, "/")
-
-
 def captured(summary):
     """The reason this summary looks lifted rather than written, or None."""
     for pattern, why in CAPTURED:
@@ -100,26 +62,23 @@ def captured(summary):
 def build():
     records, missing, lifted = {}, [], []
 
-    for path in walk_markdown():
+    for path in markdown_files():
         if path.startswith("docs/zh/"):
             continue                                   # derived below
-        text = open(path, encoding="utf-8").read()
+        text = open(os.path.join(ROOT, path), encoding="utf-8").read()
 
         if path.startswith(".claude/skills/") and path.endswith("SKILL.md"):
-            fm = parse_front_matter(text) or {}
+            fm = front_matter(text)[0] or {}
             records[path] = {"kind": "agent-skill", "axis": "start-here",
                              "themes": [], "platforms": [],
                              "summary": fm.get("description", "").strip()}
-            continue
-
-        if path in NOT_A_DOCUMENT:
             continue
 
         if path == "README.md":
             records[path] = dict(ROOT_README)
             continue
 
-        fm = parse_front_matter(text)
+        fm, _ = front_matter(text)
         if fm is None:
             missing.append(path)
             continue
@@ -139,7 +98,7 @@ def build():
         if "counterpart" in fm:
             records[path]["counterpart"] = fm["counterpart"]
 
-    for path in walk_markdown():                       # derive the mirrors
+    for path in markdown_files():                      # derive the mirrors
         if not path.startswith("docs/zh/"):
             continue
         source = path[len("docs/zh/"):]

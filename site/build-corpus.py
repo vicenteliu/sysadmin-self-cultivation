@@ -25,11 +25,13 @@ a generated file out of date.
 import json, os, re, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, ROOT)
+from repolib import front_matter  # noqa: E402
+
 INDEX = os.path.join(ROOT, "docs", "index.json")
 OUT_TITLES = os.path.join(ROOT, "site", "titles.json")
 OUT_CORPUS = os.path.join(ROOT, "site", "corpus.json")
 
-FRONT_MATTER = re.compile(r"\A---\n.*?\n---\n", re.DOTALL)
 MERMAID = re.compile(r"^```mermaid\n.*?^```\n", re.DOTALL | re.MULTILINE)
 H1 = re.compile(r"^#\s+(.+?)\s*$", re.MULTILINE)
 HEADING = re.compile(r"^#{2,4}\s+(.+?)\s*$", re.MULTILINE)
@@ -83,7 +85,7 @@ def build():
             missing.append(path)
             continue
         raw = open(full, encoding="utf-8").read()
-        body = FRONT_MATTER.sub("", raw)
+        body = front_matter(raw)[1]
         titles[path] = title_of(body, path)
         docs[path] = {
             "t": titles[path],
