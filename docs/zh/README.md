@@ -68,7 +68,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 | **学一项可迁移技能** | [`cross-cutting/`](cross-cutting/) —— 身份 · IaC · CI/CD · 数据库 · ITSM · web/TLS · 事件响应 · 等等 |
 | **核对我究竟会什么** | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/README.md) —— 一个主题横切全部七个平台，按技能能走多远分层 |
 | **准备面试** | [`cross-cutting/interview/`](cross-cutting/interview/README.md) —— 同样的章节从桌子另一侧看：他们问什么、在探什么、答案什么形状 |
-| **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
+| **在平常的周二用 AI** | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) —— 分诊 → 变更 → 事件 → 复盘 → 扫尾，以及在哪里把它收回来 |
 | **支持一个我接手的平台** | break-fix **support 笔记**（见 [已建成](#已建成)）—— 反复出现的工单、跨方向经验差、每篇一个可跑 lab |
 | **看 AI 怎么被约束诚实** | [`ai-workflow/`](ai-workflow/) —— 方法及其护栏 |
 | **查一个词或一条旧决策** | [`CONTEXT.md`](CONTEXT.md) —— 每个词在这里是什么意思（以及不是什么）· [`docs/adr/`](docs/adr/) —— 十五条决策及它们击败的选项 |
@@ -83,7 +83,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 113 篇；`build-out/` 十六步、`the-stack/` 七章、`cross-cutting/` 的 22 篇正文、`docs/adr/` 的 15 篇决策记录、`docs/questions/` 与 `endpoint/` 都已补齐；各处 lab 的 README 与 `platforms/` 的逐平台目录尚未镜像），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 121 篇；根目录、`build-out/`、`the-stack/`、`cross-cutting/`、`docs/adr/`、`docs/questions/`、`endpoint/`、`toolbox/` 与 **`platforms/aws/`** 都已补齐；另外六个平台目录和各处 lab 的 README 尚未镜像），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |

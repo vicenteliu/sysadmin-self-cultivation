@@ -8,6 +8,8 @@ summary: "The companion to how-i-use-ai-to-learn-and-operate.md, which is about 
 ---
 # AI in the Day Job
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/ai-workflow/ai-in-the-day-job.md)
+
 > The companion to [`how-i-use-ai-to-learn-and-operate.md`](how-i-use-ai-to-learn-and-operate.md),
 > which is about the **ramp** — arriving somewhere new. This one is about the
 > steady state: a Tuesday, with a queue, a change window and nothing novel in it.

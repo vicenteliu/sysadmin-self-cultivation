@@ -8,6 +8,8 @@ summary: "architecture is how AWS is structured; operations is what running it l
 ---
 # AWS — Scripting the API (managing & operating from code)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/aws/automation.md)
+
 > [`architecture`](architecture.md) is how AWS is structured; [`operations`](operations.md)
 > is what running it looks like. This note is the *how*: **driving AWS through its
 > API from code** — the concrete craft behind move #3 of the

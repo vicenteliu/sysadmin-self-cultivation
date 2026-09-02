@@ -75,7 +75,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 
 | 平台 | 有什么 · 诚实标注 |
 | --- | --- |
-| [`aws/`](platforms/aws/) | ✅ 范例 + [architecture](../../platforms/aws/architecture.md)/[operations](../../platforms/aws/operations.md)/[automation](../../platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs（**2 个可跑** + 三段式 CLI arc）。先读它。· 🧭 |
+| [`aws/`](platforms/aws/) | ✅ 范例 + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs（**2 个可跑** + 三段式 CLI arc）。先读它。· 🧭 |
 | [`azure/`](platforms/azure/) | ✅ + [architecture](../../platforms/azure/architecture.md)/[operations](../../platforms/azure/operations.md)/[automation](../../platforms/azure/automation.md)/[support](platforms/azure/support.md) + 三段式 CLI arc。· 🧭，**Entra/身份 🔨** |
 | [`gcp/`](platforms/gcp/) | ✅ + [architecture](../../platforms/gcp/architecture.md)/[operations](../../platforms/gcp/operations.md)/[automation](../../platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 三段式 CLI arc。global-VPC 是那个异类。· 🧭 |
 | [`oci/`](platforms/oci/) | ✅ + [architecture](../../platforms/oci/architecture.md)/[operations](../../platforms/oci/operations.md)/[automation](../../platforms/oci/automation.md)/[support](platforms/oci/support.md) + 三段式 CLI arc + [compartment/verb lab](../../platforms/oci/labs/a-compartment-is-not-an-account/)。最年轻的超大规模云 —— compartment、OCPU、裸金属优先、便宜出网。· 🧭 |
@@ -190,7 +190,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | 音频 | **永不进这棵树。** 你用自己的 TTS 生成，或者去听已发布的那一集 | — |
 | 拍 | 一段话、一次 TTS 调用、一个音频片段、一个楼面状态 —— 按稳定 id 对齐，绝不按时间戳（[ADR-0012](docs/adr/0012-alignment-is-by-beat-not-by-timestamp.md)） | ✅ |
 | 楼面 | viewer 里一间可交互的二维办公室 —— 平移、三档语义缩放、20 个可点物体。那群人**就是**无线负载。它渲染 Markdown 已陈述的内容，自己不计算（[ADR-0011](docs/adr/0011-the-floor-renders-the-reference-office-and-may-not-compute-it.md)） | ✅ |
-| 它的守卫 | [`build-walkthrough.py`](../../walkthrough/build-walkthrough.py) —— 拍、锚点、可念性、发布冻结 · [`tools/floor/`](../../tools/floor/README.md) —— 手绘的贴图集 | ✅ |
+| 它的守卫 | [`build-walkthrough.py`](../../walkthrough/build-walkthrough.py) —— 拍、锚点、可念性、发布冻结 · [`tools/floor/`](tools/floor/README.md) —— 手绘的贴图集 | ✅ |
 
 ## Agent Skills —— 方法，可被调用
 

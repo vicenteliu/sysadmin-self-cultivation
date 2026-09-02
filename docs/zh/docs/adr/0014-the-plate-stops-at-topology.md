@@ -43,7 +43,7 @@ summary: "走读所播放于其上的那个楼面在结构上是错的：一间�
 正在被做出的那句声称，所以它被写下来并被核对，而不是被留给人从"家具不在哪儿"去推断。
 
 **这份拓扑是被证明的，不是被断言的。** 一个 headless 的 Godot 工程在
-[`tools/floor/godot/`](../../../../tools/floor/README.md) 里走这块 plate：从电梯厅出发、只沿动线、
+[`tools/floor/godot/`](../../tools/floor/README.md) 里走这块 plate：从电梯厅出发、只沿动线、
 在不穿过任何工位格的前提下到达每一个空间。plate 把结果存成一份"被证明了什么"的指纹，所以一块事后
 被编辑过的 plate 会报告出没有人重新证明过它。Godot 是设计期和检查期的，永远不被交付出去
 （[ADR-0013](0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）。

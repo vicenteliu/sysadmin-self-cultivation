@@ -80,7 +80,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 补缺（第二批） | [`service-mesh`](cross-cutting/service-mesh.md)（发现 + mesh，🧭）· [`web-and-tls`](cross-cutting/web-and-tls.md)（反向代理 + 证书生命周期，🔨 基本功）· [`incident-response`](cross-cutting/incident-response.md)（生命周期、on-call、复盘） | ✅ 已写 |
 | 原创 | [`working-with-security`](cross-cutting/working-with-security.md) —— 运维者视角的安全：与 InfoSec/SOC 协作 + MITRE ATT&CK 意识；🔨 运维安全 vs 🧭 专家。选择自己写而不是引入（这是与外部安全体系建立关系的诚实方式） | ✅ 已写 |
 | 平台 | [`platforms/gcp/`](platforms/gcp/) —— README + skills-map + ai-ramp（global-VPC 的异类；Tier-1 第 4 项）；lab 已出规格 | ✅ 已写 |
-| 平台深度 | [`platforms/aws/architecture.md`](../../platforms/aws/architecture.md) + [`operations.md`](../../platforms/aws/operations.md) + [`automation.md`](../../platforms/aws/automation.md) —— 账号模型、day-2 运维工作拆解、AI 在环、给 API 写脚本 | ✅ 已写 |
+| 平台深度 | [`platforms/aws/architecture.md`](platforms/aws/architecture.md) + [`operations.md`](platforms/aws/operations.md) + [`automation.md`](platforms/aws/automation.md) —— 账号模型、day-2 运维工作拆解、AI 在环、给 API 写脚本 | ✅ 已写 |
 | 平台深度 | Azure + GCP 的 architecture/operations/automation 三件套（对齐 AWS） | ✅ 已写 |
 | 私有云 | [`platforms/vsphere/`](../../platforms/vsphere/) —— 🔨 亲手做过（VCP6-DCV/NV、区域 vCenter 管理员）+ [`platforms/openstack/`](../../platforms/openstack/) —— 🧭 ramp，与 KVM 邻接 | ✅ 已写 |
 | 平台补齐 | [`platforms/oci/`](platforms/oci/) —— 🧭 第四朵云 + [`platforms/self-host/`](../../platforms/self-host/) —— 🔨 最深的根。**the-stack 的七个平台现在都有模块** | ✅ 已写 |
@@ -89,7 +89,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 平台深度 | **OCI + OpenStack** 的 architecture/operations/automation 三件套（🧭 ramp）。**七个平台现在都带全套三件套** —— 平台深度对称 | ✅ 已写 |
 | 技能图 | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/) —— 平台技能图的**转置**：一个主题横跨全部七个平台，按可迁移性而非按云分层。[networking](cross-cutting/skills-maps/networking.md)（63 格）+ [identity](cross-cutting/skills-maps/identity.md)（58 格）；两个最密的需求集群优先 | ✅ |
 | 面试 | [`cross-cutting/interview/`](cross-cutting/interview/) —— 技能图的再一次转置，这回从面试官那一侧：[networking](cross-cutting/interview/networking.md)（21 问）+ [identity](cross-cutting/interview/identity.md)（19 问）。答案的形状由小节的 marker 决定（[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)）；六个 🔨 答案仍带 ⏳ | ✅ |
-| AI 方法 | [`ai-workflow/ai-in-the-day-job.md`](../../ai-workflow/ai-in-the-day-job.md) —— 稳态而非 ramp：分诊 → 变更 → 事件 → 复盘 → 扫尾，每一段都点名交出去什么、在哪里收回来 | ✅ |
+| AI 方法 | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) —— 稳态而非 ramp：分诊 → 变更 → 事件 → 复盘 → 扫尾，每一段都点名交出去什么、在哪里收回来 | ✅ |
 | 检索 | 156 个文件上的 front-matter 作为唯一来源 + [`docs/build-index.py`](../build-index.py) → [`docs/index.json`](../index.json)（191 条记录，镜像标 derived）。面向 agent；幂等，`--check` 报告过期 | ✅ |
 | 站点设计 | [`cross-cutting/site-network-design.md`](cross-cutting/site-network-design.md) —— 从参考办公室的参数到一份设计之间的那一步，海拔与分层章节相同。与 [`the-reference-office.md`](the-reference-office.md) 配对，后者现在在空间参数之外承载**六个参数域** —— 人员流动、终端与备机、身份形状、SaaS 清册、支持负载、数据与恢复 —— 每一个都是因为某个 lab 或某一步已经被迫编造过它才写的，且都记在那个文件自己的需求账本里。`Reference build` 保持 ⏳，因为没有哪一步需要型号；`Where things run` **两半都已写完** —— 四样东西留在这层楼或某朵云上，六样被考虑过并被拒绝，而后者是更短也更有用的那份清单 | ✅ |
 | 走读 | [`walkthrough/`](walkthrough/README.md) —— 第二条路线，是念的不是读的：格式、五条决策（[ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)–[0013](docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）以及 viewer 的注册都已写完，而且**目前共三篇走读已建成** —— 01 · 网络（106 拍）、02 · 第一个星期一（93 拍）与 03 · 它坏掉的那一天（102 拍），各两种语言，播放在同一张可交互的二维楼面上。稿子进仓库，音频永远不进。像 `toolbox/` 那样一次长一篇，没有目标篇数 | ✅ |

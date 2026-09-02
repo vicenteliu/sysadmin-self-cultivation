@@ -7,6 +7,8 @@ summary: "How to get to competent on AWS in days instead of months — using AI 
 ---
 # AWS — The AI-Assisted Ramp
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/aws/ai-ramp.md)
+
 > How to get to *competent* on AWS in days instead of months — using AI as a
 > co-pilot, and keeping it honest. The method generalizes to any platform.
 

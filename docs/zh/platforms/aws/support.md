@@ -6,7 +6,7 @@
 
 ---
 
-> [`operations.md`](../../../../platforms/aws/operations.md) 讲的是运营你自己那套 AWS 的**节奏** —— 什么会 page 你，以及每天/每周/每季度的活。本篇讲另一半：**把 AWS support 当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及最有用的那点：**一个来自别的方向的强 sysadmin 接手它时，哪些直觉会坑他。** AWS 本身在这里仍是 🧭 ramp；撑起它的可迁移基本功（Linux、网络、身份、排障）才是那个 🔨 亲手做过——而这正是本页的意义。
+> [`operations.md`](operations.md) 讲的是运营你自己那套 AWS 的**节奏** —— 什么会 page 你，以及每天/每周/每季度的活。本篇讲另一半：**把 AWS support 当作一门修/救（break-fix）手艺** —— 真正反复出现的工单、精确的排查落点，以及最有用的那点：**一个来自别的方向的强 sysadmin 接手它时，哪些直觉会坑他。** AWS 本身在这里仍是 🧭 ramp；撑起它的可迁移基本功（Linux、网络、身份、排障）才是那个 🔨 亲手做过——而这正是本页的意义。
 
 一个熟练的 Linux / on-prem 网络 / 虚拟化 / 别的云的运维，接手 AWS support 通常比一个新招的云工程师快 —— **前提是**他能察觉自己哪些直觉已经不再成立。这段转轨里的痛不是"不懂"，而是**把一身自信的肌肉记忆，指向了一个把自己好几条规则都反过来的平台** —— deny-by-default 而非 allow-by-default、按量计费的账单而非沉没成本、一个你抓不了包的 API 而非一台你能上手的交换机。本篇把职责、反复出现的工单及其诊断面、以及有经验老手反射恰好失灵的那几处一一点名 —— 让这次迁移变成一张核对清单，而不是一连串自找的故障（或账单）。
 
@@ -101,11 +101,11 @@ AWS 的修/救本质是在一小组控制台和日志上做模式识别。你要
 ## AI 辅助的 ramp（AWS-support 口味）
 
 - **把你的直觉翻译成 AWS 的行话：** *"我会 `tcpdump` 那个网口、grep 防火墙日志 —— '这个到不了那个'在 AWS 的等价做法是什么，我又有哪些看不到？"* 那个诚实的答案（Reachability Analyzer + Flow Logs + shared-responsibility 那条线）恰恰是 AI 擅长压缩的东西。
-- **让它起草 policy/命令，你亲手做最小权限。** AI 在 **IAM JSON、`aws` CLI、`boto3`、Terraform** 上是真强 —— 而它也会**发明不存在的 IAM action 和 API 调用**、**过度放开到 `"*"`**、并爽快地提一个 **blast radius 是整个账号**的 security-group 或 policy 改动。每一段生成的 policy 都要对着文档（和一个 linter —— 见 field kit）核验、并在一个**一次性账号**里跑过，才允许碰生产。这跟本仓库其余部分是同一套"往死里验证"的纪律 —— 见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](../../../../platforms/aws/operations.md#how-ai-assists-the-operating-work-not-just-the-learning)。
+- **让它起草 policy/命令，你亲手做最小权限。** AI 在 **IAM JSON、`aws` CLI、`boto3`、Terraform** 上是真强 —— 而它也会**发明不存在的 IAM action 和 API 调用**、**过度放开到 `"*"`**、并爽快地提一个 **blast radius 是整个账号**的 security-group 或 policy 改动。每一段生成的 policy 都要对着文档（和一个 linter —— 见 field kit）核验、并在一个**一次性账号**里跑过，才允许碰生产。这跟本仓库其余部分是同一套"往死里验证"的纪律 —— 见 [`ai-workflow/`](../../ai-workflow/) 和[运营环](operations.md#ai-怎么协助运维工作不只是学习)。
 
 ## 诚实边界
 
-**AWS 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 让这个 ramp 快的，是那些**🔨 可迁移、且真实**的基本功在承重：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、以及**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）—— AWS support 里那些*本来就是*这些技能、只是换了 AWS 名字的部分。AWS 特有的机制（deny-by-default 的策略评估、VPC 的分层、服务目录、计费的边）是被映射、对着文档核验、并在可跑的 [labs](../../../../platforms/aws/labs/) 里练过的 —— **不是**声称成多年生产资历。这里的声明就是[平台 README](../../../../platforms/aws/README.md) 做的那一个：*一套可迁移的操作模型，加一条 AI 加速、在本仓库里可验证、能快速到达"胜任"的 ramp* —— 而上面那些 support 反射就是这条 ramp 落到实处。某个具体服务上更深、规模化的生产 AWS 仍在前方，注释如实说明、绝不吹。
+**AWS 在本仓库里是个 🧭 验证过的 ramp，本页也守着这条线。** 让这个 ramp 快的，是那些**🔨 可迁移、且真实**的基本功在承重：**Linux** 与 guest-OS 运维、**网络 / DNS / TLS**（[`the-stack/02`](../../the-stack/02-network.md)）、以及**身份与最小权限思维**（[`identity-iam.md`](../../cross-cutting/identity-iam.md)）—— AWS support 里那些*本来就是*这些技能、只是换了 AWS 名字的部分。AWS 特有的机制（deny-by-default 的策略评估、VPC 的分层、服务目录、计费的边）是被映射、对着文档核验、并在可跑的 [labs](../../../../platforms/aws/labs/) 里练过的 —— **不是**声称成多年生产资历。这里的声明就是[平台 README](README.md) 做的那一个：*一套可迁移的操作模型，加一条 AI 加速、在本仓库里可验证、能快速到达"胜任"的 ramp* —— 而上面那些 support 反射就是这条 ramp 落到实处。某个具体服务上更深、规模化的生产 AWS 仍在前方，注释如实说明、绝不吹。
 
 ## Field kit —— 真实工具与参考
 

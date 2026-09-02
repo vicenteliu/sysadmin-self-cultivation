@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 319,
+  "count": 327,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -990,6 +990,19 @@
       "mirrors": "WHY.md",
       "derived": true
     },
+    "docs/zh/ai-workflow/ai-in-the-day-job.md": {
+      "kind": "note",
+      "axis": "start-here",
+      "themes": [
+        "observability"
+      ],
+      "platforms": [],
+      "summary": "The companion to how-i-use-ai-to-learn-and-operate.md, which is about the ramp — arriving somewhere new.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "ai-workflow/ai-in-the-day-job.md",
+      "derived": true
+    },
     "docs/zh/ai-workflow/how-i-use-ai-to-learn-and-operate.md": {
       "kind": "note",
       "axis": "start-here",
@@ -1932,6 +1945,93 @@
       "mirrors": "platforms/README.md",
       "derived": true
     },
+    "docs/zh/platforms/aws/README.md": {
+      "kind": "index",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The template every platform module follows: what it is → the admin skill map → the AI-assisted ramp → labs — plus four deeper companion notes AWS gets as the worked example: architecture (how it's…",
+      "language": "zh",
+      "mirrors": "platforms/aws/README.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/ai-ramp.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "How to get to competent on AWS in days instead of months — using AI as a co-pilot, and keeping it honest.",
+      "language": "zh",
+      "mirrors": "platforms/aws/ai-ramp.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/architecture.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The README mapped AWS onto the seven surfaces — what the services are.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/aws/architecture.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/automation.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "architecture is how AWS is structured; operations is what running it looks like.",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/aws/automation.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/operations.md": {
+      "kind": "companion",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "The README is what AWS is; architecture is how it's structured; this note is what running it actually looks like — the operations brief, what pages you at 3 a.m., the real ops work broken down by…",
+      "marker": "mixed",
+      "language": "zh",
+      "mirrors": "platforms/aws/operations.md",
+      "derived": true
+    },
+    "docs/zh/platforms/aws/skills-map.md": {
+      "kind": "skill-map",
+      "axis": "platforms",
+      "themes": [
+        "cloud"
+      ],
+      "platforms": [
+        "aws"
+      ],
+      "summary": "Check a box when you can do it from code and explain the failure modes — not when you've read about it.",
+      "language": "zh",
+      "mirrors": "platforms/aws/skills-map.md",
+      "derived": true
+    },
     "docs/zh/platforms/aws/support.md": {
       "kind": "support-note",
       "axis": "platforms",
@@ -2346,6 +2446,16 @@
       "marker": "🔨",
       "language": "zh",
       "mirrors": "toolbox/vsphere-inventory/README.md",
+      "derived": true
+    },
+    "docs/zh/tools/floor/README.md": {
+      "kind": "tool",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Inputs: hand-drawn ASCII tiles · Outputs: the floor's sprite sheet and its index under site/assets/floor/ · Risk: writes two generated files, nothing else · Root: not needed",
+      "language": "zh",
+      "mirrors": "tools/floor/README.md",
       "derived": true
     },
     "docs/zh/walkthrough/README.md": {
