@@ -71,7 +71,7 @@ flowchart LR
 主题那几篇没有对应的综合，而这是一句陈述而不是一个缺口：云**之间**会坏什么是一个主题；
 Terraform 和 Kubernetes 之间会坏什么不是。
 
-**技能图** —— [平台技能图](../../../platforms/aws/skills-map.md)的转置：一个主题横切每一个
+**技能图** —— [平台技能图](../platforms/aws/skills-map.md)的转置：一个主题横切每一个
 平台，按每项技能能走多远而不是按它属于哪朵云来分层。见
 [`skills-maps/`](skills-maps/README.md)。
 

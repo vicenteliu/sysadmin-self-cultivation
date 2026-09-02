@@ -28,7 +28,7 @@ summary: "这个仓库的词表 —— 在这里有特定含义的词，以及�
 **Skill map（技能图）**：
 一份可勾选的能力清单 —— `- [ ]` 格子，按 **Core / Working / Depth** 分层，勾上一格
 意味着你**做得到**这件事并且**讲得清它的故障模式**。存在两种取向：
-[`platforms/*/skills-map.md`](../../platforms/aws/skills-map.md)（一个平台横跨所有主题）
+[`platforms/*/skills-map.md`](platforms/aws/skills-map.md)（一个平台横跨所有主题）
 与 [`cross-cutting/skills-maps/*.md`](cross-cutting/skills-maps/README.md)
 （一个主题横跨所有平台）。
 _避免_：skill list、能力矩阵、checklist

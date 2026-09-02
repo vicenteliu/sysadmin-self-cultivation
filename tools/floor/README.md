@@ -7,6 +7,8 @@ summary: "Inputs: hand-drawn ASCII tiles · Outputs: the floor's sprite sheet an
 ---
 # tools/floor — the floor's design-time side
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/tools/floor/README.md)
+
 > **Inputs:** [`tiles.tiles`](tiles.tiles), one character per pixel · **Outputs:**
 > `site/assets/floor/tiles.png` and `tiles.json` · **Risk:** writes two generated files
 > and nothing else · **Root:** not needed

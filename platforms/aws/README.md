@@ -7,6 +7,8 @@ summary: "The template every platform module follows: what it is → the admin s
 ---
 # AWS — the worked example
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/aws/README.md)
+
 > The template every platform module follows: **what it is → the admin skill map →
 > the AI-assisted ramp → labs** — plus four deeper companion notes AWS gets as the
 > worked example: **[architecture](architecture.md)** (how it's structured),

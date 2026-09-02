@@ -8,6 +8,8 @@ summary: "The README mapped AWS onto the seven surfaces — what the services ar
 ---
 # AWS — Understanding the Architecture
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/aws/architecture.md)
+
 > The [README](README.md) mapped AWS onto the seven surfaces — *what the services
 > are.* This note is the layer up: *how AWS is structured*, so you design **with**
 > its architecture instead of fighting it. Get the account model, the region/AZ
