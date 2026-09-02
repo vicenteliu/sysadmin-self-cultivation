@@ -224,6 +224,23 @@ production operations, Packer as a specific tool (the *discipline* it encodes is
 🔨; the tool itself is a ramp), and each platform's image-distribution specifics —
 all mapped with the method above and verified by building, not by reading.
 
+## Lab (✅ runnable — [`labs/03-one-image-is-not-one-image/`](labs/03-one-image-is-not-one-image/))
+
+**One image is not one image** — zero cloud, zero hypervisor, Python stdlib only:
+
+```bash
+python3 the-stack/labs/03-one-image-is-not-one-image/image_pinning_drill.py
+```
+
+Two machines, one written procedure, six weeks apart, both saying `latest`. They
+resolve to different artifacts, the inventory records them as identical and is not
+lying — the row has no column for what the reference resolved to. The drill then shows
+where they actually differ (three values, all of them **baked**; the fried half is
+byte-identical because cloud-init ran the same user-data), the bug that only reproduces
+on the newer one and destroys its own evidence when you rebuild to chase it, and what
+the baked/fried seam costs: the same edit is one reboot or a rebuild plus forty
+redeploys.
+
 ## Guided run (spec)
 
 **This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.

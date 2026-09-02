@@ -297,6 +297,23 @@ explicitly **single-operator, not company-grade SLOs, not on-call** — labeled 
 way wherever it appears. The transferable claim: a deep monitoring foundation plus
 a fast, honest ramp onto modern observability — not "ten years of SLO engineering."
 
+## Lab (✅ runnable — [`labs/06-no-data-is-not-healthy/`](labs/06-no-data-is-not-healthy/))
+
+**No data is not healthy** — zero services, zero exporters, Python stdlib only:
+
+```bash
+python3 the-stack/labs/06-no-data-is-not-healthy/silence_drill.py
+```
+
+Three monitors, one hour, and a rack that loses power at minute 12. The in-rack error
+alert **never fires** — it is a predicate over data, and no data arrived. The CPU alert
+cannot fire either, at any threshold, because it has no sample. The off-rack symptom
+alert pages at minute 14, and a staleness alert — the one predicate in the estate whose
+input is *absence* — pages at 15. Meanwhile both in-rack panels are green, displaying
+the last thing they were told nine minutes earlier, and neither is lying. It is
+chapter 01's placement rule applied to the system whose job is to tell you about
+chapter 01.
+
 ## Guided run (spec)
 
 **This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.

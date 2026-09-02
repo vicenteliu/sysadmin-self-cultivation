@@ -258,6 +258,24 @@ claim: a hands-on operational-security foundation (endpoint, encryption, patch,
 compliance-checks, least-privilege) plus a fast, honest ramp onto cloud-security
 posture and program work — not "ten years as a security engineer."
 
+## Lab (✅ runnable — [`labs/07-detection-is-a-window/`](labs/07-detection-is-a-window/))
+
+**Detection is a window, and one finding never closes** — zero cloud, zero scanner,
+Python stdlib only:
+
+```bash
+python3 the-stack/labs/07-detection-is-a-window/exposure_drill.py
+```
+
+Four ordinary mistakes over thirty days, priced in exposure-minutes under three
+regimes. Daily → hourly scanning saves 69 hours and still leaves 220, because a scan
+runs after the fact. A guardrail takes its two named classes to zero — and the guardrail
+column comes out **worse** than the hourly one, because prevention retired two classes
+while the other two lost their fast detection. A guardrail retires a class, not a
+scanner, and the matrix format says they are alternatives. Then the finding whose
+exposure does not end when you fix it: the API key's ticket closed in 1.3 hours and its
+exposure is 216 and still running, because removing a commit does not un-read a key.
+
 ## Guided run (spec)
 
 **This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.

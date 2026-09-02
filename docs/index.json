@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 395,
+  "count": 403,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -3175,6 +3175,30 @@
       "mirrors": "the-stack/labs/01-failure-domains/README.md",
       "derived": true
     },
+    "docs/zh/the-stack/labs/02-first-match-and-longest-prefix/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "A routing table and a firewall ruleset are both ordered lists of prefixes, and only one of them cares about the order. Neither file says which.",
+      "language": "zh",
+      "mirrors": "the-stack/labs/02-first-match-and-longest-prefix/README.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/labs/03-one-image-is-not-one-image/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [],
+      "summary": "Two machines built from the same image reference six weeks apart are two different machines, the inventory records them as identical, and nothing in it is lying.",
+      "language": "zh",
+      "mirrors": "the-stack/labs/03-one-image-is-not-one-image/README.md",
+      "derived": true
+    },
     "docs/zh/the-stack/labs/04-backup-not-snapshot/README.md": {
       "kind": "lab",
       "axis": "the-stack",
@@ -3186,6 +3210,26 @@
       "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+ and its built-in sqlite3.",
       "language": "zh",
       "mirrors": "the-stack/labs/04-backup-not-snapshot/README.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/labs/06-no-data-is-not-healthy/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [],
+      "summary": "The outage that produces silence instead of a page. Green and silent are the same colour on every dashboard ever built, and only one kind of alert can tell them apart.",
+      "language": "zh",
+      "mirrors": "the-stack/labs/06-no-data-is-not-healthy/README.md",
+      "derived": true
+    },
+    "docs/zh/the-stack/labs/07-detection-is-a-window/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [],
+      "summary": "\"We caught it\" is a statement about a window. A posture scanner makes the window small; a guardrail closes it for exactly the classes it names; and one finding's exposure does not end when you fix it at all.",
+      "language": "zh",
+      "mirrors": "the-stack/labs/07-detection-is-a-window/README.md",
       "derived": true
     },
     "docs/zh/the-stack/labs/README.md": {
@@ -4329,6 +4373,24 @@
       "platforms": [],
       "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+."
     },
+    "the-stack/labs/02-first-match-and-longest-prefix/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [
+        "networking"
+      ],
+      "platforms": [],
+      "summary": "A routing table and a firewall ruleset are both ordered lists of prefixes, and only one of them cares about the order. Neither file says which."
+    },
+    "the-stack/labs/03-one-image-is-not-one-image/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [
+        "virtualization"
+      ],
+      "platforms": [],
+      "summary": "Two machines built from the same image reference six weeks apart are two different machines, the inventory records them as identical, and nothing in it is lying."
+    },
     "the-stack/labs/04-backup-not-snapshot/README.md": {
       "kind": "lab",
       "axis": "the-stack",
@@ -4338,6 +4400,20 @@
       ],
       "platforms": [],
       "summary": "No cloud, no credentials, no cost, no external packages — just Python 3.8+ and its built-in sqlite3."
+    },
+    "the-stack/labs/06-no-data-is-not-healthy/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [],
+      "summary": "The outage that produces silence instead of a page. Green and silent are the same colour on every dashboard ever built, and only one kind of alert can tell them apart."
+    },
+    "the-stack/labs/07-detection-is-a-window/README.md": {
+      "kind": "lab",
+      "axis": "the-stack",
+      "themes": [],
+      "platforms": [],
+      "summary": "\"We caught it\" is a statement about a window. A posture scanner makes the window small; a guardrail closes it for exactly the classes it names; and one finding's exposure does not end when you fix it at all."
     },
     "the-stack/labs/README.md": {
       "kind": "lab",
