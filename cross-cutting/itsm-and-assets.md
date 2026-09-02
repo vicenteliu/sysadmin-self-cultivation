@@ -154,7 +154,7 @@ operational discipline is 🔨, the formal-auditor role is the ramp. The transfe
 claim: real ITSM, asset-reconciliation, and access-governance operations — the spine a
 compliant IT org runs on — plus a fast ramp onto any specific platform or framework.
 
-## Lab (✅ built, in two pieces)
+## Lab (✅ built, in three drills)
 
 **Reconcile the truth, prove the access.** Pure-local, no special tooling. The
 spec below was written as one three-part lab; it ended up as two, because the
@@ -179,6 +179,12 @@ reconciliation half and the access half turned out to be different drills.
    role that outlives whoever granted it, and the individual grants cannot be
    reconstructed at all. That is the "governance is only real when it's answerable"
    claim, made to fail on demand.
+4. **Staffing** — ✅ [`labs/help-desk-queue/`](labs/help-desk-queue/), which the spec
+   never asked for and [`build-out/13`](../build-out/13-the-help-desk.md) did. *One per
+   fifty users* replaced by a queue that can say why the number is what it is, and where
+   the ratio stops agreeing without being able to say so. It lives here because a
+   staffing number is a claim about the estate — the same estate the first drill
+   reconciles — and only survives with that estate attached.
 
 ## The chapter on one screen
 

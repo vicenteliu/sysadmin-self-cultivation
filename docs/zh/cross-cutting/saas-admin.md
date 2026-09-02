@@ -146,6 +146,19 @@ flowchart LR
 注意它和 [`endpoint/`](../endpoint/README.md) 的差别：那条赛道管的是**设备**；这一条管的是
 **生产力估算面及其身份** —— 相邻的两条车道，都是亲手做过的。
 
+## Lab（✅ 已建成，两个 drill）
+
+两个都关于套件租户的默认值恰好做了它们声称的事，而那正是发现本身。纯本地，退出码 `0` 表示教训
+成立，各自都带 `--break-it`。
+
+- [`labs/mail-authentication-alignment/`](labs/mail-authentication-alignment) —— **记录发布了，
+  每个检查器都是绿的，而域名仍然可以被冒充。** SPF 认证信封域，DKIM 认证签名域；DMARC 问的是两者
+  之一是否与人眼看到的 `From:` 对齐，而 `p=none` 什么都不保护。执行的风险恰恰就是你的清单弄错的
+  那些发件方，而那是这周就能量出来的。
+- [`labs/transcript-retention/`](labs/transcript-retention) —— **一次不含任何错误的治理失败。**
+  组共享是正确的，每一次访问复审都通过，三年之后一段私下对话能被三倍的人读到。缺的那个控制是一个
+  到期，不是一个权限 —— 保留默认值是按产物设的，所以来源过期了，从它派生出来的摘要没有。
+
 ## Guided run（规格）
 
 **这是一次 [guided run](../CONTEXT.md)，不是一个 lab。** 它需要一个真实环境，所以这里没有任何

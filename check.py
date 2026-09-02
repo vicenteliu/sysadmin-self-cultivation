@@ -353,6 +353,70 @@ def verdict(held, broken=False):
 # --- end of the reporter ------------------------------------------------------------
 '''
 
+LAB_HEADING_RE = re.compile(r"^## Labs?\b", re.M)
+LAB_README_HEADINGS = ("Run", "Verify", "The point")
+
+
+def lab_dirs():
+    """The directory of every lab check.py runs, whatever its runnable is."""
+    out = []
+    for _, argv in find_labs():
+        rel = drill_of(argv)
+        out.append(os.path.dirname(rel) if rel else
+                   next(k for k, (a, _) in OTHER_DRILLS.items() if a == argv))
+    return sorted(out)
+
+
+def axis_of(lab_dir):
+    """The axis a lab belongs to: its top-level directory, or platforms/<name>."""
+    parts = lab_dir.split("/")
+    return "/".join(parts[:2]) if parts[0] == "platforms" else parts[0]
+
+
+def check_lab_owners():
+    """Every lab is owned by a document in its own axis: one outside labs/ that links
+    it from under a `## Lab` heading, which is how this repo's chapters, notes and
+    support notes already claim theirs. An index row is not ownership, and neither
+    is a mention in passing — a lab nobody's prose claims is a lab nobody reaches."""
+    problems = []
+    for lab in lab_dirs():
+        axis = axis_of(lab)
+        owned = False
+        for doc in markdown_files():
+            if doc.startswith("docs/zh/") or "/labs/" in doc or not doc.startswith(axis + "/"):
+                continue
+            here = os.path.dirname(doc)
+            for section in re.split(r"^(?=## )", read(doc), flags=re.M):
+                if not LAB_HEADING_RE.match(section):
+                    continue
+                for m in LINK_RE.finditer(section):
+                    dest = os.path.normpath(os.path.join(here, m.group(1) or ""))
+                    if dest == lab or dest.startswith(lab + "/"):
+                        owned = True
+                        break
+                if owned:
+                    break
+            if owned:
+                break
+        if not owned:
+            problems.append(f"{lab}/: no document under {axis}/ links it from a `## Lab` "
+                            f"section — give it an owner, or say in the owner why not")
+    return problems
+
+
+def check_lab_readmes():
+    """A lab README carries the three headings a reader needs — how to run it, how to
+    verify it without trusting the drill, and what it proves."""
+    problems = []
+    for lab in lab_dirs():
+        rel = lab + "/README.md"
+        heads = [h.strip() for _, h in HEADING_RE.findall(read(rel))]
+        for want in LAB_README_HEADINGS:
+            if not any(h.lower().startswith(want.lower()) for h in heads):
+                problems.append(f"{rel}: no `## {want}…` heading")
+    return problems
+
+
 def check_drill_block():
     """Every drill check.py runs carries DRILL_BLOCK byte for byte."""
     problems = []
@@ -837,6 +901,10 @@ def main():
                 print(f"  {name:<28} {' '.join(argv)}")
             if g == "labs":
                 print(f"  {'reporter block':<28} every Python drill above carries it byte for byte")
+                print(f"  {'lab owners':<28} every lab is linked from a `## Lab` section of a "
+                      f"document in its axis")
+                print(f"  {'lab READMEs':<28} every lab README has "
+                      f"{' / '.join(LAB_README_HEADINGS)} headings")
                 print(f"  {'break paths':<28} each drill's --break-it run must exit 1 and say FAILED:")
                 for name, argv in GROUPS[g]():
                     rel = drill_of(argv)
@@ -909,6 +977,14 @@ def main():
             ran += 1
             n_py = sum(1 for _, a in find_labs() if drill_of(a))
             report("reporter block", problems, f"{n_py} drills carry it byte for byte", t0, failed)
+            t0 = time.time()
+            report("lab owners", check_lab_owners(),
+                   f"{len(lab_dirs())} labs each claimed from a `## Lab` section in their axis",
+                   t0, failed)
+            t0 = time.time()
+            report("lab READMEs", check_lab_readmes(),
+                   "every lab README has Run, Verify and The point", t0, failed)
+            ran += 2
             _, not_run = scan_labs()
             for nm, path, why in not_run:
                 print(f"  – {nm:<28} not run — {why}")

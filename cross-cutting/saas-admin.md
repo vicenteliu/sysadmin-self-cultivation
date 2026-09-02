@@ -167,6 +167,22 @@ tenant engineering** at scale, **Proofpoint / Defender for Office 365**, and
 [`endpoint/`](../endpoint/): that track manages the *device*; this one manages the
 *productivity estate and its identities* — adjacent lanes, both hands-on.
 
+## Lab (✅ built, two drills)
+
+Both are about the suite tenant's defaults doing exactly what they say, and that being
+the finding. Pure-local, exit `0` means the lessons held, each carries `--break-it`.
+
+- [`labs/mail-authentication-alignment/`](labs/mail-authentication-alignment/) — **the
+  records are published, every checker is green, and the domain is still spoofable.**
+  SPF authenticates the envelope and DKIM the signing domain; DMARC asks whether either
+  matches the `From:` a human reads, and `p=none` protects nothing. Enforcement's risk
+  is exactly the senders your inventory got wrong, which is measurable this week.
+- [`labs/transcript-retention/`](labs/transcript-retention/) — **a governance failure
+  that contains no mistake.** Group sharing is correct, every access review passes, and
+  three years later a private conversation is readable by three times as many people.
+  The missing control is an expiry, not a permission — retention defaults are set per
+  artefact, so the source expires and the summary derived from it does not.
+
 ## Guided run (spec)
 
 **This is a [guided run](../CONTEXT.md), not a lab.** It needs a real environment, so nothing here can assert that you did it and CI cannot run it. That is the whole of the distinction and it is not a demotion — a guided run reaches real latency, real error messages and real bills, which no model does.

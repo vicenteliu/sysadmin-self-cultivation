@@ -43,6 +43,24 @@ leave the workspace for inspection. What you'll see:
   ✓ with no argument it FAILS FAST (the ${1:?} guard) (LESSON 4)
 ```
 
+## Verify (don't take the script's word for it)
+
+Keep the workspace and read the two config files yourself:
+
+```bash
+bash idempotence_drill.sh --keep                 # ends with "(workspace kept at /…/tmp.XXXX)"
+W=/…/tmp.XXXX                                    # the path it printed
+cat $W/fragile-run/app/app.conf                  # server=prod — twice
+cat $W/safe-run/app/app.conf                     # server=prod — once
+WORKDIR_INNER=$W/fragile-run bash $W/fragile.sh; echo "exit $?"   # a third run
+cat $W/fragile-run/app/app.conf                  # three times now, and it said exit 0
+```
+
+The third run is the one to watch: `mkdir` fails, the line is appended anyway, and the
+exit code says success. That is the shape of every "the script ran fine" that left a
+box half-configured. Run `safe.sh` a fourth time the same way and the file does not
+change — convergence is something you can `cat`.
+
 ## The point
 
 - **Non-idempotent operations double on re-run.** `echo x >> file` appends every

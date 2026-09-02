@@ -50,6 +50,24 @@ exit code `0` 表示每一条断言都成立，所以它兼作一个 CI 检查�
   ✓ lost rack-b, 2 of 3 replicas still serving — N+1 across domains (LESSON 3)
 ```
 
+## 验证（别光信这个脚本说的）
+
+这个模型是三个字典和四个函数；在这个目录里自己驱动它：
+
+```bash
+python3 -c '
+from failure_domains import Fleet, build_fleet, place_naive, place_anti_affinity, service_is_up
+f = Fleet(build_fleet()); n = place_naive(f, 2); a = place_anti_affinity(f, 2)
+print("naive:", n, " anti-affinity:", a)
+f.fail_rack("rack-a")
+print("after rack-a dies —  naive up:", service_is_up(f, n)[0], " anti-affinity up:", service_is_up(f, a)[0])
+'
+```
+
+然后把 `build_fleet()` 改到只剩一个机架，再调一次 `place_anti_affinity(f, 2)`：它会拒绝，报
+*cannot place 2 replicas with anti-affinity across 1 racks*。这个拒绝就是云的 placement group
+替你强制执行、而手搭的机架不会替你执行的那条约束 —— estate 里没有的东西，drill 也铺不开。
+
 ## 重点
 
 - **同处一地的副本共享同一个命运。** 一个机柜里的两份拷贝就是一份拷贝 —— 那个两个朴素副本都落在

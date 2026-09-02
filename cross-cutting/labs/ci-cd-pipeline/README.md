@@ -46,6 +46,21 @@ python3 hostcheck.py "  Web01.PROD  " "bad_host!"   # see it normalize + reject
 That `python3 -m unittest` is exactly the command the pipeline's **test** job runs —
 the local version of "every commit is built and tested automatically."
 
+## Verify (don't take the script's word for it)
+
+A green suite proves nothing until you have watched it go red. Open `app/hostcheck.py`,
+make `is_valid()` return `True` on its first line, and run the suite again:
+
+```bash
+cd app
+python3 -m unittest            # the rejection tests fail — exit 1
+git checkout hostcheck.py      # put it back
+```
+
+That red run is what the pipeline's `test` job would show on the pull request, and it
+is the whole reason `build` carries `needs: test`. `check.py` runs this suite on every
+push of this repo too, so the tests that guard the lab are the tests the lab is about.
+
 ## The pipeline, and the rules it encodes
 
 Three jobs, each demonstrating a chapter rule:

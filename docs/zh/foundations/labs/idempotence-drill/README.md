@@ -47,6 +47,23 @@ exit code `0` 表示每一条断言都成立 —— 它兼作一个 CI 检查。
   ✓ with no argument it FAILS FAST (the ${1:?} guard) (LESSON 4)
 ```
 
+## 验证（别光信这个脚本说的）
+
+把工作区留下，自己去读那两个配置文件：
+
+```bash
+bash idempotence_drill.sh --keep                 # 最后一行是 "(workspace kept at /…/tmp.XXXX)"
+W=/…/tmp.XXXX                                    # 它打印出来的那个路径
+cat $W/fragile-run/app/app.conf                  # server=prod —— 两次
+cat $W/safe-run/app/app.conf                     # server=prod —— 一次
+WORKDIR_INNER=$W/fragile-run bash $W/fragile.sh; echo "exit $?"   # 第三次跑
+cat $W/fragile-run/app/app.conf                  # 现在是三次，而它说 exit 0
+```
+
+要看的是第三次：`mkdir` 失败了，那一行照样追加，退出码说成功。每一句"脚本跑得好好的"背后留下一台
+半配置的机器，就是这个形状。用同样的方式把 `safe.sh` 跑第四次，文件不变 —— 收敛是一件你可以 `cat`
+出来的事。
+
 ## 重点
 
 - **非幂等的操作在重跑时会翻倍。** `echo x >> file` 每次都追加；`mkdir`（没有 `-p`）第二次就崩。

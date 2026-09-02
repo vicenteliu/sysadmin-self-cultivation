@@ -48,6 +48,26 @@ see:
   ✓ lost rack-b, 2 of 3 replicas still serving — N+1 across domains (LESSON 3)
 ```
 
+## Verify (don't take the script's word for it)
+
+The model is three dictionaries and four functions; drive it yourself from this
+directory:
+
+```bash
+python3 -c '
+from failure_domains import Fleet, build_fleet, place_naive, place_anti_affinity, service_is_up
+f = Fleet(build_fleet()); n = place_naive(f, 2); a = place_anti_affinity(f, 2)
+print("naive:", n, " anti-affinity:", a)
+f.fail_rack("rack-a")
+print("after rack-a dies —  naive up:", service_is_up(f, n)[0], " anti-affinity up:", service_is_up(f, a)[0])
+'
+```
+
+Then edit `build_fleet()` down to one rack and call `place_anti_affinity(f, 2)` again:
+it refuses with *cannot place 2 replicas with anti-affinity across 1 racks*. That
+refusal is the constraint a cloud placement group enforces for you and a hand-built
+rack does not — the drill cannot spread what the estate does not have.
+
 ## The point
 
 - **Co-located replicas share a fate.** Two copies in one rack is one copy — the

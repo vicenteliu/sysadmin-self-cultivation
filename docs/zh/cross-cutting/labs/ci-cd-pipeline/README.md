@@ -50,6 +50,21 @@ python3 hostcheck.py "  Web01.PROD  " "bad_host!"   # 看它做归一化 + 拒�
 那条 `python3 -m unittest` 恰好就是这条流水线的 **test** job 所跑的命令 ——
 也就是"每一次提交都被自动构建和测试"的本地版本。
 
+## 验证（别光信这个脚本说的）
+
+一套绿的测试在你看见它变红之前什么都证明不了。打开 `app/hostcheck.py`，让 `is_valid()` 第一行就
+`return True`，再跑一遍：
+
+```bash
+cd app
+python3 -m unittest            # 那几条拒绝的测试失败 —— exit 1
+git checkout hostcheck.py      # 改回去
+```
+
+那次红的运行就是流水线的 `test` job 会在 pull request 上显示的东西，也是 `build` 带着
+`needs: test` 的全部理由。`check.py` 在这个仓库每次 push 时也跑这套测试，所以守着这个 lab 的测试
+就是这个 lab 讲的那些测试。
+
 ## 那条流水线，以及它编码进去的那些规则
 
 三个 job，每一个演示一条章节规则：

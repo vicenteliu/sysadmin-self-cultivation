@@ -158,6 +158,16 @@ proxy generation rather than run one for a fleet.
 **Not claimed:** cryptographic review of any tunnel protocol, carrier-side transport, or
 throughput engineering for a concentrator at scale.
 
+## Lab (✅ built)
+
+[`labs/remote-access-four-causes/`](labs/remote-access-four-causes/) — **the five
+decisions above, seen from the help desk.** One user report, *the VPN won't connect*,
+produced byte for byte by four unrelated causes — no address, wrong segment, a resolver
+that answers dishonestly, and a session that expired after the tunnel said connected.
+The reflex checks eliminate nothing; ordering the checks by what each one rules out
+resolves all four. Pure-local, exit `0` means the lessons held, and `--break-it`
+sabotages the one check that separates a captive portal from an identity outage.
+
 ## Read deeper
 
 - [`build-out/10`](../build-out/10-remote-access.md) — what still requires network-level
