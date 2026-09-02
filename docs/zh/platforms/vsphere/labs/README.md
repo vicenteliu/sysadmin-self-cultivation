@@ -1,14 +1,14 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [virtualization]
 platforms: [vsphere]
 marker: "🔨"
 derived: true
 mirrors: platforms/vsphere/labs/README.md
-summary: "对着一个 lab vCenter（或者嵌套 ESXi）做的可拆练习。"
+summary: "对着一个 lab vCenter（或者嵌套 ESXi）做的三次 guided run —— 在这个平台上，那句诚实的说明是它们已经跑过了，在生产里，跑了很多年。"
 ---
-# vSphere —— Lab
+# vSphere —— Guided run
 
 > 🌐 **语言：** [English（默认）](../../../../../platforms/vsphere/labs/README.md) · **中文**
 >
@@ -16,8 +16,12 @@ summary: "对着一个 lab vCenter（或者嵌套 ESXi）做的可拆练习。"
 
 ---
 
-对着一个 lab vCenter（或者嵌套 ESXi）做的可拆练习。读 vMotion 和做 vMotion 是两项不同的技能 ——
-而在这个平台上，那句诚实的说明是：这些 lab *已经跑过了*，在生产里，跑了很多年。
+对着一个 lab vCenter（或者嵌套 ESXi）做的三次 guided run。读 vMotion 和做 vMotion 是两项不同的
+技能 —— 而在这个平台上，那句诚实的说明是：这些*已经跑过了*，在生产里，跑了很多年。
+
+**这些是 [guided run](../../../CONTEXT.md)，不是 lab。** 每一次都需要一个真实环境，所以这里没有
+任何东西能断言你做过它，而 CI 也跑不了它。那就是全部的区分，而且它不是降级 —— 一次 guided run
+够得到真实的延迟、真实的报错和真实的账单，而那是没有模型做得到的。
 
 > **地面规则：** 用一个 **lab/嵌套集群**，在破坏性步骤之前先打快照，做完把那些 VM 清理掉。
 > 绝不要在生产主机上做测试。
@@ -29,9 +33,9 @@ vSphere 有一个很棒的 GUI —— 而老手们仍然用 **PowerCLI**（或�
 **可评审**。GUI 是给一次性的事和看的；PowerCLI 是用来运维一片机队的。这就是那个差别最明显的平台：
 没有人会把一次滚动的主机升级点两遍。
 
-## 那条三节 lab 弧
+## 那条三节 guided run 弧
 
-### Lab 01 —— 连接 + 盘点（那一招"把所有东西列出来"）
+### Run 01 —— 连接 + 盘点（那一招"把所有东西列出来"）
 
 连上 vCenter，从 **PowerCLI** 盘点这片估算面 —— 在一个真实集群上，你绝不会靠点鼠标去做的那一招：
 
@@ -50,7 +54,7 @@ Get-Datastore | Select Name, @{N='FreeGB';E={[math]::Round($_.FreeSpaceGB)}}, @{
 
 **验证：** 那些数目和 vCenter 的清册视图对得上 —— 而且你是用一条命令拿到的，不是三个标签页。
 
-### Lab 02 —— 从一个模板发放一台 VM
+### Run 02 —— 从一个模板发放一台 VM
 
 带着一份 customization spec 从一个黄金模板克隆 —— 也就是 vSphere 上的那条镜像流水线
 （[`the-stack/03`](../../../the-stack/03-compute-and-images.md)）：
@@ -70,7 +74,7 @@ Get-VM lab-vm01 | Select Name, VMHost, PowerState, @{N='Tools';E={$_.ExtensionDa
 **验证：** 那台 VM 在你点名的那台主机上启动，并带着定制好的身份 —— 是牛，不是一只手工搭起来的
 宠物。**拆除：** `Stop-VM lab-vm01 -Confirm:$false; Remove-VM lab-vm01 -DeletePermanently -Confirm:$false`。
 
-### Lab 03 —— 看着 HA 重启一台 VM（故障域，变得摸得着）
+### Run 03 —— 看着 HA 重启一台 VM（故障域，变得摸得着）
 
 [`the-stack/01`](../../../the-stack/01-physical.md) 那一课故障域，落在它来自的那个平台上 ——
 再加上每次升级都会用到的那次维护模式疏散：

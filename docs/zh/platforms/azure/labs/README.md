@@ -1,13 +1,13 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [azure]
 derived: true
 mirrors: platforms/azure/labs/README.md
-summary: "可跑、可拆的练习 —— 和 AWS 那些 lab 同一个形状，好让你感觉到这些概念在「迁移」，而不是从头再学一遍。"
+summary: "对着一个沙箱订阅做的三次 guided run —— 和 AWS 那三次同一个形状，好让你感觉到这些概念在「迁移」，而不是从头再学一遍。"
 ---
-# Azure —— Lab
+# Azure —— Guided run
 
 > 🌐 **语言：** [English（默认）](../../../../../platforms/azure/labs/README.md) · **中文**
 >
@@ -15,8 +15,14 @@ summary: "可跑、可拆的练习 —— 和 AWS 那些 lab 同一个形状，�
 
 ---
 
-可跑、可拆的练习 —— 和 [AWS 那些 lab](../../aws/labs/) 同一个形状，好让你感觉到这些概念在
-*迁移*，而不是从头再学一遍。
+对着一个沙箱订阅做的三次 guided run —— 和 [AWS 那三次](../../aws/labs/) 同一个形状，好让你
+感觉到这些概念在*迁移*，而不是从头再学一遍。
+
+**这些是 [guided run](../../../CONTEXT.md)，不是 lab。** 每一次都需要一个真实环境，所以这里没有
+任何东西能断言你做过它，而 CI 也跑不了它。那就是全部的区分，而且它不是降级 —— 一次 guided run
+够得到真实的延迟、真实的报错和真实的账单，而那是没有模型做得到的。
+
+这个平台唯一的那个 lab —— 自验证、纯本地 —— 在弧的下面。
 
 > **地面规则：** 用一个**免费/沙箱订阅**，先设一条 **Budget 告警**，把所有东西放进一个专用的
 > **resource group**，做完就把那个 resource group 删掉（Azure 给你的最干净的拆除方式）。用
@@ -24,15 +30,15 @@ summary: "可跑、可拆的练习 —— 和 AWS 那些 lab 同一个形状，�
 
 ## 为什么是命令行
 
-这里每一个 lab 都是**命令行优先**的（`az`，PowerShell 的 `Az` 是同等的替代），而那是一个教学选择。
+这里每一次 guided run 都是**命令行优先**的（`az`，PowerShell 的 `Az` 是同等的替代），而那是一个教学选择。
 门户是用来*看*的；命令行是用来*做*的。一条 `az` 命令比一路翻 blade **更快**、**更精确**（不会挑错
 下拉项）、**可复现**（粘进一份 runbook）、**可评审**（一份 diff，不是一段屏幕录像）—— 而且它就是
 你的自动化所用的那片界面。凡是你点得了的，你都命令得了；而命令才是那个你能递给下一个人或者下一台
 机器的东西。
 
-## 那条三节 lab 弧
+## 那条三节 guided run 弧
 
-### Lab 01 —— 受限身份 + 盘点
+### Run 01 —— 受限身份 + 盘点
 
 一个最小权限的 **Reader**，然后盘点这个订阅 —— AWS lab 01 的 Azure 双胞胎。注意 **Azure Resource
 Graph** 用一次查询就回答了组织范围的问题，不用循环（这是 Azure 的一项强项）：
@@ -52,7 +58,7 @@ az storage account list --query '[].{name:name, rg:resourceGroup, kind:kind}' -o
 **验证：** 把那个 Reader 的范围收窄到一个 resource group，重跑，看着其余的从结果里消失 ——
 那个范围限定被变得可见了。
 
-### Lab 02 —— 从代码起一套最小 VNet + VM
+### Run 02 —— 从代码起一套最小 VNet + VM
 
 一个 VNet + 子网、一个**入站全无的 NSG**、一台带**托管身份**且**没有公网 IP** 的 VM，经 Bastion
 可达。从命令行来（Terraform/Bicep 是那个持久形态；这里是那条命令式的序列）：
@@ -73,7 +79,7 @@ az network bastion ssh -n lab-bastion -g lab-rg --target-resource-id "$(az vm sh
 **验证：** `az vm show -d -g lab-rg -n lab-vm --query publicIps -o tsv` 返回空 —— 没有任何公网
 暴露。**拆除：** `az group delete -n lab-rg --yes --no-wait`。
 
-### Lab 03 —— 安全的存储 + 一条策略护栏
+### Run 03 —— 安全的存储 + 一条策略护栏
 
 安全默认值，加上一条*预防性*护栏（Azure Policy 让那件错的事变得不可能，而不只是告警）：
 
@@ -115,6 +121,6 @@ python3 global-admin-is-not-owner/two_planes_drill.py   # exit 0 = 那些教训�
 
 ---
 
-每个 lab 落地时都带着代码（Terraform/Bicep + 任何脚本）、一份 `README`，以及明确的拆除步骤。
+每次 guided run 落地时都带着代码（Terraform/Bicep + 任何脚本）、一份 `README`，以及明确的拆除步骤。
 **Entra/身份**那一块（lab 01 那个受限角色，以及那个 support 演练）是从亲手做过的地面写出来的；
 其余是那条诚实的 ramp。

@@ -1,14 +1,14 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [oci]
 marker: "🧭"
 derived: true
 mirrors: platforms/oci/labs/README.md
-summary: "可跑、可拆的练习 —— 和 AWS 那些 lab 同一个形状。"
+summary: "在一个专用 compartment 里做的三次 guided run —— 和 AWS 那三次同一个形状；OCI 的 Always Free 层让它们真的零成本。"
 ---
-# OCI —— Lab
+# OCI —— Guided run
 
 > 🌐 **语言：** [English（默认）](../../../../../platforms/oci/labs/README.md) · **中文**
 >
@@ -16,21 +16,27 @@ summary: "可跑、可拆的练习 —— 和 AWS 那些 lab 同一个形状。"
 
 ---
 
-可跑、可拆的练习 —— 和 [AWS 那些 lab](../../aws/labs/) 同一个形状。OCI 的 **Always Free 层**让
-这些真的零成本。
+在一个专用 compartment 里做的三次 guided run —— 和 [AWS 那三次](../../aws/labs/) 同一个形状。
+OCI 的 **Always Free 层**让这些真的零成本。
+
+**这些是 [guided run](../../../CONTEXT.md)，不是 lab。** 每一次都需要一个真实环境，所以这里没有
+任何东西能断言你做过它，而 CI 也跑不了它。那就是全部的区分，而且它不是降级 —— 一次 guided run
+够得到真实的延迟、真实的报错和真实的账单，而那是没有模型做得到的。
+
+这个平台唯一的那个 lab —— 自验证、纯本地 —— 在弧的下面。
 
 > **地面规则：** 用一个专用的 **compartment**，先设一条**预算**，做完就把资源终结掉。经一台
 > bastion 或者一个私有子网够到那些实例 —— 绝不要把 SSH 开到互联网上。
 
 ## 为什么是命令行
 
-每一个 lab 都是**命令行优先**的（`oci`）。控制台是用来*看*的；命令行是用来*做*的 —— **更快**、
+每一次 guided run 都是**命令行优先**的（`oci`）。控制台是用来*看*的；命令行是用来*做*的 —— **更快**、
 **更精确**、**可复现**、**可评审**，而且就是你的自动化所用的那片界面。凡是你点得了的，你都
 命令得了。
 
-## 那条三节 lab 弧
+## 那条三节 guided run 弧
 
-### Lab 01 —— 受限身份 + 盘点
+### Run 01 —— 受限身份 + 盘点
 
 一个 **compartment**（OCI 的爆炸半径单位）和一条最小权限**策略**，然后盘点。OCI 的策略语言读起来
 像句子 —— 比 JSON 好看：
@@ -56,7 +62,7 @@ oci compute instance list --compartment-id "$LAB_COMPARTMENT" \
 **验证：** 把那条策略的动词从 `read` 改成 `inspect`，然后看看一个 Readers 成员还调得动哪些 ——
 那个策略语言被变具体了。
 
-### Lab 02 —— 最小 VCN + 实例
+### Run 02 —— 最小 VCN + 实例
 
 一个 **VCN**（分 region 的）、一个子网，和一台实例。注意 OCI 那个过滤选择 —— **在 security list
 和 NSG 之间挑一个，然后统一下来**（这个 lab 用 VCN 的默认 security list，之后你会刻意切到 NSG）：
@@ -79,7 +85,7 @@ oci compute instance launch --compartment-id "$LAB" \
 **验证：** `oci compute instance list --compartment-id "$LAB" --query 'data[].shape'`
 显示那个 flex shape；那台实例没有公网 IP。**拆除：** 终结那台实例，然后删掉子网和 VCN。
 
-### Lab 03 —— 对象存储 + 一条预算
+### Run 03 —— 对象存储 + 一条预算
 
 Object Storage（OCI 出网便宜这个优势，让它成为一个不错的备份目标），以及一条预算：
 
@@ -116,5 +122,5 @@ oci budget budget create --compartment-id "$OCI_TENANCY" \
 
 ---
 
-每个 lab 落地时都带着代码（Terraform / Resource Manager 是那个持久形态）、一份 `README`，以及明确
+每次 guided run 落地时都带着代码（Terraform / Resource Manager 是那个持久形态）、一份 `README`，以及明确
 的拆除步骤。一句诚实的说明：OCI 是一条 🧭 ramp —— Always-Free 层让它成为一条跑得起来的 ramp。

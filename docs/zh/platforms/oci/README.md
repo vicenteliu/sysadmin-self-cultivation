@@ -86,7 +86,7 @@ NSG、那门策略语言）"* —— 然后对着当前文档核实，并在一�
 
 ## 4. Lab
 
-一条**三段式 CLI lab arc**（受限身份加盘点 → VCN 加实例 → 对象存储加预算）在
+一条**三段式 CLI arc（guided run）**（受限身份加盘点 → VCN 加实例 → 对象存储加预算）在
 **[`labs/`](labs)** 里，配真实的 `oci` 命令，对应
 [AWS 那些 lab](../aws/README.md) 的形状：一个受限身份（一条最小权限 IAM policy 加一个 compartment）
 的盘点脚本，然后一个经 Resource Manager 用 Terraform 写的最小 VCN 加实例。OCI 那个 **Always Free

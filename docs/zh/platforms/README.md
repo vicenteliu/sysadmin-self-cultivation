@@ -21,7 +21,7 @@ summary: "一个平台一个目录。每个模块都遵循同一份四段式模�
 1. **`README.md`** —— 它是什么（映射到七个面）+ 提纲式技能图 + AI-ramp 摘要。
 2. **`skills-map.md`** —— 完整的、可勾选的能力清单（Core / Working / Depth）。
 3. **`ai-ramp.md`** —— 快速变得称职的 AI 辅助方法，以及怎么让 AI 保持诚实。
-4. **`labs/`** —— 可跑、可拆的练习。
+4. **`labs/`** —— 一条对着真实环境的三节 CLI arc（guided run），以及 —— 建成的话 —— 一个 CI 能跑的 lab。
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="../../../site/assets/diagrams/seven-surfaces.dark.svg">

@@ -1,14 +1,14 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [gcp]
 marker: "🧭"
 derived: true
 mirrors: platforms/gcp/labs/README.md
-summary: "可跑、可拆的练习 —— 和 AWS 那些 lab 同一个形状，好让这些概念「迁移」过来。"
+summary: "对着一个沙箱 project 做的三次 guided run —— 和 AWS 那三次同一个形状，好让这些概念「迁移」过来。"
 ---
-# GCP —— Lab
+# GCP —— Guided run
 
 > 🌐 **语言：** [English（默认）](../../../../../platforms/gcp/labs/README.md) · **中文**
 >
@@ -16,21 +16,28 @@ summary: "可跑、可拆的练习 —— 和 AWS 那些 lab 同一个形状，�
 
 ---
 
-可跑、可拆的练习 —— 和 [AWS 那些 lab](../../aws/labs/) 同一个形状，好让这些概念*迁移*过来。
+对着一个沙箱 project 做的三次 guided run —— 和 [AWS 那三次](../../aws/labs/) 同一个形状，好让
+这些概念*迁移*过来。
+
+**这些是 [guided run](../../../CONTEXT.md)，不是 lab。** 每一次都需要一个真实环境，所以这里没有
+任何东西能断言你做过它，而 CI 也跑不了它。那就是全部的区分，而且它不是降级 —— 一次 guided run
+够得到真实的延迟、真实的报错和真实的账单，而那是没有模型做得到的。
+
+这个平台唯一的那个 lab —— 自验证、纯本地 —— 在弧的下面。
 
 > **地面规则：** 用一个**沙箱 project**（或者 Always-Free 层），先设一条**预算告警**，做完就把那个
 > project 或者那些资源删掉。用 **IAP** 隧道够到那些 VM —— 绝不要把 SSH 开到互联网上。
 
 ## 为什么是命令行
 
-每一个 lab 都是**命令行优先**的（`gcloud`）。控制台是用来*看*的；`gcloud` 是用来*做*的 ——
+每一次 guided run 都是**命令行优先**的（`gcloud`）。控制台是用来*看*的；`gcloud` 是用来*做*的 ——
 比一路翻菜单**更快**、**更精确**（不会留着一个选错的 project）、**可复现**（粘进一份 runbook）、
 **可评审**（一份 diff，不是一张截图）—— 而且它就是你的自动化所用的那片界面。凡是你点得了的，
 你都命令得了。
 
-## 那条三节 lab 弧
+## 那条三节 guided run 弧
 
-### Lab 01 —— 受限身份 + 盘点
+### Run 01 —— 受限身份 + 盘点
 
 一个最小权限的 **service account**，然后盘点这个 project。注意 **Cloud Asset Inventory** 一次调用
 就回答了组织范围的问题 —— 而且记住你常常要遍历的是 *project*，并且资源是分 zone/region 的：
@@ -52,7 +59,7 @@ gcloud storage buckets list --format="table(name, location, default_storage_clas
 **验证：** 只在一个资源上给那个 service account 授予 `roles/viewer`，扮演它
 （`--impersonate-service-account`），然后看着其余的消失。
 
-### Lab 02 —— 从代码起一套最小网络 + 计算
+### Run 02 —— 从代码起一套最小网络 + 计算
 
 记住 GCP 那个异类之处：**VPC 是全局的**，子网是分 region 的。一个网络、一条以**标签**（不是一个
 IP 段 —— 这是 GCP 的模型）为目标的防火墙规则，以及一台**没有外部 IP** 的实例：
@@ -76,7 +83,7 @@ gcloud compute ssh lab-vm --zone=us-central1-a --tunnel-through-iap
 返回空 —— 没有外部 IP。**拆除：** 删掉那台实例、那条防火墙规则、那个子网，然后
 `gcloud compute networks delete lab-vpc`。
 
-### Lab 03 —— 安全的存储 + 一条预算
+### Run 03 —— 安全的存储 + 一条预算
 
 默认就安全的存储（GCP 的默认值本来就强；把它们显式写出来），以及那条预算：
 
@@ -116,5 +123,5 @@ python3 gke-iam-vs-rbac/gke_authz_drill.py   # exit 0 = 那些教训成立；在
 
 ---
 
-每个 lab 落地时都带着代码（Terraform 是那个持久形态）、一份 `README`，以及明确的拆除步骤。一句
+每次 guided run 落地时都带着代码（Terraform 是那个持久形态）、一份 `README`，以及明确的拆除步骤。一句
 诚实的说明：GCP 是那条 🧭 ramp —— 这些是那条 ramp 被做成可跑的，而且在免费层上零成本。

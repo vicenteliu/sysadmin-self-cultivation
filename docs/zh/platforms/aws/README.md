@@ -75,7 +75,7 @@ Amazon Web Services 是一座你用 API 驾驶的租来的数据中心。你不�
 
 ## 4. Lab
 
-读一个 subnet 和配一个 subnet 是两种不同的技能。那些可跑、可拆的练习住在 **[`labs/`](labs)**
+读一个 subnet 和配一个 subnet 是两种不同的技能。那三次 guided run 住在 **[`labs/`](labs)**
 里 —— 从一个最小权限 IAM role 加一个盘点你账号的 `boto3` 脚本开始（那个经典"列出一切"管理脚本的
 云上版本），然后是一个用 Terraform 写的最小 VPC 加 EC2。
 

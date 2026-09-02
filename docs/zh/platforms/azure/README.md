@@ -82,7 +82,7 @@ Microsoft Entra ID 租户            身份边界 —— 那个目录
 
 ## 4. Lab
 
-可跑的练习在 **[`labs/`](labs)** 里 —— 和 AWS 同一个形状：一个受限身份
+三次 guided run 在 **[`labs/`](labs)** 里 —— 和 AWS 同一个形状：一个受限身份
 加一次 subscription 盘点（Azure Resource Graph / CLI），然后一个用 Terraform 写的、不用开端口就够
 得到的最小 VNet 加 VM，然后 Key Vault 加 managed identity，然后一个 Budget。
 

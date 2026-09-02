@@ -1,17 +1,24 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [gcp]
 marker: "🧭"
-summary: "Runnable, tear-down-able exercises — same shape as the AWS labs, so the concepts translate."
+summary: "Three guided runs against a sandbox project — same shape as the AWS runs, so the concepts translate."
 ---
-# GCP — Labs
+# GCP — Guided runs
 
 > 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/gcp/labs/README.md)
 
-Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/), so
-the concepts *translate*.
+Three guided runs against a sandbox project — same shape as the
+[AWS runs](../../aws/labs/), so the concepts *translate*.
+
+**These are [guided runs](../../../CONTEXT.md), not labs.** Each needs a real environment,
+so nothing here can assert that you did it and CI cannot run it. That is the whole of the
+distinction and it is not a demotion — a guided run reaches real latency, real error
+messages and real bills, which no model does.
+
+The one lab this platform has — self-verifying, pure-local — sits below the arc.
 
 > **Ground rules:** use a **sandbox project** (or the Always-Free tier), set a
 > **budget alert** first, and delete the project or the resources when done. Reach VMs
@@ -19,14 +26,14 @@ the concepts *translate*.
 
 ## Why the command line
 
-Every lab is **CLI-first** (`gcloud`). The console is for *looking*; `gcloud` is for
+Every run is **CLI-first** (`gcloud`). The console is for *looking*; `gcloud` is for
 *doing* — **faster** than a menu-hunt, **exact** (no wrong project left selected),
 **repeatable** (paste into a runbook), and **reviewable** (a diff, not a screencap) —
 the same surface your automation uses. Anything you can click, you can command.
 
-## The three-lab arc
+## The three-run arc
 
-### Lab 01 — Scoped identity + inventory
+### Run 01 — Scoped identity + inventory
 
 A least-privilege **service account**, then inventory the project. Note **Cloud Asset
 Inventory** answers org-wide questions in one call — and remember you often loop
@@ -49,7 +56,7 @@ gcloud storage buckets list --format="table(name, location, default_storage_clas
 **Verify:** grant the service account `roles/viewer` on one resource only, impersonate
 it (`--impersonate-service-account`), and watch the rest disappear.
 
-### Lab 02 — Minimal network + compute from code
+### Run 02 — Minimal network + compute from code
 
 Remember GCP's outlier: the **VPC is global**, subnets are regional. A network, a
 firewall rule targeting a **tag** (not an IP range — the GCP model), and an instance
@@ -74,7 +81,7 @@ gcloud compute ssh lab-vm --zone=us-central1-a --tunnel-through-iap
 returns empty — no external IP. **Teardown:** delete the instance, firewall, subnet,
 then `gcloud compute networks delete lab-vpc`.
 
-### Lab 03 — Secure storage + a budget
+### Run 03 — Secure storage + a budget
 
 Secure-by-default storage (GCP defaults are strong; make them explicit) and the budget:
 
@@ -97,7 +104,7 @@ rejected. **Teardown:** `gcloud storage rm --recursive gs://$BUCKET`.
 
 ## Beyond the arc — a pure-local support drill
 
-The three-lab arc above needs a sandbox project. One more lab needs **nothing** — a
+The three-run arc above needs a sandbox project. One more lab needs **nothing** — a
 pure-local, stdlib-only, self-verifying drill tied to the [support note](../support.md):
 
 ### `gke-iam-vs-rbac/` — GKE's two auth planes ✅ built (pure-local)
@@ -115,6 +122,6 @@ Read it before the cloud arc if "I'm Owner but kubectl says Forbidden" is the ti
 
 ---
 
-Each lab lands with the code (Terraform is the persistent form), a `README`, and
+Each run lands with the code (Terraform is the persistent form), a `README`, and
 explicit teardown. Honest note: GCP is the 🧭 ramp — these are the ramp made runnable
 at no cost on the free tier.

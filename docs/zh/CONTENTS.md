@@ -67,7 +67,7 @@ summary: "详细索引：每个模块是什么、住在哪。"
 ## IV. Platforms —— 按平台读（全部七个）
 
 每个模块都有 `README`（是什么 + 技能图 + AI-ramp 摘要）· `skills-map` · `ai-ramp` ·
-`labs/` 里一条**三段式 CLI arc**；公有云另加更深的 **architecture · operations ·
+`labs/` 里一条**三段式 CLI arc**（都是 guided run）；公有云另加更深的 **architecture · operations ·
 automation** 三件套。The Stack 里对比的七个平台都有模块。见
 [`platforms/`](platforms/)。
 
@@ -75,7 +75,7 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 
 | 平台 | 有什么 · 诚实标注 |
 | --- | --- |
-| [`aws/`](platforms/aws/) | ✅ 范例 + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs（**2 个可跑** + 三段式 CLI arc）。先读它。· 🧭 |
+| [`aws/`](platforms/aws/) | ✅ 范例 + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + 一条三段式 CLI arc（guided run）+ 一个 lab。先读它。· 🧭 |
 | [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md)/[support](platforms/azure/support.md) + 三段式 CLI arc。· 🧭，**Entra/身份 🔨** |
 | [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 三段式 CLI arc。global-VPC 是那个异类。· 🧭 |
 | [`oci/`](platforms/oci/) | ✅ + [architecture](platforms/oci/architecture.md)/[operations](platforms/oci/operations.md)/[automation](platforms/oci/automation.md)/[support](platforms/oci/support.md) + 三段式 CLI arc + [compartment/verb lab](platforms/oci/labs/a-compartment-is-not-an-account)。最年轻的超大规模云 —— compartment、OCPU、裸金属优先、便宜出网。· 🧭 |

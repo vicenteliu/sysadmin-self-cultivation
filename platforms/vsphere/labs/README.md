@@ -1,18 +1,23 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [virtualization]
 platforms: [vsphere]
 marker: "🔨"
-summary: "Tear-down-able exercises against a lab vCenter (or nested ESXi)."
+summary: "Three guided runs against a lab vCenter (or nested ESXi) — on this platform, the honest note is that they already ran, in production, for years."
 ---
-# vSphere — Labs
+# vSphere — Guided runs
 
 > 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/vsphere/labs/README.md)
 
-Tear-down-able exercises against a lab vCenter (or nested ESXi). Reading about vMotion
-and doing it are different skills — and on this platform, the honest note is the labs
+Three guided runs against a lab vCenter (or nested ESXi). Reading about vMotion and
+doing it are different skills — and on this platform, the honest note is that these
 *already ran*, in production, for years.
+
+**These are [guided runs](../../../CONTEXT.md), not labs.** Each needs a real environment,
+so nothing here can assert that you did it and CI cannot run it. That is the whole of the
+distinction and it is not a demotion — a guided run reaches real latency, real error
+messages and real bills, which no model does.
 
 > **Ground rules:** use a **lab/nested cluster**, snapshot before destructive steps,
 > and clean up VMs when done. Never test on production hosts.
@@ -25,9 +30,9 @@ because the CLI is **faster** (no click-through on 200 VMs), **exact**, **repeat
 one-offs and looking; PowerCLI is for operating a fleet. This is the platform where
 that difference is most obvious: nobody clicks through a rolling host upgrade twice.
 
-## The three-lab arc
+## The three-run arc
 
-### Lab 01 — Connect + inventory (the "list everything")
+### Run 01 — Connect + inventory (the "list everything")
 
 Connect to vCenter and inventory the estate from **PowerCLI** — the move you'd never
 do by clicking on a real cluster:
@@ -48,7 +53,7 @@ Get-Datastore | Select Name, @{N='FreeGB';E={[math]::Round($_.FreeSpaceGB)}}, @{
 **Verify:** the counts match the vCenter inventory view — and you got them in one
 command instead of three tabs.
 
-### Lab 02 — Provision a VM from a template
+### Run 02 — Provision a VM from a template
 
 Clone from a golden template with a customization spec — the image pipeline
 ([`the-stack/03`](../../../the-stack/03-compute-and-images.md)) on vSphere:
@@ -68,7 +73,7 @@ Get-VM lab-vm01 | Select Name, VMHost, PowerState, @{N='Tools';E={$_.ExtensionDa
 **Verify:** the VM boots on the host you named with the customized identity — cattle,
 not a hand-built pet. **Teardown:** `Stop-VM lab-vm01 -Confirm:$false; Remove-VM lab-vm01 -DeletePermanently -Confirm:$false`.
 
-### Lab 03 — Watch HA restart a VM (failure domains, made tangible)
+### Run 03 — Watch HA restart a VM (failure domains, made tangible)
 
 The [`the-stack/01`](../../../the-stack/01-physical.md) failure-domain lesson on the
 platform it came from — plus the maintenance-mode evacuation every upgrade uses:

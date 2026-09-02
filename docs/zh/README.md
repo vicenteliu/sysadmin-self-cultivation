@@ -104,21 +104,21 @@ roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 la
 点名，而不是把它们算进来 —— 一个声明了依赖，另一个没有可以跑的脚本。
 
 **平台** —— The Stack 里对比的七个平台各有一个"端到端运维它"的专门模块（是什么 · 技能图 ·
-AI-ramp · 一套 **3-lab CLI arc**），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：
+AI-ramp · 一条**三节的 CLI arc**，都是 guided run），而且**七个现在都带更深的 架构 · 运营 · 自动化 三件套**：
 
-| 平台 | 模块 | 架构·运营·自动化 | Lab arc（已规范） | 已建成的 lab | 诚实度 |
+| 平台 | 模块 | 架构·运营·自动化 | Guided run | 已建成的 lab | 诚实度 |
 | --- | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)**（完整样板） | ✅ · [support 中文镜像](platforms/aws/support.md) | ✅ | 3 节（boto3 / Terraform） | **01–02 已建**；03 是命令行走查 · 另加 [iam-deny](platforms/aws/labs/iam-deny-by-default) | 🧭 ramp |
-| **[Azure](platforms/azure/)** | ✅ · [support 中文镜像](platforms/azure/support.md) | ✅ | 3 节（`az`） | arc 一节未建 · [two-planes](platforms/azure/labs/global-admin-is-not-owner) 是独立 drill | 🧭 + Entra/身份 🔨 |
-| **[GCP / GKE](platforms/gcp/)** | ✅ · [support 中文镜像](platforms/gcp/support.md) | ✅ | 3 节（`gcloud`） | arc 一节未建 · [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac) 是独立 drill | 🧭 ramp |
-| **[OCI](platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ | 3 节（`oci`） | arc 一节未建 · [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account) 是独立 drill | 🧭 ramp |
+| **[AWS](platforms/aws/)**（完整样板） | ✅ · [support 中文镜像](platforms/aws/support.md) | ✅ | 3 节（boto3 / Terraform / CLI）—— 01–02 带代码，03 是规格 | [iam-deny](platforms/aws/labs/iam-deny-by-default) | 🧭 ramp |
+| **[Azure](platforms/azure/)** | ✅ · [support 中文镜像](platforms/azure/support.md) | ✅ | 3 节（`az`） | [two-planes](platforms/azure/labs/global-admin-is-not-owner) | 🧭 + Entra/身份 🔨 |
+| **[GCP / GKE](platforms/gcp/)** | ✅ · [support 中文镜像](platforms/gcp/support.md) | ✅ | 3 节（`gcloud`） | [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac) | 🧭 ramp |
+| **[OCI](platforms/oci/)** | ✅ · [support 中文镜像](platforms/oci/support.md) | ✅ | 3 节（`oci`） | [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account) | 🧭 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ · 另有 [vCenter 与 Proxmox 中文镜像](platforms/vsphere/vcenter-and-proxmox.md) | ✅ | 3 节（PowerCLI） | —— | **🔨 亲手做过**（VCP6-DCV/NV） |
 | **[OpenStack](platforms/openstack/)** | ✅ | ✅ | 3 节（`openstack` / DevStack） | —— | 🧭 ramp（KVM 相邻 🔨） |
 | **[self-host / 裸机](platforms/self-host/)** | ✅ | ✅ | 3 节（virsh / ipmitool / ansible） | —— | **🔨 亲手做过**（10万+ 机群） |
 
-七个里两个标 **🔨 亲手做过**（vSphere 和 self-host —— 生产实战，不是 ramp）；其余是诚实的 🧭 ramp。lab 刻意**命令行优先**：命令行更快、更精确、可复现、可审查 —— 而且是你自动化用的同一个界面。
+七个里两个标 **🔨 亲手做过**（vSphere 和 self-host —— 生产实战，不是 ramp）；其余是诚实的 🧭 ramp。这些 run 刻意**命令行优先**：命令行更快、更精确、可复现、可审查 —— 而且是你自动化用的同一个界面。
 
-**七条 arc 全部写完；二十一节里建成两节**（AWS 01–02），另有四个不属于任何 arc 的独立 drill。这个缺口单独占一列、而不是和已写共用一个 ✅ —— 因为写好的 spec 只是一个计划，而本页第二段立的那条规矩，首先适用于仓库对自己的声明。
+**七条 arc 全部作为 guided run 写完** —— AWS 01–02 带代码，其余是规格 —— 而 guided run 不是 lab：没有任何东西能断言你做过，所以一个都不算作 lab。lab，也就是自验证的那种，单独占一列：四个公有云各一个，三个 on-prem 平台还没有。写好的 run 只是一个计划，而本页第二段立的那条规矩，首先适用于仓库对自己的声明。
 
 **Agent Skills** —— 仓库自带十个 [`.claude/skills/`](../../.claude/skills/)。七个把方法论变成可调用的 AI 工作流：**platform-ramp**（诚实地上手任何平台）、**honesty-audit**（把声明分类 🔨/🧭/过度声明）、**author-module**（用仓库的声音写新章，含 **support note**、有据可查）、**runnable-lab**（把概念做成自验证 drill）、**diagram-module**（判断一篇文档该不该配图、配什么图，并让派生产物保持同步）、**mirror-zh**（把文档镜像成 `docs/zh/` 中文）、**interview-drill**（按面试官的方式把它问回来）。另外三个是**使用者侧**的 —— **linux-triage**、**harden-baseline**、**toolbox-picker** 把[工具箱](toolbox/)包装成 AI agent 能替你驱动的形态：新机器上装一个，一句话跑完一次分诊、或整个 audit→remediate 闭环。
 

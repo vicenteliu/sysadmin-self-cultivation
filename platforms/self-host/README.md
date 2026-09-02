@@ -90,7 +90,7 @@ you're about to run it as root, because you are ([`foundations/`](../../foundati
 
 ## 4. Labs
 
-A **three-lab CLI arc** (inventory the fleet → provision a node hands-off → failure-
+A **three-run CLI arc** (inventory the fleet → provision a node hands-off → failure-
 domain + RAID drills) is in **[`labs/`](labs/)** with real `virsh`/`ipmitool`/`ansible`
 commands, and it overlaps the
 stack's most tangible drill: on one machine with nested virtualization (Proxmox or

@@ -79,8 +79,8 @@ isn't knowing every flag — it's knowing when the machine is confidently wrong.
 
 ## 4. Labs
 
-Reading about a subnet and configuring one are different skills. The runnable,
-tear-down-able exercises live in **[`labs/`](labs/)** — starting with a
+Reading about a subnet and configuring one are different skills. The three guided
+runs live in **[`labs/`](labs/)** — starting with a
 least-privilege IAM role + a `boto3` script that inventories your account (the cloud
 version of a classic "list everything" admin script), then a minimal VPC + EC2 in
 Terraform.

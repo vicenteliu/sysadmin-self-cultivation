@@ -84,7 +84,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 平台深度 | Azure + GCP 的 architecture/operations/automation 三件套（对齐 AWS） | ✅ 已写 |
 | 私有云 | [`platforms/vsphere/`](platforms/vsphere) —— 🔨 亲手做过（VCP6-DCV/NV、区域 vCenter 管理员）+ [`platforms/openstack/`](platforms/openstack) —— 🧭 ramp，与 KVM 邻接 | ✅ 已写 |
 | 平台补齐 | [`platforms/oci/`](platforms/oci/) —— 🧭 第四朵云 + [`platforms/self-host/`](platforms/self-host) —— 🔨 最深的根。**the-stack 的七个平台现在都有模块** | ✅ 已写 |
-| Labs | **每个平台一条三段式 CLI arc**（7×3 = 21 个 lab）—— 受限身份盘点 → 从代码起网络与计算 → 安全默认/signature drill，每个都带真实命令行示例（CLI 优先于 GUI） | ✅ 已写；AWS 01/02 可跑 |
+| Labs | **每个平台一条三段式 CLI arc**（7×3 = 21 次 guided run）—— 受限身份盘点 → 从代码起网络与计算 → 安全默认/signature drill，每个都带真实命令行示例（CLI 优先于 GUI） | ✅ 已写；AWS 01/02 可跑 |
 | 平台深度 | **vSphere + self-host** 的 architecture/operations/automation 三件套 —— 这两个 🔨 平台的深度现在与 AWS/Azure/GCP 齐平（从生产环境写出来的） | ✅ 已写 |
 | 平台深度 | **OCI + OpenStack** 的 architecture/operations/automation 三件套（🧭 ramp）。**七个平台现在都带全套三件套** —— 平台深度对称 | ✅ 已写 |
 | 技能图 | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/) —— 平台技能图的**转置**：一个主题横跨全部七个平台，按可迁移性而非按云分层。[networking](cross-cutting/skills-maps/networking.md)（63 格）+ [identity](cross-cutting/skills-maps/identity.md)（58 格）；两个最密的需求集群优先 | ✅ |

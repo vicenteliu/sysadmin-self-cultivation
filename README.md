@@ -116,28 +116,29 @@ are runnable exercises rather than labs as [`CONTEXT.md`](CONTEXT.md) defines on
 the other has no script to run.
 
 **Platforms** — all seven compared in The Stack have a dedicated "operate it end to end"
-module (what-it-is · skill map · AI-ramp · a **3-lab CLI arc**), and **all seven now
+module (what-it-is · skill map · AI-ramp · a **three-run CLI arc** of guided runs), and **all seven now
 carry the deeper architecture · operations · automation trio**:
 
-| Platform | Module | Arch · Ops · Auto | Lab arc (specced) | Labs built | Honesty |
+| Platform | Module | Arch · Ops · Auto | Guided runs | Labs built | Honesty |
 | --- | --- | --- | --- | --- | --- |
-| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ | 3 (boto3 / Terraform) | **01–02 built**; 03 is a guided CLI run · + [iam-deny](platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
-| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ | 3 (`az`) | none of the arc · [two-planes](platforms/azure/labs/global-admin-is-not-owner/) stands alone | 🧭 + Entra/identity 🔨 |
-| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ | 3 (`gcloud`) | none of the arc · [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac/) stands alone | 🧭 ramp |
-| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ | 3 (`oci`) | none of the arc · [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account/) stands alone | 🧭 ramp |
+| **[AWS](platforms/aws/)** (worked example) | ✅ · [support](platforms/aws/support.md) | ✅ | 3 (boto3 / Terraform / CLI) — 01–02 carry code, 03 a spec | [iam-deny](platforms/aws/labs/iam-deny-by-default/) | 🧭 ramp |
+| **[Azure](platforms/azure/)** | ✅ · [support](platforms/azure/support.md) | ✅ | 3 (`az`) | [two-planes](platforms/azure/labs/global-admin-is-not-owner/) | 🧭 + Entra/identity 🔨 |
+| **[GCP / GKE](platforms/gcp/)** | ✅ · [support](platforms/gcp/support.md) | ✅ | 3 (`gcloud`) | [gke-auth](platforms/gcp/labs/gke-iam-vs-rbac/) | 🧭 ramp |
+| **[OCI](platforms/oci/)** | ✅ · [support](platforms/oci/support.md) | ✅ | 3 (`oci`) | [compartment/verb](platforms/oci/labs/a-compartment-is-not-an-account/) | 🧭 ramp |
 | **[vSphere / vCenter](platforms/vsphere/)** | ✅ | ✅ | 3 (PowerCLI) | — | **🔨 hands-on depth** (VCP6-DCV/NV) |
 | **[OpenStack](platforms/openstack/)** | ✅ | ✅ | 3 (`openstack` / DevStack) | — | 🧭 ramp (KVM-adjacent 🔨) |
 | **[self-host / bare metal](platforms/self-host/)** | ✅ | ✅ | 3 (virsh / ipmitool / ansible) | — | **🔨 hands-on depth** (100k+ fleet) |
 
 Two of the seven are labeled **🔨 hands-on depth** (vSphere and self-host — production
-ground, not a ramp); the rest are honest 🧭 ramps. The labs are **CLI-first** on purpose:
+ground, not a ramp); the rest are honest 🧭 ramps. The runs are **CLI-first** on purpose:
 the command line is faster, exact, repeatable, and reviewable — and it's the same surface
 your automation uses.
 
-**All seven arcs are written; two of the twenty-one are built** (AWS 01–02), alongside
-four standalone drills that sit outside the arcs. The gap gets its own column rather than
-a shared checkmark, because a specced lab is a plan — and the rule in the second paragraph
-of this file applies to the repo's own claims first.
+**All seven arcs are written as guided runs** — AWS 01–02 carry code, the rest are specs —
+and a guided run is not a lab: nothing can assert that you did it, so none is counted as
+one. The labs, the self-verifying kind, get their own column: one per public cloud, none
+yet on the three on-prem platforms. A specced run is a plan, and the rule in the second
+paragraph of this file applies to the repo's own claims first.
 
 ## Who wrote this
 

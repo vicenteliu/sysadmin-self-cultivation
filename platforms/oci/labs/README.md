@@ -1,17 +1,24 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [oci]
 marker: "🧭"
-summary: "Runnable, tear-down-able exercises — same shape as the AWS labs."
+summary: "Three guided runs in a dedicated compartment — same shape as the AWS runs; OCI's Always Free tier makes them genuinely no-cost."
 ---
-# OCI — Labs
+# OCI — Guided runs
 
 > 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/oci/labs/README.md)
 
-Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/).
-OCI's **Always Free tier** makes these genuinely no-cost.
+Three guided runs in a dedicated compartment — same shape as the
+[AWS runs](../../aws/labs/). OCI's **Always Free tier** makes these genuinely no-cost.
+
+**These are [guided runs](../../../CONTEXT.md), not labs.** Each needs a real environment,
+so nothing here can assert that you did it and CI cannot run it. That is the whole of the
+distinction and it is not a demotion — a guided run reaches real latency, real error
+messages and real bills, which no model does.
+
+The one lab this platform has — self-verifying, pure-local — sits below the arc.
 
 > **Ground rules:** use a dedicated **compartment**, set a **budget** first, and
 > terminate resources when done. Reach instances via a bastion or a private subnet —
@@ -19,13 +26,13 @@ OCI's **Always Free tier** makes these genuinely no-cost.
 
 ## Why the command line
 
-Every lab is **CLI-first** (`oci`). The console is for *looking*; the CLI is for
+Every run is **CLI-first** (`oci`). The console is for *looking*; the CLI is for
 *doing* — **faster**, **exact**, **repeatable**, **reviewable**, and the same surface
 your automation uses. Anything you can click, you can command.
 
-## The three-lab arc
+## The three-run arc
 
-### Lab 01 — Scoped identity + inventory
+### Run 01 — Scoped identity + inventory
 
 A **compartment** (OCI's blast-radius unit) and a least-privilege **policy**, then
 inventory. OCI's policy language reads like sentences — nicer than JSON:
@@ -51,7 +58,7 @@ oci compute instance list --compartment-id "$LAB_COMPARTMENT" \
 **Verify:** change the policy verb from `read` to `inspect` and watch which calls a
 Readers member can still make — the policy language made concrete.
 
-### Lab 02 — Minimal VCN + instance
+### Run 02 — Minimal VCN + instance
 
 A **VCN** (regional), a subnet, and an instance. Note the OCI filtering choice — **pick
 security lists OR NSGs and standardize** (this lab uses the VCN's default security
@@ -76,7 +83,7 @@ oci compute instance launch --compartment-id "$LAB" \
 shows the flex shape; the instance has no public IP. **Teardown:** terminate the
 instance, then delete the subnet and VCN.
 
-### Lab 03 — Object storage + a budget
+### Run 03 — Object storage + a budget
 
 Object Storage (OCI's cheap-egress advantage makes it a good backup target) and a budget:
 
@@ -101,7 +108,7 @@ returns `NoPublicAccess`. **Teardown:** delete the object, then the bucket.
 
 ## Beyond the arc — a pure-local support drill
 
-The three-lab arc above needs an (Always-Free) tenancy. There's also a **zero-cost,
+The three-run arc above needs an (Always-Free) tenancy. There's also a **zero-cost,
 zero-credential** drill that models OCI's signature access lessons in ~200 lines of
 stdlib Python — runnable anywhere, and in CI:
 
@@ -114,6 +121,6 @@ stdlib Python — runnable anywhere, and in CI:
 
 ---
 
-Each lab lands with the code (Terraform / Resource Manager is the persistent form), a
+Each run lands with the code (Terraform / Resource Manager is the persistent form), a
 `README`, and explicit teardown. Honest note: OCI is a 🧭 ramp — the Always-Free tier
 makes it a runnable one.

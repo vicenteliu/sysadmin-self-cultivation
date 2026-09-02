@@ -1,18 +1,23 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [virtualization]
 platforms: [self-host]
 marker: "🔨"
-summary: "Pure-local, tear-down-able exercises. Where the clouds need an account, this platform needs a laptop with nested virtualization — the honest way to practice bare-metal discipline without a data centre."
+summary: "Three guided runs on a laptop with nested virtualization — where the clouds need an account, this platform needs that laptop; the honest way to practice bare-metal discipline without a data centre."
 ---
-# Self-Hosted / Bare Metal — Labs
+# Self-Hosted / Bare Metal — Guided runs
 
 > 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/self-host/labs/README.md)
 
-Pure-local, tear-down-able exercises. Where the clouds need an account, this platform
-needs a laptop with nested virtualization — the honest way to practice bare-metal
+Three guided runs on a laptop with nested virtualization. Where the clouds need an
+account, this platform needs that laptop — the honest way to practice bare-metal
 discipline without a data centre.
+
+**These are [guided runs](../../../CONTEXT.md), not labs.** Each needs a real environment,
+so nothing here can assert that you did it and CI cannot run it. That is the whole of the
+distinction and it is not a demotion — a guided run reaches real latency, real error
+messages and real bills, which no model does.
 
 > **Ground rules:** run these in a **throwaway VM / nested hypervisor** (Proxmox,
 > libvirt/KVM, or Workstation/Fusion). Nothing here needs real hardware — the point is
@@ -27,9 +32,9 @@ CLI's virtues are sharpest. `virsh`, `ipmitool`, `ansible`, and plain shell are
 More than that: bare metal has **no undo** — a command you can read, version, and
 review is the only safe way to touch it ([`foundations/`](../../../foundations/)).
 
-## The three-lab arc
+## The three-run arc
 
-### Lab 01 — Inventory the fleet (from code, not a spreadsheet)
+### Run 01 — Inventory the fleet (from code, not a spreadsheet)
 
 The "list everything" move on hardware you own — Ansible ad-hoc against an inventory,
 plus out-of-band reach via IPMI:
@@ -50,7 +55,7 @@ ipmitool -I lanplus -H 10.0.0.50 -U admin -P "$BMC_PW" sdr type temperature   # 
 **Verify:** you inventoried the fleet without logging into a single box by hand, and
 reached a powered-off machine over IPMI — out-of-band management, working.
 
-### Lab 02 — Provision a node hands-off (the pipeline)
+### Run 02 — Provision a node hands-off (the pipeline)
 
 The signature self-host skill: network-boot a blank machine into a working one with no
 hands ([`the-stack/03`](../../../the-stack/03-compute-and-images.md)). In a nested lab,
@@ -79,7 +84,7 @@ virsh list --all                                 # the node came up with no cons
 **Verify:** the node boots already-personalized (hostname, user, packages) — no
 installer clicked through. Re-run to prove it's **repeatable and idempotent**.
 
-### Lab 03 — Failure domains + the RAID truth (the drills)
+### Run 03 — Failure domains + the RAID truth (the drills)
 
 Two of the repo's most tangible lessons, on the platform they came from:
 

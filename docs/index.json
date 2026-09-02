@@ -2253,7 +2253,7 @@
       "derived": true
     },
     "docs/zh/platforms/aws/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -2261,7 +2261,7 @@
       "platforms": [
         "aws"
       ],
-      "summary": "Runnable, tear-down-able exercises. Reading about a subnet and configuring one are different skills; these make you do the second.",
+      "summary": "Three guided runs against a sandbox account — tear-down-able, CLI-first. Reading about a subnet and configuring one are different skills; these make you do the second.",
       "language": "zh",
       "mirrors": "platforms/aws/labs/README.md",
       "derived": true
@@ -2384,7 +2384,7 @@
       "derived": true
     },
     "docs/zh/platforms/azure/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -2392,7 +2392,7 @@
       "platforms": [
         "azure"
       ],
-      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so you feel the concepts translate rather than re-learning from scratch.",
+      "summary": "Three guided runs against a sandbox subscription — same shape as the AWS runs, so you feel the concepts translate rather than re-learning from scratch.",
       "language": "zh",
       "mirrors": "platforms/azure/labs/README.md",
       "derived": true
@@ -2514,7 +2514,7 @@
       "derived": true
     },
     "docs/zh/platforms/gcp/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -2522,7 +2522,7 @@
       "platforms": [
         "gcp"
       ],
-      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so the concepts translate.",
+      "summary": "Three guided runs against a sandbox project — same shape as the AWS runs, so the concepts translate.",
       "marker": "🧭",
       "language": "zh",
       "mirrors": "platforms/gcp/labs/README.md",
@@ -2647,7 +2647,7 @@
       "derived": true
     },
     "docs/zh/platforms/oci/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -2655,7 +2655,7 @@
       "platforms": [
         "oci"
       ],
-      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs.",
+      "summary": "Three guided runs in a dedicated compartment — same shape as the AWS runs; OCI's Always Free tier makes them genuinely no-cost.",
       "marker": "🧭",
       "language": "zh",
       "mirrors": "platforms/oci/labs/README.md",
@@ -2779,7 +2779,7 @@
       "derived": true
     },
     "docs/zh/platforms/openstack/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -2787,7 +2787,7 @@
       "platforms": [
         "openstack"
       ],
-      "summary": "Tear-down-able exercises against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre.",
+      "summary": "Three guided runs against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre.",
       "marker": "🧭",
       "language": "zh",
       "mirrors": "platforms/openstack/labs/README.md",
@@ -2881,7 +2881,7 @@
       "derived": true
     },
     "docs/zh/platforms/self-host/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "virtualization"
@@ -2889,7 +2889,7 @@
       "platforms": [
         "self-host"
       ],
-      "summary": "Pure-local, tear-down-able exercises. Where the clouds need an account, this platform needs a laptop with nested virtualization — the honest way to practice bare-metal discipline without a data centre.",
+      "summary": "Three guided runs on a laptop with nested virtualization — where the clouds need an account, this platform needs that laptop; the honest way to practice bare-metal discipline without a data centre.",
       "marker": "🔨",
       "language": "zh",
       "mirrors": "platforms/self-host/labs/README.md",
@@ -2984,7 +2984,7 @@
       "derived": true
     },
     "docs/zh/platforms/vsphere/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "virtualization"
@@ -2992,7 +2992,7 @@
       "platforms": [
         "vsphere"
       ],
-      "summary": "Tear-down-able exercises against a lab vCenter (or nested ESXi).",
+      "summary": "Three guided runs against a lab vCenter (or nested ESXi) — on this platform, the honest note is that they already ran, in production, for years.",
       "marker": "🔨",
       "language": "zh",
       "mirrors": "platforms/vsphere/labs/README.md",
@@ -3646,7 +3646,7 @@
       "summary": "A VPC, a public and a private subnet, and one EC2 instance reachable without opening a single inbound port — stood up entirely from Terraform and torn down cleanly. Move #3 of the operating model, at the build-from-code-not-clicks bar."
     },
     "platforms/aws/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -3654,7 +3654,7 @@
       "platforms": [
         "aws"
       ],
-      "summary": "Runnable, tear-down-able exercises. Reading about a subnet and configuring one are different skills; these make you do the second."
+      "summary": "Three guided runs against a sandbox account — tear-down-able, CLI-first. Reading about a subnet and configuring one are different skills; these make you do the second."
     },
     "platforms/aws/labs/iam-deny-by-default/README.md": {
       "kind": "lab",
@@ -3750,7 +3750,7 @@
       "marker": "mixed"
     },
     "platforms/azure/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -3758,7 +3758,7 @@
       "platforms": [
         "azure"
       ],
-      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so you feel the concepts translate rather than re-learning from scratch."
+      "summary": "Three guided runs against a sandbox subscription — same shape as the AWS runs, so you feel the concepts translate rather than re-learning from scratch."
     },
     "platforms/azure/labs/global-admin-is-not-owner/README.md": {
       "kind": "lab",
@@ -3853,7 +3853,7 @@
       "marker": "mixed"
     },
     "platforms/gcp/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -3861,7 +3861,7 @@
       "platforms": [
         "gcp"
       ],
-      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs, so the concepts translate.",
+      "summary": "Three guided runs against a sandbox project — same shape as the AWS runs, so the concepts translate.",
       "marker": "🧭"
     },
     "platforms/gcp/labs/gke-iam-vs-rbac/README.md": {
@@ -3959,7 +3959,7 @@
       "marker": "mixed"
     },
     "platforms/oci/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -3967,7 +3967,7 @@
       "platforms": [
         "oci"
       ],
-      "summary": "Runnable, tear-down-able exercises — same shape as the AWS labs.",
+      "summary": "Three guided runs in a dedicated compartment — same shape as the AWS runs; OCI's Always Free tier makes them genuinely no-cost.",
       "marker": "🧭"
     },
     "platforms/oci/labs/a-compartment-is-not-an-account/README.md": {
@@ -4064,7 +4064,7 @@
       "marker": "mixed"
     },
     "platforms/openstack/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "cloud"
@@ -4072,7 +4072,7 @@
       "platforms": [
         "openstack"
       ],
-      "summary": "Tear-down-able exercises against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre.",
+      "summary": "Three guided runs against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre.",
       "marker": "🧭"
     },
     "platforms/openstack/operations.md": {
@@ -4145,7 +4145,7 @@
       "marker": "mixed"
     },
     "platforms/self-host/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "virtualization"
@@ -4153,7 +4153,7 @@
       "platforms": [
         "self-host"
       ],
-      "summary": "Pure-local, tear-down-able exercises. Where the clouds need an account, this platform needs a laptop with nested virtualization — the honest way to practice bare-metal discipline without a data centre.",
+      "summary": "Three guided runs on a laptop with nested virtualization — where the clouds need an account, this platform needs that laptop; the honest way to practice bare-metal discipline without a data centre.",
       "marker": "🔨"
     },
     "platforms/self-host/operations.md": {
@@ -4227,7 +4227,7 @@
       "marker": "mixed"
     },
     "platforms/vsphere/labs/README.md": {
-      "kind": "lab",
+      "kind": "guided-run",
       "axis": "platforms",
       "themes": [
         "virtualization"
@@ -4235,7 +4235,7 @@
       "platforms": [
         "vsphere"
       ],
-      "summary": "Tear-down-able exercises against a lab vCenter (or nested ESXi).",
+      "summary": "Three guided runs against a lab vCenter (or nested ESXi) — on this platform, the honest note is that they already ran, in production, for years.",
       "marker": "🔨"
     },
     "platforms/vsphere/operations.md": {

@@ -95,6 +95,7 @@
     "companion":    { "en": "Companion",    "zh": "配套篇" },
     "support-note": { "en": "Support note", "zh": "支持笔记" },
     "lab":          { "en": "Lab",          "zh": "实验" },
+    "guided-run":   { "en": "Guided run",   "zh": "引导式实操" },
     "route-step":   { "en": "Route step",   "zh": "路线步骤" },
     "walkthrough":  { "en": "Walkthrough",  "zh": "导览稿" },
     "tool":         { "en": "Tool",         "zh": "工具" },

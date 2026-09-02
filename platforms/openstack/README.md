@@ -90,7 +90,7 @@ below is 🧭.
 
 ## 4. Labs
 
-A **three-lab CLI arc** (Keystone identity + inventory → Neutron network + Nova
+A **three-run CLI arc** (Keystone identity + inventory → Neutron network + Nova
 instance → the control-plane failure drill) is in **[`labs/`](labs/)** with real
 `openstack` commands. It's built on **DevStack** (a
 single-node all-in-one OpenStack) in a VM, create a project + flavor + tenant network,

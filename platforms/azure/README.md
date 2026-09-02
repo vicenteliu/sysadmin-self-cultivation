@@ -84,7 +84,7 @@ where AI gets confidently wrong.
 
 ## 4. Labs
 
-Runnable exercises in **[`labs/`](labs/)** — same shape as AWS: a scoped identity +
+Three guided runs in **[`labs/`](labs/)** — same shape as AWS: a scoped identity +
 subscription inventory (Azure Resource Graph / CLI), then a minimal VNet + VM in
 Terraform reachable without an open port, then Key Vault + managed identity, then a
 Budget.

@@ -1,14 +1,14 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [openstack]
 marker: "🧭"
 derived: true
 mirrors: platforms/openstack/labs/README.md
-summary: "对着 DevStack 做的可拆练习 —— 一台 VM 里的单节点一体化 OpenStack，是不需要数据中心就能认识这个平台那套管路的诚实方式。"
+summary: "对着 DevStack 做的三次 guided run —— 一台 VM 里的单节点一体化 OpenStack，是不需要数据中心就能认识这个平台那套管路的诚实方式。"
 ---
-# OpenStack —— Lab
+# OpenStack —— Guided run
 
 > 🌐 **语言：** [English（默认）](../../../../../platforms/openstack/labs/README.md) · **中文**
 >
@@ -16,8 +16,12 @@ summary: "对着 DevStack 做的可拆练习 —— 一台 VM 里的单节点一
 
 ---
 
-对着 **DevStack** 做的可拆练习 —— 一台 VM 里的单节点一体化 OpenStack，是不需要数据中心就能认识
-这个平台那套管路的诚实方式。
+对着 **DevStack** 做的三次 guided run —— 一台 VM 里的单节点一体化 OpenStack，是不需要数据中心
+就能认识这个平台那套管路的诚实方式。
+
+**这些是 [guided run](../../../CONTEXT.md)，不是 lab。** 每一次都需要一个真实环境，所以这里没有
+任何东西能断言你做过它，而 CI 也跑不了它。那就是全部的区分，而且它不是降级 —— 一次 guided run
+够得到真实的延迟、真实的报错和真实的账单，而那是没有模型做得到的。
 
 > **地面规则：** 把 **DevStack** 跑在一台用完即弃的 VM 里（它不是给生产用的，而且能干净地重新
 > stack）。先 `source` 你的凭据文件（`source openrc admin admin`）。做完就把资源删掉。
@@ -28,9 +32,9 @@ OpenStack 有 Horizon（一个网页面板）—— 而运维者住在 **`openst
 **更精确**、**可复现**（同样的命令跨每一个部署都成立）、**可评审**，而且就是 Heat/Terraform 驱动
 的那片界面。Horizon 是用来看的；那个统一的 `openstack` 客户端是用来运维的。一个二进制，每一个服务。
 
-## 那条三节 lab 弧
+## 那条三节 guided run 弧
 
-### Lab 01 —— 身份 + 盘点（Keystone，那道正门）
+### Run 01 —— 身份 + 盘点（Keystone，那道正门）
 
 一切都通过 **Keystone** 认证；从命令行盘点一个 project：
 
@@ -52,7 +56,7 @@ openstack volume list -c Name -c Status -c Size
 **验证：** 换成 `labuser`（一个受限的非 admin 身份）重新 source，然后看着 `--all-projects` 不再起作用
 —— Keystone 的范围限定被变得可见了。
 
-### Lab 02 —— 网络 + 实例（跑在 KVM 上的 Nova，以及 Neutron）
+### Run 02 —— 网络 + 实例（跑在 KVM 上的 Nova，以及 Neutron）
 
 一个租户网络、一台通往外部网络的路由器，和一个实例 —— 也就是你可能已经懂的 KVM，被裹在那个云控制
 平面里：
@@ -79,7 +83,7 @@ openstack server add floating ip lab-vm <FLOATING_IP>
 floating IP；你 SSH 得进去。**拆除：** 删掉那台 server、那个 floating IP、那些路由器接口、
 那个子网、那个网络。
 
-### Lab 03 —— 控制平面故障演练（真正的那个教训）
+### Run 03 —— 控制平面故障演练（真正的那个教训）
 
 那个"云是你造的"所独有的教训 —— API 可以死掉，而你的 VM 继续跑
 （[`the-stack/01`](../../../the-stack/01-physical.md)）：

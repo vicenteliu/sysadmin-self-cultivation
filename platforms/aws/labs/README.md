@@ -1,16 +1,23 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [aws]
-summary: "Runnable, tear-down-able exercises. Reading about a subnet and configuring one are different skills; these make you do the second."
+summary: "Three guided runs against a sandbox account — tear-down-able, CLI-first. Reading about a subnet and configuring one are different skills; these make you do the second."
 ---
-# AWS — Labs
+# AWS — Guided runs
 
 > 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/aws/labs/README.md)
 
-Runnable, tear-down-able exercises. Reading about a subnet and configuring one are
-different skills; these make you do the second.
+Three guided runs against a sandbox account — tear-down-able, CLI-first. Reading
+about a subnet and configuring one are different skills; these make you do the second.
+
+**These are [guided runs](../../../CONTEXT.md), not labs.** Each needs a real environment,
+so nothing here can assert that you did it and CI cannot run it. That is the whole of the
+distinction and it is not a demotion — a guided run reaches real latency, real error
+messages and real bills, which no model does.
+
+The one lab this platform has — self-verifying, pure-local — sits below the arc.
 
 > **Ground rules:** use a **throwaway / sandbox account**, set a **hard Budget
 > alarm** first, and `destroy` everything when you're done. Never run labs with
@@ -18,7 +25,7 @@ different skills; these make you do the second.
 
 ## Why the command line
 
-Every lab here is **CLI-first**, and that's a teaching choice, not a preference. The
+Every run here is **CLI-first**, and that's a teaching choice, not a preference. The
 console is for *looking*; the command line is for *doing*. A single `aws` command is
 **faster** than a click-path, **exact** (no mis-picked dropdown or wrong region left
 selected), **repeatable** (paste it into a script, a runbook, a ticket), and
@@ -28,12 +35,12 @@ can hand to the next person or the next machine. Learn the CLI and the GUI becom
 optional; learn only the GUI and you can't automate, can't reproduce, and can't move
 fast at 3 a.m.
 
-## The three-lab arc
+## The three-run arc
 
 The same shape on every platform in this repo — [the operating
 model](../../../00-the-operating-model.md) made runnable, read-only first:
 
-### Lab 01 — Scoped identity + inventory ✅ built
+### Run 01 — Scoped identity + inventory ✅ built
 
 Register a least-privilege identity, then drive the API to inventory the account. See
 **[`01-scoped-identity-inventory/`](01-scoped-identity-inventory/)** for the full
@@ -58,7 +65,7 @@ aws iam list-users --query 'Users[].UserName' --output text
 **Verify:** remove one action from the policy, re-run, and watch that exact call fail
 with `AccessDenied` — proof the scoping is real, and practice reading a denied request.
 
-### Lab 02 — Minimal network + compute from code ✅ built
+### Run 02 — Minimal network + compute from code ✅ built
 
 A VPC (public + private subnet, IGW + NAT), one EC2 instance with an instance profile
 (no baked keys), reachable over SSM (no open SSH), IMDSv2 + encrypted disk. Full
@@ -74,7 +81,7 @@ aws ssm start-session --target "$(terraform output -raw instance_id)"
 terraform destroy       # tear down cleanly — no orphaned billing resources
 ```
 
-### Lab 03 — Secure defaults + a budget guardrail 🚧 guided CLI run
+### Run 03 — Secure defaults + a budget guardrail 🚧 guided CLI run
 
 The "right defaults" muscle and the cost guardrail, entirely from the CLI:
 
@@ -101,7 +108,7 @@ public-access-block shows all four `true`. **Teardown:** `aws s3 rb s3://$BUCKET
 
 ## Beyond the arc — a pure-local support drill
 
-The three-lab arc above needs a sandbox account. One more lab needs **nothing** — a
+The three-run arc above needs a sandbox account. One more lab needs **nothing** — a
 pure-local, stdlib-only, self-verifying drill tied to the [support note](../support.md),
 in the spirit of the repo's other runnable drills:
 

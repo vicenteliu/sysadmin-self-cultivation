@@ -10,7 +10,7 @@ import { t, label, getLang } from "./i18n.js";
 
 const AXIS_ORDER = ["start-here", "foundations", "the-stack", "platforms",
                     "cross-cutting", "build-out", "walkthrough", "toolbox", "meta"];
-const KIND_ORDER = ["index", "note", "companion", "support-note", "lab", "route-step",
+const KIND_ORDER = ["index", "note", "companion", "support-note", "lab", "guided-run", "route-step",
                     "walkthrough", "tool", "ansible-role", "skill-map", "agent-skill", "interview",
                     "adr", "roadmap", "questions", "glossary"];
 const FACETS = [["axis", "byAxis"], ["platforms", "byPlatform"],

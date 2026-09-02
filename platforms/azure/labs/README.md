@@ -1,16 +1,24 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [azure]
-summary: "Runnable, tear-down-able exercises — same shape as the AWS labs, so you feel the concepts translate rather than re-learning from scratch."
+summary: "Three guided runs against a sandbox subscription — same shape as the AWS runs, so you feel the concepts translate rather than re-learning from scratch."
 ---
-# Azure — Labs
+# Azure — Guided runs
 
 > 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/azure/labs/README.md)
 
-Runnable, tear-down-able exercises — same shape as the [AWS labs](../../aws/labs/), so
-you feel the concepts *translate* rather than re-learning from scratch.
+Three guided runs against a sandbox subscription — same shape as the
+[AWS runs](../../aws/labs/), so you feel the concepts *translate* rather than
+re-learning from scratch.
+
+**These are [guided runs](../../../CONTEXT.md), not labs.** Each needs a real environment,
+so nothing here can assert that you did it and CI cannot run it. That is the whole of the
+distinction and it is not a demotion — a guided run reaches real latency, real error
+messages and real bills, which no model does.
+
+The one lab this platform has — self-verifying, pure-local — sits below the arc.
 
 > **Ground rules:** use a **free / sandbox subscription**, set a **Budget alert**
 > first, put everything in a dedicated **resource group**, and delete the resource
@@ -19,16 +27,16 @@ you feel the concepts *translate* rather than re-learning from scratch.
 
 ## Why the command line
 
-Every lab here is **CLI-first** (`az`, with PowerShell `Az` as the equal alternative),
+Every run here is **CLI-first** (`az`, with PowerShell `Az` as the equal alternative),
 and that's a teaching choice. The portal is for *looking*; the CLI is for *doing*. An
 `az` command is **faster** than a blade-hunt, **exact** (no wrong dropdown), **repeatable**
 (paste into a runbook), and **reviewable** (a diff, not a screen recording) — the same
 surface your automation uses. Anything you can click, you can command; the command is
 what you hand to the next person or machine.
 
-## The three-lab arc
+## The three-run arc
 
-### Lab 01 — Scoped identity + inventory
+### Run 01 — Scoped identity + inventory
 
 A least-privilege **Reader**, then inventory the subscription — the Azure twin of AWS
 lab 01. Note **Azure Resource Graph** answers org-wide questions in one query instead
@@ -49,7 +57,7 @@ az storage account list --query '[].{name:name, rg:resourceGroup, kind:kind}' -o
 **Verify:** narrow the Reader scope to one resource group, re-run, and watch the rest
 vanish from results — the scoping made visible.
 
-### Lab 02 — Minimal VNet + VM from code
+### Run 02 — Minimal VNet + VM from code
 
 A VNet + subnet, an **NSG with no inbound**, one VM with a **managed identity** and
 **no public IP**, reachable via Bastion. From the CLI (Terraform/Bicep is the
@@ -71,7 +79,7 @@ az network bastion ssh -n lab-bastion -g lab-rg --target-resource-id "$(az vm sh
 **Verify:** `az vm show -d -g lab-rg -n lab-vm --query publicIps -o tsv` returns empty
 — no public exposure. **Teardown:** `az group delete -n lab-rg --yes --no-wait`.
 
-### Lab 03 — Secure storage + a policy guardrail
+### Run 03 — Secure storage + a policy guardrail
 
 Secure defaults and a *preventive* guardrail (Azure Policy that makes the wrong thing
 impossible, not just alerted):
@@ -96,7 +104,7 @@ az policy assignment create --name deny-public-blob \
 
 ## Beyond the arc — a pure-local support drill
 
-The three-lab arc above needs a sandbox subscription. One more lab needs **nothing** — a
+The three-run arc above needs a sandbox subscription. One more lab needs **nothing** — a
 pure-local, stdlib-only, self-verifying drill tied to the [support note](../support.md):
 
 ### `global-admin-is-not-owner/` — Azure's two identity planes ✅ built (pure-local)
@@ -114,6 +122,6 @@ Read it the moment "I'm Global Admin but I can't see the VM" lands on your desk.
 
 ---
 
-Each lab lands with the code (Terraform/Bicep + any script), a `README`, and explicit
+Each run lands with the code (Terraform/Bicep + any script), a `README`, and explicit
 teardown. The **Entra/identity** slice (lab 01's scoped role, and the support drill) is
 written from hands-on ground; the rest is the honest ramp.

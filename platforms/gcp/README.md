@@ -84,7 +84,7 @@ and on-prem — is the review gate.
 
 ## 4. Labs
 
-Reading about a global VPC and building one are different skills. A **three-lab CLI
+Reading about a global VPC and building one are different skills. A **three-run CLI
 arc** (scoped identity + inventory → global-VPC network + instance → secure storage +
 budget) is in **[`labs/`](labs/)** with real `gcloud` commands — the second lab is
 where the global-VPC model visibly changes the commands vs. the AWS version.

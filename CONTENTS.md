@@ -64,7 +64,7 @@ project's most distinctive axis. See [`the-stack/`](the-stack/).
 ## IV. Platforms — read by platform (all seven)
 
 Every module is `README` (what-it-is + skill map + AI-ramp summary) · `skills-map` ·
-`ai-ramp` · a **3-lab CLI arc** in `labs/`; the public clouds add the deeper
+`ai-ramp` · a **three-run CLI arc** of guided runs in `labs/`; the public clouds add the deeper
 **architecture · operations · automation** trio. All seven platforms compared in The
 Stack have a module. See [`platforms/`](platforms/).
 
@@ -72,18 +72,18 @@ Stack have a module. See [`platforms/`](platforms/).
 
 | Platform | What's there · honesty |
 | --- | --- |
-| [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + labs (**2 runnable** + 3-lab CLI arc). Read first. · 🧭 |
-| [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md)/[support](platforms/azure/support.md) + 3-lab CLI arc. · 🧭, **Entra/identity 🔨** |
-| [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + 3-lab CLI arc. Global-VPC is the outlier. · 🧭 |
-| [`oci/`](platforms/oci/) | ✅ + [architecture](platforms/oci/architecture.md)/[operations](platforms/oci/operations.md)/[automation](platforms/oci/automation.md)/[support](platforms/oci/support.md) + 3-lab CLI arc + [compartment/verb lab](platforms/oci/labs/a-compartment-is-not-an-account/). Youngest hyperscaler — compartments, OCPU, bare-metal-first, cheap egress. · 🧭 |
+| [`aws/`](platforms/aws/) | ✅ worked example + [architecture](platforms/aws/architecture.md)/[operations](platforms/aws/operations.md)/[automation](platforms/aws/automation.md)/[support](platforms/aws/support.md) + a three-run CLI arc (guided runs) + one lab. Read first. · 🧭 |
+| [`azure/`](platforms/azure/) | ✅ + [architecture](platforms/azure/architecture.md)/[operations](platforms/azure/operations.md)/[automation](platforms/azure/automation.md)/[support](platforms/azure/support.md) + three-run CLI arc. · 🧭, **Entra/identity 🔨** |
+| [`gcp/`](platforms/gcp/) | ✅ + [architecture](platforms/gcp/architecture.md)/[operations](platforms/gcp/operations.md)/[automation](platforms/gcp/automation.md)/[support](platforms/gcp/support.md) + three-run CLI arc. Global-VPC is the outlier. · 🧭 |
+| [`oci/`](platforms/oci/) | ✅ + [architecture](platforms/oci/architecture.md)/[operations](platforms/oci/operations.md)/[automation](platforms/oci/automation.md)/[support](platforms/oci/support.md) + three-run CLI arc + [compartment/verb lab](platforms/oci/labs/a-compartment-is-not-an-account/). Youngest hyperscaler — compartments, OCPU, bare-metal-first, cheap egress. · 🧭 |
 
 **Private cloud / on-prem** — the platforms you run on your *own* hardware:
 
 | Platform | What's there · honesty |
 | --- | --- |
-| [`vsphere/`](platforms/vsphere/) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + 3-lab CLI arc (PowerCLI). regional vCenter admin, VCP6-DCV/NV. · **🔨 hands-on depth — a strength, not a ramp** |
-| [`openstack/`](platforms/openstack/) | ✅ + [architecture](platforms/openstack/architecture.md)/[operations](platforms/openstack/operations.md)/[automation](platforms/openstack/automation.md) + 3-lab CLI arc (DevStack). "You build the cloud"; control-plane-as-product. · 🧭 (KVM-adjacent 🔨) |
-| [`self-host/`](platforms/self-host/) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + 3-lab CLI arc. PXE/image fleet 100k+, BMC/IPMI, DNS/RAID. · **🔨 hands-on depth — the deepest root** |
+| [`vsphere/`](platforms/vsphere/) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + three-run CLI arc (PowerCLI). regional vCenter admin, VCP6-DCV/NV. · **🔨 hands-on depth — a strength, not a ramp** |
+| [`openstack/`](platforms/openstack/) | ✅ + [architecture](platforms/openstack/architecture.md)/[operations](platforms/openstack/operations.md)/[automation](platforms/openstack/automation.md) + three-run CLI arc (DevStack). "You build the cloud"; control-plane-as-product. · 🧭 (KVM-adjacent 🔨) |
+| [`self-host/`](platforms/self-host/) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + three-run CLI arc. PXE/image fleet 100k+, BMC/IPMI, DNS/RAID. · **🔨 hands-on depth — the deepest root** |
 
 ## V. Cross-cutting — read by theme (the transferable surfaces)
 

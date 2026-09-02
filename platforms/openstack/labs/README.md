@@ -1,17 +1,22 @@
 ---
-kind: lab
+kind: guided-run
 axis: platforms
 themes: [cloud]
 platforms: [openstack]
 marker: "🧭"
-summary: "Tear-down-able exercises against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre."
+summary: "Three guided runs against DevStack — a single-node, all-in-one OpenStack in a VM, the honest way to meet the platform's plumbing without a data centre."
 ---
-# OpenStack — Labs
+# OpenStack — Guided runs
 
 > 🌐 **Languages:** English (default) · [中文](../../../docs/zh/platforms/openstack/labs/README.md)
 
-Tear-down-able exercises against **DevStack** — a single-node, all-in-one OpenStack in
-a VM, the honest way to meet the platform's plumbing without a data centre.
+Three guided runs against **DevStack** — a single-node, all-in-one OpenStack in a VM,
+the honest way to meet the platform's plumbing without a data centre.
+
+**These are [guided runs](../../../CONTEXT.md), not labs.** Each needs a real environment,
+so nothing here can assert that you did it and CI cannot run it. That is the whole of the
+distinction and it is not a demotion — a guided run reaches real latency, real error
+messages and real bills, which no model does.
 
 > **Ground rules:** run **DevStack** in a throwaway VM (it's not for production and
 > re-stacks cleanly). `source` your credentials file first (`source openrc admin
@@ -25,9 +30,9 @@ every deployment), **reviewable**, and the same surface Heat/Terraform drive. Ho
 is for looking; the unified `openstack` client is for operating. One binary, every
 service.
 
-## The three-lab arc
+## The three-run arc
 
-### Lab 01 — Identity + inventory (Keystone, the front door)
+### Run 01 — Identity + inventory (Keystone, the front door)
 
 Everything authenticates through **Keystone**; inventory a project from the CLI:
 
@@ -49,7 +54,7 @@ openstack volume list -c Name -c Status -c Size
 **Verify:** re-source as `labuser` (a scoped, non-admin identity) and watch
 `--all-projects` stop working — Keystone scoping made visible.
 
-### Lab 02 — Network + instance (Nova over KVM, Neutron)
+### Run 02 — Network + instance (Nova over KVM, Neutron)
 
 A tenant network, a router to the external net, and an instance — the KVM you may know,
 wrapped in the cloud control plane:
@@ -76,7 +81,7 @@ openstack server add floating ip lab-vm <FLOATING_IP>
 floating IP; you can SSH in. **Teardown:** delete the server, floating IP, router
 interfaces, subnet, network.
 
-### Lab 03 — The control-plane failure drill (the real lesson)
+### Run 03 — The control-plane failure drill (the real lesson)
 
 The lesson unique to "you build the cloud" — the API can die while your VMs keep
 running ([`the-stack/01`](../../../the-stack/01-physical.md)):
