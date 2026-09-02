@@ -126,6 +126,13 @@ It **consumes services and operates none** — no product, no customer traffic, 
 endpoint it is accountable for
 ([ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md)).
 
+Structurally it is the repo's one **fixture** — a named, parameterised scenario the routes
+and labs reason *against*: not an axis, not a route, not a view, and kept at the root
+because it belongs to every axis and to none
+([ADR-0016](docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md)). The word
+is reserved for that shape; there is exactly one, and a second is a second file with its
+own name.
+
 **"A hundred-person office" is not this term.** It is a generic phrase, and several labs
 use it for their own scenario with their own numbers — 97 devices, seven ticket
 categories, two document estates — none of which cites this file. That is allowed; what
@@ -348,11 +355,11 @@ file.
 _Avoid_: todo, backlog item, missing piece
 
 **Lab**:
-A pure-local, zero-dependency, self-verifying drill where exit code `0` means the
-lessons held. Most carry a `--break-it` flag that swaps in the *standard*
-procedure and shows it failing. **The mechanical test is whether CI can run it**,
-which is why [`check.py`](check.py) discovers labs by their `*_drill.py` and runs
-every one of them on every push.
+A pure-local, zero-dependency, self-verifying **drill** (below) with a README around
+it, where exit code `0` means the lessons held. A drill carries a `--break-it` flag
+wherever the lesson has a *standard* procedure to swap in and show failing. **The
+mechanical test is whether CI can run it**, which is why [`check.py`](check.py)
+discovers labs by their drill and runs every one of them on every push.
 _Avoid_: tutorial, exercise, demo
 
 **Guided run**:
@@ -376,5 +383,43 @@ useful ([ADR-0001](docs/adr/0001-the-build-out-is-a-route-not-a-seventh-axis.md)
 `build-out/` is a route across the axes; `cross-cutting/skills-maps/` is a
 transposed view of them; [`site/`](site/README.md) is a **view** — it renders
 the material and adds none of it, which is the same test applied a second time
-([ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)).
+([ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md));
+[`the-reference-office.md`](the-reference-office.md) is a **fixture** — material the
+routes reason against, not a face over it
+([ADR-0016](docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md)).
 _Avoid_: section, category, track
+
+### The scripts
+
+Three kinds of runnable file live here, and *script* unqualified names none of them.
+
+**Drill**:
+The one runnable file inside a **lab** — `*_drill.py`, or `*_drill.sh` where the lesson
+is about the shell. A lab is a directory holding a README and a drill; the drill is what
+`check.py` runs, and its exit code `0` is the lab's word for *the lessons held*. It
+imports nothing from this repo and carries its own reporter by decision
+([ADR-0017](docs/adr/0017-a-drill-carries-its-own-reporter.md)).
+_Avoid_: script (unqualified), the lab (when the file is meant), test, exercise
+
+**Builder**:
+A maintenance script that derives an artifact from a source and takes `--check` to say
+whether the artifact has gone stale: the retrieval index, the search corpus, the hero
+diagrams and the floor's tile sheet each have one. The artifact is generated and never
+edited.
+_Avoid_: generator (that is [`toolbox/generate/`](toolbox/generate/), which packs a
+subset and derives nothing), build script, pipeline
+
+**Guard**:
+A maintenance script that checks and derives nothing: the walkthrough checker, the
+topology proof, the viewer smoke test. [`check.py`](check.py) is the guard of guards —
+the one entry point that runs every builder's `--check`, every guard and every drill,
+and the only list of them. A check that is not in `check.py` is a check nobody runs.
+_Avoid_: test suite, linter, validator, CI (that is where `check.py` runs, not what it
+is)
+
+**Tool**:
+A runnable thing under [`toolbox/`](toolbox/) meant for a real host — read-only or
+dry-run by default, carrying a `Tested on:` line and an agent-readable header. **A tool
+is never a lab**: a lab proves a lesson on a model, a tool does a job on a machine. The
+three toolbox Agent Skills drive tools; they are not tools.
+_Avoid_: script (unqualified), utility, lab, drill

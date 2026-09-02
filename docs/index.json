@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 403,
+  "count": 407,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -857,6 +857,20 @@
       "themes": [],
       "platforms": [],
       "summary": "The reference office was asked to grow parameters for a cloud footprint and an online service, and nobody had ever said whether this office operates anything. It does not: it is a hundred-person company's IT department, and the material that would back a product side is the material this repo teaches generally rather than lives in."
+    },
+    "docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "the-reference-office.md sits at the root, is cited by forty-six files and is the premise of both routes, and the table of six axes has never had a row for it. It is not a seventh axis and it is not being moved: it is the repo's one fixture — a named scenario the routes and labs reason against — and that shape now has a word."
+    },
+    "docs/adr/0017-a-drill-carries-its-own-reporter.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Twenty-three drills carry the same fifteen-line reporter, copied by hand, and two dialects of it have already drifted apart. The obvious fix is a shared module. The decision is the opposite: a drill imports nothing from this repo, the reporter is a vendored block with one canonical copy, and check.py asserts every copy is byte-identical."
     },
     "docs/questions.md": {
       "kind": "questions",
@@ -1941,6 +1955,26 @@
       "summary": "The reference office was asked to grow parameters for a cloud footprint and an online service, and nobody had ever said whether this office operates anything. It does not: it is a hundred-person company's IT department, and the material that would back a product side is the material this repo teaches generally rather than lives in.",
       "language": "zh",
       "mirrors": "docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "the-reference-office.md sits at the root, is cited by forty-six files and is the premise of both routes, and the table of six axes has never had a row for it. It is not a seventh axis and it is not being moved: it is the repo's one fixture — a named scenario the routes and labs reason against — and that shape now has a word.",
+      "language": "zh",
+      "mirrors": "docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md",
+      "derived": true
+    },
+    "docs/zh/docs/adr/0017-a-drill-carries-its-own-reporter.md": {
+      "kind": "adr",
+      "axis": "meta",
+      "themes": [],
+      "platforms": [],
+      "summary": "Twenty-three drills carry the same fifteen-line reporter, copied by hand, and two dialects of it have already drifted apart. The obvious fix is a shared module. The decision is the opposite: a drill imports nothing from this repo, the reporter is a vendored block with one canonical copy, and check.py asserts every copy is byte-identical.",
+      "language": "zh",
+      "mirrors": "docs/adr/0017-a-drill-carries-its-own-reporter.md",
       "derived": true
     },
     "docs/zh/docs/questions.md": {

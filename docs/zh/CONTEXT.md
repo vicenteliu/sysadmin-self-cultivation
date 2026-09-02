@@ -120,6 +120,11 @@ _避免_：插图、图形、品牌图、figure（那指这两种中的任一种
 它**只消费服务、不运营服务** —— 没有产品、没有客户流量、没有它要负责的公开端点
 （[ADR-0015](docs/adr/0015-the-reference-office-consumes-services-and-operates-none.md)）。
 
+在结构上它是这个仓库唯一的 **fixture** —— 一个有名字、参数化的场景，route 和 lab 都拿它
+来*推理*：不是 axis、不是 route、不是 view，放在根目录是因为它属于每一条轴、也不属于任何
+一条（[ADR-0016](docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md)）。这个
+词专指这种形状；只有一个，第二个就是另一个有自己名字的文件。
+
 **"一间百人办公室"不是这个术语。** 那是个通用说法，好几个 lab 用它指自己的场景、带自己
 的数字 —— 97 台设备、七类工单、两套文档 estate —— 没有一个引用这个文件。这是允许的；不
 允许的是让两者模糊，因为一个有两间无名百人办公室的仓库，没法告诉你某个数字来自哪一间。
@@ -308,9 +313,10 @@ _避免_：level、depth（那是 🔨 的断言）、layer（那是 `the-stack/
 _避免_：todo、backlog 条目、缺的那块
 
 **Lab**：
-一个纯本地、零依赖、自验证的 drill，退出码 `0` 意味着教训成立。多数带一个 `--break-it`
-开关，把**标准做法**换进去，然后展示它失败。**机械判据是 CI 跑不跑得动它**，这也是为什么
-[`check.py`](../../check.py) 靠 `*_drill.py` 发现 lab，并在每次 push 时把它们全跑一遍。
+一个纯本地、零依赖、自验证的 **drill**（见下）外加一篇 README，退出码 `0` 意味着教训成立。
+凡是教训里有一个可以换进去、展示它失败的**标准做法**，drill 就带一个 `--break-it` 开关。
+**机械判据是 CI 跑不跑得动它**，这也是为什么 [`check.py`](../../check.py) 靠 drill 发现
+lab，并在每次 push 时把它们全跑一遍。
 _避免_：教程、exercise、demo
 
 **Guided run（引导式实操）**：
@@ -332,5 +338,37 @@ _避免_：lab（那是自验证的那种）、教程、workshop
 `build-out/` 是一条横穿这些轴的路线；`cross-cutting/skills-maps/` 是它们的一个转置视图；
 [`site/`](site/README.md) 是一个**视图** —— 它渲染材料而不添加任何材料，这是同一条判据被
 第二次施行
-（[ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）。
+（[ADR-0005](docs/adr/0005-the-site-is-a-view-not-a-seventh-axis.md)）；
+[`the-reference-office.md`](the-reference-office.md) 是一个 **fixture** —— 被 route 拿来推理
+的材料，而不是覆盖材料的一个面
+（[ADR-0016](docs/adr/0016-the-reference-office-is-a-fixture-not-an-axis.md)）。
 _避免_：section、类别、track
+
+### 脚本
+
+这里住着三种可执行文件，不加限定的"脚本"哪一种都不是。
+
+**Drill**：
+一个 **lab** 里那个唯一可执行的文件 —— `*_drill.py`，或者当教训本身关于 shell 时的
+`*_drill.sh`。lab 是一个装着 README 和 drill 的目录；drill 是 `check.py` 跑的那个东西，它的
+退出码 `0` 就是 lab 说"教训成立"的方式。它不从这个仓库 import 任何东西，并且按决定自带
+reporter（[ADR-0017](docs/adr/0017-a-drill-carries-its-own-reporter.md)）。
+_避免_：脚本（不加限定）、the lab（实指文件时）、测试、exercise
+
+**Builder**：
+一个从源生成派生物、并接受 `--check` 来回答派生物是否已经过期的维护脚本：检索索引、搜索
+语料、门面图和楼面的 tile sheet 各有一个。派生物是生成的，永远不手改。
+_避免_：generator（那是 [`toolbox/generate/`](toolbox/generate/)，它打包一个子集、不派生任何
+东西）、构建脚本、pipeline
+
+**Guard**：
+一个只检查、不派生任何东西的维护脚本：走读检查器、拓扑证明、viewer 的冒烟测试。
+[`check.py`](../../check.py) 是 guard 的 guard —— 唯一的入口，跑每个 builder 的 `--check`、
+每个 guard 和每个 drill，也是它们唯一的清单。不在 `check.py` 里的检查，就是没人跑的检查。
+_避免_：测试套件、linter、validator、CI（那是 `check.py` 跑的地方，不是它是什么）
+
+**Tool**：
+[`toolbox/`](toolbox/) 下面向真实主机的可执行物 —— 默认只读或 dry-run，带一行 `Tested on:`
+和一个 agent 可读的头块。**tool 永远不是 lab**：lab 在一个模型上证明一条教训，tool 在一台
+机器上干一件活。三个 toolbox Agent Skill 驱动 tool；它们自己不是 tool。
+_避免_：脚本（不加限定）、utility、lab、drill
