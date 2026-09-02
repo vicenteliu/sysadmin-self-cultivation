@@ -85,8 +85,8 @@ automation** 三件套。The Stack 里对比的七个平台都有模块。见
 | 平台 | 有什么 · 诚实标注 |
 | --- | --- |
 | [`vsphere/`](platforms/vsphere) | ✅ + [architecture](platforms/vsphere/architecture.md)/[operations](platforms/vsphere/operations.md)/[automation](platforms/vsphere/automation.md) + 三段式 CLI arc（PowerCLI）。区域 vCenter 管理员，VCP6-DCV/NV。· **🔨 亲手做过的深度 —— 这是强项，不是 ramp** |
-| [`openstack/`](../../platforms/openstack/) | ✅ + [architecture](../../platforms/openstack/architecture.md)/[operations](../../platforms/openstack/operations.md)/[automation](../../platforms/openstack/automation.md) + 三段式 CLI arc（DevStack）。"云是你自己搭的"；控制面即产品。· 🧭（与 KVM 邻接的 🔨） |
-| [`self-host/`](../../platforms/self-host/) | ✅ + [architecture](../../platforms/self-host/architecture.md)/[operations](../../platforms/self-host/operations.md)/[automation](../../platforms/self-host/automation.md) + 三段式 CLI arc。PXE/镜像机队 10 万+、BMC/IPMI、DNS/RAID。· **🔨 亲手做过的深度 —— 最深的那条根** |
+| [`openstack/`](platforms/openstack) | ✅ + [architecture](platforms/openstack/architecture.md)/[operations](platforms/openstack/operations.md)/[automation](platforms/openstack/automation.md) + 三段式 CLI arc（DevStack）。"云是你自己搭的"；控制面即产品。· 🧭（与 KVM 邻接的 🔨） |
+| [`self-host/`](platforms/self-host) | ✅ + [architecture](platforms/self-host/architecture.md)/[operations](platforms/self-host/operations.md)/[automation](platforms/self-host/automation.md) + 三段式 CLI arc。PXE/镜像机队 10 万+、BMC/IPMI、DNS/RAID。· **🔨 亲手做过的深度 —— 最深的那条根** |
 
 ## V. Cross-cutting —— 按主题读（可迁移的那些面）
 
@@ -234,7 +234,7 @@ docker compose -f site/docker-compose.yml up    # http://127.0.0.1:8099
 每个模块都按 [`WHY.md`](WHY.md) 标注 **🔨 亲手做过的深度** 与 **🧭 经过验证的 ramp**
 —— 而这个标注是承重的，不是装饰。七个平台里有两个是 **🔨**：
 [vSphere](platforms/vsphere)（一套生产 vCenter 估算面，VCP6-DCV/NV）和
-[self-host](../../platforms/self-host/)（10 万+ 设备的机队），以及那些横切的强项 ——
+[self-host](platforms/self-host)（10 万+ 设备的机队），以及那些横切的强项 ——
 Linux、[endpoint](endpoint/)、[身份](cross-cutting/identity-iam.md)、
 [SaaS 管理](cross-cutting/saas-admin.md)，和那份自动化纪律。公有云、OpenStack 的
 控制面，以及深度 Kubernetes 是诚实的 **🧭** ramp —— 测绘过、验证过、可跑，从不吹。

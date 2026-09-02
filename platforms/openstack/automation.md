@@ -8,6 +8,8 @@ summary: "architecture is how OpenStack is structured; operations is what runnin
 ---
 # OpenStack — Scripting the API (managing & operating from code)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/openstack/automation.md)
+
 > [`architecture`](architecture.md) is how OpenStack is structured; [`operations`](operations.md)
 > is what running it looks like. This note is the *how*: **driving OpenStack from
 > code** — the [operating-model](../../00-the-operating-model.md) move #3, through the

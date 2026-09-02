@@ -8,6 +8,8 @@ summary: "The README is what OpenStack is; architecture is how it's structured; 
 ---
 # OpenStack — Operating It (the day-2 reality)
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/openstack/operations.md)
+
 > The [README](README.md) is *what OpenStack is*; [architecture](architecture.md) is
 > *how it's structured*; this note is **what running it looks like** — and here the
 > day-2 story has a twist no managed cloud has: **you operate the control plane, so

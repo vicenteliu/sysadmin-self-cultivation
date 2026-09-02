@@ -8,6 +8,8 @@ summary: "architecture is how a bare-metal estate is structured; operations is w
 ---
 # Self-Hosted / Bare Metal — Scripting the Fleet
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/self-host/automation.md)
+
 > [`architecture`](architecture.md) is how a bare-metal estate is structured;
 > [`operations`](operations.md) is what running it looks like. This note is the *how*:
 > **driving a fleet from code** — Ansible, SSH, `ipmitool`, `virsh`, and the

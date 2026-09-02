@@ -8,6 +8,8 @@ summary: "How to get to competent-to-reason on OpenStack fast — and an honest 
 ---
 # OpenStack — The AI-Assisted Ramp
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/openstack/ai-ramp.md)
+
 > How to get to *competent-to-reason* on OpenStack fast — and an honest line about
 > where AI stops. OpenStack is a clean demonstration of the ramp method **and** of its
 > limit: the concepts translate in minutes, but the platform's real difficulty is

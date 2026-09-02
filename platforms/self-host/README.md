@@ -7,6 +7,8 @@ summary: "Same four-part template as AWS: what it is → the admin skill map →
 ---
 # Self-Hosted / Bare Metal — where the abstractions end
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/self-host/README.md)
+
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus the deeper **[architecture](architecture.md) ·
 > [operations](operations.md) · [automation](automation.md)** trio. The honesty marker

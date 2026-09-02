@@ -8,6 +8,8 @@ summary: "The README mapped OpenStack onto the seven surfaces — what the compo
 ---
 # OpenStack — Understanding the Architecture
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/openstack/architecture.md)
+
 > The [README](README.md) mapped OpenStack onto the seven surfaces — *what the
 > components are.* This note is the layer up: *how OpenStack is structured*, and the
 > one fact that shapes everything — **you assembled this cloud, so its control plane

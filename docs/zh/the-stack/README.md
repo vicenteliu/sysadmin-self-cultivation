@@ -46,8 +46,8 @@ summary: "这个仓库的第三条轴。platforms/ 一次读一朵云；cross-cu
 
 | 家族 | 平台 | 硬件归谁 | 诚实标记 |
 | --- | --- | --- | --- |
-| **你来建** | [自建裸金属](../../../platforms/self-host/) · VMware [vSphere](../platforms/vsphere) | 你 | 🔨 亲手做过的深度 |
-| **你来建一朵云** | [OpenStack](../../../platforms/openstack/) | 你（外加一个你现在得运维的控制面） | 🧭 ramp（与 KVM 邻接的 🔨） |
+| **你来建** | [自建裸金属](../platforms/self-host) · VMware [vSphere](../platforms/vsphere) | 你 | 🔨 亲手做过的深度 |
+| **你来建一朵云** | [OpenStack](../platforms/openstack) | 你（外加一个你现在得运维的控制面） | 🧭 ramp（与 KVM 邻接的 🔨） |
 | **他们来建** | [AWS](../platforms/aws/) · [Azure](../platforms/azure/) · [GCP](../platforms/gcp/) · [OCI](../platforms/oci/) | 提供方 | 🧭 ramp |
 
 **七个全部**现在都有一个专门的 **[`platforms/`](../platforms/)** 模块（"端到端运维
