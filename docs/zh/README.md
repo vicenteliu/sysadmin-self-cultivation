@@ -83,7 +83,7 @@ Jamf、Intune、Entra、AWS、Azure、GCP —— 都是同一副骨架。**把�
 ## 已建成
 
 roadmap 计划的都写完了。剩下的是更多可跑 lab —— 平台的 lab arc 写得远比建成的多，下表
-逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 121 篇；根目录、`build-out/`、`the-stack/`、`cross-cutting/`、`docs/adr/`、`docs/questions/`、`endpoint/`、`toolbox/` 与 **`platforms/aws/`** 都已补齐；另外六个平台目录和各处 lab 的 README 尚未镜像），以及按需求深化。
+逐个说明 —— 更完整的中文镜像（`docs/zh/` 目前 127 篇；根目录、`build-out/`、`the-stack/`、`cross-cutting/`、`docs/adr/`、`docs/questions/`、`endpoint/`、`toolbox/` 与 **`platforms/aws/`、`platforms/azure/`** 都已补齐；另外五个平台目录和各处 lab 的 README 尚未镜像），以及按需求深化。
 
 | | 是什么 | 从哪进 |
 | --- | --- | --- |

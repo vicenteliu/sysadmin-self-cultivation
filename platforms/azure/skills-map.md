@@ -7,6 +7,8 @@ summary: "Same tiers as AWS: Core (can't admin without it), Working (solid mid/s
 ---
 # Azure — Admin Skill Map
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/azure/skills-map.md)
+
 Same tiers as [AWS](../aws/skills-map.md): **Core** (can't admin without it),
 **Working** (solid mid/senior), **Depth** (the differentiator). Check a box when you
 can *do* it from code and *explain* the failure modes.

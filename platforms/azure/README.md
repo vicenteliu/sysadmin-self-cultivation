@@ -7,6 +7,8 @@ summary: "Same four-part template as AWS: what it is → the admin skill map →
 ---
 # Azure
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/platforms/azure/README.md)
+
 > Same four-part template as [AWS](../aws/): **what it is → the admin skill map → the
 > AI-assisted ramp → labs** — plus four deeper companion notes mirroring the AWS
 > worked example: **[architecture](architecture.md)** (how it's structured),
