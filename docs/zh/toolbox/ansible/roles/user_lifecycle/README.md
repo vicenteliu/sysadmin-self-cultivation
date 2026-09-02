@@ -1,5 +1,11 @@
 # role: user_lifecycle
 
+> 🌐 **语言：** [English（默认）](../../../../../../toolbox/ansible/roles/user_lifecycle/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/ansible/roles/user_lifecycle/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 声明式用户：定义期望状态，role 收敛到它。[`user-lifecycle`](../../../user-lifecycle/)
 脚本的 Ansible 对应物，同样的法则——**停用 ≠ 删除**。
 

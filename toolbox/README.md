@@ -8,6 +8,8 @@ summary: "The rest of this repo explains how things work."
 ---
 # Toolbox — take it with you
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/toolbox/README.md)
+
 > The rest of this repo explains how things work. The toolbox is the part you can
 > **run**: small, self-contained tools a sysadmin — or an AI agent working alongside
 > one — can pick up and use in minutes.

@@ -49,8 +49,8 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 论点 | [`00-the-operating-model.md`](00-the-operating-model.md) | ✅ |
 | 论点 | [`WHY.md`](WHY.md) | ✅ |
 | 方法 | [`ai-workflow/`](ai-workflow/) | ✅ |
-| 平台 | [`platforms/aws/`](platforms/aws/) | ✅ + 2 个可跑 lab |
-| 平台 | [`platforms/azure/`](platforms/azure/) | ✅（lab 已规划） |
+| 平台 | [`platforms/aws/`](platforms/aws/) | ✅ + 一个 lab（[`iam-deny-by-default`](platforms/aws/labs/iam-deny-by-default)）；那条弧是三次 guided run，其中两次带代码 |
+| 平台 | [`platforms/azure/`](platforms/azure/) | ✅ + 一个 lab（[`global-admin-is-not-owner`](platforms/azure/labs/global-admin-is-not-owner)） |
 | 横切 | [`cross-cutting/identity-iam.md`](cross-cutting/identity-iam.md) | ✅ |
 | 分层系列 | [`the-stack/01-physical.md`](the-stack/01-physical.md) —— 物理层，七个平台对比 | ✅ |
 | 分层系列 | [`the-stack/02-network.md`](the-stack/02-network.md) —— 网络层（覆盖 Tier-1 第 2 项） | ✅ |
@@ -90,7 +90,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 | 技能图 | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/) —— 平台技能图的**转置**：一个主题横跨全部七个平台，按可迁移性而非按云分层。[networking](cross-cutting/skills-maps/networking.md)（63 格）+ [identity](cross-cutting/skills-maps/identity.md)（58 格）；两个最密的需求集群优先 | ✅ |
 | 面试 | [`cross-cutting/interview/`](cross-cutting/interview/) —— 技能图的再一次转置，这回从面试官那一侧：[networking](cross-cutting/interview/networking.md)（21 问）+ [identity](cross-cutting/interview/identity.md)（19 问）。答案的形状由小节的 marker 决定（[ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)）；六个 🔨 答案仍带 ⏳ | ✅ |
 | AI 方法 | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) —— 稳态而非 ramp：分诊 → 变更 → 事件 → 复盘 → 扫尾，每一段都点名交出去什么、在哪里收回来 | ✅ |
-| 检索 | 385 个文件上的 front-matter 作为唯一来源 + [`docs/build-index.py`](../build-index.py) → [`docs/index.json`](../index.json)（413 条记录，镜像标 derived）。面向 agent；幂等，`--check` 报告过期 | ✅ |
+| 检索 | 387 个文件上的 front-matter 作为唯一来源 + [`docs/build-index.py`](../build-index.py) → [`docs/index.json`](../index.json)（415 条记录，镜像标 derived）。面向 agent；幂等，`--check` 报告过期 | ✅ |
 | 站点设计 | [`cross-cutting/site-network-design.md`](cross-cutting/site-network-design.md) —— 从参考办公室的参数到一份设计之间的那一步，海拔与分层章节相同。与 [`the-reference-office.md`](the-reference-office.md) 配对，后者现在在空间参数之外承载**六个参数域** —— 人员流动、终端与备机、身份形状、SaaS 清册、支持负载、数据与恢复 —— 每一个都是因为某个 lab 或某一步已经被迫编造过它才写的，且都记在那个文件自己的需求账本里。`Reference build` 保持 ⏳，因为没有哪一步需要型号；`Where things run` **两半都已写完** —— 四样东西留在这层楼或某朵云上，六样被考虑过并被拒绝，而后者是更短也更有用的那份清单 | ✅ |
 | 走读 | [`walkthrough/`](walkthrough/README.md) —— 第二条路线，是念的不是读的：格式、五条决策（[ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)–[0013](docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)）以及 viewer 的注册都已写完，而且**目前共三篇走读已建成** —— 01 · 网络（106 拍）、02 · 第一个星期一（93 拍）与 03 · 它坏掉的那一天（102 拍），各两种语言，播放在同一张可交互的二维楼面上。稿子进仓库，音频永远不进。像 `toolbox/` 那样一次长一篇，没有目标篇数 | ✅ |
 | **Roadmap** | **所有分层条目均已落地** —— 每个规划模块都有已写的内容，而且 **`docs/zh/` 已镜像英文树里的每一篇文档**；剩下的工作是 lab + 深化 | ✅ |
@@ -107,7 +107,7 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 
 1. **`cross-cutting/identity-iam.md`** —— ✅ *已完成。* 最密的需求集群
    （AD / Entra / Okta / SSO / SCIM / RBAC / 生命周期），也是跨每个平台最可迁移的那个面。
-2. **`cross-cutting/networking.md`** —— 每个岗位都默认你有的云/本地网络基本功
+2. **`cross-cutting/networking.md`** —— ✅ *落地为 [`the-stack/02-network.md`](the-stack/02-network.md)，旁边还有 [`site-network-design.md`](cross-cutting/site-network-design.md)、[`debug-ladder.md`](cross-cutting/debug-ladder.md) 和 [`network-evolution.md`](cross-cutting/network-evolution.md)；不存在叫这个名字的文件。* 每个岗位都默认你有的云/本地网络基本功
    （TCP/IP、DNS、DHCP、路由、防火墙、负载均衡）。
 3. **`cross-cutting/iac-and-config.md`** —— 把 Terraform + Ansible + Puppet 当作一个
    通用控制面。（Ansible 是被点名最多的单一工具之一。）
@@ -117,16 +117,16 @@ endpoint + **身份** + 配置管理 —— 而云只是其中若干个重要面
 
 5. **`endpoint/`** —— 给 endpoint/MDM 那条 lane 一条一等公民的轨道（Jamf、Intune、
    PXE/imaging、打补丁、macOS/Windows 机队）—— 一个需求非常高、而平台目录覆盖不到的领域。
-6. **`cross-cutting/security-compliance.md`** —— 加固/基线、EDR/XDR、SIEM、zero-trust，
+6. **`cross-cutting/security-compliance.md`** —— ✅ *落地为 [`the-stack/07-security.md`](the-stack/07-security.md) 和 [`working-with-security.md`](cross-cutting/working-with-security.md)；不存在叫这个名字的文件。* 加固/基线、EDR/XDR、SIEM、zero-trust，
    以及点名的合规（SOC 2 / SOX / GDPR / FedRAMP / ISO 27001）。
-7. **`cross-cutting/virtualization.md`** —— VMware/vSphere、KVM、Proxmox。
+7. **`cross-cutting/virtualization.md`** —— ✅ *落地为 [`the-stack/01-physical.md`](the-stack/01-physical.md) 和 [`platforms/vsphere/`](platforms/vsphere/)；不存在叫这个名字的文件。* VMware/vSphere、KVM、Proxmox。
 8. **`cross-cutting/kubernetes.md`** —— 容器 + 编排，横跨 EKS/AKS/GKE。
 
 ### Tier 3 —— 补全
 
-9. **`cross-cutting/observability.md`** —— metric/log/trace、SLI/SLO、事件响应。
+9. **`cross-cutting/observability.md`** —— ✅ *落地为 [`the-stack/06-observability.md`](the-stack/06-observability.md) 和 [`incident-response.md`](cross-cutting/incident-response.md)；不存在叫这个名字的文件。* metric/log/trace、SLI/SLO、事件响应。
 10. **`foundations/`** —— Linux + 脚本（Python/Bash/PowerShell）作为默认底子，明确写出来。
-11. **`cross-cutting/storage.md`**、SaaS 管理（Google Workspace / M365），以及按需增加
+11. **`cross-cutting/storage.md`**（✅ *落地为 [`the-stack/04-storage.md`](the-stack/04-storage.md)；不存在叫这个名字的文件*）、SaaS 管理（Google Workspace / M365），以及按需增加
     的平台（OpenStack、OCI）。
 
 ## 工具箱这条线（2026-07 开启）

@@ -7,6 +7,8 @@ summary: "Applies pending updates on apt or dnf systems, then reports — or, if
 ---
 # role: patch
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/toolbox/ansible/roles/patch/README.md)
+
 Applies pending updates on apt or dnf systems, then reports — or, if you ask —
 acts on a required reboot. The execution half of
 [`patch-report`](../../../patch-report/).

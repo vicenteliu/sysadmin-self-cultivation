@@ -1,5 +1,11 @@
 # vsphere-inventory
 
+> 🌐 **语言：** [English（默认）](../../../../toolbox/vsphere-inventory/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/vsphere-inventory/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 > **输入：** `--server 主机[:端口]`、`--user`、密码走 `VSPHERE_PASSWORD` 环境变量 ·
 > **输出：** 一份 JSON 清单文档（stdout 或 `--out`），可选每 VM 一行的 CSV ·
 > **风险：** 只读——登录、读属性、登出，什么都不改 · **root：** 不需要

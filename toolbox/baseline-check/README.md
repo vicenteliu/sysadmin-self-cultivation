@@ -7,6 +7,8 @@ summary: "Inputs: none · Outputs: PASS/FAIL/INFO/SKIP per check + summary · Ri
 ---
 # baseline-check
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/baseline-check/README.md)
+
 > **Inputs:** none · **Outputs:** PASS/FAIL/INFO/SKIP per check + summary ·
 > **Risk:** read-only, changes nothing · **Root:** optional — shadow and
 > effective-sshd checks need it

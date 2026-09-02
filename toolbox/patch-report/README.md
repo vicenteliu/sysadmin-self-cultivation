@@ -7,6 +7,8 @@ summary: "Inputs: none (--quiet for counts only) · Outputs: pending-updates rep
 ---
 # patch-report
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/patch-report/README.md)
+
 > **Inputs:** none (`--quiet` for counts only) · **Outputs:** pending-updates report
 > on stdout · **Risk:** read-only — never installs, never refreshes metadata ·
 > **Root:** not needed for the report

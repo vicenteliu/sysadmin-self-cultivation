@@ -7,6 +7,8 @@ summary: "Inputs: a vsphere-inventory JSON document (--in FILE or stdin) · Outp
 ---
 # vm-migration-assess
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/vm-migration-assess/README.md)
+
 > **Inputs:** a [`vsphere-inventory`](../vsphere-inventory/) JSON document
 > (`--in FILE` or stdin) · **Outputs:** per-VM verdict report (or `--json`) ·
 > **Risk:** read-only — assessment only, touches neither environment ·

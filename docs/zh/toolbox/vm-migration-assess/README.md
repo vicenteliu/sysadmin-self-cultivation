@@ -1,5 +1,11 @@
 # vm-migration-assess
 
+> 🌐 **语言：** [English（默认）](../../../../toolbox/vm-migration-assess/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/vm-migration-assess/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 > **输入：** 一份 [`vsphere-inventory`](../vsphere-inventory/) JSON 文档
 > （`--in 文件` 或 stdin）· **输出：** 每 VM 一个裁决的报告（或 `--json`）·
 > **风险：** 只读——纯评估，两边环境都不碰 · **root：** 不需要

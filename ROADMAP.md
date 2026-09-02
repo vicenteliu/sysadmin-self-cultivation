@@ -46,8 +46,8 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Thesis | [`00-the-operating-model.md`](00-the-operating-model.md) | ✅ |
 | Thesis | [`WHY.md`](WHY.md) | ✅ |
 | Method | [`ai-workflow/`](ai-workflow/) | ✅ |
-| Platform | [`platforms/aws/`](platforms/aws/) | ✅ + 2 runnable labs |
-| Platform | [`platforms/azure/`](platforms/azure/) | ✅ (labs planned) |
+| Platform | [`platforms/aws/`](platforms/aws/) | ✅ + a lab ([`iam-deny-by-default`](platforms/aws/labs/iam-deny-by-default/)); the arc is three guided runs, two of them with code |
+| Platform | [`platforms/azure/`](platforms/azure/) | ✅ + a lab ([`global-admin-is-not-owner`](platforms/azure/labs/global-admin-is-not-owner/)) |
 | Cross-cutting | [`cross-cutting/identity-iam.md`](cross-cutting/identity-iam.md) | ✅ |
 | Layer series | [`the-stack/01-physical.md`](the-stack/01-physical.md) — physical layer, 7 platforms compared | ✅ |
 | Layer series | [`the-stack/02-network.md`](the-stack/02-network.md) — network layer (covers Tier-1 item #2) | ✅ |
@@ -87,7 +87,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 | Skill maps | [`cross-cutting/skills-maps/`](cross-cutting/skills-maps/) — the platform skill maps **transposed**: one theme across all seven platforms, tiered by transferability rather than by cloud. [networking](cross-cutting/skills-maps/networking.md) (63 boxes) + [identity](cross-cutting/skills-maps/identity.md) (58 boxes); the two densest demand clusters first | ✅ |
 | Interview | [`cross-cutting/interview/`](cross-cutting/interview/) — the skill maps transposed again, from the interviewer's side: [networking](cross-cutting/interview/networking.md) (21 Q) + [identity](cross-cutting/interview/identity.md) (19 Q). Answer shape set by the section marker ([ADR-0004](docs/adr/0004-interview-answers-are-evidence-for-a-marker.md)); six 🔨 answers still carry ⏳ | ✅ |
 | AI method | [`ai-workflow/ai-in-the-day-job.md`](ai-workflow/ai-in-the-day-job.md) — the steady state rather than the ramp: triage → change → incident → write-up → sweep, each naming what to hand over and where to take it back | ✅ |
-| Retrieval | front-matter on 385 files as the single source + [`docs/build-index.py`](docs/build-index.py) → [`docs/index.json`](docs/index.json) (413 records, mirrors derived). Agent-facing; idempotent, `--check` reports staleness | ✅ |
+| Retrieval | front-matter on 387 files as the single source + [`docs/build-index.py`](docs/build-index.py) → [`docs/index.json`](docs/index.json) (415 records, mirrors derived). Agent-facing; idempotent, `--check` reports staleness | ✅ |
 | Site design | [`cross-cutting/site-network-design.md`](cross-cutting/site-network-design.md) — the step between the reference office's parameters and a design, at the same altitude as the layer chapter. Paired with [`the-reference-office.md`](the-reference-office.md), which now carries **six parameter domains** past the spatial ones — people flow, endpoints and spares, identity shape, the SaaS estate, support load, and data and recovery — each written because a lab or a step had already been forced to invent it, and each recorded in that file's own demand ledger. `Reference build` stays ⏳ because no step asks for a model; `Where things run` is **written on both halves** — four things stay on this floor or in a cloud, and six were considered and refused, which is the shorter and more useful list | ✅ |
 | Walkthrough | [`walkthrough/`](walkthrough/README.md) — a second route, spoken rather than read: the format, the five decisions ([ADR-0009](docs/adr/0009-the-walkthrough-ships-its-script-not-its-audio.md)–[0013](docs/adr/0013-godot-is-a-design-tool-and-the-floor-keeps-one-palette.md)) and the viewer registration are written, and **three walkthroughs are built** — 01 · the network (106 beats), 02 · the first Monday (93 beats) and 03 · the day it breaks (102 beats), each in two languages over the same interactive 2D floor. Scripts ship, audio never does. Grows one walkthrough at a time like `toolbox/`, with no target count | ✅ |
 | **Roadmap** | **all tiered items landed** — every planned module has written content, and **`docs/zh/` mirrors every document in the English tree**; remaining work is labs + deepening | ✅ |
@@ -106,7 +106,7 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 1. **`cross-cutting/identity-iam.md`** — ✅ *done.* The densest demand cluster
    (AD / Entra / Okta / SSO / SCIM / RBAC / lifecycle) and the most transferable
    surface across every platform.
-2. **`cross-cutting/networking.md`** — the cloud/on-prem networking fundamentals every
+2. **`cross-cutting/networking.md`** — ✅ *landed as [`the-stack/02-network.md`](the-stack/02-network.md), with [`site-network-design.md`](cross-cutting/site-network-design.md), [`debug-ladder.md`](cross-cutting/debug-ladder.md) and [`network-evolution.md`](cross-cutting/network-evolution.md) beside it; no file by this name exists.* The cloud/on-prem networking fundamentals every
    role assumes (TCP/IP, DNS, DHCP, routing, firewalls, load balancing).
 3. **`cross-cutting/iac-and-config.md`** — Terraform + Ansible + Puppet as one
    universal control plane. (Ansible is one of the most-requested single tools.)
@@ -117,16 +117,16 @@ and treats each cloud as a place to *prove* the model rather than the whole poin
 5. **`endpoint/`** — a first-class track for the endpoint/MDM lane (Jamf, Intune,
    PXE/imaging, patching, macOS/Windows fleet) — a very-high-demand area the platform
    folders don't cover.
-6. **`cross-cutting/security-compliance.md`** — hardening/baselines, EDR/XDR, SIEM,
+6. **`cross-cutting/security-compliance.md`** — ✅ *landed as [`the-stack/07-security.md`](the-stack/07-security.md) and [`working-with-security.md`](cross-cutting/working-with-security.md); no file by this name exists.* Hardening/baselines, EDR/XDR, SIEM,
    zero-trust, and compliance-by-name (SOC 2 / SOX / GDPR / FedRAMP / ISO 27001).
-7. **`cross-cutting/virtualization.md`** — VMware/vSphere, KVM, Proxmox.
+7. **`cross-cutting/virtualization.md`** — ✅ *landed as [`the-stack/01-physical.md`](the-stack/01-physical.md) and [`platforms/vsphere/`](platforms/vsphere/); no file by this name exists.* VMware/vSphere, KVM, Proxmox.
 8. **`cross-cutting/kubernetes.md`** — containers + orchestration across EKS/AKS/GKE.
 
 ### Tier 3 — round it out
 
-9. **`cross-cutting/observability.md`** — metrics/logs/traces, SLIs/SLOs, incident response.
+9. **`cross-cutting/observability.md`** — ✅ *landed as [`the-stack/06-observability.md`](the-stack/06-observability.md) and [`incident-response.md`](cross-cutting/incident-response.md); no file by this name exists.* Metrics/logs/traces, SLIs/SLOs, incident response.
 10. **`foundations/`** — Linux + scripting (Python/Bash/PowerShell) as the assumed base, made explicit.
-11. **`cross-cutting/storage.md`**, SaaS admin (Google Workspace / M365), and additional platforms (OpenStack, OCI) as warranted.
+11. **`cross-cutting/storage.md`** — ✅ *landed as [`the-stack/04-storage.md`](the-stack/04-storage.md); no file by this name exists* —, SaaS admin (Google Workspace / M365), and additional platforms (OpenStack, OCI) as warranted.
 
 ## The toolbox track (opened 2026-07)
 

@@ -7,6 +7,8 @@ summary: "Inputs: a CSV of username,action[,groups] · Outputs: the plan (dry-ru
 ---
 # user-lifecycle
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/user-lifecycle/README.md)
+
 > **Inputs:** a CSV of `username,action[,groups]` · **Outputs:** the plan (dry-run)
 > or per-user results (`--apply`) · **Risk:** **dry-run by default** — changes state
 > only with `--apply` · **Root:** required for `--apply`

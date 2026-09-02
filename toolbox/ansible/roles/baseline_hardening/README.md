@@ -7,6 +7,8 @@ summary: "Remediates the items baseline-check audits — SSH posture, default um
 ---
 # role: baseline_hardening
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/toolbox/ansible/roles/baseline_hardening/README.md)
+
 Remediates the items [`baseline-check`](../../../baseline-check/) audits — SSH
 posture, default umask, a sysctl baseline, and persistent journald. Every item
 is a switch; anything that can lock you out defaults to **off**.

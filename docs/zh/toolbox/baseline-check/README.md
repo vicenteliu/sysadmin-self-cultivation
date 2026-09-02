@@ -1,5 +1,11 @@
 # baseline-check
 
+> 🌐 **语言：** [English（默认）](../../../../toolbox/baseline-check/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/baseline-check/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 > **输入：** 无 · **输出：** 每项 PASS/FAIL/INFO/SKIP + 汇总 · **风险：** 只读，
 > 不改任何东西 · **root：** 可选——shadow 和 sshd 生效值检查需要它
 

@@ -1,5 +1,11 @@
 # snapshot-audit
 
+> 🌐 **语言：** [English（默认）](../../../../toolbox/snapshot-audit/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/snapshot-audit/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 > **输入：** 一份或多份清单 JSON（[`vsphere-inventory`](../vsphere-inventory/)
 > 和/或 [`pve-inventory`](../pve-inventory/)；不给参数则读 stdin）· **输出：**
 > 被标记 VM 的卫生报告（或 `--json`）· **风险：** 只读——只标记；删除或合并

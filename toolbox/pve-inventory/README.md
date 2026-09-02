@@ -7,6 +7,8 @@ summary: "Inputs: none on a PVE node (live pvesh get calls); or --from DIR with 
 ---
 # pve-inventory
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/pve-inventory/README.md)
+
 > **Inputs:** none on a PVE node (live `pvesh get` calls); or `--from DIR` with
 > captured output · **Outputs:** one JSON inventory document (stdout or
 > `--out`), same schema as [`vsphere-inventory`](../vsphere-inventory/) ·

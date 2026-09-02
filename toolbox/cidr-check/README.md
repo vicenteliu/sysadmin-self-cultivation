@@ -7,6 +7,8 @@ summary: "Inputs: CIDR ranges (args or --file plan.txt) · Outputs: overlap repo
 ---
 # cidr-check
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/cidr-check/README.md)
+
 > **Inputs:** CIDR ranges (args or `--file plan.txt`) · **Outputs:** overlap report on
 > stdout · **Risk:** read-only, touches nothing · **Root:** not needed
 

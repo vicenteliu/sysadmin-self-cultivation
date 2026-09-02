@@ -7,6 +7,8 @@ summary: "A narrated route through the reference office — written to be spoken
 ---
 # The Walkthrough — the reference office, told out loud
 
+> 🌐 **Languages:** English (default) · [中文](../docs/zh/walkthrough/README.md)
+
 > A **route through** the other axes, like [`build-out/`](../build-out/README.md) and for
 > the same reason: it teaches no page this repo does not already hold. What it adds is an
 > **order** and a **register** — one hundred-person office, walked through slowly, in a

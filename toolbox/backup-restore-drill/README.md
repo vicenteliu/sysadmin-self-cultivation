@@ -7,6 +7,8 @@ summary: "Inputs: a tar archive; optionally the source dir it backs up · Output
 ---
 # backup-restore-drill
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/backup-restore-drill/README.md)
+
 > **Inputs:** a tar archive; optionally the source dir it backs up · **Outputs:**
 > restore report on stdout · **Risk:** read-only towards your system — writes only
 > to a temp dir it deletes on exit · **Root:** not needed

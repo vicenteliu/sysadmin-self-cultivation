@@ -8,6 +8,8 @@ summary: "Inputs: --server host[:port], --user, password via VSPHEREPASSWORD · 
 ---
 # vsphere-inventory
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/vsphere-inventory/README.md)
+
 > **Inputs:** `--server host[:port]`, `--user`, password via `VSPHERE_PASSWORD` ·
 > **Outputs:** one JSON inventory document (stdout or `--out`), optional per-VM
 > CSV · **Risk:** read-only — logs in, reads properties, logs out; changes

@@ -7,6 +7,8 @@ summary: "The scripts find problems (read-only, safe to run anywhere)."
 ---
 # Ansible line — the remediation half
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/ansible/README.md)
+
 > The [scripts](../) *find* problems (read-only, safe to run anywhere). These
 > Ansible roles *fix* them — idempotently, declaratively, one control plane.
 > Together they close the loop: `baseline-check` reports, `baseline_hardening`

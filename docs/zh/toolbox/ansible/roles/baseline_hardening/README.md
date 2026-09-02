@@ -1,5 +1,11 @@
 # role: baseline_hardening
 
+> 🌐 **语言：** [English（默认）](../../../../../../toolbox/ansible/roles/baseline_hardening/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/ansible/roles/baseline_hardening/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 修复 [`baseline-check`](../../../baseline-check/) 审计的项——SSH 姿态、
 默认 umask、sysctl 基线、持久化 journald。每项都是开关；任何可能把你锁在外面的项默认**关闭**。
 

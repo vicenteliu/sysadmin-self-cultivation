@@ -1,5 +1,11 @@
 # cidr-check
 
+> 🌐 **语言：** [English（默认）](../../../../toolbox/cidr-check/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/cidr-check/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 > **输入：** CIDR 网段（参数或 `--file plan.txt`）· **输出：** stdout 上重叠报告 ·
 > **风险：** 只读，不碰任何东西 · **root：** 不需要
 

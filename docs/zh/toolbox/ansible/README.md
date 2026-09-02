@@ -1,5 +1,11 @@
 # Ansible 线 — 修复的另一半
 
+> 🌐 **语言：** [English（默认）](../../../../toolbox/ansible/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/ansible/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 > [脚本](../)负责*发现*问题（只读，随处安全运行）。这些 Ansible role 负责*修复*
 > ——幂等、声明式、一套控制面。二者闭环：`baseline-check` 报告、`baseline_hardening`
 > 修复；`patch-report` 清点、`patch` 应用；`user-lifecycle` 规划、`user_lifecycle` 收敛。

@@ -1,5 +1,11 @@
 # role: patch
 
+> 🌐 **语言：** [English（默认）](../../../../../../toolbox/ansible/roles/patch/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/ansible/roles/patch/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 在 apt 或 dnf 系统上应用待更新，然后报告——或者按你要求，处理需要的重启。
 [`patch-report`](../../../patch-report/) 的执行侧。
 

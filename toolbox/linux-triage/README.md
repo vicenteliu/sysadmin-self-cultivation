@@ -7,6 +7,8 @@ summary: "Inputs: none · Outputs: one triage report on stdout · Risk: read-onl
 ---
 # linux-triage
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/linux-triage/README.md)
+
 > **Inputs:** none · **Outputs:** one triage report on stdout · **Risk:** read-only
 > · **Root:** optional — journal errors and some counters say more with it
 

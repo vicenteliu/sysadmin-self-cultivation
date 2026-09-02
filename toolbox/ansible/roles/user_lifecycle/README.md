@@ -7,6 +7,8 @@ summary: "Declarative users: define the desired state, the role converges to it.
 ---
 # role: user_lifecycle
 
+> 🌐 **Languages:** English (default) · [中文](../../../../docs/zh/toolbox/ansible/roles/user_lifecycle/README.md)
+
 Declarative users: define the desired state, the role converges to it. The
 Ansible counterpart of the [`user-lifecycle`](../../../user-lifecycle/) script,
 same law — **disabled ≠ deleted**.

@@ -1,5 +1,11 @@
 # user-lifecycle
 
+> 🌐 **语言：** [English（默认）](../../../../toolbox/user-lifecycle/README.md) · **中文**
+>
+> ⚠️ 本项目**默认语言为英文**，`toolbox/user-lifecycle/README.md` 是"事实来源"。本页中文是多语言支持的一部分，可能略滞后于英文版；两者不一致时以英文为准。
+
+---
+
 > **输入：** 一个 `username,action[,groups]` 的 CSV · **输出：** 计划（dry-run）或
 > 逐用户结果（`--apply`）· **风险：** **默认 dry-run**——仅 `--apply` 才改动状态 ·
 > **root：** `--apply` 时必需

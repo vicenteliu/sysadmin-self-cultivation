@@ -2,7 +2,7 @@
   "schema": 1,
   "generated_by": "docs/build-index.py",
   "note": "Generated from front-matter. Edit the file, not this index.",
-  "count": 413,
+  "count": 415,
   "files": {
     ".claude/skills/README.md": {
       "kind": "index",
@@ -132,6 +132,13 @@
       "themes": [],
       "platforms": [],
       "summary": "The idea behind the project, and an honest read on where the craft is heading."
+    },
+    "ai-workflow/README.md": {
+      "kind": "index",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The method: how AI is used to learn a platform and to operate one, and the discipline that keeps it honest — two notes, the ramp and the steady state."
     },
     "ai-workflow/ai-in-the-day-job.md": {
       "kind": "note",
@@ -1002,6 +1009,16 @@
       "summary": "The idea behind the project, and an honest read on where the craft is heading.",
       "language": "zh",
       "mirrors": "WHY.md",
+      "derived": true
+    },
+    "docs/zh/ai-workflow/README.md": {
+      "kind": "index",
+      "axis": "start-here",
+      "themes": [],
+      "platforms": [],
+      "summary": "The method: how AI is used to learn a platform and to operate one, and the discipline that keeps it honest — two notes, the ramp and the steady state.",
+      "language": "zh",
+      "mirrors": "ai-workflow/README.md",
       "derived": true
     },
     "docs/zh/ai-workflow/ai-in-the-day-job.md": {

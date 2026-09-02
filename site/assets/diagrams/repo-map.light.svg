@@ -19,7 +19,7 @@
       <!-- axis 1 -->
       <rect x="60" y="72" width="160" height="128" rx="6" fill="#faf8f4"/>
       <rect x="60" y="72" width="160" height="128" rx="6" fill="rgba(38,38,43,0.05)" stroke="#5d5a52" stroke-width="1"/>
-      <text x="140" y="98" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.12em" data-axis="start-here">20 DOCS</text>
+      <text x="140" y="98" fill="#8a8479" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle" letter-spacing="0.12em" data-axis="start-here">21 DOCS</text>
       <text x="140" y="132" fill="#26262b" font-size="14" font-weight="600" font-family="'Geist', system-ui, sans-serif" text-anchor="middle">Start here</text>
       <text x="140" y="156" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">WHY · the model</text>
       <text x="140" y="172" fill="#5d5a52" font-size="8" font-family="'Geist Mono', ui-monospace, monospace" text-anchor="middle">ai-workflow · skills</text>

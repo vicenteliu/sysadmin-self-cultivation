@@ -7,6 +7,8 @@ summary: "Inputs: one or more inventory JSON files (vsphere-inventory and/or pve
 ---
 # snapshot-audit
 
+> 🌐 **Languages:** English (default) · [中文](../../docs/zh/toolbox/snapshot-audit/README.md)
+
 > **Inputs:** one or more inventory JSON files ([`vsphere-inventory`](../vsphere-inventory/)
 > and/or [`pve-inventory`](../pve-inventory/); stdin when none) · **Outputs:**
 > hygiene report of flagged VMs (or `--json`) · **Risk:** read-only — flags only;
